@@ -4,3 +4,16 @@
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
       <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 {% endblock %}
+
+{% block sidebar_about %}
+    <img src="/dosbox-staging.svg" style="display:block; width:80%;"/>
+    <p class="lead">
+    <span style="font-weight:bold">dosbox-staging</span> is DOS/x86 emulator
+    focusing on current technologies and ease of use.
+    Based on DOSBox; <a href="/about/">read more</a>.
+    </p>
+    {% if config.description %}
+    <p class="lead">{{config.description}}</p>
+    {% endif %}
+{% endblock %}
+
