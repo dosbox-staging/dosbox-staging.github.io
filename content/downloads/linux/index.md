@@ -22,7 +22,7 @@ This list might be incomplete, lookup packages on
 
 ## Tarball download
 
-TODO The latest stable version: [dosbox-staging 0.75.0-rc1]()
+TODO The latest stable version: [dosbox-staging 0.75.0-rc1](/)
 
 Our precompiled tarball builds are designed to work with wide range
 of Linux distributions, but will require you to manually install some
