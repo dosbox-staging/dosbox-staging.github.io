@@ -17,6 +17,9 @@ theme = "hyde"
 # Put all your custom variables here
 
 hyde_links = [
-    {url = "https://google.com", name = "Google.com"},
-    {url = "https://google.fr", name = "Google.fr"},
+    {url = "/", name = "Home"},
+    {url = "/downloads/linux/", name = "Downloads (Linux)"},
+    {url = "/downloads/windows/", name = "Downloads (Windows)"},
+    {url = "/downloads/macos/", name = "Downloads (macOS)"},
+    {url = "https://github.com/dosbox-staging/dosbox-staging", name = "Source code (GitHub)"},
 ]
