@@ -46,7 +46,5 @@ dependencies in order to use it:
 You can always check what's cooking on the master branch :)
 
 These builds might be slow or unstable, they are designed with developers
-and testers in mind:
-
-[Download instructions](https://github.com/dosbox-staging/dosbox-staging#linux)
-
+and testers in mind: [download instructions for snapshot builds](
+https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds)
