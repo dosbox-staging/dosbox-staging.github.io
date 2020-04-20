@@ -60,13 +60,13 @@ choice for new users.
 SmartScreen will allow you to run application, after you click
 on "More info":
 
-![alt text](smartscreen1.png)
-![alt text](smartscreen2.png)
+![SmartScreen window 1](smartscreen1.png)
+![SmartScreen window 2](smartscreen2.png)
 
 #### Method 3
 
 Right-click on "dosbox.exe" file distributed in the zip file, select
 "Properties", and then "Unblock".
 
-![alt text](properties.png)
+![Properties window](properties.png)
 
