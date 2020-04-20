@@ -6,6 +6,7 @@ template = "download.html"
 TODO The latest stable version: [dosbox-staging 0.75.0-rc1](/)
 
 TODO Describe caveats.
+![alt text](placeholder.jpg)
 
 ## Development snapshot builds
 
