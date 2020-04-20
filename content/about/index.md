@@ -45,3 +45,6 @@ Planned features can be followed through
   emulation speed should look at [dosemu2](https://github.com/dosemu2/dosemu2).
 - Running DOS as daily driver / OS. There's [FreeDOS](https://www.freedos.org/).
 
+## Team
+
+Project is maintained by [dosbox-staging team](https://github.com/orgs/dosbox-staging/people).
