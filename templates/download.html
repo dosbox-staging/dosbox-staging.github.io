@@ -1,10 +1,8 @@
-{% extends "index.html" %}
+{% extends "content_with_footer.html" %}
 
-{% block content %}
+{% block page_content %}
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   {{ page.content | safe }}
 </div>
-
-{% endblock content %}
-
+{% endblock page_content %}

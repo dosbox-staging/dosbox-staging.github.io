@@ -16,25 +16,3 @@
     <p class="lead">{{config.description}}</p>
     {% endif %}
 {% endblock %}
-
-{#
-  Abusing sidebar_nav block to inject copyright info, as theme is missing
-  dedicated block for this purpose.
-#}
-{% block sidebar_nav %}
-{% for link in config.extra.hyde_links %}
-<li class="sidebar-nav-item"><a href="{{link.url}}">{{link.name}}</a></li>
-{% endfor %}
-<li class="sidebad-nav-item" style="margin-top:3em;">
-  <span style="font-size: 0.7rem">
-    Content on this site is licensed under a
-    <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons BY-SA 4.0</a>.
-  </span>
-</li>
-<li class="sidebad-nav-item">
-  <span style="font-size: 0.7rem">
-    dosbox-staging is licensed under a
-    <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU&nbsp;GPLv2+</a>
-  </span>
-</li>
-{% endblock %}
