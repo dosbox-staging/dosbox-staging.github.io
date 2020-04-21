@@ -26,7 +26,7 @@ Starting with Windows 8, Microsoft enabled "SmartScreen" technology, which
 disrupts user ability to run new (as in: newly developed) software.
 
 Bypassing this check from software distribution side requires paying hundreds
-of dollars for "[Extended Validation Code Signing Certificates][1]" and putting
+of dollars for "[Extended Validation Code Signing Certificate][1]" and putting
 the software on Windows Store (code signing only is not enough<sup>[2]</sup>).
 
 As a small, open source, Free software project, we don't have ability to pay

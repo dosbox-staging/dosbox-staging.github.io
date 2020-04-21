@@ -10,7 +10,7 @@ and improvement on existing codebase, leveraging current development
 tools and practices.
 
 This project is **separate** from "vanilla" [DOSBox](https://www.dosbox.com/)
-project developed by DOSBox Team.
+project developed by the DOSBox Team.
 
 ## Goals
 
