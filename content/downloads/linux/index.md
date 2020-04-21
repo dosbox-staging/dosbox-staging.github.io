@@ -22,11 +22,12 @@ This list might be incomplete, lookup packages on
 
 ## Tarball download
 
-TODO The latest stable version: [dosbox-staging 0.75.0-rc1](/)
+TODO: **RC1 build not released yet**
+<!-- **[Download dosbox-staging 0.75.0-rc1](/)** -->
 
 Our precompiled tarball builds are designed to work with wide range
-of Linux distributions, but will require you to manually install some
-dependencies in order to use it:
+of Linux distributions (x86\_64 only for now), but will require you
+to manually install some dependencies in order to use it:
 
 #### Fedora
 

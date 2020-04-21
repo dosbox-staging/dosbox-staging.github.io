@@ -3,7 +3,8 @@ title = "Windows downloads"
 template = "download.html"
 +++
 
-TODO **Download the latest stable version: [dosbox-staging 0.75.0-rc1](/)**
+TODO: **RC1 build not released yet**
+<!-- **[Download dosbox-staging 0.75.0-rc1](/)** -->
 
 *If Windows 8.x or Windows 10 prevents you from running dosbox-staging via
 Microsoft Defender SmartScreen, see the [section below](#ms-ss).*
