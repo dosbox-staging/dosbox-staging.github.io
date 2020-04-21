@@ -3,8 +3,8 @@ title = "Linux packages"
 template = "download.html"
 +++
 
-If your distribution already includes `dosbox-staging` in the repository, then
-using that package is recommended:
+If your distribution already includes `dosbox-staging` in its repository, then
+we recommend using that package:
 
 #### Arch, Manjaro
 
@@ -16,8 +16,9 @@ TODO instructions
 
 #### Others
 
-This list might be incomplete, lookup packages on
-[repology.org](https://repology.org/projects/?search=dosbox-staging).
+This list might be incomplete. Search
+[repology.org](https://repology.org/projects/?search=dosbox-staging) for the
+latest list of distributions that carry `dosbox-staging`.
 
 
 ## Tarball download
@@ -25,15 +26,14 @@ This list might be incomplete, lookup packages on
 TODO: **RC1 build not released yet**
 <!-- **[Download dosbox-staging 0.75.0-rc1](/)** -->
 
-Our precompiled tarball builds are designed to work with wide range
-of Linux distributions (x86\_64 only for now), but will require you
-to manually install some dependencies in order to use it:
+Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
+They depend on the following easy-to-install packages, as follows:
 
 #### Fedora
 
     sudo dnf install SDL2 SDL2_net opusfile
 
-#### Debian (10 or newer), Ubuntu (18.04 LTS or newer)
+#### Ubuntu (18.04 and newer) and Debian (10 and newer)
 
     sudo apt install libsdl2-2.0 libsdl2-net-2.0 libopusfile0
 
@@ -44,8 +44,8 @@ to manually install some dependencies in order to use it:
 
 ## Development snapshot builds
 
-You can always check what's cooking on the master branch :)
+You can always see what's cooking on the master branch :)
 
-These builds might be slow or unstable, they are designed with developers
+These builds might be slow or unstable as they are designed with developers
 and testers in mind: [download instructions for snapshot builds](
-https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds)
+https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds).
