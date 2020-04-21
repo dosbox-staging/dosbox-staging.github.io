@@ -1,0 +1,31 @@
+From 74e05173d2b644e742bf663e2d6e4953e71a4ebe Mon Sep 17 00:00:00 2001
+From: Patryk Obara <dreamer.tan@gmail.com>
+Date: Tue, 21 Apr 2020 05:19:40 +0200
+Subject: [PATCH] Add Google Analytics
+
+---
+ templates/index.html | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/templates/index.html b/templates/index.html
+index cc5574f..ec7dad8 100644
+--- a/templates/index.html
++++ b/templates/index.html
+@@ -1,6 +1,14 @@
+ <!DOCTYPE html>
+ <html lang="en">
+     <head>
++      <!-- Global site tag (gtag.js) - Google Analytics -->
++      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-164115926-1"></script>
++      <script>
++        window.dataLayer = window.dataLayer || [];
++        function gtag(){dataLayer.push(arguments);}
++        gtag('js', new Date());
++        gtag('config', 'UA-164115926-1');
++      </script>
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta http-equiv="content-type" content="text/html; charset=utf-8">
+ 
+-- 
+2.25.3
+
