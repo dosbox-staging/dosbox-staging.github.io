@@ -11,11 +11,11 @@ Microsoft Defender SmartScreen, see the [section below](#ms-ss).*
 
 ### Development snapshot builds
 
-You can always check what's cooking on the master branch :)
+You can always see what's cooking on the master branch :)
 
-These builds might be slow or unstable, they are designed with developers
+These builds might be slow or unstable as they are designed with developers
 and testers in mind: [download instructions for snapshot builds](
-https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds)
+https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds).
 
 ### Older builds
 
@@ -23,27 +23,21 @@ There are no stable builds yet.
 
 ### <a name="ms-ss"></a> Microsoft Defender SmartScreen
 
-Starting with Windows 8, Microsoft enabled "SmartScreen" technology, which
-disrupts user ability to run new (as in: newly developed) software.
+Starting in Windows 8, Microsoft's SmartScreen pop-up encumbers the execution
+of all but certified applications, a process that involves developers paying
+Microsoft's certification vendors a yearly fee (such as Symantec’s $795/year EV
+Code Signing service).
 
-Bypassing this check from software distribution side requires paying hundreds
-of dollars for "[Extended Validation Code Signing Certificate][1]" and putting
-the software on Windows Store (code signing only is not enough<sup>[2]</sup>).
+As dosbox-staging is a volunteer effort, we are not in a position to make such
+payments. We therefore ask users to manually unblock dosbox-staging and be
+patient while Microsoft's "Application Reputation" scheme eventually whitelists
+dosbox-staging (see: [[3]], and the last paragraph in [[4]]).
 
-As a small, open source, Free software project, we don't have ability to pay
-for whitelisting and we don't want to force users into downloading the software
-from Windows Store, that's why we rely on Microsoft's "Application Reputation"
-scheme (see: [[3]], last paragraph in [[4]]) to eventually disable this hurdle for
-users.
+For now, user can bypass SmartScreen using methods 1, 2, or 3 below:
 
-So simply bypass SmartScreen using methods 1, 2, or 3 listed below and don't
-worry about it. Microsoft will eventually catch up to the fact, that this is
-not malware and (hopefully) disable the screen for future users.
-
-If you're afraid downloads linked in here might lead you to tainted version
-of the software, you can always
-[build dosbox-staging yourself straight from the source][5] (send us patches
-if you'll end up improving something!) :).
+If you're concerned about downloading pre-compiled binaries, you can [build
+dosbox-staging yourself straight from the source][5] (send us patches if you
+improve something!) :).
 
 [1]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates
 [2]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-windows-store--windows-8-apps
@@ -70,4 +64,3 @@ Right-click on "dosbox.exe" file distributed in the zip file, select
 "Properties", and then "Unblock".
 
 ![Properties window](properties.png)
-
