@@ -8,9 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: Inject GA
-      run: git -C themes/hyde/ am ../../patches/0001-Add-Google-Analytics.patch
-    - name: Deploy Zola
+    - name: shalzz/zola-deploy-action
       uses: shalzz/zola-deploy-action@master
       env:
         PAGES_BRANCH: master
