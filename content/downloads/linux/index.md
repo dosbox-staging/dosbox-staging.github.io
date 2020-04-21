@@ -33,7 +33,7 @@ They depend on the following easy-to-install packages, as follows:
 
     sudo dnf install SDL2 SDL2_net opusfile
 
-#### Ubuntu (18.04 and newer) and Debian (10 and newer)
+#### Ubuntu (18.04 or newer) and Debian (10 or newer)
 
     sudo apt install libsdl2-2.0 libsdl2-net-2.0 libopusfile0
 

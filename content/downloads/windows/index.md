@@ -23,14 +23,15 @@ There are no stable builds yet.
 
 ### <a name="ms-ss"></a> Microsoft Defender SmartScreen
 
-In 2012, Microsoft added "SmartScreen" to Windows 8, a rent-seeking system
-meant extort payments from developers in exchange for sharing their software
-with Window users via the App Store (see [[1]] and [[2]] below).
+Starting in Windows 8, Microsoft's SmartScreen pop-up encumbers the execution
+of all but certified applications, a process that involves developers paying
+Microsoft's certification vendors a yearly fee (such as Symantec’s $795/year EV
+Code Signing service).
 
-In lieu of paying Microsoft, the dosbox-staging project uses GitHub's free
-integration service to generate Windows release packages. We will also rely on
-Microsoft's "Application Reputation" scheme to eventually whitelist
-dosbox-staging for users (see: [[3]], and the last paragraph in [[4]]).
+As dosbox-staging is a volunteer effort, we are not in a position to make such
+payments. We therefore ask users to manually unblock dosbox-staging and be
+patient while Microsoft's "Application Reputation" scheme eventually whitelists
+dosbox-staging (see: [[3]], and the last paragraph in [[4]]).
 
 For now, user can bypass SmartScreen using methods 1, 2, or 3 below:
 

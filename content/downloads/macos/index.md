@@ -10,9 +10,9 @@ Compatible only with macOS 10.15 (Catalina); if you want to run it on an older
 macOS, [build dosbox-staging yourself straight from the source][1] (send us
 patches if you improve something!) :)
 
-*Apple's "gatekeeper" feature on macOS will prevent you from running
-dosbox-staging; see [the section below](#apple-gatekeeper) to learn how to fix
-it.*
+*macOS uses its Gatekeeper feature to prevent users from running
+externally-hosted 3rd party software, such as dosbox-staging. See [the section
+below](#apple-gatekeeper) to learn how to fix it.*
 
 [1]:https://github.com/dosbox-staging/dosbox-staging.
 
@@ -32,13 +32,7 @@ There are no stable builds yet.
 
 ### <a name="apple-gatekeeper"></a> Apple Gatekeeper
 
-In 2016 Apple added "Gatekeeper" to macOS 10.12, a rent-seeking system meant to
-extort yearly payments from developers in exchange for sharing their software
-with Apple users via the Apple App Store.
-
-In lieu of paying Apple, the dosbox-staging project uses GitHub's free
-integration service to generate macOS release packages. Users can bypass
-Apple's Gatekeeper using either of the following methods:
+Apple's Gatekeeper feature only permits the running of notarized software, one aspect of which involves developers making yearly payments to Apple. As dosbox-staging is a volunteer effort, we are not in a position to make such payments and therefore ask users to bypass Apple's Gatekeeper using either of the following methods:
 
 #### Method 1
 
