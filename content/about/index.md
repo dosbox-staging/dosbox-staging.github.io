@@ -14,14 +14,14 @@ project developed by the DOSBox Team.
 
 ## Goals
 
+- Provide good **out of the box** experience for new users.
 - Enable **new contributors**, remove barriers to entry.
 - Fix, cleanup, and merge a number of **community-developed patches**,
   that were not accepted upstream.
 - Implement **new features** and quality of life improvements.
-- Provide good **out of the box** experience for new users.
 - Focus on **DOS games** (but we welcome improvements for productivity software as
   long as they do not regress game emulation quality)
-- Balancing emulation **quality** with **speed** and **usability**.
+- Balance emulation **quality** with **speed** and **usability**.
 - Deliver consistent cross-platform experience.
 - Leverage ongoing DOSBox development.
 - Focus on supporting up-to-date, current Operating Systems and modern
