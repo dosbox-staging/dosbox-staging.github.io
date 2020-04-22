@@ -48,9 +48,8 @@ You can easily configure your DOS games on Steam to use dosbox-staging via
 [Boxtron](https://github.com/dreamer/boxtron) (community-developed
 Steam Play compatibility tool for DOS games).
 
-If you use dosbox-staging `dosbox` command is in your PATH,
-then Boxtron will pick it up automatically.  You can also
-configure Boxtron to use specific build by editing file
+Boxtron will automatically use `dosbox` if found in your PATH or can be
+configured to use a specific binary by editing the file
 `~/.config/boxtron.conf` and overriding [dosbox.cmd][boxtron-conf]:
 
     cmd = ~/path-to-dosbox-staging/dosbox
