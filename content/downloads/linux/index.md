@@ -8,17 +8,18 @@ we recommend using that package:
 
 #### Arch, Manjaro
 
-TODO instructions
+Available via Arch User Repository
+([link](https://aur.archlinux.org/packages/dosbox-staging)).
 
 #### NixOS
 
-TODO instructions
+Available via Nix User Repository
+([instructions](https://github.com/dosbox-staging/dosbox-staging/wiki/Installing-on-NixOS)).
 
 #### Others
 
-This list might be incomplete. Search
-[repology.org](https://repology.org/projects/?search=dosbox-staging) for the
-latest list of distributions that carry `dosbox-staging`.
+This list might be incomplete. Lookup package on
+[repology.org](https://repology.org/projects/?search=dosbox-staging).
 
 
 ## Tarball download
