@@ -13,7 +13,7 @@ patches if you improve something!) :)
 externally-hosted 3rd party software, such as dosbox-staging. See [the section
 below](#apple-gatekeeper) to learn how to fix it.*
 
-[1]:https://github.com/dosbox-staging/dosbox-staging.
+[1]:https://github.com/dosbox-staging/dosbox-staging
 
 ### Development snapshot builds
 

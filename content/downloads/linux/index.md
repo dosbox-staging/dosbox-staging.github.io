@@ -48,3 +48,11 @@ You can always see what's cooking on the master branch :)
 These builds might be slow or unstable as they are designed with developers
 and testers in mind: [download instructions for snapshot builds](
 https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds).
+
+
+## Building from source
+
+Of course you can always [build dosbox-staging straight from the source][1].
+Send us patches if you improve something! :)
+
+[1]:https://github.com/dosbox-staging/dosbox-staging

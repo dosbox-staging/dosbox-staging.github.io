@@ -41,7 +41,7 @@ For now, you can bypass SmartScreen using methods 1, 2, or 3 below:
 [1]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-windows-store--windows-8-apps
 [2]:https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview
 [3]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-ev-code-signing
-[4]:https://github.com/dosbox-staging/dosbox-staging.
+[4]:https://github.com/dosbox-staging/dosbox-staging
 
 #### Method 1
 
