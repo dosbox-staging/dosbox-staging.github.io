@@ -5,9 +5,9 @@ template = "download.html"
 
 **[Download dosbox-staging 0.75.0-rc1 (dmg)](https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-macOS-v0.75.0-rc1.dmg)**
 
-Compatible only with macOS 10.15 (Catalina); if you want to run it on an older
-macOS, [build dosbox-staging yourself straight from the source][1] (send us
-patches if you improve something!) :)
+Compatible only with macOS 10.15 (Catalina) ATM; if you want to run it on an older
+macOS, [build dosbox-staging yourself straight from the source][1].
+Send us patches if you improve something! :)
 
 *macOS uses its Gatekeeper feature to prevent users from running
 externally-hosted 3rd party software, such as dosbox-staging. See [the section
