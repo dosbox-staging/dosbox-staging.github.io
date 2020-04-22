@@ -23,9 +23,9 @@ There are no stable builds yet.
 ### <a name="ms-ss"></a> Microsoft Defender SmartScreen
 
 Starting in Windows 8, Microsoft's SmartScreen pop-up encumbers the execution
-of newly-developed applications. This process involves developers paying
-Microsoft's EV certification vendors a yearly fee and putting the software on
-Windows Store<sup>[1]</sup>.
+of newly-developed applications.  To prevent this, developers are expected to pay
+Microsoft's EV certification vendors a yearly fee and put the software on Windows
+Store<sup>[1]</sup>.
 
 As dosbox-staging is a volunteer effort, we are not in a position to make such
 payments. We therefore ask users to manually unblock dosbox-staging and be
