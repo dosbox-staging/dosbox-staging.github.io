@@ -23,8 +23,7 @@ latest list of distributions that carry `dosbox-staging`.
 
 ## Tarball download
 
-TODO: **RC1 build not released yet**
-<!-- **[Download dosbox-staging 0.75.0-rc1](/)** -->
+**[Download dosbox-staging 0.75.0-rc1 (tar.xz)](https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-linux-v0.75.0-rc1.tar.xz)**
 
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
 They depend on the following packages:

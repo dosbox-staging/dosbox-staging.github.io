@@ -3,8 +3,7 @@ title = "macOS bundles"
 template = "download.html"
 +++
 
-TODO: **RC1 build not released yet**
-<!-- **[Download dosbox-staging 0.75.0-rc1](/)** -->
+**[Download dosbox-staging 0.75.0-rc1 (dmg)](https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-macOS-v0.75.0-rc1.dmg)**
 
 Compatible only with macOS 10.15 (Catalina); if you want to run it on an older
 macOS, [build dosbox-staging yourself straight from the source][1] (send us
