@@ -4,10 +4,17 @@
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
       <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 
-      <meta property="og:title" content="dosbox-staging">
-      <meta property="og:type" content="website">
-      <meta property="og:image" content="https://dosbox-staging.github.io/dosbox-staging.svg">
-      <meta property="og:description" content="DOS/x86 emulator focusing on ease of use.">
+      <meta property="og:image" content="https://dosbox-staging.github.io/dosbox-staging-256.png">
+      <meta property="og:site_name" content="dosbox-staging project home" />
+      <meta property="og:type" content="object" />
+      <meta property="og:title" content="dosbox-staging (title test)">
+      {% if page.permalink %}
+      <meta property="og:url" content="{{ page.permalink | safe }}" />
+      {% else %}
+      <meta property="og:url" content="https://dosbox-staging.github.io/" />
+      {% endif %}
+      <meta property="og:description" content="DOS/x86 emulator focusing on ease of use and current technologies.">
+
 {% endblock %}
 
 {% block sidebar_about %}
