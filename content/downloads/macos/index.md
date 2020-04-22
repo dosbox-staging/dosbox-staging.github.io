@@ -21,9 +21,8 @@ below](#apple-gatekeeper) to learn how to fix it.*
 You can always see what's cooking on the master branch :)
 
 These builds might be slow or unstable as they are designed with developers and
-testers in mind: [download instructions for snapshot
-builds](https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds).
-
+testers in mind: [download instructions for snapshot builds](
+https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds).
 
 ### Older builds
 
@@ -32,7 +31,12 @@ There are no stable builds yet.
 
 ### <a name="apple-gatekeeper"></a> Apple Gatekeeper
 
-Apple's Gatekeeper feature only permits the running of notarized software, one aspect of which involves developers making yearly payments to Apple. As dosbox-staging is a volunteer effort, we are not in a position to make such payments and therefore ask users to bypass Apple's Gatekeeper using either of the following methods:
+Apple's Gatekeeper feature only permits the running of notarized software, one
+aspect of which involves developers making yearly payments to Apple.
+
+As dosbox-staging is a volunteer effort, we are not in a position to make such
+payments and therefore ask users to bypass Apple's Gatekeeper using either of
+the following methods:
 
 #### Method 1
 

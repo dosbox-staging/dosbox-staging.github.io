@@ -27,7 +27,7 @@ TODO: **RC1 build not released yet**
 <!-- **[Download dosbox-staging 0.75.0-rc1](/)** -->
 
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
-They depend on the following easy-to-install packages, as follows:
+They depend on the following packages:
 
 #### Fedora
 

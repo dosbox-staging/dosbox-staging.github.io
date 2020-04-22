@@ -24,26 +24,25 @@ There are no stable builds yet.
 ### <a name="ms-ss"></a> Microsoft Defender SmartScreen
 
 Starting in Windows 8, Microsoft's SmartScreen pop-up encumbers the execution
-of all but certified applications, a process that involves developers paying
-Microsoft's certification vendors a yearly fee (such as Symantec’s $795/year EV
-Code Signing service).
+of newly-developed applications. This process involves developers paying
+Microsoft's EV certification vendors a yearly fee and putting the software on
+Windows Store<sup>[1]</sup>.
 
 As dosbox-staging is a volunteer effort, we are not in a position to make such
 payments. We therefore ask users to manually unblock dosbox-staging and be
 patient while Microsoft's "Application Reputation" scheme eventually whitelists
-dosbox-staging (see: [[3]], and the last paragraph in [[4]]).
-
-For now, user can bypass SmartScreen using methods 1, 2, or 3 below:
+dosbox-staging (see: [[2]], and the last paragraph in [[3]]).
 
 If you're concerned about downloading pre-compiled binaries, you can [build
-dosbox-staging yourself straight from the source][5] (send us patches if you
-improve something!) :).
+dosbox-staging yourself straight from the source][4]. Send us patches if you
+improve something! :)
 
-[1]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates
-[2]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-windows-store--windows-8-apps
-[3]:https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview
-[4]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-ev-code-signing
-[5]:https://github.com/dosbox-staging/dosbox-staging.
+For now, you can bypass SmartScreen using methods 1, 2, or 3 below:
+
+[1]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-windows-store--windows-8-apps
+[2]:https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview
+[3]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-ev-code-signing
+[4]:https://github.com/dosbox-staging/dosbox-staging.
 
 #### Method 1
 

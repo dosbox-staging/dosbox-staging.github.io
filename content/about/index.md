@@ -12,7 +12,7 @@ codebase while leveraging modern development tools and practices.
 
 - Improve the **out-of-the-box** experience for new users.
 - Encourage **new contributors** by removing barriers to entry.
-- Fix, cleanup, and integrate a number of notable **community-developed
+- Fix, cleanup, and integrate several notable **community-developed
   patches** that are not included in the SourceForge-hosted project.
 - Implement **new features** and quality-of-life improvements.
 - Prioritize **DOS gaming**, while welcoming general improvements (such as for
