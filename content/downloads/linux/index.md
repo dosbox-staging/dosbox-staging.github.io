@@ -42,6 +42,21 @@ They depend on the following packages:
     sudo pacman -S sdl2 sdl2_net opusfile
 
 
+## <a name="steam"></a> Steam
+
+You can easily configure your DOS games on Steam to use dosbox-staging via
+[Boxtron](https://github.com/dreamer/boxtron) (community-developed
+Steam Play compatibility tool for DOS games).
+
+If you use dosbox-staging `dosbox` command is in your PATH,
+then Boxtron will pick it up automatically.  You can also
+configure Boxtron to use specific build by editing file
+`~/.config/boxtron.conf` and overriding [dosbox.cmd][boxtron-conf]:
+
+    cmd = ~/path-to-dosbox-staging/dosbox
+
+[boxtron-conf]:https://github.com/dreamer/boxtron/wiki/Configuration#dosboxcmd
+
 ## Development snapshot builds
 
 You can always see what's cooking on the master branch :)
