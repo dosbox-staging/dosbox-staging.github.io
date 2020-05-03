@@ -3,10 +3,18 @@ title = "macOS bundles"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.75.0-rc1 (dmg)](https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-macOS-v0.75.0-rc1.dmg)**
+**[Download dosbox-staging 0.75.0-rc1 (dmg)][dmg]**
+<br/>
+<span style="font-size:0.7em">
+sha256: 8a5c12d1b6567d6e981acd76e30dec41a73a699963b714f4f1dcf0fc853fc9f6
+</span>
 
-Compatible only with macOS 10.15 (Catalina) ATM; if you want to run it on an older
-macOS, [build dosbox-staging yourself straight from the source][1].
+[dmg]:https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-macOS-v0.75.0-rc1.dmg
+
+Compatible only with macOS 10.15 (Catalina).
+
+If you want to run it on an older macOS,
+[build dosbox-staging yourself straight from the source][1].
 Send us patches if you improve something! :)
 
 *macOS uses its Gatekeeper feature to prevent users from running
@@ -44,7 +52,7 @@ choice for new users.
 
 #### Method 2
 
-The following screenshots depict how to manually approve dosbox-staging in
-your security settings:
+**Ctrl-click** (or right-click) on dosbox-staging app, and select "Open".
+This time, Gatekeeper will show "Open" button like on a screenshot below:
 
-TODO post screenshots
+![Gatekeeper window](gatekeeper.png)

@@ -14,6 +14,8 @@ build_search_index = false
 
 theme = "hyde"
 
+title = "dosbox-staging"
+
 [extra]
 # Put all your custom variables here
 

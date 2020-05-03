@@ -24,10 +24,16 @@ This list might be incomplete. Lookup package on
 
 ## Tarball download
 
-**[Download dosbox-staging 0.75.0-rc1 (tar.xz)](https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-linux-v0.75.0-rc1.tar.xz)**
+**[Download dosbox-staging 0.75.0-rc1 (tar.xz)][tarxz]**
+<br/>
+<span style="font-size:0.7em">
+sha256: 594ba45280af240cb18b3882f7ffa71169a697eb362b7d7a76c8ccda2b940e84
+</span>
 
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
 They depend on the following packages:
+
+[tarxz]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-linux-v0.75.0-rc1.tar.xz
 
 #### Fedora
 
