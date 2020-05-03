@@ -13,10 +13,6 @@ sha256: TODO
 
 Compatible only with macOS 10.15 (Catalina).
 
-If you want to run it on an older macOS,
-[build dosbox-staging yourself straight from the source][1].
-Send us patches if you improve something! :)
-
 *macOS uses its Gatekeeper feature to prevent users from running
 externally-hosted 3rd party software, such as dosbox-staging. See [the section
 below](#apple-gatekeeper) to learn how to fix it.*
@@ -44,21 +40,23 @@ sha256: 8a5c12d1b6567d6e981acd76e30dec41a73a699963b714f4f1dcf0fc853fc9f6
 
 ### <a name="apple-gatekeeper"></a> Apple Gatekeeper
 
+**Ctrl-click** (or right-click) on dosbox-staging app, and select "Open".
+This time, Gatekeeper will show "Open" button like this:
+
+![Gatekeeper window](gatekeeper.png)
+
+#### Explanation
+
 Apple's Gatekeeper feature only permits the running of notarized software, one
 aspect of which involves developers making yearly payments to Apple.
 
 As dosbox-staging is a volunteer effort, we are not in a position to make such
-payments and therefore ask users to bypass Apple's Gatekeeper using either of
-the following methods:
+payments and therefore ask users to bypass Apple's Gatekeeper manually.
 
-#### Method 1
 
-Use Linux instead. [Ubuntu](https://ubuntu.com/download/desktop) is an excellent
-choice for new users.
+### Building from source
 
-#### Method 2
+Of course you can always [build dosbox-staging straight from the source][1].
+Send us patches if you improve something! :)
 
-**Ctrl-click** (or right-click) on dosbox-staging app, and select "Open".
-This time, Gatekeeper will show "Open" button like on a screenshot below:
-
-![Gatekeeper window](gatekeeper.png)
+[1]:https://github.com/dosbox-staging/dosbox-staging
