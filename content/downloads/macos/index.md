@@ -31,7 +31,7 @@ These builds might be slow or unstable as they are designed with developers and
 testers in mind: [download instructions for snapshot builds](
 https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds).
 
-### Older builds
+### <a name="old-builds" href="#old-builds">§</a> Older builds
 
 * **[dosbox-staging 0.75.0-rc1 (dmg)][0_75_0_rc1]** (macOS 10.15 or newer)
 <br/>
