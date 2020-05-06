@@ -3,16 +3,16 @@ title = "Windows downloads"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.75.0 (zip)][zip]** TODO
+**[Download dosbox-staging 0.75.0 (zip)][zip]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: 69046adcef2ef9920fbba8d40fc9e51f3dd144ba4549787e1816cf1c2ae87d71
 </span>
 
 *If Windows 8.x or Windows 10 prevents you from running dosbox-staging via
 Microsoft Defender SmartScreen, see the [section below](#ms-ss).*
 
-[zip]: https://TODO
+[zip]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-windows-v0.75.0.zip
 
 
 ### Development snapshot builds

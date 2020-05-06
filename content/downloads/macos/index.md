@@ -3,13 +3,13 @@ title = "macOS bundles"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.75.0 (dmg)][dmg]** TODO
+**[Download dosbox-staging 0.75.0 (dmg)][dmg]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: a0038c7401d239934d25517ca5e8e6006cc3f4cb7060f6ace56609d36bca12ef
 </span>
 
-[dmg]: https://TODO
+[dmg]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-macOS-v0.75.0.dmg
 
 Compatible only with macOS 10.15 (Catalina).
 
