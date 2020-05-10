@@ -10,6 +10,10 @@ we recommend using that package:
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dosbox-staging)
 
+#### Gentoo
+
+    # emerge games-emulation/dosbox-staging
+
 #### Arch, Manjaro
 
 Available via Arch User Repository
