@@ -27,8 +27,7 @@ Available via Nix User Repository
 #### Others
 
 This list might be incomplete. Lookup package on
-[repology.org](https://repology.org/projects/?search=dosbox-staging).
-
+[repology.org](https://repology.org/project/dosbox-staging/versions)
 
 ## Tarball download
 
