@@ -68,12 +68,11 @@ dosbox-staging (see: [[2]], and the last paragraph in [[3]]).
 [1]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-windows-store--windows-8-apps
 [2]:https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview
 [3]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-ev-code-signing
-[4]:https://github.com/dosbox-staging/dosbox-staging
 
 
 ### Building from source
 
-Of course you can always [build dosbox-staging straight from the source][1].
+Of course you can always [build dosbox-staging straight from the source][4].
 Send us patches if you improve something! :)
 
-[1]:https://github.com/dosbox-staging/dosbox-staging
+[4]:https://github.com/dosbox-staging/dosbox-staging

@@ -10,6 +10,10 @@ we recommend using that package:
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dosbox-staging)
 
+#### Gentoo
+
+    # emerge games-emulation/dosbox-staging
+
 #### Arch, Manjaro
 
 Available via Arch User Repository
@@ -23,8 +27,7 @@ Available via Nix User Repository
 #### Others
 
 This list might be incomplete. Lookup package on
-[repology.org](https://repology.org/projects/?search=dosbox-staging).
-
+[repology.org](https://repology.org/project/dosbox-staging/versions)
 
 ## Tarball download
 
@@ -43,9 +46,9 @@ They depend on the following packages:
 
     sudo dnf install SDL2 SDL2_net opusfile
 
-#### Ubuntu (18.04 or newer) and Debian (10 or newer)
+#### Ubuntu (18.04 or newer) and Debian (9 or newer)
 
-    sudo apt install libsdl2-2.0 libsdl2-net-2.0 libopusfile0
+    sudo apt install libsdl2-2.0-0 libsdl2-net-2.0-0 libopusfile0
 
 #### Arch, Manjaro
 
