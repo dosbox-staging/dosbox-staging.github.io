@@ -81,28 +81,31 @@ document.addEventListener("DOMContentLoaded", () => {
     <h1 class="post-title">{{ page.title }}</h1>
 
     <p>
-        <em>Development build artefacts are hosted on GitHub; you need to be logged in to download them.</em>
+        <em>Development build artifacts are hosted on GitHub; you need to be logged in to download them.</em>
     </p>
 
-    <div>
-        <a id="linux-build-link">Linux</a>
-        <span id="linux-build-version">-</span>
-        <span id="linux-build-date">-</span>
-    </div>
-
-    <div>
-        <a id="windows-build-link">Windows</a>
-        <span id="windows-build-version">-</span>
-        <span id="windows-build-date">-</span>
-    </div>
-
-    <div>
-        <a id="macos-build-link">macOS</a>
-        <span id="macos-build-version">-</span>
-        <span id="macos-build-date">-</span>
-    </div>
-
-    </p>
+    <table>
+       <tr>
+          <th>Download link</th>
+          <th>Build version</th>
+          <th>Date</th>
+       </tr>
+       <tr>
+          <td><a id="linux-build-link">Linux</a></td>
+          <td id="linux-build-version">-</td>
+          <td id="linux-build-date">-</td>
+       </tr>
+       <tr>
+          <td><a id="windows-build-link">Windows</a></td>
+          <td id="windows-build-version">-</td>
+          <td id="windows-build-date">-</td>
+       </tr>
+       <tr>
+          <td><a id="macos-build-link">macOS</a></td>
+          <td id="macos-build-version">-</td>
+          <td id="macos-build-date">-</td>
+       </tr>
+    </table>
 
     {{ page.content | safe }}
 </div>
