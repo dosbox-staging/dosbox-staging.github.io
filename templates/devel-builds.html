@@ -4,6 +4,32 @@
 <script>
 <!--
 
+function set_build_version(gh_api_artifacts, os_name) {
+    fetch(gh_api_artifacts)
+        .then(response => {
+            if (response.status !== 200)
+                return;
+
+            response.json().then(data => {
+                let changelog = data.artifacts
+                    .find(a => a.name.startsWith("changelog-"));
+
+                if (changelog === undefined)
+                    return;
+
+                //console.log(changelog);
+
+                let n = changelog.name.length;
+                let version = changelog.name.substring(10, n - 4);
+                let version_el = document.getElementById(os_name + "-build-version");
+                version_el.textContent = version;
+            });
+        })
+        .catch(err => {
+            console.log('Fetch Error :-S', err);
+        });
+}
+
 // Fetch build status using GitHub API and update HTML
 function set_ci_status(workflow_file, os_name) {
     let gh_api_url = "https://api.github.com/repos/dosbox-staging/dosbox-staging/";
@@ -29,8 +55,10 @@ function set_ci_status(workflow_file, os_name) {
                 build_link.setAttribute("href", status.html_url);
 
                 let build_date = new Date(status.updated_at);
-                let date_span = document.getElementById(os_name + "-build-date");
-                date_span.textContent = build_date.toUTCString();
+                let date_el = document.getElementById(os_name + "-build-date");
+                date_el.textContent = build_date.toUTCString();
+
+                set_build_version(status.artifacts_url, os_name);
             });
         })
         .catch(err => {
@@ -58,17 +86,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div>
         <a id="linux-build-link">Linux</a>
-        <span id="linux-build-date">N/A</span>
+        <span id="linux-build-version">-</span>
+        <span id="linux-build-date">-</span>
     </div>
 
     <div>
         <a id="windows-build-link">Windows</a>
-        <span id="windows-build-date">N/A</span>
+        <span id="windows-build-version">-</span>
+        <span id="windows-build-date">-</span>
     </div>
 
     <div>
         <a id="macos-build-link">macOS</a>
-        <span id="macos-build-date">N/A</span>
+        <span id="macos-build-version">-</span>
+        <span id="macos-build-date">-</span>
     </div>
 
     </p>
