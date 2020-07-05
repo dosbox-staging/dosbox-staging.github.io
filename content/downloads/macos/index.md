@@ -38,7 +38,7 @@ sha256: 8a5c12d1b6567d6e981acd76e30dec41a73a699963b714f4f1dcf0fc853fc9f6
 [0_75_0_rc1]:https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-macOS-v0.75.0-rc1.dmg
 
 
-### <a name="apple-gatekeeper"></a> Apple Gatekeeper
+### <a name="apple-gatekeeper" href="#apple-gatekeeper">§</a> Apple Gatekeeper
 
 **Ctrl-click** (or right-click) on dosbox-staging app, and select "Open".
 This time, Gatekeeper will show "Open" button like this:
