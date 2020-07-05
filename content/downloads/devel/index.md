@@ -5,9 +5,8 @@ template = "devel-builds.html"
 
 ## Installation notes
 
-Development snapshot builds do not touch configuration of stable
-version; they use separate config file (`dosbox-staging-git.conf`)
-located in:
+Development snapshots use a separate configuration file named<br/>
+`dosbox-staging-git.conf`, located alongside the stable conf file in:
 
 <table>
   <tr>
