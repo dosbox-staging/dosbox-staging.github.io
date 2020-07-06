@@ -26,18 +26,20 @@ Development snapshots use a separate configuration file named<br/>
 
 ### Linux
 
-These are dynamically-linked x86\_64 builds, you'll need additional packages installed via your package manager.
+Tarball includes dynamically-linked x86\_64 build, you'll need additional
+dependencies installed via your package manager.
 
-#### Fedora
-
+    # Fedora
     sudo dnf install SDL2 SDL2_net opusfile
 
-#### Debian, Ubuntu
+<em></em>
 
+    # Debian, Ubuntu
     sudo apt install libsdl2-2.0-0 libsdl2-net-2.0-0 libopusfile0
 
-#### Arch, Manjaro
+<em></em>
 
+    # Arch, Manjaro
     sudo pacman -S sdl2 sdl2_net opusfile
 
 
@@ -51,8 +53,8 @@ See [this guide](/downloads/windows/#ms-ss) to learn how to deal with this.
 
 ### macOS
 
-macOS bundle is notarized via Apple Gatekeeper, your OS will try to prevent
-dosbox-staging from running.
+macOS app bundle is not notarized; Apple Gatekeeper  will try to prevent
+dosbox&#8209;staging from running.
 
 See [this guide](/downloads/macos/#apple-gatekeeper) to learn how to deal with
 this.
