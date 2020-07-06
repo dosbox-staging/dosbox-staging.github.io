@@ -16,7 +16,11 @@ theme = "hyde"
 
 title = "dosbox-staging"
                    
-generate_rss = true
+# zola up to 0.10.x
+#generate_rss = true
+
+# zola 11.x broke the behaviour
+feed_filename = "rss.xml
 
 [extra]
 # Put all your custom variables here
