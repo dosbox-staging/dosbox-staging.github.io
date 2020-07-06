@@ -17,8 +17,6 @@ function set_build_version(gh_api_artifacts, os_name) {
                 if (changelog === undefined)
                     return;
 
-                //console.log(changelog);
-
                 let n = changelog.name.length;
                 let version = changelog.name.substring(10, n - 4);
                 let version_el = document.getElementById(os_name + "-build-version");
@@ -31,26 +29,41 @@ function set_build_version(gh_api_artifacts, os_name) {
 }
 
 // Fetch build status using GitHub API and update HTML
-function set_ci_status(workflow_file, os_name) {
+function set_ci_status(workflow_file, os_name, page = 1) {
+
+    // GitHub has strict rate-limits for anonymous users: 60 requests per hour;
+    // We request 100 results per page (max allowed); master builds are very
+    // likely to be included in the first page anyway.
+    if (page > 10) {
+        return;
+    }
+
+    let per_page = 100;
     let gh_api_url = "https://api.github.com/repos/dosbox-staging/dosbox-staging/";
-    fetch(gh_api_url + "actions/workflows/" + workflow_file + "/runs")
+    fetch(gh_api_url + "actions/workflows/" + workflow_file + "/runs" +
+          "?page=" + page + "&per_page=" + per_page)
         .then(response => {
 
             // Handle HTTP error
             if (response.status !== 200) {
                 console.log("Looks like there was a problem." +
-                    "Status Code: " + response.status);
+                            "Status Code: " + response.status);
                 return;
             }
 
-            // Examine the text in the response
             response.json().then(data => {
 
                 let status = data.workflow_runs
                     .filter(run => run.head_branch == "master")
                     .find(run => run.conclusion == "success");
-                // console.log(status);
 
+                // If result not found, query the next page
+                if (status == undefined) {
+                    set_ci_status(workflow_file, os_name, page + 1);
+                    return;
+                }
+
+                // Update HTML elements
                 let build_link = document.getElementById(os_name + "-build-link");
                 build_link.setAttribute("href", status.html_url);
 
