@@ -25,5 +25,6 @@ hyde_links = [
     {url = "/downloads/linux/", name = "Downloads (Linux)"},
     {url = "/downloads/windows/", name = "Downloads (Windows)"},
     {url = "/downloads/macos/", name = "Downloads (macOS)"},
+    {url = "/downloads/devel/", name = "Development builds"},
     {url = "https://github.com/dosbox-staging/dosbox-staging", name = "Source code (GitHub)"},
 ]

@@ -24,8 +24,8 @@ below](#apple-gatekeeper) to learn how to fix it.*
 You can always see what's cooking on the master branch :)
 
 These builds might be slow or unstable as they are designed with developers and
-testers in mind: [download instructions for snapshot builds](
-https://github.com/dosbox-staging/dosbox-staging#development-snapshot-builds).
+testers in mind: [download instructions for snapshot builds](/downloads/devel/).
+
 
 ### <a name="old-builds" href="#old-builds">§</a> Older builds
 
