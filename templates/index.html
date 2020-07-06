@@ -29,10 +29,10 @@
 {% block sidebar_about %}
 <div style="text-align:center">
 <a href="/">
-    <img src="/dosbox-staging.svg" style="width:85%; display:inline;"/>
+    <img src="/dosbox-staging.svg" style="width:90%; display:inline;"/>
 </a>
 </div>
-    <p class="lead" style="font-size:1.2rem">
+    <p class="lead" style="font-size:0.95rem">
     <span style="font-weight:bold">dosbox-staging</span> is DOS/x86 emulator
     focusing on ease of use.
     Based on DOSBox; <a href="/about/">read&nbsp;more</a>.
@@ -40,4 +40,12 @@
     {% if config.description %}
     <p class="lead">{{config.description}}</p>
     {% endif %}
+{% endblock %}
+
+{% block sidebar_footer %}
+<a style="font-size:0.7rem" href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a>
+·
+<a style="font-size:0.7rem" href="https://discord.gg/WwAg3Xf">Discord</a>
+·
+<a style="font-size:0.7rem" href="/rss.xml">RSS</a>
 {% endblock %}
