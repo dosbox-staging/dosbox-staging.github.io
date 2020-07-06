@@ -19,8 +19,9 @@ title = "dosbox-staging"
 # zola up to 0.10.x
 #generate_rss = true
 
-# zola 11.x broke the behaviour
-feed_filename = "rss.xml
+# zola 11.x broke the behaviour and uses this instead:
+generate_feed = true
+feed_filename = "rss.xml"
 
 [extra]
 # Put all your custom variables here
