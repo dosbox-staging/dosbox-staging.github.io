@@ -15,11 +15,7 @@ build_search_index = false
 theme = "hyde"
 
 title = "dosbox-staging"
-                   
-# zola up to 0.10.x
-#generate_rss = true
 
-# zola 11.x broke the behaviour and uses this instead:
 generate_feed = true
 feed_filename = "rss.xml"
 
