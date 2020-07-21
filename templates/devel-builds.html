@@ -29,7 +29,7 @@ function set_build_version(gh_api_artifacts, os_name) {
 }
 
 // Fetch build status using GitHub API and update HTML
-function set_ci_status(workflow_file, os_name, page = 1) {
+function set_ci_status(workflow_file, os_name, description, page = 1) {
 
     // GitHub has strict rate-limits for anonymous users: 60 requests per hour;
     // We request 100 results per page (max allowed); master builds are very
@@ -64,8 +64,12 @@ function set_ci_status(workflow_file, os_name, page = 1) {
                 }
 
                 // Update HTML elements
-                let build_link = document.getElementById(os_name + "-build-link");
+                let build_link = document.createElement("a");
+                build_link.textContent = description;
                 build_link.setAttribute("href", status.html_url);
+                let build_link_tr_el = document.getElementById(os_name + "-build-link");
+                build_link_tr_el.innerHTML = '';
+                build_link_tr_el.appendChild(build_link);
 
                 let build_date = new Date(status.updated_at);
                 let date_el = document.getElementById(os_name + "-build-date");
@@ -80,9 +84,9 @@ function set_ci_status(workflow_file, os_name, page = 1) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    set_ci_status("linux.yml", "linux");
-    set_ci_status("windows.yml", "windows");
-    set_ci_status("macos.yml", "macos");
+    set_ci_status("linux.yml", "linux", "Linux");
+    set_ci_status("windows.yml", "windows", "Windows");
+    set_ci_status("macos.yml", "macos", "macOS");
 });
 
 -->
@@ -112,17 +116,17 @@ document.addEventListener("DOMContentLoaded", () => {
           <th>Date</th>
        </tr>
        <tr>
-          <td><a id="linux-build-link">Linux</a></td>
+          <td id="linux-build-link"><img style="margin:auto;margin-left:0.1em;" src="/dots.svg"/></td>
           <td id="linux-build-version">-</td>
           <td id="linux-build-date">-</td>
        </tr>
        <tr>
-          <td><a id="windows-build-link">Windows</a></td>
+          <td id="windows-build-link"><img style="margin:auto;margin-left:0.1em;" src="/dots.svg"/></td>
           <td id="windows-build-version">-</td>
           <td id="windows-build-date">-</td>
        </tr>
        <tr>
-          <td><a id="macos-build-link">macOS</a></td>
+          <td id="macos-build-link"><img style="margin:auto;margin-left:0.1em;" src="/dots.svg"/></td>
           <td id="macos-build-version">-</td>
           <td id="macos-build-date">-</td>
        </tr>
