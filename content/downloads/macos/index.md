@@ -19,6 +19,13 @@ below](#apple-gatekeeper) to learn how to fix it.*
 
 [1]:https://github.com/dosbox-staging/dosbox-staging
 
+### Homebrew
+
+The build is also available via
+[Homebrew package](https://formulae.brew.sh/formula/dosbox-staging).
+
+    brew install dosbox-staging
+
 ### Development snapshot builds
 
 You can always see what's cooking on the master branch :)
