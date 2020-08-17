@@ -3,16 +3,23 @@ title = "Windows downloads"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.75.0 (zip)][zip]**
+**[Download dosbox-staging 0.75.1 64-bit (zip)][0_75_1_x64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: 69046adcef2ef9920fbba8d40fc9e51f3dd144ba4549787e1816cf1c2ae87d71
+sha256: TODO
+</span>
+
+**[Download dosbox-staging 0.75.1 32-bit (zip)][0_75_1_x86]**
+<br/>
+<span style="font-size:0.7em">
+sha256: TODO
 </span>
 
 *If Windows 8.x or Windows 10 prevents you from running dosbox-staging via
 Microsoft Defender SmartScreen, see the [section below](#ms-ss).*
 
-[zip]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-windows-v0.75.0.zip
+[0_75_1_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-windows-x64-v0.75.1.zip
+[0_75_1_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-windows-x86-v0.75.1.zip
 
 
 ### Development snapshot builds
@@ -21,17 +28,6 @@ You can always see what's cooking on the master branch :)
 
 These builds might be slow or unstable as they are designed with developers and
 testers in mind: [download instructions for snapshot builds](/downloads/devel/).
-
-
-### <a name="old-builds" href="#old-builds">§</a> Older builds
-
-* **[dosbox-staging 0.75.0-rc1 (zip)][0_75_0_rc1]**
-<br/>
-<span style="font-size:0.7em">
-sha256: 738d2ae2101384f2eeaf1895de64cf1b4c76eaf7873de7e15b7f52145dfed7e7
-</span>
-
-[0_75_0_rc1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-windows-v0.75.0-rc1.zip
 
 
 ### <a name="ms-ss" href="#ms-ss">§</a> Microsoft Defender SmartScreen
@@ -68,6 +64,24 @@ dosbox-staging (see: [[2]], and the last paragraph in [[3]]).
 [1]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-windows-store--windows-8-apps
 [2]:https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview
 [3]:https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates#-ev-code-signing
+
+
+### <a name="old-builds" href="#old-builds">§</a> Older builds
+
+* [dosbox-staging 0.75.0 32-bit (zip)][0_75_0_x86]
+<br/>
+<span style="font-size:0.7em">
+sha256: 69046adcef2ef9920fbba8d40fc9e51f3dd144ba4549787e1816cf1c2ae87d71
+</span>
+
+* [dosbox-staging 0.75.0-rc1 32-bit (zip)][0_75_0_rc1_x86]
+<br/>
+<span style="font-size:0.7em">
+sha256: 738d2ae2101384f2eeaf1895de64cf1b4c76eaf7873de7e15b7f52145dfed7e7
+</span>
+
+[0_75_0_x86]:     https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-windows-v0.75.0.zip
+[0_75_0_rc1_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-windows-v0.75.0-rc1.zip
 
 
 ### Building from source
