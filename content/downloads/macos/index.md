@@ -6,7 +6,7 @@ template = "download.html"
 **[Download dosbox-staging 0.75.1 (dmg)][0_75_1]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: 2508a87c6aceee63da13e4c76159734e3c9ee4e76fb22a3a7c0d66021e71a4eb
 </span>
 
 [0_75_1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-macOS-v0.75.1.dmg
