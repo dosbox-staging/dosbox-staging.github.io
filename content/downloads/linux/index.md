@@ -34,7 +34,7 @@ This list might be incomplete. Lookup package on
 **[Download dosbox-staging 0.75.1 (tar.xz)][0_75_1]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: aef22e5ddf93ff826fc2d48a4c8c0b4097d3455525b40be5b3fb443935929c70
 </span>
 
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
