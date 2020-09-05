@@ -30,17 +30,17 @@ Tarball includes dynamically-linked x86\_64 build, you'll need additional
 dependencies installed via your package manager.
 
     # Fedora
-    sudo dnf install SDL2 SDL2_net opusfile
+    sudo dnf install SDL2 SDL2_net opusfile fluidsynth
 
 <em></em>
 
     # Debian, Ubuntu
-    sudo apt install libsdl2-2.0-0 libsdl2-net-2.0-0 libopusfile0
+    sudo apt install libsdl2-2.0-0 libsdl2-net-2.0-0 libopusfile0 libfluidsynth2
 
 <em></em>
 
     # Arch, Manjaro
-    sudo pacman -S sdl2 sdl2_net opusfile
+    sudo pacman -S sdl2 sdl2_net opusfile fluidsynth
 
 
 ### Windows
