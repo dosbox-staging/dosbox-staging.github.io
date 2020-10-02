@@ -11,7 +11,7 @@ sha256: 2508a87c6aceee63da13e4c76159734e3c9ee4e76fb22a3a7c0d66021e71a4eb
 
 [0_75_1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-macOS-v0.75.1.dmg
 
-Compatible only with macOS 10.15 (Catalina).
+This bundle is compatible with macOS 10.15 (Catalina) or newer.
 
 *macOS uses its Gatekeeper feature to prevent users from running
 externally-hosted 3rd party software, such as dosbox-staging. See [the section
@@ -21,8 +21,8 @@ below](#apple-gatekeeper) to learn how to fix it.*
 
 ### Homebrew
 
-The build is also available via
-[Homebrew package](https://formulae.brew.sh/formula/dosbox-staging).
+[Homebrew package](https://formulae.brew.sh/formula/dosbox-staging) is compatible
+with macOS 10.13 (High Sierra) or newer.
 
     brew install dosbox-staging
 
