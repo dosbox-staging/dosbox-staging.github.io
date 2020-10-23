@@ -53,8 +53,11 @@ function set_ci_status(workflow_file, os_name, description, page = 1) {
 
             response.json().then(data => {
 
+                // console.log(data.workflow_runs);
+
                 let status = data.workflow_runs
                     .filter(run => run.head_branch == "master")
+                    .filter(run => run.event == "push")
                     .find(run => run.conclusion == "success");
 
                 // If result not found, query the next page
