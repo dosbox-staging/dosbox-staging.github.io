@@ -31,16 +31,16 @@ This list might be incomplete. Lookup package on
 
 ## Tarball download
 
-**[Download dosbox-staging 0.75.1 (tar.xz)][0_75_1]**
+**[Download dosbox-staging 0.75.2 (tar.xz)][0_75_2]**
 <br/>
 <span style="font-size:0.7em">
-sha256: aef22e5ddf93ff826fc2d48a4c8c0b4097d3455525b40be5b3fb443935929c70
+sha256: TODO
 </span>
 
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
 They depend on the following packages:
 
-[0_75_1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-linux-v0.75.1.tar.xz
+[0_75_2]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-linux-v0.75.2.tar.xz
 
 #### Fedora
 
@@ -79,6 +79,12 @@ testers in mind: [download instructions for snapshot builds](/downloads/devel/).
 
 ## <a name="old-builds" href="#old-builds">§</a> Older builds
 
+* [dosbox-staging 0.75.1 (tar.xz)][0_75_1]
+<br/>
+<span style="font-size:0.7em">
+sha256: aef22e5ddf93ff826fc2d48a4c8c0b4097d3455525b40be5b3fb443935929c70
+</span>
+
 * [dosbox-staging 0.75.0 (tar.xz)][0_75_0]
 <br/>
 <span style="font-size:0.7em">
@@ -91,6 +97,7 @@ sha256: a28d8ba0481722c8343b7532299c7b9bb9e491c6832d9d05dd4704939287f776
 sha256: 594ba45280af240cb18b3882f7ffa71169a697eb362b7d7a76c8ccda2b940e84
 </span>
 
+[0_75_1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-linux-v0.75.1.tar.xz
 [0_75_0]:     https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-linux-v0.75.0.tar.xz
 [0_75_0_rc1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-linux-v0.75.0-rc1.tar.xz
 

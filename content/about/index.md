@@ -4,7 +4,7 @@ template = "about.html"
 date = 2020-04-21
 +++
 
-**dosbox-staging** is an attempt to revitalize DOSBox's development process.
+**DOSBox Staging** is an attempt to revitalize DOSBox's development process.
 It's not a rewrite, but a continuation and improvement on the existing DOSBox
 codebase while leveraging modern development tools and practices.
 
@@ -51,7 +51,7 @@ Planned features are recorded in
 
 ## Relationship to DOSBox
 
-**dosbox-staging** is separate from and not supported by the SourceForge-hosted
+**DOSBox Staging** is separate from and not supported by the SourceForge-hosted
 [DOSBox](https://www.dosbox.com/) project or its development team, the DOSBox
 Team.
 
@@ -60,5 +60,5 @@ contributors.
 
 ## Team
 
-This project is maintained by the [dosbox-staging
-team](https://github.com/orgs/dosbox-staging/people).
+This project is maintained by the
+[DOSBox Staging team](https://github.com/orgs/dosbox-staging/people).
