@@ -6,13 +6,13 @@ template = "download.html"
 **[Download dosbox-staging 0.75.2 64-bit (zip)][0_75_2_x64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: 09f0ca911813a64b8814880eb6e49ad4dcdac9a5bb9263c4887ad82b71fad292
 </span>
 
 **[Download dosbox-staging 0.75.2 32-bit (zip)][0_75_2_x86]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: 51dc171ff52ea395c6a22f09ebb98a93974a95c701ca81008368c22a66deced2
 </span>
 
 *If Windows 8.x or Windows 10 prevents you from running dosbox-staging via
