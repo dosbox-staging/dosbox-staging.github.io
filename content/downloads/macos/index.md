@@ -6,7 +6,7 @@ template = "download.html"
 **[Download dosbox-staging 0.76.0 (dmg)][0_76_0]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: c9fa7b0bf6410f430b47daeb15a470e0105a147b555d3fbf574514406c71f492
 </span>
 
 This bundle is compatible with macOS 10.15 (Catalina) or newer.
