@@ -6,6 +6,8 @@ template = "download.html"
 If your distribution already includes `dosbox-staging` in its repository, then
 we recommend using that package:
 
+[![Packaging status](https://repology.org/badge/vertical-allrepos/dosbox-staging.svg)](https://repology.org/project/dosbox-staging/versions)
+
 #### Snap Store
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dosbox-staging)
@@ -18,16 +20,8 @@ we recommend using that package:
 
 Available via Arch User Repository
 ([link](https://aur.archlinux.org/packages/dosbox-staging)).
+*Vote for inclusion in the community repo!*
 
-#### NixOS
-
-Available via Nix User Repository
-([instructions](https://github.com/dosbox-staging/dosbox-staging/wiki/Installing-on-NixOS)).
-
-#### Others
-
-This list might be incomplete. Lookup package on
-[repology.org](https://repology.org/project/dosbox-staging/versions)
 
 ## Tarball download
 
@@ -40,6 +34,7 @@ sha256: TODO
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
 They depend on the following packages:
 
+⚠️ *Tarball builds have FluidSynth 2.x feature disabled.*
 
 #### Fedora
 
