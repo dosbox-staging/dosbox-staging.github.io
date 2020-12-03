@@ -3,23 +3,20 @@ title = "Windows downloads"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.75.2 64-bit (zip)][0_75_2_x64]**
+**[Download dosbox-staging 0.76.0 64-bit (zip)][0_76_0_x64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: 09f0ca911813a64b8814880eb6e49ad4dcdac9a5bb9263c4887ad82b71fad292
+sha256: b0b90dd880ef6205eb8d6333c564bdce9c1c0035f080d8d663b7a79bc4d9a52a
 </span>
 
-**[Download dosbox-staging 0.75.2 32-bit (zip)][0_75_2_x86]**
+**[Download dosbox-staging 0.76.0 32-bit (zip)][0_76_0_x86]**
 <br/>
 <span style="font-size:0.7em">
-sha256: 51dc171ff52ea395c6a22f09ebb98a93974a95c701ca81008368c22a66deced2
+sha256: 646d2f3fa8189e411589fedcb8148a295361693a6ce95d08e06f4a70e5a36b16
 </span>
 
 *If Windows 8.x or Windows 10 prevents you from running dosbox-staging via
 Microsoft Defender SmartScreen, see the [section below](#ms-ss).*
-
-[0_75_2_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-windows-x64-v0.75.2.zip
-[0_75_2_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-windows-x86-v0.75.2.zip
 
 
 ### Development snapshot builds
@@ -68,6 +65,18 @@ dosbox-staging (see: [[2]], and the last paragraph in [[3]]).
 
 ### <a name="old-builds" href="#old-builds">§</a> Older builds
 
+* [dosbox-staging 0.75.2 64-bit (zip)][0_75_2_x64]
+<br/>
+<span style="font-size:0.7em">
+sha256: 09f0ca911813a64b8814880eb6e49ad4dcdac9a5bb9263c4887ad82b71fad292
+</span>
+
+* [dosbox-staging 0.75.2 32-bit (zip)][0_75_2_x86]
+<br/>
+<span style="font-size:0.7em">
+sha256: 51dc171ff52ea395c6a22f09ebb98a93974a95c701ca81008368c22a66deced2
+</span>
+
 * [dosbox-staging 0.75.1 64-bit (zip)][0_75_1_x64]
 <br/>
 <span style="font-size:0.7em">
@@ -92,9 +101,13 @@ sha256: 69046adcef2ef9920fbba8d40fc9e51f3dd144ba4549787e1816cf1c2ae87d71
 sha256: 738d2ae2101384f2eeaf1895de64cf1b4c76eaf7873de7e15b7f52145dfed7e7
 </span>
 
+[0_76_0_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.76.0/dosbox-staging-windows-x64-v0.76.0.zip
+[0_76_0_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.76.0/dosbox-staging-windows-x86-v0.76.0.zip
+[0_75_2_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-windows-x64-v0.75.2.zip
+[0_75_2_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-windows-x86-v0.75.2.zip
 [0_75_1_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-windows-x64-v0.75.1.zip
 [0_75_1_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-windows-x86-v0.75.1.zip
-[0_75_0_x86]:     https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-windows-v0.75.0.zip
+[0_75_0_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-windows-v0.75.0.zip
 [0_75_0_rc1_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-windows-v0.75.0-rc1.zip
 
 
