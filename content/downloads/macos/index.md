@@ -52,7 +52,7 @@ payments and therefore ask users to bypass Apple's Gatekeeper manually.
 
 ### <a name="old-builds" href="#old-builds">§</a> Older builds
 
-* [dosbox-staging 0.76.0 (dmg)][0_76_0]
+* [dosbox-staging 0.76.0 (dmg)][0_76_0] (macOS 10.15 or newer)
 <br/>
 <span style="font-size:0.7em">
 sha256: c9fa7b0bf6410f430b47daeb15a470e0105a147b555d3fbf574514406c71f492
