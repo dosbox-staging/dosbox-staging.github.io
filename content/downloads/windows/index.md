@@ -3,11 +3,16 @@ title = "Windows downloads"
 template = "download.html"
 +++
 
+<!--
+64-bit builds are broken for now, see:
+https://github.com/dosbox-staging/dosbox-staging/issues/746
+
 **[Download dosbox-staging 0.76.0 64-bit (zip)][0_76_0_x64]**
 <br/>
 <span style="font-size:0.7em">
 sha256: b0b90dd880ef6205eb8d6333c564bdce9c1c0035f080d8d663b7a79bc4d9a52a
 </span>
+-->
 
 **[Download dosbox-staging 0.76.0 32-bit (zip)][0_76_0_x86]**
 <br/>
