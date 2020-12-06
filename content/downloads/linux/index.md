@@ -14,13 +14,11 @@ we recommend using that package:
 
 ⚠️ *Snap package has FluidSynth 2.x feature disabled.*
 
-
 #### Gentoo
 
     # emerge games-emulation/dosbox-staging
 
-
-#### Ubuntu
+#### Ubuntu, Mint
 
 Available via Personal Package Archive
 ([link](https://launchpad.net/~feignint/+archive/ubuntu/dosbox-staging)):
@@ -29,14 +27,12 @@ Available via Personal Package Archive
     $ sudo apt-get update
     $ sudo apt install dosbox-staging
 
-
-#### Arch, Manjaro AUR
+#### Arch, Manjaro
 
 Available via Arch User Repository
 ([link](https://aur.archlinux.org/packages/dosbox-staging)).
 
 *Vote for inclusion in the community repo!*
-
 
 ## Tarball download
 
