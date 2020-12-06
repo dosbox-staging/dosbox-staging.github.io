@@ -12,14 +12,29 @@ we recommend using that package:
 
 [![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dosbox-staging)
 
+⚠️ *Snap package has FluidSynth 2.x feature disabled.*
+
+
 #### Gentoo
 
     # emerge games-emulation/dosbox-staging
 
-#### Arch, Manjaro
+
+#### Ubuntu
+
+Available via Personal Package Archive
+([link](https://launchpad.net/~feignint/+archive/ubuntu/dosbox-staging)):
+
+    $ sudo add-apt-repository ppa:feignint/dosbox-staging
+    $ sudo apt-get update
+    $ sudo apt install dosbox-staging
+
+
+#### Arch, Manjaro AUR
 
 Available via Arch User Repository
 ([link](https://aur.archlinux.org/packages/dosbox-staging)).
+
 *Vote for inclusion in the community repo!*
 
 
@@ -34,7 +49,7 @@ sha256: b14de58ba0f5dd192398cda58fa439b15512f50d1c88b5ded6f300d4a9212852
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
 They depend on the following packages:
 
-⚠️ *Tarball builds have FluidSynth 2.x feature disabled.*
+⚠️ *Tarball package has FluidSynth 2.x feature disabled.*
 
 #### Fedora
 
