@@ -3,16 +3,15 @@ title = "Linux packages"
 template = "download.html"
 +++
 
-If your distribution already includes `dosbox-staging` in its repository, then
-we recommend using that package:
+<span>
+<a href='https://flathub.org/apps/details/io.github.dosbox-staging'>
+  <img style='float:left; margin-right:1em;' width='240' alt='Download on Flathub' src='https://flathub.org/assets/badges/flathub-badge-en.png' />
+</a>
 
-[![Packaging status](https://repology.org/badge/vertical-allrepos/dosbox-staging.svg)](https://repology.org/project/dosbox-staging/versions)
-
-#### Snap Store
-
-[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/dosbox-staging)
-
-⚠️ *Snap package has FluidSynth 2.x feature disabled.*
+<a href='https://snapcraft.io/dosbox-staging'>
+  <img height='80' alt='Get it from the Snap Store' src='https://snapcraft.io/static/images/badges/en/snap-store-black.svg'/>
+</a>
+</span>
 
 #### Gentoo
 
@@ -33,6 +32,10 @@ Available via Arch User Repository
 ([link](https://aur.archlinux.org/packages/dosbox-staging)).
 
 *Vote for inclusion in the community repo!*
+
+#### Other repositories
+
+[![Packaging status](https://repology.org/badge/vertical-allrepos/dosbox-staging.svg)](https://repology.org/project/dosbox-staging/versions)
 
 ## Tarball download
 
