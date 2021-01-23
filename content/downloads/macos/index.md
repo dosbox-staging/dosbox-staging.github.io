@@ -20,7 +20,7 @@ below](#apple-gatekeeper) to learn how to fix it.*
 ### Homebrew
 
 [Homebrew package](https://formulae.brew.sh/formula/dosbox-staging) is compatible
-with macOS 10.13 (High Sierra) or newer.
+with macOS 10.14 (Mojave) or newer.
 
     brew install dosbox-staging
 
