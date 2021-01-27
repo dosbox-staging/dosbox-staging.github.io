@@ -4,7 +4,7 @@ on:
     branches: [ pages ]
 jobs:
   build:
-    uses: shalzz/zola-deploy-action@v0.11.0
+    name: shalzz/zola-deploy-action
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
