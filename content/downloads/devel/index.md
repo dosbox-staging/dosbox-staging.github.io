@@ -5,8 +5,9 @@ template = "devel-builds.html"
 
 ## Installation notes
 
-Development snapshots use a separate configuration file named<br/>
-`dosbox-staging-git.conf`, located alongside the stable conf file in:
+Testing new features might require manual reset of the configuration
+file.  DOSBox&nbsp;Staging builds use a configuration file named
+`dosbox-staging.conf` located in:
 
 <table>
   <tr>
@@ -26,7 +27,7 @@ Development snapshots use a separate configuration file named<br/>
 
 ### Linux
 
-Tarball includes dynamically-linked x86\_64 build, you'll need additional
+Tarball contains dynamically-linked x86\_64 build, you'll need additional
 dependencies installed via your package manager.
 
     # Fedora
