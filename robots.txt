@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://dosbox-staging.github.io/sitemap.xml
