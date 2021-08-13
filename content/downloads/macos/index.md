@@ -3,19 +3,20 @@ title = "macOS bundles"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.77.0 x86-64 (dmg)][0_77_0_x64]**
+**[Download dosbox-staging 0.77.1 x86-64 (dmg)][0_77_1_x64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: 3ca859573814b2c50065825c02d8a04eb6d95605830ec3af21de0d64a2e32314
+sha256: TODO
 </span>
 
-**[Download dosbox-staging 0.77.0 ARM64-testing (dmg)][0_77_0_arm64]**
+**[Download dosbox-staging 0.77.1 ARM64-testing (dmg)][0_77_1_arm64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: e2eecb52777d5ed836ba1f772fe669c89e94ea9b67777aced5fef5b51051ccaf
+sha256: TODO
 </span>
 
-This bundle is compatible with macOS 10.15 (Catalina) or newer.
+The x86-64 bundle is compatible with macOS 10.15 (Catalina) or newer and
+the arm64 bundle is compatible macOS 11 (Big Sur) or newer.
 
 *macOS uses its Gatekeeper feature to prevent users from running
 externally-hosted 3rd party software, such as dosbox-staging. See [the section
@@ -58,6 +59,18 @@ payments and therefore ask users to bypass Apple's Gatekeeper manually.
 
 ### <a name="old-builds" href="#old-builds">§</a> Older builds
 
+* [dosbox-staging 0.77.0 x86-64 (dmg)][0_77_0_x64] (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: 3ca859573814b2c50065825c02d8a04eb6d95605830ec3af21de0d64a2e32314
+</span>
+
+* [dosbox-staging 0.77.0 ARM64-testing (dmg)][0_77_0_arm64] (macOS 11 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: e2eecb52777d5ed836ba1f772fe669c89e94ea9b67777aced5fef5b51051ccaf
+</span>
+
 * [dosbox-staging 0.76.0-3 (dmg)][0_76_0-3] (macOS 10.15 or newer)
 <br/>
 <span style="font-size:0.7em">
@@ -94,6 +107,8 @@ sha256: a0038c7401d239934d25517ca5e8e6006cc3f4cb7060f6ace56609d36bca12ef
 sha256: 8a5c12d1b6567d6e981acd76e30dec41a73a699963b714f4f1dcf0fc853fc9f6
 </span>
 
+[0_77_1_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-macOS-v0.77.1.dmg
+[0_77_1_arm64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-macOS-arm64-0.77.1.dmg
 [0_77_0_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-macOS-v0.77.0.dmg
 [0_77_0_arm64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-macOS-arm64-0.77.0-testing.dmg
 [0_76_0-3]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.76.0/dosbox-staging-macOS-v0.76.0-3-g6525f.dmg
