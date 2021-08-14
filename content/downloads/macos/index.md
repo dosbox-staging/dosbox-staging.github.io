@@ -9,7 +9,7 @@ template = "download.html"
 sha256: TODO
 </span>
 
-**[Download dosbox-staging 0.77.1 ARM64-testing (dmg)][0_77_1_arm64]**
+**[Download dosbox-staging 0.77.1 ARM64 (dmg)][0_77_1_arm64]**
 <br/>
 <span style="font-size:0.7em">
 sha256: TODO
