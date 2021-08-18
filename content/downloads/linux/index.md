@@ -13,6 +13,10 @@ template = "download.html"
 </a>
 </span>
 
+#### Fedora
+
+    $ sudo dnf install dosbox-staging
+
 #### Gentoo
 
     # emerge games-emulation/dosbox-staging
