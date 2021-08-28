@@ -6,13 +6,13 @@ template = "download.html"
 **[Download dosbox-staging 0.77.1 x86-64 (dmg)][0_77_1_x64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: 29964d79f0a85d593f8bafd30da854c726594c12474528f46758fc95c05f0c97
 </span>
 
 **[Download dosbox-staging 0.77.1 ARM64 (dmg)][0_77_1_arm64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: TODO
+sha256: 74a1c84bdda0db25091f749ba7a2e5e93f7849baf130817ea1bc182039bd3698
 </span>
 
 The x86-64 bundle is compatible with macOS 10.15 (Catalina) or newer and
