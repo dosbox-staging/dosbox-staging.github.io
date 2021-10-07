@@ -32,7 +32,7 @@ function set_build_version(gh_api_artifacts, os_name) {
 function set_ci_status(workflow_file, os_name, description, page = 1) {
 
     // GitHub has strict rate-limits for anonymous users: 60 requests per hour;
-    // We request 100 results per page (max allowed); master builds are very
+    // We request 100 results per page (max allowed); main builds are very
     // likely to be included in the first page anyway.
     if (page > 10) {
         return;
@@ -56,7 +56,7 @@ function set_ci_status(workflow_file, os_name, description, page = 1) {
                 // console.log(data.workflow_runs);
 
                 let status = data.workflow_runs
-                    .filter(run => run.head_branch == "master")
+                    .filter(run => run.head_branch == "main")
                     .filter(run => run.event == "push")
                     .find(run => run.conclusion == "success");
 

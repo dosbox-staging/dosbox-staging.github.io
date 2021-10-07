@@ -83,7 +83,7 @@ configured to use a specific binary by editing the file
 
 ## Development snapshot builds
 
-You can always see what's cooking on the master branch :)
+You can always see what's cooking on the main branch :)
 
 These builds might be slow or unstable as they are designed with developers and
 testers in mind: [download instructions for snapshot builds](/downloads/devel/).
