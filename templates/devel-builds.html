@@ -89,6 +89,7 @@ function set_ci_status(workflow_file, os_name, description, page = 1) {
 document.addEventListener("DOMContentLoaded", () => {
     set_ci_status("linux.yml", "linux", "Linux");
     set_ci_status("windows.yml", "windows", "Windows");
+    set_ci_status("windows-meson-msys2.yml", "msys2", "Windows (MSYS2)");
     set_ci_status("macos.yml", "macos", "macOS");
 });
 
@@ -127,6 +128,11 @@ document.addEventListener("DOMContentLoaded", () => {
           <td id="windows-build-link"><img style="margin:auto;margin-left:0.1em;" src="/dots.svg"/></td>
           <td id="windows-build-version">-</td>
           <td id="windows-build-date">-</td>
+       </tr>
+       <tr>
+          <td id="msys2-build-link"><img style="margin:auto;margin-left:0.1em;" src="/dots.svg"/></td>
+          <td id="msys2-build-version">-</td>
+          <td id="msys2-build-date">-</td>
        </tr>
        <tr>
           <td id="macos-build-link"><img style="margin:auto;margin-left:0.1em;" src="/dots.svg"/></td>
