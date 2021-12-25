@@ -36,8 +36,8 @@ testers in mind: [download instructions for snapshot builds](/downloads/devel/).
 
 ### <a name="apple-gatekeeper" href="#apple-gatekeeper">§</a> Apple Gatekeeper
 
-**Ctrl-click** (or right-click) on dosbox-staging app, and select "Open".
-This time, Gatekeeper will show "Open" button like this:
+**Ctrl-click** (or right-click) on dosbox-staging app, and click "Open" twice
+to get Gatekeeper to open. It will show "Open" button like this:
 
 ![Gatekeeper window](gatekeeper.png)
 
