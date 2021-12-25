@@ -43,16 +43,14 @@ Available via Arch User Repository
 
 ## Tarball download
 
-**[Download dosbox-staging 0.77.1 (tar.xz)][0_77_1]**
+**[Download dosbox-staging 0.78.0 (tar.xz)][0_78_0]**
 <br/>
 <span style="font-size:0.7em">
-sha256: e2d475e4b1f80881ccafc4502b3884c096b51aa2fc2cfe89bb6c2b8ebfb7cc76
+sha256: 085e7cbe350546b3f25b0400c872a2766f9a49d16a5ca8d17a0a93aad6e37709
 </span>
 
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
 They depend on the following packages:
-
-⚠️ *Tarball package has FluidSynth 2.x feature disabled.*
 
 #### Fedora
 
@@ -91,6 +89,12 @@ testers in mind: [download instructions for snapshot builds](/downloads/devel/).
 
 ## <a name="old-builds" href="#old-builds">§</a> Older builds
 
+* [Download dosbox-staging 0.77.1 (tar.xz)][0_77_1]
+<br/>
+<span style="font-size:0.7em">
+sha256: e2d475e4b1f80881ccafc4502b3884c096b51aa2fc2cfe89bb6c2b8ebfb7cc76
+</span>
+
 * [dosbox-staging 0.76.0 (tar.xz)][0_77_0]
 <br/>
 <span style="font-size:0.7em">
@@ -127,6 +131,7 @@ sha256: a28d8ba0481722c8343b7532299c7b9bb9e491c6832d9d05dd4704939287f776
 sha256: 594ba45280af240cb18b3882f7ffa71169a697eb362b7d7a76c8ccda2b940e84
 </span>
 
+[0_78_0]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-linux-v0.78.0.tar.xz
 [0_77_1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-linux-v0.77.1.tar.xz
 [0_77_0]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-linux-v0.77.0.tar.xz
 [0_76_0]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.76.0/dosbox-staging-linux-v0.76.0.tar.xz

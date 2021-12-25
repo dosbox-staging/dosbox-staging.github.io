@@ -3,21 +3,21 @@ title = "Windows downloads"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.77.1 64-bit (zip)][0_77_1_x64]**
+**[Download dosbox-staging 0.78.0 64-bit (zip)][0_78_0_x64]**
 <br/>
 <span style="font-size:0.7em">
-sha256: 11ba992ece6d3e4ef2046fcdb6d842da364b69720a921d61fdcc793eb52e7051
+sha256: f13cba664259fdb0db5e32826e13dcded4270557963f6e823a4731129f23a8a3
 </span>
 
-**[Download dosbox-staging 0.77.1 32-bit (zip)][0_77_1_x86]**
+**[Download dosbox-staging 0.78.0 32-bit (zip)][0_78_0_x86]**
 <br/>
 <span style="font-size:0.7em">
-sha256: a34883101486ce2af071a29c6390f2038889fc519e042101284f2a6999d9f0ef
+sha256: 0ca9201cdf3f3a1576b97b0de0e87280b75c633976f0b179ba33a68d44f5ba56
 </span>
+
 
 *If Windows 8.x or Windows 10 prevents you from running dosbox-staging via
 Microsoft Defender SmartScreen, see the [section below](#ms-ss).*
-
 
 ### Development snapshot builds
 
@@ -25,7 +25,6 @@ You can always see what's cooking on the main branch :)
 
 These builds might be slow or unstable as they are designed with developers and
 testers in mind: [download instructions for snapshot builds](/downloads/devel/).
-
 
 ### <a name="ms-ss" href="#ms-ss">§</a> Microsoft Defender SmartScreen
 
@@ -64,6 +63,18 @@ dosbox-staging (see: [[2]], and the last paragraph in [[3]]).
 
 
 ### <a name="old-builds" href="#old-builds">§</a> Older builds
+
+* [dosbox-staging 0.77.1 64-bit (zip)][0_77_1_x64]
+<br/>
+<span style="font-size:0.7em">
+sha256: 11ba992ece6d3e4ef2046fcdb6d842da364b69720a921d61fdcc793eb52e7051
+</span>
+
+* [dosbox-staging 0.77.1 32-bit (zip)][0_77_1_x86]
+<br/>
+<span style="font-size:0.7em">
+sha256: a34883101486ce2af071a29c6390f2038889fc519e042101284f2a6999d9f0ef
+</span>
 
 * [dosbox-staging 0.77.0 64-bit (zip)][0_77_0_x64]
 <br/>
@@ -119,6 +130,8 @@ sha256: 69046adcef2ef9920fbba8d40fc9e51f3dd144ba4549787e1816cf1c2ae87d71
 sha256: 738d2ae2101384f2eeaf1895de64cf1b4c76eaf7873de7e15b7f52145dfed7e7
 </span>
 
+[0_78_0_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-windows-msys2-x86_64-v0.78.0.zip
+[0_78_0_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-windows-msys2-i686-v0.78.0.zip
 [0_77_1_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-windows-x64-v0.77.1.zip
 [0_77_1_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-windows-x86-v0.77.1.zip
 [0_77_0_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-windows-x64-v0.77.0.zip
