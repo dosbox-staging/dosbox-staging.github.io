@@ -9,8 +9,7 @@ template = "download.html"
 sha256: 3997546560af542b7f3b55b1bc890ae4342144a72c21af9880449adf579db88b
 </span>
 
-The package is compatible with macOS 10.15 (Catalina) or newer and
-the arm64 bundle is compatible macOS 11 (Big Sur) or newer.
+This package is compatible with macOS 10.15 (Catalina) or newer.
 
 *macOS uses its Gatekeeper feature to prevent users from running
 externally-hosted 3rd party software, such as dosbox-staging. See [the section
