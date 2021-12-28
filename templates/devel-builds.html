@@ -88,9 +88,9 @@ function set_ci_status(workflow_file, os_name, description, page = 1) {
 
 document.addEventListener("DOMContentLoaded", () => {
     set_ci_status("linux.yml", "linux", "Linux");
-    set_ci_status("windows.yml", "windows", "Windows");
-    set_ci_status("windows-meson-msys2.yml", "msys2", "Windows (MSYS2)");
     set_ci_status("macos.yml", "macos", "macOS");
+    set_ci_status("windows-meson-msys2.yml", "msys2", "Windows (MSYS2), with Ethernet+slirp");
+    set_ci_status("windows.yml", "windows", "Windows (MSVC), without Ethernet+slirp");
 });
 
 -->
