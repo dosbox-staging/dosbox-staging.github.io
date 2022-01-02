@@ -3,7 +3,7 @@ title = "macOS bundles"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.78.0 Universal Build (dmg)][0_78_0_UB]**
+**[Download dosbox-staging 0.78.0 Universal binary (dmg)][0_78_0_UB]**
 <br/>
 <span style="font-size:0.7em">
 sha256: 3997546560af542b7f3b55b1bc890ae4342144a72c21af9880449adf579db88b
