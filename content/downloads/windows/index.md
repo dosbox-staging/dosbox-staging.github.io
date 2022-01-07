@@ -9,7 +9,7 @@ template = "download.html"
 sha256: 3c2f408125351154a37e93de8a4bd05d0c722bbf53e1f583909e4ca6c3eb9204
 </span>
 
-**[Download dosbox-staging 0.78.1 64-bit(zip) MSVC-build][0_78_1_x64_MSVC], for users of the debugger**
+**[Download dosbox-staging 0.78.1 64-bit(zip) MSVC-build][0_78_1_x64_MSVC], for users of the debugger** 
 <br/>
 <span style="font-size:0.7em">
 sha256: b99f3c354f831ed2b0ed04d215170f696b6fc18285b0c7192c0abab62c41bbc8
