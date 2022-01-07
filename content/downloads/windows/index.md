@@ -6,13 +6,13 @@ template = "download.html"
 **[Download dosbox-staging 0.78.1 64-bit (zip)][MSYS2 0_78_1_x64], with Ethernet support**
 <br/>
 <span style="font-size:0.7em">
-sha256: f13cba664259fdb0db5e32826e13dcded4270557963f6e823a4731129f23a8a3
+sha256: 3c2f408125351154a37e93de8a4bd05d0c722bbf53e1f583909e4ca6c3eb9204
 </span>
 
 **[Download dosbox-staging 0.78.1 64-bit (zip)][MSVC 0_78_1_x64], for users of the debugger**
 <br/>
 <span style="font-size:0.7em">
-sha256: 0ca9201cdf3f3a1576b97b0de0e87280b75c633976f0b179ba33a68d44f5ba56
+sha256: b99f3c354f831ed2b0ed04d215170f696b6fc18285b0c7192c0abab62c41bbc8
 </span>
 
 
