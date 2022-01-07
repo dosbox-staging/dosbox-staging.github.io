@@ -9,7 +9,7 @@ template = "download.html"
 sha256: 3c2f408125351154a37e93de8a4bd05d0c722bbf53e1f583909e4ca6c3eb9204
 </span>
 
-**[Download dosbox-staging 0.78.1 64-bit(zip) MSVC-build][0_78_1_x64_MSVC], for users of the debugger** 
+**[Download dosbox-staging 0.78.1 64-bit (zip) MSVC-build][0_78_1_x64_MSVC], for users of the debugger**
 <br/>
 <span style="font-size:0.7em">
 sha256: b99f3c354f831ed2b0ed04d215170f696b6fc18285b0c7192c0abab62c41bbc8
@@ -64,13 +64,13 @@ dosbox-staging (see: [[2]], and the last paragraph in [[3]]).
 
 ### <a name="old-builds" href="#old-builds">§</a> Older builds
 
-* [Download dosbox-staging 0.78.0 64-bit (zip)][0_78_0_x64]
+* [dosbox-staging 0.78.0 64-bit (zip)][0_78_0_x64]
 <br/>
 <span style="font-size:0.7em">
 sha256: f13cba664259fdb0db5e32826e13dcded4270557963f6e823a4731129f23a8a3
 </span>
 
-* [Download dosbox-staging 0.78.0 32-bit (zip)][0_78_0_x86]
+* [dosbox-staging 0.78.0 32-bit (zip)][0_78_0_x86]
 <br/>
 <span style="font-size:0.7em">
 sha256: 0ca9201cdf3f3a1576b97b0de0e87280b75c633976f0b179ba33a68d44f5ba56
