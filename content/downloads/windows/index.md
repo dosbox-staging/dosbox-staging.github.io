@@ -3,13 +3,13 @@ title = "Windows downloads"
 template = "download.html"
 +++
 
-**[Download dosbox-staging 0.78.1 64-bit (zip)][MSYS2 0_78_1_x64], with Ethernet support**
+**[Download dosbox-staging 0.78.1 64-bit (zip) MSYS2-build][0_78_1_x64_MSYS2], with Ethernet support**
 <br/>
 <span style="font-size:0.7em">
 sha256: 3c2f408125351154a37e93de8a4bd05d0c722bbf53e1f583909e4ca6c3eb9204
 </span>
 
-**[Download dosbox-staging 0.78.1 64-bit (zip)][MSVC 0_78_1_x64], for users of the debugger**
+**[Download dosbox-staging 0.78.1 64-bit(zip) MSVC-build][0_78_1_x64_MSVC], for users of the debugger**
 <br/>
 <span style="font-size:0.7em">
 sha256: b99f3c354f831ed2b0ed04d215170f696b6fc18285b0c7192c0abab62c41bbc8
@@ -142,8 +142,8 @@ sha256: 69046adcef2ef9920fbba8d40fc9e51f3dd144ba4549787e1816cf1c2ae87d71
 sha256: 738d2ae2101384f2eeaf1895de64cf1b4c76eaf7873de7e15b7f52145dfed7e7
 </span>
 
-[0_78_1_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-windows-msys2-x86_64-v0.78.1.zip
-[0_78_1_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-windows-x64-v0.78.1.zip
+[0_78_1_x64_MSYS2]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-windows-msys2-x86_64-v0.78.1.zip
+[0_78_1_x64_MSVC]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-windows-x64-v0.78.1.zip
 [0_78_0_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-windows-msys2-x86_64-v0.78.0.zip
 [0_78_0_x86]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-windows-msys2-i686-v0.78.0.zip
 [0_77_1_x64]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-windows-x64-v0.77.1.zip
