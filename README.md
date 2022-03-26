@@ -1,4 +1,4 @@
-Source code for [dosbox-staging.github.io](https://dosbox-staging.github.io/).
+This is the source code for the DOSBox Staging website located at [dosbox-staging.github.io](https://dosbox-staging.github.io/).
 
 This repo uses Git submodules; the quickest way to initialize them is:
 
