@@ -38,7 +38,7 @@ Planned features are recorded in
 
 - Perfecting DOS-era hardware emulation. The
   [PCem](https://pcem-emulator.co.uk/) and
-  [DOSBox-X](https://github.com/joncampbell123/dosbox-x) projects prioritize
+  [DOSBox-X](https://www.dosbox-x.com/) projects prioritize
   this goal.
 
 - Being the fastest DOS emulator on x86 hardware. Users interested in
