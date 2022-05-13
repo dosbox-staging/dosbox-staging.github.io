@@ -37,10 +37,8 @@ We plan to add the features listed in
   and limited CPU/memory hardware, which are constraints [DOSBox](https://www.dosbox.com/)
   continues to support.
 
-- Perfecting DOS-era hardware emulation. The
-  [PCem](https://pcem-emulator.co.uk/) and
-  [DOSBox-X](https://www.dosbox-x.com/) projects prioritize
-  this goal.
+- Persuing hardware accuracy when it impacts the above goals or detracts
+  from the source material.
 
 - Being the fastest DOS emulator on x86 hardware. Users interested in
   emulation speed should look at [dosemu2](https://github.com/dosemu2/dosemu2).
