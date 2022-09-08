@@ -39,7 +39,8 @@ We plan to add the features listed in
 
 - Supporting the use of Windows 9x/Me in the emulator. Windows 9x/Me emulation
   is supported by projects such as [QEMU](https://www.qemu.org) and [VirtualBox](https://www.virtualbox.org/),
-  although DOSBox forks like [DOSBox-X](https://www.dosbox-x.com/) and [DOSBox Pure](https://github.com/schellingb/dosbox-pure) also support this.
+  although DOSBox forks like [DOSBox-X](https://www.dosbox-x.com/) and [DOSBox Pure](https://github.com/schellingb/dosbox-pure) 
+  also support this. This may change if wanted by the DOSBox Staging community in general.
 
 - Persuing hardware accuracy when it impacts the above goals or detracts
   from the source material. [PCem](https://pcem-emulator.co.uk/) and its derivatives
