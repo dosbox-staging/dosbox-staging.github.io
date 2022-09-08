@@ -43,7 +43,7 @@ Available via Arch User Repository
 
 ## Tarball download
 
-**[Download dosbox-staging 0.78.1 (tar.xz)][0_78_1]**
+**[Download DOSBox Staging 0.78.1 (tar.xz)][0_78_1]**
 <br/>
 <span style="font-size:0.7em">
 sha256: 8bd2a247ca960f6059276db2b0331f853e16bc8a090722b15f567782542b5fba
@@ -67,7 +67,7 @@ They depend on the following packages:
 
 ## <a name="steam"></a> Steam
 
-You can easily configure your DOS games on Steam to use dosbox-staging via
+You can easily configure your DOS games on Steam to use DOSBox Staging via
 [Boxtron](https://github.com/dreamer/boxtron) (community-developed
 Steam Play compatibility tool for DOS games).
 
@@ -89,49 +89,49 @@ testers in mind: [download instructions for snapshot builds](/downloads/devel/).
 
 ## <a name="old-builds" href="#old-builds">§</a> Older builds
 
-* [Download dosbox-staging 0.78.0 (tar.xz)][0_78_0]
+* [Download DOSBox Staging 0.78.0 (tar.xz)][0_78_0]
 <br/>
 <span style="font-size:0.7em">
 sha256: 085e7cbe350546b3f25b0400c872a2766f9a49d16a5ca8d17a0a93aad6e37709
 </span>
 
-* [Download dosbox-staging 0.77.1 (tar.xz)][0_77_1]
+* [Download DOSBox Staging 0.77.1 (tar.xz)][0_77_1]
 <br/>
 <span style="font-size:0.7em">
 sha256: e2d475e4b1f80881ccafc4502b3884c096b51aa2fc2cfe89bb6c2b8ebfb7cc76
 </span>
 
-* [dosbox-staging 0.76.0 (tar.xz)][0_77_0]
+* [Download DOSBox Staging 0.76.0 (tar.xz)][0_77_0]
 <br/>
 <span style="font-size:0.7em">
 sha256: f8401bcd473d5b664eeb3a90e4dbb4bbf0cef5339adba867f361c00b7de9b2fe
 </span>
 
-* [dosbox-staging 0.76.0 (tar.xz)][0_76_0]
+* [Download DOSBox Staging 0.76.0 (tar.xz)][0_76_0]
 <br/>
 <span style="font-size:0.7em">
 sha256: b14de58ba0f5dd192398cda58fa439b15512f50d1c88b5ded6f300d4a9212852
 </span>
 
-* [dosbox-staging 0.75.2 (tar.xz)][0_75_2]
+* [Download DOSBox Staging 0.75.2 (tar.xz)][0_75_2]
 <br/>
 <span style="font-size:0.7em">
 sha256: 0325a1860aea95e8117aa49b041bfd628ab20531a3abc7b0a67aff4c47049465
 </span>
 
-* [dosbox-staging 0.75.1 (tar.xz)][0_75_1]
+* [Download DOSBox Staging 0.75.1 (tar.xz)][0_75_1]
 <br/>
 <span style="font-size:0.7em">
 sha256: aef22e5ddf93ff826fc2d48a4c8c0b4097d3455525b40be5b3fb443935929c70
 </span>
 
-* [dosbox-staging 0.75.0 (tar.xz)][0_75_0]
+* [Download DOSBox Staging 0.75.0 (tar.xz)][0_75_0]
 <br/>
 <span style="font-size:0.7em">
 sha256: a28d8ba0481722c8343b7532299c7b9bb9e491c6832d9d05dd4704939287f776
 </span>
 
-* [dosbox-staging 0.75.0-rc1 (tar.xz)][0_75_0_rc1]
+* [Download DOSBox Staging 0.75.0-rc1 (tar.xz)][0_75_0_rc1]
 <br/>
 <span style="font-size:0.7em">
 sha256: 594ba45280af240cb18b3882f7ffa71169a697eb362b7d7a76c8ccda2b940e84
@@ -149,7 +149,7 @@ sha256: 594ba45280af240cb18b3882f7ffa71169a697eb362b7d7a76c8ccda2b940e84
 
 ## Building from source
 
-Of course you can always [build dosbox-staging straight from the source][1].
+Of course you can always [build DOSBox Staging straight from the source][1].
 Send us patches if you improve something! :)
 
 [1]:https://github.com/dosbox-staging/dosbox-staging
