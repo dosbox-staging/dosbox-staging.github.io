@@ -18,7 +18,7 @@ by applying modern development practices to the existing DOSBox codebase.
   or code maintainability).
 - Prioritize the **quality** of newly written code to minimize technical
   debt and ease future maintenance, which generally means
-  following the [Staging Coding Style Guide](https://github.com/dosbox-staging/dosbox-staging/blob/main/CONTRIBUTING.md#coding-style) 
+  following the [Staging Coding Style Guide](https://github.com/dosbox-staging/dosbox-staging/blob/main/CONTRIBUTING.md#coding-style)
   and being aware of best practices, like the [C++ Core Guidelines](http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines).
 - Deliver a consistent cross-platform experience.
 - Leverage upstream and community developments in DOSBox.
@@ -33,17 +33,22 @@ We plan to add the features listed in
 
 ## Non-goals
 
-- Supporting old operating systems (Windows 9x, OS/2, and Mac OS X 10.4)
+- Supporting old operating systems (Windows 9x/Me, OS/2, and Mac OS X 10.4)
   and limited CPU/memory hardware, which are constraints [DOSBox](https://www.dosbox.com/)
   continues to support.
 
-- Persuing hardware accuracy when it impacts the above goals or detracts
-  from the source material.
+- Supporting the use of Windows 9x/Me in the emulator. Windows 9x/Me emulation
+  is supported by projects such as [QEMU](https://www.qemu.org) and [VirtualBox](https://www.virtualbox.org/),
+  although DOSBox forks like [DOSBox-X](https://www.dosbox-x.com/) and [DOSBox Pure](https://github.com/schellingb/dosbox-pure) also support this.
 
-- Being the fastest DOS emulator on x86 hardware. Users interested in
+- Persuing hardware accuracy when it impacts the above goals or detracts
+  from the source material. [PCem](https://pcem-emulator.co.uk/) and its derivatives
+  like [86Box](https://86box.net) and [PCBox](https://pcbox.github.io/) are examples of cycle-accurate emulators.
+
+- Being the fastest DOS emulator on x86 hardware. Linux users interested in
   emulation speed should look at [dosemu2](https://github.com/dosemu2/dosemu2).
 
-- Acting as a general-purpose DOS operating system. For that, there's
+- Acting as a general-purpose DOS operating system. For that, there is
   [FreeDOS](https://www.freedos.org/).
 
 ## Relationship to DOSBox
