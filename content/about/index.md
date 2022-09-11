@@ -43,8 +43,9 @@ We plan to add the features listed in
   also support this. This may change if wanted by the DOSBox Staging community in general.
 
 - Persuing hardware accuracy when it impacts the above goals or detracts
-  from the source material. [PCem](https://pcem-emulator.co.uk/) and its derivatives
-  like [86Box](https://86box.net) and [PCBox](https://pcbox.github.io/) are examples of cycle-accurate emulators.
+  from the source material, although config options may be added in case of issues.
+  If you need perfect emulation in terms of accuracy you may look at [PCem](https://pcem-emulator.co.uk/) and its derivatives
+  like [86Box](https://86box.net) and [PCBox](https://pcbox.github.io/), which are examples of cycle-accurate emulators.
 
 - Being the fastest DOS emulator on x86 hardware. Linux users interested in
   emulation speed should look at [dosemu2](https://github.com/dosemu2/dosemu2).
