@@ -20,3 +20,13 @@ feed_filename = "rss.xml"
       {url = "/downloads/macos/", name = "Downloads (macOS)"},
       {url = "/downloads/devel/", name = "Development builds"},
   ]
+
+[link_checker]
+# Skip link checking for external URLs that start with these prefixes
+skip_prefixes = [
+    "http://localhost/",
+    "http://127.0.0.1/",
+]
+
+# Treat internal link problems as either "error" or "warn", default is "error"
+internal_level = "warn"
