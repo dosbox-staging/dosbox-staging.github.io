@@ -1,3 +1,3 @@
 +++
-sorted_by = date
+sorted_by = "date"
 +++
