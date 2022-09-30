@@ -3,7 +3,7 @@ title = "macOS bundles"
 template = "download.html"
 +++
 
-**[Download DOSBox Staging 0.79.0 Universal binary (dmg)][0_79_0]**
+**[Download DOSBox Staging 0.79.1 Universal binary (dmg)][0_79_1]**
 <br/>
 <span style="font-size:0.7em">
 sha256: 1678f7458acabecdaf2b49e0d95a20d057734898b70c29d4e845f52a1aa26d46
@@ -53,6 +53,12 @@ payments and therefore ask users to bypass Apple's Gatekeeper manually.
 
 
 ### <a name="old-builds" href="#old-builds">§</a> Older builds
+
+* [DOSBox Staging 0.79.0 Universal binary (dmg)][0_79_0]**
+<br/>
+<span style="font-size:0.7em">
+sha256: 1678f7458acabecdaf2b49e0d95a20d057734898b70c29d4e845f52a1aa26d46
+</span>
 
 * [DOSBox Staging 0.78.1 Universal binary (dmg)][0_78_1_UB]
 <br/>
@@ -126,6 +132,7 @@ sha256: a0038c7401d239934d25517ca5e8e6006cc3f4cb7060f6ace56609d36bca12ef
 sha256: 8a5c12d1b6567d6e981acd76e30dec41a73a699963b714f4f1dcf0fc853fc9f6
 </span>
 
+[0_79_1]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.1/dosbox-staging-macOS-v0.79.1.dmg
 [0_79_0]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.0/dosbox-staging-macOS-v0.79.0.dmg
 [0_78_1_UB]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-macOS-v0.78.1.dmg
 [0_78_0_UB]: https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-macOS-v0.78.0.dmg
