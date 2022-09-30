@@ -6,7 +6,7 @@ template = "download.html"
 **[Download DOSBox Staging 0.79.1 Universal binary (dmg)][0_79_1]**
 <br/>
 <span style="font-size:0.7em">
-sha256: c3c1543fe159aef66df84ea07ae1400370f6241937ffe5cb35410ea6de711f82
+sha256: 52547692be29949747bb8d3b59bf31dd22b4f49178316417cc8f1f468eeab387
 </span>
 
 This package is compatible with macOS 10.15 (Catalina) or newer.

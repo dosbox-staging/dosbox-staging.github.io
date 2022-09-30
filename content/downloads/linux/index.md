@@ -46,7 +46,7 @@ Available via Arch User Repository
 **[Download DOSBox Staging 0.79.1 (tar.xz)][0_79_1]**
 <br/>
 <span style="font-size:0.7em">
-sha256: 97aede3d0debe34048cc56fc5e7568a8608b19199233df9f15936864bced5d5b
+sha256: aebf8619bb44934f18d0e219d50c4e2c03b179c37daa67a9b800e7bd3aefc262
 </span>
 
 Our pre-compiled builds run on most Linux distributions (x86\_64 only for now).
