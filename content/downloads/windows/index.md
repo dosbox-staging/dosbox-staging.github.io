@@ -6,13 +6,13 @@ template = "download.html"
 **[Download DOSBox Staging 0.79.1 64-bit (Installer)][0_79_1_x64_INSTALLER]**
 <br/>
 <span style="font-size:0.7em">
-sha256: 154c663f76d0ca46d1d23d8c2bcea2d83717f1ba9103067a6a6f5ce814cf0cb2
+sha256: 991d708a72b065667ab360dc9b78e2602e6eba76b52b60e392a9f7ed38682e2d
 </span>
 
 **[Download DOSBox Staging 0.79.1 64-bit (zip)][0_79_1_x64_ZIP]**
 <br/>
 <span style="font-size:0.7em">
-sha256: b3633d425489fbb5f6f9b3de75e4c2c6dd0713c3aec504e42cac948cc1550bbe
+sha256: 43b7970aff7ec7ab0fa8d862bbe70957f5ca7c0f4e7d803c87337b69b2214db8
 </span>
 
 *If Windows 8.x or Windows 10 prevents you from running DOSBox Staging via
