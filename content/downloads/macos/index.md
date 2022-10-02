@@ -19,11 +19,25 @@ below](#apple-gatekeeper) to learn how to fix it.*
 
 ### Homebrew
 
-[Homebrew package](https://formulae.brew.sh/formula/dosbox-staging) is compatible
-with macOS 10.14 (Mojave) or newer.
+The [Homebrew package](https://formulae.brew.sh/formula/dosbox-staging) is
+compatible with macOS 10.14 (Mojave) or newer. Learn how to setup Homebrew
+[here](https://mac.install.guide/homebrew/).
 
+    brew update
     brew install dosbox-staging
 
+### MacPorts
+
+The [MacPorts package](https://github.com/macports/macports-ports/tree/master/emulators/dosbox-staging)
+should build on systems as old as macOS 10.9 (Mavericks, circa 2013) or newer.
+Learn how to setup MacPorts [here](https://guide.macports.org/).
+
+    sudo port selfupdate
+    sudo port install dosbox-staging
+
+If you're running an OS not longer maintained by Apple, then support is on a
+best-effort basis (as the team runs supported configurations and may not be able
+to reproduce some issues).
 
 ### Development snapshot builds
 
