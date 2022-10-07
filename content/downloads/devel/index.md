@@ -6,7 +6,7 @@ template = "devel-builds.html"
 ## Installation notes
 
 Testing new features might require manual reset of the configuration
-file.  DOSBox&nbsp;Staging builds use a configuration file named
+file.  DOSBox Staging builds use a configuration file named
 `dosbox-staging.conf` located in:
 
 <table>
