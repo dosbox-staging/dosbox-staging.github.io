@@ -4,8 +4,7 @@ template = "about.html"
 date = 2022-03-26
 +++
 
-**DOSBox Staging** is an attempt to revitalize DOSBox's development process
-by applying modern development practices to the existing DOSBox codebase.
+**DOSBox Staging** is a modern continuation of DOSBox with advanced features and current development practices.
 
 ## Goals
 
