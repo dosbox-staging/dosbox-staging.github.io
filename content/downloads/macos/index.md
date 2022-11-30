@@ -28,7 +28,7 @@ compatible with macOS 10.14 (Mojave) or newer. Learn how to setup Homebrew
 
 ### MacPorts
 
-The [MacPorts package](https://ports.macports.org/port/dosbox-staging)
+The [MacPorts package](https://ports.macports.org/port/dosbox-staging/)
 should build on systems as old as macOS 10.7 (Lion, circa 2011) or newer.
 Learn how to setup MacPorts [here](https://guide.macports.org/).
 
