@@ -7,11 +7,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices." name="description"/>
 <meta content="DOSBox Staging Authors" name="author"/>
-<link href="https://https:/dosbox-staging.github.io/downloads/windows/" rel="canonical"/>
-<link href="../macos/" rel="next"/>
+<link href="https://https:/dosbox-staging.github.io/downloads/development-builds/" rel="canonical"/>
+<link href="../linux/" rel="prev"/>
+<link href="../release-notes/0.80.1/" rel="next"/>
 <link href="../../assets/images/favicon.ico" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.2" name="generator"/>
-<title>Windows - DOSBox Staging</title>
+<title>Development builds - DOSBox Staging</title>
 <link href="../../assets/stylesheets/main.f56500e0.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -36,7 +37,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#windows-builds">
+<a class="md-skip" href="#development-builds">
           Skip to content
         </a>
 </div>
@@ -111,7 +112,7 @@
 <div class="md-tabs__inner md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="./">
+<a class="md-tabs__link md-tabs__link--active" href="../windows/">
         Downloads
       </a>
 </li>
@@ -160,62 +161,10 @@
           Downloads
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Windows
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../windows/">
         Windows
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#development-snapshot-builds">
-    Development snapshot builds
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#microsoft-defender-smartscreen">
-    Microsoft Defender SmartScreen
-  </a>
-<nav aria-label="Microsoft Defender SmartScreen" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#method-1">
-    Method 1
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#method-2">
-    Method 2
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#explanation">
-    Explanation
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#older-builds">
-    Older builds
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#building-from-source">
-    Building from source
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../macos/">
@@ -227,10 +176,66 @@
         Linux
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../development-builds/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Development builds
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
         Development builds
       </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installation-notes">
+    Installation notes
+  </a>
+<nav aria-label="Installation notes" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#linux">
+    Linux
+  </a>
+<nav aria-label="Linux" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fedora">
+    Fedora
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#debian-ubuntu">
+    Debian, Ubuntu
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#arch-manjaro">
+    Arch, Manjaro
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#windows">
+    Windows
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#macos">
+    macOS
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" id="__nav_1_5" type="checkbox"/>
@@ -371,43 +376,47 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#development-snapshot-builds">
-    Development snapshot builds
+<a class="md-nav__link" href="#installation-notes">
+    Installation notes
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#microsoft-defender-smartscreen">
-    Microsoft Defender SmartScreen
-  </a>
-<nav aria-label="Microsoft Defender SmartScreen" class="md-nav">
+<nav aria-label="Installation notes" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#method-1">
-    Method 1
+<a class="md-nav__link" href="#linux">
+    Linux
+  </a>
+<nav aria-label="Linux" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#fedora">
+    Fedora
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#method-2">
-    Method 2
+<a class="md-nav__link" href="#debian-ubuntu">
+    Debian, Ubuntu
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#explanation">
-    Explanation
+<a class="md-nav__link" href="#arch-manjaro">
+    Arch, Manjaro
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#older-builds">
-    Older builds
+<a class="md-nav__link" href="#windows">
+    Windows
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#building-from-source">
-    Building from source
+<a class="md-nav__link" href="#macos">
+    macOS
   </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -416,208 +425,206 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="windows-builds">Windows builds<a class="headerlink" href="#windows-builds" title="Permanent link">¶</a></h1>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-v0.80.1-setup.exe">Download DOSBox Staging 0.80.1 64-bit (Installer)</a>
-<br/>
-<small>
-sha256: 94b961f397f3b70a13daf3b573857b52<wbr/>62515e75d490bfc19f019479fe1694f8
-</small></p>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_64-v0.80.1.zip">Download DOSBox Staging 0.80.1 64-bit (zip)</a>
-<br/>
-<small>
-sha256: 3680cbdf7a91467877b51c95e468ef45<wbr/>b186b42518c3163fab85c727923ee659
-</small></p>
-<p>Check out the <a href="../release-notes/0.80.1/">0.80.1 release notes</a> to learn about
-the changes and improvements introduced by this release.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>If Windows 8.x or Windows 10 prevents you from running DOSBox Staging via
-Microsoft Defender SmartScreen, see the <a href="#microsoft-defender-smartscreen">section below</a>.</p>
+<h1 id="development-builds">Development builds<a class="headerlink" href="#development-builds" title="Permanent link">¶</a></h1>
+<script>
+
+function set_build_version(gh_api_artifacts, os_name) {
+    fetch(gh_api_artifacts)
+        .then(response => {
+            if (response.status !== 200)
+                return;
+
+            response.json().then(data => {
+                let changelog = data.artifacts
+                    .find(a => a.name.startsWith("changelog-"));
+
+                if (changelog === undefined)
+                    return;
+
+                let n = changelog.name.length;
+                let version = changelog.name.substring(10, n - 4);
+                let version_el = document.getElementById(os_name + "-build-version");
+                version_el.textContent = version;
+            });
+        })
+        .catch(err => {
+            console.log('Fetch Error :-S', err);
+        });
+}
+
+// Fetch build status using GitHub API and update HTML
+function set_ci_status(workflow_file, os_name, description, page = 1) {
+
+    // GitHub has strict rate-limits for anonymous users: 60 requests per hour;
+    // We request 100 results per page (max allowed); main builds are very
+    // likely to be included in the first page anyway.
+    if (page > 10) {
+        return;
+    }
+
+    let per_page = 100;
+    let gh_api_url = "https://api.github.com/repos/dosbox-staging/dosbox-staging/";
+    fetch(gh_api_url + "actions/workflows/" + workflow_file + "/runs" +
+          "?page=" + page + "&per_page=" + per_page)
+        .then(response => {
+
+            // Handle HTTP error
+            if (response.status !== 200) {
+                console.log("Looks like there was a problem." +
+                            "Status Code: " + response.status);
+                return;
+            }
+
+            response.json().then(data => {
+
+                console.log(data.workflow_runs);
+
+                let status = data.workflow_runs
+                    .filter(run => run.head_branch == "main")
+                    .filter(run => run.event == "push")
+                    .find(run => run.conclusion == "success");
+
+                // If result not found, query the next page
+                if (status == undefined) {
+                    set_ci_status(workflow_file, os_name, page + 1);
+                    return;
+                }
+
+                // Update HTML elements
+                let build_link = document.createElement("a");
+                build_link.textContent = description;
+                build_link.setAttribute("href", status.html_url);
+                let build_link_tr_el = document.getElementById(os_name + "-build-link");
+                build_link_tr_el.innerHTML = '';
+                build_link_tr_el.appendChild(build_link);
+
+                let build_date = new Date(status.updated_at);
+                let date_el = document.getElementById(os_name + "-build-date");
+                date_el.textContent = build_date.toUTCString();
+
+                set_build_version(status.artifacts_url, os_name);
+            });
+        })
+        .catch(err => {
+            console.log('Fetch Error :-S', err);
+        });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    set_ci_status("linux.yml", "linux", "Linux");
+    set_ci_status("macos.yml", "macos", "macOS");
+    set_ci_status("windows-msys2.yml", "msys2", "Windows MSYS2 builds");
+    set_ci_status("windows-msvc.yml", "windows", "Windows MSVC builds");
+});
+
+</script>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>These are unstable development snapshots intended for testing and showcasing new features; if you want to download a stable build, head on to <a href="../linux/">Linux</a>, <a href="../windows/">Windows</a>, or <a href="../macos/">macOS</a> download pages.</p>
+<p>Build artifacts are hosted on GitHub; you need to be logged in to download them.</p>
 </div>
-<h2 id="development-snapshot-builds">Development snapshot builds<a class="headerlink" href="#development-snapshot-builds" title="Permanent link">¶</a></h2>
-<p>You can always see what’s cooking on the main branch! <img alt="😎" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f60e.svg" title=":sunglasses:"> <img alt="🍺" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f37a.svg" title=":beer:"/></img></p>
-<p>These <a href="../development-builds/">snapshot builds</a> might be slow or unstable as they
-are designed with developers and testers in mind.</p>
-<h2 id="microsoft-defender-smartscreen">Microsoft Defender SmartScreen<a class="headerlink" href="#microsoft-defender-smartscreen" title="Permanent link">¶</a></h2>
-<p>You’ll need to do the following when launching DOSBox Staging for the first
-time (you’ll need to repeat these steps every time after having upgraded to a newer version).</p>
-<h3 id="method-1">Method 1<a class="headerlink" href="#method-1" title="Permanent link">¶</a></h3>
-<p>Start the application, then click on <strong>More info</strong> in the appearing dialog.
-Click the <strong>Run anyway</strong> button in the second dialog.</p>
-<figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/smartscreen1.png"><img alt="SmartScreen window 1" src="../images/smartscreen1.png"/></a></p>
-</figure>
-<figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/smartscreen2.png"><img alt="SmartScreen window 2" src="../images/smartscreen2.png"/></a></p>
-</figure>
-<h3 id="method-2">Method 2<a class="headerlink" href="#method-2" title="Permanent link">¶</a></h3>
-<p>In your installation folder, right-click on the <code>dosbox.exe</code>, select <strong>Properties</strong>, tick
-<strong>Unblock</strong> in the appearing dialog, then press <strong>Ok</strong>.</p>
-<figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/properties.png"><img alt="Properties window" src="../images/properties.png"/></a></p>
-</figure>
-<h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">¶</a></h3>
-<p>Starting in Windows 8, <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview">Microsoft Defender SmartScreen’s</a> pop-up encumbers the execution
-of newly-developed applications.  To prevent this, developers are expected to pay
-Microsoft’s <a href="https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates">EV certification</a> vendors a yearly fee and put the software on Windows
-Store.</p>
-<p>As DOSBox Staging is a volunteer effort, we are not in a position to make such
-payments. We therefore ask users to manually unblock DOSBox Staging and be
-patient while Microsoft’s Application Reputation Scheme eventually whitelists
-DOSBox Staging.</p>
-<h2 id="older-builds">Older builds<a class="headerlink" href="#older-builds" title="Permanent link">¶</a></h2>
-<ul>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.0/dosbox-staging-v0.80.0-setup.exe">DOSBox Staging 0.80.0 64-bit (Installer)</a>
-<br/>
-<small>
-  sha256: 84445c869e58f6b4591484f6178c7b5b<wbr/>3c8f284bf9460e9afc4502ba842ab039
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.0/dosbox-staging-windows-msys2-x86_64-v0.80.0.zip">DOSBox Staging 0.80.0 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: 075be379ed4475615e0e86953eb21f02<wbr/>4c74b4cafd6914e9cf5ef40e3d9e26cd
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.1/dosbox-staging-v0.79.1-setup.exe">DOSBox Staging 0.79.1 64-bit (installer)</a>
-<br/>
-<small>
-  sha256: 0045ac995ada0af955681983ae86c969<wbr/>a05030c25173618f8b1547a267046a27
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.1/dosbox-staging-windows-x86_64-v0.79.1.zip">DOSBox Staging 0.79.1 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: 8c7045dfea6dc20bb985cff516d2faee<wbr/>51d2ecaf054db60632857b6941d3d648
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.0/dosbox-staging-v0.79.0-setup.exe">DOSBox Staging 0.79.0 64-bit (installer)</a>
-<br/>
-<small>
-  sha256: 154c663f76d0ca46d1d23d8c2bcea2d8<wbr/>3717f1ba9103067a6a6f5ce814cf0cb2
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.0/dosbox-staging-windows-x86_64-v0.79.0.zip">DOSBox Staging 0.79.0 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: b3633d425489fbb5f6f9b3de75e4c2c6<wbr/>dd0713c3aec504e42cac948cc1550bbe
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-windows-msys2-x86_64-v0.78.1.zip">DOSBox Staging 0.78.1 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: 3c2f408125351154a37e93de8a4bd05d<wbr/>0c722bbf53e1f583909e4ca6c3eb9204
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-windows-x64-v0.78.1.zip">DOSBox Staging with built-in debugger 0.78.1 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: b99f3c354f831ed2b0ed04d215170f69<wbr/>6b6fc18285b0c7192c0abab62c41bbc8
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-windows-msys2-x86_64-v0.78.0.zip">DOSBox Staging 0.78.0 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: f13cba664259fdb0db5e32826e13dcde<wbr/>d4270557963f6e823a4731129f23a8a3
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-windows-msys2-i686-v0.78.0.zip">DOSBox Staging 0.78.0 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: 0ca9201cdf3f3a1576b97b0de0e87280<wbr/>b75c633976f0b179ba33a68d44f5ba56
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-windows-x64-v0.77.1.zip">DOSBox Staging 0.77.1 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: 11ba992ece6d3e4ef2046fcdb6d842da<wbr/>364b69720a921d61fdcc793eb52e7051
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-windows-x86-v0.77.1.zip">DOSBox Staging 0.77.1 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: a34883101486ce2af071a29c6390f203<wbr/>8889fc519e042101284f2a6999d9f0ef
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-windows-x64-v0.77.0.zip">DOSBox Staging 0.77.0 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: cacdac418642fd8c7faf1e5955110c35<wbr/>d0c207392ae20835707fd2a1e1114b82
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-windows-x86-v0.77.0.zip">DOSBox Staging 0.77.0 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: f718d07bab69e3e1be0b28207039cea2<wbr/>746c7e45b8ba7a19b625011f477e609a
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.76.0/dosbox-staging-windows-x86-v0.76.0.zip">DOSBox Staging 0.76.0 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: 646d2f3fa8189e411589fedcb8148a29<wbr/>5361693a6ce95d08e06f4a70e5a36b16
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-windows-x64-v0.75.2.zip">DOSBox Staging 0.75.2 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: 09f0ca911813a64b8814880eb6e49ad4<wbr/>dcdac9a5bb9263c4887ad82b71fad292
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-windows-x86-v0.75.2.zip">DOSBox Staging 0.75.2 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: 51dc171ff52ea395c6a22f09ebb98a93<wbr/>974a95c701ca81008368c22a66deced2
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-windows-x64-v0.75.1.zip">DOSBox Staging 0.75.1 64-bit (zip)</a>
-<br/>
-<small>
-  sha256: 80c60c4377ff2882649f113b3cb3bcd4<wbr/>07c17acaac344c49fa1fc4229813f012
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-windows-x86-v0.75.1.zip">DOSBox Staging 0.75.1 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: 843c742a348f575862e152e02cf174be<wbr/>0ea1c52bdb6e4bffd65f34af88b566b7
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-windows-v0.75.0.zip">DOSBox Staging 0.75.0 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: 69046adcef2ef9920fbba8d40fc9e51f<wbr/>3dd144ba4549787e1816cf1c2ae87d71
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-windows-v0.75.0-rc1.zip">DOSBox Staging 0.75.0-rc1 32-bit (zip)</a>
-<br/>
-<small>
-  sha256: 738d2ae2101384f2eeaf1895de64cf1b<wbr/>4c76eaf7873de7e15b7f52145dfed7e7
-  </small></p>
-</li>
-</ul>
-<h2 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">¶</a></h2>
-<p>Of course you can always <a href="https://github.com/dosbox-staging/dosbox-staging">build DOSBox Staging straight from the source</a>.</p>
-<p>Send us patches if you improve something! <img alt="😄" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/1f604.svg" title=":smile:"/></p>
+<div class="compact">
+<table>
+<tr>
+<th style="width: 260px">Download link</th>
+<th style="width: 260px">Build version</th>
+<th style="width: 260px">Date</th>
+</tr>
+<tr>
+<td id="linux-build-link">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="linux-build-version">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="linux-build-date">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+</tr>
+<tr>
+<td id="macos-build-link">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="macos-build-version">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="macos-build-date">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+</tr>
+<tr>
+<td id="msys2-build-link">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="msys2-build-version">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="msys2-build-date">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+</tr>
+<tr>
+<td id="windows-build-link">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="windows-build-version">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+<td id="windows-build-date">
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/dots.svg"><img src="../images/dots.svg" style="margin:auto;margin-left:0.1em;"/></a>
+</td>
+</tr>
+</table>
+</div>
+<h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">¶</a></h2>
+<p>Testing new features might require manual reset of the configuration
+file.  DOSBox Staging builds use a configuration file named
+<code>dosbox-staging.conf</code> located in:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th><!-- --></th>
+<th><!-- --></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linux</td>
+<td><code>~/.config/dosbox/</code></td>
+</tr>
+<tr>
+<td>Windows</td>
+<td><code>C:\Users\USERNAME&gt;\AppData\Local\DOSBox\</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>~/Library/Preferences/DOSBox/</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">¶</a></h3>
+<p>The tarball contains a dynamically-linked x86_64 build; you’ll need additional
+dependencies installed via your package manager.</p>
+<h4 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code>sudo dnf install SDL2 SDL2_image SDL2_net opusfile
+</code></pre></div>
+<h4 id="debian-ubuntu">Debian, Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code>sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-net-2.0-0 libopusfile0
+</code></pre></div>
+<h4 id="arch-manjaro">Arch, Manjaro<a class="headerlink" href="#arch-manjaro" title="Permanent link">¶</a></h4>
+<div class="highlight"><pre><span></span><code>sudo pacman -S sdl2 sdl2_image sdl2_net opusfile
+</code></pre></div>
+<h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">¶</a></h3>
+<p>Windows executables in a snapshot packages are not signed, therefore Windows 10
+might prevent the program from starting.</p>
+<p>See <a href="../windows/#microsoft-defender-smartscreen">this guide</a> to learn how to deal with this.</p>
+<h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">¶</a></h3>
+<p>macOS app bundles are not notarized; Apple Gatekeeper will try to prevent
+the program from running.</p>
+<p>See <a href="../macos/#apple-gatekeeper">this guide</a> to learn how to deal with
+this.</p>
 </article>
 </div>
 </div>
@@ -631,14 +638,27 @@ DOSBox Staging.</p>
 <!-- Link to previous and/or next page -->
 <nav aria-label="" class="md-footer__inner md-grid" hidden="">
 <!-- Link to previous page -->
+<a aria-label="Previous: Linux" class="md-footer__link md-footer__link--prev" href="../linux/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Linux
+            </div>
+</div>
+</a>
 <!-- Link to next page -->
-<a aria-label="Next: macOS" class="md-footer__link md-footer__link--next" href="../macos/" rel="next">
+<a aria-label="Next: 0.80.1" class="md-footer__link md-footer__link--next" href="../release-notes/0.80.1/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              macOS
+              0.80.1
             </div>
 </div>
 <div class="md-footer__button md-icon">
