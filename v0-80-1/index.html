@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>
+0.80.1 Maintenance Release Notes - dosbox-staging
+</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;print.css" media="print">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;poole.css">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+      <meta property="og:image" content="https://dosbox-staging.github.io/square-splash.png" />
+      <meta property="og:site_name" content="dosbox-staging.github.io" />
+      <meta property="og:type" content="object" />
+      
+      <meta property="og:title" content="0.80.1 Maintenance Release Notes">
+      <meta property="og:url" content="https://dosbox-staging.github.io/v0-80-1/" />
+      
+      <meta property="og:description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+
+      <style type="text/css">
+      <!--
+      .youtube > iframe { width: 640px; height: 350px; }
+      pre { overflow-x: auto; }
+      -->
+      </style>
+
+
+
+
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+<div style="text-align:center">
+<a href="/">
+    <img src="/dosbox-staging.svg" style="width:90%; max-width:8em; display:inline;"/>
+</a>
+</div>
+    <p class="lead" style="font-size:0.95rem">
+    <span style="font-weight:bold">DOSBox Staging</span> is a
+    modern continuation of DOSBox with advanced features
+    and current development practices. <a href="/about/">Read&nbsp;more</a>.
+    </p>
+    
+
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;linux&#x2F;">Downloads (Linux)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;windows&#x2F;">Downloads (Windows)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;macos&#x2F;">Downloads (macOS)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;devel&#x2F;">Development builds</a></li>
+                        
+                        
+                    </ul>
+
+                    
+<div style="font-size:0.7rem">
+<a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a>
+·
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki">Wiki</a>
+·
+<a href="https://discord.gg/WwAg3Xf">Discord</a>
+·
+<a href="https://opencollective.com/dosbox-staging">OpenCollective</a>
+·
+<a href="/rss.xml">RSS</a>
+</div>
+
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+
+<div class="post">
+  <h1 class="post-title">0.80.1 Maintenance Release Notes</h1>
+  <span class="post-date">2023-01-06</span>
+  <h2 id="1-table-of-contents">1. <a name='Tableofcontents'></a>Table of contents</h2>
+<!-- vscode-markdown-toc -->
+<ul>
+<li>
+<ol>
+<li><a href="https://dosbox-staging.github.io/v0-80-1/#Tableofcontents">Table of contents</a></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li><a href="https://dosbox-staging.github.io/v0-80-1/#Summary">Summary</a></li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li><a href="https://dosbox-staging.github.io/v0-80-1/#Howtoupgrade">How to upgrade</a></li>
+</ol>
+<ul>
+<li>3.1. <a href="https://dosbox-staging.github.io/v0-80-1/#Downloads">Downloads</a></li>
+<li>3.2. <a href="https://dosbox-staging.github.io/v0-80-1/#Updateyourconfigurationfile">Update your configuration file</a></li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li><a href="https://dosbox-staging.github.io/v0-80-1/#Bugandregressionfixes">Bug and regression fixes</a></li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li><a href="https://dosbox-staging.github.io/v0-80-1/#Translationupdates">Translation updates</a></li>
+</ol>
+</li>
+<li>
+<ol start="6">
+<li><a href="https://dosbox-staging.github.io/v0-80-1/#Contributors">Contributors</a></li>
+</ol>
+<ul>
+<li>6.1. <a href="https://dosbox-staging.github.io/v0-80-1/#Commitauthorsalphabeticorder">Commit authors (alphabetic order)</a></li>
+<li>6.2. <a href="https://dosbox-staging.github.io/v0-80-1/#Sponsors100USDpermonth">Sponsors (100+ USD per month)</a></li>
+<li>6.3. <a href="https://dosbox-staging.github.io/v0-80-1/#Backers5USDpermonth">Backers (5+ USD per month)</a></li>
+</ul>
+</li>
+<li>
+<ol start="7">
+<li><a href="https://dosbox-staging.github.io/v0-80-1/#Thankyou">Thank you</a></li>
+</ol>
+</li>
+</ul>
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+<h2 id="2-summary">2. <a name='Summary'></a>Summary</h2>
+<p>This maintenance release fixes minor issues with the mouse defaults, modem and
+Ethernet connection handling, and Meson dependencies.</p>
+<p>We are also happy to report that the high DPI improvements in the previous
+0.80.0 release have been verified on Windows, meaning that high DPI support is
+now functional on all platforms. Thanks to GranMinigun for this addition!</p>
+<p>This maintenance release was made possible by everyone who tried 0.80.0,
+submitted bugs and pull requests, and tested the updates: thank you!</p>
+<h2 id="3-how-to-upgrade">3. <a name='Howtoupgrade'></a>How to upgrade</h2>
+<p>Get started by downloading the latest version and updating your configuration
+file:</p>
+<h3 id="3-1-downloads">3.1. <a name='Downloads'></a>Downloads</h3>
+<ul>
+<li><a href="/downloads/linux/">Linux</a></li>
+<li><a href="/downloads/windows/">Windows</a></li>
+<li><a href="/downloads/macos/">macOS</a></li>
+</ul>
+<h3 id="3-2-update-your-configuration-file">3.2. <a name='Updateyourconfigurationfile'></a>Update your configuration file</h3>
+<ol>
+<li>Launch the new release.</li>
+<li>At the<code>Z:\&gt;</code> prompt, run: <code>config -wc</code> to write the new configuration file.</li>
+</ol>
+<p>Notes:</p>
+<ul>
+<li>Existing settings will be retained, but extraneous comments will be dropped.</li>
+</ul>
+<h2 id="4-bug-and-regression-fixes">4. <a name='Bugandregressionfixes'></a>Bug and regression fixes</h2>
+<p>This release fixes the following:</p>
+<ul>
+<li>
+<p>The mouse will now be captured only after the first click inside the window.
+For users without a windowing environment, the previous capture-on-start
+behavior will remain unchanged.</p>
+</li>
+<li>
+<p>The captured mouse will now be centered in the window upon release.</p>
+</li>
+<li>
+<p>The softmodem now includes a brief warm-up period where it will drop initial
+unreliable data, similar to hardware modems. This allows Duke Nukem 3D to
+establish its data connection on the first attempt.</p>
+</li>
+<li>
+<p>A potential slow memory leak related to closed Ethernet connections has been
+fixed.</p>
+</li>
+<li>
+<p>A bug that caused the C: mount to become unlistable after launching DOSBox
+Staging with a command-line mount while using MORE.COM has been fixed.</p>
+</li>
+<li>
+<p>The xinput2 library, an optional dependency of ManyMouse, can now be set via
+the Meson options. For more information, see <code>meson_options.txt</code>.</p>
+</li>
+<li>
+<p>When compiling on ARM platforms, the SpeexDSP wrap will now correctly check if
+the host supports NEON instructions, and use them if available.</p>
+</li>
+</ul>
+<details>
+  <summary>Click to see the full PR list of bug and regression fixes:</summary>
+<ul>
+<li>#2142: Add missing Windows 11 features to MORE command</li>
+<li>#2148: Check CLI arguments for directories using non-invasive test</li>
+<li>#2150: Fix remaining two CWEs involving unchecked return values</li>
+<li>#2152: Bump actions/cache from 3.2.0 to 3.2.1</li>
+<li>#2155: Make the xinput2 library optional for ManyMouse</li>
+<li>#2161: Fix imprecise help string in MORE command</li>
+<li>#2162: Bump Coverity to v2022.06</li>
+<li>#2163: Improve seamless mouse configuration entry description, mention the touchscreen</li>
+<li>#2165: Bump actions/cache from 3.2.1 to 3.2.2</li>
+<li>#2168: Improve logging of the current display mode</li>
+<li>#2172: Change mouse capture default to 'onclick'</li>
+<li>#2173: Center mouse cursor before releasing it</li>
+<li>#2179: Cleanup some minor Coverity issues</li>
+<li>#2181: Use presence of desktop environment in mouse capture states</li>
+<li>#2182: Fix slirp/ne2000 warnings</li>
+<li>#2187: Fix logging of some pre-EGA modes</li>
+<li>#2190: Fix CGA mono and Hercules intro banners</li>
+<li>#2193: Add Linux ARM CI jobs using containerized cross-compiler</li>
+<li>#2195: Use extended ASCII check in MORE command</li>
+</ul>
+</details>
+<h2 id="5-translation-updates">5. <a name='Translationupdates'></a>Translation updates</h2>
+<p>This maintenance release includes updates to the Dutch, Italian, and Polish
+translations.</p>
+<details>
+  <summary>Click to see the full PR list of documentation and translation changes:</summary>
+<ul>
+<li>#2159: Update Polish (pl) translation</li>
+<li>#2164: Update Dutch (nl) translation of MORE</li>
+<li>#2166: Update Italian (it-it) translation</li>
+<li>#2186: Update Polish (pl) translation</li>
+<li>#2194: Update Polish (pl) translation, for 0.80.x only</li>
+</ul>
+</details>
+<h2 id="6-contributors">6. <a name='Contributors'></a>Contributors</h2>
+<p>The following commit authors, sponsors, supporters, and backers invested their
+time or funds into this maintenance release. Thank you!</p>
+<h3 id="6-1-commit-authors-alphabetic-order">6.1. <a name='Commitauthorsalphabeticorder'></a>Commit authors (alphabetic order)</h3>
+<ul>
+<li>dependabot[bot]</li>
+<li>FeralChild64</li>
+<li>johnnovak</li>
+<li>Kappa971</li>
+<li>kcgen</li>
+<li>NicknineTheEagle</li>
+<li>rderooy</li>
+<li>shermp</li>
+<li>ThomasEricB</li>
+</ul>
+<h3 id="6-2-sponsors-100-usd-per-month">6.2. <a name='Sponsors100USDpermonth'></a>Sponsors (100+ USD per month)</h3>
+<ul>
+<li>Antti Peltola</li>
+<li>Wengier Wu</li>
+</ul>
+<h3 id="6-3-backers-5-usd-per-month">6.3. <a name='Backers5USDpermonth'></a>Backers (5+ USD per month)</h3>
+<ul>
+<li>Burrito78</li>
+<li>Hannu Hartikainen</li>
+<li>Hugo Locurcio</li>
+</ul>
+<p>Thank you for considering supporting our work through a donation on <a href="https://github.com/sponsors/dosbox-staging">GitHub
+Sponsors</a> or <a href="https://opencollective.com/dosbox-staging">Open
+Collective</a>. Your contribution helps
+us purchase hardware and cover ongoing expenses to keep the project going.</p>
+<h2 id="7-thank-you">7. <a name='Thankyou'></a>Thank you</h2>
+<p>We are grateful for all community contributions as well as the original DOSBox
+project, upon which DOSBox Staging is based.</p>
+
+</div>
+
+
+<div style="text-align:center; font-size:0.70rem;">
+<div>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration:none">
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" />
+	</a>
+</div>
+<div>
+	Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+<div>
+	DOSBox Staging is licensed under a <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU GPL version 2 or later</a>.
+</span>
+</div>
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>
+0.78.0 Release Notes - dosbox-staging
+</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;print.css" media="print">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;poole.css">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+      <meta property="og:image" content="https://dosbox-staging.github.io/square-splash.png" />
+      <meta property="og:site_name" content="dosbox-staging.github.io" />
+      <meta property="og:type" content="object" />
+      
+      <meta property="og:title" content="0.78.0 Release Notes">
+      <meta property="og:url" content="https://dosbox-staging.github.io/v0-78-0/" />
+      
+      <meta property="og:description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+
+      <style type="text/css">
+      <!--
+      .youtube > iframe { width: 640px; height: 350px; }
+      pre { overflow-x: auto; }
+      -->
+      </style>
+
+
+
+
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+<div style="text-align:center">
+<a href="/">
+    <img src="/dosbox-staging.svg" style="width:90%; max-width:8em; display:inline;"/>
+</a>
+</div>
+    <p class="lead" style="font-size:0.95rem">
+    <span style="font-weight:bold">DOSBox Staging</span> is a
+    modern continuation of DOSBox with advanced features
+    and current development practices. <a href="/about/">Read&nbsp;more</a>.
+    </p>
+    
+
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;linux&#x2F;">Downloads (Linux)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;windows&#x2F;">Downloads (Windows)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;macos&#x2F;">Downloads (macOS)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;devel&#x2F;">Development builds</a></li>
+                        
+                        
+                    </ul>
+
+                    
+<div style="font-size:0.7rem">
+<a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a>
+·
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki">Wiki</a>
+·
+<a href="https://discord.gg/WwAg3Xf">Discord</a>
+·
+<a href="https://opencollective.com/dosbox-staging">OpenCollective</a>
+·
+<a href="/rss.xml">RSS</a>
+</div>
+
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+
+<div class="post">
+  <h1 class="post-title">0.78.0 Release Notes</h1>
+  <span class="post-date">2021-12-25</span>
+  <h2 id="1-table-of-contents">1. <a name='TableofContents'></a>Table of Contents</h2>
+<!-- vscode-markdown-toc -->
+<ul>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#TableofContents">1. Table of Contents</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#Upgrade">2. Upgrade!</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#SignificantChanges">3. Significant Changes</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#Bugfixes">4. Bugfixes</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#TranslationUpdates">5. Translation Updates</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#RepositoryAuthors">6. Repository Authors</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#WikiAuthors">7. Wiki Authors</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#FinancialContributors">8. Financial Contributors</a></li>
+<li><a href="https://dosbox-staging.github.io/v0-78-0/#ThankYou">9. Thank You</a></li>
+</ul>
+<!-- vscode-markdown-toc-config
+	numbering=true
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+<h2 id="2-upgrade">2. <a name='Upgrade'></a>Upgrade!</h2>
+<p>Download and launch the latest version:</p>
+<ul>
+<li><a href="/downloads/linux/">Linux</a> (or <a href="/downloads/linux#steam">Steam on Linux</a>)</li>
+<li><a href="/downloads/windows/">Windows</a></li>
+<li><a href="/downloads/macos/">macOS</a></li>
+</ul>
+<p>At the DOSBox <code>C:\&gt;</code> prompt, run: <code>config -wc</code> to upgrade your config file.
+Your existing settings will be retained however extraneous comments will be dropped.</p>
+<h2 id="3-significant-changes">3. <a name='SignificantChanges'></a>Significant Changes</h2>
+<ul>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1240">Added</a> Universal binary for macOS, supporting x86-64 and ARM64 (Kirk Klobe)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1158">Added</a> a workaround for vsync lag, which is useful for video outputs that enforce vsync (Kirk Klobe)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1272">Added</a> window size and placement customizations (John Novak)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1356">Added</a> full <code>/help</code> output text for the AUTOTYPE, BOOT, CALL, CHOICE, CLS, COPY, DIR, ECHO, EXIT, GOTO, HELP, IF, INTRO KEYB, LS, MD/MKDIR, MEM, RD/RMDIR, REN/RENAME, RESCAN, SHIFT, SUBST, and TYPE commands (Wengier)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1443">Added</a> MSYS2-based release builds and instuctions for those on Windows using MSYS2 (Sherman Perry)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1122">Merged</a> PCjr composite patch by NewRisingSun. Thanks to JKapp76 for testing and feedback (NewRisingSun)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1157">Merged</a> CGA composite improvement patch by reenigne, respectively. Thanks to JKapp76 for testing and feedback (reenigne)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1200">Added</a> bash-shell completion. See <code>contrib/linux/bash-completion/README</code> for adding this to your shell (FeignInt)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1225">Added</a> Loguru, a fast cross-platform logging subsystem. Logs are now time-stamped and warnings are now colorized (Kirk Klobe)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1244">Merged</a> S3 video patch by s3freak. This adds more video modes and supports up to 8 MiB of video memory, <code>vmemsize = 8</code>, when using <code>machine = svga_s3</code>. Thanks to Zorix, Grounded0, Brandon Roberts, GranMinigun, Kirk Klobe, and nemo93 for testing (s3freak)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1268">Added</a> configurable FluidSynth chorus and reverb settings. Thanks to GranMinigun for the extensive listening tests (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1269">Added</a> auto-exit. When an executable that's passed on the command-line exits, then so too will the emulator. This is equivalent to manually adding the <code>-exit</code> command-line flag.  Thanks to Burrito78 for testing (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/blob/656e98edaf0fd2269c3d74792a568f277180e6d0/README#L422-L466">Added</a> layered and portable configuration file handling. Thanks to JKapp76, Grounded0, and Burrito78 for testing (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1398">Added</a> ENet (reliable UDP) as an option for modem and null-modem transport, as well as <code>SERIAL.COM</code> for runtime serial-port configuration (Scott Duensing)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1419">Added</a> support for virtual Ethernet and TCP/IP networking via slirp (Jookia)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1447">Added</a> support for networking in Windows for Workgroups 3.11 <a href="https://github.com/dosbox-staging/dosbox-staging/pull/1447#issuecomment-1000890397">from the shell</a>. Previously networking in WfW was only possible when booting a real MS-DOS installation from a bootable HDD image (Wengier, nanshiki)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1451">Added</a> IDE controller support, authored by joncampbell123 of the DOSBox-X project, for CDROM image-mounts, which is useful for CDROM-based games that also happen to need a real DOS environment such as Revell's car games, like European Racers (joncampbell123, Wengier)</p>
+</li>
+</ul>
+<h2 id="4-bugfixes">4. <a name='Bugfixes'></a>Bugfixes</h2>
+<ul>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1205">Fixed</a> 32-bit dynamic core crashes (Kirk Klobe)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1144">Fixed</a> regression when setting <code>windowresolution=</code> in the conf file. Thanks to arrowgent for the report and testing (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/issues/1241">Fixed</a> hanging in Mortal Kombat Trilogy when <code>joysticktype=none</code>. Thanks to nemo93 for the report and GranMinigun for also testing (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1362">Fixed</a> regression during shutdown while using the ALSA sequencer. Thanks to AaronBPaden for the report and testing (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1389">Fixed</a> zero-offset PC Speaker issue on Windows 11. Thanks to ggpettas for reporting (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1400">Fixed</a> regression that broke video recording. Thanks to Grounded0 for reporting and testing (kcgen)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/issues/1136">Fixed</a> ability to run an application-provided <code>help.exe|com</code> program. Thanks to SmilingSpectre for reporting (Wengier)</p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/pull/1457">Removed</a> VESA modes 320x200x15/16/24, which were added late in the 90s and were not properly supported by some games (NicknineTheEagle)</p>
+</li>
+</ul>
+<h2 id="5-translation-updates">5. <a name='TranslationUpdates'></a>Translation Updates</h2>
+<ul>
+<li>Italian (Kappa971)</li>
+<li>German (Burrito78)</li>
+<li>Russian (GranMinigun)</li>
+</ul>
+<p>Translations (de, es, fr, it, pl, and ru) are included with the release package and can be selected using the two-letter country code either via environment variable (<code>LANG=de</code>), conf file (<code>[dosbox] language = it</code>), or command-line (<code>-lang ru</code>). See Section 14 in the <code>README</code> file for more details.</p>
+<h2 id="6-repository-authors">6. <a name='RepositoryAuthors'></a>Repository Authors</h2>
+<p>to ensure authors are credited for their work, the project records authorship on all commits in the version control system, including all works from the upstream DOSBox project, patch authors, and external projects.</p>
+<table><thead><tr><th><strong>0.78 Authors</strong></th><th>Lines-Changed</th></tr></thead><tbody>
+<tr><td>arrowgent</td><td>361</td></tr>
+<tr><td>Brandon Roberts</td><td>1495</td></tr>
+<tr><td>Burrito78</td><td>1882</td></tr>
+<tr><td>Christer Solskogen</td><td>4</td></tr>
+<tr><td>Dan Church</td><td>2</td></tr>
+<tr><td>David Reid</td><td>6733</td></tr>
+<tr><td>Eli Schwartz</td><td>6</td></tr>
+<tr><td>GranMinigun</td><td>1204</td></tr>
+<tr><td>Gregory Pakosz</td><td>1178</td></tr>
+<tr><td>John Novak</td><td>668</td></tr>
+<tr><td>Jookia</td><td>2296</td></tr>
+<tr><td>Kappa971</td><td>2773</td></tr>
+<tr><td>kcgen</td><td>63022</td></tr>
+<tr><td>Kirk Klobe</td><td>1658</td></tr>
+<tr><td>llm</td><td>6</td></tr>
+<tr><td>NicknineTheEagle</td><td>30</td></tr>
+<tr><td>Patryk Obara</td><td>103</td></tr>
+<tr><td>ripsaw8080</td><td>59</td></tr>
+<tr><td>s3freak</td><td>648</td></tr>
+<tr><td>Scott Duensing</td><td>7330</td></tr>
+<tr><td>Sherman Perry</td><td>5408</td></tr>
+<tr><td>Sjoerd van der Berg</td><td>28</td></tr>
+<tr><td>Wengier</td><td>5430</td></tr>
+<tr><td>Yann Collet</td><td>2438</td></tr>
+<tr><td>ykhwong</td><td>7</td></tr>
+</tbody></table>
+<p>During the 0.78 timeframe, DOSBox SVN commits r4466 through r4471 were merged to the project and authorship is reflected above.</p>
+<h2 id="7-wiki-authors">7. <a name='WikiAuthors'></a>Wiki Authors</h2>
+<table><thead><tr><th><strong>0.78 Wiki Authors</strong></th><th>Lines-Changed</th></tr></thead><tbody>
+<tr><td>Alberto Salvia Novella</td><td>164</td></tr>
+<tr><td>Burrito78</td><td>2</td></tr>
+<tr><td>Grounded0</td><td>557</td></tr>
+<tr><td>John Novak</td><td>12</td></tr>
+<tr><td>Joshua Fern</td><td>30</td></tr>
+<tr><td>kcgen</td><td>243</td></tr>
+<tr><td>Kirk Klobe</td><td>2</td></tr>
+<tr><td>LowLevelMahn</td><td>14</td></tr>
+<tr><td>MasterO2</td><td>395</td></tr>
+<tr><td>nemo93</td><td>5370</td></tr>
+<tr><td>Tobias Gruetzmacher</td><td>5</td></tr>
+</tbody></table>
+<h2 id="8-financial-contributors">8. <a name='FinancialContributors'></a>Financial Contributors</h2>
+<ul>
+<li>
+<p><strong>Antti Peltola</strong>: Project Sponsor. His combined contribution of 4000 USD spanning the 2021 period to maintainers and the project has allowed the team to add a dedicated Apple M1 build host. Thank you!</p>
+</li>
+<li>
+<p><strong>Burrito78</strong>: Project Backer. Thank you!</p>
+</li>
+</ul>
+<p>To support our work, join the <a href="https://opencollective.com/dosbox-staging">Open Collective</a>.</p>
+<h2 id="9-thank-you">9. <a name='ThankYou'></a>Thank You</h2>
+<p>We are extremely grateful for all contributions, including the invaluable improvements merged in from the DOSBox project.</p>
+
+</div>
+
+
+<div style="text-align:center; font-size:0.70rem;">
+<div>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration:none">
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" />
+	</a>
+</div>
+<div>
+	Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+<div>
+	DOSBox Staging is licensed under a <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU GPL version 2 or later</a>.
+</span>
+</div>
+
+        </div>
+
+    </body>
+
+</html>

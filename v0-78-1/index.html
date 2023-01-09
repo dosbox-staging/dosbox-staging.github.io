@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>
+0.78.1 Maintenance Release Notes - dosbox-staging
+</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;print.css" media="print">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;poole.css">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+      <meta property="og:image" content="https://dosbox-staging.github.io/square-splash.png" />
+      <meta property="og:site_name" content="dosbox-staging.github.io" />
+      <meta property="og:type" content="object" />
+      
+      <meta property="og:title" content="0.78.1 Maintenance Release Notes">
+      <meta property="og:url" content="https://dosbox-staging.github.io/v0-78-1/" />
+      
+      <meta property="og:description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+
+      <style type="text/css">
+      <!--
+      .youtube > iframe { width: 640px; height: 350px; }
+      pre { overflow-x: auto; }
+      -->
+      </style>
+
+
+
+
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+<div style="text-align:center">
+<a href="/">
+    <img src="/dosbox-staging.svg" style="width:90%; max-width:8em; display:inline;"/>
+</a>
+</div>
+    <p class="lead" style="font-size:0.95rem">
+    <span style="font-weight:bold">DOSBox Staging</span> is a
+    modern continuation of DOSBox with advanced features
+    and current development practices. <a href="/about/">Read&nbsp;more</a>.
+    </p>
+    
+
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;linux&#x2F;">Downloads (Linux)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;windows&#x2F;">Downloads (Windows)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;macos&#x2F;">Downloads (macOS)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;devel&#x2F;">Development builds</a></li>
+                        
+                        
+                    </ul>
+
+                    
+<div style="font-size:0.7rem">
+<a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a>
+·
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki">Wiki</a>
+·
+<a href="https://discord.gg/WwAg3Xf">Discord</a>
+·
+<a href="https://opencollective.com/dosbox-staging">OpenCollective</a>
+·
+<a href="/rss.xml">RSS</a>
+</div>
+
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+
+<div class="post">
+  <h1 class="post-title">0.78.1 Maintenance Release Notes</h1>
+  <span class="post-date">2022-01-07</span>
+  <p><strong>How to upgrade from any version:</strong></p>
+<p>Download and launch the latest version:</p>
+<ul>
+<li><a href="/downloads/linux/">Linux</a> (or <a href="/downloads/linux#steam">Steam on Linux</a>)</li>
+<li><a href="/downloads/windows/">Windows</a></li>
+<li><a href="/downloads/macos/">macOS</a></li>
+</ul>
+<p>At the DOSBox <code>C:\&gt;</code> prompt, run: <code>config -wc</code> to upgrade your config file with the currently-supported settings.</p>
+<h2 id="changes">Changes</h2>
+<p>Maintenance changes to 0.78.1 are as follows (reported-by; fixed-by):</p>
+<p><strong>Fixes and regressions:</strong></p>
+<ul>
+<li>Fixed a crash when exiting fullscreen mode and also using OpenGL output (NicknineTheEagle; kcgen)</li>
+<li>Fixed a crash and host input lockup when using SDL's kmsdrm video driver (GranMinigun)</li>
+<li>Fixed an early exit bug when using the -exit and -c exit command-line arguments (pheener and d10sfan; kcgen)</li>
+<li>Fixed a memory leak when changing one or more serial port types at runtime (kcgen)</li>
+<li>Fixed a regression that failed to apply aspect correction when using pixel-perfect output modes (Diduz; kcgen)</li>
+<li>Fixed a regression that disabled the keyboard input when using the debugger (LowLevelMahn; kcgen)</li>
+<li>Fixed a regression that impacted 32-bit performance on some Windows systems (RaymanXY; Kirk Klobe and kcgen)</li>
+<li>Fixed a regression that causes a crash when opening UPX-compressed code-page files (FeralChild64; Wengier)</li>
+</ul>
+<p><strong>Functionality refinements:</strong></p>
+<ul>
+<li>Improved the modem's command-mode handling (NicknineTheEagle)</li>
+<li>Corrected the modem's DTR drop delay units from ms to hundredths of a second (NicknineTheEagle)</li>
+<li>Reverted the allowance that let the VESA refresh rate use the host rate (RaymanXY; kcgen)</li>
+<li>Allowed read-only image mounting for write-protected disk and floppy images (Burrito78; Wengier)</li>
+</ul>
+<p><strong>Documentation-related improvements:</strong></p>
+<ul>
+<li>Updated the German messages and config file text (Burrito78)</li>
+<li>Updated the Italian messages and config file text (Kappa971)</li>
+<li>Fixed a documentation conflict describing the command line's version flag (arrowgent)</li>
+<li>Documented how to install gmock, a dependency added during 0.78.0, on Fedora (oturpe)</li>
+</ul>
+<p><strong>Development and packaging fixes:</strong></p>
+<ul>
+<li>Fixed a compilation issue with Loguru on ARM32 using GCC 8 (rtissera; kcgen)</li>
+<li>Fixed a compilation issue with older C++17 compilers missing std::filesystem support (jowtron; gulrak and kcgen)</li>
+<li>Fixed a build tool-specific bug that exposed the UI when running gmock tests (oturpe and voyageur; brandonrobertz and kcgen)</li>
+</ul>
+<h2 id="known-issues">Known Issues</h2>
+<ul>
+<li>
+<p>The MSYS2-built debugger will fail to open if launched from the Windows UI.</p>
+<ul>
+<li>As a work-around, run it from within a CMD console.</li>
+<li>Thanks to Sherman Perry for investigating this issue and isolating it to the Windows Console API.</li>
+</ul>
+</li>
+<li>
+<p>Audio might stutter on Some Windows platforms. If your system is affected, adjust the Mixer's settings in your conf file, as follows:</p>
+<pre><code>[mixer]
+blocksize = 1024
+prebuffer = 25
+</code></pre>
+<ul>
+<li>Quick tip: run <code>dosbox -editconf</code> to open your config file.</li>
+<li>Thanks to Genju for reporting this regression and isolating the solution.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+<div style="text-align:center; font-size:0.70rem;">
+<div>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration:none">
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" />
+	</a>
+</div>
+<div>
+	Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+<div>
+	DOSBox Staging is licensed under a <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU GPL version 2 or later</a>.
+</span>
+</div>
+
+        </div>
+
+    </body>
+
+</html>

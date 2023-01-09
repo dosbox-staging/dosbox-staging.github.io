@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>
+macOS bundles - dosbox-staging
+</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;print.css" media="print">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;poole.css">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+      <meta property="og:image" content="https://dosbox-staging.github.io/square-splash.png" />
+      <meta property="og:site_name" content="dosbox-staging.github.io" />
+      <meta property="og:type" content="object" />
+      
+      <meta property="og:title" content="macOS bundles">
+      <meta property="og:url" content="https://dosbox-staging.github.io/downloads/macos/" />
+      
+      <meta property="og:description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+
+      <style type="text/css">
+      <!--
+      .youtube > iframe { width: 640px; height: 350px; }
+      pre { overflow-x: auto; }
+      -->
+      </style>
+
+
+
+
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+<div style="text-align:center">
+<a href="/">
+    <img src="/dosbox-staging.svg" style="width:90%; max-width:8em; display:inline;"/>
+</a>
+</div>
+    <p class="lead" style="font-size:0.95rem">
+    <span style="font-weight:bold">DOSBox Staging</span> is a
+    modern continuation of DOSBox with advanced features
+    and current development practices. <a href="/about/">Read&nbsp;more</a>.
+    </p>
+    
+
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;linux&#x2F;">Downloads (Linux)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;windows&#x2F;">Downloads (Windows)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;macos&#x2F;">Downloads (macOS)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;devel&#x2F;">Development builds</a></li>
+                        
+                        
+                    </ul>
+
+                    
+<div style="font-size:0.7rem">
+<a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a>
+·
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki">Wiki</a>
+·
+<a href="https://discord.gg/WwAg3Xf">Discord</a>
+·
+<a href="https://opencollective.com/dosbox-staging">OpenCollective</a>
+·
+<a href="/rss.xml">RSS</a>
+</div>
+
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+
+<div class="post">
+  <h1 class="post-title">macOS bundles</h1>
+  <p><strong><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-macOS-v0.80.1.dmg">Download DOSBox Staging 0.80.1 Universal binary (dmg)</a></strong>
+<br/>
+<span style="font-size:0.7em">
+sha256: 46a256645255e8345981ea357f1416b8ce4bc60a2aba9a86b5122d5075aa7fa9
+</span></p>
+<p>This package is compatible with macOS 10.15 (Catalina) or newer.</p>
+<p><em>macOS uses its Gatekeeper feature to prevent users from running
+externally-hosted 3rd party software, such as DOSBox Staging. See <a href="https://dosbox-staging.github.io/downloads/macos/#apple-gatekeeper">the section
+below</a> to learn how to fix it.</em></p>
+<h3 id="homebrew">Homebrew</h3>
+<p>The <a href="https://formulae.brew.sh/formula/dosbox-staging">Homebrew package</a> is
+compatible with macOS 10.14 (Mojave) or newer. Learn how to setup Homebrew
+<a href="https://mac.install.guide/homebrew/">here</a>.</p>
+<pre><code>brew update
+brew install dosbox-staging
+</code></pre>
+<h3 id="macports">MacPorts</h3>
+<p>The <a href="https://ports.macports.org/port/dosbox-staging/">MacPorts package</a>
+should build on systems as old as macOS 10.7 (Lion, circa 2011) or newer.
+Learn how to setup MacPorts <a href="https://guide.macports.org/">here</a>.</p>
+<pre><code>sudo port selfupdate
+sudo port install dosbox-staging
+</code></pre>
+<p>If you're running an OS not longer maintained by Apple, then support is on a
+best-effort basis (as the team runs supported configurations and may not be able
+to reproduce some issues).</p>
+<h3 id="development-snapshot-builds">Development snapshot builds</h3>
+<p>You can always see what's cooking on the main branch :)</p>
+<p>These builds might be slow or unstable as they are designed with developers and
+testers in mind: <a href="/downloads/devel/">download instructions for snapshot builds</a>.</p>
+<h3 id="ss-apple-gatekeeper"><a name="apple-gatekeeper" href="#apple-gatekeeper">§</a> Apple Gatekeeper</h3>
+<p><strong>Ctrl-click</strong> (or right-click) on DOSBox Staging app, and click &quot;Open&quot;. 
+Click &quot;OK&quot; to close the resulting message. After opening the app a 
+second time (like above) Gatekeeper will show an &quot;Open&quot; button like 
+this:</p>
+<p><img src="https://dosbox-staging.github.io/downloads/macos/gatekeeper.png" alt="Gatekeeper window" /></p>
+<h4 id="explanation">Explanation</h4>
+<p>Apple's Gatekeeper feature only permits the running of notarized software, one
+aspect of which involves developers making yearly payments to Apple.</p>
+<p>As DOSBox Staging is a volunteer effort, we are not in a position to make such
+payments and therefore ask users to bypass Apple's Gatekeeper manually.</p>
+<h3 id="ss-older-builds"><a name="old-builds" href="#old-builds">§</a> Older builds</h3>
+<ul>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.0/dosbox-staging-macOS-v0.80.0.dmg">DOSBox Staging 0.80.0 Universal binary (dmg)</a>
+<br/>
+<span style="font-size:0.7em">
+sha256: 53f12aa63cf9d2a33a46149fb394947c6b12d5ab9b7ba41ee2d7eab1a990fa7a
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.1/dosbox-staging-macOS-v0.79.1.dmg">DOSBox Staging 0.79.1 Universal binary (dmg)</a>
+<br/>
+<span style="font-size:0.7em">
+sha256: 52547692be29949747bb8d3b59bf31dd22b4f49178316417cc8f1f468eeab387
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.79.0/dosbox-staging-macOS-v0.79.0.dmg">DOSBox Staging 0.79.0 Universal binary (dmg)</a>
+<br/>
+<span style="font-size:0.7em">
+sha256: 1678f7458acabecdaf2b49e0d95a20d057734898b70c29d4e845f52a1aa26d46
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.1/dosbox-staging-macOS-v0.78.1.dmg">DOSBox Staging 0.78.1 Universal binary (dmg)</a>
+<br/>
+<span style="font-size:0.7em">
+sha256: b9ddff89e9fc283493580d5fc021b05021a13d90305ae44e2867499b22e359c9
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.78.0/dosbox-staging-macOS-v0.78.0.dmg">DOSBox Staging 0.78.0 Universal binary (dmg)</a>
+<br/>
+<span style="font-size:0.7em">
+sha256: 3997546560af542b7f3b55b1bc890ae4342144a72c21af9880449adf579db88b
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-macOS-v0.77.1.dmg">DOSBox Staging 0.77.1 x86-64 (dmg)</a>
+<br/>
+<span style="font-size:0.7em">
+sha256: 29964d79f0a85d593f8bafd30da854c726594c12474528f46758fc95c05f0c97
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.1/dosbox-staging-macOS-arm64-0.77.1.dmg">DOSBox Staging 0.77.1 ARM64 (dmg)</a>
+<br/>
+<span style="font-size:0.7em">
+sha256: 74a1c84bdda0db25091f749ba7a2e5e93f7849baf130817ea1bc182039bd3698
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-macOS-v0.77.0.dmg">DOSBox Staging 0.77.0 x86-64 (dmg)</a> (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: 3ca859573814b2c50065825c02d8a04eb6d95605830ec3af21de0d64a2e32314
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.77.0/dosbox-staging-macOS-arm64-0.77.0-testing.dmg">DOSBox Staging 0.77.0 ARM64-testing (dmg)</a> (macOS 11 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: e2eecb52777d5ed836ba1f772fe669c89e94ea9b67777aced5fef5b51051ccaf
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.76.0/dosbox-staging-macOS-v0.76.0-3-g6525f.dmg">DOSBox Staging 0.76.0-3 (dmg)</a> (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: f6048fa0e1a33a41f0018cb6d7139c4f7b4a60176bbe6a42f681aa8b5adcb73b
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.76.0/dosbox-staging-macOS-v0.76.0.dmg">DOSBox Staging 0.76.0 (dmg)</a> (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: c9fa7b0bf6410f430b47daeb15a470e0105a147b555d3fbf574514406c71f492
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.2/dosbox-staging-macOS-v0.75.2.dmg">DOSBox Staging 0.75.2 (dmg)</a> (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: 272f01aa8598ecf3229d48680aa6ce6e5b88ebd0645b1f92b899bc0159afcf11
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.1/dosbox-staging-macOS-v0.75.1.dmg">DOSBox Staging 0.75.1 (dmg)</a> (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: 2508a87c6aceee63da13e4c76159734e3c9ee4e76fb22a3a7c0d66021e71a4eb
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0/dosbox-staging-macOS-v0.75.0.dmg">DOSBox Staging 0.75.0 (dmg)</a> (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: a0038c7401d239934d25517ca5e8e6006cc3f4cb7060f6ace56609d36bca12ef
+</span></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-macOS-v0.75.0-rc1.dmg">DOSBox Staging 0.75.0-rc1 (dmg)</a> (macOS 10.15 or newer)
+<br/>
+<span style="font-size:0.7em">
+sha256: 8a5c12d1b6567d6e981acd76e30dec41a73a699963b714f4f1dcf0fc853fc9f6
+</span></p>
+</li>
+</ul>
+<h3 id="building-from-source">Building from source</h3>
+<p>Of course you can always <a href="https://github.com/dosbox-staging/dosbox-staging">build DOSBox Staging straight from the source</a>.
+Send us patches if you improve something! :)</p>
+
+</div>
+
+
+<div style="text-align:center; font-size:0.70rem;">
+<div>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration:none">
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" />
+	</a>
+</div>
+<div>
+	Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+<div>
+	DOSBox Staging is licensed under a <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU GPL version 2 or later</a>.
+</span>
+</div>
+
+        </div>
+
+    </body>
+
+</html>

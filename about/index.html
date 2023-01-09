@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>
+Vision - dosbox-staging
+</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;print.css" media="print">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;poole.css">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+      <meta property="og:image" content="https://dosbox-staging.github.io/square-splash.png" />
+      <meta property="og:site_name" content="dosbox-staging.github.io" />
+      <meta property="og:type" content="object" />
+      
+      <meta property="og:title" content="Vision">
+      <meta property="og:url" content="https://dosbox-staging.github.io/about/" />
+      
+      <meta property="og:description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+
+      <style type="text/css">
+      <!--
+      .youtube > iframe { width: 640px; height: 350px; }
+      pre { overflow-x: auto; }
+      -->
+      </style>
+
+
+
+
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+<div style="text-align:center">
+<a href="/">
+    <img src="/dosbox-staging.svg" style="width:90%; max-width:8em; display:inline;"/>
+</a>
+</div>
+    <p class="lead" style="font-size:0.95rem">
+    <span style="font-weight:bold">DOSBox Staging</span> is a
+    modern continuation of DOSBox with advanced features
+    and current development practices. <a href="/about/">Read&nbsp;more</a>.
+    </p>
+    
+
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;linux&#x2F;">Downloads (Linux)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;windows&#x2F;">Downloads (Windows)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;macos&#x2F;">Downloads (macOS)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;devel&#x2F;">Development builds</a></li>
+                        
+                        
+                    </ul>
+
+                    
+<div style="font-size:0.7rem">
+<a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a>
+·
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki">Wiki</a>
+·
+<a href="https://discord.gg/WwAg3Xf">Discord</a>
+·
+<a href="https://opencollective.com/dosbox-staging">OpenCollective</a>
+·
+<a href="/rss.xml">RSS</a>
+</div>
+
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+
+<div class="post">
+  <h1 class="post-title">Vision</h1>
+  <p><strong>DOSBox Staging</strong> is a modern continuation of DOSBox with advanced features and current development practices.</p>
+<h2 id="goals">Goals</h2>
+<ul>
+<li>Improve the <strong>out-of-the-box</strong> experience for new users.</li>
+<li>Encourage <strong>new contributors</strong> by removing barriers to entry.</li>
+<li>Implement <strong>new features</strong> and quality-of-life improvements.</li>
+<li>Fix, cleanup, and integrate notable <strong>community-developed patches</strong> that
+fill valuable general-purpose and/or gaming-focused emulation holes
+(provided they don't impact broader compatibility, performance, stability,
+or code maintainability).</li>
+<li>Prioritize the <strong>quality</strong> of newly written code to minimize technical
+debt and ease future maintenance, which generally means
+following the <a href="https://github.com/dosbox-staging/dosbox-staging/blob/main/CONTRIBUTING.md#coding-style">Staging Coding Style Guide</a>
+and being aware of best practices, like the <a href="http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines">C++ Core Guidelines</a>.</li>
+<li>Deliver a consistent cross-platform experience.</li>
+<li>Leverage upstream and community developments in DOSBox.</li>
+<li>Focus on supporting up-to-date, current Operating Systems and modern
+hardware.</li>
+</ul>
+<p>A summary of technical and feature differences is
+<a href="https://github.com/dosbox-staging/dosbox-staging#summary-of-differences-compared-to-upstream">here</a>.</p>
+<p>We plan to add the features listed in
+<a href="https://github.com/dosbox-staging/dosbox-staging/projects/3">the backlog</a>.</p>
+<h2 id="non-goals">Non-goals</h2>
+<ul>
+<li>
+<p>Supporting old operating systems (Windows 9x/Me, OS/2, and Mac OS X 10.4)
+and limited CPU/memory hardware, which are constraints <a href="https://www.dosbox.com/">DOSBox</a>
+continues to support.</p>
+</li>
+<li>
+<p>Supporting the use of Windows 9x/Me in the emulator. Windows 9x/Me emulation
+is supported by projects such as <a href="https://www.qemu.org">QEMU</a> and <a href="https://www.virtualbox.org/">VirtualBox</a>,
+although DOSBox forks like <a href="https://www.dosbox-x.com/">DOSBox-X</a> and <a href="https://github.com/schellingb/dosbox-pure">DOSBox Pure</a> 
+also support this. This may change if wanted by the DOSBox Staging community in general.</p>
+</li>
+<li>
+<p>Persuing hardware accuracy when it impacts the above goals or detracts
+from the source material, although config options may be added in case of issues.
+If you need perfect emulation in terms of accuracy you may look at <a href="https://pcem-emulator.co.uk/">PCem</a> and its derivatives
+like <a href="https://86box.net">86Box</a> and <a href="https://pcbox.github.io/">PCBox</a>, which are examples of cycle-accurate emulators.</p>
+</li>
+<li>
+<p>Being the fastest DOS emulator on x86 hardware. Linux users interested in
+emulation speed should look at <a href="https://github.com/dosemu2/dosemu2">dosemu2</a>.</p>
+</li>
+<li>
+<p>Acting as a general-purpose DOS operating system. For that, there is
+<a href="https://www.freedos.org/">FreeDOS</a>.</p>
+</li>
+</ul>
+<h2 id="relationship-to-dosbox">Relationship to DOSBox</h2>
+<p><strong>DOSBox Staging</strong> is separate from and not supported by the SourceForge-hosted
+<a href="https://www.dosbox.com/">DOSBox</a> project or its development team, the DOSBox
+Team.</p>
+<p>We acknowledge and are thankful for the work shared by all DOSBox
+contributors.</p>
+<h2 id="team">Team</h2>
+<p>This project is maintained by the
+<a href="https://github.com/orgs/dosbox-staging/people">DOSBox Staging team</a>.</p>
+
+</div>
+
+
+<div style="text-align:center; font-size:0.70rem;">
+<div>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration:none">
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" />
+	</a>
+</div>
+<div>
+	Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+<div>
+	DOSBox Staging is licensed under a <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU GPL version 2 or later</a>.
+</span>
+</div>
+
+        </div>
+
+    </body>
+
+</html>

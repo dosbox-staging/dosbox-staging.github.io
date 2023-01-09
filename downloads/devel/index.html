@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <!-- viewport-fit=cover is to support iPhone X rounded corners and notch in landscape-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+
+      <title>
+Development builds - dosbox-staging
+</title>
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;print.css" media="print">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;poole.css">
+      <link rel="stylesheet" href="https:&#x2F;&#x2F;dosbox-staging.github.io&#x2F;hyde.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+      
+
+      
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+
+      <meta property="og:image" content="https://dosbox-staging.github.io/square-splash.png" />
+      <meta property="og:site_name" content="dosbox-staging.github.io" />
+      <meta property="og:type" content="object" />
+      
+      <meta property="og:title" content="Development builds">
+      <meta property="og:url" content="https://dosbox-staging.github.io/downloads/devel/" />
+      
+      <meta property="og:description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+
+      <style type="text/css">
+      <!--
+      .youtube > iframe { width: 640px; height: 350px; }
+      pre { overflow-x: auto; }
+      -->
+      </style>
+
+
+<script>
+<!--
+
+function set_build_version(gh_api_artifacts, os_name) {
+    fetch(gh_api_artifacts)
+        .then(response => {
+            if (response.status !== 200)
+                return;
+
+            response.json().then(data => {
+                let changelog = data.artifacts
+                    .find(a => a.name.startsWith("changelog-"));
+
+                if (changelog === undefined)
+                    return;
+
+                let n = changelog.name.length;
+                let version = changelog.name.substring(10, n - 4);
+                let version_el = document.getElementById(os_name + "-build-version");
+                version_el.textContent = version;
+            });
+        })
+        .catch(err => {
+            console.log('Fetch Error :-S', err);
+        });
+}
+
+// Fetch build status using GitHub API and update HTML
+function set_ci_status(workflow_file, os_name, description, page = 1) {
+
+    // GitHub has strict rate-limits for anonymous users: 60 requests per hour;
+    // We request 100 results per page (max allowed); main builds are very
+    // likely to be included in the first page anyway.
+    if (page > 10) {
+        return;
+    }
+
+    let per_page = 100;
+    let gh_api_url = "https://api.github.com/repos/dosbox-staging/dosbox-staging/";
+    fetch(gh_api_url + "actions/workflows/" + workflow_file + "/runs" +
+          "?page=" + page + "&per_page=" + per_page)
+        .then(response => {
+
+            // Handle HTTP error
+            if (response.status !== 200) {
+                console.log("Looks like there was a problem." +
+                            "Status Code: " + response.status);
+                return;
+            }
+
+            response.json().then(data => {
+
+                // console.log(data.workflow_runs);
+
+                let status = data.workflow_runs
+                    .filter(run => run.head_branch == "main")
+                    .filter(run => run.event == "push")
+                    .find(run => run.conclusion == "success");
+
+                // If result not found, query the next page
+                if (status == undefined) {
+                    set_ci_status(workflow_file, os_name, page + 1);
+                    return;
+                }
+
+                // Update HTML elements
+                let build_link = document.createElement("a");
+                build_link.textContent = description;
+                build_link.setAttribute("href", status.html_url);
+                let build_link_tr_el = document.getElementById(os_name + "-build-link");
+                build_link_tr_el.innerHTML = '';
+                build_link_tr_el.appendChild(build_link);
+
+                let build_date = new Date(status.updated_at);
+                let date_el = document.getElementById(os_name + "-build-date");
+                date_el.textContent = build_date.toUTCString();
+
+                set_build_version(status.artifacts_url, os_name);
+            });
+        })
+        .catch(err => {
+            console.log('Fetch Error :-S', err);
+        });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    set_ci_status("linux.yml", "linux", "Linux");
+    set_ci_status("macos.yml", "macos", "macOS");
+    set_ci_status("windows-msys2.yml", "msys2", "Windows MSYS2 builds");
+    set_ci_status("windows-msvc.yml", "windows", "Windows MSVC builds");
+});
+
+-->
+</script>
+
+
+    </head>
+
+    <body class=" ">
+        
+            <div class="sidebar">
+                <div class="container sidebar-sticky">
+                    <div class="sidebar-about">
+                        
+<div style="text-align:center">
+<a href="/">
+    <img src="/dosbox-staging.svg" style="width:90%; max-width:8em; display:inline;"/>
+</a>
+</div>
+    <p class="lead" style="font-size:0.95rem">
+    <span style="font-weight:bold">DOSBox Staging</span> is a
+    modern continuation of DOSBox with advanced features
+    and current development practices. <a href="/about/">Read&nbsp;more</a>.
+    </p>
+    
+
+                    </div>
+
+                    <ul class="sidebar-nav">
+                        
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;linux&#x2F;">Downloads (Linux)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;windows&#x2F;">Downloads (Windows)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;macos&#x2F;">Downloads (macOS)</a></li>
+                        
+                        <li class="sidebar-nav-item"><a href="&#x2F;downloads&#x2F;devel&#x2F;">Development builds</a></li>
+                        
+                        
+                    </ul>
+
+                    
+<div style="font-size:0.7rem">
+<a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a>
+·
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki">Wiki</a>
+·
+<a href="https://discord.gg/WwAg3Xf">Discord</a>
+·
+<a href="https://opencollective.com/dosbox-staging">OpenCollective</a>
+·
+<a href="/rss.xml">RSS</a>
+</div>
+
+                </div>
+            </div>
+        
+
+        <div class="content container">
+            
+
+<div class="post">
+    <h1 class="post-title">Development builds</h1>
+    <p> These are unstable development snapshots
+        intended for testing and showcasing new
+        features; if you want to download a stable
+        build, head on to <a href="/downloads/linux/">Linux</a>,
+        <a href="/downloads/windows/">Windows</a>,
+        or <a href="/downloads/macos/">macOS</a> download pages. </p>
+    <p>
+        <em>Build artifacts are hosted on GitHub; you need to be logged in to
+          download them.</em>
+    </p>
+
+    <table>
+      <tr>
+        <th>Download link</th>
+        <th>Build version</th>
+        <th>Date</th>
+      </tr>
+      <tr>
+        <td id="linux-build-link">
+          <img style="margin:auto;margin-left:0.1em;" src="/dots.svg" />
+        </td>
+        <td id="linux-build-version">-</td>
+        <td id="linux-build-date">-</td>
+      </tr>
+      <tr>
+        <td id="macos-build-link">
+          <img style="margin:auto;margin-left:0.1em;" src="/dots.svg" />
+        </td>
+        <td id="macos-build-version">-</td>
+        <td id="macos-build-date">-</td>
+      </tr>
+      <tr>
+        <td id="msys2-build-link">
+          <img style="margin:auto;margin-left:0.1em;" src="/dots.svg" />
+        </td>
+        <td id="msys2-build-version">-</td>
+        <td id="msys2-build-date">-</td>
+      </tr>
+      <tr>
+        <td id="windows-build-link">
+          <img style="margin:auto;margin-left:0.1em;" src="/dots.svg" />
+        </td>
+        <td id="windows-build-version">-</td>
+        <td id="windows-build-date">-</td>
+      </tr>
+    </table>
+
+    <h2 id="installation-notes">Installation notes</h2>
+<p>Testing new features might require manual reset of the configuration
+file.  DOSBox Staging builds use a configuration file named
+<code>dosbox-staging.conf</code> located in:</p>
+<table>
+  <tr>
+    <td>Linux</td>
+    <td><code>~/.config/dosbox/</code></td>
+  </tr>
+  <tr>
+    <td>Windows</td>
+    <td><code>C:\Users\USERNAME\AppData\Local\DOSBox\</code></td>
+  </tr>
+  <tr>
+    <td>macOS</td>
+    <td><code>~/Library/Preferences/DOSBox/</code></td>
+  </tr>
+</table>
+<h3 id="linux">Linux</h3>
+<p>Tarball contains dynamically-linked x86_64 build, you'll need additional
+dependencies installed via your package manager.</p>
+<pre><code># Fedora
+sudo dnf install SDL2 SDL2_image SDL2_net opusfile
+</code></pre>
+<p><em></em></p>
+<pre><code># Debian, Ubuntu
+sudo apt install libsdl2-2.0-0 libsdl2-image-2.0-0 libsdl2-net-2.0-0 libopusfile0
+</code></pre>
+<p><em></em></p>
+<pre><code># Arch, Manjaro
+sudo pacman -S sdl2 sdl2_image sdl2_net opusfile
+</code></pre>
+<h3 id="windows">Windows</h3>
+<p>Windows executables in a snapshot packages are not signed, therefore Windows 10
+might prevent the program from starting.</p>
+<p>See <a href="/downloads/windows/#ms-ss">this guide</a> to learn how to deal with this.</p>
+<h3 id="macos">macOS</h3>
+<p>macOS app bundle is not notarized; Apple Gatekeeper  will try to prevent
+dosbox‑staging from running.</p>
+<p>See <a href="/downloads/macos/#apple-gatekeeper">this guide</a> to learn how to deal with
+this.</p>
+
+</div>
+
+
+<div style="text-align:center; font-size:0.70rem;">
+<div>
+	<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration:none">
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" />
+		<img alt="Creative Commons License" style="width:2em; display:inline-block; border:0; margin:0" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" />
+	</a>
+</div>
+<div>
+	Content on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+</div>
+<div>
+	DOSBox Staging is licensed under a <a href="https://www.gnu.org/licenses/gpl-2.0.html">GNU GPL version 2 or later</a>.
+</span>
+</div>
+
+        </div>
+
+    </body>
+
+</html>
