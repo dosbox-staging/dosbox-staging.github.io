@@ -439,6 +439,11 @@ sha256: 3680cbdf7a91467877b51c95e468ef45<wbr/>b186b42518c3163fab85c727923ee659
 </small></p>
 <p>Check out the <a href="../release-notes/0.80.1/">0.80.1 release notes</a> to learn about
 the changes and improvements introduced by this release.</p>
+<p>For 32-bit Windows 7 and later, and for 64-bit Windows 7 hosts use the MSVC <a class="headerlink" href="#development-snapshot-builds" title="Development snapshot builds">snapshot builds</a>.
+The 64-bit MSVC build on Windows 7 and later also can be optionally selected in the installer.</p>
+<p>Windows Vista hosts are supported out-of-the-box up to release 0.78.1. 
+Subsequent releases can be <a href="https://github.com/dosbox-staging/dosbox-staging/blob/main/docs/build-windows.md#build-using-msys2">build from source</a> by excluding FluidSynth (MIDI) and Slirp (NE2000) via:
+MSYS2 Clang build with step 8 command "<small>meson setup -Duse_fluidsynth=false -Duse_slirp=false build/release-clang --native-file=.github/meson/native-clang.ini</small>"</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>If Windows 8.x or Windows 10 prevents you from running DOSBox Staging via
