@@ -1,0 +1,1168 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices." name="description"/>
+<meta content="DOSBox Staging Authors" name="author"/>
+<link href="https://https:/dosbox-staging.github.io/getting-started/dark-forces/" rel="canonical"/>
+<link href="../beneath-a-steel-sky/" rel="prev"/>
+<link href="../next-steps/" rel="next"/>
+<link href="../../assets/images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>Star Wars: Dark Forces - DOSBox Staging</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#star-wars-dark-forces">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<!-- Determine class according to configuration -->
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="" class="md-header__inner md-grid">
+<!-- Link to home -->
+<a aria-label="DOSBox Staging" class="md-header__button md-logo" data-md-component="logo" href="../.." title="DOSBox Staging">
+<img alt="logo" src="../../assets/images/dosbox-staging-nobg.svg"/>
+</a>
+<!-- Button to open drawer -->
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<!-- Header title -->
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+</div>
+</div>
+</div>
+<!-- Button to open search modal -->
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Navigation tabs (sticky) -->
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../downloads/windows/">
+        Downloads
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
+        Getting started
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../get-involved/">
+        Get involved
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../about/">
+        About
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+      Wiki
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DOSBox Staging" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="DOSBox Staging">
+<img alt="logo" src="../../assets/images/dosbox-staging-nobg.svg"/>
+</a>
+    DOSBox Staging
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Downloads
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Downloads
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/windows/">
+        Windows
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/macos/">
+        macOS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/linux/">
+        Linux
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/development-builds/">
+        Development builds
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          Release notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_5">
+<span class="md-nav__icon md-icon"></span>
+          Release notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.80.1/">
+        0.80.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.80.0/">
+        0.80.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.79.1/">
+        0.79.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.79.0/">
+        0.79.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.78.1/">
+        0.78.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.78.0/">
+        0.78.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.77.1/">
+        0.77.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.77.0/">
+        0.77.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.76.0/">
+        0.76.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.2/">
+        0.75.2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.1/">
+        0.75.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.0/">
+        0.75.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.0-rc1/">
+        0.75.0-RC1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../prince-of-persia/">
+        Setting up Prince of Persia
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../enhancing-prince-of-persia/">
+        Enhancing Prince of Persia
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../passport-to-adventure/">
+        Passport to Adventure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../beneath-a-steel-sky/">
+        Beneath a Steel Sky
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Star Wars: Dark Forces
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Star Wars: Dark Forces
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-the-game">
+    Installing the game
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autotype">
+    Autotype
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#display-refresh-rate">
+    Display refresh rate
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vertical-syncing">
+    Vertical syncing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-the-emulated-cpu-speed">
+    Setting the emulated CPU speed
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-general-midi-sound">
+    Setting up General MIDI sound
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamic-range-compression">
+    Dynamic range compression
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reverse-stereo">
+    Reverse stereo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#minimising-audio-glitches">
+    Minimising audio glitches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#final-configuration">
+    Final configuration
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../next-steps/">
+        Next steps
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../get-involved/">Get involved</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Get involved
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../get-involved/code-of-conduct/">
+        Code of conduct
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../about/">About</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+        Wiki
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-the-game">
+    Installing the game
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#autotype">
+    Autotype
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#display-refresh-rate">
+    Display refresh rate
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#vertical-syncing">
+    Vertical syncing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-the-emulated-cpu-speed">
+    Setting the emulated CPU speed
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-up-general-midi-sound">
+    Setting up General MIDI sound
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dynamic-range-compression">
+    Dynamic range compression
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reverse-stereo">
+    Reverse stereo
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#minimising-audio-glitches">
+    Minimising audio glitches
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#final-configuration">
+    Final configuration
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="star-wars-dark-forces">Star Wars: Dark Forces<a class="headerlink" href="#star-wars-dark-forces" title="Permanent link">¶</a></h1>
+<p>We will continue our trend of featuring a disproportionate amount of LucasArts
+games in our guide. The game we’ll tackle next is the <a href="https://en.wikipedia.org/wiki/Star_Wars:_Dark_Forces">Star Wars: Dark
+Forces</a> demo from 1995,
+an example of the first-person shooter (FPS) genre, featuring fast
+software-rendered 3D graphics.</p>
+<h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">¶</a></h2>
+<p>As per our usual routine, we’ll create a new folder in <code>DOS Games</code> called
+<code>Dark Forces</code>, and the <code>drives/c</code> subfolder in it. The <a href="https://archive.org/details/StarWarsDarkForces">game demo</a> comes in
+three ZIP archives,
+<a href="https://archive.org/download/StarWarsDarkForces/dforces1.zip">dforces1.zip</a>,
+<a href="https://archive.org/download/StarWarsDarkForces/dforces2.zip">dforces2.zip</a>,
+and <a href="https://archive.org/download/StarWarsDarkForces/dforces3.zip">dforces3.zip</a>;
+we’ll need to copy their contents to our virtual C drive. Make sure to
+download the <a href="https://archive.org/details/dark-forces-manual">manual</a> as well.</p>
+<p>There’s a <code>README.TXT</code> included with the demo, it’s recommended to read at
+least the installation and the keyboard shortcuts sections (use <code>more
+README.TXT</code>). The instructions tell us exactly what we need to do (this is why
+you should always check out the included text files):</p>
+<div class="highlight"><pre><span></span><code>I) INSTRUCTIONS FOR INSTALLING AND RUNNING DARK FORCES DEMO:
+
+1. Create a directory for the demo on your hard drive.
+   (ex. C:\DFDEMO)
+
+2. Extract the demo using PKUNZIP.EXE into the demo
+   directory.  If you have downloaded one or both of
+   the cutscene files, then unzip them as well.
+
+3. From the demo directory, type "demo" and  RETURN. This will
+   bring you to the install menu. From the install menu, follow
+   the on-screen instructions. Press "I" to install. This will
+   take you through through the sound card setup program. When
+   the install is finished it will bring you to the options
+   menu. From there you type "1" to run Dark Forces. In the
+   future, in order to get to the options menu, you should
+   type "demo" from the your demo directory.
+</code></pre></div>
+<p>We actually don’t need that <code>DFDEMO</code> folder, and we’ve already extracted the
+contents of the three ZIP archives to our root directory on drive C, so just
+follow the instructions in step 3. Choose the <em>Express Setup</em> option in the
+sound configuration utility by pressing <span class="keys"><kbd class="key-e">E</kbd></span>, and the rest should be
+straightforward. The setup program will detect the Sound Blaster 16 correctly
+and will even play some test sounds.</p>
+<p>After the setup has been completed, start the game by running <code>demo</code> again
+and then pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-dark-forces-ingame/dark-forces-ingame.png"><img alt="Star Wars: Dark Forces -- Opening scene" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-dark-forces-ingame/dark-forces-ingame.png"/></a></p>
+<figcaption>
+<p>Star Wars: Dark Forces — Opening scene
+  </p>
+</figcaption>
+</figure>
+<h2 id="autotype">Autotype<a class="headerlink" href="#autotype" title="Permanent link">¶</a></h2>
+<p>Having to press the <span class="keys"><kbd class="key-1">1</kbd></span> key every time we start the game is not the end of
+the world, but it’s not great either. Luckily, there’s a way to automate that;
+the handy <code>autotype</code> DOSBox Staging command can simulate keypresses as implied
+by its name. This is what we need to put into our <code>[autoexec]</code> section to
+start the game without manual intervention:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">[autoexec]</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="na">c</span><span class="o">:</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="na">autotype -w 0.5 1</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="na">demo</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="na">exit</span>
+</code></pre></div>
+<p>The first <code>-w 0.5</code> argument of the <code>autotype</code> command specifies an initial 0.5
+second wait time before the “auto-typing” begins. This is followed by the <code>1</code>
+argument which will simulate pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.</p>
+<p>That’s it! It’s a simple but very useful feature. Run <code>autotype /?</code> to see the
+full list of available options and check out the list of <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/AUTOTYPE-Candidates">AUTOTYPE
+candidates</a>
+on our wiki for assorted real-life examples.</p>
+<h2 id="display-refresh-rate">Display refresh rate<a class="headerlink" href="#display-refresh-rate" title="Permanent link">¶</a></h2>
+<p>Dark Forces uses the 320×200 / 256-colour VGA screen mode, just like the
+majority of DOS games from the 90s. This mode uses a fixed 70 Hz screen
+refresh rate, so if your emulated CPU is fast enough, you can get 70 FPS out
+of the game.</p>
+<p>But there’s a problem: most modern non-variable refresh rate flat screens work
+at fixed 60 Hz. Luckily, DOSBox Staging intelligently times and drops frames
+if there’s a mismatch between the refresh rate of the <em>emulated</em> graphics
+card and the <em>actual</em> refresh rate of your physical monitor. In most cases,
+this works fine out of the box without you needing to configure anything.</p>
+<p>However, even though DOSBox Staging is trying to do its best in such
+situations, refresh rates will always result in some visible unevenness of
+motion. This is especially noticeable in games that feature smooth scrolling
+(e.g., shoot’em up games, platformers, and pinball games), and in fast-paced
+3D games, such as Dark Forces.</p>
+<p>To achieve smoother motion, we have two options:</p>
+<ul>
+<li>
+<p>Using a <strong>variable-refresh rate (VRR) monitor</strong> — Nvidia G-Sync, AMD
+  FreeSync, VESA AdaptiveSync, and Apple ProMotion certified displays all
+  fall into this category. Any monitor that can continuously vary the
+  refresh rate from about 59 to 71 Hz should do the job. DOSBox Staging
+  automatically takes advantage of such displays by default.</p>
+</li>
+<li>
+<p>Using <strong>specific fixed refresh rates</strong> on non-VRR monitors — Even if
+  you’re not a lucky owner of a VRR display, your monitor might support a
+  fixed 70 Hz refresh rate if you create a custom screen mode for it. This
+  is highly monitor dependent, but there’s no harm in trying it out.</p>
+</li>
+</ul>
+<p>Note, however, that depending on the type of game, the 60/70 Hz mismatch might
+not matter much or at all. For instance, most adventure, strategy, and
+role-playing games rarely have fast-paced graphics; they generally only update
+the screen in the low 5-20 FPS range. Running the monitor at 70 Hz results in
+very little noticeable improvement with these games.</p>
+<p>Another important consideration is that most pre-VGA games don’t feature
+smooth movement in their graphics, so the general unevenness of motion masks
+the slight judder resulting from the 60/70 Hz mismatch.</p>
+<p>For reference, these are the refresh rates of all emulated graphics cards:</p>
+<table>
+<thead>
+<tr>
+<th>Graphics adapter</th>
+<th>Refresh rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SVGA and VESA</td>
+<td>70 Hz or higher — 640×480 or higher extended and VESA modes</td>
+</tr>
+<tr>
+<td>VGA</td>
+<td>60 Hz — 640×480 standard mode only<br/>70 Hz — all other standard modes</td>
+</tr>
+<tr>
+<td>CGA, PCjr, Tandy, EGA</td>
+<td>60 Hz</td>
+</tr>
+<tr>
+<td>Hercules</td>
+<td>50 Hz</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Creating custom 60 and 70 Hz screen modes</p>
+<p>“Custom resolution” is a bit of a misnomer because what we’re after is
+creating a new screen mode that uses your monitor’s native resolution, but
+with a custom <em>refresh rate</em>.</p>
+<p>You can create such custom resolutions using the Nvidia Control Panel or
+with the <a href="https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU">Custom Resolution Utility
+(CRU)</a>
+on Windows. You’ll probably need to enable <em>CVT reduced blanking</em> (CVT-RB
+or CVT-RBv2) to go up to 70 Hz. For the best results, it’s recommended to
+use the exact fractional <strong>59.713 Hz</strong> and <strong>70.086 Hz</strong> refresh rates for
+the nominal “60 Hz” and “70 Hz” DOS rates, respectively.</p>
+<p>The drawback of this approach is that you need to set the appropriate
+custom resolution before starting DOSBox Staging, and if a game switches
+between different refresh rates, well, you’re out of luck—these games
+can only work 100% correctly either on a true VRR display or a real
+old-school CRT monitor. However, most games only use a single fixed
+refresh rate, which is usually the standard 70 Hz VGA rate, so this
+technique is still very practical.</p>
+</div>
+<h2 id="vertical-syncing">Vertical syncing<a class="headerlink" href="#vertical-syncing" title="Permanent link">¶</a></h2>
+<p>Dark Forces synchronises its screen updates to the refresh rate of the
+emulated VGA card, which is always 70 Hz. This is hardcoded behaviour that
+cannot be disabled in the game’s configuration.</p>
+<p>DOSBox Staging itself also uses vertical syncing by default to synchronise
+updating the emulated image to the vertical refresh rate of your physical
+monitor. Without DOSBox-level vsync, fast-paced games such as this one would
+exhibit a lot of tearing. This is important to understand: to get zero
+tearing, vertical syncing <em>must</em> be happening both in the game <em>and</em> at the
+DOSBox level!</p>
+<p>Conversely, DOSBox-level vsync only means that the <em>emulated</em> image is output
+to your physical monitor without flickering and tearing; the emulated DOS game
+<em>itself</em> might or might not use vertical syncing, and thus might or might not
+produce tearing artifacts of its own (these artifacts are present when running
+the game on real hardware too—there’s nothing we can do about them).</p>
+<p>You don’t have control over the vertical syncing behaviour in most DOS games.
+For example, Commander Keen 4–6, Doom, and many other FPS games have
+hardcoded vsync with a fixed 35 FPS cap. These games were programmed with
+fixed refresh rates in mind from the ground up; trying to disable the vsync or
+altering the FPS cap would completely break them (but the good news is you
+can’t do that anyway).</p>
+<p>To recap, the following variations are possible when it comes to vsync:</p>
+<div class="compact vsync">
+<table>
+<thead>
+<tr>
+<th>Game uses vsync?</th>
+<th>DOSBox-level vsync enabled?</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yes</td>
+<td>yes</td>
+<td>no tearing</td>
+</tr>
+<tr>
+<td>no</td>
+<td>yes</td>
+<td>some tearing; also present on real hardware</td>
+</tr>
+<tr>
+<td>yes</td>
+<td>no</td>
+<td>bad tearing (in fast-paced games)</td>
+</tr>
+<tr>
+<td>no</td>
+<td>no</td>
+<td>very bad double-tearing (in fast-paced games)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<style>
+.vsync th:nth-child(3) {
+  width: 58%;
+}
+</style>
+<p>As you can see, there is no point in disabling vsync in DOSBox itself, and
+even with DOSBox vsync enabled you might still get tearing in some games, but
+that’s just how the games were coded. We can’t “fix” that at the emulator
+level; that would require making changes to the games’ code. On the other
+hand, that’s the “authentic DOS experience” for you! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:"/></p>
+<h2 id="setting-the-emulated-cpu-speed">Setting the emulated CPU speed<a class="headerlink" href="#setting-the-emulated-cpu-speed" title="Permanent link">¶</a></h2>
+<p>Hardware-accelerated 3D graphics only became widespread in the second half of
+the 90s after the end of the DOS era, so most DOS games only use software
+rendering. Dark Forces is no exception, which means your emulated CPU needs to
+be fast enough to reach the 70 FPS maximum the game supports.</p>
+<p>The game prints out the familiar message of the DOS/4GW DOS extender at
+startup, which means this is a
+<a href="../beneath-a-steel-sky/#real-and-protected-mode">protected mode game</a>:</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>DOS/4GW Protected Mode Run-Time  Version 1.95
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>Copyright (c) Rational Systems, Inc. 1990-1993
+</code></pre></div>
+<p>As we’ve learnt, protected mode games default to using all available CPU
+power. While this will most likely help achieve a stable 70 FPS (if your
+computer is powerful enough), running the CPU at maximum speed could starve
+the audio emulation, leading to audible glitches, clicks, and pops.</p>
+<p>To avoid such issues, it’s much preferable to emulate a CPU that is
+powerful enough to handle 70 FPS but not more. One way to come up with a good
+cycles number is to start the game with a relatively low cycles setting, say
+10 000, then keep increasing it with the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> shortcut
+(<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> on the Mac) while playing to arrive at the lowest value that
+results in adequate performance. As a reminder, you can decrease the current
+cycles value too with the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f11">F11</kbd></span> (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f11">F11</kbd></span>) shortcut.</p>
+<p>So let’s add the following to our config:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">[cpu]</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10000</span>
+</code></pre></div>
+<p>Start the game and hold the <span class="keys"><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-arrow-right">Right</kbd></span> key to keep turning around,
+then increase the cycles value until the motion becomes smooth (again, unless
+you’re using a VRR monitor or a fixed 70 Hz refresh rate, it will never become
+completely smooth). Somewhere around 50 000 cycles seems to do the
+trick, which roughly corresponds to a Pentium 90 based on our <a href="../beneath-a-steel-sky/#finding-the-correct-speed-for-a-game">table of
+common
+processors</a>.</p>
+<p>So we’ll go with that setting. You might need to increase this if later levels
+are more demanding on the CPU, but this is a good starting point:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">[cpu]</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50000</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Running out of steam</p>
+<p>As you keep increasing the fixed cycles value, the audio will start
+breaking up, and the motion will become very stuttery after a certain
+point. This means you’re trying to emulate a faster CPU than your computer
+can handle. If you’re on a less powerful machine, this unfortunately can
+happen before reaching the minimum cycles value necessary for a smooth and
+stable 70 FPS.</p>
+<p>You have only two options in this situation: live with a lower cycles
+setting that results in less than 70 FPS, or buy a more powerful computer
+with a faster processor that can handle higher cycles values.</p>
+<p>Also, make sure you’re not running any other CPU-intensive programs at the
+same time in the background. Virus scanners, backup software, copying
+large files to USB storage, heavy network traffic, and even ordinary web
+browsers with many tabs open can chew up a significant part of your total
+CPU power. Certain popular chat programs can be very demanding on the CPU
+too, and, surprisingly, even innocent-looking stuff such as automatic
+wallpaper changers can have negative effects on the performance of DOSBox.</p>
+<p>As a general rule, it’s best to close all other programs if you’re
+encountering performance issues with DOSBox and try again. Just apply
+common sense and treat DOSBox as any other performance-intensive modern
+game.</p>
+</div>
+<h2 id="setting-up-general-midi-sound">Setting up General MIDI sound<a class="headerlink" href="#setting-up-general-midi-sound" title="Permanent link">¶</a></h2>
+<p>Our previous example game, Beneath A Steel Sky, supports the Roland MT-32 MIDI
+sound module to provide more realistic-sounding music than what the Sound
+Blaster’s OPL synthesiser is capable of. Dark Forces, however, was composed
+for a newer family of MIDI sound modules that support the so-called <strong>General
+MIDI standard</strong>.</p>
+<p>DOSBox Staging comes with an integrated General MIDI compliant synthesiser
+called FluidSynth. Unlike the MT-32 emulation, FluidSynth does not attempt to
+mimic any specific hardware device but a very generic MIDI sound module. This
+sound module doesn’t have any built-in sounds—you need to load so-called
+<strong>SoundFont files</strong> (<code>.sf2</code> extension) into FluidSynth to get any sound out of
+it; these contain the instrument definitions and the sound data.</p>
+<p>You can read more about the history of MIDI in DOS gaming at the end of this
+section, but the short practical summary is as follows:</p>
+<ul>
+<li>
+<p>The Roland Sound Canvas SC-55 was the de-facto standard General MIDI sound
+  module until the very end of the DOS years (around 1997).</p>
+</li>
+<li>
+<p>DOSBox Staging does not emulate the SC-55 directly, but there are SoundFonts
+  you can load into FluidSynth that approximate the sound of the SC-55.</p>
+</li>
+</ul>
+<p>One extra detail is that Roland went a bit beyond the General MIDI standard in
+their Sound Canvas series; these modules actually support the <strong>GS standard</strong>,
+which is basically General MIDI plus some Roland-specific enhancements. Many
+games use these extra features, and while General MIDI compatible SoundFonts
+will work with them, for the best results it’s recommended to use GS standard
+compatible ones.</p>
+<p>One such SoundFont is <a href="https://schristiancollins.com/generaluser.php">GeneralUser GS</a>;
+download the latest version, then copy the SoundFont file with the <code>.sf2</code>
+extension into its designated folder:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th><!-- --></th>
+<th><!-- --></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Windows</strong></td>
+<td><code>C:\Users\%USERNAME%\AppData\Local\DOSBox\soundfonts\</code></td>
+</tr>
+<tr>
+<td><strong>macOS</strong></td>
+<td><code>~/Library/Preferences/DOSBox/soundfonts/</code></td>
+</tr>
+<tr>
+<td><strong>Linux</strong></td>
+<td><code>~/.config/dosbox/soundfonts</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The next step is to configure DOSBox Staging to use this SoundFont for General
+MIDI playback. The name of the SoundFont might be slightly different if a new
+version has been released since the writing of this guide; make sure you use
+the correct filename for the <code>soundfont</code> setting.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">[midi]</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">fluidsynth</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">[fluidsynth]</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="na">soundfont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"GeneralUser GS v1.471.sf2"</span>
+</code></pre></div>
+<p>The only thing left to do is to reconfigure the game to use General MIDI for
+music:</p>
+<ul>
+<li>
+<p>Comment out the <code>autotype</code> command in the <code>[autoexec]</code> section and restart
+  DOSBox.</p>
+</li>
+<li>
+<p>Press <span class="keys"><kbd class="key-3">3</kbd></span> in the startup menu to reconfigure the sound settings, then
+  <span class="keys"><kbd class="key-c">C</kbd></span> to do a custom setup.</p>
+</li>
+<li>
+<p>Enter the <em>Advanced Menu</em> (it’s above <em>Quit</em> at the bottom).</p>
+</li>
+<li>
+<p>Select the <em>General MIDI</em> device for <em>Music</em>, and select the default <code>330</code>
+  value for the <em>Port</em> setting.</p>
+</li>
+<li>
+<p>The <em>Digital Sound</em> settings don’t need changing as our Sound Blaster 16 has
+  been auto-detected correctly.</p>
+</li>
+</ul>
+<p>The final configuration should look like this:</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/dark-forces-midi.png"><img alt="Star Wars: Dark Forces setup --- Advanced sound settings" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/dark-forces-midi.png" width="80%"/></a></p>
+</figure>
+<p>Press <span class="keys"><kbd class="key-enter">Enter</kbd></span> on the <em>Test Music</em> menu item and you should hear the start of
+the Imperial March playing with much more realistic instruments!</p>
+<div class="admonition important">
+<p class="admonition-title">How to drive a manual</p>
+<p>Note that if you try to use <em>Detect</em> in the <em>Music</em> section, the
+auto-detection will fail and the <em>Music</em> option will revert to <em>None</em>.
+This can happen with some setup utilities, therefore it’s important to
+know that the port of the General MIDI device must be set to <strong>330</strong>,
+should the auto-detection fail. This is sometimes called the <em>MPU-401
+port</em>, <em>MPU port</em>, or just <em>MIDI port</em>.</p>
+<p>Similarly, most games can auto-detect the Sound Blaster settings, but
+sometimes you need to enter them manually. The default DOSBox settings are
+port (I/O address) <strong>220</strong>, IRQ (interrupt) <strong>7</strong>, and DMA channel <strong>1</strong>.</p>
+</div>
+<p>It’s worth watching the whole intro at this point to appreciate how much more
+realistic the General MIDI rendition of this orchestral piece sounds compared
+to the OPL synth.</p>
+<p>Of course, you can always try other GM or GS compatible SoundFonts
+too—that’s the beauty of General MIDI!
+<a href="https://musical-artifacts.com/artifacts/749">FluidR3_GS</a> and
+<a href="https://archive.org/download/free-soundfonts-sf2-2019-04/Creative%20Labs%204M%20GM_4gmgsmt.sf2">Creative Labs 4M GM_4gmgsmt</a>
+are good candidates as they sound fairly close to the SC-55 sound set. The
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#soundfonts">list of recommended SoundFonts</a>
+on our wiki should also give you some further pointers on which SoundFonts
+are worth trying and where to find them.</p>
+<p>Note that while some SoundFonts, such as GeneralUser GS, give you overall good
+results in most games, other SoundFonts might excel in a handful of titles and
+sound terrible in others. To give you an idea, here’s how the intro music
+sounds on the original Roland SC-55 hardware versus a few different
+SoundFonts. As mentioned, GeneralUser GS and Creative 4GMGSMT are the closest
+in terms of overall balance and character, the rest are rather hit-and-miss.
+My advice: just pick one that gives you good overall results and stick with
+it.</p>
+<p>Further comparison recordings can be found on <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#comparison-recordings">our wiki</a>.</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th><!-- --></th>
+<th><!-- --></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Roland SC-55 v1.21 (hardware)</strong></td>
+<td><audio controls="" src="https://archive.org/download/FluidSynth-MIDI-Comparison/dark-forces-intro-sc-55-v1.21.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>GeneralUser GS</td>
+<td><audio controls="" src="https://archive.org/download/FluidSynth-MIDI-Comparison/dark-forces-intro-generaluser-gs.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Creative 4GMGSMT</td>
+<td><audio controls="" src="https://archive.org/download/FluidSynth-MIDI-Comparison/dark-forces-intro-creative-4gmgsmt.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>FluidR3</td>
+<td><audio controls="" src="https://archive.org/download/FluidSynth-MIDI-Comparison/dark-forces-intro-fluidr3-gm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>FatBoy</td>
+<td><audio controls="" src="https://archive.org/download/FluidSynth-MIDI-Comparison/dark-forces-intro-fatboy.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Arachno</td>
+<td><audio controls="" src="https://archive.org/download/FluidSynth-MIDI-Comparison/dark-forces-intro-arachno.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Turn it down, please!</p>
+<p>Some SoundFonts are <em>way</em> too loud; if you encounter such a SoundFont,
+you’ll most likely want to lower the output level of FluidSynth. For
+example, to scale back the volume to 40%, use the <code>mixer fsynth 40</code>
+command. A few SoundFonts are <em>extremely loud</em>—you need to turn the
+FluidSynth volume down to 10-20% to get usable levels. It’s a mystery what
+the authors were thinking…</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Roland MT-32 is not General MIDI</p>
+<p>Do not confuse the Roland MT-32 family of MIDI sound modules with General
+MIDI modules! Music composed for the MT-32 sounds <em>utterly wrong</em> on a
+General MIDI module, and vice versa. Yes, they both have “MIDI” in their
+names, but that only refers to the communication protocol. The MT-32 range
+of devices are fully programmable synthesisers and most games take
+advantage of their sound-shaping capabilities, while the General MIDI
+modules have much more modest synthesis capabilities, but feature more
+realistic-sounding real-world instruments (the soundtrack of Dark Forces
+showcases this very well—you just can’t get such realistic orchestral
+music out of an MT-32).</p>
+<p>Whenever you want to configure a new game for MIDI sound, you should
+consult the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">list of MT-32-compatible computer games</a>
+to see if the game was originally composed for the MT-32 or a General MIDI
+device (typically the SC-55). The original game manuals very rarely give
+you this info, so you <em>absolutely</em> need this list that contains the
+hard-earned knowledge of many decades of research and testing.</p>
+<p>Quite confusingly, there’s an alarmingly large list of games that falsely
+claim MT-32 compatibility in their setup utility, but they in fact require
+a General MIDI module to sound correct. Before you configure any game for
+MT-32 sound, you should definitely check the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games#Games_that_falsely_claim_MT-32_compatibility">list of games that falsely
+claim MT-32 compatibility</a>
+too, no matter what the game’s manual says (quite often, the information
+contained therein is simply wrong).</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">A brief history of MIDI in DOS gaming</p>
+<p>In the beginning, the iconic Roland MT-32 family of devices were the only
+MIDI sound modules available for DOS games that made realistic-sounding
+music a possibility. The original MT-32 was released in 1987, and its
+hegemony ended in 1991 with Roland unleashing its successor, the similarly
+iconic Roland Sound Canvas SC-55.</p>
+<p>The SC-55 was another pioneering effort that shaped DOS gaming history in
+significant ways: it was the world’s first device to support the <em>General
+MIDI</em> standard and the <em>GS standard</em> (the latter being Roland’s
+vendor-specific General MIDI extensions). MIDI in the broadest sense only
+defines a communication mechanism between MIDI-capable devices (e.g., a
+sound module and your computer), but remains silent on how the different
+instruments should <em>sound</em>. General MIDI (GM) remedied this with its 128
+standard instrument definitions; for example, you can be sure that on any
+GM-compliant module instrument #1 is the Acoustic Grand Piano and
+instrument #36 is the Fretless Bass.</p>
+<p>This made interoperation between GM-compliant devices possible. In theory,
+you could use any General MIDI sound module with any GM-compliant game,
+and you would get music, and it would sound <em>mostly</em> correct. In practice,
+that “mostly” part is highly variable and it depends on the musical
+composition and the particular sound module in use. The thing is, most
+composers and gamers had the SC-55, establishing it as a de-facto standard
+(understandably, because it was the very first GM module). Other GM sound
+modules can render musical compositions written for the SC-55 unbalanced
+and weird-sounding, depending on how different their instruments sound
+compared to the “standard” SC-55.</p>
+<p>Another thing that makes compatibility difficult to achieve is that the
+SC-55 supports not just the GM but also the GS standard, and many games
+make good use of certain GS-only features. This means that any other
+General MIDI module that claims “Sound Canvas compatibility” also has to
+implement the GS standard in a manner that sounds very close to the SC-55,
+which is not always the case.</p>
+</div>
+<h2 id="dynamic-range-compression">Dynamic range compression<a class="headerlink" href="#dynamic-range-compression" title="Permanent link">¶</a></h2>
+<p>If a game has loud music and you set the output level of your soundcard too
+high, you’ll get rather unpleasant-sounding distortion and crackling on real
+hardware. DOSBox Staging has a dynamic range compressor on the master channel
+that automatically pulls the volume back on loud sounds to prevent such
+distortion from happening.</p>
+<p>You can test this by playing the game for a minute with the GeneralUser GS
+SoundFont. You might notice a slight “pumping” as the compressor pulls the
+volume back on loud sound effects; this dips the volume level of the
+background music as well.</p>
+<p>To hear the distortion caused by the loud sounds clearly, disable the master
+compressor:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">[mixer]</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="na">compressor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+</code></pre></div>
+<p>Overall, the compressor does a good job of preventing audible distortion up to
+a certain point, and most users should not think much about it; it just works.
+But if the master channel is overdriven heavily, the pumping artifacts would
+be rather distracting, so in that case, it’s better to lower the master volume
+with the <code>mixer</code> command (e.g., <code>mixer master 50</code> to set the master volume to
+50%). People who are after the best audio quality should also prefer lowering
+the master volume rather than relying on the compressor.</p>
+<p>The sound output of Dark Forces is on the loud side, so we’ll set the output
+to 50% to make sure the compressor is never engaged:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">[autoexec]</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="na">c</span><span class="o">:</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="na">mixer master 50</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="na">autotype -w 0.5 1</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="na">demo</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="na">exit</span>
+</code></pre></div>
+<h2 id="reverse-stereo">Reverse stereo<a class="headerlink" href="#reverse-stereo" title="Permanent link">¶</a></h2>
+<p>The sound setup utility asks us to confirm whether the left and right audio
+channels should be swapped when setting up digital audio. Weird as it may
+sound, some Sound Blaster models and clones had “reversed stereo” for some
+inexplicable reason. If people used any of these cards during the development
+of a game, the stereo image would be reversed on normal cards, and vice versa.</p>
+<p>Irrespective of the exact reasons, the fact is that some games with stereo
+digital audio support have the left and right channels reversed. In affected
+games, the channels might be reversed on all Sound Blaster variants, or only
+on certain models.</p>
+<p>In the case of Dark Forces, you don’t need to use the “reverse stereo” option
+when emulating a Sound Blaster 16 card (which is the default). However, when
+using the Sound Blaster Pro 1 model (<code>sbtype = sbpro1</code>), the stereo image
+needs to be reversed.</p>
+<p>But what about games that don’t have such a handy “reverse stereo” option in
+their setup utility? For those games, you can simply reverse the left and
+right channels of the <code>SB</code> mixer channel with the <code>mixer sb reverse</code> command.
+(Remember, use <code>mixer /?</code> to list all available commands and options.)</p>
+<h2 id="minimising-audio-glitches">Minimising audio glitches<a class="headerlink" href="#minimising-audio-glitches" title="Permanent link">¶</a></h2>
+<p>Even after setting the optimal cycles value for the game to limit the emulated
+CPU speed, you might still hear occasional audio glitches. Why this can happen
+depends on a lot of factors, but mainly it comes down to the particular
+hardware, driver, and operating system combination you’re using.</p>
+<p>As a last resort, you can try setting larger audio buffers sizes; this usually
+helps eliminate the occasional clicks and pops. The downside of this is that
+it will also increase audio latency, meaning that you’ll hear the audio in
+response to some action with a longer delay (e.g., when shooting with a gun).</p>
+<p>The default <code>blocksize</code> value is 1024 on Windows and 512 on macOS and Linux.
+The default <code>prebuffer</code> size is 25 on Windows and 20 on the other platforms (this
+is specified in milliseconds). You can experiment with increasing these
+settings—doubling them is a good start. Generally, <code>prebuffer</code> can be
+anything, and <code>blocksize</code> should be one of the following values: 256, 512,
+1024, 2048, 4096, or 8192. </p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">[mixer]</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="na">blocksize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="na">prebuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50</span>
+</code></pre></div>
+<h2 id="final-configuration">Final configuration<a class="headerlink" href="#final-configuration" title="Permanent link">¶</a></h2>
+<p>Here’s the full config of Dark Forces set up for General MIDI sound:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">[sdl]</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="na">viewport_resolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1120x840</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="k">[cpu]</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1"># to emulate a Pentium 90</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50000</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="k">[midi]</span>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">fluidsynth</span>
+<a href="#__codelineno-8-11" id="__codelineno-8-11" name="__codelineno-8-11"></a>
+<a href="#__codelineno-8-12" id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="k">[fluidsynth]</span>
+<a href="#__codelineno-8-13" id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="na">soundfont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"GeneralUser GS v1.471.sf2"</span>
+<a href="#__codelineno-8-14" id="__codelineno-8-14" name="__codelineno-8-14"></a>
+<a href="#__codelineno-8-15" id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="k">[autoexec]</span>
+<a href="#__codelineno-8-16" id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="na">c</span><span class="o">:</span>
+<a href="#__codelineno-8-17" id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="na">mixer master 50</span>
+<a href="#__codelineno-8-18" id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="na">autotype -w 0.5 1</span>
+<a href="#__codelineno-8-19" id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="na">demo</span>
+<a href="#__codelineno-8-20" id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="na">exit</span>
+</code></pre></div>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<!-- Footer -->
+<footer class="md-footer">
+<!-- Link to previous and/or next page -->
+<nav aria-label="" class="md-footer__inner md-grid">
+<!-- Link to previous page -->
+<a aria-label="Previous: Beneath a Steel Sky" class="md-footer__link md-footer__link--prev" href="../beneath-a-steel-sky/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Beneath a Steel Sky
+            </div>
+</div>
+</a>
+<!-- Link to next page -->
+<a aria-label="Next: Next steps" class="md-footer__link md-footer__link--next" href="../next-steps/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Next steps
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<!-- Further information -->
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="links">
+<ul>
+<li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+<li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+<li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+</ul>
+</div>
+<div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
+</html>

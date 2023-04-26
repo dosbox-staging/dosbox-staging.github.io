@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices." name="description"/>
+<meta content="DOSBox Staging Authors" name="author"/>
+<link href="https://https:/dosbox-staging.github.io/getting-started/prince-of-persia/" rel="canonical"/>
+<link href="../introduction/" rel="prev"/>
+<link href="../enhancing-prince-of-persia/" rel="next"/>
+<link href="../../assets/images/favicon.ico" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>Setting up Prince of Persia - DOSBox Staging</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+<link href="../../stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#setting-up-prince-of-persia">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<!-- Determine class according to configuration -->
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+<nav aria-label="" class="md-header__inner md-grid">
+<!-- Link to home -->
+<a aria-label="DOSBox Staging" class="md-header__button md-logo" data-md-component="logo" href="../.." title="DOSBox Staging">
+<img alt="logo" src="../../assets/images/dosbox-staging-nobg.svg"/>
+</a>
+<!-- Button to open drawer -->
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<!-- Header title -->
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+</div>
+</div>
+</div>
+<!-- Button to open search modal -->
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<!-- Search interface -->
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<!-- Navigation tabs (sticky) -->
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../downloads/windows/">
+        Downloads
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../introduction/">
+        Getting started
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../get-involved/">
+        Get involved
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../about/">
+        About
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+      Wiki
+    </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="DOSBox Staging" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="DOSBox Staging">
+<img alt="logo" src="../../assets/images/dosbox-staging-nobg.svg"/>
+</a>
+    DOSBox Staging
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Downloads
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Downloads
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/windows/">
+        Windows
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/macos/">
+        macOS
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/linux/">
+        Linux
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/development-builds/">
+        Development builds
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+          Release notes
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_5">
+<span class="md-nav__icon md-icon"></span>
+          Release notes
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.80.1/">
+        0.80.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.80.0/">
+        0.80.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.79.1/">
+        0.79.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.79.0/">
+        0.79.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.78.1/">
+        0.78.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.78.0/">
+        0.78.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.77.1/">
+        0.77.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.77.0/">
+        0.77.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.76.0/">
+        0.76.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.2/">
+        0.75.2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.1/">
+        0.75.1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.0/">
+        0.75.0
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../downloads/release-notes/0.75.0-rc1/">
+        0.75.0-RC1
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Getting started
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Getting started
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/">
+        Introduction
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Setting up Prince of Persia
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Setting up Prince of Persia
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#first-steps">
+    First steps
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-c-drive">
+    The C drive
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#starting-dosbox-staging">
+    Starting DOSBox Staging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-the-game">
+    Installing the game
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#starting-the-game">
+    Starting the game
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auto-executing-commands-at-startup">
+    Auto-executing commands at startup
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../enhancing-prince-of-persia/">
+        Enhancing Prince of Persia
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../passport-to-adventure/">
+        Passport to Adventure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../beneath-a-steel-sky/">
+        Beneath a Steel Sky
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../dark-forces/">
+        Star Wars: Dark Forces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../next-steps/">
+        Next steps
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../get-involved/">Get involved</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Get involved
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../get-involved/code-of-conduct/">
+        Code of conduct
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../about/">About</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          About
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+        Wiki
+      </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#first-steps">
+    First steps
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#the-c-drive">
+    The C drive
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#starting-dosbox-staging">
+    Starting DOSBox Staging
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#installing-the-game">
+    Installing the game
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#starting-the-game">
+    Starting the game
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#auto-executing-commands-at-startup">
+    Auto-executing commands at startup
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="setting-up-prince-of-persia">Setting up Prince of Persia<a class="headerlink" href="#setting-up-prince-of-persia" title="Permanent link">¶</a></h1>
+<h2 id="first-steps">First steps<a class="headerlink" href="#first-steps" title="Permanent link">¶</a></h2>
+<p>We will set up the demo version of <a href="https://www.mobygames.com/game/196/prince-of-persia/">Prince of
+Persia</a>, the classic
+cinematic platformer from 1990 as our first example. It was a landmark game,
+and it can still provide countless hours of entertainment if you like
+platformers that require you to exercise that pesky grey matter a bit too.</p>
+<p>First of all, we’ll create a new folder for storing all our DOS games. We’ll
+use <code>DOS Games</code> throughout this guide, but you can pick any name you like.
+It’s best to create this folder in your regular documents folder so DOSBox
+Staging has full read and write access to it (don’t put it in a system folder,
+e.g., <code>Program Files</code> on Windows). Each game will have its dedicated subfolder
+under <code>DOS Games</code>, so let’s create our first one called <code>Prince of Persia</code>.</p>
+<p>Now download
+<a href="https://www.dosgamesarchive.com/file/prince-of-persia/pop1">pop1.zip</a> from
+the <a href="https://www.dosgamesarchive.com/download/prince-of-persia">Prince of Persia demo
+page</a> and extract
+its contents into <code>DOS Games/Prince of Persia</code>. The archive contains only two
+files: <code>pop1.txt</code> (a regular text file) and <code>pop1demo.exe</code> (an MS-DOS
+executable). Let’s open <code>pop1.txt</code> in our text editor!</p>
+<div class="highlight"><pre><span></span><code>It's like an Arabian Nights movie come to life... with you as the star!
+Leap into an exotic labyrinth of heart-stopping action, challenging mazes,
+intrigue and superb animation that's breathtakingly realistic!
+
+This is a demonstration version which only has limited functionality.  To
+obtain the full program, just access GO BB, and order it from our store.
+</code></pre></div>
+<p>I’m not quite sold on the “heart-stopping” part, but otherwise sounds
+intriguing! As indicated by the second paragraph, this is a fully playable
+demo version that includes only the first two levels of the game. That’s more
+than enough for our purposes here, and you can always get the full game later.</p>
+<p>But there are no further instructions, so what should we do next? Well,
+setting up old DOS games is not all that dissimilar to solving adventure game
+puzzles. Getting past these puzzles requires some logical thinking, a little
+bit of background knowledge, and an element of trial and error is occasionally
+involved as well. Well, the user manual often helps too if you happen to own
+the original, or can procure a <a href="https://ia600809.us.archive.org/29/items/princeofpersia_201708_201708/prince-of-persia_dos_04ra.pdf">scanned copy</a> online (most often
+you can).</p>
+<p>Luckily, this is an easy one: executable files (programs or scripts you can
+start) under MS-DOS have the <code>.EXE</code>, <code>.COM</code> or <code>.BAT</code> file extension, so looking
+at <code>pop1demo.exe</code> the solution is quite obvious: we’ll need to run this
+executable file in DOSBox!</p>
+<h2 id="the-c-drive">The C drive<a class="headerlink" href="#the-c-drive" title="Permanent link">¶</a></h2>
+<p>Most DOS games need a hard drive as a <em>hard requirement</em> (okay, I’ll show
+myself to the door…), but DOSBox doesn’t have access to your computer’s hard
+drive by default where your programs and documents reside—we need to tell it
+which folder to use as its “virtual DOS hard drive”. This is called
+<em>mounting</em>; we <em>mount</em> a folder as the “DOS hard drive”, the contents of which
+are then available to DOSBox as the <em>C drive</em>. All drives in DOS are assigned
+to the letters of the English alphabet (just like in Windows) and the C drive
+is usually your first hard drive.</p>
+<p>The recommended way to mount the C drive is to create a <code>drives</code> subfolder
+inside your game folder. This <code>drives</code> folder is a “magic” folder with a
+special purpose: all its subfolders having single-letter names are
+automatically mounted as DOS drives with the same letter. In our case, we only
+need a single C drive, so we’ll create a <code>c</code> subfolder inside our <code>drives</code>
+folder (technically, it does not make a difference if you use uppercase or
+lowercase <code>C</code> on Windows and macOS; Linux people should use lowercase <code>c</code>).
+We’ll then copy the files from the <code>pop1.zip</code> archive into <code>drives/c</code> to end
+up with the following folder structure:</p>
+<p><img alt="Prince of Persia folder structure" class="skip-lightbox" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/pop-tree1.png" style="width: 14.5rem; margin: 0.9rem max(calc((50% - 14.5rem/2) * 0.85), 0rem);"/></p>
+<div class="admonition note">
+<p class="admonition-title">Origins of the C drive</p>
+<p>Have you ever wondered where the “C drive” in Windows got its name from?
+This is something Windows inherited from its MS-DOS heritage (which in
+turn inherited it from CP/M). In DOS, all drives are assigned letters from
+A to Z. Most computers of the era had two floppy drives, so letters A and
+B were reserved for them or other removable media, and the first hard
+drive partition was usually assigned to the letter C. We no longer have
+floppy drives in our computers as standard equipment, but this tradition
+stuck around for backwards-compatibility reasons.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you’re a Windows user, do not confuse your <em>real</em> C drive where your
+operating system and programs are stored with the “virtual DOS C drive” of
+DOSBox. It is important to understand the distinction between these two as
+they are completely separate concepts—DOSBox will <em>not</em> see the contents
+of your real C drive by default (or the contents of any of your other
+drives, for that matter).</p>
+</div>
+<h2 id="starting-dosbox-staging">Starting DOSBox Staging<a class="headerlink" href="#starting-dosbox-staging" title="Permanent link">¶</a></h2>
+<p>Okay, with our C drive set up and ready to go, the next step is to start
+DOSBox Staging from our <code>DOS Games/Prince of Persia</code> folder. This is
+accomplished slightly differently on each platform:</p>
+<h3>Windows</h3>
+<div class="admonition warning first things first">
+<p class="admonition-title">Warning</p>
+<p>After installing DOSBox Staging, it’s highly recommended to open it once
+using the Start Menu shortcut of the desktop icon <a href="../../downloads/windows/#microsoft-defender-smartscreen">as described
+here</a>, otherwise
+the below instructions might not work.</p>
+</div>
+<p>If you have used the installer with the default options to set up DOSBox
+Staging (and it’s highly recommended to do so while you’re still learning the
+ropes), simply right-click on the <code>Prince of Persia</code> folder in Windows
+Explorer and select the <em>Open with DOSBox Staging</em> in the context menu.</p>
+<p>Alternatively, you can enter the folder, right-click anywhere on the blank
+area inside it, then select <em>Open with DOSBox Staging</em> in the context menu.</p>
+<h3>macOS</h3>
+<div class="admonition warning first things first">
+<p class="admonition-title">Warning</p>
+<p>After installing DOSBox Staging, you <em>must</em> open it first using its
+application icon <a href="../../downloads/macos/#apple-gatekeeper">as described
+here</a>, otherwise the below
+instructions won’t work.</p>
+</div>
+<ol>
+<li>Mount the DOSBox Staging installer <code>.dmg</code> image file.</li>
+<li>Copy the <em>Start DOSBox Staging</em> icon from the appearing window into the
+   <code>Prince of Persia</code> folder.</li>
+<li>Right-click or <span class="keys"><kbd class="key-control">Ctrl</kbd></span>-click the icon, then select the topmost
+   <em>Open</em> menu item.</li>
+<li>A dialog with the following text will appear: <em>macOS cannot verify the
+   developer of “Start DOSBox Staging”. Are you sure you want to open it?</em></li>
+<li>Press the <em>Open</em> button.</li>
+<li>A dialog will open, asking for permission to allow DOSBox Staging access
+   your Documents folder. Click on the <em>OK</em> button.</li>
+</ol>
+<p>You only need to perform this procedure once when opening the <em>Start DOSBox
+Staging</em> icon for the first time. After the first launch, you can use it like
+any other regular icon.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To avoid having to repeat these steps whenever you set up a new game, copy
+an icon on which you have already performed this initial procedure into
+your new game folder, rather than copying the original one from the <code>.dmg</code>
+file.</p>
+</div>
+<h3>Linux</h3>
+<p>Open your favourite terminal, <code>cd</code> into the <code>Prince of Persia</code> directory, then
+run the <code>dosbox</code> command from there.</p>
+<p>Make sure to check with the <code>--version</code> argument that you’re running DOSBox
+Staging and not some other DOSBox variant:</p>
+<div class="highlight"><pre><span></span><code>% dosbox --version
+dosbox-staging, version 0.81.0
+
+Copyright (C) 2020-2022  The DOSBox Staging Team
+License: GNU GPL-2.0-or-later &lt;https://www.gnu.org/licenses/gpl-2.0.html&gt;
+</code></pre></div>
+<p>Alternatively, create a shell script or a shortcut on your desktop that
+executes the following command:</p>
+<div class="highlight"><pre><span></span><code>dosbox --working-dir &lt;PATH&gt;
+</code></pre></div>
+<p><code>&lt;PATH&gt;</code> is the absolute path of your game directory (<code>Prince of Persia</code> in
+this case).</p>
+<h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">¶</a></h2>
+<p>You’ll be greeted by the following window when starting DOSBox Staging:</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/dosbox-start.png"><img alt="DOSBox start screen" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/dosbox-start.png"/></a></p>
+</figure>
+<p>Let’s ignore the polite welcome message for now and focus on the text below
+the big blue rectangle:</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>Local directory drives/c/ mounted as C drive
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>Z:\&gt;_
+</code></pre></div>
+<p>The first line is pretty straightforward—it tells us that DOSBox mounted
+<code>drives/c</code> we created earlier as the “C drive”.</p>
+<p>The second line is the DOS prompt. DOS has a command line interface that
+predates graphical user interfaces we’re accustomed to from modern operating
+systems. We get DOS to do things by typing in commands, and if manage to do
+this correctly, DOS will follow our instructions to the letter (pun intended!)
+DOS is <em>not</em> a multitasking operating system; you can only do a single
+thing in it at any given point in time.</p>
+<p>Let’s analyse the prompt a little bit. It always starts with a letter followed
+by a semicolon which denotes the current drive. Right after startup, this is
+always the <code>Z</code> drive. This is a special drive that’s always available; DOSBox
+stores some of its commands on it—you don’t need to worry about it now.</p>
+<p>After the semicolon is the path of the current folder or current <em>directory</em>
+in DOS terminology. This is currently the root directory of the <code>Z</code> drive as
+indicated by the <code>\</code> (backslash) character. The <code>&gt;</code> character just signifies
+the end of the prompt, and the blinking underscore (<code>_</code>) character after it
+is—guess what?—the cursor.</p>
+<p>Okay, enough theory, type in <code>C:</code> and then press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to switch
+to the C drive. The prompt should now reflect that we’re in the root directory
+of the C drive:</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>Z:\&gt;c:
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>C:\&gt;_
+</code></pre></div>
+<p>Type in <code>dir</code> and press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to list the contents of the current
+directory:</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\&gt;dir
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a> Volume in drive C is CDRIVE
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a> Directory of C:\
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a>POP1     TXT                     362 07/07/1995 10:12a
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>POP1DEMO EXE                 267,420 07/05/1995  9:53a
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>                2 file(s)               268,116 bytes
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>                0 dir(s)            262,144,000 bytes free
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a>C:\&gt;_
+</code></pre></div>
+<p>Well, that’s what we put into our virtual C drive, so nothing too spectacular
+so far. We’ll execute <code>pop1demo.exe</code> next! Type in <code>pop</code> and press the <span class="keys"><kbd class="key-tab">Tab</kbd></span>
+key once to instruct DOSBox to complete the filename for you. This handy
+feature is called <em>tab completion</em> and it saves you from a lot of typing!
+Press <span class="keys"><kbd class="key-tab">Tab</kbd></span> a few more times and observe how it alternates between
+<code>POP1.TXT</code> and <code>POP1DEMO.EXE</code>; this makes sense as these are the only two
+files in the current directory that start with <code>pop</code>.</p>
+<p>Okay, let’s make sure <code>POP1DEMO.EXE</code> is displayed in the prompt then press
+<span class="keys"><kbd class="key-enter">Enter</kbd></span> to run this executable file. It turns out this is a
+self-extracting archive that unpacks its contents into the current directory
+when you run it. The following will appear (I’ve redacted the list of
+extracted files):</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\&gt;POP1DEMO.EXE
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>PKSFX (R)   FAST!   Self Extract Utility   Version 2.04g  02-01-93
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>Copr. 1989-1993 PKWARE Inc. All Rights Reserved. Shareware version
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>PKSFX Reg. U.S. Pat. and Tm. Off.
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>Searching EXE: C:/POP1DEMO.EXE
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>  Inflating: CDUNGEON.DAT
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>  Inflating: DIGISND1.DAT
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>  ...
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>  Inflating: PRINCE.EXE
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>C:\&gt;_
+</code></pre></div>
+<p>The more observant among you might have noticed the last entry, <code>PRINCE.EXE</code>.
+Bingo, that’s our game executable! But let’s pretend we haven’t spotted it;
+how do we find all executables in the current directory? By issuing the <code>dir</code>
+command with the <code>*.exe</code> wildcard search pattern!</p>
+<p>But instead of typing in <code>dir *.exe</code>, press <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> a few times until <code>dir</code>
+appears in the command line, then type in the rest (<span class="keys"><kbd class="key-space">Space</kbd></span> character
+followed by <code>*.exe</code>). This handy feature is called <em>command history</em>—you can
+move forward and backward in the list of previously executed commands with the <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>
+and <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> keys, respectively.</p>
+<p>Okay, so here’s how the output looks like:</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>C:\&gt;dir *.exe
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a> Volume in drive C is CDRIVE
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a> Directory of C:\
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>POP1DEMO EXE                 267,420 07/05/1995  9:53a
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a>PRINCE   EXE                 123,335 03/29/1990  0:00a
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a>                2 file(s)               390,755 bytes
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a>                0 dir(s)            262,144,000 bytes free
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>C:\&gt;_
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Alternatively, you can use the <code>ls</code> command that displays the directory
+contents in a wide list format. This command highlights executable files
+in green (<code>.EXE</code>, <code>.COM</code>, and <code>.BAT</code> file extensions) and directories
+(folders) in blue.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">FAT filesystem</p>
+<p>MS-DOS uses the <em>FAT filesystem</em> that allows up to 8-character filenames,
+followed optionally by a file extension consisting of a dot and at most
+three further characters. Filenames can only contain uppercase letters,
+digits, and certain special characters, such as the dash (<code>-</code>), underscore
+(<code>_</code>), and the exclamation mark (<code>!</code>).</p>
+<p>The two files we originally copied to our <code>drives/c</code> folder had all
+lowercase filenames (<code>pop1.txt</code> and <code>pop1demo.exe</code>). This does not matter
+as DOSBox automatically converts all filenames in our <code>drives/c</code> folder to
+uppercase behind the scenes.</p>
+</div>
+<h2 id="starting-the-game">Starting the game<a class="headerlink" href="#starting-the-game" title="Permanent link">¶</a></h2>
+<p>There’s nothing else left to do than to start <code>PRINCE.EXE</code> (type in the letter
+<code>p</code>, press <span class="keys"><kbd class="key-tab">Tab</kbd></span> to auto-complete it to <code>PRINCE.EXE</code>, then press <span class="keys"><kbd class="key-enter">Enter</kbd></span>).
+After a short loading, the title screen will appear and you’ll hear the
+classic Prince of Persia intro music playing! Don’t press any key yet, just
+wait and watch the intro sequence until the end to learn about the game’s
+backstory.</p>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-title.png"><img alt="Prince of Persia -- Title screen" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-title.png"/></a></p>
+<figcaption>
+<p>Prince of Persia — Title screen
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-intro.png"><img alt="Prince of Persia -- Scene from the intro sequence" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-intro.png"/></a></p>
+<figcaption>
+<p>Prince of Persia — Scene from the intro sequence
+  </p>
+</figcaption>
+</figure>
+</div>
+<p>If you keep watching, the game will enter demo mode, where the protagonist
+will soon meet his untimely death… Surely, we can do better than that! Press
+any key to start the game!</p>
+<p>You control the prince with the cursor keys, and you can walk carefully by
+holding the <span class="keys"><kbd class="key-shift">Shift</kbd></span> key. It’s not that hard to figure out the various
+movement combinations on your own, but reading the <em>Controlling Your
+Movements</em> section of the <a href="https://ia600809.us.archive.org/29/items/princeofpersia_201708_201708/prince-of-persia_dos_04ra.pdf">user
+manual</a>
+should definitely help. The manual also contains helpful hints and a full list
+of keyboard shortcuts you can use during the game.</p>
+<figure>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png"><img alt="This is where the adventure starts!" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png" width="88%"/></a></p>
+<figcaption>
+<p>This is where the adventure starts!
+  </p>
+</figcaption>
+</figure>
+<p>Congratulations, you’ve got your very first DOS game running in DOSBox
+Staging! Have some fun, try to find the sword and overcome a few guards, and
+maybe even attempt to complete the first level.</p>
+<p>You can quit the game by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span> which will return you to the DOS
+prompt. There you can use the <code>exit</code> command to close DOSBox. Of course, you
+can quit DOSBox any time by pressing <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> on Windows and Linux, or
+<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-q">Q</kbd></span> on macOS.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span> shortcut for quitting the game is specific to Prince of
+Persia. Other games might provide completely different mechanisms for
+exiting to DOS, or perhaps none at all.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">How to approach old games</p>
+<p>If you’ve only ever played modern games, you’re probably in for a bit of a
+culture shock! There’s minimal to no handholding in most DOS games from
+the 1980s and the 90s; you are expected to read the user manual, often
+there is no in-game tutorial, and the games are generally unforgiving and
+require a level of dedication from the player that’s uncommon in more
+modern titles.</p>
+<p>However, this does not mean that these games are less fun, on the
+contrary! The old adage “you get out what you put in” is certainly true
+for old DOS games. Many people (including the author of this present
+article) think that the satisfaction and enjoyment you get when mastering
+such difficult games have few parallels in the modern gaming landscape.</p>
+</div>
+<h2 id="auto-executing-commands-at-startup">Auto-executing commands at startup<a class="headerlink" href="#auto-executing-commands-at-startup" title="Permanent link">¶</a></h2>
+<p>Every time we want to play the game, we need to type in DOS commands to switch
+to the C drive and run <code>PRINCE.EXE</code> from there. Isn’t there a way to
+automate this?</p>
+<p>There certainly is! We need to create a so-called
+<em>configuration file</em> that can contain various settings to customise the
+behaviour of DOSBox, along with a list of commands to auto-execute at startup.</p>
+<p>Launch your text editor of choice and create a new plain text file called
+<code>dosbox.conf</code> inside the <code>Prince of Persia</code> folder with the following content:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">[autoexec]</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="na">c</span><span class="o">:</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="na">prince</span>
+</code></pre></div>
+<p>The commands you want to be executed right after startup should be listed in
+the aptly titled <code>[autoexec]</code> configuration section, each command in a
+separate line. Configuration sections are introduced by names enclosed in square
+brackets; everything that follows belongs to that section.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some text editors insist on appending the <code>.txt</code> extension after the
+filename you enter in their save dialog. This might result in creating a
+file called <code>dosbox.conf.txt</code> which won’t work. Get to know your text
+editor and make sure you save the configuration file as <code>dosbox.conf</code></p>
+</div>
+<p>When DOSBox starts, it looks for this special <code>dosbox.conf</code> file in the folder
+it was started from, and if it finds it, it configures the DOS environment and
+DOSBox itself according to its contents. This is handy because we can put a
+different configuration file into each of our game folders to set them up
+differently (this is necessary; it’s simply impossible to create a single
+configuration that would work with all DOS games).</p>
+<p>Just to make everything absolutely clear, this is the folder structure we
+should have at this point (only the first four files are shown in <code>drives/c</code>
+to save space):</p>
+<p><img alt="Prince of Persia folder structure showcasing the location of the 'dosbox.conf' file" class="skip-lightbox" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/pop-tree2.png" style="width: 14.5rem; margin: 0.9rem max(calc((50% - 14.5rem/2) * 0.85), 0rem);"/></p>
+<p>Starting up DOSBox Staging from the <code>Prince of Persia</code> folder should now launch the
+game right away without any manual intervention!</p>
+<p>So far so good—now let’s see how we can use the advanced features offered by
+DOSBox Staging to our advantage!</p>
+<div class="admonition info">
+<p class="admonition-title">DOSBox vs DOSBox Staging</p>
+<p>Astute readers might have noticed that the guide sometimes refers to
+“DOSBox Staging” and sometimes to just “DOSBox”. Why is that?</p>
+<p>As explained on our <a href="../../about/">about page</a>, DOSBox Staging is a
+modern continuation of the original DOSBox project. Technically, DOSBox
+Staging is an open-source fork of and separate project from the
+SourceForge-hosted DOSBox project.</p>
+<p>Generally, we use “DOSBox Staging” when we discuss features specific to
+Staging, or when we talk about the DOSBox Staging application, installer,
+or process itself. But when mentioning base functionality present in the
+original DOSBox and pretty much all other DOSBox variants, we simply write
+“DOSBox”. Admittedly, sometimes the distinction gets rather blurry, and
+seeing “DOSBox Staging” fully typed out everywhere would get old rather
+quickly!</p>
+<p>Using the term “DOSBox” is also a nod to the original DOSBox developers to
+whom we are grateful for starting this awesome open-source project in the
+first place!</p>
+</div>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<!-- Footer -->
+<footer class="md-footer">
+<!-- Link to previous and/or next page -->
+<nav aria-label="" class="md-footer__inner md-grid">
+<!-- Link to previous page -->
+<a aria-label="Previous: Introduction" class="md-footer__link md-footer__link--prev" href="../introduction/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Introduction
+            </div>
+</div>
+</a>
+<!-- Link to next page -->
+<a aria-label="Next: Enhancing Prince of Persia" class="md-footer__link md-footer__link--next" href="../enhancing-prince-of-persia/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Enhancing Prince of Persia
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<!-- Further information -->
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="links">
+<ul>
+<li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+<li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+<li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+</ul>
+</div>
+<div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
+</html>
