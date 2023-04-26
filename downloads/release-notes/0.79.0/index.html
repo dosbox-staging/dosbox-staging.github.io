@@ -11,10 +11,10 @@
 <link href="../0.79.1/" rel="prev"/>
 <link href="../0.78.1/" rel="next"/>
 <link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.2" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
 <title>0.79.0 - DOSBox Staging</title>
-<link href="../../../assets/stylesheets/main.f56500e0.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
@@ -100,7 +100,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -109,7 +109,7 @@
 </nav>
 <!-- Navigation tabs (sticky) -->
 <nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-tabs__inner md-grid">
+<div class="md-grid">
 <ul class="md-tabs__list">
 <li class="md-tabs__item">
 <a class="md-tabs__link md-tabs__link--active" href="../../windows/">
@@ -150,12 +150,12 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           Downloads
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Downloads" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           Downloads
@@ -182,12 +182,12 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" id="__nav_1_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1_5">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
           Release notes
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Release notes" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_5">
 <span class="md-nav__icon md-icon"></span>
           Release notes
@@ -209,7 +209,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           0.79.0
           <span class="md-nav__icon md-icon"></span>
@@ -671,14 +671,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../get-involved/">Get involved</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Get involved" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           Get involved
@@ -693,11 +693,11 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../about/">About</a>
 </div>
-<nav aria-label="About" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           About
@@ -1585,14 +1585,14 @@ which results in more subdued and pleasant colours. This is especially
 apparent on the greens.</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-default.png"><img alt="Defender of the Crown (default)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-default.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-default.png"><img alt="Defender of the Crown (default)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-default.png"/></a></p>
 <figcaption>
 <p><code>cga_colors = default</code>
 </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-tandy-warm.png"><img alt="Defender of the Crown (tandy-warm)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-tandy-warm.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-tandy-warm.png"><img alt="Defender of the Crown (tandy-warm)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/dotc-tandy-warm.png"/></a></p>
 <figcaption>
 <p><code>cga_colors = tandy-warm</code>
 </p>
@@ -1604,14 +1604,14 @@ apparent on the greens.</p>
 with improved skin tones and sky colours.</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-default.png"><img alt="Gold Rush! (default)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-default.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-default.png"><img alt="Gold Rush! (default)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-default.png"/></a></p>
 <figcaption>
 <p><code>cga_colors = default</code>
 </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-agi-amigaish.png"><img alt="Gold Rush! (agi-amigaish)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-agi-amigaish.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-agi-amigaish.png"><img alt="Gold Rush! (agi-amigaish)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/gold-rush-agi-amigaish.png"/></a></p>
 <figcaption>
 <p><code>cga_colors = agi-amigaish</code>
 </p>
@@ -1623,14 +1623,14 @@ with improved skin tones and sky colours.</p>
 Commodore 64 colours!</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-default.png"><img alt="Zak McKracken (default)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-default.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-default.png"><img alt="Zak McKracken (default)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-default.png"/></a></p>
 <figcaption>
 <p><code>cga_colors = default</code>
 </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-colodore.png"><img alt="Zak McKracken (colodore)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-colodore.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-colodore.png"><img alt="Zak McKracken (colodore)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-cga-palette-overrides/zak-colodore.png"/></a></p>
 <figcaption>
 <p><code>cga_colors = colodore</code>
 </p>
@@ -1655,14 +1655,14 @@ displays them correctly.</p>
 <p><strong>Time Quest</strong></p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-good.png"><img alt="Timequest (good)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-good.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-good.png"><img alt="Timequest (good)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-good.png"/></a></p>
 <figcaption>
 <p>Good
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-bad.png"><img alt="Timequest (bad)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-bad.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-bad.png"><img alt="Timequest (bad)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/timequest-bad.png"/></a></p>
 <figcaption>
 <p>Bad
   </p>
@@ -1672,14 +1672,14 @@ displays them correctly.</p>
 <p><strong>Space Quest III: The Pirates of Pestulon</strong></p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-good.png"><img alt="Space Quest III (good)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-good.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-good.png"><img alt="Space Quest III (good)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-good.png"/></a></p>
 <figcaption>
 <p>Good
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-bad.png"><img alt="Space Quest III (bad)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-bad.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-bad.png"><img alt="Space Quest III (bad)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/sq3-bad.png"/></a></p>
 <figcaption>
 <p>Bad
   </p>
@@ -1689,14 +1689,14 @@ displays them correctly.</p>
 <p><strong>Windwalker</strong></p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-good.png"><img alt="Windwalker (good)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-good.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-good.png"><img alt="Windwalker (good)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-good.png"/></a></p>
 <figcaption>
 <p>Good
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-bad.png"><img alt="Windwalker (bad)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-bad.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-bad.png"><img alt="Windwalker (bad)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-image-scaling-improvements/windwalker-bad.png"/></a></p>
 <figcaption>
 <p>Bad
   </p>
@@ -1713,14 +1713,14 @@ by the system, producing an unpleasantly mushy presentation. But we want our
 pixels to be so sharp they could cut one’s eyes <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:"/> <img alt="🗡" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f5e1.svg" title=":dagger:"/></p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-non-hidpi.png"><img alt="DOSBox Staging on macOS without high DPI support" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-non-hidpi.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-non-hidpi.png"><img alt="DOSBox Staging on macOS without high DPI support" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-non-hidpi.png"/></a></p>
 <figcaption>
 <p>Without high DPI support
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-hidpi.png"><img alt="DOSBox Staging on macOS with high DPI support" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-hidpi.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-hidpi.png"><img alt="DOSBox Staging on macOS with high DPI support" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-macos-high-dpi-support/win31-hidpi.png"/></a></p>
 <figcaption>
 <p>With high DPI support
   </p>
@@ -1743,7 +1743,7 @@ can now set the DOSBox Staging window as transparent, with a customised level
 of window transparency, so that you can see the background window as well.
 There is a new config option <code>transparency</code> for this, whose valid values are
 between <code>0</code> (no transparency; default) to <code>90</code> (high transparency).</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-transparent-window-support/transparent-window.png"><img alt="Transparent window" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-transparent-window-support/transparent-window.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-transparent-window-support/transparent-window.png"><img alt="Transparent window" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-transparent-window-support/transparent-window.png"/></a></p>
 <h3 id="frame-presentation-modes">Frame presentation modes<a class="headerlink" href="#frame-presentation-modes" title="Permanent link">¶</a></h3>
 <p>DOSBox presents frames when new content is available, which means that
 sometimes the effective frame rate can vary between 0 FPS (if the screen
@@ -1768,7 +1768,7 @@ emulated DOS rate, as well as variations on both:</p>
 <p>By default, DOSBox Staging inspects runtime conditions and picks the optimal
 presentation mode.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-synced-cfr-earthworm-jim/synced-cfr-earthworm-jim.png"><img alt="Earthworm Jim (synced CFR)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-synced-cfr-earthworm-jim/synced-cfr-earthworm-jim.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-synced-cfr-earthworm-jim/synced-cfr-earthworm-jim.png"><img alt="Earthworm Jim (synced CFR)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-synced-cfr-earthworm-jim/synced-cfr-earthworm-jim.png"/></a></p>
 <figcaption>
 <p>Synced CFR mode selected due to vsync-enforced video drivers
   </p>
@@ -1807,7 +1807,7 @@ command) or through DOS API that accesses to file attributes. For example,
 some game installers and applications make use of file attributes. All file
 attributes are currently supported except for system and hidden attributes on
 mounted local drives for non-Windows platforms.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-improved-attrib-command/attrib-help.png"><img alt="ATTRIB command help" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-improved-attrib-command/attrib-help.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-improved-attrib-command/attrib-help.png"><img alt="ATTRIB command help" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-improved-attrib-command/attrib-help.png"/></a></p>
 <h3 id="default-choices-for-the-choice-command">Default choices for the CHOICE command<a class="headerlink" href="#default-choices-for-the-choice-command" title="Permanent link">¶</a></h3>
 <p>The <code>CHOICE</code> command allows you to choose from a list of options, but
 sometimes you want to have some default choice if no selection is made within
@@ -1827,7 +1827,7 @@ external library, plus restoring the main SDL CD interface from DOSBox.</p>
 their numbers, and use <code>-usecd NUMBER</code> parameter to specify a CD drive
 <code>NUMBER</code>, just like you would do in DOSBox SVN. Playing CD audio tracks from
 physical discs is also supported in Windows as with DOSBox SVN.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/mount-cd.png"><img alt="Mount support for Physical CD" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/mount-cd.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/mount-cd.png"><img alt="Mount support for Physical CD" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/mount-cd.png"/></a></p>
 <h3 id="read-only-disk-image-mount-support">Read-only disk image mount support<a class="headerlink" href="#read-only-disk-image-mount-support" title="Permanent link">¶</a></h3>
 <p>You might have encountered the problem previously that you could not mount
 write-protected disk images, which happened simply because DOSBox Staging
@@ -1860,7 +1860,7 @@ wildcards for mounting image files, so that you can just specify a file
 pattern that matches all the image files that you want to include. For
 example, the command <code>IMGMOUNT a d:\*.img -t floppy</code> will mount all image
 files with the IMG extension on <code>D:\</code> as floppy images.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/imgmount-wildcard.png"><img alt="Mount images with wildcard" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/imgmount-wildcard.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/imgmount-wildcard.png"><img alt="Mount images with wildcard" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-mount-improvements/imgmount-wildcard.png"/></a></p>
 <h3 id="automount-of-resource-drives">Automount of resource drives<a class="headerlink" href="#automount-of-resource-drives" title="Permanent link">¶</a></h3>
 <p>Directories can now be automounted, provided the <code>automount</code> config setting is
 enabled (which it is, by default).</p>
@@ -1936,14 +1936,14 @@ allows you to manually specify the country code for the date, time, and
 decimal formats.</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/canadian-french.png"><img alt="DIR command (CF)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/canadian-french.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/canadian-french.png"><img alt="DIR command (CF)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/canadian-french.png"/></a></p>
 <figcaption>
 <p>Canadian French locale
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/united-states.png"><img alt="DIR command (US)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/united-states.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/united-states.png"><img alt="DIR command (US)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-improved-localisation-support/united-states.png"/></a></p>
 <figcaption>
 <p>United States locale
   </p>
@@ -2058,14 +2058,14 @@ DOSBox Staging as soon as the installation ends. Shell context menus can also
 be automatically added for a faster launch of DOSBox Staging from Windows
 Explorer.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-installer-start.png"><img alt="Windows installer welome page" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-installer-start.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-installer-start.png"><img alt="Windows installer welome page" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-installer-start.png"/></a></p>
 <figcaption>
 <p>Windows installer welome page
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-icons-after-installation.png"><img alt="Icons after installation" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-icons-after-installation.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-icons-after-installation.png"><img alt="Icons after installation" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-windows-installer/windows-icons-after-installation.png"/></a></p>
 <figcaption>
 <p>Icons after installation
   </p>
@@ -2143,7 +2143,7 @@ integrated into the build system and basic hooks are in place to log frames
 and tics. These are only active (and not compiled in) unless Tracy is enabled.</p>
 <p>Here’s what it looks like:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-tracy-profiler-integration/tracy.png"><img alt="tracy" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-tracy-profiler-integration/tracy.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-tracy-profiler-integration/tracy.png"><img alt="tracy" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-tracy-profiler-integration/tracy.png"/></a></p>
 <figcaption>
 <p>Tracy runtime-profiling DOSBox Staging
   </p>
@@ -2163,8 +2163,8 @@ impossible as that logic only lived in a GitHub-syntax YAML.</p>
 <h3 id="static-analysis">Static analysis<a class="headerlink" href="#static-analysis" title="Permanent link">¶</a></h3>
 <p>The team continues to fix and address static analysis issues as flagged by
 various analysers. Here are our Coverity Scan metrics to-date:</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-numbers-2022-09.png"><img alt="Coverity metrics)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-numbers-2022-09.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-graph-2022-09.png"><img alt="Coverity graph)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-graph-2022-09.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-numbers-2022-09.png"><img alt="Coverity metrics)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-numbers-2022-09.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-graph-2022-09.png"><img alt="Coverity graph)" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.79.0-static-analysis-metrics/coverity-graph-2022-09.png"/></a></p>
 <h2 id="translation-status">Translation status<a class="headerlink" href="#translation-status" title="Permanent link">¶</a></h2>
 <div class="compact">
 <ul>
@@ -2345,10 +2345,10 @@ improvements merged in from the DOSBox project.</p>
 </article>
 </div>
 </div>
-<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
             Back to top
-          </a>
+          </button>
 </main>
 <!-- Footer -->
 <footer class="md-footer">
@@ -2403,7 +2403,7 @@ improvements merged in from the DOSBox project.</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.12658920.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.5cf534bf.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
 </html>
