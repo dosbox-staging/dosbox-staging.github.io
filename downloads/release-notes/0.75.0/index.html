@@ -1,782 +1,1459 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+      
+      
+        <meta name="author" content="DOSBox Staging Authors">
+      
+      
+        <link rel="canonical" href="https://https:/dosbox-staging.github.io/downloads/release-notes/0.75.0/">
+      
+      
+        <link rel="prev" href="../0.75.1/">
+      
+      
+        <link rel="next" href="../0.75.0-rc1/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>0.75.0 - DOSBox Staging</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices." name="description"/>
-<meta content="DOSBox Staging Authors" name="author"/>
-<link href="https://https:/dosbox-staging.github.io/downloads/release-notes/0.75.0/" rel="canonical"/>
-<link href="../0.75.1/" rel="prev"/>
-<link href="../0.75.0-rc1/" rel="next"/>
-<link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
-<title>0.75.0 - DOSBox Staging</title>
-<link href="../../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-            html.glightbox-open { overflow: initial; height: 100%; }
-            .gslide-title { margin-top: 0px; user-select: text; }
-            .gslide-desc { color: #666; user-select: text; }
-            .gslide-image img { background: white; }
-            
-                .gscrollbar-fixer { padding-right: 15px; }
-                .gdesc-inner { font-size: 0.75rem; }
-                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#0750-release-notes">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0750-release-notes" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
-<!-- Determine class according to configuration -->
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!-- Determine class according to configuration -->
+
+
+  
+
+
 <!-- Header -->
 <header class="md-header md-header--lifted" data-md-component="header">
-<nav aria-label="" class="md-header__inner md-grid">
-<!-- Link to home -->
-<a aria-label="DOSBox Staging" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="DOSBox Staging">
-<img alt="logo" src="../../../assets/images/dosbox-staging-nobg.svg"/>
-</a>
-<!-- Button to open drawer -->
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<!-- Header title -->
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label=""
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../../.."
+      title="DOSBox Staging"
+      class="md-header__button md-logo"
+      aria-label="DOSBox Staging"
+      data-md-component="logo"
+    >
+      
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             DOSBox Staging
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             DOSBox Staging
           </span>
-</div>
-</div>
-</div>
-<!-- Button to open search modal -->
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<!-- Search interface -->
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
-</a>
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-<div class="md-search__suggest" data-md-component="search-suggest"></div>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<!-- Navigation tabs (sticky) -->
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../windows/">
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../windows/" class="md-tabs__link md-tabs__link--active">
         Downloads
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../get-involved/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../get-involved/" class="md-tabs__link">
         Get involved
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../about/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
         About
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-tabs__link">
       Wiki
     </a>
-</li>
-</ul>
-</div>
+  </li>
+
+      
+    </ul>
+  </div>
 </nav>
+    
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="DOSBox Staging" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="DOSBox Staging">
-<img alt="logo" src="../../../assets/images/dosbox-staging-nobg.svg"/>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
     DOSBox Staging
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           Downloads
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
           Downloads
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../windows/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/" class="md-nav__link">
         Windows
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../macos/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macos/" class="md-nav__link">
         macOS
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../linux/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
         Linux
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../development-builds/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-builds/" class="md-nav__link">
         Development builds
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
           Release notes
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
           Release notes
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.80.1/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.80.1/" class="md-nav__link">
         0.80.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.80.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.80.0/" class="md-nav__link">
         0.80.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.79.1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.79.1/" class="md-nav__link">
         0.79.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.79.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.79.0/" class="md-nav__link">
         0.79.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.78.1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.78.1/" class="md-nav__link">
         0.78.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.78.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.78.0/" class="md-nav__link">
         0.78.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.77.1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.77.1/" class="md-nav__link">
         0.77.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.77.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.77.0/" class="md-nav__link">
         0.77.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.76.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.76.0/" class="md-nav__link">
         0.76.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.75.2/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.75.2/" class="md-nav__link">
         0.75.2
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.75.1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.75.1/" class="md-nav__link">
         0.75.1
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           0.75.0
           <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         0.75.0
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#summary">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
     Summary
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installation-instructions">
+      
+        <li class="md-nav__item">
+  <a href="#installation-instructions" class="md-nav__link">
     Installation instructions
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#new-features-in-detail">
+      
+        <li class="md-nav__item">
+  <a href="#new-features-in-detail" class="md-nav__link">
     New features in detail
   </a>
-<nav aria-label="New features in detail" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upgrade-to-sdl-20">
+  
+    <nav class="md-nav" aria-label="New features in detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-sdl-20" class="md-nav__link">
     Upgrade to SDL 2.0
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#support-flac-opus-and-mp3-cd-da-tracks">
+        
+          <li class="md-nav__item">
+  <a href="#support-flac-opus-and-mp3-cd-da-tracks" class="md-nav__link">
     Support FLAC, Opus, and MP3 CD-DA tracks
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pixel-perfect-scaling-mode">
+        
+          <li class="md-nav__item">
+  <a href="#pixel-perfect-scaling-mode" class="md-nav__link">
     Pixel-perfect scaling mode
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resizable-window">
+        
+          <li class="md-nav__item">
+  <a href="#resizable-window" class="md-nav__link">
     Resizable window
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#autotype-command">
+        
+          <li class="md-nav__item">
+  <a href="#autotype-command" class="md-nav__link">
     AUTOTYPE command
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changed-rendering-defaults">
+        
+          <li class="md-nav__item">
+  <a href="#changed-rendering-defaults" class="md-nav__link">
     Changed rendering defaults
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expand-mouse-control-methods">
+        
+          <li class="md-nav__item">
+  <a href="#expand-mouse-control-methods" class="md-nav__link">
     Expand mouse control methods
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nuked-opl-v18">
+        
+          <li class="md-nav__item">
+  <a href="#nuked-opl-v18" class="md-nav__link">
     Nuked OPL v1.8
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reload-key-bindings-at-runtime">
+        
+          <li class="md-nav__item">
+  <a href="#reload-key-bindings-at-runtime" class="md-nav__link">
     Reload key bindings at runtime
   </a>
-<nav aria-label="Reload key bindings at runtime" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reloading-key-bindings">
+  
+    <nav class="md-nav" aria-label="Reload key bindings at runtime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloading-key-bindings" class="md-nav__link">
     Reloading key bindings
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#other-new-options-svn">
+        
+          <li class="md-nav__item">
+  <a href="#other-new-options-svn" class="md-nav__link">
     Other new options (SVN)
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configuration-file-locations">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-locations" class="md-nav__link">
     Configuration file locations
   </a>
-<nav aria-label="Configuration file locations" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linux">
+  
+    <nav class="md-nav" aria-label="Configuration file locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
     Linux
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#macos">
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
     macOS
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#windows">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
     Windows
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modem-phonebook">
+        
+          <li class="md-nav__item">
+  <a href="#modem-phonebook" class="md-nav__link">
     Modem phonebook
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#64-bit-dynamic-recompilation-svn">
+        
+          <li class="md-nav__item">
+  <a href="#64-bit-dynamic-recompilation-svn" class="md-nav__link">
     64-bit dynamic recompilation (SVN)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cga-improvements">
+        
+          <li class="md-nav__item">
+  <a href="#cga-improvements" class="md-nav__link">
     CGA improvements
   </a>
-<nav aria-label="CGA improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cga-monochrome-mode">
+  
+    <nav class="md-nav" aria-label="CGA improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cga-monochrome-mode" class="md-nav__link">
     CGA monochrome mode
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cga-composite-mode-svn">
+        
+          <li class="md-nav__item">
+  <a href="#cga-composite-mode-svn" class="md-nav__link">
     CGA Composite mode (SVN)
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#glsl-shader-support-svn">
+        
+          <li class="md-nav__item">
+  <a href="#glsl-shader-support-svn" class="md-nav__link">
     GLSL shader support (SVN)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#date-and-time-commands-svn">
+        
+          <li class="md-nav__item">
+  <a href="#date-and-time-commands-svn" class="md-nav__link">
     DATE and TIME commands (SVN)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mount-overlay-support">
+        
+          <li class="md-nav__item">
+  <a href="#mount-overlay-support" class="md-nav__link">
     Mount overlay support
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#overview-of-changes">
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-changes" class="md-nav__link">
     Overview of changes
   </a>
-<nav aria-label="Overview of changes" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#removed-features">
+  
+    <nav class="md-nav" aria-label="Overview of changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removed-features" class="md-nav__link">
     Removed features
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#development-changes">
+        
+          <li class="md-nav__item">
+  <a href="#development-changes" class="md-nav__link">
     Development changes
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#known-issues">
+        
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
     Known issues
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contributors">
+        
+          <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
     Contributors
   </a>
-<nav aria-label="Contributors" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#maintainers">
+  
+    <nav class="md-nav" aria-label="Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintainers" class="md-nav__link">
     Maintainers
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct-contributors">
+        
+          <li class="md-nav__item">
+  <a href="#direct-contributors" class="md-nav__link">
     Direct contributors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#testers-and-wiki-contributors">
+        
+          <li class="md-nav__item">
+  <a href="#testers-and-wiki-contributors" class="md-nav__link">
     Testers and wiki contributors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#indirect-contributors">
+        
+          <li class="md-nav__item">
+  <a href="#indirect-contributors" class="md-nav__link">
     Indirect contributors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changelog">
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
     Changelog
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#merged-in-community-patches-and-libraries">
+        
+          <li class="md-nav__item">
+  <a href="#merged-in-community-patches-and-libraries" class="md-nav__link">
     Merged-in community patches and libraries
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#thank-you">
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
     Thank you
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.75.0-rc1/">
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.75.0-rc1/" class="md-nav__link">
         0.75.0-RC1
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../get-involved/">Get involved</a>
-<label for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../get-involved/">Get involved</a>
+          
+            <label for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
           Get involved
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../get-involved/code-of-conduct/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../get-involved/code-of-conduct/" class="md-nav__link">
         Code of conduct
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../about/">About</a>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../about/">About</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
           About
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-nav__link">
         Wiki
       </a>
-</li>
-</ul>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#summary">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
     Summary
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#installation-instructions">
+      
+        <li class="md-nav__item">
+  <a href="#installation-instructions" class="md-nav__link">
     Installation instructions
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#new-features-in-detail">
+      
+        <li class="md-nav__item">
+  <a href="#new-features-in-detail" class="md-nav__link">
     New features in detail
   </a>
-<nav aria-label="New features in detail" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upgrade-to-sdl-20">
+  
+    <nav class="md-nav" aria-label="New features in detail">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-to-sdl-20" class="md-nav__link">
     Upgrade to SDL 2.0
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#support-flac-opus-and-mp3-cd-da-tracks">
+        
+          <li class="md-nav__item">
+  <a href="#support-flac-opus-and-mp3-cd-da-tracks" class="md-nav__link">
     Support FLAC, Opus, and MP3 CD-DA tracks
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#pixel-perfect-scaling-mode">
+        
+          <li class="md-nav__item">
+  <a href="#pixel-perfect-scaling-mode" class="md-nav__link">
     Pixel-perfect scaling mode
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resizable-window">
+        
+          <li class="md-nav__item">
+  <a href="#resizable-window" class="md-nav__link">
     Resizable window
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#autotype-command">
+        
+          <li class="md-nav__item">
+  <a href="#autotype-command" class="md-nav__link">
     AUTOTYPE command
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changed-rendering-defaults">
+        
+          <li class="md-nav__item">
+  <a href="#changed-rendering-defaults" class="md-nav__link">
     Changed rendering defaults
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#expand-mouse-control-methods">
+        
+          <li class="md-nav__item">
+  <a href="#expand-mouse-control-methods" class="md-nav__link">
     Expand mouse control methods
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#nuked-opl-v18">
+        
+          <li class="md-nav__item">
+  <a href="#nuked-opl-v18" class="md-nav__link">
     Nuked OPL v1.8
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reload-key-bindings-at-runtime">
+        
+          <li class="md-nav__item">
+  <a href="#reload-key-bindings-at-runtime" class="md-nav__link">
     Reload key bindings at runtime
   </a>
-<nav aria-label="Reload key bindings at runtime" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reloading-key-bindings">
+  
+    <nav class="md-nav" aria-label="Reload key bindings at runtime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reloading-key-bindings" class="md-nav__link">
     Reloading key bindings
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#other-new-options-svn">
+        
+          <li class="md-nav__item">
+  <a href="#other-new-options-svn" class="md-nav__link">
     Other new options (SVN)
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#configuration-file-locations">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file-locations" class="md-nav__link">
     Configuration file locations
   </a>
-<nav aria-label="Configuration file locations" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#linux">
+  
+    <nav class="md-nav" aria-label="Configuration file locations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
     Linux
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#macos">
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
     macOS
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#windows">
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
     Windows
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#modem-phonebook">
+        
+          <li class="md-nav__item">
+  <a href="#modem-phonebook" class="md-nav__link">
     Modem phonebook
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#64-bit-dynamic-recompilation-svn">
+        
+          <li class="md-nav__item">
+  <a href="#64-bit-dynamic-recompilation-svn" class="md-nav__link">
     64-bit dynamic recompilation (SVN)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cga-improvements">
+        
+          <li class="md-nav__item">
+  <a href="#cga-improvements" class="md-nav__link">
     CGA improvements
   </a>
-<nav aria-label="CGA improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cga-monochrome-mode">
+  
+    <nav class="md-nav" aria-label="CGA improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cga-monochrome-mode" class="md-nav__link">
     CGA monochrome mode
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#cga-composite-mode-svn">
+        
+          <li class="md-nav__item">
+  <a href="#cga-composite-mode-svn" class="md-nav__link">
     CGA Composite mode (SVN)
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#glsl-shader-support-svn">
+        
+          <li class="md-nav__item">
+  <a href="#glsl-shader-support-svn" class="md-nav__link">
     GLSL shader support (SVN)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#date-and-time-commands-svn">
+        
+          <li class="md-nav__item">
+  <a href="#date-and-time-commands-svn" class="md-nav__link">
     DATE and TIME commands (SVN)
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mount-overlay-support">
+        
+          <li class="md-nav__item">
+  <a href="#mount-overlay-support" class="md-nav__link">
     Mount overlay support
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#overview-of-changes">
+      
+        <li class="md-nav__item">
+  <a href="#overview-of-changes" class="md-nav__link">
     Overview of changes
   </a>
-<nav aria-label="Overview of changes" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#removed-features">
+  
+    <nav class="md-nav" aria-label="Overview of changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#removed-features" class="md-nav__link">
     Removed features
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#development-changes">
+        
+          <li class="md-nav__item">
+  <a href="#development-changes" class="md-nav__link">
     Development changes
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#known-issues">
+        
+          <li class="md-nav__item">
+  <a href="#known-issues" class="md-nav__link">
     Known issues
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contributors">
+        
+          <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
     Contributors
   </a>
-<nav aria-label="Contributors" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#maintainers">
+  
+    <nav class="md-nav" aria-label="Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maintainers" class="md-nav__link">
     Maintainers
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#direct-contributors">
+        
+          <li class="md-nav__item">
+  <a href="#direct-contributors" class="md-nav__link">
     Direct contributors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#testers-and-wiki-contributors">
+        
+          <li class="md-nav__item">
+  <a href="#testers-and-wiki-contributors" class="md-nav__link">
     Testers and wiki contributors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#indirect-contributors">
+        
+          <li class="md-nav__item">
+  <a href="#indirect-contributors" class="md-nav__link">
     Indirect contributors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changelog">
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
     Changelog
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#merged-in-community-patches-and-libraries">
+        
+          <li class="md-nav__item">
+  <a href="#merged-in-community-patches-and-libraries" class="md-nav__link">
     Merged-in community patches and libraries
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#thank-you">
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
     Thank you
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="0750-release-notes">0.75.0 release notes<a class="headerlink" href="#0750-release-notes" title="Permanent link">¶</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="0750-release-notes">0.75.0 release notes<a class="headerlink" href="#0750-release-notes" title="Permanent link">&para;</a></h1>
 <p><strong>Release date:</strong> 2020-05-06</p>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>This document contains the release notes for DOSBox Staging 0.75. It describes
 recently added, changed, or deleted features of DOSBox Staging.</p>
 <p>All users are encouraged to consult the <a href="#new-features-in-detail">New features in detail</a>
 and <a href="#known-issues">Known issues</a> sections before using DOSBox Staging, as
 these describe important interface changes as well as information discovered
 late in the release cycle or after the release.</p>
-<h2 id="installation-instructions">Installation instructions<a class="headerlink" href="#installation-instructions" title="Permanent link">¶</a></h2>
+<h2 id="installation-instructions">Installation instructions<a class="headerlink" href="#installation-instructions" title="Permanent link">&para;</a></h2>
 <div class="compact">
 <ul>
 <li><a href="/downloads/linux/">Linux</a> (or <a href="/downloads/linux#steam">Steam on Linux</a>)</li>
@@ -787,9 +1464,9 @@ late in the release cycle or after the release.</p>
 <p>The <strong>DOSBox Staging</strong> project was created September 15, 2019 as a
 <a href="https://en.wikipedia.org/wiki/Fork_(software_development)">soft-fork</a> of the SourceForge-based DOSBox project, which is a separate
 project having its own schedule and development priorities.</p>
-<h2 id="new-features-in-detail">New features in detail<a class="headerlink" href="#new-features-in-detail" title="Permanent link">¶</a></h2>
+<h2 id="new-features-in-detail">New features in detail<a class="headerlink" href="#new-features-in-detail" title="Permanent link">&para;</a></h2>
 <p>New features originating from our upstream (DOSBox) are marked with <strong>SVN</strong>.</p>
-<h3 id="upgrade-to-sdl-20">Upgrade to SDL 2.0<a class="headerlink" href="#upgrade-to-sdl-20" title="Permanent link">¶</a></h3>
+<h3 id="upgrade-to-sdl-20">Upgrade to SDL 2.0<a class="headerlink" href="#upgrade-to-sdl-20" title="Permanent link">&para;</a></h3>
 <p>SDL 2.0 is a major update to the SDL 1.2 codebase, which has been unmaintained
 since 2013. SDL 2.0 supports more input devices; more output interfaces such as
 Wayland, and OpenGLES 1 and 2; low-latency audio using OpenSL ES; and improves
@@ -802,177 +1479,177 @@ cross-platform consistency.</p>
 <li>Eased support for modern graphic APIs, and opened the field for new features
   and improvements.</li>
 </ul>
-<p>One example includes the new <code>texture</code> output mode, which uses SDL’s 2D
+<p>One example includes the new <code>texture</code> output mode, which uses SDL&rsquo;s 2D
 hardware-accelerated API rendering to a platform-specific backend.</p>
 <p>For example, Windows users can test:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="na">output</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">texture</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="na">texture_renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">direct3d11</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">output</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">texture</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">texture_renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">direct3d11</span>
 </code></pre></div>
 <p>macOS users can try Metal:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="na">output</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">texture</span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="na">texture_renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">metal</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">output</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">texture</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">texture_renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">metal</span>
 </code></pre></div>
 <p>And everyone can use OpenGL as texture backend:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="na">output</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">texture</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="na">texture_renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">opengl</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">output</span><span class="w">           </span><span class="o">=</span><span class="w"> </span><span class="s">texture</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">texture_renderer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">opengl</span>
 </code></pre></div>
 <p>Or just use <code>texture_renderer = auto</code> to let SDL pick the backend appropriate
 for your operating system.</p>
-<h3 id="support-flac-opus-and-mp3-cd-da-tracks">Support FLAC, Opus, and MP3 CD-DA tracks<a class="headerlink" href="#support-flac-opus-and-mp3-cd-da-tracks" title="Permanent link">¶</a></h3>
+<h3 id="support-flac-opus-and-mp3-cd-da-tracks">Support FLAC, Opus, and MP3 CD-DA tracks<a class="headerlink" href="#support-flac-opus-and-mp3-cd-da-tracks" title="Permanent link">&para;</a></h3>
 <p>FLAC, Opus, and MP3 (as well as MP2 and MP1) encoded audio can be <code>imgmount</code>ed
 as CD-DA tracks in DOSBox Staging, in addition to the usual WAV and Vorbis
-tracks supported by DOSBox. WAV support has been expanded to include Sony’s
+tracks supported by DOSBox. WAV support has been expanded to include Sony&rsquo;s
 Wave64 format.</p>
 <p>DOSBox Staging also supports tracks having sample resolutions of 24 and 16-bit;
 sampling rates of 96, 88.2, 48, 44.1, 22.05, and 11.025 kHz; and stereo or mono
 channel counts (to the extent each codec supports these variations). You can
-mix-and-match these properties and track types to best suit each track’s
+mix-and-match these properties and track types to best suit each track&rsquo;s
 content.</p>
 <p>The following sample CUE file depicts the use of every codec supported by
 DOSBox Staging:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>FILE "data.iso" BINARY
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>  TRACK 01 MODE1/2048
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>    INDEX 01 00:00:00
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>FILE "track02.opus" OPUS
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>  TRACK 02  AUDIO
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>    PREGAP 00:02:00
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>    INDEX 01 00:00:00
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>FILE "track03.flac" FLAC
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>  TRACK 03 AUDIO
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>    INDEX 01 00:00:00
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>FILE "track04.mp3" MP3
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>  TRACK 04 AUDIO
-<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>    INDEX 01 00:00:00
-<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>
-<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>FILE "track05.w64" W64
-<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>  TRACK 05 AUDIO
-<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>    INDEX 01 00:00:00
-<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a>
-<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a>FILE "track06.ogg" OGG
-<a href="#__codelineno-3-23" id="__codelineno-3-23" name="__codelineno-3-23"></a>  TRACK 06 AUDIO
-<a href="#__codelineno-3-24" id="__codelineno-3-24" name="__codelineno-3-24"></a>    INDEX 01 00:00:00
-<a href="#__codelineno-3-25" id="__codelineno-3-25" name="__codelineno-3-25"></a>
-<a href="#__codelineno-3-26" id="__codelineno-3-26" name="__codelineno-3-26"></a>FILE "track07.wav" WAV
-<a href="#__codelineno-3-27" id="__codelineno-3-27" name="__codelineno-3-27"></a>  TRACK 07 AUDIO
-<a href="#__codelineno-3-28" id="__codelineno-3-28" name="__codelineno-3-28"></a>    INDEX 01 00:00:00
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>FILE &quot;data.iso&quot; BINARY
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>  TRACK 01 MODE1/2048
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    INDEX 01 00:00:00
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>FILE &quot;track02.opus&quot; OPUS
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  TRACK 02  AUDIO
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    PREGAP 00:02:00
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    INDEX 01 00:00:00
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>FILE &quot;track03.flac&quot; FLAC
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>  TRACK 03 AUDIO
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    INDEX 01 00:00:00
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>FILE &quot;track04.mp3&quot; MP3
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>  TRACK 04 AUDIO
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>    INDEX 01 00:00:00
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>FILE &quot;track05.w64&quot; W64
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>  TRACK 05 AUDIO
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>    INDEX 01 00:00:00
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>FILE &quot;track06.ogg&quot; OGG
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>  TRACK 06 AUDIO
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>    INDEX 01 00:00:00
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>FILE &quot;track07.wav&quot; WAV
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>  TRACK 07 AUDIO
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>    INDEX 01 00:00:00
 </code></pre></div>
 <p>For devices with sufficient storage, we recommend ripping your CD-ROM audio to
 (lossless) FLAC tracks and adding seek-points using:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>flac -8 --output-name=trackXY.flac trackXY.wav
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>metaflac --add-seekpoint=1s trackXY.flac
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flac -8 --output-name=trackXY.flac trackXY.wav
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>metaflac --add-seekpoint=1s trackXY.flac
 </code></pre></div>
 <p>FLAC typically achieves between 50% and 35% compression while producing
 binary-identical output versus WAV files.</p>
 <p>For limited-storage devices such as ARM single-board computers, Opus provides
 state-of-the-art lossy compression that exceeds all other formats, including
-Apple’s AAC and AAC High-Efficiency formats. Opus allows even further space
+Apple&rsquo;s AAC and AAC High-Efficiency formats. Opus allows even further space
 savings over MP3 or Vorbis track while matching or exceeding them in output
 quality.</p>
 <p>For example, CD-DA tracks consisting of monaural speech can be encoded with:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>opusenc --speech --bitrate 24 --downmix-mono trackXY.wav trackXY.opus
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>opusenc --speech --bitrate 24 --downmix-mono trackXY.wav trackXY.opus
 </code></pre></div>
-<p>When applied to Sierra’s <strong>Jones in the Fast Lane</strong> audio track, Opus compresses
+<p>When applied to Sierra&rsquo;s <strong>Jones in the Fast Lane</strong> audio track, Opus compresses
 it from 373 MB down to 6.4 MB (98.2% savings in disk space) with no discernible
 loss in quality.</p>
 <p>For CD-DA tracks consisting of sound effects and relatively simple music, Opus
 does fine with a bitrate between 54 and 70, whereas more complex musical
 tracks might need a bitrate of up to 84. Experiment and find your sweet spot!</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>opusenc --bitrate 70 trackXY.wav trackXY.opus
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>opusenc --bitrate 70 trackXY.wav trackXY.opus
 </code></pre></div>
-<p>If your CD-DA tracks are encoded at 48 kHz (which is Opus’s default internal
-rate), then feel free to configure DOSBox Staging’s mixer rate to match,
+<p>If your CD-DA tracks are encoded at 48 kHz (which is Opus&rsquo;s default internal
+rate), then feel free to configure DOSBox Staging&rsquo;s mixer rate to match,
 which ensures your CD-DA will not be resampled through your audio chain; as
 your sound card, USB speakers, and HDMI interface all (likely) operate at a
 native rate of 48 kHz.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">[mixer]</span>
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="na">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">48000</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[mixer]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">rate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">48000</span>
 </code></pre></div>
-<h3 id="pixel-perfect-scaling-mode">Pixel-perfect scaling mode<a class="headerlink" href="#pixel-perfect-scaling-mode" title="Permanent link">¶</a></h3>
+<h3 id="pixel-perfect-scaling-mode">Pixel-perfect scaling mode<a class="headerlink" href="#pixel-perfect-scaling-mode" title="Permanent link">&para;</a></h3>
 <p>Pixel-perfect output scales the image by the largest integer multiplier that
-fits within your monitor’s native resolution. For example, given a
-1920×1080 monitor and a 320×200 game requiring aspect-correction,
-each of its pixels would be scaled by 4×5 to produce a 1280×1000
+fits within your monitor&rsquo;s native resolution. For example, given a
+1920&times;1080 monitor and a 320&times;200 game requiring aspect-correction,
+each of its pixels would be scaled by 4&times;5 to produce a 1280&times;1000
 image. This preserves the original artwork without <em>any</em> edge blurring.</p>
 <p>To enable pixel-perfect output, apply the following settings to the indicated
 sections of your DOSBox Staging configuration file, as follows:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="na">output</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">texturepp</span>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="k">[render]</span>
-<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="na">scaler</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
-<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">output</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">texturepp</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="k">[render]</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="na">scaler</span><span class="w">   </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
 </code></pre></div>
 <p>Pixel-perfect looks like this on a 1080p screen:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/heroes-of-might-and-magic-2-pixel-perfect.png"><img alt="Heroes of Might and Magic II (1996)" src="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/heroes-of-might-and-magic-2-pixel-perfect.png"/></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/heroes-of-might-and-magic-2-pixel-perfect.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Heroes of Might and Magic II (1996)" src="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/heroes-of-might-and-magic-2-pixel-perfect.png" /></a></p>
 <figcaption>
-<p><a href="https://en.wikipedia.org/wiki/Heroes_of_Might_and_Magic_II">Heroes of Might and Magic II (1996)</a> — 640×480
+<p><a href="https://en.wikipedia.org/wiki/Heroes_of_Might_and_Magic_II">Heroes of Might and Magic II (1996)</a> &mdash; 640&times;480
   with a <a href="https://en.wikipedia.org/wiki/Pixel_aspect_ratio">pixel aspect ratio (PAR)</a>
-  of 1:1, upscaled to 2×2
+  of 1:1, upscaled to 2&times;2
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/wolfenstein-3d-pixel-perfect.png"><img alt="Wolf3D" src="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/wolfenstein-3d-pixel-perfect.png"/></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/wolfenstein-3d-pixel-perfect.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Wolf3D" src="https://archive.org/download/dosbox-staging-v0.75.0-pixel-perfect/wolfenstein-3d-pixel-perfect.png" /></a></p>
 <figcaption>
-<p><a href="https://en.wikipedia.org/wiki/Wolfenstein_3D">Wolfenstein 3D (1992)</a> — 320×200 with a PAR of 1:1.2 (non-square
-  pixels), upscaled to 4×5 with a PAR of 1:1.25
+<p><a href="https://en.wikipedia.org/wiki/Wolfenstein_3D">Wolfenstein 3D (1992)</a> &mdash; 320&times;200 with a PAR of 1:1.2 (non-square
+  pixels), upscaled to 4&times;5 with a PAR of 1:1.25
   </p>
 </figcaption>
 </figure>
-<h3 id="resizable-window">Resizable window<a class="headerlink" href="#resizable-window" title="Permanent link">¶</a></h3>
-<p>Being able to click and drag to resize an application’s window is not a
-revolutionary feature by any measure; however it’s a welcome addition for
+<h3 id="resizable-window">Resizable window<a class="headerlink" href="#resizable-window" title="Permanent link">&para;</a></h3>
+<p>Being able to click and drag to resize an application&rsquo;s window is not a
+revolutionary feature by any measure; however it&rsquo;s a welcome addition for
 DOSBox Staging!</p>
 <figure>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="472" src="https://www.youtube-nocookie.com/embed/9J2U-qFxE1E" title="YouTube video player" width="840"></iframe>
 <figcaption>
-<p><a href="https://en.wikipedia.org/wiki/Star_Wars:_Dark_Forces">Star Wars: Dark Forces (1995)</a> — intro playing while the DOSBox window is being
+<p><a href="https://en.wikipedia.org/wiki/Star_Wars:_Dark_Forces">Star Wars: Dark Forces (1995)</a> &mdash; intro playing while the DOSBox window is being
   resized vigorously
   </p>
 </figcaption>
 </figure>
-<p>This feature is a work-in-progress: it’s available on Linux by default, and can
+<p>This feature is a work-in-progress: it&rsquo;s available on Linux by default, and can
 be enabled for testing on Windows and macOS by setting the following (but note
 that it does not yet work correctly on these systems):</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="na">windowresolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">resizable</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">windowresolution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">resizable</span>
 </code></pre></div>
 <p>On all systems, the resizable window is only available for <code>output = opengl</code>
 and <code>glshader = sharp</code>. Support will be expanded to more outputs and shaders in
 the future versions.</p>
-<h3 id="autotype-command">AUTOTYPE command<a class="headerlink" href="#autotype-command" title="Permanent link">¶</a></h3>
+<h3 id="autotype-command">AUTOTYPE command<a class="headerlink" href="#autotype-command" title="Permanent link">&para;</a></h3>
 <p><code>AUTOTYPE</code> is a command-line tool provided by DOSBox Staging that performs
 scripted keyboard entry into the running DOS program or game.</p>
 <p>It can be used to reliably skip intros, provide input to answer initial startup
 or configuration questions, or conduct a simple demo.</p>
 <p>Simply run the command to learn more:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>Z:&gt; autotype
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Z:&gt; autotype
 </code></pre></div>
 <p>Some games that benefit from <code>AUTOTYPE</code> on startup are listed on the
 <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/AUTOTYPE-Candidates">wiki page</a>.</p>
-<h3 id="changed-rendering-defaults">Changed rendering defaults<a class="headerlink" href="#changed-rendering-defaults" title="Permanent link">¶</a></h3>
+<h3 id="changed-rendering-defaults">Changed rendering defaults<a class="headerlink" href="#changed-rendering-defaults" title="Permanent link">&para;</a></h3>
 <p>The following default configuration settings were changed to improve the
 out-of-the-box experience for the majority of games running on modern hardware.</p>
-<p>The default video settings now use SDL’s OpenGL rendering backend, apply a 4:3
+<p>The default video settings now use SDL&rsquo;s OpenGL rendering backend, apply a 4:3
 aspect ratio correction, and scale the image using the <code>sharp</code> OpenGL shader to
 provide relatively sharp pixels when in fullscreen mode.</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.75.0-rendering-defaults/battle-chess.png"><img alt="Battle Chess" src="https://archive.org/download/dosbox-staging-v0.75.0-rendering-defaults/battle-chess.png"/></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.75.0-rendering-defaults/battle-chess.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Battle Chess" src="https://archive.org/download/dosbox-staging-v0.75.0-rendering-defaults/battle-chess.png" /></a></p>
 <figcaption>
-<p><a href="https://en.wikipedia.org/wiki/Battle_Chess">Battle Chess (1989)</a> — at 1080p using the default settings
+<p><a href="https://en.wikipedia.org/wiki/Battle_Chess">Battle Chess (1989)</a> &mdash; at 1080p using the default settings
   </p>
 </figcaption>
 </figure>
-<h3 id="expand-mouse-control-methods">Expand mouse control methods<a class="headerlink" href="#expand-mouse-control-methods" title="Permanent link">¶</a></h3>
-<p>The prior “autolocking” mouse option used by DOSBox has been renamed in
+<h3 id="expand-mouse-control-methods">Expand mouse control methods<a class="headerlink" href="#expand-mouse-control-methods" title="Permanent link">&para;</a></h3>
+<p>The prior &ldquo;autolocking&rdquo; mouse option used by DOSBox has been renamed in
 DOSBox Staging to <code>capture_mouse</code>, which is configured using two values
 defining how the mouse behaves.</p>
 <p>The first value defines how the mouse is controlled:</p>
@@ -988,10 +1665,10 @@ defining how the mouse behaves.</p>
 <li><code>middlerelease</code>: middle-click will uncapture the mouse when windowed (not sent to the game)</li>
 </ul>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="k">[sdl]</span>
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="na">capture_mouse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">onclick middlerelease</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">capture_mouse</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">onclick middlerelease</span>
 </code></pre></div>
-<p>This will capture the mouse on the first click inside DOSBox Staging’s window, and a
+<p>This will capture the mouse on the first click inside DOSBox Staging&rsquo;s window, and a
 middle-click will release the mouse. Note that the prior method to release the
 mouse still works (pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f10">F10</kbd></span>).</p>
 <div class="admonition note">
@@ -1007,70 +1684,70 @@ recommend switching to fullscreen (<span class="keys"><kbd class="key-alt">Alt</
 <p class="admonition-title">Important</p>
 <p>These options do not affect the mouse behavior in fullscreen (<span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span>), as the mouse is always captured.</p>
 </div>
-<h3 id="nuked-opl-v18">Nuked OPL v1.8<a class="headerlink" href="#nuked-opl-v18" title="Permanent link">¶</a></h3>
+<h3 id="nuked-opl-v18">Nuked OPL v1.8<a class="headerlink" href="#nuked-opl-v18" title="Permanent link">&para;</a></h3>
 <p>The cycle-accurate Nuked <a href="https://en.wikipedia.org/wiki/Yamaha_YMF262">OPL3</a> emulator is now used by default;
 this change improves AdLib and Sound Blaster FM music emulation accuracy.</p>
 <p>This improved accuracy comes at the cost of a slightly higher CPU use, which
 is insignificant for the vast majority of users on typical desktop or laptop
 hardware.</p>
 <p>However, those using DOSBox Staging on old or CPU-limited hardware (capable of
-30,000 dosbox “cycles” or less, such as the Raspberry Pi 3) will be served best
+30,000 dosbox &ldquo;cycles&rdquo; or less, such as the Raspberry Pi 3) will be served best
 using the <code>fast</code> OPL emulator (see the <code>oplemu</code> documentation provided in the
 configuration file).</p>
-<h3 id="reload-key-bindings-at-runtime">Reload key bindings at runtime<a class="headerlink" href="#reload-key-bindings-at-runtime" title="Permanent link">¶</a></h3>
+<h3 id="reload-key-bindings-at-runtime">Reload key bindings at runtime<a class="headerlink" href="#reload-key-bindings-at-runtime" title="Permanent link">&para;</a></h3>
 <p>The built-in <code>CONFIG</code> shell command is a bit old, but a little-known feature
 allows users to reconfigure DOSBox Staging at runtime. This is a nifty way to
 change configuration using batch scripts based on user input.</p>
-<h4 id="reloading-key-bindings">Reloading key bindings<a class="headerlink" href="#reloading-key-bindings" title="Permanent link">¶</a></h4>
+<h4 id="reloading-key-bindings">Reloading key bindings<a class="headerlink" href="#reloading-key-bindings" title="Permanent link">&para;</a></h4>
 <p>You can now change key bindings at runtime by loading them from a file:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>Z:\&gt; config -set "sdl mapperfile=&lt;path-to-file&gt;"
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Z:\&gt; config -set &quot;sdl mapperfile=&lt;path-to-file&gt;&quot;
 </code></pre></div>
-<h4 id="other-new-options-svn">Other new options (SVN)<a class="headerlink" href="#other-new-options-svn" title="Permanent link">¶</a></h4>
+<h4 id="other-new-options-svn">Other new options (SVN)<a class="headerlink" href="#other-new-options-svn" title="Permanent link">&para;</a></h4>
 <p>DOSBox added a number of features to the <code>CONFIG</code> command. To list them all,
 run:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>Z:\&gt; config /?
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Z:\&gt; config /?
 </code></pre></div>
-<h3 id="configuration-file-locations">Configuration file locations<a class="headerlink" href="#configuration-file-locations" title="Permanent link">¶</a></h3>
-<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">¶</a></h4>
-<p>DOSBox Staging’s configuration-file location has been updated to comply wit the
+<h3 id="configuration-file-locations">Configuration file locations<a class="headerlink" href="#configuration-file-locations" title="Permanent link">&para;</a></h3>
+<h4 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h4>
+<p>DOSBox Staging&rsquo;s configuration-file location has been updated to comply wit the
 <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG Base Directory Specification</a>. This means DOSBox Staging will no
 longer going create configuration directories directly in your home directory.</p>
 <p>Configuration files are now located in:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>~/.config/dosbox/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>~/.config/dosbox/
 </code></pre></div>
 <p>Users can customize the parent (<code>.config/</code>) location by setting the
 <code>XDG_CONFIG_HOME</code> environment variable, according to the <a href="https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG
 Specification</a>.</p>
-<h4 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">¶</a></h4>
+<h4 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h4>
 <p>The path was slightly changed to avoid spaces in the default configuration
 filename and to group all configuration files in a single directory:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>~/Library/Preferences/DOSBox/
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>~/Library/Preferences/DOSBox/
 </code></pre></div>
-<h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">¶</a></h4>
+<h4 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h4>
 <p>No changes; the configuration files are created in:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>C:\Users\&lt;username&gt;\AppData\Local\DOSBox\
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>C:\Users\&lt;username&gt;\AppData\Local\DOSBox\
 </code></pre></div>
-<h3 id="modem-phonebook">Modem phonebook<a class="headerlink" href="#modem-phonebook" title="Permanent link">¶</a></h3>
+<h3 id="modem-phonebook">Modem phonebook<a class="headerlink" href="#modem-phonebook" title="Permanent link">&para;</a></h3>
 <p>You can map fake phone numbers to Internet addresses which is useful for programs
 where limitations on phone number input field are too strict.
 Create a text file with the name specified in <code>phonebookfile</code> entry in the <code>[serial]</code>
 section in the DOSBox configuration file and add phone-address pairs per line,
 for example:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>5551234 towel.blinkenlights.nl:23
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>5551234 towel.blinkenlights.nl:23
 </code></pre></div>
 <p>Now you can dial the specified phone number and the emulated modem will connect
-to the address it’s mapped to. Note that phone book does not allow any
+to the address it&rsquo;s mapped to. Note that phone book does not allow any
 characters in the phone number that are ignored or denied by a real Hayes
 compatible modem.</p>
-<h3 id="64-bit-dynamic-recompilation-svn">64-bit dynamic recompilation (SVN)<a class="headerlink" href="#64-bit-dynamic-recompilation-svn" title="Permanent link">¶</a></h3>
+<h3 id="64-bit-dynamic-recompilation-svn">64-bit dynamic recompilation (SVN)<a class="headerlink" href="#64-bit-dynamic-recompilation-svn" title="Permanent link">&para;</a></h3>
 <p>DOSBox has had <a href="https://en.wikipedia.org/wiki/Dynamic_recompilation">dynamic recompilation</a> support for a long time, but it
 was limited to 32-bit builds.  Support for 64-bit dynarec improves CPU
-emulation speed and quality across the board—this is especially visible to
+emulation speed and quality across the board&mdash;this is especially visible to
 Linux and macOS users<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>.</p>
 <figure>
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen" frameborder="0" height="472" src="https://www.youtube-nocookie.com/embed/9N-wXIamSh4" title="YouTube video player" width="840"></iframe>
 <figcaption>
-<p><a href="https://en.wikipedia.org/wiki/Stargunner">Stargunner (1996, freeware)</a> — running on Linux x86_64 via Boxtron
+<p><a href="https://en.wikipedia.org/wiki/Stargunner">Stargunner (1996, freeware)</a> &mdash; running on Linux x86_64 via Boxtron
   </p>
 </figcaption>
 </figure>
@@ -1078,33 +1755,33 @@ Linux and macOS users<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a
 fluctuating emulation speed (sometimes too fast, sometimes too slow -
 regardless of cycles settings). This game was designed to run with constant
 70 FPS and now it runs with constant 70 FPS.</p>
-<h3 id="cga-improvements">CGA improvements<a class="headerlink" href="#cga-improvements" title="Permanent link">¶</a></h3>
+<h3 id="cga-improvements">CGA improvements<a class="headerlink" href="#cga-improvements" title="Permanent link">&para;</a></h3>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.75.0-cga-improvements/maniac-mansion-cga.png"><img alt="Maniac Mansion -- CGA modes comparison" src="https://archive.org/download/dosbox-staging-v0.75.0-cga-improvements/maniac-mansion-cga.png"/></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.75.0-cga-improvements/maniac-mansion-cga.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Maniac Mansion -- CGA modes comparison" src="https://archive.org/download/dosbox-staging-v0.75.0-cga-improvements/maniac-mansion-cga.png" /></a></p>
 <figcaption>
-<p><a href="https://en.wikipedia.org/wiki/Maniac_Mansion">Maniac Mansion (1988)</a> — with forced CGA mode:<br/>
-  top-left: CGA, default palette;<br/>
-  top-right: CGA mono, green tint;<br/>
-  bottom-left: CGA composite, early model, default hue;<br/>
+<p><a href="https://en.wikipedia.org/wiki/Maniac_Mansion">Maniac Mansion (1988)</a> &mdash; with forced CGA mode:<br>
+  top-left: CGA, default palette;<br>
+  top-right: CGA mono, green tint;<br>
+  bottom-left: CGA composite, early model, default hue;<br>
   bottom-right: CGA composite, late model, default hue.
   </p>
 </figcaption>
 </figure>
-<h4 id="cga-monochrome-mode">CGA monochrome mode<a class="headerlink" href="#cga-monochrome-mode" title="Permanent link">¶</a></h4>
-<p>Many <a href="https://en.wikipedia.org/wiki/Color_Graphics_Adapter">CGA</a> games from the 80’s were designed to support monochromatic
+<h4 id="cga-monochrome-mode">CGA monochrome mode<a class="headerlink" href="#cga-monochrome-mode" title="Permanent link">&para;</a></h4>
+<p>Many <a href="https://en.wikipedia.org/wiki/Color_Graphics_Adapter">CGA</a> games from the 80&rsquo;s were designed to support monochromatic
 cathode-ray tube (CRT) monitors that used either an amber, green, or
 grayscale-shaded phosphor coating. As such, some games look much better when
 rendered using a similar monochrome palette. This mode is designed to emulate
 such displays.</p>
 <p>Use <code>machine = cga_mono</code> to turn on the feature. You can switch between green,
 amber, white, and paper-white palettes at runtime by pressing <span class="keys"><kbd class="key-f11">F11</kbd></span>.</p>
-<h4 id="cga-composite-mode-svn">CGA Composite mode (SVN)<a class="headerlink" href="#cga-composite-mode-svn" title="Permanent link">¶</a></h4>
+<h4 id="cga-composite-mode-svn">CGA Composite mode (SVN)<a class="headerlink" href="#cga-composite-mode-svn" title="Permanent link">&para;</a></h4>
 <p>Technical artifacts caused by the composite video format were cleverly used by
 game developers to generate extra colors (versus non-composite CGA) by
 manipulating pixel positions on the screen.  For example, adjacent pixels would be
-partly “averaged” (through horizontal overlap), producing interposed solid
+partly &ldquo;averaged&rdquo; (through horizontal overlap), producing interposed solid
 colors or generating rudimentary transparency effects.</p>
-<p><a href="https://en.wikipedia.org/wiki/Composite_artifact_colors">Composite</a> mode was added to DOSBox’s CGA emulator in 2012, but was
+<p><a href="https://en.wikipedia.org/wiki/Composite_artifact_colors">Composite</a> mode was added to DOSBox&rsquo;s CGA emulator in 2012, but was
 never back-ported to any of its stable releases. Most users are familiar this
 mode as its commonly included in other DOSBox forks.</p>
 <p>Once enabled, you can switch between color and composite modes, early and late
@@ -1112,20 +1789,20 @@ CGA models, and adjust the hue at runtime.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The default keybinding for manipulating CGA modes conflict with other
-essential bindings; it’s advisable to change them if you plan to use this
+essential bindings; it&rsquo;s advisable to change them if you plan to use this
 feature. The default key for turning on composite mode is <span class="keys"><kbd class="key-f12">F12</kbd></span>.</p>
 </div>
-<h3 id="glsl-shader-support-svn">GLSL shader support (SVN)<a class="headerlink" href="#glsl-shader-support-svn" title="Permanent link">¶</a></h3>
+<h3 id="glsl-shader-support-svn">GLSL shader support (SVN)<a class="headerlink" href="#glsl-shader-support-svn" title="Permanent link">&para;</a></h3>
 <p>Shaders written in <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">OpenGL Shading Language (GLSL)</a> offload the task of
-processing the emulated game’s output to your GPU hardware.</p>
+processing the emulated game&rsquo;s output to your GPU hardware.</p>
 <p>This allows the image to be altered in many ways, such as emulating the analog
 artifacts (scanlines, shadow masks, and phosphor glow) present in circa-1980s
 and 90s CRT monitor on modern 1080p and greater LCD panels.</p>
 <p>You can can select the shader to use by setting the <code>glshader</code> config param:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="k">[render]</span>
-<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sharp</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">[render]</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sharp</span>
 </code></pre></div>
-<p>It’s also possible to provide your shader implementations by placing <code>.glsl</code>
+<p>It&rsquo;s also possible to provide your shader implementations by placing <code>.glsl</code>
 files in the configuration directory:</p>
 <div class="compact">
 <table>
@@ -1153,7 +1830,7 @@ files in the configuration directory:</p>
 </div>
 <p>E.g. if you put a shader file called <code>test.glsl</code> in your config directory, you
 can select it as follows:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">test.glsl</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">test.glsl</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1162,51 +1839,51 @@ ensure image post-processing is performed exclusively by the shader (and not a
 mix of the two).</p>
 </div>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://archive.org/download/dosbox-staging-v0.75.0-glsl-shader-support/start-wars-x-wing-crt-shader.png"><img alt="X-Wing Collector's Edition" src="https://archive.org/download/dosbox-staging-v0.75.0-glsl-shader-support/start-wars-x-wing-crt-shader.png"/></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.75.0-glsl-shader-support/start-wars-x-wing-crt-shader.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="X-Wing Collector's Edition" src="https://archive.org/download/dosbox-staging-v0.75.0-glsl-shader-support/start-wars-x-wing-crt-shader.png" /></a></p>
 <figcaption>
-<p><a href="https://en.wikipedia.org/wiki/Star_Wars:_X-Wing_(video_game_series)#Collector_Editions">Star Wars™ — X-Wing: Collector’s CD-ROM Edition (1994)</a><br/>
+<p><a href="https://en.wikipedia.org/wiki/Star_Wars:_X-Wing_(video_game_series)#Collector_Editions">Star Wars&trade; &mdash; X-Wing: Collector&rsquo;s CD-ROM Edition (1994)</a><br>
   Using CRT-Lottes shader on a 1080p screen; click on the image to enlarge it to see
   the fine details. This shader is not bundled with DOSBox Staging (yet); you
   can download it from <a href="https://github.com/tyrells/dosbox-svn-shaders">here</a>.
   </p>
 </figcaption>
 </figure>
-<h3 id="date-and-time-commands-svn">DATE and TIME commands (SVN)<a class="headerlink" href="#date-and-time-commands-svn" title="Permanent link">¶</a></h3>
+<h3 id="date-and-time-commands-svn">DATE and TIME commands (SVN)<a class="headerlink" href="#date-and-time-commands-svn" title="Permanent link">&para;</a></h3>
 <p>The traditional <code>DATE</code> and <code>TIME</code> DOS commands have been added to DOSBox. This
 allows the user to change the date seen by the software running inside the
 emulated environment:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>Z:\&gt; date
-<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>Current date: Fri 05/01/2020
-<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a>Type 'date MM-DD-YYYY' to change.
-<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a>
-<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a>Z:\&gt; time
-<a href="#__codelineno-20-6" id="__codelineno-20-6" name="__codelineno-20-6"></a>Current time: 11:08:23,34
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Z:\&gt; date
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>Current date: Fri 05/01/2020
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Type &#39;date MM-DD-YYYY&#39; to change.
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>Z:\&gt; time
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>Current time: 11:08:23,34
 </code></pre></div>
 <p>Note that while the date can be changed, the time cannot.</p>
 <p>This feature is useful for running old batch scripts and bypassing date checks
 in some old software.</p>
-<h3 id="mount-overlay-support">Mount overlay support<a class="headerlink" href="#mount-overlay-support" title="Permanent link">¶</a></h3>
+<h3 id="mount-overlay-support">Mount overlay support<a class="headerlink" href="#mount-overlay-support" title="Permanent link">&para;</a></h3>
 <p>This feature allows the user to redirect new and changed files to a different
 location transparently. The files in the overlay and normal drives are merged
 at startup and kept up to date when the game writes to the disk.</p>
 <p>This feature is useful for redirecting save files or configuration files
 to a different location (e.g. for backup or cloud saves).</p>
 <p>Example usage:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>Z:\&gt; mount C real
-<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>Drive C is mounted as local directory real/
-<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>
-<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a>Z:\&gt; mount C backup -t overlay
-<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a>Overlay backup/ on drive C mounted.
-<a href="#__codelineno-21-6" id="__codelineno-21-6" name="__codelineno-21-6"></a>
-<a href="#__codelineno-21-7" id="__codelineno-21-7" name="__codelineno-21-7"></a>Z:\&gt; C:
-<a href="#__codelineno-21-8" id="__codelineno-21-8" name="__codelineno-21-8"></a>C:\&gt; echo foo &gt; test.txt
-<a href="#__codelineno-21-9" id="__codelineno-21-9" name="__codelineno-21-9"></a>
-<a href="#__codelineno-21-10" id="__codelineno-21-10" name="__codelineno-21-10"></a>C:\&gt; type TEST.TXT
-<a href="#__codelineno-21-11" id="__codelineno-21-11" name="__codelineno-21-11"></a>foo
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Z:\&gt; mount C real
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>Drive C is mounted as local directory real/
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>Z:\&gt; mount C backup -t overlay
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>Overlay backup/ on drive C mounted.
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>Z:\&gt; C:
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>C:\&gt; echo foo &gt; test.txt
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>C:\&gt; type TEST.TXT
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>foo
 </code></pre></div>
 <p>File <code>TEST.TXT</code> is written to the directory <code>backup</code>, and not to <code>real</code>.</p>
-<h2 id="overview-of-changes">Overview of changes<a class="headerlink" href="#overview-of-changes" title="Permanent link">¶</a></h2>
-<h3 id="removed-features">Removed features<a class="headerlink" href="#removed-features" title="Permanent link">¶</a></h3>
+<h2 id="overview-of-changes">Overview of changes<a class="headerlink" href="#overview-of-changes" title="Permanent link">&para;</a></h2>
+<h3 id="removed-features">Removed features<a class="headerlink" href="#removed-features" title="Permanent link">&para;</a></h3>
 <ul>
 <li>DOSBox Staging does not run on Operating System/2 (OS/2) or derivatives.</li>
 <li>DOSBox Staging does not run on Windows XP or earlier Windows versions.</li>
@@ -1222,10 +1899,10 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li>Removed CD-DA playback support for tracks using the Audio Interchange File
   Format <a href="https://en.wikipedia.org/wiki/Audio_Interchange_File_Format">AIFF</a> audio codec.</li>
 </ul>
-<h3 id="development-changes">Development changes<a class="headerlink" href="#development-changes" title="Permanent link">¶</a></h3>
+<h3 id="development-changes">Development changes<a class="headerlink" href="#development-changes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Migrated the DOSBox source from Apache’s Subversion (SVN) software versioning
+<p>Migrated the DOSBox source from Apache&rsquo;s Subversion (SVN) software versioning
   and revision control system to the Git distributed version-control system
   using GitHub, while preserving all publicly available project history.</p>
 <ul>
@@ -1260,12 +1937,12 @@ to a different location (e.g. for backup or cloud saves).</p>
 </ul>
 </li>
 <li>
-<p>Added static analysis checks performed by LLVM’s Clang, Synopsys’s Coverity,
-  and VIVA64’s Program Verification Systems (PVS) Studio.</p>
+<p>Added static analysis checks performed by LLVM&rsquo;s Clang, Synopsys&rsquo;s Coverity,
+  and VIVA64&rsquo;s Program Verification Systems (PVS) Studio.</p>
 </li>
 <li>
-<p>Added dynamic analysis checks performed by Clang’s undefined-behavior (UB)
-  sanitizer and GCC’s UB and address sanitizers.</p>
+<p>Added dynamic analysis checks performed by Clang&rsquo;s undefined-behavior (UB)
+  sanitizer and GCC&rsquo;s UB and address sanitizers.</p>
 </li>
 <li>
 <p>The CI system includes gated checks that allow maintainers to focus on code
@@ -1292,7 +1969,7 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li>
 <p>Automated the compilation of release-style builds against the latest main
   and feature branches. These not only save time for testers wanting to verify
-  new features and bugfixes, but also ensures they’re running builds compiled
+  new features and bugfixes, but also ensures they&rsquo;re running builds compiled
   using would-be release settings.</p>
 </li>
 <li>
@@ -1311,18 +1988,18 @@ to a different location (e.g. for backup or cloud saves).</p>
   <a href="https://github.com/dosbox-staging/dosbox-staging/blob/main/CONTRIBUTING.md">Contributor Guidelines</a>.</p>
 </li>
 </ul>
-<h3 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">¶</a></h3>
+<h3 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Inconsistent minimum window size with <code>windowresolution = resizable</code> when
   leaving fullscreen.</li>
 <li>Windows, macOS: Window content is not refreshed when resizing.</li>
 <li>Windows, macOS: Emulation stops when moving or resizing window.</li>
-<li>Linux: Wayland crashes (Wayland support is “experimental” at the moment).</li>
+<li>Linux: Wayland crashes (Wayland support is &ldquo;experimental&rdquo; at the moment).</li>
 <li>Linux: Splash screen is sometimes transparent or corrupted on KDE.</li>
 </ul>
 <p>Submit new issues or learn more about existing ones using our
 <a href="https://github.com/dosbox-staging/dosbox-staging/issues">bug-tracker</a>.</p>
-<h3 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">¶</a></h3>
+<h3 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h3>
 <p>During the <strong>DOSBox Staging 0.75</strong> development period:</p>
 <ul>
 <li><strong>11 DOSBox Staging contributors</strong> submitted <strong>208</strong> pull requests comprised
@@ -1332,7 +2009,7 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li><strong>Three DOSBox (SVN) maintainers</strong> committed <strong>76</strong> changes written by <strong>5</strong>
   authors. These changes have been incorporated into DOSBox Staging.</li>
 </ul>
-<h4 id="maintainers">Maintainers<a class="headerlink" href="#maintainers" title="Permanent link">¶</a></h4>
+<h4 id="maintainers">Maintainers<a class="headerlink" href="#maintainers" title="Permanent link">&para;</a></h4>
 <div class="compact">
 <ul>
 <li>Patryk Obara</li>
@@ -1340,7 +2017,7 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li>Anton Shepelev <em>(ant-222)</em></li>
 </ul>
 </div>
-<h4 id="direct-contributors">Direct contributors<a class="headerlink" href="#direct-contributors" title="Permanent link">¶</a></h4>
+<h4 id="direct-contributors">Direct contributors<a class="headerlink" href="#direct-contributors" title="Permanent link">&para;</a></h4>
 <div class="compact">
 <ul>
 <li>Anton Shepelev <em>(ant-222)</em></li>
@@ -1356,7 +2033,7 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li>Wouter Wijsman</li>
 </ul>
 </div>
-<h4 id="testers-and-wiki-contributors">Testers and wiki contributors<a class="headerlink" href="#testers-and-wiki-contributors" title="Permanent link">¶</a></h4>
+<h4 id="testers-and-wiki-contributors">Testers and wiki contributors<a class="headerlink" href="#testers-and-wiki-contributors" title="Permanent link">&para;</a></h4>
 <div class="compact">
 <ul>
 <li>GranMinigun</li>
@@ -1365,7 +2042,7 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li>rderooy</li>
 </ul>
 </div>
-<h4 id="indirect-contributors">Indirect contributors<a class="headerlink" href="#indirect-contributors" title="Permanent link">¶</a></h4>
+<h4 id="indirect-contributors">Indirect contributors<a class="headerlink" href="#indirect-contributors" title="Permanent link">&para;</a></h4>
 <p>Library or patch authors, upstream SVN developers, etc.</p>
 <div class="compact">
 <ul>
@@ -1383,11 +2060,11 @@ to a different location (e.g. for backup or cloud saves).</p>
 <li>Yann Collet</li>
 </ul>
 </div>
-<h4 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">¶</a></h4>
+<h4 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h4>
 <p>You can read detailed changelog via Git, e.g. using the following command:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>git shortlog ^v0.75.0-pre v0.75.0 --no-merges
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>git shortlog ^v0.75.0-pre v0.75.0 --no-merges
 </code></pre></div>
-<h3 id="merged-in-community-patches-and-libraries">Merged-in community patches and libraries<a class="headerlink" href="#merged-in-community-patches-and-libraries" title="Permanent link">¶</a></h3>
+<h3 id="merged-in-community-patches-and-libraries">Merged-in community patches and libraries<a class="headerlink" href="#merged-in-community-patches-and-libraries" title="Permanent link">&para;</a></h3>
 <p>The following lists those merges performed by maintainers either on behalf of,
 or making use of, patches or libraries authored by community members (in
 alphabetic order).</p>
@@ -1436,82 +2113,128 @@ alphabetic order).</p>
 <ul>
 <li>Add cga_mono machine <em>(VileRancour)</em></li>
 </ul>
-<h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">¶</a></h2>
+<h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>We are extremely grateful for all contributions, including the invaluable
 improvements merged in from the DOSBox project.</p>
 <div class="footnote">
-<hr/>
+<hr />
 <ol>
 <li id="fn:1">
 <p>DOSBox Staging 0.75.0 stable Windows build is still 32-bit; Linux and
-macOS builds are 64-bits. <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a></p>
+macOS builds are 64-bits.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
-</article>
-</div>
-</div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
           </button>
-</main>
-<!-- Footer -->
+        
+      </main>
+      
+        <!-- Footer -->
 <footer class="md-footer">
-<!-- Link to previous and/or next page -->
-<nav aria-label="" class="md-footer__inner md-grid">
-<!-- Link to previous page -->
-<a aria-label="Previous: 0.75.1" class="md-footer__link md-footer__link--prev" href="../0.75.1/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav
+      class="md-footer__inner md-grid"
+      aria-label=""
+      
+    >
+
+      <!-- Link to previous page -->
+      
+        
+        <a
+          href="../0.75.1/"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: 0.75.1"
+          rel="prev"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
                 Previous
               </span>
               0.75.1
             </div>
-</div>
-</a>
-<!-- Link to next page -->
-<a aria-label="Next: 0.75.0-RC1" class="md-footer__link md-footer__link--next" href="../0.75.0-rc1/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a
+          href="../0.75.0-rc1/"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: 0.75.0-RC1"
+          rel="next"
+        >
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
                 Next
               </span>
               0.75.0-RC1
             </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<!-- Further information -->
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="links">
-<ul>
-<li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
-<li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
-<li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
-<!-- Mastodon verification -->
-<li><a href="https://corteximplant.com/@DOSBox_Staging" rel="me">Mastodon</a></li>
-</ul>
-</div>
-<div class="credits">
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+          <li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+          <li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+          <!-- Mastodon verification -->
+	  <li><a rel="me" href="https://corteximplant.com/@DOSBox_Staging">Mastodon</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
        Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
-</div>
-</div>
-</div>
+     </div>
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
 </html>
