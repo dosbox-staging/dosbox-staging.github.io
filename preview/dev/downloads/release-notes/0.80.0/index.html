@@ -1,748 +1,1503 @@
 
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+      
+      
+        <meta name="author" content="DOSBox Staging Authors">
+      
+      
+        <link rel="canonical" href="https://https:/dosbox-staging.github.io/downloads/release-notes/0.80.0/">
+      
+      
+        <link rel="prev" href="../0.80.1/">
+      
+      
+        <link rel="next" href="../0.79.1/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+    
+    
+      
+        <title>0.80.0 - DOSBox Staging</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
+      
+      
 
-<html class="no-js" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices." name="description"/>
-<meta content="DOSBox Staging Authors" name="author"/>
-<link href="https://https:/dosbox-staging.github.io/downloads/release-notes/0.80.0/" rel="canonical"/>
-<link href="../0.80.1/" rel="prev"/>
-<link href="../0.79.1/" rel="next"/>
-<link href="../../../assets/images/favicon.ico" rel="icon"/>
-<meta content="mkdocs-1.4.3, mkdocs-material-9.1.6" name="generator"/>
-<title>0.80.0 - DOSBox Staging</title>
-<link href="../../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-            html.glightbox-open { overflow: initial; height: 100%; }
-            .gslide-title { margin-top: 0px; user-select: text; }
-            .gslide-desc { color: #666; user-select: text; }
-            .gslide-image img { background: white; }
-            
-                .gscrollbar-fixer { padding-right: 15px; }
-                .gdesc-inner { font-size: 0.75rem; }
-                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
-<body data-md-color-accent="" data-md-color-primary="" data-md-color-scheme="default" dir="ltr">
-<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
-<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
-<label class="md-overlay" for="__drawer"></label>
-<div data-md-component="skip">
-<a class="md-skip" href="#0800-release-notes">
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#0800-release-notes" class="md-skip">
           Skip to content
         </a>
-</div>
-<div data-md-component="announce">
-</div>
-<!-- Determine class according to configuration -->
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      <!-- Determine class according to configuration -->
+
+
+  
+
+
 <!-- Header -->
 <header class="md-header md-header--lifted" data-md-component="header">
-<nav aria-label="" class="md-header__inner md-grid">
-<!-- Link to home -->
-<a aria-label="DOSBox Staging" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="DOSBox Staging">
-<img alt="logo" src="../../../assets/images/dosbox-staging-nobg.svg"/>
-</a>
-<!-- Button to open drawer -->
-<label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
-</label>
-<!-- Header title -->
-<div class="md-header__title" data-md-component="header-title">
-<div class="md-header__ellipsis">
-<div class="md-header__topic">
-<span class="md-ellipsis">
+  <nav
+    class="md-header__inner md-grid"
+    aria-label=""
+  >
+
+    <!-- Link to home -->
+    <a
+      href="../../.."
+      title="DOSBox Staging"
+      class="md-header__button md-logo"
+      aria-label="DOSBox Staging"
+      data-md-component="logo"
+    >
+      
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             DOSBox Staging
           </span>
-</div>
-<div class="md-header__topic" data-md-component="header-topic">
-<span class="md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             DOSBox Staging
           </span>
-</div>
-</div>
-</div>
-<!-- Button to open search modal -->
-<label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-</label>
-<!-- Search interface -->
-<div class="md-search" data-md-component="search" role="dialog">
-<label class="md-search__overlay" for="__search"></label>
-<div class="md-search__inner" role="search">
-<form class="md-search__form" name="search">
-<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
-<label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</label>
-<nav aria-label="Search" class="md-search__options">
-<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
-</a>
-<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
-</button>
-</nav>
-<div class="md-search__suggest" data-md-component="search-suggest"></div>
-</form>
-<div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="">
-<div class="md-search-result" data-md-component="search-result">
-<div class="md-search-result__meta">
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
-</div>
-</div>
-</nav>
-<!-- Navigation tabs (sticky) -->
-<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
-<div class="md-grid">
-<ul class="md-tabs__list">
-<li class="md-tabs__item">
-<a class="md-tabs__link md-tabs__link--active" href="../../windows/">
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../windows/" class="md-tabs__link md-tabs__link--active">
         Downloads
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../getting-started/introduction/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../getting-started/introduction/" class="md-tabs__link">
         Getting started
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../get-involved/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../get-involved/" class="md-tabs__link">
         Get involved
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="../../../about/">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about/" class="md-tabs__link">
         About
       </a>
-</li>
-<li class="md-tabs__item">
-<a class="md-tabs__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-tabs__link">
       Wiki
     </a>
-</li>
-</ul>
-</div>
+  </li>
+
+      
+    </ul>
+  </div>
 </nav>
+    
+  
 </header>
-<div class="md-container" data-md-component="container">
-<main class="md-main" data-md-component="main">
-<div class="md-main__inner md-grid">
-<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
-<label class="md-nav__title" for="__drawer">
-<a aria-label="DOSBox Staging" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="DOSBox Staging">
-<img alt="logo" src="../../../assets/images/dosbox-staging-nobg.svg"/>
-</a>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
     DOSBox Staging
   </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
           Downloads
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_1">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
           Downloads
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../windows/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows/" class="md-nav__link">
         Windows
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../macos/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../macos/" class="md-nav__link">
         macOS
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../linux/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/" class="md-nav__link">
         Linux
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../development-builds/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development-builds/" class="md-nav__link">
         Development builds
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_1_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" checked>
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
           Release notes
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="true" aria-labelledby="__nav_1_5_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_1_5">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_5">
+          <span class="md-nav__icon md-icon"></span>
           Release notes
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.80.1/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.80.1/" class="md-nav__link">
         0.80.1
       </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
           0.80.0
           <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         0.80.0
       </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#summary">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
     Summary
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-upgrade">
+      
+        <li class="md-nav__item">
+  <a href="#how-to-upgrade" class="md-nav__link">
     How to upgrade
   </a>
-<nav aria-label="How to upgrade" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#downloads">
+  
+    <nav class="md-nav" aria-label="How to upgrade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
     Downloads
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upgrade-your-configuration-file">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-your-configuration-file" class="md-nav__link">
     Upgrade your configuration file
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#new-features">
+      
+        <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
     New features
   </a>
-<nav aria-label="New features" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reelmagic-support">
+  
+    <nav class="md-nav" aria-label="New features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reelmagic-support" class="md-nav__link">
     ReelMagic support
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mouse-improvements">
+        
+          <li class="md-nav__item">
+  <a href="#mouse-improvements" class="md-nav__link">
     Mouse improvements
   </a>
-<nav aria-label="Mouse improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dedicated-configuration-section">
+  
+    <nav class="md-nav" aria-label="Mouse improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-configuration-section" class="md-nav__link">
     Dedicated configuration section
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dual-mouse-gaming">
+        
+          <li class="md-nav__item">
+  <a href="#dual-mouse-gaming" class="md-nav__link">
     Dual mouse gaming
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#improved-support-for-third-party-int33-windows-mouse-drivers">
+        
+          <li class="md-nav__item">
+  <a href="#improved-support-for-third-party-int33-windows-mouse-drivers" class="md-nav__link">
     Improved support for third-party INT33 Windows mouse drivers
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mouse-related-help-in-the-title-bar">
+        
+          <li class="md-nav__item">
+  <a href="#mouse-related-help-in-the-title-bar" class="md-nav__link">
     Mouse-related help in the title bar
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#high-dpi-on-windows">
+        
+          <li class="md-nav__item">
+  <a href="#high-dpi-on-windows" class="md-nav__link">
     High DPI on Windows
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ability-to-use-local-configs-via-finder-on-macos">
+        
+          <li class="md-nav__item">
+  <a href="#ability-to-use-local-configs-via-finder-on-macos" class="md-nav__link">
     Ability to use local configs via Finder on macOS
   </a>
-<nav aria-label="Ability to use local configs via Finder on macOS" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-use-it">
+  
+    <nav class="md-nav" aria-label="Ability to use local configs via Finder on macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-it" class="md-nav__link">
     How to use it
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#general-improvements">
+      
+        <li class="md-nav__item">
+  <a href="#general-improvements" class="md-nav__link">
     General improvements
   </a>
-<nav aria-label="General improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#morecom-command">
+  
+    <nav class="md-nav" aria-label="General improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#morecom-command" class="md-nav__link">
     more.com command
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#on-the-fly-changes">
+        
+          <li class="md-nav__item">
+  <a href="#on-the-fly-changes" class="md-nav__link">
     On-the-fly changes
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#post-rendered-screenshots">
+        
+          <li class="md-nav__item">
+  <a href="#post-rendered-screenshots" class="md-nav__link">
     Post-rendered screenshots
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#more-bundled-opengl-shaders">
+        
+          <li class="md-nav__item">
+  <a href="#more-bundled-opengl-shaders" class="md-nav__link">
     More bundled OpenGL shaders
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bug-and-regression-fixes">
+      
+        <li class="md-nav__item">
+  <a href="#bug-and-regression-fixes" class="md-nav__link">
     Bug and regression fixes
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#translation-improvements">
+      
+        <li class="md-nav__item">
+  <a href="#translation-improvements" class="md-nav__link">
     Translation improvements
   </a>
-<nav aria-label="Translation improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#translations">
+  
+    <nav class="md-nav" aria-label="Translation improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translations" class="md-nav__link">
     Translations
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#related-improvements">
+        
+          <li class="md-nav__item">
+  <a href="#related-improvements" class="md-nav__link">
     Related improvements
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#documentation-updates">
+      
+        <li class="md-nav__item">
+  <a href="#documentation-updates" class="md-nav__link">
     Documentation updates
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contributors">
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
     Contributors
   </a>
-<nav aria-label="Contributors" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#080-commit-authors">
+  
+    <nav class="md-nav" aria-label="Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#080-commit-authors" class="md-nav__link">
     0.80 commit authors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#080-sponsors">
+        
+          <li class="md-nav__item">
+  <a href="#080-sponsors" class="md-nav__link">
     0.80 sponsors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#080-backers">
+        
+          <li class="md-nav__item">
+  <a href="#080-backers" class="md-nav__link">
     0.80 backers
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#thank-you">
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
     Thank you
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.79.1/">
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.79.1/" class="md-nav__link">
         0.79.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.79.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.79.0/" class="md-nav__link">
         0.79.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.78.1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.78.1/" class="md-nav__link">
         0.78.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.78.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.78.0/" class="md-nav__link">
         0.78.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.77.1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.77.1/" class="md-nav__link">
         0.77.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.77.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.77.0/" class="md-nav__link">
         0.77.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.76.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.76.0/" class="md-nav__link">
         0.76.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.75.2/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.75.2/" class="md-nav__link">
         0.75.2
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.75.1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.75.1/" class="md-nav__link">
         0.75.1
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.75.0/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.75.0/" class="md-nav__link">
         0.75.0
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../0.75.0-rc1/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.75.0-rc1/" class="md-nav__link">
         0.75.0-RC1
       </a>
-</li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
           Getting started
           <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_2">
-<span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
           Getting started
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../getting-started/introduction/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/introduction/" class="md-nav__link">
         Introduction
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../getting-started/prince-of-persia/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/prince-of-persia/" class="md-nav__link">
         Setting up Prince of Persia
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../getting-started/enhancing-prince-of-persia/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
         Enhancing Prince of Persia
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../getting-started/passport-to-adventure/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/passport-to-adventure/" class="md-nav__link">
         Passport to Adventure
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../getting-started/beneath-a-steel-sky/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
         Beneath a Steel Sky
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../getting-started/dark-forces/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/dark-forces/" class="md-nav__link">
         Star Wars: Dark Forces
       </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../getting-started/next-steps/">
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/next-steps/" class="md-nav__link">
         Next steps
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../get-involved/">Get involved</a>
-<label for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
-</label>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_3">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+            
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../get-involved/">Get involved</a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
           Get involved
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../get-involved/code-of-conduct/">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../get-involved/code-of-conduct/" class="md-nav__link">
         Code of conduct
       </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../about/">About</a>
-</div>
-<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_4">
-<span class="md-nav__icon md-icon"></span>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../../about/">About</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
           About
         </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="https://github.com/dosbox-staging/dosbox-staging/wiki">
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-nav__link">
         Wiki
       </a>
-</li>
-</ul>
+    </li>
+  
+
+    
+  </ul>
 </nav>
-</div>
-</div>
-</div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#summary">
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
     Summary
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-upgrade">
+      
+        <li class="md-nav__item">
+  <a href="#how-to-upgrade" class="md-nav__link">
     How to upgrade
   </a>
-<nav aria-label="How to upgrade" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#downloads">
+  
+    <nav class="md-nav" aria-label="How to upgrade">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
     Downloads
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#upgrade-your-configuration-file">
+        
+          <li class="md-nav__item">
+  <a href="#upgrade-your-configuration-file" class="md-nav__link">
     Upgrade your configuration file
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#new-features">
+      
+        <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
     New features
   </a>
-<nav aria-label="New features" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reelmagic-support">
+  
+    <nav class="md-nav" aria-label="New features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reelmagic-support" class="md-nav__link">
     ReelMagic support
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mouse-improvements">
+        
+          <li class="md-nav__item">
+  <a href="#mouse-improvements" class="md-nav__link">
     Mouse improvements
   </a>
-<nav aria-label="Mouse improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dedicated-configuration-section">
+  
+    <nav class="md-nav" aria-label="Mouse improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dedicated-configuration-section" class="md-nav__link">
     Dedicated configuration section
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#dual-mouse-gaming">
+        
+          <li class="md-nav__item">
+  <a href="#dual-mouse-gaming" class="md-nav__link">
     Dual mouse gaming
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#improved-support-for-third-party-int33-windows-mouse-drivers">
+        
+          <li class="md-nav__item">
+  <a href="#improved-support-for-third-party-int33-windows-mouse-drivers" class="md-nav__link">
     Improved support for third-party INT33 Windows mouse drivers
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#mouse-related-help-in-the-title-bar">
+        
+          <li class="md-nav__item">
+  <a href="#mouse-related-help-in-the-title-bar" class="md-nav__link">
     Mouse-related help in the title bar
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#high-dpi-on-windows">
+        
+          <li class="md-nav__item">
+  <a href="#high-dpi-on-windows" class="md-nav__link">
     High DPI on Windows
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#ability-to-use-local-configs-via-finder-on-macos">
+        
+          <li class="md-nav__item">
+  <a href="#ability-to-use-local-configs-via-finder-on-macos" class="md-nav__link">
     Ability to use local configs via Finder on macOS
   </a>
-<nav aria-label="Ability to use local configs via Finder on macOS" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#how-to-use-it">
+  
+    <nav class="md-nav" aria-label="Ability to use local configs via Finder on macOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-it" class="md-nav__link">
     How to use it
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#general-improvements">
+      
+        <li class="md-nav__item">
+  <a href="#general-improvements" class="md-nav__link">
     General improvements
   </a>
-<nav aria-label="General improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#morecom-command">
+  
+    <nav class="md-nav" aria-label="General improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#morecom-command" class="md-nav__link">
     more.com command
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#on-the-fly-changes">
+        
+          <li class="md-nav__item">
+  <a href="#on-the-fly-changes" class="md-nav__link">
     On-the-fly changes
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#post-rendered-screenshots">
+        
+          <li class="md-nav__item">
+  <a href="#post-rendered-screenshots" class="md-nav__link">
     Post-rendered screenshots
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#more-bundled-opengl-shaders">
+        
+          <li class="md-nav__item">
+  <a href="#more-bundled-opengl-shaders" class="md-nav__link">
     More bundled OpenGL shaders
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bug-and-regression-fixes">
+      
+        <li class="md-nav__item">
+  <a href="#bug-and-regression-fixes" class="md-nav__link">
     Bug and regression fixes
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#translation-improvements">
+      
+        <li class="md-nav__item">
+  <a href="#translation-improvements" class="md-nav__link">
     Translation improvements
   </a>
-<nav aria-label="Translation improvements" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#translations">
+  
+    <nav class="md-nav" aria-label="Translation improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#translations" class="md-nav__link">
     Translations
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#related-improvements">
+        
+          <li class="md-nav__item">
+  <a href="#related-improvements" class="md-nav__link">
     Related improvements
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#documentation-updates">
+      
+        <li class="md-nav__item">
+  <a href="#documentation-updates" class="md-nav__link">
     Documentation updates
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#contributors">
+      
+        <li class="md-nav__item">
+  <a href="#contributors" class="md-nav__link">
     Contributors
   </a>
-<nav aria-label="Contributors" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#080-commit-authors">
+  
+    <nav class="md-nav" aria-label="Contributors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#080-commit-authors" class="md-nav__link">
     0.80 commit authors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#080-sponsors">
+        
+          <li class="md-nav__item">
+  <a href="#080-sponsors" class="md-nav__link">
     0.80 sponsors
   </a>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#080-backers">
+        
+          <li class="md-nav__item">
+  <a href="#080-backers" class="md-nav__link">
     0.80 backers
   </a>
+  
 </li>
-</ul>
-</nav>
+        
+      </ul>
+    </nav>
+  
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#thank-you">
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
     Thank you
   </a>
+  
 </li>
-</ul>
+      
+    </ul>
+  
 </nav>
-</div>
-</div>
-</div>
-<div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
-<h1 id="0800-release-notes">0.80.0 release notes<a class="headerlink" href="#0800-release-notes" title="Permanent link">¶</a></h1>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="0800-release-notes">0.80.0 release notes<a class="headerlink" href="#0800-release-notes" title="Permanent link">&para;</a></h1>
 <p><strong>Release date:</strong> 2022-12-21</p>
-<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p><a href="https://en.wikipedia.org/wiki/RealMagic">ReelMagic</a> DOS games are now playable thanks to the efforts of Jon
 Dennis, Chris Guthrie, and Joseph Whittaker, with testing and feedback from
 Vogons users Uka, DonutKing, and Vetz. Mouse emulation has been improved and
@@ -754,10 +1509,10 @@ Windows. A new <code>--working-dir</code> command line flag allows DOSBox Stagin
 launch from a specific working directory. Repo packagers should note that
 <strong>sdl2_image</strong> is now a dependency.</p>
 <p>Read on for all the details!</p>
-<h2 id="how-to-upgrade">How to upgrade<a class="headerlink" href="#how-to-upgrade" title="Permanent link">¶</a></h2>
+<h2 id="how-to-upgrade">How to upgrade<a class="headerlink" href="#how-to-upgrade" title="Permanent link">&para;</a></h2>
 <p>Get started by downloading the latest version and updating your configuration
 file:</p>
-<h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">¶</a></h3>
+<h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
 <div class="compact">
 <ul>
 <li><a href="/downloads/linux/">Linux</a></li>
@@ -765,7 +1520,7 @@ file:</p>
 <li><a href="/downloads/macos/">macOS</a></li>
 </ul>
 </div>
-<h3 id="upgrade-your-configuration-file">Upgrade your configuration file<a class="headerlink" href="#upgrade-your-configuration-file" title="Permanent link">¶</a></h3>
+<h3 id="upgrade-your-configuration-file">Upgrade your configuration file<a class="headerlink" href="#upgrade-your-configuration-file" title="Permanent link">&para;</a></h3>
 <ol>
 <li>Launch the new release.</li>
 <li>At the<code>Z:\&gt;</code> prompt, run <code>config -wc</code> to write the new configuration file.</li>
@@ -788,33 +1543,33 @@ file:</p>
 </li>
 </ul>
 </div>
-<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">¶</a></h2>
-<h3 id="reelmagic-support">ReelMagic support<a class="headerlink" href="#reelmagic-support" title="Permanent link">¶</a></h3>
-<p>DOS <a href="https://en.wikipedia.org/wiki/RealMagic">ReelMagic</a> games are now playable thanks to Jon Dennis’s
+<h2 id="new-features">New features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h2>
+<h3 id="reelmagic-support">ReelMagic support<a class="headerlink" href="#reelmagic-support" title="Permanent link">&para;</a></h3>
+<p>DOS <a href="https://en.wikipedia.org/wiki/RealMagic">ReelMagic</a> games are now playable thanks to Jon Dennis&rsquo;s
 <a href="https://github.com/jrdennisoss/dosboxrm">patch</a> with help from Chris Guthrie
 and Joseph Whittaker.</p>
 <p>See the <code>[reelmagic]</code> section in your configuration file to enable this. We
 suggest only enabling ReelMagic emulation on an as-needed basis.</p>
 <figure>
 <video controls="controls" width="100%">
-<source src="https://archive.org/download/dosbox-staging-v0.80.0-return-to-zork-intro-reelmagic/return-to-zork-intro-reelmagic.mp4" type="video/mp4"/>
+    <source src="https://archive.org/download/dosbox-staging-v0.80.0-return-to-zork-intro-reelmagic/return-to-zork-intro-reelmagic.mp4" type="video/mp4">
     Your browser does not support the <code>video</code> element.
   </video>
 <figcaption>
-<p>Return to Zork (1995) — introduction
+<p>Return to Zork (1995) &mdash; introduction
   </p>
 </figcaption>
 </figure>
 <p>Jon plans to add DMA support (primarily used by the ReelMagic Windows 3.1x
 driver and games) when time permits, but most ReelMagic games for DOS are
 already fully functional and playable.</p>
-<h3 id="mouse-improvements">Mouse improvements<a class="headerlink" href="#mouse-improvements" title="Permanent link">¶</a></h3>
-<h4 id="dedicated-configuration-section">Dedicated configuration section<a class="headerlink" href="#dedicated-configuration-section" title="Permanent link">¶</a></h4>
+<h3 id="mouse-improvements">Mouse improvements<a class="headerlink" href="#mouse-improvements" title="Permanent link">&para;</a></h3>
+<h4 id="dedicated-configuration-section">Dedicated configuration section<a class="headerlink" href="#dedicated-configuration-section" title="Permanent link">&para;</a></h4>
 <p>The mouse configuration has been moved to its own section and additional
 options have been added. A tool called <code>mousectl</code> is available on <code>Z:</code> for
 more detailed per-interface mouse configuration.
  </p>
-<h4 id="dual-mouse-gaming">Dual mouse gaming<a class="headerlink" href="#dual-mouse-gaming" title="Permanent link">¶</a></h4>
+<h4 id="dual-mouse-gaming">Dual mouse gaming<a class="headerlink" href="#dual-mouse-gaming" title="Permanent link">&para;</a></h4>
 <p>Multiple physical mice can now be mapped to specific emulated mouse
 interfaces, enabling two-player split-screen gaming (<a href="https://en.wikipedia.org/wiki/The_Settlers">The Settlers</a>
 and <a href="https://en.wikipedia.org/wiki/The_Settlers_II">The Settlers II</a>) using two USB mice on a single computer.</p>
@@ -823,16 +1578,16 @@ article</a>
 for more details.</p>
 <figure>
 <video controls="controls" width="100%">
-<source src="https://archive.org/download/dosbox-staging-v0.80.0-settlers-2-dual-mouse/settlers-2-dual-mouse.mp4" type="video/mp4"/>
+    <source src="https://archive.org/download/dosbox-staging-v0.80.0-settlers-2-dual-mouse/settlers-2-dual-mouse.mp4" type="video/mp4">
     Your browser does not support the <code>video</code> element.
   </video>
 <figcaption>
-<p>The Settlers II (1996) — showcasing dual-mouse gaming in action
+<p>The Settlers II (1996) &mdash; showcasing dual-mouse gaming in action
   </p>
 </figcaption>
 </figure>
-<h4 id="improved-support-for-third-party-int33-windows-mouse-drivers">Improved support for third-party INT33 Windows mouse drivers<a class="headerlink" href="#improved-support-for-third-party-int33-windows-mouse-drivers" title="Permanent link">¶</a></h4>
-<p><em>javispedro</em>‘s <a href="https://git.javispedro.com/cgit/vbados.git/about/">INT33 mouse driver</a>
+<h4 id="improved-support-for-third-party-int33-windows-mouse-drivers">Improved support for third-party INT33 Windows mouse drivers<a class="headerlink" href="#improved-support-for-third-party-int33-windows-mouse-drivers" title="Permanent link">&para;</a></h4>
+<p><em>javispedro</em>&lsquo;s <a href="https://git.javispedro.com/cgit/vbados.git/about/">INT33 mouse driver</a>
 for Windows 3.1x is fully supported and no longer requires the use of the
 separate DOS driver, except when booting from a disk image. The driver also
 resolves compatibility issues with seamless mouse integration and adds mouse
@@ -840,10 +1595,10 @@ wheel support.</p>
 <p>See the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Windows-3.1x#improved-mouse-driver">wiki
 article</a>
 for more details.</p>
-<h4 id="mouse-related-help-in-the-title-bar">Mouse-related help in the title bar<a class="headerlink" href="#mouse-related-help-in-the-title-bar" title="Permanent link">¶</a></h4>
+<h4 id="mouse-related-help-in-the-title-bar">Mouse-related help in the title bar<a class="headerlink" href="#mouse-related-help-in-the-title-bar" title="Permanent link">&para;</a></h4>
 <p>The title bar now displays some short help about the mouse, such as how it can
 be captured or released.</p>
-<h3 id="high-dpi-on-windows">High DPI on Windows<a class="headerlink" href="#high-dpi-on-windows" title="Permanent link">¶</a></h3>
+<h3 id="high-dpi-on-windows">High DPI on Windows<a class="headerlink" href="#high-dpi-on-windows" title="Permanent link">&para;</a></h3>
 <p>Following macOS, high DPI support now comes to Windows: the DOSBox window
 should scale nicely along other programs, and retain correct dimensions when
 moving between monitors with different scaling factors set.</p>
@@ -852,16 +1607,16 @@ moving between monitors with different scaling factors set.</p>
 <p>This feature is currently experimental! If you notice any weird behaviour,
 <a href="https://github.com/dosbox-staging/dosbox-staging/issues/new/choose">please report it!</a></p>
 </div>
-<h3 id="ability-to-use-local-configs-via-finder-on-macos">Ability to use local configs via Finder on macOS<a class="headerlink" href="#ability-to-use-local-configs-via-finder-on-macos" title="Permanent link">¶</a></h3>
+<h3 id="ability-to-use-local-configs-via-finder-on-macos">Ability to use local configs via Finder on macOS<a class="headerlink" href="#ability-to-use-local-configs-via-finder-on-macos" title="Permanent link">&para;</a></h3>
 <p>A new <code>--working-dir &lt;path&gt;</code> command line parameter has been introduced to
 make it possible to launch DOSBox Staging using local configs from the Finder
 on macOS. Previously, you had to use DOSBox from the command line to achieve
 this.
  </p>
-<h4 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">¶</a></h4>
+<h4 id="how-to-use-it">How to use it<a class="headerlink" href="#how-to-use-it" title="Permanent link">&para;</a></h4>
 <p>Follow the steps indicated in the DMG package, as shown:</p>
 <figure>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../images/macos_dmg_run_command.png"><img alt="macOS DMG run-command tip" src="../../images/macos_dmg_run_command.png"/></a></p>
+<p><a class="glightbox" href="../../images/macos_dmg_run_command.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="macOS DMG run-command tip" src="../../images/macos_dmg_run_command.png" /></a></p>
 </figure>
 <p>Simply copy the included <code>Start DOSBox Staging.command</code> to any folder that
 contains a local <code>dosbox.conf</code> and then open it (<code>Start DOSBox
@@ -871,91 +1626,91 @@ folder and will pick up the local config.
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You might be asked to give DOSBox Staging access to the containing folder
-upon the first launch—just click OK if that dialog comes up.</p>
+upon the first launch&mdash;just click OK if that dialog comes up.</p>
 </div>
-<h2 id="general-improvements">General improvements<a class="headerlink" href="#general-improvements" title="Permanent link">¶</a></h2>
-<h3 id="morecom-command"><code>more.com</code> command<a class="headerlink" href="#morecom-command" title="Permanent link">¶</a></h3>
+<h2 id="general-improvements">General improvements<a class="headerlink" href="#general-improvements" title="Permanent link">&para;</a></h2>
+<h3 id="morecom-command"><code>more.com</code> command<a class="headerlink" href="#morecom-command" title="Permanent link">&para;</a></h3>
 <p>The <code>more</code> command is now internally implemented (should be more user-friendly
 than the original DOS one), and its engine is used for displaying help
 messages longer than one screen.</p>
 <figure>
 <video controls="controls" width="100%">
-<source src="https://archive.org/download/dosbox-staging-v0.80.0-enhanced-more-command/enhanced-more-command.mp4" type="video/mp4"/>
+    <source src="https://archive.org/download/dosbox-staging-v0.80.0-enhanced-more-command/enhanced-more-command.mp4" type="video/mp4">
     Your browser does not support the <code>video</code> element.
   </video>
 <figcaption>
-<p>more.com — Better and Improved™
+<p>more.com &mdash; Better and Improved&trade;
   </p>
 </figcaption>
 </figure>
-<h3 id="on-the-fly-changes">On-the-fly changes<a class="headerlink" href="#on-the-fly-changes" title="Permanent link">¶</a></h3>
+<h3 id="on-the-fly-changes">On-the-fly changes<a class="headerlink" href="#on-the-fly-changes" title="Permanent link">&para;</a></h3>
 <p>Several settings can be safely adjusted at runtime, including the output video
 settings, resolution, OpenGL shaders, audio devices, and mixer settings.</p>
 <figure>
 <video controls="controls" width="100%">
-<source src="https://archive.org/download/dosbox-staging-v0.80.0-plug-n-play-audio/plug-n-play-audio.mp4" type="video/mp4"/>
+    <source src="https://archive.org/download/dosbox-staging-v0.80.0-plug-n-play-audio/plug-n-play-audio.mp4" type="video/mp4">
     Your browser does not support the <code>video</code> element.
   </video>
 <figcaption>
-<p>Reconfiguring audio on-the-fly — changing sound cards in a PC has never
+<p>Reconfiguring audio on-the-fly &mdash; changing sound cards in a PC has never
   been easier!
   </p>
 </figcaption>
 </figure>
-<h3 id="post-rendered-screenshots">Post-rendered screenshots<a class="headerlink" href="#post-rendered-screenshots" title="Permanent link">¶</a></h3>
+<h3 id="post-rendered-screenshots">Post-rendered screenshots<a class="headerlink" href="#post-rendered-screenshots" title="Permanent link">&para;</a></h3>
 <p>DOSBox has long provided the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> hotkey to capture the emulated video
-card’s image prior to rendering.</p>
+card&rsquo;s image prior to rendering.</p>
 <p>DOSBox Staging 0.80 now pairs this with <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> (or <span class="keys"><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> on macOS) to
 capture the as-seen (post-rendered) image.</p>
-<h3 id="more-bundled-opengl-shaders">More bundled OpenGL shaders<a class="headerlink" href="#more-bundled-opengl-shaders" title="Permanent link">¶</a></h3>
-<p>The balance of usable shaders from <a href="https://github.com/tyrells/dosbox-svn-shaders">Tyrells’ CRT shader
+<h3 id="more-bundled-opengl-shaders">More bundled OpenGL shaders<a class="headerlink" href="#more-bundled-opengl-shaders" title="Permanent link">&para;</a></h3>
+<p>The balance of usable shaders from <a href="https://github.com/tyrells/dosbox-svn-shaders">Tyrells&rsquo; CRT shader
 collection</a>, as well as
-GranMinigun’s interpolating Catmull–Rom spline shader have been added.</p>
+GranMinigun&rsquo;s interpolating Catmull–Rom spline shader have been added.</p>
 <p>Launch DOSBox Staging with the <code>--list-glshaders</code> command-line argument to list
 the available OpenGL shaders. For example:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>List of available GLSL shaders
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>------------------------------
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>Path '/usr/src/dosbox-staging/build/resources/glshaders' has:
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>        |- crt/aperture
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>        |- crt/caligari
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>        |- crt/easymode
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>        |- crt/easymode.tweaked
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>        |- crt/fakelottes
-<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>        |- crt/fakelottes.tweaked
-<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>        |- crt/geom
-<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>        |- crt/geom.tweaked
-<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>        |- crt/hyllian-updated
-<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>        |- crt/hyllian
-<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>        |- crt/lottes-fast
-<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a>        |- crt/lottes-fast.subtle+gain
-<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a>        |- crt/lottes
-<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>        |- crt/lottes.tweaked
-<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a>        |- crt/mattias
-<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a>        |- crt/pi-vertical
-<a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a>        |- crt/pi
-<a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a>        |- crt/yee64
-<a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a>        |- crt/yeetron
-<a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a>        |- crt/zfast
-<a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a>        |- crt/zfast-composite
-<a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a>        |- interpolation/catmull-rom
-<a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a>        |- interpolation/sharp
-<a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a>        |- scaler/advinterp2x
-<a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a>        |- scaler/advinterp3x
-<a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a>        |- scaler/advmame2x
-<a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a>        |- scaler/advmame3x
-<a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a>        |- scaler/rgb2x
-<a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a>        |- scaler/rgb3x
-<a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a>        |- scaler/scan2x
-<a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a>        |- scaler/scan3x
-<a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a>        |- scaler/tv2x
-<a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a>        `- scaler/tv3x
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>List of available GLSL shaders
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>------------------------------
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Path &#39;/usr/src/dosbox-staging/build/resources/glshaders&#39; has:
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        |- crt/aperture
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        |- crt/caligari
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        |- crt/easymode
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        |- crt/easymode.tweaked
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        |- crt/fakelottes
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        |- crt/fakelottes.tweaked
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        |- crt/geom
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        |- crt/geom.tweaked
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>        |- crt/hyllian-updated
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>        |- crt/hyllian
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>        |- crt/lottes-fast
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>        |- crt/lottes-fast.subtle+gain
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>        |- crt/lottes
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        |- crt/lottes.tweaked
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        |- crt/mattias
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        |- crt/pi-vertical
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>        |- crt/pi
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        |- crt/yee64
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        |- crt/yeetron
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>        |- crt/zfast
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        |- crt/zfast-composite
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>        |- interpolation/catmull-rom
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>        |- interpolation/sharp
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>        |- scaler/advinterp2x
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        |- scaler/advinterp3x
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        |- scaler/advmame2x
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>        |- scaler/advmame3x
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>        |- scaler/rgb2x
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>        |- scaler/rgb3x
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>        |- scaler/scan2x
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>        |- scaler/scan3x
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>        |- scaler/tv2x
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>        `- scaler/tv3x
 </code></pre></div>
 <details class="note">
 <summary>Full PR list of additions and improvements</summary>
 <ul>
 <li>Add <code>--working-dir</code> command line option (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2122" title="GitHub Issue dosbox-staging/dosbox-staging #2122">#2122</a>)</li>
-<li>Add a subset of OpenGL shaders from Tyrells’ repo (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2137" title="GitHub Issue dosbox-staging/dosbox-staging #2137">#2137</a>)</li>
+<li>Add a subset of OpenGL shaders from Tyrells&rsquo; repo (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2137" title="GitHub Issue dosbox-staging/dosbox-staging #2137">#2137</a>)</li>
 <li>Add direct support for Windows 3.1 seamless mouse driver by javispedro (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1996" title="GitHub Issue dosbox-staging/dosbox-staging #1996">#1996</a>)</li>
 <li>Add libraries to support TrueType font rendering (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2075" title="GitHub Issue dosbox-staging/dosbox-staging #2075">#2075</a>)</li>
 <li>Add more cleanup on audio device tear-down (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2099" title="GitHub Issue dosbox-staging/dosbox-staging #2099">#2099</a>)</li>
@@ -984,7 +1739,7 @@ the available OpenGL shaders. For example:</p>
 <li>Fix sentence starting with lower case in MOUNT command help (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2068" title="GitHub Issue dosbox-staging/dosbox-staging #2068">#2068</a>)</li>
 <li>Generate linker map file by default (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2103" title="GitHub Issue dosbox-staging/dosbox-staging #2103">#2103</a>)</li>
 <li>Implement MORE.COM command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2020" title="GitHub Issue dosbox-staging/dosbox-staging #2020">#2020</a>)</li>
-<li>Import Jon Dennis’s ReelMagic emulation package <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1112" title="GitHub Issue dosbox-staging/dosbox-staging #1112">#1112</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2077" title="GitHub Issue dosbox-staging/dosbox-staging #2077">#2077</a>)</li>
+<li>Import Jon Dennis&rsquo;s ReelMagic emulation package <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1112" title="GitHub Issue dosbox-staging/dosbox-staging #1112">#1112</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2077" title="GitHub Issue dosbox-staging/dosbox-staging #2077">#2077</a>)</li>
 <li>Improve detection of atomics, testing of speexDSP, and cleanup README (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1992" title="GitHub Issue dosbox-staging/dosbox-staging #1992">#1992</a>)</li>
 <li>Improve interactive mouse mapping (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2065" title="GitHub Issue dosbox-staging/dosbox-staging #2065">#2065</a>)</li>
 <li>Improve management of audio devices (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2095" title="GitHub Issue dosbox-staging/dosbox-staging #2095">#2095</a>)</li>
@@ -1005,18 +1760,18 @@ the available OpenGL shaders. For example:</p>
 <li>Use shared pointers to manage the virtual files (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2117" title="GitHub Issue dosbox-staging/dosbox-staging #2117">#2117</a>)</li>
 </ul>
 </details>
-<h2 id="bug-and-regression-fixes">Bug and regression fixes<a class="headerlink" href="#bug-and-regression-fixes" title="Permanent link">¶</a></h2>
+<h2 id="bug-and-regression-fixes">Bug and regression fixes<a class="headerlink" href="#bug-and-regression-fixes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>The mixer’s effects (reverb, chorus, and crossfeed) can now be turned on and
+<p>The mixer&rsquo;s effects (reverb, chorus, and crossfeed) can now be turned on and
   off at runtime via the mixer command.</p>
 </li>
 <li>
-<p>FluidSynth’s specific reverb and chorus configuration settings are now applied
+<p>FluidSynth&rsquo;s specific reverb and chorus configuration settings are now applied
   and will replace the default values that were previously always applied.</p>
 </li>
 <li>
-<p>The modem’s call now has a warm-up period where it will discard data. This
+<p>The modem&rsquo;s call now has a warm-up period where it will discard data. This
   fixes a bug noted in <strong>Duke Nukem 3D</strong> where it would fail its initial
   handshake on the first try.</p>
 </li>
@@ -1039,7 +1794,7 @@ the available OpenGL shaders. For example:</p>
 <li>Fix several English strings too long to fit on screen (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1998" title="GitHub Issue dosbox-staging/dosbox-staging #1998">#1998</a>)</li>
 <li>Fix tab handling in MORE command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2102" title="GitHub Issue dosbox-staging/dosbox-staging #2102">#2102</a>)</li>
 <li>Improve <code>mixer.com</code> CLI handling of volume and effect arguments (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2021" title="GitHub Issue dosbox-staging/dosbox-staging #2021">#2021</a>)</li>
-<li>Initialize the window’s canvas size during its setup phase (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2038" title="GitHub Issue dosbox-staging/dosbox-staging #2038">#2038</a>)</li>
+<li>Initialize the window&rsquo;s canvas size during its setup phase (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2038" title="GitHub Issue dosbox-staging/dosbox-staging #2038">#2038</a>)</li>
 <li>Limit <code>bit_view</code>s to 8-bit registers to avoid byte-order assumption (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1999" title="GitHub Issue dosbox-staging/dosbox-staging #1999">#1999</a>)</li>
 <li>MORE text output engine fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2083" title="GitHub Issue dosbox-staging/dosbox-staging #2083">#2083</a>)</li>
 <li>Parse language options before writing the conf file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2001" title="GitHub Issue dosbox-staging/dosbox-staging #2001">#2001</a>)</li>
@@ -1049,8 +1804,8 @@ the available OpenGL shaders. For example:</p>
 <li>Use non-throwing form of <code>std::filesystem</code> calls (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1995" title="GitHub Issue dosbox-staging/dosbox-staging #1995">#1995</a>)</li>
 </ul>
 </details>
-<h2 id="translation-improvements">Translation improvements<a class="headerlink" href="#translation-improvements" title="Permanent link">¶</a></h2>
-<h3 id="translations">Translations<a class="headerlink" href="#translations" title="Permanent link">¶</a></h3>
+<h2 id="translation-improvements">Translation improvements<a class="headerlink" href="#translation-improvements" title="Permanent link">&para;</a></h2>
+<h3 id="translations">Translations<a class="headerlink" href="#translations" title="Permanent link">&para;</a></h3>
 <div class="compact">
 <ul>
 <li>German: up-to-date</li>
@@ -1061,7 +1816,7 @@ the available OpenGL shaders. For example:</p>
 <li>Spanish: not updated</li>
 </ul>
 </div>
-<h3 id="related-improvements">Related improvements<a class="headerlink" href="#related-improvements" title="Permanent link">¶</a></h3>
+<h3 id="related-improvements">Related improvements<a class="headerlink" href="#related-improvements" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>The title bar is now translatable.</p>
@@ -1073,10 +1828,10 @@ the available OpenGL shaders. For example:</p>
 <p>Translations are now stored in UTF-8 and converted to the selected DOS
   codepage, dropping accents if needed, sometimes even performing crude
   transliterations (for Latin, Greek, and Cyrillic alphabets DOSBox
-  shouldn’t display garbled messages anymore regardless which codepage is
+  shouldn&rsquo;t display garbled messages anymore regardless which codepage is
   selected). This is especially important for languages where more than one
   incompatible encoding was used in the DOS era. All FreeDOS codepages are
-  supported. Note that only DOSBox Staging’s own messages benefit from this
+  supported. Note that only DOSBox Staging&rsquo;s own messages benefit from this
   feature.</p>
 </li>
 </ul>
@@ -1124,7 +1879,7 @@ the available OpenGL shaders. For example:</p>
 <li>Various Dutch translation updates (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2016" title="GitHub Issue dosbox-staging/dosbox-staging #2016">#2016</a>)</li>
 </ul>
 </details>
-<h2 id="documentation-updates">Documentation updates<a class="headerlink" href="#documentation-updates" title="Permanent link">¶</a></h2>
+<h2 id="documentation-updates">Documentation updates<a class="headerlink" href="#documentation-updates" title="Permanent link">&para;</a></h2>
 <p>The following wiki articles have been updated:</p>
 <ul>
 <li>
@@ -1138,7 +1893,7 @@ the available OpenGL shaders. For example:</p>
 </li>
 <li>
 <p>The new <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Windows-3.0">Windows 3.0 page</a>
-  documents how to set up Windows 3.0’s video, sound, MIDI, mouse, and how to
+  documents how to set up Windows 3.0&rsquo;s video, sound, MIDI, mouse, and how to
   print to files.</p>
 </li>
 <li>
@@ -1156,11 +1911,11 @@ the available OpenGL shaders. For example:</p>
   domain or Creative Commons licensed YouTube chapters and playlists.</p>
 </li>
 </ul>
-<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">¶</a></h2>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
 <p>The following commit authors, sponsors, supporters, and backers all invested
 their time or funds into the 0.80 release effort. Thank you!</p>
 <p>Contributors are listed in alphabetic order.</p>
-<h3 id="080-commit-authors">0.80 commit authors<a class="headerlink" href="#080-commit-authors" title="Permanent link">¶</a></h3>
+<h3 id="080-commit-authors">0.80 commit authors<a class="headerlink" href="#080-commit-authors" title="Permanent link">&para;</a></h3>
 <div class="compact">
 <ul>
 <li>Burrito78</li>
@@ -1184,7 +1939,7 @@ their time or funds into the 0.80 release effort. Thank you!</p>
 <li>tyrells</li>
 </ul>
 </div>
-<h3 id="080-sponsors">0.80 sponsors<a class="headerlink" href="#080-sponsors" title="Permanent link">¶</a></h3>
+<h3 id="080-sponsors">0.80 sponsors<a class="headerlink" href="#080-sponsors" title="Permanent link">&para;</a></h3>
 <p>Sponsors who donated more than <strong>100 USD per month</strong> to the project:</p>
 <div class="compact">
 <ul>
@@ -1192,7 +1947,7 @@ their time or funds into the 0.80 release effort. Thank you!</p>
 <li>Wengier Wu (380 USD during the period)</li>
 </ul>
 </div>
-<h3 id="080-backers">0.80 backers<a class="headerlink" href="#080-backers" title="Permanent link">¶</a></h3>
+<h3 id="080-backers">0.80 backers<a class="headerlink" href="#080-backers" title="Permanent link">&para;</a></h3>
 <p>Backers who donated more than <strong>5 USD per month</strong> to the project:</p>
 <div class="compact">
 <ul>
@@ -1206,73 +1961,119 @@ their time or funds into the 0.80 release effort. Thank you!</p>
 <a href="https://opencollective.com/dosbox-staging">Open Collective</a>. Your
 contribution helps us purchase the necessary hardware and licenses to keep our
 project going.</p>
-<h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">¶</a></h2>
+<h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>We are grateful for all community contributions as well as the original DOSBox
 project, upon which DOSBox Staging is based.</p>
-</article>
-</div>
-</div>
-<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
             Back to top
           </button>
-</main>
-<!-- Footer -->
+        
+      </main>
+      
+        <!-- Footer -->
 <footer class="md-footer">
-<!-- Link to previous and/or next page -->
-<nav aria-label="" class="md-footer__inner md-grid">
-<!-- Link to previous page -->
-<a aria-label="Previous: 0.80.1" class="md-footer__link md-footer__link--prev" href="../0.80.1/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav
+      class="md-footer__inner md-grid"
+      aria-label=""
+      
+    >
+
+      <!-- Link to previous page -->
+      
+        
+        <a
+          href="../0.80.1/"
+          class="md-footer__link md-footer__link--prev"
+          aria-label="Previous: 0.80.1"
+          rel="prev"
+        >
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
                 Previous
               </span>
               0.80.1
             </div>
-</div>
-</a>
-<!-- Link to next page -->
-<a aria-label="Next: 0.79.1" class="md-footer__link md-footer__link--next" href="../0.79.1/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a
+          href="../0.79.1/"
+          class="md-footer__link md-footer__link--next"
+          aria-label="Next: 0.79.1"
+          rel="next"
+        >
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
                 Next
               </span>
               0.79.1
             </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
-<!-- Further information -->
-<div class="md-footer-meta md-typeset">
-<div class="md-footer-meta__inner md-grid">
-<div class="links">
-<ul>
-<li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
-<li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
-<li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
-<!-- Mastodon verification -->
-<li><a href="https://corteximplant.com/@DOSBox_Staging" rel="me">Mastodon</a></li>
-</ul>
-</div>
-<div class="credits">
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+          <li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+          <li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+          <!-- Mastodon verification -->
+	  <li><a rel="me" href="https://corteximplant.com/@DOSBox_Staging">Mastodon</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
        Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
-</div>
-</div>
-</div>
+     </div>
+    </div>
+  </div>
 </footer>
-</div>
-<div class="md-dialog" data-md-component="dialog">
-<div class="md-dialog__inner md-typeset"></div>
-</div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
-<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
 </html>
