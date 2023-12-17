@@ -923,15 +923,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#command-line-user-experience-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command-line user experience improvements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#new-for-command" class="md-nav__link">
     <span class="md-ellipsis">
       New FOR command
@@ -950,9 +941,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#persistent-command-line-history" class="md-nav__link">
+  <a href="#persistent-command-history" class="md-nav__link">
     <span class="md-ellipsis">
-      Persistent command-line history
+      Persistent command history
     </span>
   </a>
   
@@ -1031,6 +1022,15 @@
   <a href="#revised-capture-naming-scheme" class="md-nav__link">
     <span class="md-ellipsis">
       Revised capture naming scheme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-user-experience-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command-line user experience improvements
     </span>
   </a>
   
@@ -1187,6 +1187,15 @@
   <a href="#081-sponsors" class="md-nav__link">
     <span class="md-ellipsis">
       0.81 sponsors
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#081-supporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.81 supporters
     </span>
   </a>
   
@@ -2244,15 +2253,6 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#command-line-user-experience-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Command-line user experience improvements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#new-for-command" class="md-nav__link">
     <span class="md-ellipsis">
       New FOR command
@@ -2271,9 +2271,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#persistent-command-line-history" class="md-nav__link">
+  <a href="#persistent-command-history" class="md-nav__link">
     <span class="md-ellipsis">
-      Persistent command-line history
+      Persistent command history
     </span>
   </a>
   
@@ -2352,6 +2352,15 @@
   <a href="#revised-capture-naming-scheme" class="md-nav__link">
     <span class="md-ellipsis">
       Revised capture naming scheme
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-line-user-experience-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Command-line user experience improvements
     </span>
   </a>
   
@@ -2514,6 +2523,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#081-supporters" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.81 supporters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#081-backers" class="md-nav__link">
     <span class="md-ellipsis">
       0.81 backers
@@ -2589,7 +2607,7 @@ late 90s 3D DOS games! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr
 ultra-rare IBM Music Feature Card, dealing with Roland MT-32 ROMs has become
 much easier, plus we&rsquo;ve made numerous MIDI-related improvements as well. Not
 to mention all the mouse and joystick enhancements and fixes, the addition of
-a few missing DOS commands, improved FAT filesystem integration, fixing some
+a few missing DOS commands, improved filesystem integration, fixing some
 long-standing annoying shortcomings of the FPU emulation in non-x86 builds,
 taking localisation support to the next level, and the list just goes on and
 on&hellip;</p>
@@ -2948,6 +2966,21 @@ undoubtedly contributed to this widespread problem. Aspect ratio correct
 screen captures by default is our attempt to play our part in remedying
 the situation, and hopefully reversing it with time.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Raw capture breaking changes</p>
+<p>Previously, raw image captures width or height doubled certain DOS video
+modes. There wasn&rsquo;t much rhyme or reason to it. Now raw captures always
+contain the actual emulated DOS framebuffer-level image (e.g.,
+320&times;200 modes get captured as 320&times;200 PNG files, regadless of
+any other settings).</p>
+<p>The only exceptions are the composite CGA, PCjr, and Tandy modes. These
+modes are a bit special as internally they&rsquo;re rendered width-doubled to
+have enough horizontal resolution for representing composite artifacts.
+Therefore, we write raw image captures of composite modes width-doubled to
+retain all rendered information (e.g., the 640&times;200 composite CGA
+mode will result in a 1280&times;200 raw image, which might be surprising
+at first, but it&rsquo;s intended and correct behaviour).</p>
+</div>
 <h3 id="supercharged-image-and-video-capturing">Supercharged image and video capturing<a class="headerlink" href="#supercharged-image-and-video-capturing" title="Permanent link">&para;</a></h3>
 <p>The optimised <em>zlib-ng</em> library has been added to mitigate the video capturing
 performance hit incurred by our new more accurate VGA emulation approach
@@ -3007,7 +3040,7 @@ viewport setting is logged, so you can simply copy it to your config.</p>
 <figure>
 <p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-aspect-corrected.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Price of Persia (aspect ratio corrected )" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-aspect-corrected.jpg" /></a></p>
 <figcaption>
-<p>Prince of Persia with <code>aspect = stretch</code> and <code>viewport = relative 112% 172%</code>
+<p>Prince of Persia with <code>aspect = stretch</code> and <code>viewport = relative 112% 173%</code>
   </p>
 </figcaption>
 </figure>
@@ -3019,7 +3052,7 @@ intricate technical details to do with 80-bit x87 FPU emulation, the issue
 does not manifest in 32-bit x86 builds, but it does in all other builds on all
 platforms (including 64-bit x86 builds).</p>
 <p>A non-exhaustive list of affected programs:</p>
-<p>Games:</p>
+<p><strong>Games</strong></p>
 <div class="compact">
 <ul>
 <li><a href="https://www.mobygames.com/game/367/carmageddon/">Carmageddon (1997)</a></li>
@@ -3027,7 +3060,7 @@ platforms (including 64-bit x86 builds).</p>
 <li><a href="https://www.mobygames.com/game/7250/pete-sampras-tennis-97/">Peter Sampras Tennis (1997)</a></li>
 </ul>
 </div>
-<p>Demos:</p>
+<p><strong>Demos</strong></p>
 <div class="compact">
 <ul>
 <li><a href="https://www.pouet.net/prod.php?which=85">Sunflower by Pulse (1997)</a></li>
@@ -3037,9 +3070,9 @@ platforms (including 64-bit x86 builds).</p>
 </div>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-multikolor/multikolor-buggy.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Multikolor by kolor --- Black vertical bar issue" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-multikolor/multikolor-buggy.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-multikolor/multikolor-buggy.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Multikolor by kolor --- Black vertical bars issue" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-multikolor/multikolor-buggy.png" /></a></p>
 <figcaption>
-<p>Multikolor by kolor &mdash; Black vertical bar issue
+<p>Multikolor by kolor &mdash; Black vertical bars issue
   </p>
 </figcaption>
 </figure>
@@ -3154,7 +3187,7 @@ building upon the work of Ove Kaaven:</p>
   determining the default window size.</p>
 </li>
 <li>
-<p>We&rsquo;ve change the VESA BIOS branding to <em>DOSBox Staging</em> (because we can
+<p>We&rsquo;ve changed the VESA BIOS branding to <em>DOSBox Staging</em> (because we can
   <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" />)</p>
 </li>
 </ul>
@@ -3413,7 +3446,7 @@ mixer).</p>
 <p>Fixed a regression where the Sound Blaster 16&rsquo;s maximum sample rate was
   erroneously clamped to 45&thinsp;000 Hz (it can go up to 45&thinsp;454 Hz on
   real hardware). This caused the sound to be slightly out of tune in programs
-  that used the maximum sample rate.</p>
+  that use the maximum sample rate.</p>
 </li>
 <li>
 <p>Fixed a regression that prevented Tandy Sound from being re-configurable at
@@ -3555,17 +3588,6 @@ keys have been assigned to their correct scan codes too.</p>
 </ul>
 </details>
 <h2 id="dos-integration">DOS integration<a class="headerlink" href="#dos-integration" title="Permanent link">&para;</a></h2>
-<h3 id="command-line-user-experience-improvements">Command-line user experience improvements<a class="headerlink" href="#command-line-user-experience-improvements" title="Permanent link">&para;</a></h3>
-<p>We listened to our users and improved the command-line user experience. Every
-option has been looked at critically; text descriptions have been rewritten,
-and some old options have been removed that do not apply to the current state
-of the software. All behaviour is still backward compatible to ensure smooth
-operation with old batch files and shell scripts.</p>
-<p>Most notably, some long options were prefixed with a single dash (e.g.,
-<code>-machine</code>, <code>-lang</code>) and some with two dashes (e.g., <code>--list-glshaders</code>,
-<code>--printconf</code>). Now all options conform to GNU conventions, so all long
-options start with two dashes (e.g., <code>--machines</code>). The legacy single-dash
-variants are still silently recognised for backward compatibility.</p>
 <h3 id="new-for-command">New FOR command<a class="headerlink" href="#new-for-command" title="Permanent link">&para;</a></h3>
 <p>The missing <code>FOR</code> command has been added, resulting in better software
 compatibility with batch files that contain loops. The behaviour mirrors the
@@ -3583,10 +3605,12 @@ behaviour of the MS-DOS 6.22 <code>FOR</code> command.</p>
   invocation.</li>
 <li>The <code>MORE</code> command is now extended with features from modern Windows.</li>
 </ul>
-<h3 id="persistent-command-line-history">Persistent command-line history<a class="headerlink" href="#persistent-command-line-history" title="Permanent link">&para;</a></h3>
+<h3 id="persistent-command-history">Persistent command history<a class="headerlink" href="#persistent-command-history" title="Permanent link">&para;</a></h3>
 <p>The emulated DOS shell now retains a 500-line history of your previous
 commands. The history is remembered across multiple sessions, just like you
 would expect it from a Linux shell.</p>
+<p>If you&rsquo;d like to disable the shell history, set the new <code>shell_history_file</code>
+setting to an empty value.</p>
 <h3 id="support-for-all-dos-file-directory-attributes">Support for all DOS file &amp; directory attributes<a class="headerlink" href="#support-for-all-dos-file-directory-attributes" title="Permanent link">&para;</a></h3>
 <p>All DOS file and directory attributes are now supported.</p>
 <p>On Windows, the attributes are stored as standard filesystem attributes.</p>
@@ -3739,19 +3763,19 @@ the mapper, but that will break the pause feature).</p>
 </li>
 </ul>
 <h3 id="revised-capture-naming-scheme">Revised capture naming scheme<a class="headerlink" href="#revised-capture-naming-scheme" title="Permanent link">&para;</a></h3>
-<p>The naming scheme of the capture files has been revised. Previously, the name
+<p>The naming scheme of the captured files has been revised. Previously, the name
 of the running DOS executable was used as the basename to which a running
 number was appended. This rarely added any value because DOS programs tend to
-have short nonsensical names such as <code>GAME.EXE</code>, <code>START.EXE</code>, <code>SCIV.EXE</code>, etc. If
-anything, this only created confusion when capturing the output from multiple
-differently named programs during a single DOSBox session because all
+have short nonsensical names such as <code>GAME.EXE</code>, <code>START.EXE</code>, <code>SCIV.EXE</code>, etc.
+If anything, this only created confusion when capturing the output from
+multiple differently named programs during a single DOSBox session because all
 basenames effectively had their own independent counters. In such a scenario,
 the only way to view the captured images in a timeline order was to sort them
 by creation date which was cumbersome.</p>
-<p>Technically, this change was necessary so we can use the same basename and
-counter value when taking screenshots in multiple formats with the default
-screenshot action, but it makes a lot of sense in general too.</p>
-<p>Captured images are now named as follows:</p>
+<p>Technically, this change was necessary to keep the counter values in sync when
+taking screenshots in multiple formats with the default screenshot action, but
+it makes a lot of sense in general too.</p>
+<p>Captured images are now named as follows (the <code>0001</code> part is a running counter):</p>
 <div class="compact">
 <ul>
 <li>Raw capture: <code>image0001-raw.png</code></li>
@@ -3759,7 +3783,7 @@ screenshot action, but it makes a lot of sense in general too.</p>
 <li>Rendered capture: <code>image0001-rendered.png</code></li>
 </ul>
 </div>
-<p>The rest of the captures have the following naming scheme:</p>
+<p>The other capture types have the following naming scheme:</p>
 <div class="compact">
 <ul>
 <li>Audio: <code>audio0001.wav</code></li>
@@ -3772,6 +3796,17 @@ screenshot action, but it makes a lot of sense in general too.</p>
 </div>
 <p>Note that the last counter value in the capture folder per capture type is
 only looked up at startup or after changing the <code>capture_dir</code> setting.</p>
+<h3 id="command-line-user-experience-improvements">Command-line user experience improvements<a class="headerlink" href="#command-line-user-experience-improvements" title="Permanent link">&para;</a></h3>
+<p>We listened to our users and improved the command-line user experience. Every
+option has been looked at critically; text descriptions have been rewritten,
+and some old options have been removed that do not apply to the current state
+of the software. All behaviour is still backward compatible to ensure smooth
+operation with old batch files and shell scripts.</p>
+<p>Most notably, some long options were prefixed with a single dash (e.g.,
+<code>-machine</code>, <code>-lang</code>) and some with two dashes (e.g., <code>--list-glshaders</code>,
+<code>--printconf</code>). Now all options conform to GNU conventions, so all long
+options start with two dashes (e.g., <code>--machines</code>). The legacy single-dash
+variants are still silently recognised for backward compatibility.</p>
 <h3 id="normalise-windows-explorer-context-menus">Normalise Windows Explorer context menus<a class="headerlink" href="#normalise-windows-explorer-context-menus" title="Permanent link">&para;</a></h3>
 <p>If you&rsquo;re using the installer version on Windows, now starting DOSBox Stating
 via the right-click context menu in Windows Explorer is more consistent.
@@ -3792,8 +3827,8 @@ installer to start Staging with a log window open.</p>
 <figure>
 <p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-macos-logging-shortcut/macos-logging-shortcut.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="New run with log window macOS shortcut" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-macos-logging-shortcut/macos-logging-shortcut.png" width="85%" /></a></p>
 </figure>
-<p>Simply copy the included <code>Start DOSBox Staging (logging).command</code> to any folder that
-contains a local <code>dosbox.conf</code> and then open it in Finder. DOSBox Staging will act as if started from that
+<p>Simply copy the included <code>Start DOSBox Staging (logging).command</code> to a folder
+then open it in Finder. DOSBox Staging will act as if started from that
 folder, it will pick up the local config, and it will also open a terminal
 window that shows the logs.
  </p>
@@ -3859,7 +3894,7 @@ that game mandates a modem speed of 9&thinsp;600 bps.</p>
 <li>
 <p>Linux debugger-enabled builds now have OpenGL enabled (previously, this was
   disabled due to the OpenGL code paths not being compatible with the
-  debugger on Linux)</p>
+  debugger on Linux).</p>
 </li>
 <li>
 <p>A <code>C_HEAVY_DEBUG</code> compile-time feature has been added to allow breaking on
@@ -4194,6 +4229,11 @@ Make sure to install the required dependencies as described in the
 <p>The following commit authors, sponsors, supporters, and backers all invested
 their time or funds into the 0.81 release effort. Thank you!</p>
 <p>Contributors are listed in alphabetic order.</p>
+<p>Thank you for considering supporting our work through a donation on
+<a href="https://github.com/sponsors/dosbox-staging">GitHub Sponsors</a> or
+<a href="https://opencollective.com/dosbox-staging">Open Collective</a>. Your
+contribution helps us purchase the necessary hardware and licenses to keep our
+project going.</p>
 <h3 id="081-commit-authors">0.81 commit authors<a class="headerlink" href="#081-commit-authors" title="Permanent link">&para;</a></h3>
 <div class="compact">
 <ul>
@@ -4225,27 +4265,29 @@ their time or funds into the 0.81 release effort. Thank you!</p>
 </ul>
 </div>
 <h3 id="081-sponsors">0.81 sponsors<a class="headerlink" href="#081-sponsors" title="Permanent link">&para;</a></h3>
-<p>Sponsors who donated more than <strong>100 USD</strong> in total to the project:</p>
 <div class="compact">
 <ul>
-<li>Antti Peltola (3200 USD during the period)</li>
-<li>Wengier Wu (440 USD during the period)</li>
+<li>Antti Peltola</li>
+</ul>
+</div>
+<h3 id="081-supporters">0.81 supporters<a class="headerlink" href="#081-supporters" title="Permanent link">&para;</a></h3>
+<div class="compact">
+<ul>
+<li>Wengier Wu</li>
 </ul>
 </div>
 <h3 id="081-backers">0.81 backers<a class="headerlink" href="#081-backers" title="Permanent link">&para;</a></h3>
-<p>Backers who donated more than <strong>5 USD per month</strong> to the project:</p>
 <div class="compact">
 <ul>
+<li>BenBudr</li>
 <li>Burrito78</li>
-<li>Hugo Lucorcio</li>
 <li>Florent Wagner</li>
+<li>Hannu Hartikainen</li>
+<li>Hugo Lucorcio</li>
+<li>Robin Mattheussen</li>
+<li>Thomas Eric</li>
 </ul>
 </div>
-<p>Thank you for considering supporting our work through a donation on
-<a href="https://github.com/sponsors/dosbox-staging">GitHub Sponsors</a> or
-<a href="https://opencollective.com/dosbox-staging">Open Collective</a>. Your
-contribution helps us purchase the necessary hardware and licenses to keep our
-project going.</p>
 <h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>We are grateful for all community contributions as well as the original DOSBox
 project, upon which DOSBox Staging is based.</p>
