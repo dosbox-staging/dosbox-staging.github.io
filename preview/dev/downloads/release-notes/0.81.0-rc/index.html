@@ -628,6 +628,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#after-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      After upgrading
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -776,6 +785,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#fluidsynth-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      FluidSynth fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#improved-mixer-command" class="md-nav__link">
     <span class="md-ellipsis">
       Improved MIXER command
@@ -797,15 +815,6 @@
   <a href="#sanitise-midi-output-roland-ra-50-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       Sanitise MIDI output &amp; Roland RA-50 compatibility
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fluidsynth-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      FluidSynth fixes
     </span>
   </a>
   
@@ -866,6 +875,15 @@
   <a href="#support-for-mapping-mouse-buttons-to-keys" class="md-nav__link">
     <span class="md-ellipsis">
       Support for mapping mouse buttons to keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualbox-mouse-driver-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualBox mouse driver support
     </span>
   </a>
   
@@ -1958,6 +1976,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#after-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      After upgrading
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2106,6 +2133,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#fluidsynth-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      FluidSynth fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#improved-mixer-command" class="md-nav__link">
     <span class="md-ellipsis">
       Improved MIXER command
@@ -2127,15 +2163,6 @@
   <a href="#sanitise-midi-output-roland-ra-50-compatibility" class="md-nav__link">
     <span class="md-ellipsis">
       Sanitise MIDI output &amp; Roland RA-50 compatibility
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fluidsynth-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      FluidSynth fixes
     </span>
   </a>
   
@@ -2196,6 +2223,15 @@
   <a href="#support-for-mapping-mouse-buttons-to-keys" class="md-nav__link">
     <span class="md-ellipsis">
       Support for mapping mouse buttons to keys
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtualbox-mouse-driver-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      VirtualBox mouse driver support
     </span>
   </a>
   
@@ -2670,6 +2706,9 @@ as follows:</p>
 <code>dosbox-staging.conf</code> file. After this, you carry over your settings from
 the old primary config manually.</p>
 </div>
+<h3 id="after-upgrading">After upgrading<a class="headerlink" href="#after-upgrading" title="Permanent link">&para;</a></h3>
+<p>Look out for deprecation warnings in the logs (in yellow/orange colour) and
+update your configs accordingly.</p>
 <h2 id="new-getting-started-guide">New getting started guide<a class="headerlink" href="#new-getting-started-guide" title="Permanent link">&para;</a></h2>
 <p>Due to popular demand, we&rsquo;ve added a new <a href="../../../getting-started/introduction/">getting started
 guide</a> to the front page. The guide
@@ -3174,17 +3213,26 @@ building upon the work of Ove Kaaven:</p>
   grey colours.</p>
 </li>
 <li>
-<p>sRGB GLSL pragmas now work correctly. Somewhat embarrassingly, the <code>sharp</code>
-  shader was advertised to be gamma-correct more than a year ago, but sadly
-  that was never the case&mdash;until this fix.</p>
-</li>
-<li>
 <p>Reloading shaders at runtime via the hotkey action now works a lot more
   reliably.</p>
 </li>
 <li>
 <p>Nearest-neighbour output modes aren&rsquo;t treated any differently anymore when
   determining the default window size.</p>
+</li>
+<li>
+<p>sRGB GLSL pragmas now work correctly. Somewhat embarrassingly, the <code>sharp</code>
+  shader was advertised to be gamma-correct more than a year ago, but sadly
+  that was never the case&mdash;until this fix.</p>
+</li>
+<li>
+<p>Introduction of the <code>use_npot_texture</code> GLSL pragma to request non-power-of-two-texture.</p>
+</li>
+<li>
+<p>Introduction of the <code>force_single_scan</code> and <code>force_no_pixel_doubling</code> GLSL
+  pragmas to force no line doubling and no pixel doubling in VGA modes,
+  respectively. This might come in handy for certain shaders that need to work
+  on the &ldquo;raw&rdquo; pixel data, such as upscalers.</p>
 </li>
 <li>
 <p>We&rsquo;ve changed the VESA BIOS branding to <em>DOSBox Staging</em> (because we can
@@ -3350,6 +3398,51 @@ display of available ROMs and the active ROM much clearer.</p>
   </p>
 </figcaption>
 </figure>
+<h3 id="fluidsynth-fixes">FluidSynth fixes<a class="headerlink" href="#fluidsynth-fixes" title="Permanent link">&para;</a></h3>
+<p>The Roland SC-55 and FluidSynth handle MIDI portamento messages (pitch glides
+between consecutive notes) very differently. As the rather unique Roland SC-55
+portamento cannot be emulated with FluidSynth, music written for the SC-55
+that uses it might sound weirdly out of tune on FluidSynth (e.g., the
+level 8 music of <strong>Descent</strong>).</p>
+<p>All in all, it&rsquo;s best not to send MIDI portamento messages to FluidSynth at
+all to avoid the problem completely. The resulting sound is a lot closer to
+the Roland SC-55&rsquo;s output.</p>
+<p>Additionally, a rather strange sound stage issue has also been fixed by
+upgrading to the latest FluidSynth library. The panning of some instruments was
+off-centre, slightly leaning to the left. The problem could be fairly subtle
+or quite apparent depending on the SoundFont in use, the musical score, and
+the instruments being played. You can hear it to varying degrees in the
+&ldquo;buggy&rdquo; audio recording below recorded using the previous 0.80.1 DOSBox
+Staging version.</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descent &ndash; Level 8 (SC-55) ¹</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-scva.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Descent &ndash; Level 8 (FluidSynth buggy) ²</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-fluidsynth-bug-0.80.1.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Descent &ndash; Level 8 (FluidSynth fixed) ³</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-fluidsynth-fixed.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><small></p>
+<p>¹ Roland Sound Canvas VA in SC-55 mode was used for the recording<br>
+² DOSBox Staging v0.80.1 (previous version) with the <a href="https://schristiancollins.com/generaluser.php">GeneralUser GS SoundFont</a><br>
+³ Current DOSBox Staging version with the GeneralUser GS SoundFont</p>
+<p></small></p>
 <h3 id="improved-mixer-command">Improved MIXER command<a class="headerlink" href="#improved-mixer-command" title="Permanent link">&para;</a></h3>
 <p>The <code>MIXER</code> command has been recreated from the ground up to make it a lot
 more robust and less confusing to use. The main highlights are as follows:</p>
@@ -3405,51 +3498,6 @@ MIDI message).</p>
 &ldquo;sanitisation&rdquo; of MIDI data. That might come in handy if you need to leave the
 raw MIDI stream unaltered (e.g., when working with music applications, or when
 debugging MIDI issues).</p>
-<h3 id="fluidsynth-fixes">FluidSynth fixes<a class="headerlink" href="#fluidsynth-fixes" title="Permanent link">&para;</a></h3>
-<p>The Roland SC-55 and FluidSynth handle MIDI portamento messages (pitch glides
-between consecutive notes) very differently. As the rather unique Roland SC-55
-portamento cannot be emulated with FluidSynth, music written for the SC-55
-that uses it might sound weirdly out of tune on FluidSynth (e.g., the
-level 8 music of <strong>Descent</strong>).</p>
-<p>All in all, it&rsquo;s best not to send MIDI portamento messages to FluidSynth at
-all to avoid the problem completely. The resulting sound is a lot closer to
-the Roland SC-55&rsquo;s output.</p>
-<p>Additionally, a rather strange sound stage issue has also been fixed by
-upgrading to the latest FluidSynth version. The panning of some instruments was
-off-centre, slightly leaning to the left. The problem could be rather subtle
-or quite apparent depending on the soundfont in use, the musical score, and
-the instruments being played. You can hear it to varying degrees in the
-&ldquo;buggy&rdquo; audio below recorded using the previous 0.80.1 DOSBox
-Staging version.</p>
-<div class="compact">
-<table>
-<thead>
-<tr>
-<th>&nbsp;</th>
-<th>&nbsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Descent &ndash; Level 8 (SC-55) ¹</td>
-<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-scva.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
-</tr>
-<tr>
-<td>Descent &ndash; Level 8 (FluidSynth buggy) ²</td>
-<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-fluidsynth-bug-0.80.1.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
-</tr>
-<tr>
-<td>Descent &ndash; Level 8 (FluidSynth fixed) ³</td>
-<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-fluidsynth-fixed.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><small></p>
-<p>¹ Roland Sound Canvas VA in SC-55 mode was used for the recording.<br>
-² DOSBox Staging v0.80.1 (previous version) with the <a href="https://schristiancollins.com/generaluser.php">GeneralUser GS soundfont</a><br>
-³ Current DOSBox Staging version with the GeneralUser GS soundfont</p>
-<p></small></p>
 <h3 id="optionally-fade-out-hanging-notes-on-tandy-opl">Optionally fade out hanging notes on Tandy &amp; OPL<a class="headerlink" href="#optionally-fade-out-hanging-notes-on-tandy-opl" title="Permanent link">&para;</a></h3>
 <p>Some games like <strong>Bard&rsquo;s Tale Construction Set</strong> and <strong>California Games II</strong>
 suffer from hanging note issues where the notes are not always properly
@@ -3491,7 +3539,7 @@ mixer).</p>
 </li>
 <li>
 <p>Un-deprecate the per-SoundFont volume scaling as it is useful to reign in
-  overly loud soundfonts.</p>
+  overly loud SoundFonts.</p>
 </li>
 <li>
 <p>Ignore speaker-output enable/disable commands on the Sound Blaster 16 (this
@@ -3584,6 +3632,15 @@ certain actions. This is impossible to perform on some input devices such as
 the Apple MacBook trackpad or the ChesterMouse. This has now been fixed by
 allowing mouse buttons to be mapped to the keys of the keyboard as a
 workaround.</p>
+<h3 id="virtualbox-mouse-driver-support">VirtualBox mouse driver support<a class="headerlink" href="#virtualbox-mouse-driver-support" title="Permanent link">&para;</a></h3>
+<p>DOSBox Staging has had experimental support for the VirtualBox mouse protocol
+for quite some time now, and in this version, we&rsquo;ve made the feature much more
+stable. The primary motivation for using a VirtualBox mouse driver is to
+enable seamless mouse operation in Windows 3.x.</p>
+<p>Just install <a href="https://git.javispedro.com/cgit/vbmouse.git/about/">Javis Pedro&rsquo;s Windows 3.x
+driver</a>, set
+<code>mouse_capture</code> to <code>seamless</code> in your config, and enjoy the seamless Windows
+3.x experience!</p>
 <h3 id="multi-monitor-aware-mouse-capture-support">Multi-monitor-aware mouse capture support<a class="headerlink" href="#multi-monitor-aware-mouse-capture-support" title="Permanent link">&para;</a></h3>
 <p>DOSBox Staging now has fully multi-monitor-aware mouse capture and seamless
 mouse behaviour. Essentially, if DOSBox is in fullscreen mode on multi-monitor
@@ -3591,8 +3648,8 @@ systems, mouse capture and seamless mode work as if you were still in
 windowed mode, allowing you to move the mouse cursor freely between the
 monitors.</p>
 <p>The feature is enabled by default but it&rsquo;s only active on systems with
-multiple displays. Of course, you can always disable it
-by setting the <code>mouse_multi_display_aware</code> setting to <code>off</code>.</p>
+multiple displays. Of course, you can always disable it by setting
+<code>mouse_multi_display_aware</code> to <code>off</code> in your config.</p>
 <h3 id="other-mouse-improvements">Other mouse improvements<a class="headerlink" href="#other-mouse-improvements" title="Permanent link">&para;</a></h3>
 <ul>
 <li>The PS/2 mouse port is now emulated at the register level, and more PS/2
