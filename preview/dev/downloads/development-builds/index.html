@@ -1561,10 +1561,10 @@ function set_ci_status(workflow_file, os_name, description) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    set_ci_status("linux.yml", "linux", "Linux");
-    set_ci_status("macos.yml", "macos", "macOS");
-    set_ci_status("windows-msys2.yml", "msys2", "Windows MSYS2 builds ¹");
-    set_ci_status("windows-msvc.yml", "windows", "Windows MSVC builds ²");
+    set_ci_status("linux.yml", "linux", "Linux x86-64");
+    set_ci_status("macos.yml", "macos", "macOS ¹");
+    set_ci_status("windows-msys2.yml", "msys2", "Windows MSYS2 builds ²");
+    set_ci_status("windows-msvc.yml", "windows", "Windows MSVC builds ³");
 });
 
 </script>
@@ -1628,9 +1628,10 @@ document.addEventListener("DOMContentLoaded", () => {
 </table>
 </div>
 
-<p>¹ Windows MSYS2 builds include 64-bit ZIP and Installer with both 64-bit MSYS2
+<p>¹ macOS builds include Intel, Apple silicon, and universal binaries.</p>
+<p>² Windows MSYS2 builds include 64-bit ZIP and Installer with both 64-bit MSYS2
 (default) and 64-bit MSVC (optional).</p>
-<p>² Windows MSVC builds include 32-bit ZIP and 64-bit ZIP.</p>
+<p>³ Windows MSVC builds include 32-bit ZIP and 64-bit ZIP.</p>
 <h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">&para;</a></h2>
 <p>Testing new features might require a manual reset of the configuration
 file.  DOSBox Staging builds use a configuration file named
@@ -1660,7 +1661,7 @@ file.  DOSBox Staging builds use a configuration file named
 </table>
 </div>
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
-<p>The tarball contains a dynamically-linked x86_64 build; you&rsquo;ll need additional
+<p>The tarball contains a dynamically-linked x86-64 build; you&rsquo;ll need additional
 dependencies installed via your package manager.</p>
 <h4 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">&para;</a></h4>
 <div class="highlight"><pre><span></span><code>sudo dnf install SDL2 SDL2_image SDL2_net opusfile

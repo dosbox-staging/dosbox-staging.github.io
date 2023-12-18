@@ -803,9 +803,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#do-not-send-portamento-messages-to-fluidsynth" class="md-nav__link">
+  <a href="#fluidsynth-fixes" class="md-nav__link">
     <span class="md-ellipsis">
-      Do not send portamento messages to FluidSynth
+      FluidSynth fixes
     </span>
   </a>
   
@@ -2133,9 +2133,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#do-not-send-portamento-messages-to-fluidsynth" class="md-nav__link">
+  <a href="#fluidsynth-fixes" class="md-nav__link">
     <span class="md-ellipsis">
-      Do not send portamento messages to FluidSynth
+      FluidSynth fixes
     </span>
   </a>
   
@@ -2971,7 +2971,7 @@ the situation, and hopefully reversing it with time.</p>
 <p>Previously, raw image captures width or height doubled certain DOS video
 modes. There wasn&rsquo;t much rhyme or reason to it. Now raw captures always
 contain the actual emulated DOS framebuffer-level image (e.g.,
-320&times;200 modes get captured as 320&times;200 PNG files, regadless of
+320&times;200 modes get captured as 320&times;200 PNG files, regardless of
 any other settings).</p>
 <p>The only exceptions are the composite CGA, PCjr, and Tandy modes. These
 modes are a bit special as internally they&rsquo;re rendered width-doubled to
@@ -3049,8 +3049,8 @@ viewport setting is logged, so you can simply copy it to your config.</p>
 <p>This is a fix for the &ldquo;black vertical bars&rdquo; video corruption issue seen on a
 few late 90s games and demos that require Pentium CPUs. Due to some fairly
 intricate technical details to do with 80-bit x87 FPU emulation, the issue
-does not manifest in 32-bit x86 builds, but it does in all other builds on all
-platforms (including 64-bit x86 builds).</p>
+does not manifest in 32-bit and most 64-bit x86 builds, but it does in all
+non-Intel and MSVC 64-bit builds when using the non-dynamic cores.</p>
 <p>A non-exhaustive list of affected programs:</p>
 <p><strong>Games</strong></p>
 <div class="compact">
@@ -3295,7 +3295,34 @@ Silpheed. Thanks to Loris Chiocca for authoring this originally! See the
 <code>[imfc]</code> section for further details.</p>
 <p>We highly recommend checking out <a href="https://nerdlypleasures.blogspot.com/2015/02/the-ibm-music-feature-card-overpriced.html">this excellent blog post</a>
 to learn more about the interesting history of the card.</p>
-<p><strong>TODO video or audio</strong></p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Game</th>
+<th>Audio example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quest for Glory: So You Want to Be a Hero</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-imfc/imfc-quest-for-glory.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Colonel&rsquo;s Bequest &ndash; Intro 1</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-imfc/imfc-colonels-bequest-1.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Colonel&rsquo;s Bequest &ndash; Intro 2</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-imfc/imfc-colonels-bequest-2.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Colonel&rsquo;s Bequest &ndash; Intro 3</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-imfc/imfc-colonels-bequest-3.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+</tbody>
+</table>
+</div>
 <h3 id="roland-mt-32-rom-handling-improvements">Roland MT-32 ROM handling improvements<a class="headerlink" href="#roland-mt-32-rom-handling-improvements" title="Permanent link">&para;</a></h3>
 <p>We have moved from the fiddly and error-prone filename-based Roland
 MT-32/CM-32L ROM lookup mechanism to checksum-based detection. It&rsquo;s no longer
@@ -3378,7 +3405,7 @@ MIDI message).</p>
 &ldquo;sanitisation&rdquo; of MIDI data. That might come in handy if you need to leave the
 raw MIDI stream unaltered (e.g., when working with music applications, or when
 debugging MIDI issues).</p>
-<h3 id="do-not-send-portamento-messages-to-fluidsynth">Do not send portamento messages to FluidSynth<a class="headerlink" href="#do-not-send-portamento-messages-to-fluidsynth" title="Permanent link">&para;</a></h3>
+<h3 id="fluidsynth-fixes">FluidSynth fixes<a class="headerlink" href="#fluidsynth-fixes" title="Permanent link">&para;</a></h3>
 <p>The Roland SC-55 and FluidSynth handle MIDI portamento messages (pitch glides
 between consecutive notes) very differently. As the rather unique Roland SC-55
 portamento cannot be emulated with FluidSynth, music written for the SC-55
@@ -3387,7 +3414,42 @@ level 8 music of <strong>Descent</strong>).</p>
 <p>All in all, it&rsquo;s best not to send MIDI portamento messages to FluidSynth at
 all to avoid the problem completely. The resulting sound is a lot closer to
 the Roland SC-55&rsquo;s output.</p>
-<p><strong>TODO audio comparison</strong></p>
+<p>Additionally, a rather strange sound stage issue has also been fixed by
+upgrading to the latest FluidSynth version. The panning of some instruments was
+off-centre, slightly leaning to the left. The problem could be rather subtle
+or quite apparent depending on the soundfont in use, the musical score, and
+the instruments being played. You can hear it to varying degrees in the
+&ldquo;buggy&rdquo; audio below recorded using the previous 0.80.1 DOSBox
+Staging version.</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>&nbsp;</th>
+<th>&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Descent &ndash; Level 8 (SC-55) ¹</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-scva.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Descent &ndash; Level 8 (FluidSynth buggy) ²</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-fluidsynth-bug-0.80.1.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Descent &ndash; Level 8 (FluidSynth fixed) ³</td>
+<td><audio controls src="https://archive.org/download/dosbox-staging-v0.81.0-fluidsynth-fixes/descent-level-8-fluidsynth-fixed.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><small></p>
+<p>¹ Roland Sound Canvas VA in SC-55 mode was used for the recording.<br>
+² DOSBox Staging v0.80.1 (previous version) with the <a href="https://schristiancollins.com/generaluser.php">GeneralUser GS soundfont</a><br>
+³ Current DOSBox Staging version with the GeneralUser GS soundfont</p>
+<p></small></p>
 <h3 id="optionally-fade-out-hanging-notes-on-tandy-opl">Optionally fade out hanging notes on Tandy &amp; OPL<a class="headerlink" href="#optionally-fade-out-hanging-notes-on-tandy-opl" title="Permanent link">&para;</a></h3>
 <p>Some games like <strong>Bard&rsquo;s Tale Construction Set</strong> and <strong>California Games II</strong>
 suffer from hanging note issues where the notes are not always properly
@@ -3713,6 +3775,11 @@ in a world where minimum quad-cores are the norm:</p>
   as compiling programs or rendering 3D images) while doing something else on
   your computer.</p>
 </li>
+<li>
+<p>The DOSBox Staging window&rsquo;s title bar now shows the current <code>cycles</code>
+  setting more accurately; specifically, the <code>limit</code> option is now also
+  shown, if configured.</p>
+</li>
 </ul>
 <h3 id="pause-improvements">Pause improvements<a class="headerlink" href="#pause-improvements" title="Permanent link">&para;</a></h3>
 <p>The pause feature now operates on the same principle as the mute function: you
@@ -3842,6 +3909,8 @@ on the first launch&mdash;just click OK if that dialog comes up.</p>
 legibility at small icon sizes. A custom icon with a rounded rectangle design
 has been added for macOS that conforms to the Apple Human Interface
 Guidelines.</p>
+<p>Linux users downloading the release from the website should run the
+included <code>install-icons.sh</code> script in order to see the new icons.</p>
 <h3 id="maximum-memory-space-increased-to-3-gb">Maximum memory space increased to 3 GB<a class="headerlink" href="#maximum-memory-space-increased-to-3-gb" title="Permanent link">&para;</a></h3>
 <p>The maximum XMS memory size has been increased from 63 MB to 3 GB. Windows
 3.1x now allows more than 64 MB of RAM to be allocated.</p>
@@ -3880,10 +3949,10 @@ that game mandates a modem speed of 9&thinsp;600 bps.</p>
   hosts for any engineering or financial calculations. The current state of
   x87 FPU emulation is as follows:</p>
 <ul>
-<li>100% conformance in all x86 (32-bit) builds.</li>
-<li>100% conformance in all x64 (64-bit) builds on the <code>dynamic</code> core.</li>
+<li>100% conformance in all x86 (32-bit) builds on all cores.</li>
+<li>100% conformance in all x64 (64-bit) builds on the <code>dynamic</code> core only.</li>
 <li>100% conformance in all non-MSVC x64 (64-bit) builds on the <code>normal</code>
-  core (we don&rsquo;t officially publish MSVC Windows builds).</li>
+  core only (we don&rsquo;t officially publish MSVC Windows builds).</li>
 <li>Every other build, host, and core combination is non-conformant (but
   working at reduced 64-bit precision).</li>
 </ul>
@@ -3976,7 +4045,7 @@ PPC processors without problems.</p>
 </ul>
 </details>
 <details class="note">
-<summary>Full PR list of documentation related changes</summary>
+<summary>Full PR list of documentation-related changes</summary>
 <ul>
 <li>Add Instructions to Build on Nix (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2326" title="GitHub Issue dosbox-staging/dosbox-staging #2326">#2326</a>)</li>
 <li>Add game mode support for macOS Sonoma or newer (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3016" title="GitHub Issue dosbox-staging/dosbox-staging #3016">#3016</a>)</li>
