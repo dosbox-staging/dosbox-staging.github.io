@@ -69,7 +69,20 @@
     </div>
     
     
-      <!-- Determine class according to configuration -->
+
+<div class="banner dev-site">
+  <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
+<p>Regular users, please <a href="https://dosbox-staging.github.io/">follow the exit signs</a>.</p>
+
+</div>
+
+<script>
+	if (window.location.pathname.startsWith("/preview/")) {
+    document.getElementsByClassName("dev-site")[0].classList.add("show");
+	}
+</script>
+
+<!-- Determine class according to configuration -->
 
 
   
@@ -276,7 +289,7 @@
     
   
 </header>
-    
+
     <div class="md-container" data-md-component="container">
       
       
