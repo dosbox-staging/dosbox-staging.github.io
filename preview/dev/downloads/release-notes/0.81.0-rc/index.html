@@ -2899,9 +2899,10 @@ rendered at full 18-bit precision.</p>
 <p>We use 9&times;16 fonts on all emulated VGA adapters now which is how most
 people remember VGA text modes. You can still force 8&times;16 fonts on VGA by
 enabling the new <code>vga_8dot_font</code> setting.</p>
-<p>These improvements have made the <code>vgaonly</code> machine type redundant, so it has
-been deprecated (it&rsquo;s still recognised as an alias for
-<code>svga_paradise</code> for backward compatibility).</p>
+<p>These improvements absorb the benefits of <code>vgaonly</code> into the base VGA
+emulation, making the <code>vgaonly</code> machine type unecessary, so it has been
+deprecated (it&rsquo;s still recognised as an alias for <code>svga_paradise</code> for backward
+compatibility).</p>
 <p>Additionally, all CGA, PCjr, and Tandy text modes are now properly
 single-scanned when using their respective machine types. A few CGA, PCjr, and
 Tandy graphics modes appeared with the incorrect aspect ratio before;
@@ -2919,10 +2920,17 @@ known as <strong>psyraven</strong>).</p>
 <p>We&rsquo;ve added support for emulating a Voodoo 1 board with either a 2 MB Frame
 Buffer Interface (FBI) and one 2 MB Texture Mapping Unit (TMU), or a 4 MB FBI
 + dual 2x4 MB TMU configuration.</p>
-<p>This is a purely software-based emulation; we don&rsquo;t support any OpenGL
-passthrough. The default refresh rate for the Voodoo is 60 Hz, but it&rsquo;s
-possible to force any custom refresh rate via <code>dos_rate</code>.</p>
+<p>The default refresh rate for the Voodoo is 60 Hz, but it&rsquo;s possible to force
+any custom refresh rate via <code>dos_rate</code>.</p>
 <p>Please refer to the new <code>[voodoo]</code> config section to learn more.</p>
+<div class="admonition note">
+<p class="admonition-title">Low vs high-level emulation</p>
+<p>Note this is purely software-based <em>low-level emulation</em>; we&rsquo;re emulating
+the 3dfx Voodoo 1 hardware accurately in software, which requires a beefy
+host CPU. We don&rsquo;t support <em>high-level emulation</em> where the Glide API
+calls are transformed and passed through to modern 3D APIs for the actual
+rendering (e.g., OpenGl, Vulkan, Direct3D, etc).</p>
+</div>
 <h3 id="new-integer-scaling-modes">New integer scaling modes<a class="headerlink" href="#new-integer-scaling-modes" title="Permanent link">&para;</a></h3>
 <p>A new <code>integer_scaling</code> setting has been introduced to constrain the
 horizontal or vertical scaling factor to integer values when upscaling the
@@ -3633,14 +3641,13 @@ the Apple MacBook trackpad or the ChesterMouse. This has now been fixed by
 allowing mouse buttons to be mapped to the keys of the keyboard as a
 workaround.</p>
 <h3 id="virtualbox-mouse-driver-support">VirtualBox mouse driver support<a class="headerlink" href="#virtualbox-mouse-driver-support" title="Permanent link">&para;</a></h3>
-<p>DOSBox Staging has had experimental support for the VirtualBox mouse protocol
-for quite some time now, and in this version, we&rsquo;ve made the feature much more
-stable. The primary motivation for using a VirtualBox mouse driver is to
-enable seamless mouse operation in Windows 3.x.</p>
+<p>DOSBox Staging has had experimental support for the VMware mouse protocol for
+quite some time now, and in this version we have added support for the
+VirtualBox mouse protocol. The primary motivation is to enable seamless mouse
+operation in Windows 3.x.</p>
 <p>Just install <a href="https://git.javispedro.com/cgit/vbmouse.git/about/">Javis Pedro&rsquo;s Windows 3.x
-driver</a>, set
-<code>mouse_capture</code> to <code>seamless</code> in your config, and enjoy the seamless Windows
-3.x experience!</p>
+driver</a> and enjoy the
+seamless Windows 3.x experience!</p>
 <h3 id="multi-monitor-aware-mouse-capture-support">Multi-monitor-aware mouse capture support<a class="headerlink" href="#multi-monitor-aware-mouse-capture-support" title="Permanent link">&para;</a></h3>
 <p>DOSBox Staging now has fully multi-monitor-aware mouse capture and seamless
 mouse behaviour. Essentially, if DOSBox is in fullscreen mode on multi-monitor
@@ -4008,8 +4015,8 @@ that game mandates a modem speed of 9&thinsp;600 bps.</p>
 <ul>
 <li>100% conformance in all x86 (32-bit) builds on all cores.</li>
 <li>100% conformance in all x64 (64-bit) builds on the <code>dynamic</code> core only.</li>
-<li>100% conformance in all non-MSVC x64 (64-bit) builds on the <code>normal</code>
-  core only (we don&rsquo;t officially publish MSVC Windows builds).</li>
+<li>100% conformance in all x64 (64-bit) builds on the <code>normal</code>
+  core, except for the MSVC (Microsoft Visual Studio) Windows builds.</li>
 <li>Every other build, host, and core combination is non-conformant (but
   working at reduced 64-bit precision).</li>
 </ul>
