@@ -11,102 +11,17 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/development-builds/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/linux/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/macos/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/windows/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.75.0-rc1/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.75.0/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.75.1/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.75.2/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.76.0/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.77.0/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.77.1/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.78.0/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.78.1/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.79.0/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.79.1/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.80.0/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.80.1/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://https:/dosbox-staging.github.io/downloads/release-notes/0.81.0-rc/</loc>
-         <lastmod>2023-12-19</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://https:/dosbox-staging.github.io/get-involved/</loc>
          <lastmod>2023-12-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://https:/dosbox-staging.github.io/get-involved/code-of-conduct/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/getting-started/advanced-graphics-options/</loc>
          <lastmod>2023-12-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -142,6 +57,96 @@
     </url>
     <url>
          <loc>https://https:/dosbox-staging.github.io/getting-started/prince-of-persia/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/development-builds/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/linux/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/macos/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/windows/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.75.0-rc1/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.75.0/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.75.1/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.75.2/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.76.0/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.77.0/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.77.1/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.78.0/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.78.1/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.79.0/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.79.1/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.80.0/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.80.1/</loc>
+         <lastmod>2023-12-19</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://https:/dosbox-staging.github.io/releases/release-notes/0.81.0-rc/</loc>
          <lastmod>2023-12-19</lastmod>
          <changefreq>daily</changefreq>
     </url>
