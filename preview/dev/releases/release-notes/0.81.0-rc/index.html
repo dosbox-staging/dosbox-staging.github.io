@@ -2645,7 +2645,7 @@
 <p><strong>Release date:</strong> 2023-12-22</p>
 <div class="admonition warning">
 <p class="admonition-title">Release candidate notes</p>
-<p>Welcome to the <strong>release candidate (RC)</strong> of DOSBox Staging 0.81!</p>
+<p>Welcome to the <strong>release candidate (RC)</strong> of DOSBox Staging 0.81.0!</p>
 <p>What is a “release candidate”? You can think of it as a “sneak preview” of
 our upcoming release before we complete our full round of internal
 testing. As such, it might contain occasional bugs or regressions, but it
@@ -2725,8 +2725,11 @@ it on each platform:</p>
 </tbody>
 </table>
 </div>
-<p>After this, simply start the new version&mdash;a new <code>dosbox-staging.conf</code> will be
-written containing the new defaults and updated setting descriptions.</p>
+<p>You can also execute DOSBox Staging with the <code>--printconf</code> option to have the
+location of the primary config printed to your console.</p>
+<p>After backing up the existing primary config, simply start the new version&mdash;a
+new <code>dosbox-staging.conf</code> will be written containing the new defaults and
+updated setting descriptions.</p>
 <div class="admonition note">
 <p class="admonition-title">Portable mode notes</p>
 <p>In portable mode, <code>dosbox-staging.conf</code> resides in the same folder as your
@@ -2965,7 +2968,7 @@ any custom refresh rate via <code>dos_rate</code>.</p>
 the 3dfx Voodoo 1 hardware accurately in software, which requires a beefy
 host CPU. We don&rsquo;t support <em>high-level emulation</em> where the Glide API
 calls are transformed and passed through to modern 3D APIs for the actual
-rendering (e.g., OpenGl, Vulkan, Direct3D, etc).</p>
+rendering (e.g., OpenGL, Vulkan, Direct3D, etc.)</p>
 </div>
 <h3 id="new-integer-scaling-modes">New integer scaling modes<a class="headerlink" href="#new-integer-scaling-modes" title="Permanent link">&para;</a></h3>
 <p>A new <code>integer_scaling</code> setting has been introduced to constrain the
