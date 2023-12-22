@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://https:/dosbox-staging.github.io/getting-started/dark-forces/">
+        <link rel="canonical" href="https://https:/dosbox-staging.github.io/getting-started/star-wars-dark-forces/">
       
       
         <link rel="prev" href="../beneath-a-steel-sky/">
@@ -945,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prince-of-persia/" class="md-nav__link">
+      <a href="../setting-up-prince-of-persia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1563,7 +1563,9 @@ and will even play some test sounds.</p>
 <p>After the setup has been completed, start the game by running <code>demo</code> again
 and then pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-dark-forces-ingame/dark-forces-ingame.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Star Wars: Dark Forces -- Opening scene" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-dark-forces-ingame/dark-forces-ingame.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-dark-forces/dark-forces-ingame.jpg" >
+    <img alt="Star Wars: Dark Forces -- Opening scene" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-dark-forces/dark-forces-ingame-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Star Wars: Dark Forces &mdash; Opening scene
   </p>
@@ -1571,33 +1573,34 @@ and then pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.<
 </figure>
 <h2 id="autotype">Autotype<a class="headerlink" href="#autotype" title="Permanent link">&para;</a></h2>
 <p>Having to press the <span class="keys"><kbd class="key-1">1</kbd></span> key every time we start the game is not the end of
-the world, but it&rsquo;s not great either. Luckily, there&rsquo;s a way to automate that;
-the handy <code>autotype</code> DOSBox Staging command can simulate keypresses as implied
-by its name. This is what we need to put into our <code>[autoexec]</code> section to
-start the game without manual intervention:</p>
+the world, but it&rsquo;s not great either. Luckily, there&rsquo;s a way to automate
+that; the handy <code>autotype</code> DOSBox Staging command can simulate keypresses as
+implied by its name. This is what we need to put into our <code>[autoexec]</code> section
+to start the game without manual intervention:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[autoexec]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">c</span><span class="o">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">autotype -w 0.5 1</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="na">demo</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="na">exit</span>
 </code></pre></div>
-<p>The first <code>-w 0.5</code> argument of the <code>autotype</code> command specifies an initial 0.5
-second wait time before the &ldquo;auto-typing&rdquo; begins. This is followed by the <code>1</code>
-argument which will simulate pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.</p>
+<p>The first <code>-w 0.5</code> argument of the <code>autotype</code> command specifies an initial
+half-second wait time before the &ldquo;auto-typing&rdquo; begins. This is followed by the
+<code>1</code> argument which will simulate pressing the <span class="keys"><kbd class="key-1">1</kbd></span> key.</p>
 <p>That&rsquo;s it! It&rsquo;s a simple but very useful feature. Run <code>autotype /?</code> to see the
 full list of available options and check out the list of <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/AUTOTYPE-Candidates">AUTOTYPE
 candidates</a>
 on our wiki for assorted real-life examples.</p>
 <h2 id="display-refresh-rate">Display refresh rate<a class="headerlink" href="#display-refresh-rate" title="Permanent link">&para;</a></h2>
-<p>Dark Forces uses the 320&times;200 / 256-colour VGA screen mode, just like the
-majority of DOS games from the 90s. This mode uses a fixed 70 Hz screen
+<p>Dark Forces uses the 320&times;200 256-colour VGA screen mode, just like the
+majority of DOS games from the 1990s. This mode uses a fixed 70 Hz screen
 refresh rate, so if your emulated CPU is fast enough, you can get 70 FPS out
 of the game.</p>
 <p>But there&rsquo;s a problem: most modern non-variable refresh rate flat screens work
-at fixed 60 Hz. Luckily, DOSBox Staging intelligently times and drops frames
-if there&rsquo;s a mismatch between the refresh rate of the <em>emulated</em> graphics
-card and the <em>actual</em> refresh rate of your physical monitor. In most cases,
-this works fine out of the box without you needing to configure anything.</p>
+at a fixed 60 Hz rate. Luckily, DOSBox Staging intelligently times and drops
+frames if there&rsquo;s a mismatch between the refresh rate of the <em>emulated</em>
+graphics card and the <em>actual</em> refresh rate of your physical monitor. In most
+cases, this works fine out of the box without you needing to configure
+anything.</p>
 <p>However, even though DOSBox Staging is trying to do its best in such
 situations, refresh rates will always result in some visible unevenness of
 motion. This is especially noticeable in games that feature smooth scrolling
@@ -1616,7 +1619,7 @@ motion. This is especially noticeable in games that feature smooth scrolling
 <p>Using <strong>specific fixed refresh rates</strong> on non-VRR monitors &mdash; Even if
   you&rsquo;re not a lucky owner of a VRR display, your monitor might support a
   fixed 70 Hz refresh rate if you create a custom screen mode for it. This
-  is highly monitor dependent, but there&rsquo;s no harm in trying it out.</p>
+  is highly monitor-dependent, but there&rsquo;s no harm in trying it out.</p>
 </li>
 </ul>
 <p>Note, however, that depending on the type of game, the 60/70 Hz mismatch might
@@ -1627,11 +1630,12 @@ very little noticeable improvement with these games.</p>
 <p>Another important consideration is that most pre-VGA games don&rsquo;t feature
 smooth movement in their graphics, so the general unevenness of motion masks
 the slight judder resulting from the 60/70 Hz mismatch.</p>
-<p>For reference, these are the refresh rates of all emulated graphics cards:</p>
+<p>For reference, these are the refresh rates of the graphics standards emulated
+by DOSBox Staging:</p>
 <table>
 <thead>
 <tr>
-<th>Graphics adapter</th>
+<th>Graphics standard</th>
 <th>Refresh rate</th>
 </tr>
 </thead>
@@ -1672,23 +1676,24 @@ between different refresh rates, well, you&rsquo;re out of luck&mdash;these game
 can only work 100% correctly either on a true VRR display or a real
 old-school CRT monitor. However, most games only use a single fixed
 refresh rate, which is usually the standard 70 Hz VGA rate, so this
-technique is still very practical.</p>
+technique still has a lot of practical utility.</p>
 </div>
 <h2 id="vertical-syncing">Vertical syncing<a class="headerlink" href="#vertical-syncing" title="Permanent link">&para;</a></h2>
 <p>Dark Forces synchronises its screen updates to the refresh rate of the
 emulated VGA card, which is always 70 Hz. This is hardcoded behaviour that
 cannot be disabled in the game&rsquo;s configuration.</p>
-<p>DOSBox Staging itself also uses vertical syncing by default to synchronise
-updating the emulated image to the vertical refresh rate of your physical
-monitor. Without DOSBox-level vsync, fast-paced games such as this one would
-exhibit a lot of tearing. This is important to understand: to get zero
-tearing, vertical syncing <em>must</em> be happening both in the game <em>and</em> at the
-DOSBox level!</p>
+<p>DOSBox Staging tries to automatically detect the conditions where enabling
+vertical syncing is beneficial to synchronise updating the emulated image to
+the vertical refresh rate of your physical monitor. Without DOSBox-level
+vsync, fast-paced games such as this one would exhibit a lot of tearing. This
+is important to understand: to get zero tearing, vertical syncing <em>must</em> be
+happening both in the game <em>and</em> at the DOSBox level!</p>
 <p>Conversely, DOSBox-level vsync only means that the <em>emulated</em> image is output
 to your physical monitor without flickering and tearing; the emulated DOS game
 <em>itself</em> might or might not use vertical syncing, and thus might or might not
 produce tearing artifacts of its own (these artifacts are present when running
-the game on real hardware too&mdash;there&rsquo;s nothing we can do about them).</p>
+the game on real hardware too, so there&rsquo;s nothing we can do about them at the
+emulator level).</p>
 <p>You don&rsquo;t have control over the vertical syncing behaviour in most DOS games.
 For example, Commander Keen 4&ndash;6, Doom, and many other FPS games have
 hardcoded vsync with a fixed 35 FPS cap. These games were programmed with
@@ -1714,7 +1719,7 @@ can&rsquo;t do that anyway).</p>
 <tr>
 <td>no</td>
 <td>yes</td>
-<td>some tearing; also present on real hardware</td>
+<td>some tearing also present on real hardware</td>
 </tr>
 <tr>
 <td>yes</td>
@@ -1735,14 +1740,22 @@ can&rsquo;t do that anyway).</p>
 }
 </style>
 
-<p>As you can see, there is no point in disabling vsync in DOSBox itself, and
-even with DOSBox vsync enabled you might still get tearing in some games, but
-that&rsquo;s just how the games were coded. We can&rsquo;t &ldquo;fix&rdquo; that at the emulator
-level; that would require making changes to the games&rsquo; code. On the other
-hand, that&rsquo;s the &ldquo;authentic DOS experience&rdquo; for you! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<p>As you can see, even with DOSBox-level vsync enabled, you might still get
+tearing in some games, but that&rsquo;s just how the games were coded. We can&rsquo;t
+&ldquo;fix&rdquo; that at the emulator level, that would require making changes to the
+games&rsquo; code.  Many pre-rendered cutscenes and FMV games tear really badly on
+real hardware too on CRTs&mdash;that&rsquo;s the &ldquo;authentic DOS experience&rdquo; for you!
+<img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<p>Manually configuring vsync is a complex advanced topic for power users only,
+so it&rsquo;s beyond the scope of this beginner&rsquo;s guide. If you&rsquo;re feeling brave,
+look into the <code>presentation_mode</code>, <code>vsync</code>, <code>vsync_skip</code>, <code>host_rate</code>, and
+<code>dos_rate</code> settings for further details, but it&rsquo;s unlikely you&rsquo;ll be able to
+improve the automatically chosen settings unless you <em>really</em> know what you&rsquo;re
+doing (and it&rsquo;s really easy to make the situation a lot worse by
+misconfiguring things).</p>
 <h2 id="setting-the-emulated-cpu-speed">Setting the emulated CPU speed<a class="headerlink" href="#setting-the-emulated-cpu-speed" title="Permanent link">&para;</a></h2>
 <p>Hardware-accelerated 3D graphics only became widespread in the second half of
-the 90s after the end of the DOS era, so most DOS games only use software
+the 1990s after the end of the DOS era, so most DOS games only use software
 rendering. Dark Forces is no exception, which means your emulated CPU needs to
 be fast enough to reach the 70 FPS maximum the game supports.</p>
 <p>The game prints out the familiar message of the DOS/4GW DOS extender at
@@ -1755,13 +1768,13 @@ startup, which means this is a
 power. While this will most likely help achieve a stable 70 FPS (if your
 computer is powerful enough), running the CPU at maximum speed could starve
 the audio emulation, leading to audible glitches, clicks, and pops.</p>
-<p>To avoid such issues, it&rsquo;s much preferable to emulate a CPU that is
-powerful enough to handle 70 FPS but not more. One way to come up with a good
-cycles number is to start the game with a relatively low cycles setting, say
-10&thinsp;000, then keep increasing it with the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> shortcut
-(<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> on the Mac) while playing to arrive at the lowest value that
-results in adequate performance. As a reminder, you can decrease the current
-cycles value too with the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f11">F11</kbd></span> (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f11">F11</kbd></span>) shortcut.</p>
+<p>To avoid such issues, it&rsquo;s much preferable to emulate a CPU that is <em>just
+powerful enough</em> to handle 70 FPS but not <em>more</em> powerful. One way to come up
+with a good cycles number is to start the game with a relatively low cycles
+setting, say 10&thinsp;000, then keep increasing it with the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f12">F12</kbd></span>
+shortcut (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> on the Mac) while playing to arrive at the lowest value
+that results in adequate performance. As a reminder, you can decrease the
+current cycles value too with the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f11">F11</kbd></span> (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f11">F11</kbd></span>) shortcut.</p>
 <p>So let&rsquo;s add the following to our config:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[cpu]</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10000</span>
@@ -1770,9 +1783,8 @@ cycles value too with the <span class="keys"><kbd class="key-control">Ctrl</kbd>
 then increase the cycles value until the motion becomes smooth (again, unless
 you&rsquo;re using a VRR monitor or a fixed 70 Hz refresh rate, it will never become
 completely smooth). Somewhere around 50&thinsp;000 cycles seems to do the
-trick, which roughly corresponds to a Pentium 90 based on our <a href="../beneath-a-steel-sky/#finding-the-correct-speed-for-a-game">table of
-common
-processors</a>.</p>
+trick, which roughly corresponds to a Pentium 90 based on our <a href="../beneath-a-steel-sky/#finding-the-correct-speed-for-a-game">table of common
+CPU speeds</a>.</p>
 <p>So we&rsquo;ll go with that setting. You might need to increase this if later levels
 are more demanding on the CPU, but this is a good starting point:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[cpu]</span>
@@ -1784,22 +1796,23 @@ are more demanding on the CPU, but this is a good starting point:</p>
 breaking up, and the motion will become very stuttery after a certain
 point. This means you&rsquo;re trying to emulate a faster CPU than your computer
 can handle. If you&rsquo;re on a less powerful machine, this unfortunately can
-happen before reaching the minimum cycles value necessary for a smooth and
-stable 70 FPS.</p>
-<p>You have only two options in this situation: live with a lower cycles
+happen before reaching the minimum cycles value necessary for achieving
+a smooth and stable 70 FPS rate.</p>
+<p>You have only two options in that situation: live with a lower cycles
 setting that results in less than 70 FPS, or buy a more powerful computer
 with a faster processor that can handle higher cycles values.</p>
 <p>Also, make sure you&rsquo;re not running any other CPU-intensive programs at the
 same time in the background. Virus scanners, backup software, copying
 large files to USB storage, heavy network traffic, and even ordinary web
-browsers with many tabs open can chew up a significant part of your total
+browsers with many tabs open can chew up a significant chunk of your total
 CPU power. Certain popular chat programs can be very demanding on the CPU
 too, and, surprisingly, even innocent-looking stuff such as automatic
-wallpaper changers can have negative effects on the performance of DOSBox.</p>
+wallpaper switchers can have negative effects on the performance of DOSBox.</p>
 <p>As a general rule, it&rsquo;s best to close all other programs if you&rsquo;re
 encountering performance issues with DOSBox and try again. Just apply
 common sense and treat DOSBox as any other performance-intensive modern
-game.</p>
+game. This might seem counterintuitive as we&rsquo;re running decades-old
+software here, but emulation can be very demanding on your computer.</p>
 </div>
 <h2 id="setting-up-general-midi-sound">Setting up General MIDI sound<a class="headerlink" href="#setting-up-general-midi-sound" title="Permanent link">&para;</a></h2>
 <p>Our previous example game, Beneath A Steel Sky, supports the Roland MT-32 MIDI
@@ -1817,8 +1830,8 @@ it; these contain the instrument definitions and the sound data.</p>
 section, but the short practical summary is as follows:</p>
 <ul>
 <li>
-<p>The Roland Sound Canvas SC-55 was the de-facto standard General MIDI sound
-  module until the very end of the DOS years (around 1997).</p>
+<p>The <strong>Roland Sound Canvas SC-55</strong> was the de-facto standard General MIDI
+  sound module until the very end of the DOS years (around 1997).</p>
 </li>
 <li>
 <p>DOSBox Staging does not emulate the SC-55 directly, but there are SoundFonts
@@ -1831,8 +1844,8 @@ which is basically General MIDI plus some Roland-specific enhancements. Many
 games use these extra features, and while General MIDI compatible SoundFonts
 will work with them, for the best results it&rsquo;s recommended to use GS standard
 compatible ones.</p>
-<p>One such SoundFont is <a href="https://schristiancollins.com/generaluser.php">GeneralUser GS</a>;
-download the latest version, then copy the SoundFont file with the <code>.sf2</code>
+<p>One such SoundFont is <a href="https://schristiancollins.com/generaluser.php">GeneralUser GS</a>.
+Download the latest version, then copy the SoundFont file with the <code>.sf2</code>
 extension into its designated folder:</p>
 <div class="compact">
 <table>
@@ -1927,7 +1940,8 @@ sounds on the original Roland SC-55 hardware versus a few different
 SoundFonts. As mentioned, GeneralUser GS and Creative 4GMGSMT are the closest
 in terms of overall balance and character, the rest are rather hit-and-miss.
 My advice: just pick one that gives you good overall results and stick with
-it.</p>
+it. It&rsquo;s best to do this in your primary config, then you never need to think
+about it again.</p>
 <p>Further comparison recordings can be found on <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#comparison-recordings">our wiki</a>.</p>
 <div class="compact">
 <table>
@@ -1968,86 +1982,88 @@ it.</p>
 <div class="admonition tip">
 <p class="admonition-title">Turn it down, please!</p>
 <p>Some SoundFonts are <em>way</em> too loud; if you encounter such a SoundFont,
-you&rsquo;ll most likely want to lower the output level of FluidSynth. For
-example, to scale back the volume to 40%, use the <code>mixer fsynth 40</code>
-command. A few SoundFonts are <em>extremely loud</em>&mdash;you need to turn the
-FluidSynth volume down to 10-20% to get usable levels. It&rsquo;s a mystery what
-the authors were thinking&hellip;</p>
+you&rsquo;ll most likely want to lower its output level. The best way to do so
+is by including an additional percentage volume value after the
+SoundFont&rsquo;s name in the config, e.g.:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[fluidsynth]
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>soundfont = Arachno.sf2 40
+</code></pre></div>
+<p>This will scale back the volume to 40%. A few SoundFonts are <em>extremely
+loud</em>&mdash;you need to turn the volume down to 10-20% to get usable levels.
+It&rsquo;s a mystery what the authors were thinking&hellip;</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Roland MT-32 is not General MIDI</p>
 <p>Do not confuse the Roland MT-32 family of MIDI sound modules with General
-MIDI modules! Music composed for the MT-32 sounds <em>utterly wrong</em> on a
-General MIDI module, and vice versa. Yes, they both have &ldquo;MIDI&rdquo; in their
+MIDI modules! Music composed for the MT-32 often sounds <em>utterly wrong</em> on a
+General MIDI device, and vice versa. Yes, they both have “MIDI” in their
 names, but that only refers to the communication protocol. The MT-32 range
-of devices are fully programmable synthesisers and most games take
-advantage of their sound-shaping capabilities, while the General MIDI
-modules have much more modest synthesis capabilities, but feature more
-realistic-sounding real-world instruments (the soundtrack of Dark Forces
-showcases this very well&mdash;you just can&rsquo;t get such realistic orchestral
-music out of an MT-32).</p>
-<p>Whenever you want to configure a new game for MIDI sound, you should
-consult the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">list of MT-32-compatible computer games</a>
-to see if the game was originally composed for the MT-32 or a General MIDI
-device (typically the SC-55). The original game manuals very rarely give
-you this info, so you <em>absolutely</em> need this list that contains the
-hard-earned knowledge of many decades of research and testing.</p>
-<p>Quite confusingly, there&rsquo;s an alarmingly large list of games that falsely
-claim MT-32 compatibility in their setup utility, but they in fact require
-a General MIDI module to sound correct. Before you configure any game for
-MT-32 sound, you should definitely check the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games#Games_that_falsely_claim_MT-32_compatibility">list of games that falsely
-claim MT-32 compatibility</a>
-too, no matter what the game&rsquo;s manual says (quite often, the information
-contained therein is simply wrong).</p>
+of devices are programmable synthesisers and most MT-32 supporting games
+take advantage of that to create custom sounds. In contrast, General MIDI
+modules are generally weaker in the synthesis front but feature more
+realistic-sounding real-world instruments. The soundtrack of Dark Forces
+showcases this very well&mdash;you can’t get such realistic orchestral music
+out of an MT-32.</p>
+<p>Whenever you configure a game for MIDI sound, you should consult the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">List of MT-32-compatible computer games</a>
+first. This contains the hard-earned
+knowledge of many decades of research and tells you which MIDI module to
+use for a particular game. The original game manuals very rarely give you
+this info, and even if they do, the information is often wrong. So you
+<em>absolutely</em> need this list.</p>
+<p>Quite confusingly, there’s a large list of games that claim MT-32
+compatibility but only sound correct on a General MIDI module. Make sure
+to check the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games#Games_that_falsely_claim_MT-32_compatibility">List of games that falsely claim MT-32
+compatibility</a>
+as well before configuring any game for MT-32 sound.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">A brief history of MIDI in DOS gaming</p>
-<p>In the beginning, the iconic Roland MT-32 family of devices were the only
-MIDI sound modules available for DOS games that made realistic-sounding
-music a possibility. The original MT-32 was released in 1987, and its
-hegemony ended in 1991 with Roland unleashing its successor, the similarly
-iconic Roland Sound Canvas SC-55.</p>
-<p>The SC-55 was another pioneering effort that shaped DOS gaming history in
-significant ways: it was the world&rsquo;s first device to support the <em>General
-MIDI</em> standard and the <em>GS standard</em> (the latter being Roland&rsquo;s
-vendor-specific General MIDI extensions). MIDI in the broadest sense only
+<p>The iconic <strong>Roland MT-32</strong> released in 1987 was the first sound module that
+made realistic-sounding music in DOS games a possibility. In 1991, Roland
+released its successor, the iconic <strong>Roland Sound Canvas SC-55</strong>.</p>
+<p>The SC-55 shaped DOS gaming history in significant ways: it was the
+world’s first device to support the <strong>General MIDI standard</strong>. MIDI only
 defines a communication mechanism between MIDI-capable devices (e.g., a
-sound module and your computer), but remains silent on how the different
-instruments should <em>sound</em>. General MIDI (GM) remedied this with its 128
-standard instrument definitions; for example, you can be sure that on any
-GM-compliant module instrument #1 is the Acoustic Grand Piano and
-instrument #36 is the Fretless Bass.</p>
-<p>This made interoperation between GM-compliant devices possible. In theory,
-you could use any General MIDI sound module with any GM-compliant game,
-and you would get music, and it would sound <em>mostly</em> correct. In practice,
-that &ldquo;mostly&rdquo; part is highly variable and it depends on the musical
-composition and the particular sound module in use. The thing is, most
-composers and gamers had the SC-55, establishing it as a de-facto standard
-(understandably, because it was the very first GM module). Other GM sound
-modules can render musical compositions written for the SC-55 unbalanced
-and weird-sounding, depending on how different their instruments sound
-compared to the &ldquo;standard&rdquo; SC-55.</p>
-<p>Another thing that makes compatibility difficult to achieve is that the
-SC-55 supports not just the GM but also the GS standard, and many games
-make good use of certain GS-only features. This means that any other
-General MIDI module that claims &ldquo;Sound Canvas compatibility&rdquo; also has to
-implement the GS standard in a manner that sounds very close to the SC-55,
-which is not always the case.</p>
+sound module and your computer). But it remains silent on how the
+different instruments should sound. General MIDI (GM) remedied this with
+its 128 standard instrument definitions. For example, on any GM-compliant
+module, instrument #1 is always the Acoustic Grand Piano and instrument
+#36 is the Fretless Bass.</p>
+<p>This made interoperation between GM-compliant devices possible. You could
+use any General MIDI sound module with any GM-compliant game, and you
+would get music. The music would sound <em>mostly</em> correct, but this depends on
+the musical composition and the particular sound module. Most composers
+and gamers had the SC-55, establishing it as a de facto standard. This
+means music could sound unbalanced and weird on other GM sound modules if
+they deviated too much from the “gold standard” SC-55 sound.</p>
+<p>Additionally, the SC-55 also supports the <strong>General Standard</strong> (<strong>Roland
+GS</strong>, or only <strong>GS</strong> in short), which is Roland’s vendor-specific General
+MIDI extension. Many games make good use of these extra features and sound
+wrong in their absence. This means that alternative MIDI modules need to
+support both the GM <em>and</em> the GS standards to sound correct with DOS
+games.</p>
+<p>The <strong>Yamaha DB50XG</strong> and <strong>MU-series</strong> (e.g., MU50, MU80, MU100, etc.) are such
+MIDI modules. They can be viewed as more modern-sounding and
+higher-quality takes on the original SC-55. They offer excellent SC-55
+compatibility but with a more polished and punchy  sonic character. In
+fact, many prefer them to the SC-55 in certain DOS games. If you are
+curious about how these Yamaha modules stack up against the SC-55, <a href="https://blog.johnnovak.net/2023/03/05/grand-ms-dos-gaming-general-midi-showdown/">this
+article</a> might be of interest.</p>
 </div>
 <h2 id="dynamic-range-compression">Dynamic range compression<a class="headerlink" href="#dynamic-range-compression" title="Permanent link">&para;</a></h2>
 <p>If a game has loud music and you set the output level of your soundcard too
 high, you&rsquo;ll get rather unpleasant-sounding distortion and crackling on real
 hardware. DOSBox Staging has a dynamic range compressor on the master channel
 that automatically pulls the volume back on loud sounds to prevent such
-distortion from happening.</p>
+distortions.</p>
 <p>You can test this by playing the game for a minute with the GeneralUser GS
 SoundFont. You might notice a slight &ldquo;pumping&rdquo; as the compressor pulls the
 volume back on loud sound effects; this dips the volume level of the
 background music as well.</p>
 <p>To hear the distortion caused by the loud sounds clearly, disable the master
 compressor:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[mixer]</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">compressor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[mixer]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">compressor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
 </code></pre></div>
 <p>Overall, the compressor does a good job of preventing audible distortion up to
 a certain point, and most users should not think much about it; it just works.
@@ -2058,12 +2074,12 @@ with the <code>mixer</code> command (e.g., <code>mixer master 50</code> to set t
 the master volume rather than relying on the compressor.</p>
 <p>The sound output of Dark Forces is on the loud side, so we&rsquo;ll set the output
 to 50% to make sure the compressor is never engaged:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="na">mixer master 50</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="na">autotype -w 0.5 1</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="na">demo</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="na">exit</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">c</span><span class="o">:</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="na">mixer master 50</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="na">autotype -w 0.5 1</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="na">demo</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="na">exit</span>
 </code></pre></div>
 <h2 id="reverse-stereo">Reverse stereo<a class="headerlink" href="#reverse-stereo" title="Permanent link">&para;</a></h2>
 <p>The sound setup utility asks us to confirm whether the left and right audio
@@ -2082,50 +2098,53 @@ needs to be reversed.</p>
 <p>But what about games that don&rsquo;t have such a handy &ldquo;reverse stereo&rdquo; option in
 their setup utility? For those games, you can simply reverse the left and
 right channels of the <code>SB</code> mixer channel with the <code>mixer sb reverse</code> command.
-(Remember, use <code>mixer /?</code> to list all available commands and options.)</p>
+This will only reverse the digital sound output of the Sound Blaster.</p>
+<p>(Remember, you can use <code>mixer /?</code> or <code>help mixer</code> to view the mixer command&rsquo;s
+help.)</p>
 <h2 id="minimising-audio-glitches">Minimising audio glitches<a class="headerlink" href="#minimising-audio-glitches" title="Permanent link">&para;</a></h2>
 <p>Even after setting the optimal cycles value for the game to limit the emulated
 CPU speed, you might still hear occasional audio glitches. Why this can happen
-depends on a lot of factors, but mainly it comes down to the particular
+depends on a lot of factors, but it mainly comes down to the particular
 hardware, driver, and operating system combination you&rsquo;re using.</p>
 <p>As a last resort, you can try setting larger audio buffers sizes; this usually
 helps eliminate the occasional clicks and pops. The downside of this is that
 it will also increase audio latency, meaning that you&rsquo;ll hear the audio in
 response to some action with a longer delay (e.g., when shooting with a gun).</p>
-<p>The default <code>blocksize</code> value is 1024 on Windows and 512 on macOS and Linux.
-The default <code>prebuffer</code> size is 25 on Windows and 20 on the other platforms (this
-is specified in milliseconds). You can experiment with increasing these
-settings&mdash;doubling them is a good start. Generally, <code>prebuffer</code> can be
-anything, and <code>blocksize</code> should be one of the following values: 256, 512,
-1024, 2048, 4096, or 8192. </p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[mixer]</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">blocksize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="na">prebuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50</span>
+<p>The default <code>blocksize</code> value is 1024 on Windows and 512 on macOS and
+Linux. The default <code>prebuffer</code> size is 25 on Windows and 20 on the other
+platforms (this is specified in milliseconds). You can experiment with
+increasing these settings&mdash;doubling them is a good start. Generally,
+<code>prebuffer</code> can be anything but <code>blocksize</code> must be one of the following
+values: 256, 512, 1024, 2048, 4096, or 8192.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[mixer]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">blocksize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">prebuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50</span>
 </code></pre></div>
 <h2 id="final-configuration">Final configuration<a class="headerlink" href="#final-configuration" title="Permanent link">&para;</a></h2>
 <p>Here&rsquo;s the full config of Dark Forces set up for General MIDI sound:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[sdl]</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">[render]</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1120x840</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
-<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="k">[cpu]</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="c1"># to emulate a Pentium 90</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50000</span>
-<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
-<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="k">[midi]</span>
-<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">fluidsynth</span>
-<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
-<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="k">[fluidsynth]</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="na">soundfont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GeneralUser GS v1.471.sf2&quot;</span>
-<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>
-<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="na">mixer master 50</span>
-<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="na">autotype -w 0.5 1</span>
-<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="na">demo</span>
-<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="na">exit</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">[cpu]</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># to emulate a Pentium 90</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50000</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">[mixer]</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="na">compressor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">[midi]</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">fluidsynth</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="k">[fluidsynth]</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="c1"># not needed if you set this in the primary config</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="na">soundfont</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;GeneralUser GS v1.471.sf2&quot;</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="na">c</span><span class="o">:</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="na">mixer master 50</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="na">autotype -w 0.5 1</span>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="na">demo</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a><span class="na">exit</span>
 </code></pre></div>
 
 

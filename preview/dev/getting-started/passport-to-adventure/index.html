@@ -945,7 +945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prince-of-persia/" class="md-nav__link">
+      <a href="../setting-up-prince-of-persia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1033,9 +1033,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#default-configuration" class="md-nav__link">
+  <a href="#primary-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Default configuration
+      Primary configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online help
     </span>
   </a>
   
@@ -1147,6 +1156,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentic-image-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentic image size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cpu-sensitive-games" class="md-nav__link">
     <span class="md-ellipsis">
       CPU sensitive games
@@ -1201,7 +1219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dark-forces/" class="md-nav__link">
+      <a href="../star-wars-dark-forces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1455,9 +1473,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#default-configuration" class="md-nav__link">
+  <a href="#primary-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Default configuration
+      Primary configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#online-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Online help
     </span>
   </a>
   
@@ -1569,6 +1596,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#authentic-image-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Authentic image size
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cpu-sensitive-games" class="md-nav__link">
     <span class="md-ellipsis">
       CPU sensitive games
@@ -1612,18 +1648,24 @@ blockbusters of the adventure gaming genre back in the day, and they still
 offer countless hours of fun if you like puzzle-solving and well-written,
 intriguing storylines.</p>
 <p>But before we begin, let&rsquo;s discuss something fundamental to DOSBox Staging!</p>
-<h2 id="default-configuration">Default configuration<a class="headerlink" href="#default-configuration" title="Permanent link">&para;</a></h2>
+<h2 id="primary-configuration">Primary configuration<a class="headerlink" href="#primary-configuration" title="Permanent link">&para;</a></h2>
 <p>Have you wondered how do you learn about all the available configuration
 settings? When you start DOSBox Staging for the very first time, it creates a
-so-called <em>default configuration</em> file in a standard location with the name
+so-called <em>primary configuration</em> file in a standard location with the name
 <code>dosbox-staging.conf</code>. This file contains the full list of available settings
-with their default values, plus a short explanatory text for each.</p>
-<p>For example, this is the description of the <code>viewport</code> setting:</p>
-<div class="highlight"><pre><span></span><code>Set the viewport size (drawable area) within the window/screen:
-  fit:       Fit the viewport to the available window/screen (default).
-  &lt;custom&gt;:  Limit the viewport within to a custom resolution or percentage
-             of the desktop. Specified in WxH, N%, N.M%.
-             Examples: 960x720 or 50%
+with their default values and a short description for each.</p>
+<p>For example, this is the start of the description of the <code>viewport</code> setting:</p>
+<div class="highlight"><pre><span></span><code>Set the viewport size (maximum drawable area). The video output is always
+contained within the viewport while taking the configured aspect ratio into
+account (see &#39;aspect&#39;). Possible values:
+  fit:          Fit the viewport into the available window/screen (default).
+                There might be padding (black areas) around the image with
+                &#39;integer_scaling&#39; enabled.
+  WxH:          Set a fixed viewport size in WxH format in logical units
+                (e.g., 960x720). The specified size must not be larger than
+                the desktop. If it&#39;s larger than the window size, it&#39;s
+                scaled to fit within the window.
+  ...
 </code></pre></div>
 <p>Here are the locations of <code>dosbox-staging.conf</code> on each platform:</p>
 <div class="compact">
@@ -1656,37 +1698,60 @@ with their default values, plus a short explanatory text for each.</p>
  visible, go to your home folder in Finder, press <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-j">J</kbd></span> to bring up
  the view options dialog, and then check <em>Show Library Folder</em>.</p>
 </div>
+<h2 id="online-help">Online help<a class="headerlink" href="#online-help" title="Permanent link">&para;</a></h2>
 <p>If you know the exact name of a configuration setting, you can display its
 explanatory text using the built-in <code>config</code> command. The invocation is
-<code>config -h</code> followed by a space and the setting&rsquo;s name. For example:</p>
+<code>config -h &lt;setting_name&gt;</code>. </p>
+<p>However, if the description is longer than what can fit into a single screen,
+this is not too fruitful as the <code>config</code> command will effectively only display
+the last page. In such cases, we can &ldquo;pipe&rdquo; the output of the <code>config</code> command
+through the <code>more</code> command that will paginate the preceding command&rsquo;s output.
+For example, this is how to display the description of the <code>viewport</code> setting
+which is rather long:</p>
+<div class="highlight"><pre><span></span><code>config -h viewport | more
+</code></pre></div>
+<p>The <code>|</code> is called the &ldquo;pipe&rdquo; character&mdash;how fitting! You can type it by
+pressing <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-backslash">\</kbd></span>, which is located above the <span class="keys"><kbd class="key-enter">Enter</kbd></span> key on the
+standard US keyboard.</p>
+<p>This is how the output of the command looks like:</p>
 <p><a class="glightbox" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/config-help.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Displaying the description of a config setting using the 'config' command" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/config-help.png" style="margin: 0.9rem 0;" /></a></p>
+<p>When piping the output through <code>more</code>, you can press <span class="keys"><kbd class="key-space">Space</kbd></span> to go to the
+next page, <span class="keys"><kbd class="key-enter">Enter</kbd></span> to advance to the next line, or <span class="keys"><kbd class="key-q">Q</kbd></span> to quit the viewer,
+as the bottom line indicates. The viewer will also automatically quit once
+we&rsquo;ve reached the end of the output.</p>
 <p>It is highly recommended to look up the descriptions of the various settings
 as you encounter them in this guide. That&rsquo;s a good way to get gradually
-acquainted with them and further your knowledge about the available options.</p>
+acquainted with the available options.</p>
 <h2 id="layered-configurations">Layered configurations<a class="headerlink" href="#layered-configurations" title="Permanent link">&para;</a></h2>
 <p>In our Prince of Persia example, we created a <code>dosbox.conf</code> configuration file
-in the game&rsquo;s folder, then started DOSBox Staging from that folder. In such a
-scenario, DOSBox loads the default configuration first, then applies
-the <code>dosbox.conf</code> configuration found in the folder it was started from (the
-game&rsquo;s folder), overriding certain default settings.</p>
+in the game&rsquo;s folder, then we started DOSBox Staging from that folder. In such
+a scenario, DOSBox loads the <em>primary configuration</em> first, then
+applies the <em>local</em> <code>dosbox.conf</code> <em>configuration</em> found in the folder it was started
+from (the game&rsquo;s folder). Because of this loading order, you can override
+any primary config setting in your local config.</p>
 <p>This <em>layered configuration</em> approach is very useful; you can apply broad,
-general settings in your default <em>global configuration</em> that will apply to all
-games, then fine-tune these defaults on a per-game basis via <em>local
-<code>dosbox.conf</code> configurations</em> in the individual game folders.</p>
+general settings in your primary configuration that will apply to all games,
+then fine-tune these defaults on a per-game basis via local <code>dosbox.conf</code>
+configs in the individual game folders. Because of this, the primary
+configuration is sometimes also referred to as the <em>default</em> or <em>global
+configuration</em>.</p>
 <p>As DOSBox Staging comes with sensible defaults, you can keep these local
-configurations quite minimal, as we&rsquo;ve already seen. There&rsquo;s absolutely no
-need to specify every single setting in your local game-specific config&mdash;that
-would make configurations very cumbersome to manage, plus it would be
-difficult to see what settings have been changed from their defaults for a
-particular game.</p>
+configs quite minimal, as we&rsquo;ve already seen. There&rsquo;s absolutely no need to
+specify every single setting in your local game-specific config&mdash;that would
+make configurations very cumbersome to manage, plus it would be very difficult
+to see what settings have been changed from their defaults for a particular
+game.</p>
 <div class="admonition tip">
 <p class="admonition-title">A word of advice</p>
-<p>It&rsquo;s best not to change the default configuration while you&rsquo;re still a
+<p>It&rsquo;s best not to change the primary configuration while you&rsquo;re still a
 beginner. Even more experienced DOSBox users are generally better off
-changing the defaults very sparingly as those settings will affect all
-games. A few things that you might consider changing globally are perhaps
-always enabling fullscreen, auto-pausing, and certain audio-related
-settings (e.g., sample rate and buffer sizes). We&rsquo;ll examine these later.</p>
+changing the primary configuration very sparingly as those settings will
+affect all games.</p>
+<p>A few things that you might want to consider setting globally in the
+primary config include enabling fullscreen mode, turning on auto-pausing,
+integer scaling and shader defaults, and certain MIDI and audio-related
+settings (e.g., sample rate, buffer sizes, volume levels, etc.) We&rsquo;ll
+examine these later.</p>
 </div>
 <h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">&para;</a></h2>
 <p>Ok, so let&rsquo;s create the subfolder for our second game then! Create another
@@ -1706,24 +1771,18 @@ game, along with its own &ldquo;emulated C drive&rdquo; in the <code>drives/c</c
 quickly realise we only have two executables: <code>INSTALL.BAT</code> and <code>SAMPLER.EXE</code>.
 But there&rsquo;s also a <code>README.TXT</code>, so let&rsquo;s check that one out first!</p>
 <p>We can try displaying its contents with the <code>type README.TXT</code> command
-(remember, use tab-completion), but that&rsquo;s not too fruitful as the text is
-longer than a single screen, so the <code>type</code> command will effectively only
-display the last page. In such cases, we can &ldquo;pipe&rdquo; the output of the <code>type</code>
-command through the <code>more</code> command that will paginate the preceding command&rsquo;s
-output. This is done by executing the following:</p>
+(remember, use tab-completion), but we&rsquo;ll only see the end of the file that
+way because it&rsquo;s longer than a single page. Good thing we&rsquo;ve just learned
+about the <code>more</code> command, so let&rsquo;s put it to good use by executing the
+following:</p>
 <div class="highlight"><pre><span></span><code>type README.TXT | more
 </code></pre></div>
-<p>The <code>|</code> is called the &ldquo;pipe&rdquo; character&mdash;how fitting! You can type it by
-pressing <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-backslash">\</kbd></span>, which is located above the <span class="keys"><kbd class="key-enter">Enter</kbd></span> key on the
-standard US keyboard.</p>
-<p>But there&rsquo;s an easier way to accomplish the same thing: we can simply execute
-<code>more README.TXT</code>. You can think of the <code>more</code> command as a more advanced,
+<p>Now we can read the whole file, starting from the beginning. But there&rsquo;s an
+easier way to accomplish the same thing: we can simply execute <code>more
+README.TXT</code>. You can think of the <code>more</code> command as a more advanced,
 paginating version of the <code>type</code> command.</p>
-<p>Now we can press <span class="keys"><kbd class="key-enter">Enter</kbd></span> to advance the text one line at a time, or
-<span class="keys"><kbd class="key-space">Space</kbd></span> to go to the next page. The command will exit once we&rsquo;ve reached the
-end of the file, or we can quit earlier with the <span class="keys"><kbd class="key-q">Q</kbd></span> key. Of course, you can
-always cheat and read such text files outside of DOSBox, but we wanted to
-teach you something useful about DOS here.</p>
+<p>Of course, you can always cheat and read such text files outside of DOSBox,
+but we wanted to teach you something useful about DOS here.</p>
 <p>The file contains important instructions about installing and playing the
 game, including the list of available keyboard shortcuts, so read it
 carefully. As it turns out, we&rsquo;ll only need to run <code>SAMPLER.EXE</code>, so let&rsquo;s
@@ -1741,29 +1800,33 @@ Staging window informs you about the current mouse capture state.</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">mouse_capture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">onstart</span>
 </code></pre></div>
 <h2 id="playing-the-game">Playing the game<a class="headerlink" href="#playing-the-game" title="Permanent link">&para;</a></h2>
-<p>This is a really user-friendly program; you can press <span class="keys"><kbd class="key-f1">F1</kbd></span> at the main
+<p>This is a really user-friendly program; you can press <span class="keys"><kbd class="key-f1">F1</kbd></span> on the main
 screen to read the general instructions, then start a game demo by clicking on
 one of the three game icons on the left. Pressing <span class="keys"><kbd class="key-f1">F1</kbd></span> during the game
 displays further game-specific help; make sure you read them if you actually
 want to play these demos. They&rsquo;re worth playing even if you intend to play the
-full games later, as the demos contain slightly different scenes, puzzles, and
-dialogs, plus some fun easter-eggs.</p>
+full games later as the demos contain slightly different scenes, puzzles, and
+dialogues, plus some fun easter-eggs.</p>
 <p>For people who really don&rsquo;t like to read: <span class="keys"><kbd class="key-f5">F5</kbd></span> brings up the save/load/quit
 dialog, and you can pause/unpause the game with the <span class="keys"><kbd class="key-space">Space</kbd></span> key.</p>
-<p>Let&rsquo;s start with the first demo called &ldquo;Indy&rdquo; (Indiana Jones and the Last
-Crusade), mainly because it plays a nice long version of the famous Indiana
+<p>Let&rsquo;s start with the first demo called &ldquo;Indy&rdquo; (<strong>Indiana Jones and the Last
+Crusade</strong>), mainly because it plays a nice long version of the famous Indiana
 Jones theme during the intro, and we&rsquo;re going to investigate the various sound
 options next!</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-indy3-vga/indy-title.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Indiana Jones and the Last Crusade -- Title screen" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-indy3-vga/indy-title.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-title.png" >
+    <img alt="Indiana Jones and the Last Crusade -- Title screen" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-title-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash; Title screen
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-indy3-vga/indy-start.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Indiana Jones and the Last Crusade -- Opening scene" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-indy3-vga/indy-start.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-start.png" >
+    <img alt="Indiana Jones and the Last Crusade -- Opening scene" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-start-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash; Opening scene
   </p>
@@ -1795,14 +1858,15 @@ Blaster cards support at least two sound generation mechanisms:</p>
 </ul>
 <p>Storing music as a list of instructions for a synthesiser takes <em>very</em> little
 disk space (think of sheet music), whereas storing digital audio eats disk
-space for breakfast (think of uncompressed audio files). Consequently, the
-vast majority of DOS games use some kind of synthesiser for music, and digital
-audio is generally reserved for sound effects and speech only.</p>
+space for breakfast (think of uncompressed or even lossless audio files).
+Consequently, the vast majority of DOS games use some kind of synthesiser for
+music, and digital audio is generally reserved for sound effects and speech
+only.</p>
 <p>These game demos don&rsquo;t have any digital sound effects; they all just use the
 OPL chip of the Sound Blaster for both music and some limited sound effects.
 The game is clever enough to auto-detect our OPL-equipped Sound Blaster 16
 (the default sound card emulated by DOSBox), so we&rsquo;ll get OPL sound by simply
-just starting <code>SAMPLER.EXE</code>.</p>
+starting <code>SAMPLER.EXE</code>.</p>
 <p>Of course, we can enhance the OPL music by adding reverb and chorus effects to
 it, just as we&rsquo;ve done with Prince of Persia. Unless you&rsquo;re an absolute
 purist, this is generally a good idea, especially when using headphones. We&rsquo;ll
@@ -1827,14 +1891,18 @@ utility.</p>
     on most Sound Blaster cards.</p>
 </li>
 <li>
+<p><strong>FM</strong> refers to the type of sound synthesis the OPL chip is doing, which
+    is Frequency Modulation synthesis (or FM synthesis, in short).</p>
+</li>
+<li>
 <p><strong>AdLib</strong> was an early sound card predating Sound Blasters that featured
     the same OPL chip. Perfect AdLib compatibility was one of the Sound
     Blasters&rsquo; main selling points, therefore in games that support both
     AdLib and Sound Blaster for synthesised sound, both options will
-    usually yield the exact same results.</p>
+    usually yield the exact same result.</p>
 <p>The AdLib card, however, had no support for digital audio, so it&rsquo;s
 preferable to pick the Sound Blaster option if the game offers both&mdash;
-you might also get digital speech and sound effects that way.</p>
+you might also get digital speech and sound effects by doing so.</p>
 </li>
 <li>
 <p><strong>Sound Blaster MIDI</strong> is a weird thing. Most later games after 1992
@@ -1843,16 +1911,15 @@ you might also get digital speech and sound effects that way.</p>
     fallback option to play the same MIDI music via the OPL chip, using
     synthesised approximations of the same instruments.</p>
 </li>
-<li>
-<p><strong>FM</strong> refers to the type of sound synthesis the OPL chip is doing, which
-    is Frequency Modulation synthesis (or FM synthesis, in short).</p>
-</li>
 </ul>
+<p>All in all, the terms <strong>OPL</strong>, <strong>AdLib</strong>, and <strong>FM</strong> are used
+interchangeably in practice, and usually they refer to the exact same
+thing.</p>
 </div>
 <h3 id="pc-speaker-sound">PC speaker sound<a class="headerlink" href="#pc-speaker-sound" title="Permanent link">&para;</a></h3>
 <p>The observant among you might have spotted the list of graphics and sound
 configuration options in <code>README.TXT</code>. Playing with the graphics options is an
-exercise for the reader; it should be easy to apply what we&rsquo;ve learned during
+exercise for the reader; it should be easy to apply what we&rsquo;ve learned while
 setting up Prince of Persia.</p>
 <p>The sound settings, however, are quite interesting. We can get the executable
 to print out the list of available options by passing it some invalid
@@ -1887,10 +1954,10 @@ the <code>i</code> command-line argument:</p>
 <p>Well, it does sound a lot worse, doesn&rsquo;t it?</p>
 <p>DOSBox emulates the little <em>internal speaker</em> (also known as <em>PC speaker</em>)
 that was a standard accessory of all PCs for a long time. It was designed to
-only produce rather primitive bleeps and bloops, but certain games can make it
-play digitised sound by employing some cunning tricks. In any case, this a
-bleepy-bloopy type of game&hellip;</p>
-<p>It&rsquo;s hard to envision anyone <em>willingly</em> subject themselves to the internal
+only produce rather primitive bleeps and bloops, but certain games can coerce
+it to play digitised sound by employing some cunning tricks. In any case, this
+a bleepy-bloopy type of game&hellip;</p>
+<p>It&rsquo;s hard to envision anyone <em>willingly</em> subjecting themselves to the internal
 speaker experience when a game supports much better quality sound (even
 nostalgia can&rsquo;t be that strong!) But in most games released before about 1988,
 that&rsquo;s the only sound option you have.</p>
@@ -1908,25 +1975,25 @@ command-line argument. Let&rsquo;s try it!</p>
 <div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>C:\&gt;SAMPLER.EXE ts
 </code></pre></div>
 <p>Aaaaand, now there&rsquo;s no sound at all. Why is that?</p>
-<p>Tandy Corporation was an IBM PC clone manufacturer in the 80s; they produced
-the Tandy line of home computers that were mostly compatible with the standard
-PCs but also offered improved sound and graphics capabilities. Developers had
-to specifically support the Tandy to take advantage of these features. There
-are relatively few such games, but they are worth seeking out as they provide
+<p>Tandy Corporation was an IBM PC clone manufacturer in the 1980s; they produced
+the Tandy line of home computers that were mostly compatible with standard PCs
+but also offered improved sound and graphics capabilities. Developers had to
+specifically support the Tandy to take advantage of these features. There are
+relatively few such games, but they are worth seeking out as they provide
 a better experience, especially in the sound department. The
-<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-Tandy-&amp;-PCjr-exclusive-graphics-and-sound">games with Tandy &amp; PCjr exclusive graphics and sound</a>
-list on our wiki should help you find these pre-1990 Tandy specials.</p>
-<p>DOSBox can emulate a Tandy machine; we only need to instruct it to do so in
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-enhanced-Tandy-&amp;-PCjr-graphics-and-sound">Games with enhanced Tandy &amp; PCjr graphics and sound</a>
+page on our wiki should help you find these pre-1990 Tandy specials.</p>
+<p>DOSBox can emulate a Tandy machine&mdash;we only need to instruct it to do so in
 our config:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[dosbox]</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">tandy</span>
 </code></pre></div>
 <p>Emulating the Tandy will cause the standard DOS font to be a bit different;
-this is normal, don&rsquo;t be alarmed by it.</p>
+this is normal, so don&rsquo;t be alarmed by it.</p>
 <p>After a restart, we&rsquo;re finally hearing different synthesised music which
 sounds definitely better than the PC speaker rendition, but not as good as the
 OPL music. Interestingly, the Tandy music plays a little bit faster than the
-other options.</p>
+other sound options.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>If you started <code>SAMPLER.EXE</code> without providing the <code>ts</code> argument to
@@ -1963,9 +2030,10 @@ channel into the right, and vice versa:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[mixer]</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">crossfeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 </code></pre></div>
-<p>Naturally, you can combine crossfeed with chorus and reverb, and you can also
-specify a custom crossfeed amount if you&rsquo;re not happy with the default value
-of 40%:</p>
+<p>Naturally, you can combine crossfeed with chorus and reverb. You can also set
+<code>crossfeed</code> to <code>light</code>, <code>normal</code>, or <code>strong</code> according to your preference, or
+specify a custom crossfeed amount as a percentage from 0% (no crossfeed) to
+100% (collapse the stereo image to mono):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">crossfeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50</span>
 </code></pre></div>
 <p>Try it with headphones; the improvement is very noticeable!</p>
@@ -1979,31 +2047,40 @@ whereas later VGA monitors displayed EGA graphics without strong scanlines,
 and the pixels appeared as little sharp rectangles. It&rsquo;s as if EGA monitors
 had a &ldquo;built-in filter&rdquo; that smoothed the image somewhat while adding a subtle
 texture to it as well, making it more interesting and pleasant to look at.
-Later VGA cards and monitors &ldquo;dropped&rdquo; this filter and were just displaying
-the &ldquo;raw pixels&rdquo; without any such effects.
-This perceptual difference is because of the line-doubling peculiarity of VGA
-adapters in all low-resolution screen modes, as <a href="../enhancing-prince-of-persia/#true-vga-emulation">explained
-previously</a>.</p>
+Later VGA cards and monitors offered backward compatibility with EGA graphics,
+although this was not full compatibility but a kind of emulation: 320&times;200 EGA
+graphics were simply line and pixel-doubled to 640&times;400.</p>
 <p>VGA-style line-doubling changes the feel of EGA graphics, and many prefer the
 original EGA look. After all, this is what the artists saw on their screens
-when creating the artwork. Fortunately, as we&rsquo;ve seen in our Prince of Persia
-example, you can easily emulate the &ldquo;true EGA&rdquo; look with shaders if that&rsquo;s
-your preference.</p>
-<p>It&rsquo;s also worth restricting the image size to mimic that of a period-correct
-14&rdquo; or 15&rdquo; monitor (see the detailed explanation <a href="../enhancing-prince-of-persia/#custom-viewport-resolution">here</a>).</p>
+when creating the artwork. Because of this, the authentic CRT emulation
+feature displays EGA graphics with the &ldquo;true EGA look&rdquo; out of the box with the
+<code>glshader = crt-auto</code> setting.</p>
+<p>However, if you grew up with a VGA-equipped PC, then you only ever saw EGA
+games double-scanned. To appease such people, you can instruct DOSBox Staging
+to emulate a double-scanning VGA card in all screen modes with the
+<code>crt-auto-machine</code> setting:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[render]</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1120x840</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt-auto-machine</span>
 </code></pre></div>
+<p>Technically, this setting instructs DOSBox Staging to always emulate a CRT
+monitor appropriate for the configured <code>machine</code> type which is VGA by
+default.</p>
+<p>The below screenshots illustrate the difference between the &ldquo;true EGA&rdquo; and
+&ldquo;EGA as displayed on VGA&rdquo; look:</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-indy3-ega/indy-ega.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Indiana Jones and the Last Crusade -- EGA as displayed on VGA monitors" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-indy3-ega/indy-ega.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-vga.png" >
+    <img alt="Indiana Jones and the Last Crusade -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-vga-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash;<br>EGA as displayed on VGA monitors
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-indy3-ega/indy-ega-crt.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Indiana Jones and the Last Crusade -- &quot;True EGA&quot; emulation" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-indy3-ega/indy-ega-crt.jpg" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-ega.jpg" >
+    <img alt="Indiana Jones and the Last Crusade -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-ega-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash;<br>&ldquo;True EGA&rdquo; emulation
   </p>
@@ -2012,14 +2089,18 @@ your preference.</p>
 </div>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-monkey-ega/monkey-ega.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="The Secret of Monkey Island -- EGA as displayed on VGA monitors" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-monkey-ega/monkey-ega.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-vga.jpg" >
+    <img alt="The Secret of Monkey Island -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-vga-small.jpeg" />
+  </a></p>
 <figcaption>
 <p>The Secret of Monkey Island &mdash;<br>EGA as displayed on VGA monitors
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-monkey-ega/monkey-ega-crt.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="The Secret of Monkey Island -- &quot;True EGA&quot; emulation" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-monkey-ega/monkey-ega-crt.jpg" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-ega.jpg" >
+    <img alt="The Secret of Monkey Island -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-ega-small.jpg" />
+  </a></p>
 <figcaption>
 <p>The Secret of Monkey Island &mdash;<br>&ldquo;True EGA&rdquo; emulation
   </p>
@@ -2028,14 +2109,18 @@ your preference.</p>
 </div>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-loom-ega/loom-ega.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Loom -- EGA as displayed on VGA monitors" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-loom-ega/loom-ega.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-vga.jpg" >
+    <img alt="Loom -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-vga-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Loom &mdash; EGA as displayed on VGA monitors
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-loom-ega/loom-ega-crt.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Loom -- &quot;True EGA&quot; emulation" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-loom-ega/loom-ega-crt.jpg" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-ega.jpg" >
+    <img alt="Loom -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-ega-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Loom &mdash; &ldquo;True EGA&rdquo; emulation
   </p>
@@ -2050,10 +2135,10 @@ rarely reach the artistic genius of the EGA originals, plus often they
 don&rsquo;t have the exact same gameplay either. This is especially true for the
 three classic LucasArts games included in this demo collection. You can
 check out the comparison and analysis of the EGA versus VGA versions of
-<em>Indiana Jones and the Last Crusade</em> and <em>Loom</em>
+<strong>Indiana Jones and the Last Crusade</strong> and <strong>Loom</strong>
 <a href="https://www.superrune.com/tutorials/lucasfilm_ega.php">here</a>.</p>
 <p>In <a href="https://www.arcadeattack.co.uk/brian-moriarty/">another article</a>,
-Brian Moriatry, the creator of <em>Loom</em>, shares his opinion about the VGA
+Brian Moriatry, the creator of <strong>Loom</strong>, shares his opinion about the VGA
 remake of the game (he calls it &ldquo;an abomination&rdquo;, so apparently he&rsquo;s quite
 unimpressed&hellip;)</p>
 <p>In any case, the point here is it would be a mistake to outright dismiss
@@ -2061,6 +2146,21 @@ the original EGA experiences, thinking they are &ldquo;inferior&rdquo; somehow. 
 if you might prefer the VGA remakes in the end, you should at least give
 the EGA originals a chance.</p>
 </div>
+<h2 id="authentic-image-size">Authentic image size<a class="headerlink" href="#authentic-image-size" title="Permanent link">&para;</a></h2>
+<p>DOS games appear overly blocky at fullscreen on 24&rdquo; or larger modern monitors.
+This is not how people experienced these games back in the day. Typical
+monitor sizes were 14-15&rdquo; throughout the 320&times;200 VGA era, and 17-19&rdquo; for
+the brief 640&times;480 SVGA period at the end of the DOS days.</p>
+<p>We can make the image a bit smaller with the following setting:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">[render]</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">89%</span>
+</code></pre></div>
+<p>This will result in an image size that is the best compromise between &ldquo;modern
+sensibilities&rdquo; and the authentic original experience. It&rsquo;s still on the large
+end of the spectrum, but not overly so. If you go higher than this, the
+graphics will start looking overly blocky from a normal viewing distance.</p>
+<p>The rationale behind the &ldquo;magic 89% value&rdquo; is explained in detail in the last
+<a href="../advanced-graphics-options/#custom-viewport-resolution">advanced graphics options</a> chapter.</p>
 <h2 id="cpu-sensitive-games">CPU sensitive games<a class="headerlink" href="#cpu-sensitive-games" title="Permanent link">&para;</a></h2>
 <p>Certain older games, such as these three demos, are sensitive to CPU speed.
 This can manifest in different ways:</p>
@@ -2081,56 +2181,58 @@ computer!</p>
 millisecond. For the more technically inclined among you, this corresponds to
 ~3 MIPS (Million Instructions Per Second). When running in windowed mode, the
 text in the title bar informs you about the current cycles value, e.g.:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>DOSBOX - 3000 cycles/ms
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>DOSBOX - 3000 cycles/ms
 </code></pre></div>
 <p>Let&rsquo;s see what happens if we double the emulated CPU speed!</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">[cpu]</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">6000</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">[cpu]</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">6000</span>
 </code></pre></div>
 <p>Now we&rsquo;re greeted by an error when trying to start the game:</p>
-<div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>run-time error R6003
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>- integer divide by 0
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>C:\&gt;
+<div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>run-time error R6003
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>- integer divide by 0
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>C:\&gt;
 </code></pre></div>
 <p>We will discuss the CPU speed settings in more detail
 <a href="../beneath-a-steel-sky/#adjusting-the-emulated-cpu-speed">in the next chapter</a>,
 but it was worth mentioning this interesting quirk here.</p>
 <h2 id="final-configuration">Final configuration<a class="headerlink" href="#final-configuration" title="Permanent link">&para;</a></h2>
 <p>Here&rsquo;s the full config with all variations included as comments:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">[sdl]</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="k">[dosbox]</span>
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1"># uncomment for Tandy sound</span>
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="c1">#machine = tandy</span>
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="k">[mouse]</span>
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="na">mouse_capture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">onstart</span>
-<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>
-<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="k">[render]</span>
-<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1120x840</span>
-<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>
-<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a><span class="c1"># uncomment for Game Blaster audio</span>
-<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a><span class="c1">#sbtype = gb</span>
-<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>
-<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a><span class="k">[mixer]</span>
-<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a><span class="c1"># change &#39;reverb&#39; to &#39;tiny&#39; for the PC speaker</span>
-<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">medium</span>
-<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
-<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a><span class="na">crossfeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>
-<a id="__codelineno-15-24" name="__codelineno-15-24" href="#__codelineno-15-24"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-15-25" name="__codelineno-15-25" href="#__codelineno-15-25"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-15-26" name="__codelineno-15-26" href="#__codelineno-15-26"></a><span class="c1"># use for PC speaker sound</span>
-<a id="__codelineno-15-27" name="__codelineno-15-27" href="#__codelineno-15-27"></a><span class="c1">#sampler i</span>
-<a id="__codelineno-15-28" name="__codelineno-15-28" href="#__codelineno-15-28"></a>
-<a id="__codelineno-15-29" name="__codelineno-15-29" href="#__codelineno-15-29"></a><span class="c1"># use for Tandy sound</span>
-<a id="__codelineno-15-30" name="__codelineno-15-30" href="#__codelineno-15-30"></a><span class="c1">#sampler ts</span>
-<a id="__codelineno-15-31" name="__codelineno-15-31" href="#__codelineno-15-31"></a>
-<a id="__codelineno-15-32" name="__codelineno-15-32" href="#__codelineno-15-32"></a><span class="na">sampler</span>
-<a id="__codelineno-15-33" name="__codelineno-15-33" href="#__codelineno-15-33"></a><span class="na">exit</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="k">[dosbox]</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># uncomment for Tandy sound</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1">#machine = tandy</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="k">[mouse]</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="na">mouse_capture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">onstart</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="k">[render]</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">89%</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1"># uncomment for double-scanned VGA CRT emulation</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1">#glshader = crt-auto-machine</span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="c1"># uncomment for Game Blaster audio</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a><span class="c1">#sbtype = gb</span>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="k">[mixer]</span>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="c1"># change &#39;reverb&#39; to &#39;tiny&#39; for the PC speaker</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">medium</span>
+<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
+<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="na">crossfeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a>
+<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="na">c</span><span class="o">:</span>
+<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a><span class="c1"># use for PC speaker sound</span>
+<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="c1">#sampler i</span>
+<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
+<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="c1"># use for Tandy sound</span>
+<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="c1">#sampler ts</span>
+<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a>
+<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="na">sampler</span>
+<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="na">exit</span>
 </code></pre></div>
 
 

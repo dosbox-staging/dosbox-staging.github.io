@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://https:/dosbox-staging.github.io/getting-started/prince-of-persia/">
+        <link rel="canonical" href="https://https:/dosbox-staging.github.io/getting-started/setting-up-prince-of-persia/">
       
       
         <link rel="prev" href="../introduction/">
@@ -1132,7 +1132,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dark-forces/" class="md-nav__link">
+      <a href="../star-wars-dark-forces/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1554,7 +1554,7 @@ accomplished slightly differently on each platform:</p>
 <p class="admonition-title">Warning</p>
 <p>After installing DOSBox Staging, it&rsquo;s highly recommended to open it once
 using the Start Menu shortcut of the desktop icon <a href="../../releases/windows/#microsoft-defender-smartscreen">as described
-here</a>, otherwise
+here</a>, otherwise,
 the below instructions might not work.</p>
 </div>
 <p>If you have used the installer with the default options to set up DOSBox
@@ -1562,14 +1562,15 @@ Staging (and it&rsquo;s highly recommended to do so while you&rsquo;re still lea
 ropes), simply right-click on the <code>Prince of Persia</code> folder in Windows
 Explorer and select the <em>Open with DOSBox Staging</em> in the context menu.</p>
 <p>Alternatively, you can enter the folder, right-click anywhere on the blank
-area inside it, then select <em>Open with DOSBox Staging</em> in the context menu.</p>
+area inside it, and then select <em>Open with DOSBox Staging</em> in the context
+menu.</p>
 <h3>macOS</h3>
 
 <div class="admonition warning first things first">
 <p class="admonition-title">Warning</p>
 <p>After installing DOSBox Staging, you <em>must</em> open it first using its
 application icon <a href="../../releases/macos/#apple-gatekeeper">as described
-here</a>, otherwise the below
+here</a>, otherwise, the below
 instructions won&rsquo;t work.</p>
 </div>
 <ol>
@@ -1582,7 +1583,7 @@ instructions won&rsquo;t work.</p>
    developer of &ldquo;Start DOSBox Staging&rdquo;. Are you sure you want to open it?</em></li>
 <li>Press the <em>Open</em> button.</li>
 <li>A dialog will open, asking for permission to allow DOSBox Staging access
-   your Documents folder. Click on the <em>OK</em> button.</li>
+   to your Documents folder. Click on the <em>OK</em> button.</li>
 </ol>
 <p>You only need to perform this procedure once when opening the <em>Start DOSBox
 Staging</em> icon for the first time. After the first launch, you can use it like
@@ -1664,6 +1665,14 @@ feature is called <em>tab completion</em> and it saves you from a lot of typing!
 Press <span class="keys"><kbd class="key-tab">Tab</kbd></span> a few more times and observe how it alternates between
 <code>POP1.TXT</code> and <code>POP1DEMO.EXE</code>; this makes sense as these are the only two
 files in the current directory that start with <code>pop</code>.</p>
+<div class="admonition important">
+<p class="admonition-title">DOS filenames</p>
+<p>DOS filenames are always uppercase and are limited to 8 characters, plus
+an optional 3-character file extension. It does not matter whether you
+type in lowercase or uppercase letters because DOS will always convert
+them to uppercase before dealing with your input. Tab completion always
+uses uppercase because&hellip; I guess it just looks nice?</p>
+</div>
 <p>Okay, let&rsquo;s make sure <code>POP1DEMO.EXE</code> is displayed in the prompt then press
 <span class="keys"><kbd class="key-enter">Enter</kbd></span> to run this executable file. It turns out this is a
 self-extracting archive that unpacks its contents into the current directory
@@ -1693,8 +1702,9 @@ command with the <code>*.exe</code> wildcard search pattern!</p>
 appears in the command line, then type in the rest (<span class="keys"><kbd class="key-space">Space</kbd></span> character
 followed by <code>*.exe</code>). This handy feature is called <em>command history</em>&mdash;you can
 move forward and backward in the list of previously executed commands with the <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>
-and <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> keys, respectively.</p>
-<p>Okay, so here&rsquo;s how the output looks like:</p>
+and <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> keys, respectively. Best of all, the command history is preserved
+across DOSBox Staging restarts.</p>
+<p>Okay, so here&rsquo;s what the output looks like:</p>
 <div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>C:\&gt;dir *.exe
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a> Volume in drive C is CDRIVE
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a> Directory of C:\
@@ -1732,16 +1742,27 @@ After a short loading, the title screen will appear and you&rsquo;ll hear the
 classic Prince of Persia intro music playing! Don&rsquo;t press any key yet, just
 wait and watch the intro sequence until the end to learn about the game&rsquo;s
 backstory.</p>
+<div class="admonition tip">
+<p class="admonition-title">Running DOS programs</p>
+<p>To run executable files (files with the <code>.EXE</code>, <code>.COM</code> or <code>.BAT</code> file
+extension) it&rsquo;s enough to type in the filename only, without the
+extension. So you could have started the game with the <code>prince</code> command as
+well.</p>
+</div>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-title.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Prince of Persia -- Title screen" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-title.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-title.jpg" >
+    <img alt="Prince of Persia -- Title screen" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-title-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Prince of Persia &mdash; Title screen
   </p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-intro.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Prince of Persia -- Scene from the intro sequence" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-intro.png" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-intro.jpg" >
+    <img alt="Prince of Persia -- Scene from the intro sequence" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-intro-small.jpg" />
+  </a></p>
 <figcaption>
 <p>Prince of Persia &mdash; Scene from the intro sequence
   </p>
@@ -1756,17 +1777,19 @@ to walk carefully. It&rsquo;s not that hard to figure out the various movement
 combinations on your own, but reading the <em>Controlling Your Movements</em> section
 of the <a href="https://ia600809.us.archive.org/29/items/princeofpersia_201708_201708/prince-of-persia_dos_04ra.pdf">user
 manual</a>
-should definitely help. The manual also contains helpful hints and the full
+should definitely help. The manual also contains helpful hints and a full
 list of available keyboard shortcuts.</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="This is where the adventure starts!" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-prince-of-persia-vga/pop-vga.png" width="88%" /></a></p>
+<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-vga.jpg" >
+    <img alt="This is where the adventure starts!" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-vga-small.jpg" width="88%" />
+  </a></p>
 <figcaption>
 <p>This is where the adventure starts!
   </p>
 </figcaption>
 </figure>
 <p>Congratulations, you&rsquo;ve got your very first DOS game running in DOSBox
-Staging! Have some fun, try to find the sword and overcome a few guards, and
+Staging! Have some fun, try to find the sword, overcome a few guards, and
 maybe even attempt to complete the first level.</p>
 <p>You can quit the game by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span> which will return you to the DOS
 prompt. There you can use the <code>exit</code> command to close DOSBox. Of course, you
@@ -1782,7 +1805,7 @@ exiting to DOS, or perhaps none at all.</p>
 <p class="admonition-title">How to approach old games</p>
 <p>If you&rsquo;ve only ever played modern games, you&rsquo;re probably in for a bit of a
 culture shock! There&rsquo;s minimal to no handholding in most DOS games from
-the 1980s and the 90s; you are expected to read the user manual, often
+the 1980s and the &rsquo;90s; you are expected to read the user manual, often
 there is no in-game tutorial, and the games are generally unforgiving and
 require a level of dedication from the player that&rsquo;s uncommon in more
 modern titles.</p>
@@ -1793,15 +1816,15 @@ article) think that the satisfaction and enjoyment you get when mastering
 such difficult games have few parallels in the modern gaming landscape.</p>
 </div>
 <h2 id="authentic-crt-monitor-emulation">Authentic CRT monitor emulation<a class="headerlink" href="#authentic-crt-monitor-emulation" title="Permanent link">&para;</a></h2>
-<p>DOSBox Staging includes a cathode-ray tube (CRT) monitor emulation feature
+<p>DOSBox Staging includes a <strong>cathode-ray tube (CRT) monitor emulation</strong> feature
 which is enabled by default. It strives to achieve authentic, period-correct
-results; the look of PC CRT monitors from the 1980s and 1990s have been
+results; the look of PC CRT monitors from the 1980s and 1990s has been
 painstakingly recreated via shaders as accurately as current technology
 allows. These monitors exhibit certain characteristic peculiarities when
 displaying low-resolution graphics; you can think of them as &ldquo;built-in
 filters&rdquo; that can never be disabled. Artists of the era had to embrace and
-work with these peculiarities, and people playing DOS games on their CRTs
-saw the art through the same &ldquo;filters&rdquo; as the artists.</p>
+work with these peculiarities, and people playing DOS games on their CRTs saw
+the art through the same &ldquo;filters&rdquo; as the artists.</p>
 <p>For this reason, many people who grew up with CRTs think that once these
 filters are &ldquo;digitally removed&rdquo; by drawing the pixels as sharp little
 rectangles on modern flat screens, the art looks bland, sterile, and loses its
@@ -1816,7 +1839,7 @@ need to think about it or tinker with it, <strong>It Just Works&trade;</strong> 
 <p>We&rsquo;ll showcase the authentic CRT emulation throughout the guide, but if you
 prefer sharp pixels, we&rsquo;ll explain how to achieve that in the next chapter.</p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">Proper viewing of screenshots</p>
 <p>Screenshots of CRT shaders in action <em>need</em> to be viewed at 100%
 magnification; otherwise, you might see strange wavy interference patterns
 caused by the browser rescaling the images. These unwanted
@@ -1871,7 +1894,7 @@ DOSBox Staging to our advantage!</p>
 <p class="admonition-title">DOSBox vs DOSBox Staging</p>
 <p>Astute readers might have noticed that the guide sometimes refers to
 &ldquo;DOSBox Staging&rdquo; and sometimes to just &ldquo;DOSBox&rdquo;. Why is that?</p>
-<p>As explained on our <a href="../../about/">about page</a>, DOSBox Staging is a
+<p>As explained on our <a href="../../about/">About page</a>, DOSBox Staging is a
 modern continuation of the original DOSBox project. Technically, DOSBox
 Staging is an open-source fork of and separate project from the
 <a href="https://sourceforge.net/projects/dosbox/">SourceForge-hosted DOSBox project</a>.</p>
