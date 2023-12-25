@@ -1503,9 +1503,9 @@ mode? </p>
 <p>Again, we need a little history lesson to understand what&rsquo;s going on. CRT
 monitors did not have a fixed pixel grid like modern flat panels; they were a
 lot more flexible and could display <em>any</em> resolution within the physical
-limits of the monitor. In fact, they did not even have discrete &ldquo;pixels&rdquo; in
-the sense as modern flat panels do&mdash;the image was literally projected onto
-the screen, similarly to how movie a projector works.</p>
+limits of the monitor. They did not even have discrete &ldquo;pixels&rdquo; in the sense
+that modern flat panels do&mdash;the image was literally projected onto the
+screen, similarly to how a movie projector works.</p>
 <p>Modern flat screens, however, do have a fixed native resolution. The scanlines
 of the emulated CRT image need to “line up” with this fixed pixel grid
 vertically, otherwise we might get interference artifacts. These usually
@@ -1570,12 +1570,12 @@ only 10&rdquo; or 12&rdquo;. And these are just the &ldquo;nominal&rdquo; diagon
 actual visible area was about 1.5 to 2 inches smaller!</p>
 <p>To emulate the physical image size you&rsquo;d get on a typical 14&rdquo; VGA monitor,
 you&rsquo;d need to restrict the output to about 960&times;720 on a modern 24&rdquo;
-widescreen display with 16:9 aspect ratio (assuming the same normal viewing
-distance). Basically, you want the resulting image to measure about 12 inches (30
-cm) diagonally for the most authentic results. But alas, that would be a tad too
-small for most people. 960&times;720 would result in a non-integer vertical
-scale factor, anyway, which is to be avoided. It&rsquo;s best to bump it
-up to 1067&times;800 then:</p>
+widescreen display with a 16:9 aspect ratio (assuming the same normal viewing
+distance). You want the resulting image to measure about 12 inches
+(30 cm) diagonally for the most authentic results. But alas, that would be a
+tad too small for most people. 960&times;720 would result in a non-integer
+vertical scale factor, anyway, which is to be avoided. It&rsquo;s best to bump it up
+to 1067&times;800 then:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[render]</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1067x800</span>
 </code></pre></div>
@@ -1645,10 +1645,6 @@ shall prevail! 🤓 🧠 📚</p>
   4K. The image should measure about 14.4&rdquo; diagonally (about 35 cm) on
   your monitor, which is a little bit above the viewable size of a
   typical <strong>15&rdquo; CRT</strong>.</p>
-</li>
-<li>
-<p>With integer scaling <em>enabled</em> and assuming a <strong>320&times;200 VGA</strong>
-  resolution double-scanned to 640&times;400, dividing 961 by 400 gives us</p>
 </li>
 <li>
 <p>For the <strong>640&times;480 VGA</strong> mode, 961 / 480 ≈ 2.0021, so a 2x vertical
