@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://https:/dosbox-staging.github.io/getting-started/advanced-graphics-options/">
+        <link rel="canonical" href="https://dosbox-staging.github.io/getting-started/advanced-graphics-options/">
       
       
         <link rel="prev" href="../star-wars-dark-forces/">
@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -1503,9 +1503,9 @@ mode? </p>
 <p>Again, we need a little history lesson to understand what&rsquo;s going on. CRT
 monitors did not have a fixed pixel grid like modern flat panels; they were a
 lot more flexible and could display <em>any</em> resolution within the physical
-limits of the monitor. In fact, they did not even have discrete &ldquo;pixels&rdquo; in
-the sense as modern flat panels do&mdash;the image was literally projected onto
-the screen, similarly to how movie a projector works.</p>
+limits of the monitor. They did not even have discrete &ldquo;pixels&rdquo; in the sense
+that modern flat panels do&mdash;the image was literally projected onto the
+screen, similarly to how a movie projector works.</p>
 <p>Modern flat screens, however, do have a fixed native resolution. The scanlines
 of the emulated CRT image need to “line up” with this fixed pixel grid
 vertically, otherwise we might get interference artifacts. These usually
@@ -1558,7 +1558,7 @@ horizontal pixel widths, and good overall sharpness.</p>
 from 1440p upwards, you&rsquo;ll be hard-pressed to notice the occasional 1-pixel
 interpolation band&hellip; unless you&rsquo;re literally pressing your nose against the
 monitor to give those pixels a deep inspection (well, how about <em>not</em> doing
-that then? <img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f914.svg" title=":thinking:" />)</p>
+that then? <img alt="🤔" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f914.svg" title=":thinking:" />)</p>
 <h2 id="custom-viewport-resolution">Custom viewport resolution<a class="headerlink" href="#custom-viewport-resolution" title="Permanent link">&para;</a></h2>
 <p>That&rsquo;s very nice and all, but now the graphics look as if it was constructed
 from brightly coloured little bricks at fullscreen on a 24&rdquo; or larger modern
@@ -1570,12 +1570,12 @@ only 10&rdquo; or 12&rdquo;. And these are just the &ldquo;nominal&rdquo; diagon
 actual visible area was about 1.5 to 2 inches smaller!</p>
 <p>To emulate the physical image size you&rsquo;d get on a typical 14&rdquo; VGA monitor,
 you&rsquo;d need to restrict the output to about 960&times;720 on a modern 24&rdquo;
-widescreen display with 16:9 aspect ratio (assuming the same normal viewing
-distance). Basically, you want the resulting image to measure about 12 inches (30
-cm) diagonally for the most authentic results. But alas, that would be a tad too
-small for most people. 960&times;720 would result in a non-integer vertical
-scale factor, anyway, which is to be avoided. It&rsquo;s best to bump it
-up to 1067&times;800 then:</p>
+widescreen display with a 16:9 aspect ratio (assuming the same normal viewing
+distance). You want the resulting image to measure about 12 inches
+(30 cm) diagonally for the most authentic results. But alas, that would be a
+tad too small for most people. 960&times;720 would result in a non-integer
+vertical scale factor, anyway, which is to be avoided. It&rsquo;s best to bump it up
+to 1067&times;800 then:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[render]</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1067x800</span>
 </code></pre></div>
@@ -1647,10 +1647,6 @@ shall prevail! 🤓 🧠 📚</p>
   typical <strong>15&rdquo; CRT</strong>.</p>
 </li>
 <li>
-<p>With integer scaling <em>enabled</em> and assuming a <strong>320&times;200 VGA</strong>
-  resolution double-scanned to 640&times;400, dividing 961 by 400 gives us</p>
-</li>
-<li>
 <p>For the <strong>640&times;480 VGA</strong> mode, 961 / 480 ≈ 2.0021, so a 2x vertical
   integer scaling factor will be used again. The resulting image will be
   <strong>1280&times;960</strong> on 1080p and <strong>2560&times;1920</strong> on 4K. The resulting image
@@ -1658,7 +1654,7 @@ shall prevail! 🤓 🧠 📚</p>
   which is almost spot on the viewable size of a typical <strong>19&rdquo; CRT</strong>.</p>
 </li>
 </ul>
-<p>Q.E.D. <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<p>Q.E.D. <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 </div>
 <h2 id="custom-aspect-ratios">Custom aspect ratios<a class="headerlink" href="#custom-aspect-ratios" title="Permanent link">&para;</a></h2>
 <p>Psssst&hellip; Don&rsquo;t tell anyone, but DOSBox Staging features a hidden &ldquo;screw the
@@ -1810,10 +1806,10 @@ following magic incantations:</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>

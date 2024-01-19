@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://https:/dosbox-staging.github.io/getting-started/enhancing-prince-of-persia/">
+        <link rel="canonical" href="https://dosbox-staging.github.io/getting-started/enhancing-prince-of-persia/">
       
       
         <link rel="prev" href="../setting-up-prince-of-persia/">
@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -1090,6 +1090,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#joystick-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joystick support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pausing-the-game" class="md-nav__link">
     <span class="md-ellipsis">
       Pausing the game
@@ -1515,6 +1524,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#joystick-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Joystick support
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#pausing-the-game" class="md-nav__link">
     <span class="md-ellipsis">
       Pausing the game
@@ -1599,7 +1617,7 @@ from now on.</p>
 <p>You can do this by closing the DOSBox Staging application and then
 starting it again. But there is a better way: simply press
 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-home">Home</kbd></span>! This is a homage to the Ctrl+Alt+Del &ldquo;three-finger
-salute&rdquo; way of soft-rebooting IBM PCs. <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+salute&rdquo; way of soft-rebooting IBM PCs. <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <p>If you&rsquo;re on macOS,  you&rsquo;ll need to press <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-home">Home</kbd></span> instead, and if
 Apple has decided for you that your MacBook doesn&rsquo;t need a Home key,
 <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-option">Option</kbd><span>+</span><kbd class="key-function">Fn</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> should do the trick.</p>
@@ -1702,7 +1720,7 @@ can be displayed simultaneously on the screen chosen from a small number of fixe
 palettes. Frankly, all combinations look pretty horrifying&hellip;</p>
 <p>But no matter; the game supports it, so we&rsquo;ll have a
 look at it. Make the following adjustment to the <code>machine</code> setting, and don&rsquo;t
-forget to put on your safety goggles! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+forget to put on your safety goggles! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[dosbox]</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cga</span>
 </code></pre></div>
@@ -1822,6 +1840,51 @@ the <code>light</code> and <code>strong</code> chorus settings as well.</p>
 synthesiser&rsquo;s output is something you can do on certain Sound Blaster
 AWE32 and AWE64 models too with the standard drivers.</p>
 </div>
+<h2 id="joystick-support">Joystick support<a class="headerlink" href="#joystick-support" title="Permanent link">&para;</a></h2>
+<p>Okay, so if we want to play the game with the keyboard, we need to press
+<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-k">K</kbd></span> to enter keyboard mode every single time we start the game. As
+mentioned, that&rsquo;s because by default DOSBox Staging either lets you use your
+gamepad as the joystick, or it emulates a PC joystick even if you don&rsquo;t have a
+physical game controller plugged in. Either way, the game will always &ldquo;see&rdquo; a
+joystick at startup and will therefore auto-switch to joystick mode.</p>
+<p>From this follows that if we disable the joystick in the config, the game
+will have no other choice than to default to keyboard mode:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[joystick]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">joysticktype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">disabled</span>
+</code></pre></div>
+<p>But if you want to play the game with your gamepad instead, you can do that
+too! DOSBox Staging auto-maps most common game controllers, so you can control
+the game with the left analog stick and the <strong>X</strong> button out-of-the-box with most
+gamepads.</p>
+<p>You&rsquo;ll need to hit diagonals often to jump and crouch. If your left stick can
+only move in a circle, the following setting might make this easier:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[joystick]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">circularinput</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+</code></pre></div>
+<p>You can also adjust the deadzone of your stick if you experience controller
+drift. It&rsquo;s 10% by default, so let&rsquo;s increase it to 15% instead:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">[joystick]</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">deadzone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">15</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">The PC is not a console</p>
+<p>Note that Prince of Persia requires a lot of precise control, so playing it
+with the analog stick makes the game quite a bit harder and somewhat
+frustrating. This is a common theme with many DOS games; most of them were
+really optimised for keyboard controls, or require you to use the keyboard
+anyway to perform some essential actions.</p>
+<p>While playing DOS games from the couch with a controller in your hand
+might be cool, for the best results, just stick with the keyboard
+controls. Apart from some space and flight simulators, joystick support
+was often an afterthought in DOS games.</p>
+</div>
+<div class="admonition danger">
+<p class="admonition-title">Issues with multiple controllers</p>
+<p>You might get some weird behaviour or even crashes if you have multiple
+game controllers plugged in. If that&rsquo;s the case, please disconnect all
+game controllers except the one you want to use and restart DOSBox
+Staging. We&rsquo;re aiming to improve multi-controller support in the future.</p>
+</div>
 <h2 id="pausing-the-game">Pausing the game<a class="headerlink" href="#pausing-the-game" title="Permanent link">&para;</a></h2>
 <p>Prince of Persia can be paused by pressing the <span class="keys"><kbd class="key-escape">Esc</kbd></span> key during the game.
 That&rsquo;s nice, but not all games have such built-in pause functionality.</p>
@@ -1831,8 +1894,8 @@ same shortcut again.</p>
 <p>But wouldn&rsquo;t it be convenient if DOSBox could auto-pause itself whenever you
 switch to a different window? You can easily achieve that by enabling the
 <code>pause_when_inactive</code> option in the <code>[sdl]</code> section.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[sdl]</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
 </code></pre></div>
 <p>Restart the game and switch to a different window&mdash;DOSBox will pause itself.
 Switch back to DOSBox&mdash;the game will resume. Nifty, isn&rsquo;t it?</p>
@@ -1845,18 +1908,18 @@ bar.</p>
 </div>
 <h2 id="final-configuration">Final configuration<a class="headerlink" href="#final-configuration" title="Permanent link">&para;</a></h2>
 <p>Below is the full config with all the enhancements we&rsquo;ve added:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[sdl]</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="k">[mixer]</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="na">prince</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="na">exit</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="k">[mixer]</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="na">c</span><span class="o">:</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="na">prince</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="na">exit</span>
 </code></pre></div>
 <h2 id="configuration-comments">Configuration comments<a class="headerlink" href="#configuration-comments" title="Permanent link">&para;</a></h2>
 <p>Instead of deleting those lines, you can prefix them with a <code>#</code> character
@@ -1865,22 +1928,30 @@ bar.</p>
 reading the configuration. Normally, you would use them to add, well,
 comments to your config, but &ldquo;commenting out&rdquo; a line is a quick way to
 disable it without actually removing the line.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">[sdl]</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">[render]</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1"># for 4K+ monitors only</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1">#integer_scaling = off</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
-<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="k">[mixer]</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>
-<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="na">prince</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="na">exit</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">[joystick]</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="c1"># if you prefer the keyboard; remove it if you want to play with your gamepad</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="na">joysticktype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">disabled</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="c1"># optional gamepad adjustments</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="c1">#circularinput = on</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="c1">#deadzone = 15</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="k">[render]</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="c1"># for 4K+ monitors only</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="c1">#integer_scaling = off</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="k">[mixer]</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="na">c</span><span class="o">:</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a><span class="na">prince</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="na">exit</span>
 </code></pre></div>
 <p>Note we haven&rsquo;t commented out the <code>[render]</code> section itself. That&rsquo;s fine;
 empty sections are allowed and do no harm.</p>
@@ -1929,15 +2000,15 @@ errors:</p>
 </ul>
 </div>
 <p>This is how the freshly ruined parts of our config should look like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[sdl]</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">blah</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="na">no_such_config_param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">42</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">[dosbox]</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mcp</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="k">[render]</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">xsharp</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">blah</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="na">no_such_config_param</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">42</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="k">[dosbox]</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mcp</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="k">[render]</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">xsharp</span>
 </code></pre></div>
 <p>As expected, we&rsquo;ll see some warnings and errors in the logs after a restart:</p>
 <p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Example DOSBox logs showcasing warnings and errors" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs2.png" /></a></p>
@@ -2094,10 +2165,10 @@ Time to move on to another game!</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>

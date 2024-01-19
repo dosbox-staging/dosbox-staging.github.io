@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://https:/dosbox-staging.github.io/releases/release-notes/0.81.0-rc/">
+        <link rel="canonical" href="https://dosbox-staging.github.io/releases/release-notes/0.81.0-rc/">
       
       
         <link rel="prev" href="../../linux/">
@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -2674,7 +2674,7 @@ Screenshots have been made aspect ratio correct by default, and image
 capturing has become multi-threaded, so it no longer causes audio hiccups and
 micro-pauses. Video capturing has been made about three times more performant.
 Oh, almost forgot: we&rsquo;ve also added 3dfx Voodoo 1 support for the fans of those
-late 90s 3D DOS games! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /> <img alt="🤘" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f918.svg" title=":metal:" /></p>
+late 90s 3D DOS games! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> <img alt="🤘" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f918.svg" title=":metal:" /></p>
 <p>Well, that&rsquo;s just the video side of things. We&rsquo;ve added support for the
 ultra-rare IBM Music Feature Card, dealing with Roland MT-32 ROMs has become
 much easier, plus we&rsquo;ve made numerous MIDI-related improvements as well. Not
@@ -3083,7 +3083,7 @@ machines with rendered post-shader captures at 4K resolution.</p>
 feature (e.g., to play text adventures without black bars on the sides). Now
 we&rsquo;re giving you not only that but an entirely new mechanism to apply
 arbitrary aspect ratios, zoom into the DOS content, and even emulate the
-horizontal and vertical stretch controls of CRT monitors of yore! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+horizontal and vertical stretch controls of CRT monitors of yore! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <p>The key element of the feature is the new <code>aspect = stretch</code> mode which
 stretches the image to the extents of the viewport. For example, to make a
 game completely fill the screen, use the following config:</p>
@@ -3190,7 +3190,7 @@ building upon the work of Ove Kaaven:</p>
   footage. This one absolutely needs vertical integer scaling enabled!</p>
 </li>
 </ul>
-<p>Now you can enjoy your 90s FMV shlock in its full gory glory! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<p>Now you can enjoy your 90s FMV shlock in its full gory glory! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <div class="image-grid">
 <figure>
 <p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-fmv-deinterlacing/angel-devoid-raw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Angel Devoid: Face of the Enemy --- raw output" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-fmv-deinterlacing/angel-devoid-raw.png" /></a></p>
@@ -3283,7 +3283,7 @@ building upon the work of Ove Kaaven:</p>
 </li>
 <li>
 <p>We&rsquo;ve changed the VESA BIOS branding to <em>DOSBox Staging</em> (because we can
-  <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f60e.svg" title=":sunglasses:" />)</p>
+  <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" />)</p>
 </li>
 </ul>
 <details class="note">
@@ -3877,6 +3877,15 @@ in a world where minimum quad-cores are the norm:</p>
   degrade performance when running computation-intensive tasks in DOSBox (such
   as compiling programs or rendering 3D images) while doing something else on
   your computer.</p>
+</li>
+<li>
+<p>The rate for cycle guessing has been increased from 4 to 10 times per second,
+  allowing emulation to reach optimal speeds much quicker.</p>
+</li>
+<li>
+<p>We&rsquo;ve also added compensation for delays caused by the system graphics
+  driver, such as vsync, which were adversely affecting the cycle guessing
+  performance.</p>
 </li>
 <li>
 <p>The DOSBox Staging window&rsquo;s title bar now shows the current <code>cycles</code>
@@ -4583,10 +4592,10 @@ project, upon which DOSBox Staging is based.</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
