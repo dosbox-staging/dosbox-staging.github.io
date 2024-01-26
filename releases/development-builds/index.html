@@ -1599,8 +1599,7 @@ function set_ci_status(workflow_file, os_name, description) {
 document.addEventListener("DOMContentLoaded", () => {
     set_ci_status("linux.yml", "linux", "Linux x86-64");
     set_ci_status("macos.yml", "macos", "macOS ¹");
-    set_ci_status("windows-msys2.yml", "msys2", "Windows MSYS2 builds ²");
-    set_ci_status("windows-msvc.yml", "windows", "Windows MSVC builds ³");
+    set_ci_status("windows-msys2.yml", "windows", "Windows builds ²");
 });
 
 </script>
@@ -1640,17 +1639,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </td>
   </tr>
   <tr>
-    <td id="msys2-build-link">
-      <a class="glightbox" href="../images/dots.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img style="margin:auto;margin-left:0.1em;" src="../images/dots.svg"></a>
-    </td>
-    <td id="msys2-build-version">
-      <a class="glightbox" href="../images/dots.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img style="margin:auto;margin-left:0.1em;" src="../images/dots.svg"></a>
-    </td>
-    <td id="msys2-build-date">
-      <a class="glightbox" href="../images/dots.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img style="margin:auto;margin-left:0.1em;" src="../images/dots.svg"></a>
-    </td>
-  </tr>
-  <tr>
     <td id="windows-build-link">
       <a class="glightbox" href="../images/dots.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img style="margin:auto;margin-left:0.1em;" src="../images/dots.svg"></a>
     </td>
@@ -1665,9 +1653,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <p>¹ macOS builds include Intel, Apple silicon, and universal binaries.</p>
-<p>² Windows MSYS2 builds include 64-bit ZIP and Installer with both 64-bit MSYS2
-(default) and 64-bit MSVC (optional).</p>
-<p>³ Windows MSVC builds include 32-bit ZIP and 64-bit ZIP.</p>
+<p>² Windows builds are 64-bit and include portable ZIP and installer variants.</p>
 <h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">&para;</a></h2>
 <p>Testing new features might require a manual reset of the configuration
 file.  DOSBox Staging builds use a configuration file named
