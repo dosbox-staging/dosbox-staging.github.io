@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
       
       
 
@@ -484,15 +484,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#0810-release-candidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.81.0 release candidate
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#homebrew" class="md-nav__link">
     <span class="md-ellipsis">
       Homebrew
@@ -674,11 +665,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release-notes/0.81.0-rc/" class="md-nav__link">
+      <a href="../release-notes/0.81.0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    0.81.0-RC
+    0.81.0
   </span>
   
 
@@ -1432,15 +1423,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#0810-release-candidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.81.0 release candidate
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#homebrew" class="md-nav__link">
     <span class="md-ellipsis">
       Homebrew
@@ -1535,47 +1517,15 @@
 
 <h1 id="macos-releases">macOS releases<a class="headerlink" href="#macos-releases" title="Permanent link">&para;</a></h1>
 <h2 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">&para;</a></h2>
-<p><strong><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-macOS-v0.80.1.dmg">Download DOSBox Staging 0.80.1 Universal Binary (dmg)</a></strong>
+<p><strong><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0/dosbox-staging-macOS-v0.81.0.dmg">Download DOSBox Staging 0.81.0 Universal Binary (dmg)</a></strong>
 <br>
 <small>
-sha256: 46a256645255e8345981ea357f1416b8<wbr>ce4bc60a2aba9a86b5122d5075aa7fa9
+sha256: TODO
 </small></p>
 <p>This package is compatible with macOS 10.15 (Catalina) or newer and supports both
 Intel and Apple silicon Macs.</p>
-<p>Check out the <a href="../release-notes/0.80.1/">0.80.1 release notes</a> to learn about
+<p>Check out the <a href="../release-notes/0.81.0/">0.81.0 release notes</a> to learn about
 the changes and improvements introduced by this release.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>macOS uses its Gatekeeper feature to prevent users from running
-externally-hosted 3<sup>rd</sup> party software, such as DOSBox Staging. See <a href="#apple-gatekeeper">the section
-below</a> to learn how to fix it.</p>
-</div>
-<h2 id="0810-release-candidate">0.81.0 release candidate<a class="headerlink" href="#0810-release-candidate" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Release candidate warning</p>
-<p>Release candidates are intended for experienced early adopters willing to
-help us stabilise the next DOSBox Staging version for the final release.
-Regular users should download the <a href="#current-stable-version">current stable version</a>
-instead.</p>
-<p><strong>0.81.0-RC2</strong></p>
-<ul>
-<li><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0-rc2/dosbox-staging-macOS-v0.81.0-rc2.dmg">Download DOSBox Staging 0.81.0-RC2 Universal Binary (dmg)</a>
-  <br>
-  <small>
-  sha256: 2a425ea28b0b5e69edd743bcf219f124<wbr>03b3b696f55afc0f714c2b93fa2b3764
-  </small></li>
-</ul>
-<p><strong>0.81.0-RC1</strong></p>
-<ul>
-<li><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0-rc1/dosbox-staging-macOS-v0.81.0-rc1.dmg">Download DOSBox Staging 0.81.0-RC1 Universal Binary (dmg)</a>
-  <br>
-  <small>
-  sha256: 7f1ca6b5d2aedc63a2027f1ed467a9d3<wbr>f9bf3e27a4c7fcd0310515c2d9a12a27
-  </small></li>
-</ul>
-<p>Check out the <a href="../release-notes/0.81.0-rc/">0.81.0-RC release notes</a> to learn
-about the changes and improvements introduced in this release.</p>
-</div>
 <h2 id="homebrew">Homebrew<a class="headerlink" href="#homebrew" title="Permanent link">&para;</a></h2>
 <p>The <a href="https://formulae.brew.sh/formula/dosbox-staging">Homebrew package</a> is
 compatible with macOS 10.14 (Mojave) or newer. Learn how to set up Homebrew
@@ -1601,9 +1551,8 @@ supports both 64-bit Intel and Apple silicon Macs.</p>
 <p>These <a href="../development-builds/">snapshot builds</a> might be slow or unstable as they
 are designed with developers and testers in mind.</p>
 <h2 id="apple-gatekeeper">Apple Gatekeeper<a class="headerlink" href="#apple-gatekeeper" title="Permanent link">&para;</a></h2>
-<p>You&rsquo;ll need to do the following when launching DOSBox Staging for the first
-time (you&rsquo;ll need to repeat these steps every time after having upgraded to a
-newer version):</p>
+<p>For releases before 0.81.0, you&rsquo;ll need to do the following when launching
+DOSBox Staging for the first time:</p>
 <ul>
 <li><span class="keys"><kbd class="key-control">Ctrl</kbd></span> click (or right-click) on the <strong>DOSBox Staging</strong> app, and click <strong>Open</strong>. </li>
 <li>Click <strong>OK</strong> to close the resulting message.</li>
@@ -1616,10 +1565,18 @@ newer version):</p>
 <h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
 <p>Apple&rsquo;s Gatekeeper feature only permits the running of notarized software, one
 aspect of which involves developers making yearly payments to Apple.</p>
-<p>As DOSBox Staging is a volunteer effort, we are not in a position to make such
-payments and therefore ask users to bypass Apple&rsquo;s Gatekeeper manually.</p>
+<p>As DOSBox Staging is a volunteer effort, we were not in a position to make
+such payments prior to version 0.81.0 and therefore asked users to bypass
+Apple&rsquo;s Gatekeeper manually.</p>
 <h2 id="older-releases">Older releases<a class="headerlink" href="#older-releases" title="Permanent link">&para;</a></h2>
 <ul>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-macOS-v0.80.1.dmg">Download DOSBox Staging 0.80.1 Universal Binary (dmg)</a> (macOS 10.15 or newer)
+  <br>
+  <small>
+  sha256: 46a256645255e8345981ea357f1416b8<wbr>ce4bc60a2aba9a86b5122d5075aa7fa9
+  </small></p>
+</li>
 <li>
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.0/dosbox-staging-macOS-v0.80.0.dmg">DOSBox Staging 0.80.0 Universal binary (dmg)</a> (macOS 10.15 or newer)
   <br>
@@ -1714,7 +1671,7 @@ payments and therefore ask users to bypass Apple&rsquo;s Gatekeeper manually.</p
 <li>
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.75.0-rc1/dosbox-staging-macOS-v0.75.0-rc1.dmg">DOSBox Staging 0.75.0-rc1 (dmg)</a> (macOS 10.15 or newer)
   <br/>
-  <span style="font-size:0.7em">
+  <span>
   sha256: 8a5c12d1b6567d6e981acd76e30dec41<wbr>a73a699963b714f4f1dcf0fc853fc9f6
   </span></p>
 </li>
@@ -1844,10 +1801,10 @@ payments and therefore ask users to bypass Apple&rsquo;s Gatekeeper manually.</p
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>

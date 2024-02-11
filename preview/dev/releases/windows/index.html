@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.8">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f2e4d321.min.css">
       
       
 
@@ -494,15 +494,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#0810-release-candidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.81.0 release candidate
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hardware-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       Hardware requirements
@@ -714,11 +705,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../release-notes/0.81.0-rc/" class="md-nav__link">
+      <a href="../release-notes/0.81.0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    0.81.0-RC
+    0.81.0
   </span>
   
 
@@ -1505,15 +1496,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#0810-release-candidate" class="md-nav__link">
-    <span class="md-ellipsis">
-      0.81.0 release candidate
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#hardware-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       Hardware requirements
@@ -1618,22 +1600,18 @@
 <h1 id="windows-releases">Windows releases<a class="headerlink" href="#windows-releases" title="Permanent link">&para;</a></h1>
 <h2 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">&para;</a></h2>
 <h3 id="windows-8x-or-newer">Windows 8.x or newer<a class="headerlink" href="#windows-8x-or-newer" title="Permanent link">&para;</a></h3>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-v0.80.1-setup.exe">Download DOSBox Staging 0.80.1 64-bit (Installer)</a>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0/dosbox-staging-v0.81.0-setup.exe">Download DOSBox Staging 0.81.0 (Installer)</a>
 <br>
 <small>
-sha256: 94b961f397f3b70a13daf3b573857b52<wbr>62515e75d490bfc19f019479fe1694f8
+sha256: TODO
 </small></p>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_64-v0.80.1.zip">Download DOSBox Staging 0.80.1 64-bit (zip)</a>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0/dosbox-staging-windows-v0.81.0.zip">Download DOSBox Staging 0.81.0 (zip)</a>
 <br>
 <small>
-sha256: e7ab98013b55f6fd6db1f529574b8f29<wbr>05d374225f532ce0905666281cbe32af
+sha256: TODO
 </small></p>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_32-v0.80.1.zip">Download DOSBox Staging 0.80.1 32-bit (zip)</a>
-<br>
-<small>
-sha256: 63a8c5b084231364961f7c8b6415e446<wbr>22c5ab9822e49839c2aca1bddd3a9459
-</small></p>
-<p>Check out the <a href="../release-notes/0.80.1/">0.80.1 release notes</a> to learn about
+<p>DOSBox Staging requires 64-bit Windows.</p>
+<p>Check out the <a href="../release-notes/0.81.0/">0.81.0 release notes</a> to learn about
 the changes and improvements introduced in this release.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -1641,6 +1619,8 @@ the changes and improvements introduced in this release.</p>
 Microsoft Defender SmartScreen, see the <a href="#microsoft-defender-smartscreen">section below</a>.</p>
 </div>
 <h3 id="windows-7">Windows 7<a class="headerlink" href="#windows-7" title="Permanent link">&para;</a></h3>
+<p>The official distribution packages only support Windows 7 up to version
+0.80.1.</p>
 <p>For 64-bit Windows 7, use the 64-bit MSVC build. It can be optionally selected
 in the <a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-v0.80.1-setup.exe">installer</a> and is also available as a <a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_64-v0.80.1.zip">portable
 ZIP archive</a>.</p>
@@ -1651,50 +1631,6 @@ ZIP archive</a>.</p>
 <p>More recent releases can be built from the source by excluding FluidSynth and
 Slirp support. Please see the <a href="https://github.com/dosbox-staging/dosbox-staging/blob/main/docs/build-windows.md#build-using-msys2">Windows MSYS2 build instructions</a>
 for further details.</p>
-<h2 id="0810-release-candidate">0.81.0 release candidate<a class="headerlink" href="#0810-release-candidate" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Release candidate warning</p>
-<p>Release candidates are intended for experienced early adopters willing to
-help us stabilise the next DOSBox Staging version for the final release.
-Regular users should download the <a href="#current-stable-version">current stable version</a>
-instead.</p>
-<p><strong>0.81.0-RC2</strong></p>
-<ul>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0-rc2/dosbox-staging-v0.81.0-rc2-setup.exe">Download DOSBox Staging 0.81.0-RC2 64-bit (Installer)</a>
-  <br>
-  <small>
-  sha256: 082b0cabe333b191b129019b116620ec<wbr>3d42b2c5706f0a836e194d2f294028b8
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0-rc2/dosbox-staging-windows-v0.81.0-rc2.zip">Download DOSBox Staging 0.81.0-RC2 64-bit (zip)</a>
-  <br>
-  <small>
-  sha256: a708a1669ca46e49c9a33856dc5b9252<wbr>b647c4eb7fd516c2b8f52bb4abc09ac4
-  </small></p>
-</li>
-</ul>
-<p><strong>0.81.0-RC1</strong></p>
-<ul>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0-rc1/dosbox-staging-v0.81.0-rc1-setup.exe">Download DOSBox Staging 0.81.0-RC1 64-bit (Installer)</a>
-  <br>
-  <small>
-  sha256: 84a937d94411bd4cdfc71863905eeb71<wbr>5ab51103a5d0aa5ade6f50c6f8bc7bb6
-  </small></p>
-</li>
-<li>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.0-rc1/dosbox-staging-windows-msys2-x86_64-v0.81.0-rc1.zip">Download DOSBox Staging 0.81.0-RC1 64-bit (zip)</a>
-  <br>
-  <small>
-  sha256: 52191509f09cdbabe6dd2f0aaf1ea690<wbr>47f0b9a726a2ce55edd378012fe13773
-  </small></p>
-</li>
-</ul>
-<p>Check out the <a href="../release-notes/0.81.0-rc/">0.81.0-RC release notes</a> to learn
-about the changes and improvements introduced in this release.</p>
-</div>
 <h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h2>
 <p>An x86 processor with SSSE3 (Supplemental Streaming SIMD Extensions 3) is
 required.</p>
@@ -1734,6 +1670,27 @@ DOSBox Staging.</p>
 command-line install parameters, please see <a href="https://jrsoftware.org/ishelp/index.php?topic=setupcmdline">Inno&rsquo;s documentation page</a>.</p>
 <h2 id="older-releases">Older releases<a class="headerlink" href="#older-releases" title="Permanent link">&para;</a></h2>
 <ul>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-v0.80.1-setup.exe">Download DOSBox Staging 0.80.1 64-bit (Installer)</a>
+  <br>
+  <small>
+  sha256: 94b961f397f3b70a13daf3b573857b52<wbr>62515e75d490bfc19f019479fe1694f8
+  </small></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_64-v0.80.1.zip">Download DOSBox Staging 0.80.1 64-bit (zip)</a>
+  <br>
+  <small>
+  sha256: e7ab98013b55f6fd6db1f529574b8f29<wbr>05d374225f532ce0905666281cbe32af
+  </small></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_32-v0.80.1.zip">Download DOSBox Staging 0.80.1 32-bit (zip)</a>
+  <br>
+  <small>
+  sha256: 63a8c5b084231364961f7c8b6415e446<wbr>22c5ab9822e49839c2aca1bddd3a9459
+  </small></p>
+</li>
 <li>
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.0/dosbox-staging-v0.80.0-setup.exe">DOSBox Staging 0.80.0 64-bit (Installer)</a> (Windows 7 or newer)
   <br>
@@ -1973,10 +1930,10 @@ command-line install parameters, please see <a href="https://jrsoftware.org/ishe
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8fd75fb4.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
