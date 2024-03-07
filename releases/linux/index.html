@@ -602,6 +602,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nixos-repository-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      NixOS repository package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#other-repository-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Other repository packages
@@ -1607,6 +1616,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#nixos-repository-package" class="md-nav__link">
+    <span class="md-ellipsis">
+      NixOS repository package
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#other-repository-packages" class="md-nav__link">
     <span class="md-ellipsis">
       Other repository packages
@@ -1740,6 +1758,19 @@ sudo apt install dosbox-staging
 </code></pre></div>
 <h3 id="arch-and-manjaro-repository-package">Arch and Manjaro repository package<a class="headerlink" href="#arch-and-manjaro-repository-package" title="Permanent link">&para;</a></h3>
 <p>Available via <a href="https://aur.archlinux.org/packages/dosbox-staging">Arch User Repository</a>.</p>
+<h3 id="nixos-repository-package">NixOS repository package<a class="headerlink" href="#nixos-repository-package" title="Permanent link">&para;</a></h3>
+<p>Available via NixOS or Home Manager. Add the following to your <code>configuration.nix</code> file:</p>
+<p>For NixOS:</p>
+<div class="highlight"><pre><span></span><code>environment.systemPackages = with pkgs; [
+  dosbox-staging
+];
+</code></pre></div>
+<p>For Home Manager:</p>
+<div class="highlight"><pre><span></span><code>home.packages = with pkgs; [
+  dosbox-staging
+];
+</code></pre></div>
+<p>Then rebuild your system with: <code>nixos-rebuild switch</code></p>
 <h3 id="other-repository-packages">Other repository packages<a class="headerlink" href="#other-repository-packages" title="Permanent link">&para;</a></h3>
 <p><a href="https://repology.org/project/dosbox-staging/versions"><img alt="Packaging status" src="https://repology.org/badge/vertical-allrepos/dosbox-staging.svg" width="230" /></a></p>
 <h2 id="steam">Steam<a class="headerlink" href="#steam" title="Permanent link">&para;</a></h2>
