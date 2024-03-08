@@ -501,8 +501,6 @@
       
         
       
-        
-      
     
     
     
@@ -532,27 +530,6 @@
             Release notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../release-notes/0.81.1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    0.81.1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1622,7 +1599,7 @@ function set_ci_status(workflow_file, os_name, description) {
 document.addEventListener("DOMContentLoaded", () => {
     set_ci_status("linux.yml", "linux", "Linux");
     set_ci_status("macos.yml", "macos", "macOS ¹");
-    set_ci_status("windows-msys2.yml", "windows", "Windows ²");
+    set_ci_status("windows-msvc.yml", "windows", "Windows ²");
 });
 
 </script>
@@ -1676,7 +1653,7 @@ document.addEventListener("DOMContentLoaded", () => {
 </div>
 
 <p>¹ macOS builds include Intel, Apple silicon, and universal binaries.</p>
-<p>² Windows builds are 64-bit and include portable ZIP and installer variants.</p>
+<p>² Windows builds include 32 and 64-bit portable ZIP variants.</p>
 <h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">&para;</a></h2>
 <p>Testing new features might require a manual reset of the configuration
 file.  DOSBox Staging builds use a configuration file named
