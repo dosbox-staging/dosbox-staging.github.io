@@ -1795,9 +1795,6 @@ a few long-standing issues.</p>
   <strong>Ishar 3</strong>, <strong>Robinson&rsquo;s Requiem</strong> and <strong>Time Warriors</strong>.</p>
 </li>
 <li>
-<p>The batch file installer of <strong>Alpha Storm</strong> no longer fails.</p>
-</li>
-<li>
 <p>Fix the DOSBox Staging window gaining focus on every emulated video mode change.</p>
 </li>
 <li>
@@ -1820,6 +1817,9 @@ long-standing issues:</p>
 <li>
 <p>CD Audio is no longer muted in certain parts of <strong>Time Warriors</strong> and
   <strong>Alpha Storm</strong>.</p>
+</li>
+<li>
+<p>The batch file installer of <strong>Alpha Storm</strong> no longer fails.</p>
 </li>
 <li>
 <p>Forcing single scanning via <code>crt-auto-arcade</code> should now work
@@ -1985,7 +1985,7 @@ in our emulated MSCDEX driver. This resulted in CD Audio playing only sometimes 
 <li><strong>Alpha Storm</strong> &mdash; CD Audio music is now playing in the opening movie.</li>
 </ul>
 <details class="note">
-<summary>Full PR list of graphics-related changes</summary>
+<summary>Full PR list of sound-related changes</summary>
 <ul>
 <li>Implement seeking in MSCDEX (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3516" title="GitHub Issue dosbox-staging/dosbox-staging #3516">#3516</a>)</li>
 </ul>
@@ -2028,8 +2028,7 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <h3 id="dos-shell-improvements">DOS shell improvements<a class="headerlink" href="#dos-shell-improvements" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Fixed a regression that caused the batch file installer of <strong>Alpha
-  Storm</strong> to fail.</p>
+<p>Fixed a bug that caused the batch file installer of <strong>Alpha Storm</strong> to fail.</p>
 </li>
 <li>
 <p>The help text of the <code>IMGMOUNT</code> command now mentions the very handy wildcard
