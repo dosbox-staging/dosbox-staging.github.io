@@ -12,13 +12,13 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://dosbox-staging.github.io/releases/release-notes/0.80.1/">
+        <link rel="canonical" href="https://dosbox-staging.github.io/releases/release-notes/0.81.1/">
       
       
-        <link rel="prev" href="../0.81.0/">
+        <link rel="prev" href="../../linux/">
       
       
-        <link rel="next" href="../0.80.0/">
+        <link rel="next" href="../0.81.0/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>0.80.1 - DOSBox Staging</title>
+        <title>0.81.1 - DOSBox Staging</title>
       
     
     
@@ -81,7 +81,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#0801-release-notes" class="md-skip">
+        <a href="#0811-release-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -537,48 +537,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../0.81.1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    0.81.1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../0.81.0/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    0.81.0
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -595,7 +553,7 @@
           
   
   <span class="md-ellipsis">
-    0.80.1
+    0.81.1
   </span>
   
 
@@ -606,7 +564,7 @@
         
   
   <span class="md-ellipsis">
-    0.80.1
+    0.81.1
   </span>
   
 
@@ -656,9 +614,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upgrade-your-configuration-file" class="md-nav__link">
+  <a href="#upgrading-your-primary-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Upgrade your configuration file
+      Upgrading your primary configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      After upgrading
     </span>
   </a>
   
@@ -670,55 +637,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bug-and-regression-fixes" class="md-nav__link">
+  <a href="#graphics-related-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Bug and regression fixes
+      Graphics-related changes
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#translation-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Translation improvements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contributors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Contributors">
+    <nav class="md-nav" aria-label="Graphics-related changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#commit-authors" class="md-nav__link">
+  <a href="#vga-double-scanning-fixes-improvements" class="md-nav__link">
     <span class="md-ellipsis">
-      Commit authors
+      VGA double scanning fixes &amp; improvements
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sponsors" class="md-nav__link">
+  <a href="#option-to-revert-to-legacy-vga-rendering" class="md-nav__link">
     <span class="md-ellipsis">
-      Sponsors
+      Option to revert to legacy VGA rendering
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backers" class="md-nav__link">
+  <a href="#tandy-graphics-fixes" class="md-nav__link">
     <span class="md-ellipsis">
-      Backers
+      Tandy graphics fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes
     </span>
   </a>
   
@@ -726,6 +684,99 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sound-related changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound-related changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implement-seeking-in-mscdex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement seeking in MSCDEX
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input-related changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-integration-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS integration related changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOS integration related changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improved-expanded-pcjr-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improved expanded PCjr emulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-shell-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS shell improvements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localisation-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Localisation-related changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0811-commit-authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.81.1 commit authors
+    </span>
+  </a>
   
 </li>
       
@@ -742,6 +793,48 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.81.0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0.81.0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.80.1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0.80.1
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1487,9 +1580,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#upgrade-your-configuration-file" class="md-nav__link">
+  <a href="#upgrading-your-primary-configuration" class="md-nav__link">
     <span class="md-ellipsis">
-      Upgrade your configuration file
+      Upgrading your primary configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#after-upgrading" class="md-nav__link">
+    <span class="md-ellipsis">
+      After upgrading
     </span>
   </a>
   
@@ -1501,55 +1603,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bug-and-regression-fixes" class="md-nav__link">
+  <a href="#graphics-related-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Bug and regression fixes
+      Graphics-related changes
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#translation-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Translation improvements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contributors
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Contributors">
+    <nav class="md-nav" aria-label="Graphics-related changes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#commit-authors" class="md-nav__link">
+  <a href="#vga-double-scanning-fixes-improvements" class="md-nav__link">
     <span class="md-ellipsis">
-      Commit authors
+      VGA double scanning fixes &amp; improvements
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#sponsors" class="md-nav__link">
+  <a href="#option-to-revert-to-legacy-vga-rendering" class="md-nav__link">
     <span class="md-ellipsis">
-      Sponsors
+      Option to revert to legacy VGA rendering
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#backers" class="md-nav__link">
+  <a href="#tandy-graphics-fixes" class="md-nav__link">
     <span class="md-ellipsis">
-      Backers
+      Tandy graphics fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes
     </span>
   </a>
   
@@ -1557,6 +1650,99 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sound-related changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound-related changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implement-seeking-in-mscdex" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implement seeking in MSCDEX
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input-related changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-integration-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS integration related changes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOS integration related changes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improved-expanded-pcjr-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Improved expanded PCjr emulation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dos-shell-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS shell improvements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localisation-related-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Localisation-related changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous changes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0811-commit-authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.81.1 commit authors
+    </span>
+  </a>
   
 </li>
       
@@ -1584,147 +1770,336 @@
                   
 
 
-<h1 id="0801-release-notes">0.80.1 release notes<a class="headerlink" href="#0801-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong> 2023-01-06</p>
+<h1 id="0811-release-notes">0.81.1 release notes<a class="headerlink" href="#0811-release-notes" title="Permanent link">&para;</a></h1>
+<p><strong>Release date:</strong> 2024-04-05</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>This maintenance release fixes minor issues with the mouse defaults, modem and
-Ethernet connection handling, and Meson dependencies.</p>
-<p>We are also happy to report that the high DPI improvements in the previous
-0.80.0 release have been verified on Windows, meaning that high DPI support is
-now functional on all platforms. Thanks to <em>GranMinigun</em> for this addition!</p>
-<p>This maintenance release was made possible by everyone who tried 0.80.0,
-submitted bugs and pull requests, and tested the updates: thank you!</p>
+<p>The main focus of this maintenance release is to fix a couple of regressions
+introduced in 0.81.0, most of them related to game compatibility, and address
+a few long-standing issues.</p>
+<p>This release was made possible by everyone who tried 0.81.0, submitted bugs and pull requests, and tested the updates. Thank you! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<hr />
+<p>The release fixes the following 0.81.0 regressions:</p>
+<ul>
+<li>
+<p>Fix <strong>Wing Commander 3</strong> videos and cutscenes appearing height-doubled.</p>
+</li>
+<li>
+<p>Fix the Tandy version of <strong>Impossible Mission II</strong> crashing at startup.</p>
+</li>
+<li>
+<p>Fix starting <strong>In Extremis</strong> resulting in a black screen.</p>
+</li>
+<li>
+<p>Introduce a workaround (<code>vga_render_per_scanline = off</code>) to fix the
+  crash-at-startup regression in the following Silmarils titles: <strong>Deus</strong>,
+  <strong>Ishar 3</strong>, <strong>Robinson&rsquo;s Requiem</strong> and <strong>Time Warriors</strong>.</p>
+</li>
+<li>
+<p>The batch file installer of <strong>Alpha Storm</strong> no longer fails.</p>
+</li>
+<li>
+<p>Fix the DOSBox Staging window gaining focus on every emulated video mode change.</p>
+</li>
+<li>
+<p>Fix crash when exiting DOSBox Staging while in fullscreen mode on macOS and
+  Linux.</p>
+</li>
+</ul>
+<p>We&rsquo;ve also backported a small number of enhancements and fixes for
+long-standing issues:</p>
+<ul>
+<li>
+<p>Improve support for multiple joysticks/game controllers (the mapper
+  could behave erratically if you had more than one controller connected).</p>
+</li>
+<li>
+<p>Emulate a memory-expanded PCjr machine more faithfully. This improves game
+  compatibilty; for example, <strong>Space Quest</strong> (v1.0x and v2.2) and <strong>King&rsquo;s Quest</strong>
+  (1986 PCjr DOS version) now work instead of hanging the emulator.</p>
+</li>
+<li>
+<p>CD Audio is no longer muted in certain parts of <strong>Time Warriors</strong> and
+  <strong>Alpha Storm</strong>.</p>
+</li>
+<li>
+<p>Forcing single scanning via <code>crt-auto-arcade</code> should now work
+  with more programs.</p>
+</li>
+<li>
+<p>Fix various VGA double scanning related edge cases in demoscene
+  productions.</p>
+</li>
+</ul>
+<p>Lastly, Spanish and Brazilian Portuguese translations have been added and most
+of the other translations have been updated.</p>
+<p>Read on to learn about the details!</p>
 <h2 id="how-to-upgrade">How to upgrade<a class="headerlink" href="#how-to-upgrade" title="Permanent link">&para;</a></h2>
-<p>Get started by downloading the latest version and updating your configuration
-file:</p>
+<p>Start by downloading the latest version, then make sure to upgrade your
+primary configuration as described below.</p>
 <h3 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h3>
 <div class="compact">
 <ul>
-<li><a href="../../linux/">Linux</a> (or <a href="../../linux/#steam">Steam on Linux</a>)</li>
 <li><a href="../../windows/">Windows</a></li>
 <li><a href="../../macos/">macOS</a></li>
+<li><a href="../../linux/">Linux</a></li>
 </ul>
 </div>
-<h3 id="upgrade-your-configuration-file">Upgrade your configuration file<a class="headerlink" href="#upgrade-your-configuration-file" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Launch the new release.</li>
-<li>At the<code>Z:\&gt;</code> prompt, run <code>config -wc</code> to write the new configuration file.</li>
-</ol>
+<h3 id="upgrading-your-primary-configuration">Upgrading your primary configuration<a class="headerlink" href="#upgrading-your-primary-configuration" title="Permanent link">&para;</a></h3>
+<p>Since config settings might be renamed, altered, or deprecated between
+releases, it&rsquo;s best to let DOSBox Staging write the new default primary config
+on the first launch, then reapply your old settings manually.</p>
+<p>Start by backing up your existing primary config. This is where to find
+it on each platform:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th><!-- --></th>
+<th><!-- --></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Windows</strong></td>
+<td><code>C:\Users\%USERNAME%\AppData\Local\DOSBox\dosbox-staging.conf</code></td>
+</tr>
+<tr>
+<td><strong>macOS</strong></td>
+<td><code>~/Library/Preferences/DOSBox/dosbox-staging.conf</code></td>
+</tr>
+<tr>
+<td><strong>Linux</strong></td>
+<td><code>~/.config/dosbox/dosbox-staging.conf</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>You can also execute DOSBox Staging with the <code>--printconf</code> option to have the
+location of the primary config printed to your console.</p>
+<p>After backing up the existing primary config, simply start the new version&mdash;a
+new <code>dosbox-staging.conf</code> will be written containing the new defaults and
+updated setting descriptions.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Portable mode notes</p>
+<p>In portable mode, <code>dosbox-staging.conf</code> resides in the same folder as your
+DOSBox Staging executable. The migration steps for portable mode users are
+as follows:</p>
 <ul>
-<li>Existing settings will be retained, but extraneous comments will be
-  dropped.</li>
+<li>Unpack the new version into a <em>new</em> folder (this is important).</li>
+<li>Create a new <em>empty</em> <code>dosbox-staging.conf</code> file in the new folder to
+    enable portable mode.</li>
+<li>Launch the new version.</li>
+</ul>
+<p>DOSBox Staging will write the new defaults to the empty
+<code>dosbox-staging.conf</code> file. After this, you carry over your settings from
+the old primary config manually.</p>
+</div>
+<h3 id="after-upgrading">After upgrading<a class="headerlink" href="#after-upgrading" title="Permanent link">&para;</a></h3>
+<p>Look out for deprecation warnings in the logs (in yellow/orange colour) and
+update your configs accordingly.</p>
+<h2 id="graphics-related-changes">Graphics-related changes<a class="headerlink" href="#graphics-related-changes" title="Permanent link">&para;</a></h2>
+<h3 id="vga-double-scanning-fixes-improvements">VGA double scanning fixes &amp; improvements<a class="headerlink" href="#vga-double-scanning-fixes-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The SVGA/VESA double scanning criteria has been refined which fixes a
+  <strong>Wing Commander 3</strong> regression where the videos and cutscenes appeared
+  height-doubled.</p>
+</li>
+<li>
+<p>Some 320&times;200, 320&times;240 and similar tweaked double-scanned VGA
+  modes were incorrectly identified as 320&times;400, 320&times;480, etc.,
+  which was confusing in the logs and single scanning could not be forced on
+  them (e.g., with <code>glshader = crt-auto-arcade</code>). Affected programs include
+  <strong>Pinball Dreams</strong>, <strong>Show by Majic 12</strong>, and the <strong>Copper demo</strong> (see the
+  <a href="https://github.com/dosbox-staging/dosbox-staging/pull/3446">issue ticket</a>
+  for the exact details).</p>
+</li>
+<li>
+<p>Support &ldquo;unorthodox&rdquo; scanline repeats on VGA in forced single scanning mode.
+  This improves compatibility with demoscene productions; for example, <a href="https://www.pouet.net/prod.php?which=1158">Show
+  by Majic 12</a> sets up a custom
+  320&times;64 mode, and then uses scanline-quintupling to repeat every line 5
+  times in the zoom-rotator part in the intro.</p>
+</li>
+</ul>
+<h3 id="option-to-revert-to-legacy-vga-rendering">Option to revert to legacy VGA rendering<a class="headerlink" href="#option-to-revert-to-legacy-vga-rendering" title="Permanent link">&para;</a></h3>
+<p>In 0.81.0, we made accurate per-scanline VGA rendering the only rendering
+option available (previously, you could only enable this via <code>machine =
+vgaonly</code>). A minority of games, however, have regressed by this and would
+crash at startup.</p>
+<p>As a workaround until we improve the accuracy of the VGA emulation, we&rsquo;re
+introducing the <code>vga_render_per_scanline</code> setting in the <code>[dosbox]</code> section.
+The setting is enabled by default, but you can disable it to restore the
+legacy rendering behaviour on a per game basis.</p>
+<p>Disabling <code>vga_render_per_scanline</code> fixes the crash-at-startup regression in
+the following Silmarils titles:</p>
+<div class="compact">
+<ul>
+<li><strong>Deus</strong></li>
+<li><strong>Ishar 3</strong></li>
+<li><strong>Robinson&rsquo;s Requiem</strong></li>
+<li><strong>Time Warriors</strong></li>
 </ul>
 </div>
-<h2 id="bug-and-regression-fixes">Bug and regression fixes<a class="headerlink" href="#bug-and-regression-fixes" title="Permanent link">&para;</a></h2>
+<p>Note that these games are also CPU speed sensitive and would crash with high
+cycles settings&mdash;see the <a href="https://github.com/dosbox-staging/dosbox-staging/pull/3507">issue
+ticket</a> for config
+recommendations.</p>
+<h3 id="tandy-graphics-fixes">Tandy graphics fixes<a class="headerlink" href="#tandy-graphics-fixes" title="Permanent link">&para;</a></h3>
+<p>Fixed a regression where the Tandy version of <strong>Impossible Mission
+II</strong> would crash when starting a new game. This fix should restore our general
+compatibility with non-standard Tandy graphics modes as well.</p>
+<h3 id="other-fixes">Other fixes<a class="headerlink" href="#other-fixes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>The mouse will now be captured only after the first click inside the window.
-  For users without a windowing environment, the previous capture-on-start
-  behavior will remain unchanged.</p>
+<p>Fixed the DOSBox Staging window gaining focus on emulated video mode
+  changes.</p>
 </li>
 <li>
-<p>The captured mouse will now be centered in the window upon release.</p>
-</li>
-<li>
-<p>The softmodem now includes a brief warm-up period where it will drop initial
-  unreliable data, similar to hardware modems. This allows <strong>Duke Nukem 3D</strong> to
-  establish its data connection on the first attempt.</p>
-</li>
-<li>
-<p>A potential slow memory leak related to closed Ethernet connections has been
-  fixed.</p>
-</li>
-<li>
-<p>A bug that caused the <code>C:</code> mount to become unlistable after launching DOSBox
-  Staging with a command-line mount while using <code>MORE.COM</code> has been fixed.</p>
-</li>
-<li>
-<p>The xinput2 library, an optional dependency of ManyMouse, can now be set via
-  the Meson options. For more information, see
-  <a href="https://github.com/dosbox-staging/dosbox-staging/blob/main/meson_options.txt"><code>meson_options.txt</code></a>.</p>
-</li>
-<li>
-<p>When compiling on ARM platforms, the SpeexDSP wrap will now correctly check if
-  the host supports NEON instructions, and use them if available.</p>
+<p>Fixed DOSBox Staging crashing when exiting from fullscreen mode on macOS and
+  Linux.</p>
 </li>
 </ul>
 <details class="note">
-<summary>Full PR list of bug and regression fixes</summary>
+<summary>Full PR list of graphics-related changes</summary>
 <ul>
-<li>Add Linux ARM CI jobs using containerized cross-compiler (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2193" title="GitHub Issue dosbox-staging/dosbox-staging #2193">#2193</a>)</li>
-<li>Add missing Windows 11 features to MORE command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2142" title="GitHub Issue dosbox-staging/dosbox-staging #2142">#2142</a>)</li>
-<li>Bump Coverity to v2022.06 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2162" title="GitHub Issue dosbox-staging/dosbox-staging #2162">#2162</a>)</li>
-<li>Bump actions/cache from 3.2.0 to 3.2.1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2152" title="GitHub Issue dosbox-staging/dosbox-staging #2152">#2152</a>)</li>
-<li>Bump actions/cache from 3.2.1 to 3.2.2 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2165" title="GitHub Issue dosbox-staging/dosbox-staging #2165">#2165</a>)</li>
-<li>Center mouse cursor before releasing it (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2173" title="GitHub Issue dosbox-staging/dosbox-staging #2173">#2173</a>)</li>
-<li>Change mouse capture default to &lsquo;onclick&rsquo; (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2172" title="GitHub Issue dosbox-staging/dosbox-staging #2172">#2172</a>)</li>
-<li>Check CLI arguments for directories using non-invasive test (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2148" title="GitHub Issue dosbox-staging/dosbox-staging #2148">#2148</a>)</li>
-<li>Cleanup some minor Coverity issues (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2179" title="GitHub Issue dosbox-staging/dosbox-staging #2179">#2179</a>)</li>
-<li>Fix CGA mono and Hercules intro banners (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2190" title="GitHub Issue dosbox-staging/dosbox-staging #2190">#2190</a>)</li>
-<li>Fix imprecise help string in MORE command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2161" title="GitHub Issue dosbox-staging/dosbox-staging #2161">#2161</a>)</li>
-<li>Fix logging of some pre-EGA modes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2187" title="GitHub Issue dosbox-staging/dosbox-staging #2187">#2187</a>)</li>
-<li>Fix remaining two CWEs involving unchecked return values (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2150" title="GitHub Issue dosbox-staging/dosbox-staging #2150">#2150</a>)</li>
-<li>Fix slirp/ne2000 warnings (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2182" title="GitHub Issue dosbox-staging/dosbox-staging #2182">#2182</a>)</li>
-<li>Improve logging of the current display mode (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2168" title="GitHub Issue dosbox-staging/dosbox-staging #2168">#2168</a>)</li>
-<li>Improve seamless mouse configuration entry description, mention the touchscreen (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2163" title="GitHub Issue dosbox-staging/dosbox-staging #2163">#2163</a>)</li>
-<li>Make the xinput2 library optional for ManyMouse (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2155" title="GitHub Issue dosbox-staging/dosbox-staging #2155">#2155</a>)</li>
-<li>Use extended ASCII check in MORE command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2195" title="GitHub Issue dosbox-staging/dosbox-staging #2195">#2195</a>)</li>
-<li>Use presence of desktop environment in mouse capture states (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2181" title="GitHub Issue dosbox-staging/dosbox-staging #2181">#2181</a>)</li>
+<li>Add <code>vga_render_per_scanline</code> option (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3507" title="GitHub Issue dosbox-staging/dosbox-staging #3507">#3507</a>)</li>
+<li>Do not resize if Tandy vertical rows register is zero (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3448" title="GitHub Issue dosbox-staging/dosbox-staging #3448">#3448</a>)</li>
+<li>Fix &ldquo;unorthodox&rdquo; scanline repeats on VGA (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3441" title="GitHub Issue dosbox-staging/dosbox-staging #3441">#3441</a>)</li>
+<li>Fix Impossible Mission II transition effect (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3454" title="GitHub Issue dosbox-staging/dosbox-staging #3454">#3454</a>)</li>
+<li>Fix crash when quitting while in fullscreen mode (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3545" title="GitHub Issue dosbox-staging/dosbox-staging #3545">#3545</a>)</li>
+<li>Fix double-scanning behavior for SVGA/VESA games (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3428" title="GitHub Issue dosbox-staging/dosbox-staging #3428">#3428</a>)</li>
+<li>Improve VGA double scanning criteria (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3446" title="GitHub Issue dosbox-staging/dosbox-staging #3446">#3446</a>)</li>
+<li>Log OpenGL vsync state (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3553" title="GitHub Issue dosbox-staging/dosbox-staging #3553">#3553</a>)</li>
+<li>Only raise window when it is newly created (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3440" title="GitHub Issue dosbox-staging/dosbox-staging #3440">#3440</a>)</li>
 </ul>
 </details>
-<h2 id="translation-improvements">Translation improvements<a class="headerlink" href="#translation-improvements" title="Permanent link">&para;</a></h2>
-<p>This maintenance release includes updates to the Dutch, Italian, and Polish
-translations.</p>
+<h2 id="sound-related-changes">Sound-related changes<a class="headerlink" href="#sound-related-changes" title="Permanent link">&para;</a></h2>
+<h3 id="implement-seeking-in-mscdex">Implement seeking in MSCDEX<a class="headerlink" href="#implement-seeking-in-mscdex" title="Permanent link">&para;</a></h3>
+<p>A few games use the seek function of the CD-ROM but this was not previusly implemented
+in our emulated MSCDEX driver. This resulted in CD Audio playing only sometimes in a few games.</p>
+<p>The new seek implementation fixes CD Audio music in at least these titles:</p>
+<ul>
+<li><strong>Time Warriors</strong> &mdash; CD Audio music is now playing during the main menu and
+  gameplay.</li>
+<li><strong>Alpha Storm</strong> &mdash; CD Audio music is now playing in the opening movie.</li>
+</ul>
 <details class="note">
-<summary>Full PR list of translation improvements</summary>
+<summary>Full PR list of graphics-related changes</summary>
 <ul>
-<li>Update Dutch (nl) translation of MORE (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2164" title="GitHub Issue dosbox-staging/dosbox-staging #2164">#2164</a>)</li>
-<li>Update Italian (it-it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2166" title="GitHub Issue dosbox-staging/dosbox-staging #2166">#2166</a>)</li>
-<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2159" title="GitHub Issue dosbox-staging/dosbox-staging #2159">#2159</a>)</li>
-<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2186" title="GitHub Issue dosbox-staging/dosbox-staging #2186">#2186</a>)</li>
-<li>Update Polish (pl) translation, for 0.80.x only (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2194" title="GitHub Issue dosbox-staging/dosbox-staging #2194">#2194</a>)</li>
+<li>Implement seeking in MSCDEX (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3516" title="GitHub Issue dosbox-staging/dosbox-staging #3516">#3516</a>)</li>
 </ul>
 </details>
-<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permanent link">&para;</a></h2>
-<p>The following commit authors, sponsors, supporters, and backers invested their
-time or funds into this maintenance release. Thank you!</p>
-<h3 id="commit-authors">Commit authors<a class="headerlink" href="#commit-authors" title="Permanent link">&para;</a></h3>
-<p>In alphabetic order:</p>
-<div class="compact">
+<h2 id="input-related-changes">Input-related changes<a class="headerlink" href="#input-related-changes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>FeralChild64</li>
-<li>johnnovak</li>
-<li>Kappa971</li>
-<li>kcgen</li>
-<li>NicknineTheEagle</li>
-<li>rderooy</li>
-<li>shermp</li>
-<li>ThomasEricB</li>
+<li>
+<p>Fixed various problems in the mapper when using more than a single game controller
+  (e.g., with two joysticks connected, mapping the controls of the first joystick
+  could randomly target the mappings of the second one and vice versa).</p>
+</li>
+<li>
+<p>Fixed a keyboard handling regression in <strong>In Extremis</strong> where starting the
+  game only resulted in a black screen.</p>
+</li>
+<li>
+<p>Fixed obscure regression where the <code>timed = on</code> joystick setting messed up the
+  available free memory reported by the FreeDOS <code>MEM.EXE</code> command.</p>
+</li>
 </ul>
-</div>
-<h3 id="sponsors">Sponsors<a class="headerlink" href="#sponsors" title="Permanent link">&para;</a></h3>
-<p>Sponsors who donated <strong>100+ USD per month</strong> to the project:</p>
-<div class="compact">
+<details class="note">
+<summary>Full PR list of input-related changes</summary>
 <ul>
-<li>Antti Peltola</li>
-<li>Wengier Wu</li>
+<li>Fix handling multiple game controllers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3404" title="GitHub Issue dosbox-staging/dosbox-staging #3404">#3404</a>)</li>
+<li>Fix the &lsquo;In Extremis&rsquo; game intro getting stuck (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3549" title="GitHub Issue dosbox-staging/dosbox-staging #3549">#3549</a>)</li>
+<li>Set BIOS_Destroy not changeable at runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3420" title="GitHub Issue dosbox-staging/dosbox-staging #3420">#3420</a>)</li>
 </ul>
-</div>
-<h3 id="backers">Backers<a class="headerlink" href="#backers" title="Permanent link">&para;</a></h3>
-<p>Backers who donated <strong>5+ USD per month</strong> to the project:</p>
+</details>
+<h2 id="dos-integration-related-changes">DOS integration related changes<a class="headerlink" href="#dos-integration-related-changes" title="Permanent link">&para;</a></h2>
+<h3 id="improved-expanded-pcjr-emulation">Improved expanded PCjr emulation<a class="headerlink" href="#improved-expanded-pcjr-emulation" title="Permanent link">&para;</a></h3>
+<p>Now we&rsquo;re emulating a memory-expanded PCjr machine more faithfully. 
+This improves game compatibility; for example, <strong>Space Quest</strong> (v1.0x and v2.2) and
+<strong>King&rsquo;s Quest</strong> (1986 PCjr DOS version) now work fine&mdash;these games
+resulted in the emulator hanging previously.</p>
+<p>A new <code>pcjr_memory_config</code> setting has been introduced to the <code>[dosbox]</code>
+section, defaulting to <code>expanded</code> (the new improved behaviour). Setting this
+to <code>standard</code> restores the legacy memory model. You should only need this
+for a handful of titles, such as the DOS conversions of the <strong>Jumpman</strong> and
+<strong>Troll</strong> PC Booter games.</p>
+<h3 id="dos-shell-improvements">DOS shell improvements<a class="headerlink" href="#dos-shell-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fixed a regression that caused the batch file installer of <strong>Alpha
+  Storm</strong> to fail.</p>
+</li>
+<li>
+<p>The help text of the <code>IMGMOUNT</code> command now mentions the very handy wildcard
+  mounting option. E.g., you can use the <code>IMGMOUNT A floppy*.img -t floppy</code>
+  command to mount multiple floppy images, then cycle between them with
+  <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> at runtime (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> on macOS).</p>
+</li>
+<li>
+<p>The <code>LOADFIX</code> command&rsquo;s help text is more complete now (some options were
+  not documented previously).</p>
+</li>
+</ul>
+<details class="note">
+<summary>Full PR list of DOS integration related changes</summary>
+<ul>
+<li>Check the validity of leading path when checking device name (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3525" title="GitHub Issue dosbox-staging/dosbox-staging #3525">#3525</a>)</li>
+<li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>) </li>
+<li>Improve the help text of the LOADFIX command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3221" title="GitHub Issue dosbox-staging/dosbox-staging #3221">#3221</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3427" title="GitHub Issue dosbox-staging/dosbox-staging #3427">#3427</a>)</li>
+<li>Make PCjr application memory contiguous (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3460" title="GitHub Issue dosbox-staging/dosbox-staging #3460">#3460</a>)</li>
+</ul>
+</details>
+<h2 id="localisation-related-changes">Localisation-related changes<a class="headerlink" href="#localisation-related-changes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Spanish and Brazilian Portuguese translations have been added.</li>
+<li>Updates to the Dutch, German, and Polish translations.</li>
+</ul>
+<details class="note">
+<summary>Full PR list of localisation-related changes</summary>
+<ul>
+<li>Fix incomplete integration of Brazilian translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3438" title="GitHub Issue dosbox-staging/dosbox-staging #3438">#3438</a>)</li>
+<li>New Spanish translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3317" title="GitHub Issue dosbox-staging/dosbox-staging #3317">#3317</a>)</li>
+<li>Portuguese (Brazilian) Translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3432" title="GitHub Issue dosbox-staging/dosbox-staging #3432">#3432</a>)</li>
+<li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3439" title="GitHub Issue dosbox-staging/dosbox-staging #3439">#3439</a>)</li>
+<li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3458" title="GitHub Issue dosbox-staging/dosbox-staging #3458">#3458</a>)</li>
+<li>Update Dutch (nl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3459" title="GitHub Issue dosbox-staging/dosbox-staging #3459">#3459</a>)</li>
+<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3532" title="GitHub Issue dosbox-staging/dosbox-staging #3532">#3532</a>)</li>
+<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3463" title="GitHub Issue dosbox-staging/dosbox-staging #3463">#3463</a>)</li>
+<li>Update Portuguese (br) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3469" title="GitHub Issue dosbox-staging/dosbox-staging #3469">#3469</a>)</li>
+</ul>
+</details>
+<h2 id="miscellaneous-changes">Miscellaneous changes<a class="headerlink" href="#miscellaneous-changes" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Attempting to change unchangeable settings via the <code>CONFIG</code> command at
+  runtime is no longer silently accepted (without doing anything) but an
+  error is raised instead.</li>
+</ul>
+<details class="note">
+<summary>Full PR list of miscellaneous changes</summary>
+<ul>
+<li>Fix IPX config help comment (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3403" title="GitHub Issue dosbox-staging/dosbox-staging #3403">#3403</a>)</li>
+<li>Improve &lsquo;keyboardlayout&rsquo; option description (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3409" title="GitHub Issue dosbox-staging/dosbox-staging #3409">#3409</a>)</li>
+<li>LTO build fix (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3538" title="GitHub Issue dosbox-staging/dosbox-staging #3538">#3538</a>)</li>
+<li>Throw error if user attempts to change an unchangeable setting (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3470" title="GitHub Issue dosbox-staging/dosbox-staging #3470">#3470</a>)</li>
+</ul>
+</details>
+<h2 id="0811-commit-authors">0.81.1 commit authors<a class="headerlink" href="#0811-commit-authors" title="Permanent link">&para;</a></h2>
+<p>Complete list of commit authors who have contributed code, documentation, or
+translation changes:</p>
 <div class="compact">
 <ul>
+<li>altiereslima</li>
+<li>bluddy</li>
 <li>Burrito78</li>
-<li>Hannu Hartikainen</li>
-<li>Hugo Locurcio</li>
+<li>FeralChild64</li>
+<li>ftortoriello</li>
+<li>johnnovak</li>
+<li>kklobe</li>
+<li>weirddan455</li>
 </ul>
 </div>
-<p>Thank you for considering supporting our work through a donation on <a href="https://github.com/sponsors/dosbox-staging">GitHub
-Sponsors</a> or <a href="https://opencollective.com/dosbox-staging">Open
-Collective</a>. Your contribution helps
-us purchase hardware and cover ongoing expenses to keep the project going.</p>
 <h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
 <p>We are grateful for all community contributions as well as the original DOSBox
 project, upon which DOSBox Staging is based.</p>
@@ -1772,9 +2147,9 @@ project, upon which DOSBox Staging is based.</p>
       
         
         <a
-          href="../0.81.0/"
+          href="../../linux/"
           class="md-footer__link md-footer__link--prev"
-          aria-label="Previous: 0.81.0"
+          aria-label="Previous: Linux"
           rel="prev"
         >
           <div class="md-footer__button md-icon">
@@ -1785,7 +2160,7 @@ project, upon which DOSBox Staging is based.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              0.81.0
+              Linux
             </div>
           </div>
         </a>
@@ -1795,9 +2170,9 @@ project, upon which DOSBox Staging is based.</p>
       
         
         <a
-          href="../0.80.0/"
+          href="../0.81.0/"
           class="md-footer__link md-footer__link--next"
-          aria-label="Next: 0.80.0"
+          aria-label="Next: 0.81.0"
           rel="next"
         >
           <div class="md-footer__title">
@@ -1805,7 +2180,7 @@ project, upon which DOSBox Staging is based.</p>
               <span class="md-footer__direction">
                 Next
               </span>
-              0.80.0
+              0.81.0
             </div>
           </div>
           <div class="md-footer__button md-icon">
