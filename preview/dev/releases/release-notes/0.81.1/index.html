@@ -706,6 +706,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#fix-not-being-able-to-disable-opl-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fix not being able to disable OPL emulation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1672,6 +1681,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#fix-not-being-able-to-disable-opl-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fix not being able to disable OPL emulation
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1771,7 +1789,7 @@
 
 
 <h1 id="0811-release-notes">0.81.1 release notes<a class="headerlink" href="#0811-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong> 2024-04-05</p>
+<p><strong>Release date:</strong> 2024-04-15</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>The main focus of this maintenance release is to fix a couple of regressions
 introduced in 0.81.0, most of them related to game compatibility, and address
@@ -1795,11 +1813,17 @@ a few long-standing issues.</p>
   <strong>Ishar 3</strong>, <strong>Robinson&rsquo;s Requiem</strong> and <strong>Time Warriors</strong>.</p>
 </li>
 <li>
+<p>Fix squashed video output in the text mode game <strong>Indenture</strong>.</p>
+</li>
+<li>
 <p>Fix the DOSBox Staging window gaining focus on every emulated video mode change.</p>
 </li>
 <li>
 <p>Fix crash when exiting DOSBox Staging while in fullscreen mode on macOS and
   Linux.</p>
+</li>
+<li>
+<p>Fix not being able to disable OPL emulation with <code>oplmode = none</code>.</p>
 </li>
 </ul>
 <p>We&rsquo;ve also backported a small number of enhancements and fixes for
@@ -1921,6 +1945,12 @@ update your configs accordingly.</p>
   320&times;40 mode, and then uses scanline-quintupling to repeat every line 5
   times in the zoom-rotator part in the intro.</p>
 </li>
+<li>
+<p>Support for double-scanned text modes was removed by mistake, which
+  we&rsquo;re now restoring. This resulted in the text mode game <strong>Indenture</strong>
+  appear squashed (half-height). The game sets up a custom 640&times;200 text
+  mode using the 8&times;8 pixel CGA font with double scanning enabled.</p>
+</li>
 </ul>
 <h3 id="option-to-revert-to-legacy-vga-rendering">Option to revert to legacy VGA rendering<a class="headerlink" href="#option-to-revert-to-legacy-vga-rendering" title="Permanent link">&para;</a></h3>
 <p>In 0.81.0, we made accurate per-scanline VGA rendering the only rendering
@@ -1956,8 +1986,8 @@ compatibility with non-standard Tandy graphics modes as well.</p>
   changes.</p>
 </li>
 <li>
-<p>Fixed DOSBox Staging crashing when exiting from fullscreen mode on macOS and
-  Linux.</p>
+<p>Fixed crash when exiting DOSBox Staging while in fullscreen mode on macOS
+  and Linux.</p>
 </li>
 </ul>
 <details class="note">
@@ -1965,13 +1995,14 @@ compatibility with non-standard Tandy graphics modes as well.</p>
 <ul>
 <li>Add <code>vga_render_per_scanline</code> option (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3507" title="GitHub Issue dosbox-staging/dosbox-staging #3507">#3507</a>)</li>
 <li>Do not resize if Tandy vertical rows register is zero (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3448" title="GitHub Issue dosbox-staging/dosbox-staging #3448">#3448</a>)</li>
-<li>Fix &ldquo;unorthodox&rdquo; scanline repeats on VGA (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3441" title="GitHub Issue dosbox-staging/dosbox-staging #3441">#3441</a>)</li>
-<li>Fix Impossible Mission II transition effect (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3454" title="GitHub Issue dosbox-staging/dosbox-staging #3454">#3454</a>)</li>
 <li>Fix crash when quitting while in fullscreen mode (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3545" title="GitHub Issue dosbox-staging/dosbox-staging #3545">#3545</a>)</li>
 <li>Fix double-scanning behavior for SVGA/VESA games (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3428" title="GitHub Issue dosbox-staging/dosbox-staging #3428">#3428</a>)</li>
+<li>Fix Impossible Mission II transition effect (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3454" title="GitHub Issue dosbox-staging/dosbox-staging #3454">#3454</a>)</li>
+<li>Fix &ldquo;unorthodox&rdquo; scanline repeats on VGA (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3441" title="GitHub Issue dosbox-staging/dosbox-staging #3441">#3441</a>)</li>
 <li>Improve VGA double scanning criteria (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3446" title="GitHub Issue dosbox-staging/dosbox-staging #3446">#3446</a>)</li>
 <li>Log OpenGL vsync state (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3553" title="GitHub Issue dosbox-staging/dosbox-staging #3553">#3553</a>)</li>
 <li>Only raise window when it is newly created (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3440" title="GitHub Issue dosbox-staging/dosbox-staging #3440">#3440</a>)</li>
+<li>Restore double scanning support for VGA text modes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3568" title="GitHub Issue dosbox-staging/dosbox-staging #3568">#3568</a>)</li>
 </ul>
 </details>
 <h2 id="sound-related-changes">Sound-related changes<a class="headerlink" href="#sound-related-changes" title="Permanent link">&para;</a></h2>
@@ -1984,9 +2015,14 @@ in our emulated MSCDEX driver. This resulted in CD Audio playing only sometimes 
   gameplay.</li>
 <li><strong>Alpha Storm</strong> &mdash; CD Audio music is now playing in the opening movie.</li>
 </ul>
+<h3 id="fix-not-being-able-to-disable-opl-emulation">Fix not being able to disable OPL emulation<a class="headerlink" href="#fix-not-being-able-to-disable-opl-emulation" title="Permanent link">&para;</a></h3>
+<p>We fixed a regression where you could not disable OPL emulation with
+<code>oplmode = none</code> anymore (<code>sbtype = none</code> still worked, but that disabled the
+Sound Blaster as well).</p>
 <details class="note">
 <summary>Full PR list of sound-related changes</summary>
 <ul>
+<li>Fix not being able to set <code>oplmode = none</code> regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3565" title="GitHub Issue dosbox-staging/dosbox-staging #3565">#3565</a>)</li>
 <li>Implement seeking in MSCDEX (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3516" title="GitHub Issue dosbox-staging/dosbox-staging #3516">#3516</a>)</li>
 </ul>
 </details>
@@ -2064,6 +2100,7 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3439" title="GitHub Issue dosbox-staging/dosbox-staging #3439">#3439</a>)</li>
 <li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3458" title="GitHub Issue dosbox-staging/dosbox-staging #3458">#3458</a>)</li>
 <li>Update Dutch (nl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3459" title="GitHub Issue dosbox-staging/dosbox-staging #3459">#3459</a>)</li>
+<li>Update Italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3560" title="GitHub Issue dosbox-staging/dosbox-staging #3560">#3560</a>)</li>
 <li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3532" title="GitHub Issue dosbox-staging/dosbox-staging #3532">#3532</a>)</li>
 <li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3463" title="GitHub Issue dosbox-staging/dosbox-staging #3463">#3463</a>)</li>
 <li>Update Portuguese (br) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3469" title="GitHub Issue dosbox-staging/dosbox-staging #3469">#3469</a>)</li>
@@ -2092,6 +2129,8 @@ translation changes:</p>
 <li>altiereslima</li>
 <li>bluddy</li>
 <li>Burrito78</li>
+<li>farsil</li>
+<li>japsmits</li>
 <li>FeralChild64</li>
 <li>ftortoriello</li>
 <li>johnnovak</li>
