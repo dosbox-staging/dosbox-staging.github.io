@@ -670,6 +670,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#option-to-emulate-video-memory-access-delays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option to emulate video memory access delays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#option-for-legacy-vga-rendering" class="md-nav__link">
     <span class="md-ellipsis">
       Option for legacy VGA rendering
@@ -1662,6 +1671,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#option-to-emulate-video-memory-access-delays" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option to emulate video memory access delays
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#option-for-legacy-vga-rendering" class="md-nav__link">
     <span class="md-ellipsis">
       Option for legacy VGA rendering
@@ -1842,22 +1860,22 @@ a few long-standing issues.</p>
 <p>Fix <strong>Wing Commander 3</strong> videos and cutscenes appearing height-doubled.</p>
 </li>
 <li>
+<p>Introduce <code>vga_render_per_scanline = off</code> workaround to fix the
+  crash-at-startup regression in <strong>Deus</strong>, <strong>Ishar 3</strong>, <strong>Robinson&rsquo;s
+  Requiem</strong>, and <strong>Time Warriors</strong>.</p>
+</li>
+<li>
 <p>Fix the Tandy version of <strong>Impossible Mission II</strong> crashing at startup.</p>
 </li>
 <li>
 <p>Fix starting <strong>In Extremis</strong> resulting in a black screen.</p>
 </li>
 <li>
-<p>Introduce a workaround (<code>vga_render_per_scanline = off</code>) to fix the
-  crash-at-startup regression in the following Silmarils titles: <strong>Deus</strong>,
-  <strong>Ishar 3</strong>, <strong>Robinson&rsquo;s Requiem</strong> and <strong>Time Warriors</strong>.</p>
+<p>Fix wrong colours appearing in <strong>Spell It Plus!</strong> (needs <code>machine =
+    svga_paradise</code>).</p>
 </li>
 <li>
 <p>Fix squashed video output in the text mode game <strong>Indenture</strong>.</p>
-</li>
-<li>
-<p>Fix wrong colours appearing in <strong>Spell It Plus!</strong> (needs <code>machine =
-    svga_paradise</code>).</p>
 </li>
 <li>
 <p>Fix the DOSBox Staging window gaining focus on every emulated video mode change.</p>
@@ -1870,9 +1888,16 @@ a few long-standing issues.</p>
 <p>Fix not being able to disable OPL emulation with <code>oplmode = none</code>.</p>
 </li>
 </ul>
-<p>We&rsquo;ve also backported a small number of enhancements and fixes for
-long-standing issues:</p>
+<p>We&rsquo;ve also backported a number of enhancements and fixes for long-standing
+issues:</p>
 <ul>
+<li>
+<p>Introduce <code>vmem_delay = on</code> to help with flickering graphics and speed
+  issues in Hercules, CGA, EGA, and early VGA games. This has proven to improve
+  compatibility with <strong>Future Wars</strong>, <strong>Operation Stealth</strong>, <strong>Quest
+  for Glory II</strong>, <strong>Hostages</strong>, <strong>The Gold of the Aztecs</strong>, <strong>Corncob
+  Deluxe</strong>, and <strong>Corncob 3-D</strong> so far.</p>
+</li>
 <li>
 <p>Improve support for multiple joysticks/game controllers (the mapper
   could behave erratically if you had more than one controller connected).</p>
@@ -1996,6 +2021,30 @@ update your configs accordingly.</p>
   mode using the 8&times;8 pixel CGA font with double scanning enabled.</p>
 </li>
 </ul>
+<h3 id="option-to-emulate-video-memory-access-delays">Option to emulate video memory access delays<a class="headerlink" href="#option-to-emulate-video-memory-access-delays" title="Permanent link">&para;</a></h3>
+<p>We&rsquo;ve added the new <code>vmem_delay</code> setting to the <code>[dosbox]</code> section to more
+closely emulate the behaviour of old video cards. This approximates the
+CPU-throttling effect of accessing slow video memory via the ISA bus. The
+feature was adapted from <a href="https://dosbox-x.com/">DOSBox-X</a> based on a tip by
+<strong>MX9000</strong>. Thanks
+man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> </p>
+<p>To enable the feature, just set <code>vmem_delay</code> to <code>on</code> in your config. This can
+help reduce or eliminate flicker in Hercules, CGA, EGA, and early VGA games
+and &ldquo;even out&rdquo; emulation speed in speed-sensitive titles.</p>
+<p>We recommend enabling this only when necessary on a per-game basis, as it
+slows down the emulation. You can also fine-tune the delay by specifying the
+access delay in nanoseconds (<code>on</code> sets 3000 ns). </p>
+<p><code>vmem_delay = on</code> fixes the flashing graphics and various speed issues in at
+least the following titles:</p>
+<ul>
+<li><strong>Corncob 3-D</strong></li>
+<li><strong>Corncob Deluxe</strong></li>
+<li><strong>Future Wars</strong> (also needs <code>cycles = 1000</code>)</li>
+<li><strong>Gold of the Aztecs, The</strong></li>
+<li><strong>Hostages</strong> (also needs <code>cycles = 1500</code>)</li>
+<li><strong>Operation Stealth</strong> (when VGA or EGA is selected in the game&rsquo;s setup)</li>
+<li><strong>Quest for Glory II</strong> (fixes the too-fast vertical scrolling in the intro)</li>
+</ul>
 <h3 id="option-for-legacy-vga-rendering">Option for legacy VGA rendering<a class="headerlink" href="#option-for-legacy-vga-rendering" title="Permanent link">&para;</a></h3>
 <p>In 0.81.0, we made accurate per-scanline VGA rendering the only rendering
 option available (previously, you could only enable this via <code>machine =
@@ -2050,6 +2099,7 @@ compatibility with non-standard Tandy graphics modes as well.</p>
 <li>Improve VGA double scanning criteria (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3446" title="GitHub Issue dosbox-staging/dosbox-staging #3446">#3446</a>)</li>
 <li>Log OpenGL vsync state (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3553" title="GitHub Issue dosbox-staging/dosbox-staging #3553">#3553</a>)</li>
 <li>Only raise window when it is newly created (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3440" title="GitHub Issue dosbox-staging/dosbox-staging #3440">#3440</a>)</li>
+<li>Port video memory I/O delay tweak from DOSBox-X (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3597" title="GitHub Issue dosbox-staging/dosbox-staging #3597">#3597</a>)</li>
 <li>Restore double scanning support for VGA text modes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3568" title="GitHub Issue dosbox-staging/dosbox-staging #3568">#3568</a>)</li>
 <li>Revert to legacy non-<code>vgaonly</code> palette behaviour on <code>svga_paradise</code> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3589" title="GitHub Issue dosbox-staging/dosbox-staging #3589">#3589</a>)</li>
 </ul>
