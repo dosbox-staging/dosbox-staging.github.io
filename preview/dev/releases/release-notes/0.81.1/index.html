@@ -747,6 +747,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1748,6 +1757,15 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#other-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1847,12 +1865,13 @@
 
 
 <h1 id="0811-release-notes">0.81.1 release notes<a class="headerlink" href="#0811-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong> 2024-04-15</p>
+<p><strong>Release date:</strong> 2024-04-28</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>The main focus of this maintenance release is to fix a couple of regressions
 introduced in 0.81.0, most of them related to game compatibility, and address
 a few long-standing issues.</p>
-<p>This release was made possible by everyone who tried 0.81.0, submitted bugs and pull requests, and tested the updates. Thank you! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<p>This release was made possible by everyone who tried 0.81.0, submitted bugs
+and pull requests, and tested the updates. Thank you! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <hr />
 <p>The release fixes the following 0.81.0 regressions:</p>
 <ul>
@@ -1895,8 +1914,8 @@ issues:</p>
 <p>Introduce <code>vmem_delay = on</code> to help with flickering graphics and speed
   issues in Hercules, CGA, EGA, and early VGA games. This has proven to improve
   compatibility with <strong>Future Wars</strong>, <strong>Operation Stealth</strong>, <strong>Quest
-  for Glory II</strong>, <strong>Hostages</strong>, <strong>The Gold of the Aztecs</strong>, <strong>Corncob
-  Deluxe</strong>, and <strong>Corncob 3-D</strong> so far.</p>
+  for Glory II</strong>, <strong>Hostages</strong>, <strong>The Gold of the Aztecs</strong>, <strong>Crazy Brix</strong>,
+  <strong>Corncob Deluxe</strong>, and <strong>Corncob 3-D</strong> so far.</p>
 </li>
 <li>
 <p>Improve support for multiple joysticks/game controllers (the mapper
@@ -1904,8 +1923,8 @@ issues:</p>
 </li>
 <li>
 <p>Emulate a memory-expanded PCjr machine more faithfully. This improves game
-  compatibilty; for example, <strong>Space Quest</strong> (v1.0x and v2.2) and <strong>King&rsquo;s Quest</strong>
-  (1986 PCjr DOS version) now work instead of hanging the emulator.</p>
+  compatibility; for example, <strong>Space Quest</strong> (v1.0x and v2.2) and <strong>King&rsquo;s
+  Quest</strong> (1986 PCjr DOS version) now work instead of hanging the emulator.</p>
 </li>
 <li>
 <p>CD Audio is no longer muted in certain parts of <strong>Time Warriors</strong> and
@@ -1923,8 +1942,8 @@ issues:</p>
   productions.</p>
 </li>
 </ul>
-<p>Lastly, Spanish and Brazilian Portuguese translations have been added and most
-of the other translations have been updated.</p>
+<p>Lastly, Spanish and Brazilian Portuguese translations have been added, and
+most of the other translations have been updated.</p>
 <p>Read on to learn about the details!</p>
 <h2 id="how-to-upgrade">How to upgrade<a class="headerlink" href="#how-to-upgrade" title="Permanent link">&para;</a></h2>
 <p>Start by downloading the latest version, then make sure to upgrade your
@@ -1988,13 +2007,13 @@ as follows:</p>
 the old primary config manually.</p>
 </div>
 <h3 id="after-upgrading">After upgrading<a class="headerlink" href="#after-upgrading" title="Permanent link">&para;</a></h3>
-<p>Look out for deprecation warnings in the logs (in yellow/orange colour) and
+<p>Look for deprecation warnings in the logs (in yellow or orange colours) and
 update your configs accordingly.</p>
 <h2 id="graphics-related-changes">Graphics-related changes<a class="headerlink" href="#graphics-related-changes" title="Permanent link">&para;</a></h2>
 <h3 id="vga-double-scanning-fixes-improvements">VGA double scanning fixes &amp; improvements<a class="headerlink" href="#vga-double-scanning-fixes-improvements" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>The SVGA/VESA double scanning criteria has been refined which fixes a
+<p>The SVGA/VESA double scanning criteria has been refined, which fixes a
   <strong>Wing Commander 3</strong> regression where the videos and cutscenes appeared
   height-doubled.</p>
 </li>
@@ -2011,14 +2030,14 @@ update your configs accordingly.</p>
 <p>Support &ldquo;unorthodox&rdquo; scanline repeats on VGA in forced single scanning mode.
   This improves compatibility with demoscene productions; for example, <a href="https://www.pouet.net/prod.php?which=1158">Show
   by Majic 12</a> sets up a custom
-  320&times;40 mode, and then uses scanline-quintupling to repeat every line 5
+  320&times;40 mode and then uses scanline-quintupling to repeat every line 5
   times in the zoom-rotator part in the intro.</p>
 </li>
 <li>
 <p>Support for double-scanned text modes was removed by mistake, which
   we&rsquo;re now restoring. This resulted in the text mode game <strong>Indenture</strong>
-  appear squashed (half-height). The game sets up a custom 640&times;200 text
-  mode using the 8&times;8 pixel CGA font with double scanning enabled.</p>
+  appearing squashed (half-height). The game sets up a custom 640&times;200
+  text mode using the 8&times;8 pixel CGA font with double scanning enabled.</p>
 </li>
 </ul>
 <h3 id="option-to-emulate-video-memory-access-delays">Option to emulate video memory access delays<a class="headerlink" href="#option-to-emulate-video-memory-access-delays" title="Permanent link">&para;</a></h3>
@@ -2026,8 +2045,7 @@ update your configs accordingly.</p>
 closely emulate the behaviour of old video cards. This approximates the
 CPU-throttling effect of accessing slow video memory via the ISA bus. The
 feature was adapted from <a href="https://dosbox-x.com/">DOSBox-X</a> based on a tip by
-<strong>MX9000</strong>. Thanks
-man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> </p>
+<strong>MX9000</strong>. Thanks man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> </p>
 <p>To enable the feature, just set <code>vmem_delay</code> to <code>on</code> in your config. This can
 help reduce or eliminate flicker in Hercules, CGA, EGA, and early VGA games
 and &ldquo;even out&rdquo; emulation speed in speed-sensitive titles.</p>
@@ -2039,6 +2057,8 @@ least the following titles:</p>
 <ul>
 <li><strong>Corncob 3-D</strong></li>
 <li><strong>Corncob Deluxe</strong></li>
+<li><strong>Crazy Brix</strong> (<code>vmem_delay = 2000</code> and <code>cycles = 70000</code> makes the game run
+    smoothly)</li>
 <li><strong>Future Wars</strong> (also needs <code>cycles = 1000</code>)</li>
 <li><strong>Gold of the Aztecs, The</strong></li>
 <li><strong>Hostages</strong> (also needs <code>cycles = 1500</code>)</li>
@@ -2050,10 +2070,10 @@ least the following titles:</p>
 option available (previously, you could only enable this via <code>machine =
 vgaonly</code>). A minority of games, however, have regressed by this and would
 crash at startup.</p>
-<p>As a workaround until we improve the accuracy of the VGA emulation, we&rsquo;re
+<p>As a workaround, until we improve the accuracy of the VGA emulation, we&rsquo;re
 introducing the <code>vga_render_per_scanline</code> setting in the <code>[dosbox]</code> section.
 The setting is enabled by default, but you can disable it to restore the
-legacy rendering behaviour on a per game basis.</p>
+legacy rendering behaviour on a per-game basis.</p>
 <p>Disabling <code>vga_render_per_scanline</code> fixes the crash-at-startup regression in
 the following Silmarils titles:</p>
 <div class="compact">
@@ -2070,8 +2090,8 @@ ticket</a> for config
 recommendations.</p>
 <h3 id="option-for-legacy-palette-behaviour">Option for legacy palette behaviour<a class="headerlink" href="#option-for-legacy-palette-behaviour" title="Permanent link">&para;</a></h3>
 <p>The <code>svga_paradise</code> machine type now uses the legacy non-<code>vgaonly</code> palette
-behaviour. This fixes the wrong colours appearing in some rare titles (e.g.,
-<strong>Spell It Plus!</strong>).</p>
+behaviour. This fixes the wrong colours in some rare titles (e.g., <strong>Spell It
+Plus!</strong>).</p>
 <h3 id="tandy-graphics-fixes">Tandy graphics fixes<a class="headerlink" href="#tandy-graphics-fixes" title="Permanent link">&para;</a></h3>
 <p>Fixed a regression where the Tandy version of <strong>Impossible Mission
 II</strong> would crash when starting a new game. This fix should restore our general
@@ -2095,6 +2115,7 @@ compatibility with non-standard Tandy graphics modes as well.</p>
 <li>Fix crash when quitting while in fullscreen mode (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3545" title="GitHub Issue dosbox-staging/dosbox-staging #3545">#3545</a>)</li>
 <li>Fix double-scanning behavior for SVGA/VESA games (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3428" title="GitHub Issue dosbox-staging/dosbox-staging #3428">#3428</a>)</li>
 <li>Fix Impossible Mission II transition effect (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3454" title="GitHub Issue dosbox-staging/dosbox-staging #3454">#3454</a>)</li>
+<li>Fix the width of VGA text modes being incorrectly set sometimes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3611" title="GitHub Issue dosbox-staging/dosbox-staging #3611">#3611</a>)</li>
 <li>Fix &ldquo;unorthodox&rdquo; scanline repeats on VGA (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3441" title="GitHub Issue dosbox-staging/dosbox-staging #3441">#3441</a>)</li>
 <li>Improve VGA double scanning criteria (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3446" title="GitHub Issue dosbox-staging/dosbox-staging #3446">#3446</a>)</li>
 <li>Log OpenGL vsync state (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3553" title="GitHub Issue dosbox-staging/dosbox-staging #3553">#3553</a>)</li>
@@ -2106,8 +2127,9 @@ compatibility with non-standard Tandy graphics modes as well.</p>
 </details>
 <h2 id="sound-related-changes">Sound-related changes<a class="headerlink" href="#sound-related-changes" title="Permanent link">&para;</a></h2>
 <h3 id="implement-seeking-in-mscdex">Implement seeking in MSCDEX<a class="headerlink" href="#implement-seeking-in-mscdex" title="Permanent link">&para;</a></h3>
-<p>A few games use the seek function of the CD-ROM but this was not previusly implemented
-in our emulated MSCDEX driver. This resulted in CD Audio playing only sometimes in a few games.</p>
+<p>A few games use the seek function of the CD-ROM but this was not previusly
+implemented in our emulated MSCDEX driver. This resulted in CD Audio playing
+only sometimes in a few games.</p>
 <p>The new seek implementation fixes CD Audio music in at least these titles:</p>
 <ul>
 <li><strong>Time Warriors</strong> &mdash; CD Audio music is now playing during the main menu and
@@ -2115,13 +2137,26 @@ in our emulated MSCDEX driver. This resulted in CD Audio playing only sometimes 
 <li><strong>Alpha Storm</strong> &mdash; CD Audio music is now playing in the opening movie.</li>
 </ul>
 <h3 id="fix-not-being-able-to-disable-opl-emulation">Fix not being able to disable OPL emulation<a class="headerlink" href="#fix-not-being-able-to-disable-opl-emulation" title="Permanent link">&para;</a></h3>
-<p>We fixed a regression where you could not disable OPL emulation with
-<code>oplmode = none</code> anymore (<code>sbtype = none</code> still worked, but that disabled the
-Sound Blaster as well).</p>
+<p>Fixed a regression where you could not disable OPL emulation with <code>oplmode =
+none</code> anymore (<code>sbtype = none</code> still worked, but that disabled the Sound
+Blaster as well).</p>
+<h3 id="other-fixes_1">Other fixes<a class="headerlink" href="#other-fixes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fixed crash when output filter cutoff frequencies are not below half the
+  sample rate (e.g., by setting <code>rate = 11025</code> and <code>sbtype = sbpro1</code> which
+  selects a 8 kHz low-pass filter by default).</p>
+</li>
+<li>
+<p>Fixed FluidSynth and MT-32 crashing the emulator when the host sample rate
+  is set to 8000 Hz.</p>
+</li>
+</ul>
 <details class="note">
 <summary>Full PR list of sound-related changes</summary>
 <ul>
 <li>Fix not being able to set <code>oplmode = none</code> regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3565" title="GitHub Issue dosbox-staging/dosbox-staging #3565">#3565</a>)</li>
+<li>Fix various crashes when the host sample rate is set to low values (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3629" title="GitHub Issue dosbox-staging/dosbox-staging #3629">#3629</a>)</li>
 <li>Implement seeking in MSCDEX (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3516" title="GitHub Issue dosbox-staging/dosbox-staging #3516">#3516</a>)</li>
 <li>Use SB* and OPL logging prefixes consistely in all scenarios (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3587" title="GitHub Issue dosbox-staging/dosbox-staging #3587">#3587</a>)</li>
 </ul>
@@ -2129,17 +2164,18 @@ Sound Blaster as well).</p>
 <h2 id="input-related-changes">Input-related changes<a class="headerlink" href="#input-related-changes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Fixed various problems in the mapper when using more than a single game controller
-  (e.g., with two joysticks connected, mapping the controls of the first joystick
-  could randomly target the mappings of the second one and vice versa).</p>
+<p>Fixed various problems in the mapper when using more than a single game
+  controller (e.g., with two joysticks connected, mapping the controls of the
+  first joystick could randomly target the mappings of the second one and vice
+  versa).</p>
 </li>
 <li>
 <p>Fixed a keyboard handling regression in <strong>In Extremis</strong> where starting the
   game only resulted in a black screen.</p>
 </li>
 <li>
-<p>Fixed obscure regression where the <code>timed = on</code> joystick setting messed up the
-  available free memory reported by the FreeDOS <code>MEM.EXE</code> command.</p>
+<p>Fixed obscure regression where the <code>timed = on</code> joystick setting messed up
+  the available free memory reported by the FreeDOS <code>MEM.EXE</code> command.</p>
 </li>
 </ul>
 <details class="note">
@@ -2152,10 +2188,10 @@ Sound Blaster as well).</p>
 </details>
 <h2 id="dos-integration-related-changes">DOS integration related changes<a class="headerlink" href="#dos-integration-related-changes" title="Permanent link">&para;</a></h2>
 <h3 id="improved-expanded-pcjr-emulation">Improved expanded PCjr emulation<a class="headerlink" href="#improved-expanded-pcjr-emulation" title="Permanent link">&para;</a></h3>
-<p>Now we&rsquo;re emulating a memory-expanded PCjr machine more faithfully. 
-This improves game compatibility; for example, <strong>Space Quest</strong> (v1.0x and v2.2) and
-<strong>King&rsquo;s Quest</strong> (1986 PCjr DOS version) now work fine&mdash;these games
-resulted in the emulator hanging previously.</p>
+<p>Now we&rsquo;re emulating a memory-expanded PCjr machine more faithfully. This
+improves game compatibility; for example, <strong>Space Quest</strong> (v1.0x and v2.2) and
+<strong>King&rsquo;s Quest</strong> (1986 PCjr DOS version) now work fine&mdash;these games resulted
+in the emulator hanging previously.</p>
 <p>A new <code>pcjr_memory_config</code> setting has been introduced to the <code>[dosbox]</code>
 section, defaulting to <code>expanded</code> (the new improved behaviour). Setting this
 to <code>standard</code> restores the legacy memory model. You should only need this
@@ -2176,12 +2212,17 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <p>The <code>LOADFIX</code> command&rsquo;s help text is more complete now (some options were
   not documented previously).</p>
 </li>
+<li>
+<p>When a batch file was being instantiated, the echo state from the parent was
+  not being transferred correctly if the parent was another batch file.</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of DOS integration related changes</summary>
 <ul>
 <li>Check the validity of leading path when checking device name (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3525" title="GitHub Issue dosbox-staging/dosbox-staging #3525">#3525</a>)</li>
 <li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>) </li>
+<li>Inherit batch file echo state from parent (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3578" title="GitHub Issue dosbox-staging/dosbox-staging #3578">#3578</a>)</li>
 <li>Improve the help text of the LOADFIX command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3221" title="GitHub Issue dosbox-staging/dosbox-staging #3221">#3221</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3427" title="GitHub Issue dosbox-staging/dosbox-staging #3427">#3427</a>)</li>
 <li>Make PCjr application memory contiguous (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3460" title="GitHub Issue dosbox-staging/dosbox-staging #3460">#3460</a>)</li>
 </ul>
@@ -2199,8 +2240,12 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <li>Portuguese (Brazilian) Translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3432" title="GitHub Issue dosbox-staging/dosbox-staging #3432">#3432</a>)</li>
 <li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3439" title="GitHub Issue dosbox-staging/dosbox-staging #3439">#3439</a>)</li>
 <li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3458" title="GitHub Issue dosbox-staging/dosbox-staging #3458">#3458</a>)</li>
+<li>Update de.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3530" title="GitHub Issue dosbox-staging/dosbox-staging #3530">#3530</a>)</li>
 <li>Update Dutch (nl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3459" title="GitHub Issue dosbox-staging/dosbox-staging #3459">#3459</a>)</li>
+<li>Update English (en) translation for 0.81.1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3600" title="GitHub Issue dosbox-staging/dosbox-staging #3600">#3600</a>)</li>
+<li>Update German (de) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3630" title="GitHub Issue dosbox-staging/dosbox-staging #3630">#3630</a>)</li>
 <li>Update Italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3560" title="GitHub Issue dosbox-staging/dosbox-staging #3560">#3560</a>)</li>
+<li>Update Italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3603" title="GitHub Issue dosbox-staging/dosbox-staging #3603">#3603</a>)</li>
 <li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3532" title="GitHub Issue dosbox-staging/dosbox-staging #3532">#3532</a>)</li>
 <li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3463" title="GitHub Issue dosbox-staging/dosbox-staging #3463">#3463</a>)</li>
 <li>Update Portuguese (br) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3469" title="GitHub Issue dosbox-staging/dosbox-staging #3469">#3469</a>)</li>
@@ -2208,13 +2253,40 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 </details>
 <h2 id="miscellaneous-changes">Miscellaneous changes<a class="headerlink" href="#miscellaneous-changes" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Attempting to change unchangeable settings via the <code>CONFIG</code> command at
+<li>
+<p>Attempting to change unchangeable settings via the <code>CONFIG</code> command at
   runtime is no longer silently accepted (without doing anything) but an
-  error is raised instead.</li>
+  error is raised instead.</p>
+</li>
+<li>
+<p>Unknown command-line switches starting with dashes are now ignored and a
+  warning is logged&mdash;DOSBox Staging will not try to execute them anymore. As
+  a side effect, the current working directory was mounted as the C drive,
+  which led to very non-intuitive behaviour.</p>
+</li>
+<li>
+<p>The Windows installer now creates a Start Menu shortcut to launch DOSBox
+  Staging without showing the console window (<strong>DOSBox Staging (no console
+  window)</strong> menu item).</p>
+</li>
+<li>
+<p>The Windows installer no longer starts DOSBox Staging automatically when the
+  installation is completed.</p>
+</li>
+<li>
+<p>Most config settings are now correctly reverted to their defaults when an
+  invalid value is set, and their values are kept in sync with the active
+  setting.</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of miscellaneous changes</summary>
 <ul>
+<li>Add &ldquo;no console&rdquo; start menu item to the Windows installer (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3510" title="GitHub Issue dosbox-staging/dosbox-staging #3510">#3510</a>)</li>
+<li>Better build version handling at runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3556" title="GitHub Issue dosbox-staging/dosbox-staging #3556">#3556</a>)</li>
+<li>Config setting defaulting/syncing improvements &amp; fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3626" title="GitHub Issue dosbox-staging/dosbox-staging #3626">#3626</a>)</li>
+<li>Do not treat illegal command line switches as commands (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3621" title="GitHub Issue dosbox-staging/dosbox-staging #3621">#3621</a>)</li>
+<li>Drop Debian 10 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3557" title="GitHub Issue dosbox-staging/dosbox-staging #3557">#3557</a>)</li>
 <li>Fix IPX config help comment (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3403" title="GitHub Issue dosbox-staging/dosbox-staging #3403">#3403</a>)</li>
 <li>Improve &lsquo;keyboardlayout&rsquo; option description (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3409" title="GitHub Issue dosbox-staging/dosbox-staging #3409">#3409</a>)</li>
 <li>LTO build fix (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3538" title="GitHub Issue dosbox-staging/dosbox-staging #3538">#3538</a>)</li>
@@ -2239,8 +2311,8 @@ translation changes:</p>
 </ul>
 </div>
 <h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
-<p>We are grateful for all community contributions as well as the original DOSBox
-project, upon which DOSBox Staging is based.</p>
+<p>We are grateful for all the community contributions and the original DOSBox
+project, on which DOSBox Staging is based.</p>
 
 
 
