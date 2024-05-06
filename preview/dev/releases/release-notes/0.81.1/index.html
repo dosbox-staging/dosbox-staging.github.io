@@ -1935,11 +1935,18 @@ and pull requests, and tested the updates. Thank you! <img alt="😎" class="twe
 <p>Fix the Tandy version of <strong>Impossible Mission II</strong> crashing at startup.</p>
 </li>
 <li>
+<p>Fix regression in <strong>Tyrian</strong> where pressing the arrow
+  keys get registered twice in menus.</p>
+</li>
+<li>
 <p>Fix starting <strong>In Extremis</strong> resulting in a black screen.</p>
 </li>
 <li>
-<p>Fix wrong colours appearing in <strong>Spell It Plus!</strong> (needs <code>machine =
+<p>Fix wrong colours in <strong>Spell It Plus!</strong> (needs <code>machine =
     svga_paradise</code>).</p>
+</li>
+<li>
+<p>Fix wrong colours and garbled graphics in <strong>Spong</strong> and <strong>Exobius</strong>.</p>
 </li>
 <li>
 <p>Fix squashed video output in the text mode game <strong>Indenture</strong>.</p>
@@ -1989,6 +1996,11 @@ issues:</p>
 <li>
 <p>Fix various VGA double scanning related edge cases in demoscene
   productions.</p>
+</li>
+<li>
+<p>Detecting &ldquo;repurposed&rdquo; EGA video modes with 18-bit VGA DAC colours
+  has been made more robust when using the <code>crt-auto</code> shader (should result in
+  a double-scanned VGA shader being picked).</p>
 </li>
 <li>
 <p>Spanish and Brazilian Portuguese translations have been added, and
@@ -2090,6 +2102,12 @@ update your configs accordingly.</p>
   appearing squashed (half-height). The game sets up a custom 640&times;200
   text mode using the 8&times;8 pixel CGA font with double scanning enabled.</p>
 </li>
+<li>
+<p>Detecting &ldquo;repurposed&rdquo; EGA video modes with 18-bit VGA DAC colours on
+  emulated VGA adapters has been made more robust. In these scenarios, the
+  <code>crt-auto</code> shader should more reliably choose a double-scanned VGA shader
+  instead of a single-scanned EGA shader.</p>
+</li>
 </ul>
 <h3 id="option-to-emulate-video-memory-access-delays">Option to emulate video memory access delays<a class="headerlink" href="#option-to-emulate-video-memory-access-delays" title="Permanent link">&para;</a></h3>
 <p>We&rsquo;ve added the new <code>vmem_delay</code> setting to the <code>[dosbox]</code> section to more
@@ -2157,6 +2175,9 @@ compatibility with non-standard Tandy graphics modes as well.</p>
 <p>Fixed crash when exiting DOSBox Staging while in fullscreen mode on macOS
   and Linux.</p>
 </li>
+<li>
+<p>Fixed wrong colours and garbled graphics in <strong>Spong</strong> and <strong>Exobius</strong>.</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of graphics-related changes</summary>
@@ -2174,6 +2195,7 @@ compatibility with non-standard Tandy graphics modes as well.</p>
 <li>Port video memory I/O delay tweak from DOSBox-X (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3597" title="GitHub Issue dosbox-staging/dosbox-staging #3597">#3597</a>)</li>
 <li>Restore double scanning support for VGA text modes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3568" title="GitHub Issue dosbox-staging/dosbox-staging #3568">#3568</a>)</li>
 <li>Revert to legacy non-<code>vgaonly</code> palette behaviour on <code>svga_paradise</code> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3589" title="GitHub Issue dosbox-staging/dosbox-staging #3589">#3589</a>)</li>
+<li>Simplify &ldquo;EGA mode with VGA palette&rdquo; detection &amp; make it more robust (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3639" title="GitHub Issue dosbox-staging/dosbox-staging #3639">#3639</a>)</li>
 </ul>
 </details>
 <h2 id="sound-related-changes">Sound-related changes<a class="headerlink" href="#sound-related-changes" title="Permanent link">&para;</a></h2>
@@ -2215,14 +2237,18 @@ Blaster as well).</p>
 <h2 id="input-related-changes">Input-related changes<a class="headerlink" href="#input-related-changes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Fixed various problems in the mapper when using more than a single game
-  controller (e.g., with two joysticks connected, mapping the controls of the
-  first joystick could randomly target the mappings of the second one and vice
-  versa).</p>
+<p>Fixed a keyboard handling regression in <strong>Tyrian</strong> where pressing the arrow
+  keys get registered twice, making the menus very hard to use.</p>
 </li>
 <li>
 <p>Fixed a keyboard handling regression in <strong>In Extremis</strong> where starting the
   game only resulted in a black screen.</p>
+</li>
+<li>
+<p>Fixed various problems in the mapper when using more than a single game
+  controller (e.g., with two joysticks connected, mapping the controls of the
+  first joystick could randomly target the mappings of the second one and vice
+  versa).</p>
 </li>
 <li>
 <p>Fixed obscure regression where the <code>timed = on</code> joystick setting messed up
@@ -2232,6 +2258,7 @@ Blaster as well).</p>
 <details class="note">
 <summary>Full PR list of input-related changes</summary>
 <ul>
+<li>Deactivate IRQ if byte is read from i8042 chip (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3647" title="GitHub Issue dosbox-staging/dosbox-staging #3647">#3647</a>)</li>
 <li>Fix handling multiple game controllers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3404" title="GitHub Issue dosbox-staging/dosbox-staging #3404">#3404</a>)</li>
 <li>Fix the &lsquo;In Extremis&rsquo; game intro getting stuck (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3549" title="GitHub Issue dosbox-staging/dosbox-staging #3549">#3549</a>)</li>
 <li>Set BIOS_Destroy not changeable at runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3420" title="GitHub Issue dosbox-staging/dosbox-staging #3420">#3420</a>)</li>
@@ -2292,13 +2319,15 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3439" title="GitHub Issue dosbox-staging/dosbox-staging #3439">#3439</a>)</li>
 <li>Update br.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3458" title="GitHub Issue dosbox-staging/dosbox-staging #3458">#3458</a>)</li>
 <li>Update de.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3530" title="GitHub Issue dosbox-staging/dosbox-staging #3530">#3530</a>)</li>
+<li>Update de.lng (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3530" title="GitHub Issue dosbox-staging/dosbox-staging #3530">#3530</a>)</li>
 <li>Update Dutch (nl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3459" title="GitHub Issue dosbox-staging/dosbox-staging #3459">#3459</a>)</li>
 <li>Update English (en) translation for 0.81.1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3600" title="GitHub Issue dosbox-staging/dosbox-staging #3600">#3600</a>)</li>
 <li>Update German (de) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3630" title="GitHub Issue dosbox-staging/dosbox-staging #3630">#3630</a>)</li>
 <li>Update Italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3560" title="GitHub Issue dosbox-staging/dosbox-staging #3560">#3560</a>)</li>
 <li>Update Italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3603" title="GitHub Issue dosbox-staging/dosbox-staging #3603">#3603</a>)</li>
-<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3532" title="GitHub Issue dosbox-staging/dosbox-staging #3532">#3532</a>)</li>
 <li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3463" title="GitHub Issue dosbox-staging/dosbox-staging #3463">#3463</a>)</li>
+<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3532" title="GitHub Issue dosbox-staging/dosbox-staging #3532">#3532</a>)</li>
+<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3633" title="GitHub Issue dosbox-staging/dosbox-staging #3633">#3633</a>)</li>
 <li>Update Portuguese (br) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3469" title="GitHub Issue dosbox-staging/dosbox-staging #3469">#3469</a>)</li>
 </ul>
 </details>
