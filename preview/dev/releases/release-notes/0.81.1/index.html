@@ -1935,8 +1935,8 @@ and pull requests, and tested the updates. Thank you! <img alt="😎" class="twe
 <p>Fix the Tandy version of <strong>Impossible Mission II</strong> crashing at startup.</p>
 </li>
 <li>
-<p>Fix regression in <strong>Tyrian</strong> where pressing the arrow
-  keys get registered twice in menus.</p>
+<p>Fix regression in <strong>Tyrian</strong> where pressing the arrow keys get registered
+  twice in menus.</p>
 </li>
 <li>
 <p>Fix starting <strong>In Extremis</strong> resulting in a black screen.</p>
@@ -1979,7 +1979,7 @@ issues:</p>
 </li>
 <li>
 <p>Emulate a memory-expanded PCjr machine more faithfully. This improves game
-  compatibility; for example, <strong>Space Quest</strong> (v1.0x and v2.2) and <strong>King&rsquo;s
+  compatibility; for{ example, <strong>Space Quest</strong> (v1.0x and v2.2) and <strong>King&rsquo;s
   Quest</strong> (1986 PCjr DOS version) now work instead of hanging the emulator.</p>
 </li>
 <li>
@@ -2020,7 +2020,7 @@ primary configuration as described below.</p>
 </ul>
 </div>
 <h3 id="upgrading-your-primary-configuration">Upgrading your primary configuration<a class="headerlink" href="#upgrading-your-primary-configuration" title="Permanent link">&para;</a></h3>
-<p>Since config settings might be renamed, altered, or deprecated between
+<p>Since config settings might get renamed, altered, or deprecated between
 releases, it&rsquo;s best to let DOSBox Staging write the new default primary config
 on the first launch, then reapply your old settings manually.</p>
 <p>Start by backing up your existing primary config. This is where to find
@@ -2081,8 +2081,12 @@ update your configs accordingly.</p>
   height-doubled.</p>
 </li>
 <li>
-<p>Some 320&times;200, 320&times;240 and similar tweaked double-scanned VGA
-  modes were incorrectly identified as 320&times;400, 320&times;480, etc.,
+<p>Some 320&times;
+}
+200, 320 &amp; times;
+240 and similar tweaked double - scanned VGA modes were incorrectly identified as 320 &amp;
+                times;
+400, 320 &amp; times;480, etc.,
   which was confusing in the logs and single scanning could not be forced on
   them (e.g., with <code>glshader = crt-auto-arcade</code>). Affected programs include
   <strong>Pinball Dreams</strong>, <strong>Show by Majic 12</strong>, and the <strong>Copper demo</strong> (see the
@@ -2114,13 +2118,13 @@ update your configs accordingly.</p>
 closely emulate the behaviour of old video cards. This approximates the
 CPU-throttling effect of accessing slow video memory via the ISA bus. The
 feature was adapted from <a href="https://dosbox-x.com/">DOSBox-X</a> based on a tip by
-<strong>MX9000</strong>. Thanks man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> </p>
+<strong>MX9000</strong>. Thanks man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <p>To enable the feature, just set <code>vmem_delay</code> to <code>on</code> in your config. This can
 help reduce or eliminate flicker in Hercules, CGA, EGA, and early VGA games
 and &ldquo;even out&rdquo; emulation speed in speed-sensitive titles.</p>
 <p>We recommend enabling this only when necessary on a per-game basis, as it
 slows down the emulation. You can also fine-tune the delay by specifying the
-access delay in nanoseconds (<code>on</code> sets 3000 ns). </p>
+access delay in nanoseconds (<code>on</code> sets 3000 ns).</p>
 <p><code>vmem_delay = on</code> fixes the flashing graphics and various speed issues in at
 least the following titles:</p>
 <ul>
@@ -2200,7 +2204,7 @@ compatibility with non-standard Tandy graphics modes as well.</p>
 </details>
 <h2 id="sound-related-changes">Sound-related changes<a class="headerlink" href="#sound-related-changes" title="Permanent link">&para;</a></h2>
 <h3 id="implement-seeking-in-mscdex">Implement seeking in MSCDEX<a class="headerlink" href="#implement-seeking-in-mscdex" title="Permanent link">&para;</a></h3>
-<p>A few games use the seek function of the CD-ROM but this was not previusly
+<p>A few games use the seek function of the CD-ROM but this was not previously
 implemented in our emulated MSCDEX driver. This resulted in CD Audio playing
 only sometimes in a few games.</p>
 <p>The new seek implementation fixes CD Audio music in at least these titles:</p>
@@ -2299,7 +2303,7 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <summary>Full PR list of DOS integration related changes</summary>
 <ul>
 <li>Check the validity of leading path when checking device name (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3525" title="GitHub Issue dosbox-staging/dosbox-staging #3525">#3525</a>)</li>
-<li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>) </li>
+<li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>)</li>
 <li>Inherit batch file echo state from parent (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3578" title="GitHub Issue dosbox-staging/dosbox-staging #3578">#3578</a>)</li>
 <li>Improve the help text of the LOADFIX command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3221" title="GitHub Issue dosbox-staging/dosbox-staging #3221">#3221</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3427" title="GitHub Issue dosbox-staging/dosbox-staging #3427">#3427</a>)</li>
 <li>Make PCjr application memory contiguous (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3460" title="GitHub Issue dosbox-staging/dosbox-staging #3460">#3460</a>)</li>
