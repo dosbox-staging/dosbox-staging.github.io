@@ -1,6 +1,6 @@
 # DOSBox Staging GitHub Pages site 
 
-The static website at https://dosbox-staging.github.io/ is served from this GitHub Pages repo.
+The static website at https://www.dosbox-staging.org/ is served from this GitHub Pages repo.
 
 **DO NOT make direct changes to this branch for documentation changes—modify the MkDocs sources in the main repo instead!**
 
