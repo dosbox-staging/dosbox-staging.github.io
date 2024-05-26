@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://dosbox-staging.github.io/releases/linux/">
+        <link rel="canonical" href="https://www.dosbox-staging.org/releases/linux/">
       
       
         <link rel="prev" href="../macos/">
@@ -92,7 +92,7 @@
 
 <div class="banner dev-site">
   <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
-<p>Regular users, please <a href="https://dosbox-staging.github.io/">follow the exit signs</a>.</p>
+<p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
 
 </div>
 
@@ -1755,15 +1755,20 @@
 <h1 id="linux-releases">Linux releases<a class="headerlink" href="#linux-releases" title="Permanent link">&para;</a></h1>
 <h2 id="project-released-tarball">Project-released tarball<a class="headerlink" href="#project-released-tarball" title="Permanent link">&para;</a></h2>
 <h3 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">&para;</a></h3>
+<section class="release-downloads">
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.1/dosbox-staging-linux-v0.81.1.tar.xz">Download DOSBox Staging 0.81.1 (tar.xz)</a>
 <br>
 <small>
 sha256: 5aee92774569cf1e39ade3fccff03994<wbr>464d17b396b0ae98360af61e9d37cba7
 </small></p>
+</section>
+<p>Our pre-compiled builds run on most Linux distributions (x86_64 only for
+now). They depend on a few packages, though, which you might need to install
+manually (see instructions below).</p>
+<p>Please run the <code>install-icons.sh</code> script included with the release to install
+the application icons.</p>
 <p>Check out the <a href="../release-notes/0.81.1/">0.81.1 release notes</a> to learn
 about the changes and improvements introduced in this release.</p>
-<p>Our pre-compiled builds run on most Linux distributions (x86_64 only
-for now). They depend on the following packages:</p>
 <h3 id="install-dependencies-on-fedora">Install dependencies on Fedora<a class="headerlink" href="#install-dependencies-on-fedora" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo dnf install SDL2 SDL2_net opusfile
 </code></pre></div>
@@ -1774,8 +1779,6 @@ for now). They depend on the following packages:</p>
 <h3 id="install-dependencies-on-arch-and-manjaro">Install dependencies on Arch and Manjaro<a class="headerlink" href="#install-dependencies-on-arch-and-manjaro" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code>sudo pacman -S sdl2 sdl2_net opusfile
 </code></pre></div>
-<p>Please run the <code>install-icons.sh</code> script included with the release to install
-the application icons.</p>
 <h2 id="external-repository-packages">External repository packages<a class="headerlink" href="#external-repository-packages" title="Permanent link">&para;</a></h2>
 <p>DOSBox Staging is also packaged by external teams, as listed below.
 These packages may have variations in configuration file locations,

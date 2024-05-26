@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://dosbox-staging.github.io/about/">
+        <link rel="canonical" href="https://www.dosbox-staging.org/about/">
       
       
         <link rel="prev" href="../get-involved/code-of-conduct/">
@@ -90,7 +90,7 @@
 
 <div class="banner dev-site">
   <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
-<p>Regular users, please <a href="https://dosbox-staging.github.io/">follow the exit signs</a>.</p>
+<p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
 
 </div>
 
@@ -1408,15 +1408,15 @@
 
 
 <h1 id="about">About<a class="headerlink" href="#about" title="Permanent link">&para;</a></h1>
-<p><a href="https://dosbox-staging.github.io/"><img align="right" alt="DOSBox Staging" class="about-logo" src="../assets/images/dosbox-staging-no-border.svg" width="33%" /></a></p>
+<p><a href="https://www.dosbox-staging.org/"><img align="right" alt="DOSBox Staging" class="about-logo" src="../assets/images/dosbox-staging-no-border.svg" width="33%" /></a></p>
 <p><strong>DOSBox Staging</strong> is a modern continuation of DOSBox with advanced features
 and current development practices.</p>
-<p>It is meant as a (mostly) drop-in replacement for older DOSBox versions&mdash;your
+<p>It is a (mostly) drop-in replacement for older DOSBox versions&mdash;your
 existing configurations will continue to work, but you will have access to
 many advanced features.</p>
-<p>Because <strong>DOSBox Staging</strong> comes with sensible defaults, you&rsquo;ll need to write
+<p><strong>DOSBox Staging</strong> comes with sensible defaults, so you&rsquo;ll need to write
 a lot less configuration than with older DOSBox versions. Most games and
-application software require no tweaking and will work fine with the stock
+applications require no tweaking and will work fine with the stock
 settings. However, the extensive configuration options and advanced features
 are available if you wish to delve deeper. Please refer to the <a href="../#feature-highlights">Feature
 highlights</a> on our front page to learn more
@@ -1425,11 +1425,13 @@ about these.</p>
 <h2 id="goals">Goals<a class="headerlink" href="#goals" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Faithfully emulate the <strong>DOS operating environment</strong> running on IBM PC
-  compatibles and the IBM PCjr with the primary goal of running <strong>all PC
+  compatibles and the IBM PCjr, with the primary goal of running <strong>all PC
   Booter, DOS and Windows 3.x games</strong> released in the 1981&ndash;2000 period. Running
   applications and demoscene productions or more recent DOS software is a
   secondary objective.</li>
 <li>Improve the <strong>out-of-the-box experience</strong>.</li>
+<li>Provide a <strong>self-contained emulator</strong> that requires no extra legacy or &ldquo;modern
+  retro&rdquo; hardware to function.</li>
 <li>Focus on supporting up-to-date, <strong>current operating systems</strong> and <strong>modern
  hardware</strong>.</li>
 <li>Implement <strong>new features</strong> and <strong>quality-of-life</strong> improvements.</li>
@@ -1445,13 +1447,18 @@ about these.</p>
 <h2 id="non-goals">Non-goals<a class="headerlink" href="#non-goals" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Support old, end-of-life operating systems (e.g., Windows 7 or older, OS/2,
+<p><strong>Support old, end-of-life operating systems</strong> (e.g., Windows 7 or older, OS/2,
   or Mac OS X 10.5 or older) and limited CPU/memory hardware, which are
   constraints the original <a href="https://www.dosbox.com/">DOSBox</a> continues to
   support.</p>
 </li>
 <li>
-<p>Support the use of Windows 9x/Me in the emulator. Windows 9x/Me emulation
+<p><strong>Support legacy or &ldquo;modern retro&rdquo; hardware.</strong> DOSBox Staging is a
+  self-contained emulator; its aim is to emulate all PC hardware it supports in
+  software. Legacy and retro hardware are not supported (e.g., ISA boards, CRT monitors, RetroWare OPL3 and similar devices, etc.).</p>
+</li>
+<li>
+<p><strong>Support the use of Windows 9x/Me in the emulator.</strong> Windows 9x/Me emulation
   is supported by projects such as <a href="https://www.qemu.org">QEMU</a>,
   <a href="https://www.virtualbox.org/">VirtualBox</a> and the
   <a href="https://www.dosbox-x.com/">DOSBox-X</a> and
@@ -1459,7 +1466,7 @@ about these.</p>
   This may change if the DOSBox Staging community wants it in general.</p>
 </li>
 <li>
-<p>Pursue hardware accuracy above all else. If you’re after a more faithful
+<p><strong>Pursue hardware accuracy above all else.</strong> If you’re after a more faithful
   emulation of an entire PC, look into
   <a href="https://github.com/dbalsom/martypc">MartyPC</a>,
   <a href="https://pcem-emulator.co.uk/">PCem</a>, <a href="https://86box.net">86Box</a>,
@@ -1469,23 +1476,22 @@ about these.</p>
   especially audio emulation fidelity of these other emulators).</p>
 </li>
 <li>
-<p>Be the fastest DOS emulator on x86 hardware. Linux users interested in
+<p><strong>Be the fastest DOS emulator on x86 hardware.</strong> Linux users interested in
   emulation speed should look at <a href="https://github.com/dosemu2/dosemu2">dosemu2</a>.</p>
 </li>
 <li>
-<p>Act as a general-purpose DOS operating system. For that, there is
+<p><strong>Act as a general-purpose DOS operating system.</strong> For that, there is
   <a href="https://www.freedos.org/">FreeDOS</a>.</p>
 </li>
 </ul>
 <h2 id="relationship-to-the-original-dosbox-project">Relationship to the original DOSBox project<a class="headerlink" href="#relationship-to-the-original-dosbox-project" title="Permanent link">&para;</a></h2>
-<p><strong>DOSBox Staging</strong> is separate from and not supported by the
-SourceForge-hosted <a href="https://www.dosbox.com/">DOSBox</a> project or its
+<p><strong>DOSBox Staging</strong> is separate from, and not supported by, the
+SourceForge-hosted <a href="https://www.dosbox.com/">DOSBox</a> project, or its
 development team, the DOSBox Team.</p>
 <p>We acknowledge and are thankful for the work shared by all DOSBox
 contributors.</p>
 <h2 id="team">Team<a class="headerlink" href="#team" title="Permanent link">&para;</a></h2>
-<p>This project is maintained by the <a href="https://github.com/orgs/dosbox-staging/people">DOSBox Staging
-team</a>.</p>
+<p>This project is maintained by the <strong>DOSBox Staging team</strong>.</p>
 <h2 id="license">License<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
 <div>
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" style="text-decoration: none">

@@ -12,7 +12,7 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://dosbox-staging.github.io/releases/windows/">
+        <link rel="canonical" href="https://www.dosbox-staging.org/releases/windows/">
       
       
         <link rel="prev" href="../">
@@ -92,7 +92,7 @@
 
 <div class="banner dev-site">
   <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
-<p>Regular users, please <a href="https://dosbox-staging.github.io/">follow the exit signs</a>.</p>
+<p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
 
 </div>
 
@@ -477,9 +477,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#windows-8x-or-newer" class="md-nav__link">
+  <a href="#legacy-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows 8.x or newer
+      Legacy Windows support
     </span>
   </a>
   
@@ -527,13 +527,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#microsoft-defender-smartscreen" class="md-nav__link">
+  <a href="#windows-defender" class="md-nav__link">
     <span class="md-ellipsis">
-      Microsoft Defender SmartScreen
+      Windows Defender
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Microsoft Defender SmartScreen">
+    <nav class="md-nav" aria-label="Windows Defender">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -549,6 +549,15 @@
   <a href="#method-2" class="md-nav__link">
     <span class="md-ellipsis">
       Method 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3
     </span>
   </a>
   
@@ -1511,9 +1520,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#windows-8x-or-newer" class="md-nav__link">
+  <a href="#legacy-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows 8.x or newer
+      Legacy Windows support
     </span>
   </a>
   
@@ -1561,13 +1570,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#microsoft-defender-smartscreen" class="md-nav__link">
+  <a href="#windows-defender" class="md-nav__link">
     <span class="md-ellipsis">
-      Microsoft Defender SmartScreen
+      Windows Defender
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Microsoft Defender SmartScreen">
+    <nav class="md-nav" aria-label="Windows Defender">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1583,6 +1592,15 @@
   <a href="#method-2" class="md-nav__link">
     <span class="md-ellipsis">
       Method 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#method-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Method 3
     </span>
   </a>
   
@@ -1646,32 +1664,41 @@
 
 <h1 id="windows-releases">Windows releases<a class="headerlink" href="#windows-releases" title="Permanent link">&para;</a></h1>
 <h2 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">&para;</a></h2>
-<h3 id="windows-8x-or-newer">Windows 8.x or newer<a class="headerlink" href="#windows-8x-or-newer" title="Permanent link">&para;</a></h3>
+<section class="release-downloads">
+<ul>
+<li>
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.1/dosbox-staging-windows-v0.81.1-setup.exe">Download DOSBox Staging 0.81.1 (Installer)</a>
-<br>
-<small>
-sha256: 4bb5e63bfef41d4a6ee8f7af3b8c5ee6<wbr>756987c4247197db0b16d888c6ac0705
-</small></p>
-<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.1/dosbox-staging-windows-v0.81.1.zip">Download DOSBox Staging 0.81.1 (zip)</a>
-<br>
-<small>
-sha256: cb45e4e56b85cac7b8b1eb63a1bbd934<wbr>30a226215a5c04f2700076c279d10e12
-</small></p>
-<p>DOSBox Staging requires 64-bit Windows.</p>
+  <br>
+  <small>
+  sha256: 4bb5e63bfef41d4a6ee8f7af3b8c5ee6<wbr>756987c4247197db0b16d888c6ac0705
+  </small></p>
+</li>
+<li>
+<p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.81.1/dosbox-staging-windows-v0.81.1.zip">Download DOSBox Staging 0.81.1 (Portable ZIP)</a>
+  <br>
+  <small>
+  sha256: cb45e4e56b85cac7b8b1eb63a1bbd934<wbr>30a226215a5c04f2700076c279d10e12
+  </small></p>
+</li>
+</ul>
+</section>
+<p>DOSBox Staging requires <strong>64-bit Windows 8, 10, or 11</strong>.</p>
 <p>Check out the <a href="../release-notes/0.81.1/">0.81.1 release notes</a> to learn about
 the changes and improvements introduced in this release.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>If Windows prevents you from running DOSBox Staging via Microsoft Defender
-SmartScreen, see the <a href="#microsoft-defender-smartscreen">section below</a>.</p>
+<p>If Windows Security prevents you from running DOSBox Staging via <strong>Windows
+Defender SmartScreen</strong> (the built-in Windows antivirus), please follow
+<a href="#windows-defender">these instructions</a>.</p>
 </div>
+<h3 id="legacy-windows-support">Legacy Windows support<a class="headerlink" href="#legacy-windows-support" title="Permanent link">&para;</a></h3>
 <h3 id="windows-7">Windows 7<a class="headerlink" href="#windows-7" title="Permanent link">&para;</a></h3>
 <p>The official distribution packages only support Windows 7 up to version
 0.80.1.</p>
 <p>For 64-bit Windows 7, use the 64-bit MSVC build. It can be optionally selected
 in the <a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-v0.80.1-setup.exe">installer</a> and is also available as a <a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_64-v0.80.1.zip">portable
-ZIP archive</a>.</p>
-<p>For 32-bit Windows 7, use the 32-bit MSVC build <a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_32-v0.80.1.zip">portable ZIP archive</a></p>
+ZIP package</a>.</p>
+<p>For 32-bit Windows 7, use the 32-bit MSVC build <a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_32-v0.80.1.zip">portable ZIP package</a></p>
 <h3 id="windows-vista">Windows Vista<a class="headerlink" href="#windows-vista" title="Permanent link">&para;</a></h3>
 <p>The official distribution packages only support Windows Vista up to version
 0.78.1.</p>
@@ -1685,24 +1712,43 @@ required.</p>
 <p>You can always see what&rsquo;s cooking on the main branch! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f37a.svg" title=":beer:" /></p>
 <p>These <a href="../development-builds/">snapshot builds</a> might be slow or unstable as they
 are designed with developers and testers in mind.</p>
-<h2 id="microsoft-defender-smartscreen">Microsoft Defender SmartScreen<a class="headerlink" href="#microsoft-defender-smartscreen" title="Permanent link">&para;</a></h2>
-<p>You&rsquo;ll need to do the following when launching DOSBox Staging for the first
-time (you&rsquo;ll need to repeat these steps every time after having upgraded to a newer version).</p>
+<h2 id="windows-defender">Windows Defender<a class="headerlink" href="#windows-defender" title="Permanent link">&para;</a></h2>
+<p>Windows Defender (the built-in Windows antivirus starting from Windows 8)
+might prevent you from running DOSBox Staging when you start it for the first
+time.</p>
+<p>This is a false positive; DOSBox Staging has no malicious code whatsoever,
+just antivirus software tend to be mistakenly flag emulators as &ldquo;malware&rdquo;.</p>
+<p>If this happens, please follow the below steps to grant Windows permission to
+run DOSBox Staging. You may need to repeat these steps after upgrading
+to a newer version.</p>
 <h3 id="method-1">Method 1<a class="headerlink" href="#method-1" title="Permanent link">&para;</a></h3>
 <p>Start the application, then click on <strong>More info</strong> in the appearing dialog.
 Click the <strong>Run anyway</strong> button in the second dialog.</p>
+<div class="image-grid">
 <figure>
 <p><a class="glightbox" href="../images/smartscreen1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SmartScreen window 1" src="../images/smartscreen1.png" /></a></p>
 </figure>
 <figure>
 <p><a class="glightbox" href="../images/smartscreen2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SmartScreen window 2" src="../images/smartscreen2.png" /></a></p>
 </figure>
+</div>
+<p>Consider also performing <a href="#method-3">Method 3</a> to make DOSBox Staging start up
+faster.</p>
 <h3 id="method-2">Method 2<a class="headerlink" href="#method-2" title="Permanent link">&para;</a></h3>
 <p>In your installation folder, right-click on the <code>dosbox.exe</code>, select <strong>Properties</strong>, tick
 <strong>Unblock</strong> in the appearing dialog, then press <strong>Ok</strong>.</p>
 <figure>
 <p><a class="glightbox" href="../images/properties.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Properties window" src="../images/properties.png" /></a></p>
 </figure>
+<p>Consider also performing <a href="#method-3">Method 3</a> to make DOSBox Staging start up
+faster.</p>
+<h3 id="method-3">Method 3<a class="headerlink" href="#method-3" title="Permanent link">&para;</a></h3>
+<p>Add an exclusion to Windows Security to whitelist the DOSBox Staging
+executable or the folder in which it resides. We recommend doing so even if
+you&rsquo;ve already performed either of the previous methods, as it can eliminate
+the 3&ndash;5 second startup delay caused by the real-time antivirus scan.</p>
+<p>See the steps on how to do this <a href="https://support.microsoft.com/en-au/windows/add-an-exclusion-to-windows-security-811816c0-4dfd-af4a-47e4-c301afe13b26">here</a>
+and <a href="https://docs.rackspace.com/docs/set-windows-defender-folder-exclusions">here</a>.</p>
 <h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
 <p>Starting in Windows 8, <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview">Microsoft Defender SmartScreen&rsquo;s</a> pop-up encumbers the execution
 of newly-developed applications.  To prevent this, developers are expected to pay
