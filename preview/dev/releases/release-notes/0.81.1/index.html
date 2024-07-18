@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.29">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.76a95c52.min.css">
       
       
 
@@ -184,7 +184,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -516,6 +516,8 @@
       
         
       
+        
+      
     
     
       
@@ -546,6 +548,27 @@
             Release notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../0.81.2.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0.81.2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2118,13 +2141,13 @@ update your configs accordingly.</p>
 closely emulate the behaviour of old video cards. This approximates the
 CPU-throttling effect of accessing slow video memory via the ISA bus. The
 feature was adapted from <a href="https://dosbox-x.com/">DOSBox-X</a> based on a tip by
-<strong>MX9000</strong>. Thanks man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<strong>MX9000</strong>. Thanks man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> </p>
 <p>To enable the feature, just set <code>vmem_delay</code> to <code>on</code> in your config. This can
 help reduce or eliminate flicker in Hercules, CGA, EGA, and early VGA games
 and &ldquo;even out&rdquo; emulation speed in speed-sensitive titles.</p>
 <p>We recommend enabling this only when necessary on a per-game basis, as it
 slows down the emulation. You can also fine-tune the delay by specifying the
-access delay in nanoseconds (<code>on</code> sets 3000 ns).</p>
+access delay in nanoseconds (<code>on</code> sets 3000 ns). </p>
 <p><code>vmem_delay = on</code> fixes the flashing graphics and various speed issues in at
 least the following titles:</p>
 <ul>
@@ -2303,7 +2326,7 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <summary>Full PR list of DOS integration related changes</summary>
 <ul>
 <li>Check the validity of leading path when checking device name (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3525" title="GitHub Issue dosbox-staging/dosbox-staging #3525">#3525</a>)</li>
-<li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>)</li>
+<li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>) </li>
 <li>Inherit batch file echo state from parent (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3578" title="GitHub Issue dosbox-staging/dosbox-staging #3578">#3578</a>)</li>
 <li>Improve the help text of the LOADFIX command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3221" title="GitHub Issue dosbox-staging/dosbox-staging #3221">#3221</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3427" title="GitHub Issue dosbox-staging/dosbox-staging #3427">#3427</a>)</li>
 <li>Make PCjr application memory contiguous (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3460" title="GitHub Issue dosbox-staging/dosbox-staging #3460">#3460</a>)</li>
@@ -2515,8 +2538,10 @@ project, on which DOSBox Staging is based.</p>
     <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
