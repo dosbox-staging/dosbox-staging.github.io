@@ -2141,13 +2141,13 @@ update your configs accordingly.</p>
 closely emulate the behaviour of old video cards. This approximates the
 CPU-throttling effect of accessing slow video memory via the ISA bus. The
 feature was adapted from <a href="https://dosbox-x.com/">DOSBox-X</a> based on a tip by
-<strong>MX9000</strong>. Thanks man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> </p>
+<strong>MX9000</strong>. Thanks man! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <p>To enable the feature, just set <code>vmem_delay</code> to <code>on</code> in your config. This can
 help reduce or eliminate flicker in Hercules, CGA, EGA, and early VGA games
 and &ldquo;even out&rdquo; emulation speed in speed-sensitive titles.</p>
 <p>We recommend enabling this only when necessary on a per-game basis, as it
 slows down the emulation. You can also fine-tune the delay by specifying the
-access delay in nanoseconds (<code>on</code> sets 3000 ns). </p>
+access delay in nanoseconds (<code>on</code> sets 3000 ns).</p>
 <p><code>vmem_delay = on</code> fixes the flashing graphics and various speed issues in at
 least the following titles:</p>
 <ul>
@@ -2326,7 +2326,7 @@ for a handful of titles, such as the DOS conversions of the <strong>Jumpman</str
 <summary>Full PR list of DOS integration related changes</summary>
 <ul>
 <li>Check the validity of leading path when checking device name (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3525" title="GitHub Issue dosbox-staging/dosbox-staging #3525">#3525</a>)</li>
-<li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>) </li>
+<li>Improve the IMGMOUNT command&rsquo;s help text (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3551" title="GitHub Issue dosbox-staging/dosbox-staging #3551">#3551</a>)</li>
 <li>Inherit batch file echo state from parent (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3578" title="GitHub Issue dosbox-staging/dosbox-staging #3578">#3578</a>)</li>
 <li>Improve the help text of the LOADFIX command (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3221" title="GitHub Issue dosbox-staging/dosbox-staging #3221">#3221</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3427" title="GitHub Issue dosbox-staging/dosbox-staging #3427">#3427</a>)</li>
 <li>Make PCjr application memory contiguous (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3460" title="GitHub Issue dosbox-staging/dosbox-staging #3460">#3460</a>)</li>
