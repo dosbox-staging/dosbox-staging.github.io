@@ -1,0 +1,9 @@
+# Common editor temp/backup files
+*~
+*.swp
+*.tmp
+*.orig
+*.rej
+
+# macOS directory prefs
+.DS_Store
