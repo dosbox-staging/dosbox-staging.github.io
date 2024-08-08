@@ -953,9 +953,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-ibm-xdf-floppy-images" class="md-nav__link">
+  <a href="#other-general-improvements" class="md-nav__link">
     <span class="md-ellipsis">
-      Support IBM XDF floppy images
+      Other general improvements
     </span>
   </a>
   
@@ -2197,9 +2197,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#support-ibm-xdf-floppy-images" class="md-nav__link">
+  <a href="#other-general-improvements" class="md-nav__link">
     <span class="md-ellipsis">
-      Support IBM XDF floppy images
+      Other general improvements
     </span>
   </a>
   
@@ -2674,11 +2674,11 @@ Dawn</strong>—it&rsquo;s pretty great, sounds almost like sample-based music!<
 <tbody>
 <tr>
 <td>Discworld (ESFM)</td>
-<td><audio controls src="https://dosbox-staging.github.io/static/audio/release-notes/0.81.1/discworld-kitchen-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+<td><audio controls src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/discworld-kitchen-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
 </tr>
 <tr>
 <td>Discworld (OPL)</td>
-<td><audio controls src="https://dosbox-staging.github.io/static/audio/release-notes/0.81.1/discworld-kitchen-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+<td><audio controls src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/discworld-kitchen-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
 </tr>
 </tbody>
 </table>
@@ -2847,8 +2847,8 @@ games:</p>
 <p>Fix hang on exiting DOSBox Staging after pressing the <span class="keys"><kbd class="key-media-pause">Pause</kbd></span> key.</p>
 </li>
 <li>
-<p>General keyboard handling accuracy improvements by incorporating
-  reverse-engineered real BIOS keyboard routines into the emulator.</p>
+<p>General keyboard handling accuracy improvements, allowing us to get rid of
+  the <strong>Ultima VIII</strong> game-specific hack.</p>
 </li>
 </ul>
 <details class="note">
@@ -3073,7 +3073,7 @@ might remove support for the legacy settings in the future.</p>
 </div>
 <h3 id="improved-config-command">Improved CONFIG command<a class="headerlink" href="#improved-config-command" title="Permanent link">&para;</a></h3>
 <p>The <code>CONFIG</code> command&rsquo;s output is now paginated when you use it to display a
-config settings description (e.g., <code>config -h glshader</code> of <code>config -h
+config setting&rsquo;s description (e.g., <code>config -h glshader</code> of <code>config -h
 cpu_cycles</code>). Previously you had to pipe the output through the <code>MORE</code> command
 to paginate the output, which was a hassle (i.e., <code>config -h glshader |
 more</code>).</p>
@@ -3102,17 +3102,38 @@ the mount config file (see resources).</p>
 <p>Additionally, the built-in <code>Y</code> drive has been made read-only by default (you
 can change this in <code>resources/drives/y.conf</code>, of course, if you want to).</p>
 <h3 id="experimental-windows-arm64-builds">Experimental Windows ARM64 builds<a class="headerlink" href="#experimental-windows-arm64-builds" title="Permanent link">&para;</a></h3>
-<p>We&rsquo;re ready for the ARM revolution <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> — we started providing
+<p>We&rsquo;re ready for the ARM revolution! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+<p>Luckily, we already have a battle-tested dynamic ARM recompiler that we&rsquo;ve
+been using for the Apple Silicon macOS builds, so we started providing
 experimental Windows ARM64 packages for devices such as the Snapdragon X
 Elite.</p>
 <p>The ARM64 packages can be downloaded from our <a href="https://github.com/dosbox-staging/dosbox-staging/actions/workflows/windows-msvc.yml">Windows
 MSVC</a>
 GitHub CI workflow (requires a GitHub account).</p>
 <p>We don&rsquo;t provide any official support for the Windows ARM64 builds yet.</p>
-<h3 id="support-ibm-xdf-floppy-images">Support IBM XDF floppy images<a class="headerlink" href="#support-ibm-xdf-floppy-images" title="Permanent link">&para;</a></h3>
+<h3 id="other-general-improvements">Other general improvements<a class="headerlink" href="#other-general-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The <strong>IPX server</strong> has been moved into its own dedicated thread. This
+  should improve IPX performance when playing multi-player games.</p>
+</li>
+<li>
 <p>The <strong>IBM Extended Density Format (XDF)</strong> was used by IBM for software
-distribution on 5.25&rdquo; and 3.5&rdquo; media. XDF image files were often provided by
-IBM on CD-ROMs, bulletin boards, and FTP sites.</p>
+  distribution on 5.25&rdquo; and 3.5&rdquo; media. XDF image files were often provided by
+  IBM on CD-ROMs, bulletin boards, and FTP sites.</p>
+</li>
+<li>
+<p>A more realistic implementation of the <strong>Time Stamp Counter (TSC)</strong> found on
+  Pentium and later CPUs, often used to determine the CPU clock. Now various
+  benchmark software should display more realistic CPU speeds (e.g., HWINFO
+  and SiSoft Sandra). Games don&rsquo;t seem to be affected by this improvement.</p>
+</li>
+<li>
+<p><strong>Software-initiated reset</strong> requests now restart the emulator instead of
+  crashing it. The reset message has been improved and now includes a countdown
+  counter.</p>
+</li>
+</ul>
 <details class="note">
 <summary>Full PR list of miscellaneous enhancements</summary>
 <ul>
@@ -3176,6 +3197,7 @@ IBM on CD-ROMs, bulletin boards, and FTP sites.</p>
 <li>Bump PVS Studio CI from Clang 14 to Clang 15 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3437" title="GitHub Issue dosbox-staging/dosbox-staging #3437">#3437</a>)</li>
 <li>Bump vcpkg baseline and update to upstream libslirp v4.8.0 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3761" title="GitHub Issue dosbox-staging/dosbox-staging #3761">#3761</a>)</li>
 <li>Callback code generation rework (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3748" title="GitHub Issue dosbox-staging/dosbox-staging #3748">#3748</a>)</li>
+<li>Centralize app_id handling (continuation) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3854" title="GitHub Issue dosbox-staging/dosbox-staging #3854">#3854</a>)</li>
 <li>Change ppc64 to use correct <code>POWERPC</code> target (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3826" title="GitHub Issue dosbox-staging/dosbox-staging #3826">#3826</a>)</li>
 <li>Clean up macOS notarization script (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3408" title="GitHub Issue dosbox-staging/dosbox-staging #3408">#3408</a>)</li>
 <li>Cleanup a few warnings in cdrom_image.cpp (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3472" title="GitHub Issue dosbox-staging/dosbox-staging #3472">#3472</a>)</li>
@@ -3201,6 +3223,7 @@ IBM on CD-ROMs, bulletin boards, and FTP sites.</p>
 <li>Minor FPU cleanup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3837" title="GitHub Issue dosbox-staging/dosbox-staging #3837">#3837</a>)</li>
 <li>More PVS warning fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3494" title="GitHub Issue dosbox-staging/dosbox-staging #3494">#3494</a>)</li>
 <li>Pin CMake version for MSVC runner (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3598" title="GitHub Issue dosbox-staging/dosbox-staging #3598">#3598</a>)</li>
+<li>Reinstate creating the Windows installer package in CI (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3849" title="GitHub Issue dosbox-staging/dosbox-staging #3849">#3849</a>)</li>
 <li>Release drafter enhancements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3546" title="GitHub Issue dosbox-staging/dosbox-staging #3546">#3546</a>)</li>
 <li>Remove Debian 10 support (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3534" title="GitHub Issue dosbox-staging/dosbox-staging #3534">#3534</a>)</li>
 <li>Remove GCC_LIKELY/GCC_UNLIKELY (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3293" title="GitHub Issue dosbox-staging/dosbox-staging #3293">#3293</a>)</li>
@@ -3234,9 +3257,10 @@ IBM on CD-ROMs, bulletin boards, and FTP sites.</p>
 </details>
 <h2 id="localisation">Localisation<a class="headerlink" href="#localisation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Update Italian, Polish, Portugese, Spanish translations.</li>
+<li>Update Italian, Polish, Portugese, and Spanish translations.</li>
 <li>Use uncompressed CPI code page files instead of the compressed
-  FreeDOS-specific CPX format.</li>
+  FreeDOS-specific CPX format. This improves code page switching
+  performance, which was rather slow with low <code>cpu_cycles</code> settings.</li>
 <li>Ensure all platform-specific translatable strings are visible to the
   translators.</li>
 </ul>
