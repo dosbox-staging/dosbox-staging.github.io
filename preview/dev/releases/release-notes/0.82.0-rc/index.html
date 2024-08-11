@@ -2547,8 +2547,10 @@ the distorted HUD issue in the 3dfx version of <strong>Archimedean Dynasty</stro
 <p>Some audio devices, such as the MT-32 and FluidSynth, were already running in
 their own threads. We&rsquo;ve taken this to the next level, and now the DOSBox
 mixer itself has got its own dedicated thread, too. This greatly reduces and
-often completely eliminates audio stuttering and glitches. The improvement
-is especially noticeable with the MT-32, FluidSynth, the OPL synth, and CD Audio.</p>
+often completely eliminates audio stuttering and glitches. The improvement is
+especially noticeable in games that use the Roland MT-32 or FluidSynth for
+MIDI music, the AdLib/OPL synth, the IBM Music Feature Card (IMFC), or Red
+Book CD Audio.</p>
 <p>For example, now you should get zero glitches in the intro of <strong>Eric the
 Unready</strong> on the MT-32 when the game repeatedly switches between 320&times;200
 and 640&times;480 VGA modes.</p>
@@ -2814,6 +2816,11 @@ games:</p>
 <p>Fix no CD Audio issue on Windows if using a USB CD drive (SATA
   drives worked fine).</p>
 </li>
+<li>
+<p>The strength of the <code>tiny</code> reverb preset has been reduced by 25% as it
+  sounded too strong; now it simulates the natural reverberation of a domestic
+  room better.</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of sound-related changes</summary>
@@ -2831,10 +2838,12 @@ games:</p>
 <li>Fix the GUS reset register&rsquo;s startup behavior (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3755" title="GitHub Issue dosbox-staging/dosbox-staging #3755">#3755</a>)</li>
 <li>Further mixer fixes and improvements mega PR <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/2" title="GitHub Issue dosbox-staging/dosbox-staging #2">#2</a> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3756" title="GitHub Issue dosbox-staging/dosbox-staging #3756">#3756</a>)</li>
 <li>Improve <code>sbtype</code> and <code>oplmode</code> descriptions &amp; clean up <code>sblaster.cpp</code> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3566" title="GitHub Issue dosbox-staging/dosbox-staging #3566">#3566</a>)</li>
+<li>Improve tiny reverb preset for small-speaker emulation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3867" title="GitHub Issue dosbox-staging/dosbox-staging #3867">#3867</a>)</li>
 <li>Initialise the OPL operators per the AdLib v1.51 driver (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3772" title="GitHub Issue dosbox-staging/dosbox-staging #3772">#3772</a>)</li>
 <li>Make the <code>impulse</code> PC speaker model the default (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3851" title="GitHub Issue dosbox-staging/dosbox-staging #3851">#3851</a>)</li>
 <li>Map &lsquo;Capture MIDI action&rsquo; to Ctrl+Alt+F6 (Cmd+Opt+F6) by default (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3714" title="GitHub Issue dosbox-staging/dosbox-staging #3714">#3714</a>)</li>
 <li>Mirror the Adlib command port (388h) in the GUS (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3763" title="GitHub Issue dosbox-staging/dosbox-staging #3763">#3763</a>)</li>
+<li>Move mixer to a seperate thread (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3848" title="GitHub Issue dosbox-staging/dosbox-staging #3848">#3848</a>)</li>
 <li>Rework physical CDROM interface (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3591" title="GitHub Issue dosbox-staging/dosbox-staging #3591">#3591</a>)</li>
 <li>Show the mixer who&rsquo;s boss 😎 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3650" title="GitHub Issue dosbox-staging/dosbox-staging #3650">#3650</a>)</li>
 <li>Sync Nuked-OPL3 with upstream (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3818" title="GitHub Issue dosbox-staging/dosbox-staging #3818">#3818</a>)</li>
@@ -3251,6 +3260,7 @@ GitHub CI workflow (requires a GitHub account).</p>
 <li>Fix fs_utils_tests for macOS and enable test runs on macOS CI (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3622" title="GitHub Issue dosbox-staging/dosbox-staging #3622">#3622</a>)</li>
 <li>Fix msys2 compilation error with cdrom_win32.cpp (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3676" title="GitHub Issue dosbox-staging/dosbox-staging #3676">#3676</a>)</li>
 <li>Introduce unittests for the Value class (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3369" title="GitHub Issue dosbox-staging/dosbox-staging #3369">#3369</a>)</li>
+<li>Minor fix to x87 64-bit memcpy (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3866" title="GitHub Issue dosbox-staging/dosbox-staging #3866">#3866</a>)</li>
 <li>Remove hard-coded version string from MSVC CI (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3736" title="GitHub Issue dosbox-staging/dosbox-staging #3736">#3736</a>)</li>
 <li>Upgrade deprecated Node.js 16 GitHub actions to latest (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3457" title="GitHub Issue dosbox-staging/dosbox-staging #3457">#3457</a>)</li>
 <li>website: Add NixOS install instructions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3479" title="GitHub Issue dosbox-staging/dosbox-staging #3479">#3479</a>)</li>
