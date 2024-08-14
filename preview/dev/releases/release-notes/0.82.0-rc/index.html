@@ -2942,10 +2942,11 @@ has been removed).</p>
 <li>Fix broken shell_history_file config option (std::weak_ptr version) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3664" title="GitHub Issue dosbox-staging/dosbox-staging #3664">#3664</a>)</li>
 <li>Fix improper handling of some characters in shell history (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3791" title="GitHub Issue dosbox-staging/dosbox-staging #3791">#3791</a>)</li>
 <li>Fix shell history creation regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3485" title="GitHub Issue dosbox-staging/dosbox-staging #3485">#3485</a>)</li>
+<li>Fix shell redirection for appending to the end of a file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3873" title="GitHub Issue dosbox-staging/dosbox-staging #3873">#3873</a>)</li>
 <li>Implement File Locking (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3687" title="GitHub Issue dosbox-staging/dosbox-staging #3687">#3687</a>)</li>
 <li>Improve redirection handling in the DOS shell (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3838" title="GitHub Issue dosbox-staging/dosbox-staging #3838">#3838</a>)</li>
 <li>Keep file handle instead of entry in FileReader (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3528" title="GitHub Issue dosbox-staging/dosbox-staging #3528">#3528</a>)</li>
-<li><code>MODE</code> command fixes &amp; improvements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3853" title="GitHub Issue dosbox-staging/dosbox-staging #3853">#3853</a>)</li>
+<li>MODE command fixes &amp; improvements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3853" title="GitHub Issue dosbox-staging/dosbox-staging #3853">#3853</a>)</li>
 <li>Move System File Table memory location (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3680" title="GitHub Issue dosbox-staging/dosbox-staging #3680">#3680</a>)</li>
 <li>Move environment functions to psp (+ other small changes) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3093" title="GitHub Issue dosbox-staging/dosbox-staging #3093">#3093</a>)</li>
 <li>Replace use of <code>stat</code> in imgmount (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3465" title="GitHub Issue dosbox-staging/dosbox-staging #3465">#3465</a>)</li>
@@ -3215,6 +3216,7 @@ GitHub CI workflow (requires a GitHub account).</p>
 <li>Cleanup some missed C++ header conversions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3412" title="GitHub Issue dosbox-staging/dosbox-staging #3412">#3412</a>)</li>
 <li>Create new cross compiler docker images and adjust workflows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3678" title="GitHub Issue dosbox-staging/dosbox-staging #3678">#3678</a>)</li>
 <li>Do not auto-run DOSBox Staging after installing it on Windows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3583" title="GitHub Issue dosbox-staging/dosbox-staging #3583">#3583</a>)</li>
+<li>DYN_LOG: Fix formatting type mismatch (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3869" title="GitHub Issue dosbox-staging/dosbox-staging #3869">#3869</a>)</li>
 <li>Eliminate excessive repeat heap calls during normal runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3812" title="GitHub Issue dosbox-staging/dosbox-staging #3812">#3812</a>)</li>
 <li>Fix CDROM_Interface pointer ownership issue (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3634" title="GitHub Issue dosbox-staging/dosbox-staging #3634">#3634</a>)</li>
 <li>Fix MSVC CI builds (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3474" title="GitHub Issue dosbox-staging/dosbox-staging #3474">#3474</a>)</li>
@@ -3268,7 +3270,7 @@ GitHub CI workflow (requires a GitHub account).</p>
 </details>
 <h2 id="localisation">Localisation<a class="headerlink" href="#localisation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Update Italian, Polish, Portugese, and Spanish translations.</li>
+<li>Update Dutch, Italian, Polish, Portugese, and Spanish translations.</li>
 <li>Use uncompressed CPI code page files instead of the compressed
   FreeDOS-specific CPX format. This improves code page switching
   performance, which was rather slow with low <code>cpu_cycles</code> settings.</li>
@@ -3280,6 +3282,9 @@ GitHub CI workflow (requires a GitHub account).</p>
 <ul>
 <li>Avoid false positive warnings in translations (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3610" title="GitHub Issue dosbox-staging/dosbox-staging #3610">#3610</a>)</li>
 <li>Translations differ between platforms (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3579" title="GitHub Issue dosbox-staging/dosbox-staging #3579">#3579</a>)</li>
+<li>Update Dutch (nl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3874" title="GitHub Issue dosbox-staging/dosbox-staging #3874">#3874</a>)</li>
+<li>Update Italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3871" title="GitHub Issue dosbox-staging/dosbox-staging #3871">#3871</a>)</li>
+<li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3870" title="GitHub Issue dosbox-staging/dosbox-staging #3870">#3870</a>)</li>
 <li>Update Polish (pl) translation, minor help string fix (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3850" title="GitHub Issue dosbox-staging/dosbox-staging #3850">#3850</a>)</li>
 <li>Update Polish (pl) translation, minor string fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3684" title="GitHub Issue dosbox-staging/dosbox-staging #3684">#3684</a>)</li>
 <li>Update Portuguese Translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3609" title="GitHub Issue dosbox-staging/dosbox-staging #3609">#3609</a>)</li>
@@ -3318,6 +3323,7 @@ project going.</p>
 <li>LowLevelMahn</li>
 <li>MeAreJeenius</li>
 <li>rderooy</li>
+<li>Ringdingcoder</li>
 <li>shermp</li>
 <li>stackErr-NameNotResolved</li>
 <li>strikersix23</li>
