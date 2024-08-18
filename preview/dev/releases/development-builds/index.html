@@ -1728,9 +1728,9 @@ function set_ci_status(workflow_file, os_name, description) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  set_ci_status("linux.yml",        "linux",   "Linux")
-  set_ci_status("macos.yml",        "macos",   "macOS ¹")
-  set_ci_status("windows-msvc.yml", "windows", "Windows ²")
+  set_ci_status("linux.yml",        "linux",   "Linux ¹")
+  set_ci_status("macos.yml",        "macos",   "macOS ²")
+  set_ci_status("windows-msvc.yml", "windows", "Windows ³")
 })
 
 </script>
@@ -1741,8 +1741,8 @@ document.addEventListener("DOMContentLoaded", () => {
 showcasing new features; if you want to download a stable build, head on
 to the <a href="../linux/">Linux</a>, <a href="../windows/">Windows</a>, or <a href="../macos/">macOS</a>
 download pages.</p>
-<p>Build artifacts are hosted on GitHub; you need to be logged in to download
-them.</p>
+<p>Build artifacts are hosted on GitHub; you need to be logged in to GitHub
+to download them.</p>
 </div>
 <div class="compact">
 <table>
@@ -1787,8 +1787,11 @@ them.</p>
 </table>
 </div>
 
-<p>¹ macOS builds include Intel, Apple silicon, and universal binaries.</p>
-<p>² Windows build is a 64-bit portable ZIP package.</p>
+<p>¹ We provide a statically linked x86_64 Linux package (only depends
+on C/C++, ALSA, and OpenGL system libraries).</p>
+<p>² macOS builds include Intel, Apple silicon, and universal binary package.</p>
+<p>³ Windows builds include x86_64 installer and portable ZIP packages, and the
+experimental ARM64 portable ZIP package.</p>
 <h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">&para;</a></h2>
 <p>Testing new features might require a manual reset of the configuration
 file.  DOSBox Staging builds use a configuration file named
