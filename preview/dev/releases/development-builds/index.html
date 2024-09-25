@@ -518,6 +518,8 @@
       
         
       
+        
+      
     
     
       
@@ -548,6 +550,27 @@
             Release notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/0.82.0-rc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    0.82.0-RC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1743,7 +1766,7 @@ function set_ci_status(workflow_file, os_name, description) {
 document.addEventListener("DOMContentLoaded", () => {
   set_ci_status("windows-msvc.yml", "windows", "Windows ¹")
   set_ci_status("macos.yml",        "macos",   "macOS ²")
-  set_ci_status("linux.yml",        "linux",   "Linux")
+  set_ci_status("linux.yml",        "linux",   "Linux ³")
 })
 
 </script>
@@ -1754,8 +1777,8 @@ document.addEventListener("DOMContentLoaded", () => {
 showcasing new features; if you want to download a stable build, head on
 to the <a href="../windows/">Windows</a>, <a href="../macos/">macOS</a>, or <a href="../linux/">Linux</a>
 download pages.</p>
-<p>Build artifacts are hosted on GitHub; you need to be logged in to download
-them.</p>
+<p>Build artifacts are hosted on GitHub; you need to be logged in to GitHub
+to download them.</p>
 </div>
 <div class="compact">
 <table>
@@ -1800,8 +1823,11 @@ them.</p>
 </table>
 </div>
 
-<p>¹ Windows build is a 64-bit portable ZIP package.</p>
-<p>² macOS builds include Intel, Apple silicon, and universal binaries.</p>
+<p>¹ Windows builds include x86_64 installer and portable ZIP packages, and the
+experimental ARM64 portable ZIP package.</p>
+<p>² macOS builds include Intel, Apple silicon, and universal binary package.</p>
+<p>³ We provide a statically linked x86_64 Linux package (only depends
+on C/C++, ALSA, and OpenGL system libraries).</p>
 <h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">&para;</a></h2>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
 <p>Windows executables in snapshot packages are not signed, therefore Windows 10
