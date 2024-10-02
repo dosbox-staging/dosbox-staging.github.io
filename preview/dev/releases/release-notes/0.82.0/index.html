@@ -2512,6 +2512,10 @@ added for those hell-bent on playing games with a fake high-resolution look:</p>
   improved&mdash;at the cost of higher overall CPU usage. Set <code>voodoo_threads</code> to
   3 or less to conserve battery power on a laptop.</p>
 </li>
+<li>
+<p>Fixed a bug where the wrong shader could be picked when starting a Voodoo
+  game with the adaptive CRT shaders enabled.</p>
+</li>
 </ul>
 <h3 id="other-graphics-improvements">Other graphics improvements<a class="headerlink" href="#other-graphics-improvements" title="Permanent link">&para;</a></h3>
 <ul>
@@ -2546,6 +2550,7 @@ added for those hell-bent on playing games with a fake high-resolution look:</p>
 <li>Add <code>use_nearest_texture_filter</code> shader pragma and <code>nearest</code> shader (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3852" title="GitHub Issue dosbox-staging/dosbox-staging #3852">#3852</a>)</li>
 <li>Add xBR upscaler shaders (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3855" title="GitHub Issue dosbox-staging/dosbox-staging #3855">#3855</a>)</li>
 <li>Address additional feedback on Voodoo thread count PR <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3935" title="GitHub Issue dosbox-staging/dosbox-staging #3935">#3935</a> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3939" title="GitHub Issue dosbox-staging/dosbox-staging #3939">#3939</a>)</li>
+<li>Auto switch shader when starting a Voodoo game (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3968" title="GitHub Issue dosbox-staging/dosbox-staging #3968">#3968</a>)</li>
 <li>Check if hardware cursor is actually being enabled or disabled before setting VGA_LineDraw (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3725" title="GitHub Issue dosbox-staging/dosbox-staging #3725">#3725</a>)</li>
 <li>Comment out voodoo logging for local blending API call (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3907" title="GitHub Issue dosbox-staging/dosbox-staging #3907">#3907</a>)</li>
 <li>Fix Windows 98 S3 driver regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3946" title="GitHub Issue dosbox-staging/dosbox-staging #3946">#3946</a>)</li>
