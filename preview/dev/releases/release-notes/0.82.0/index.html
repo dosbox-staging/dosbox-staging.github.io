@@ -788,6 +788,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gravis-ultrasound-fixes-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gravis Ultrasound fixes &amp; improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#further-mixer-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       Further mixer improvements
@@ -2032,6 +2041,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#gravis-ultrasound-fixes-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gravis Ultrasound fixes &amp; improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#further-mixer-improvements" class="md-nav__link">
     <span class="md-ellipsis">
       Further mixer improvements
@@ -2395,6 +2413,10 @@ update your configs accordingly.</p>
   after the game auto-detected it.</p>
 </li>
 <li>
+<p>Fix regression that prevented audio playing in <strong>HELL: A Cyberpunk Thriller</strong>
+  on the Gravis Ultrasound.</p>
+</li>
+<li>
 <p>Fix <strong>Dunkle Schatten 2</strong> freezing after startup.</p>
 </li>
 <li>
@@ -2457,6 +2479,7 @@ update your configs accordingly.</p>
 <li>Integrate MMX emulation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3426" title="GitHub Issue dosbox-staging/dosbox-staging #3426">#3426</a>)</li>
 <li>Move System File Table memory location (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3680" title="GitHub Issue dosbox-staging/dosbox-staging #3680">#3680</a>)</li>
 <li>Prevent JEMM memory manager from detecting the VMware interface (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3925" title="GitHub Issue dosbox-staging/dosbox-staging #3925">#3925</a>)</li>
+<li>Simplify the GUS reset register logic and fix DMA IRQ handling (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3977" title="GitHub Issue dosbox-staging/dosbox-staging #3977">#3977</a>)</li>
 <li>Use inline memory routines for MMX (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3847" title="GitHub Issue dosbox-staging/dosbox-staging #3847">#3847</a>)</li>
 <li>Use linear 128 KB video memory pages for VESA modes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3767" title="GitHub Issue dosbox-staging/dosbox-staging #3767">#3767</a>)</li>
 <li>Various MT-32 improvements &amp; fix Bumpy&rsquo;s Arcade Fantasy intro tune (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3729" title="GitHub Issue dosbox-staging/dosbox-staging #3729">#3729</a>)</li>
@@ -2781,6 +2804,31 @@ games:</p>
 <li>Transantartica</li>
 </ul>
 </div>
+<h3 id="gravis-ultrasound-fixes-improvements">Gravis Ultrasound fixes &amp; improvements<a class="headerlink" href="#gravis-ultrasound-fixes-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fixed a regression that prevented the Gravis Ultrasound from playing audio
+  in <strong>HELL: A Cyberpunk Thriller</strong> and the demo <a href="https://www.pouet.net/prod.php?which=12690">Atlantis by Riot</a>.</p>
+</li>
+<li>
+<p>The Gravis UltraSound and Sound Blaster can coexist now when you run
+  <code>ULTRINIT.EXE</code>. This way, you can use the SB for digital sound effects and
+  GUS for MIDI music via <code>ULTRAMID.EXE</code> or <code>MEGAEM.EXE</code> in supported games.</p>
+</li>
+<li>
+<p>The Gravis Ultrasound&rsquo;s configuration options have been revised to reflect
+  the actual options available on real hardware:</p>
+<ul>
+<li><code>gusbase</code> — Base addresses now range from 210 through 260</li>
+<li><code>gusirq</code> — IRQs 2 and 15 have been added</li>
+<li><code>gusdma</code> — DMA 0 has been dropped (this setting is only useful on real hardware
+  to park/disable the GUS)</li>
+</ul>
+</li>
+<li>
+<p>Fix crash in Fasttracker II when GUS is configured to use IRQ 7.</p>
+</li>
+</ul>
 <h3 id="further-mixer-improvements">Further mixer improvements<a class="headerlink" href="#further-mixer-improvements" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -2808,24 +2856,6 @@ games:</p>
 </ul>
 <h3 id="other-audio-improvements">Other audio improvements<a class="headerlink" href="#other-audio-improvements" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>The Gravis UltraSound and Sound Blaster can coexist now when you run
-  <code>ULTRINIT.EXE</code>. This way, you can use the SB for digital sound effects and
-  GUS for MIDI music via <code>ULTRAMID.EXE</code> or <code>MEGAEM.EXE</code> in supported games.</p>
-</li>
-<li>
-<p>The Gravis Ultrasound&rsquo;s configuration options have been revised to reflect
-  the actual options available on real hardware:</p>
-<ul>
-<li><code>gusbase</code> — Base addresses now range from 210 through 260</li>
-<li><code>gusirq</code> — IRQs 2 and 15 have been added</li>
-<li><code>gusdma</code> — DMA 0 has been dropped (this setting is only useful on real hardware
-  to park/disable the GUS)</li>
-</ul>
-</li>
-<li>
-<p>Fix crash in Fasttracker II when GUS is configured to use IRQ 7.</p>
-</li>
 <li>
 <p>Turn off the &ldquo;cable delay&rdquo; emulation MIDI for the MT-32. This fixes the
   intro tune in <strong>Bumpy&rsquo;s Arcade Fantasy</strong>, and probably other game startup
@@ -3296,12 +3326,13 @@ builds yet.</p>
 <li>Do not auto-run DOSBox Staging after installing it on Windows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3583" title="GitHub Issue dosbox-staging/dosbox-staging #3583">#3583</a>)</li>
 <li>Eliminate excessive repeat heap calls during normal runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3812" title="GitHub Issue dosbox-staging/dosbox-staging #3812">#3812</a>)</li>
 <li>Enable SDL atomic subsystem in Meson wrap (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3934" title="GitHub Issue dosbox-staging/dosbox-staging #3934">#3934</a>)</li>
-<li>Fix &lsquo;launchable&rsquo; in the Flathub metainfo.xml file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3933" title="GitHub Issue dosbox-staging/dosbox-staging #3933">#3933</a>)</li>
+<li>Fix ARM64 Windows builds (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3973" title="GitHub Issue dosbox-staging/dosbox-staging #3973">#3973</a>)</li>
 <li>Fix CDROM_Interface pointer ownership issue (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3634" title="GitHub Issue dosbox-staging/dosbox-staging #3634">#3634</a>)</li>
 <li>Fix MSVC CI builds (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3474" title="GitHub Issue dosbox-staging/dosbox-staging #3474">#3474</a>)</li>
 <li>Fix compilation warnings reported by g++ 14.1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3783" title="GitHub Issue dosbox-staging/dosbox-staging #3783">#3783</a>)</li>
 <li>Fix data race in the mapper when using <code>autotype</code> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3928" title="GitHub Issue dosbox-staging/dosbox-staging #3928">#3928</a>)</li>
 <li>Fix issue with replace() (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3533" title="GitHub Issue dosbox-staging/dosbox-staging #3533">#3533</a>)</li>
+<li>Fix &lsquo;launchable&rsquo; in the Flathub metainfo.xml file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3933" title="GitHub Issue dosbox-staging/dosbox-staging #3933">#3933</a>)</li>
 <li>Fix macOS CI workflow (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3505" title="GitHub Issue dosbox-staging/dosbox-staging #3505">#3505</a>)</li>
 <li>Fix sed creating backup files ending with &ldquo;-e&rdquo; in macOS bundle (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3406" title="GitHub Issue dosbox-staging/dosbox-staging #3406">#3406</a>)</li>
 <li>Fix some PVS warnings (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3484" title="GitHub Issue dosbox-staging/dosbox-staging #3484">#3484</a>)</li>
@@ -3355,7 +3386,7 @@ builds yet.</p>
 </details>
 <h2 id="localisation">Localisation<a class="headerlink" href="#localisation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Update Dutch, Italian, Polish, Portugese, and Spanish translations.</li>
+<li>Update Dutch, French, Italian, Polish, Portugese, and Spanish translations.</li>
 <li>Use uncompressed CPI code page files instead of the compressed
   FreeDOS-specific CPX format. This improves code page switching
   performance, which was rather slow with low <code>cpu_cycles</code> settings.</li>
@@ -3370,6 +3401,7 @@ builds yet.</p>
 <li>Ensure logs are UTF-8 on Windows, improve deprecated config warning log (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3893" title="GitHub Issue dosbox-staging/dosbox-staging #3893">#3893</a>)</li>
 <li>Fix Dutch (nl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3967" title="GitHub Issue dosbox-staging/dosbox-staging #3967">#3967</a>)</li>
 <li>Further refinements to the Italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3880" title="GitHub Issue dosbox-staging/dosbox-staging #3880">#3880</a>)</li>
+<li>Get rid of TAB (0x09) characters and convert ANSI escape sequences to tags in French (fr) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3970" title="GitHub Issue dosbox-staging/dosbox-staging #3970">#3970</a>)</li>
 <li>Improve italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3877" title="GitHub Issue dosbox-staging/dosbox-staging #3877">#3877</a>)</li>
 <li>Make the titlebar cycles display translatable again (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3890" title="GitHub Issue dosbox-staging/dosbox-staging #3890">#3890</a>)</li>
 <li>Translation (format string) fixes across several languages (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3964" title="GitHub Issue dosbox-staging/dosbox-staging #3964">#3964</a>)</li>
