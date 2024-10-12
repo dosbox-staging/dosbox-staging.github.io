@@ -2585,6 +2585,7 @@ added for those hell-bent on playing games with a fake high-resolution look:</p>
 <li>Kill <code>openglnb</code> with fire 🔥🔥🔥🔥🔥 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3672" title="GitHub Issue dosbox-staging/dosbox-staging #3672">#3672</a>)</li>
 <li>Minor <code>vga_draw.cpp</code> refactor (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3734" title="GitHub Issue dosbox-staging/dosbox-staging #3734">#3734</a>)</li>
 <li>Presentation mode, host rate &amp; vsync cleanup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3824" title="GitHub Issue dosbox-staging/dosbox-staging #3824">#3824</a>)</li>
+<li>Remove obsolete Intel iGPU workaround (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3978" title="GitHub Issue dosbox-staging/dosbox-staging #3978">#3978</a>)</li>
 <li>Use atomic operations and busy wait for Voodoo threads (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3952" title="GitHub Issue dosbox-staging/dosbox-staging #3952">#3952</a>)</li>
 <li>Use linear 128 KB video memory pages for VESA modes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3767" title="GitHub Issue dosbox-staging/dosbox-staging #3767">#3767</a>)</li>
 </ul>
@@ -3245,6 +3246,10 @@ builds yet.</p>
   crashing it. The reset message has been improved and now includes a countdown
   counter.</p>
 </li>
+<li>
+<p>Fixed a modem emulation bug where the user could dial themselves (their own
+  DOSBox instances), resulting in weird behaviour in games.</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of miscellaneous enhancements</summary>
@@ -3272,7 +3277,9 @@ builds yet.</p>
 <li>Add DOS Files to shutdown step to avoid a crash when shutting down (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3801" title="GitHub Issue dosbox-staging/dosbox-staging #3801">#3801</a>)</li>
 <li>Allow running the <code>INTRO</code> built-in from subshells (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3665" title="GitHub Issue dosbox-staging/dosbox-staging #3665">#3665</a>)</li>
 <li>Avoid unnecessary new-lines (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3617" title="GitHub Issue dosbox-staging/dosbox-staging #3617">#3617</a>)</li>
+<li>Close modem server socket before dialing (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3979" title="GitHub Issue dosbox-staging/dosbox-staging #3979">#3979</a>)</li>
 <li><code>CONFIG -h</code> should only list visible setting values (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3753" title="GitHub Issue dosbox-staging/dosbox-staging #3753">#3753</a>)</li>
+<li>Discard incoming modem traffic from waiting clients (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3983" title="GitHub Issue dosbox-staging/dosbox-staging #3983">#3983</a>)</li>
 <li>Fix division regression by resetting flag type (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3795" title="GitHub Issue dosbox-staging/dosbox-staging #3795">#3795</a>)</li>
 <li>Fix &lsquo;output&rsquo; and other &lsquo;sdl&rsquo; settings not changeable in runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3571" title="GitHub Issue dosbox-staging/dosbox-staging #3571">#3571</a>)</li>
 <li>Fix IPX ping value display (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3418" title="GitHub Issue dosbox-staging/dosbox-staging #3418">#3418</a>)</li>
@@ -3480,6 +3487,7 @@ project going.</p>
 <li>Florent Wagner</li>
 <li>Hannu Hartikainen</li>
 <li>Hugo Lucorcio</li>
+<li>marvin-tr-81</li>
 <li>Robin Mattheussen</li>
 </ul>
 </div>
