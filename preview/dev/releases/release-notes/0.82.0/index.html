@@ -632,18 +632,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upgrading-your-primary-configuration" class="md-nav__link">
+  <a href="#the-easy-way" class="md-nav__link">
     <span class="md-ellipsis">
-      Upgrading your primary configuration
+      The easy way
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#after-upgrading" class="md-nav__link">
+  <a href="#the-correct-way" class="md-nav__link">
     <span class="md-ellipsis">
-      After upgrading
+      The correct way
     </span>
   </a>
   
@@ -1885,18 +1885,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upgrading-your-primary-configuration" class="md-nav__link">
+  <a href="#the-easy-way" class="md-nav__link">
     <span class="md-ellipsis">
-      Upgrading your primary configuration
+      The easy way
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#after-upgrading" class="md-nav__link">
+  <a href="#the-correct-way" class="md-nav__link">
     <span class="md-ellipsis">
-      After upgrading
+      The correct way
     </span>
   </a>
   
@@ -2313,7 +2313,7 @@
 
 
 <h1 id="0820-release-notes">0.82.0 release notes<a class="headerlink" href="#0820-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong> 2024-10-20</p>
+<p><strong>Release date:</strong> 2024-10-27</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>Just six short months after our monstre <a href="../0.81.0/">0.81.0 release</a>, we&rsquo;re back with
 another big one that adds</p>
@@ -2321,7 +2321,7 @@ another big one that adds</p>
 <ul>
 <li>Pentium MMX emulation,</li>
 <li>ESS Enhanced FM Audio,</li>
-<li>numerous audio related enhancements,</li>
+<li>numerous audio-related enhancements,</li>
 <li>a large number of game compatibility fixes,</li>
 <li>improved Windows 3.1x compatibility,</li>
 <li>supercharged 3dfx Voodoo emulation performance,</li>
@@ -2331,8 +2331,7 @@ another big one that adds</p>
 <p>and a lot more!</p>
 <p>Read on to get the full story! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 <h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h2>
-<p>Start by downloading the latest version, then make sure to upgrade your
-primary configuration as described below.</p>
+<p>Start by downloading the latest version:</p>
 <div class="compact">
 <ul>
 <li><a href="../../windows/">Windows</a></li>
@@ -2340,17 +2339,14 @@ primary configuration as described below.</p>
 <li><a href="../../linux/">Linux</a></li>
 </ul>
 </div>
-<p>For those upgrading from an earlier DOSBox Staging version, please follow the
+<p>If upgrading from an earlier DOSBox Staging version, please follow the
 <a href="#how-to-upgrade">upgrade instructions</a> below.</p>
-<p>First-time users and people migrating from other DOSBox variants should start
-by reading the <a href="../../../getting-started/">Getting started guide</a>.</p>
+<p>If you&rsquo;re a first-time user (i.e., you&rsquo;ve never used DOSBox Staging before, or
+you&rsquo;re migrating from some other DOSBox variant), please follow the <a href="../../../getting-started/">Getting
+started guide</a>.</p>
 <h2 id="how-to-upgrade">How to upgrade<a class="headerlink" href="#how-to-upgrade" title="Permanent link">&para;</a></h2>
-<h3 id="upgrading-your-primary-configuration">Upgrading your primary configuration<a class="headerlink" href="#upgrading-your-primary-configuration" title="Permanent link">&para;</a></h3>
-<p>Since config settings might be renamed, altered, or deprecated between
-releases, it&rsquo;s best to let DOSBox Staging write the new default primary config
-on the first launch, then reapply your old settings manually.</p>
-<p>Start by backing up your existing primary config. This is where to find
-it on each platform:</p>
+<p>Start by backing up your existing primary config. These are the standard
+non-portable mode locations for each platform:</p>
 <div class="compact">
 <table>
 <thead>
@@ -2375,29 +2371,28 @@ it on each platform:</p>
 </tbody>
 </table>
 </div>
-<p>You can also execute DOSBox Staging with the <code>--printconf</code> option to have the
-location of the primary config printed to your console.</p>
-<p>After backing up the existing primary config, simply start the new version&mdash;a
-new <code>dosbox-staging.conf</code> will be written containing the new defaults and
-updated setting descriptions.</p>
-<div class="admonition note">
-<p class="admonition-title">Portable mode notes</p>
 <p>In portable mode, <code>dosbox-staging.conf</code> resides in the same folder as your
-DOSBox Staging executable. The migration steps for portable mode users are
-as follows:</p>
-<ul>
-<li>Unpack the new version into a <em>new</em> folder (this is important).</li>
-<li>Create a new <em>empty</em> <code>dosbox-staging.conf</code> file in the new folder to
-    enable portable mode.</li>
-<li>Launch the new version.</li>
-</ul>
-<p>DOSBox Staging will write the new defaults to the empty
-<code>dosbox-staging.conf</code> file. After this, you carry over your settings from
-the old primary config manually.</p>
-</div>
-<h3 id="after-upgrading">After upgrading<a class="headerlink" href="#after-upgrading" title="Permanent link">&para;</a></h3>
-<p>Look for deprecation warnings in the logs (in yellow or orange colour) and
-update your configs accordingly.</p>
+DOSBox Staging executable. </p>
+<p>Alternatively, run DOSBox Staging with the <code>--printconf</code> option, which will
+print the location of the primary config to your console.</p>
+<h3 id="the-easy-way">The easy way<a class="headerlink" href="#the-easy-way" title="Permanent link">&para;</a></h3>
+<p>Once you&rsquo;ve backed up your primary config, start the new version, then run
+<code>config -wcd</code> to update the primary config. That&rsquo;s it!</p>
+<p>This method will work 90% of the time, but certain setting changes cannot be
+automatically migrated. Look for deprecation warnings in the
+logs (in yellow or orange colour), then compare your current and old configs
+and update your settings accordingly.</p>
+<p>Check out the new config descriptions for guidance, and also make sure to read
+the release notes carefully&mdash;everything you need to know about upgrading your
+settings is described there.</p>
+<h3 id="the-correct-way">The correct way<a class="headerlink" href="#the-correct-way" title="Permanent link">&para;</a></h3>
+<p>The 100% correct (but more cumbersome) way is to let DOSBox Staging write the
+new default primary config on the first launch, then reapply your old settings
+manually. This is very simple: after backing up your existing primary
+config, delete it, then start the new version.</p>
+<p>For portable installations, put an <em>empty</em> <code>dosbox-staging.conf</code> file in the
+installation folder to enable portable mode (otherwise DOSBox Staging would
+create the new default primary config in the standard non-portable location).</p>
 <h2 id="game-compatibility-fixes">Game compatibility fixes<a class="headerlink" href="#game-compatibility-fixes" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
@@ -2498,9 +2493,8 @@ interpolation with uneven pixels when not setting any shader explicitly. This
 was a relic from the past from pre-shader times when you had to select between
 two bad options when aspect-ratio correction was enabled: blurry output (with
 bilinear filtering) or sharp output at the expense of uneven pixels (with
-nearest-neighbour, or &ldquo;no bilinear&rdquo; interpolation). The much better current
-solution in DOSBox Staging if you want the &ldquo;sharp pixel&rdquo; look is to use the
-<code>sharp</code> shader.</p>
+nearest-neighbour, or &ldquo;no bilinear&rdquo; interpolation). If you want the &ldquo;sharp
+pixel&rdquo; look, use the <code>sharp</code> shader&mdash;this is a much better option.</p>
 <p>If you <em>really</em> want to, you can still use nearest-neighbour interpolation
 with the new <code>nearest</code> shader. But you&rsquo;ll get far better results with
 <code>sharp</code>, especially on 1080p displays.</p>
@@ -2525,7 +2519,7 @@ added for those hell-bent on playing games with a fake high-resolution look:</p>
 </li>
 <li>
 <p>The <code>voodoo_multithreading</code> confing setting (which previously toggled three
-  extra worker threads), has been replaced with <code>voodoo_threads</code> which uses up
+  extra worker threads) has been replaced with <code>voodoo_threads</code>, which uses up
   to eight threads based on the number of available physical CPU cores. This
   is enabled by default (<code>auto</code> setting), but you can override it by setting
   the number of threads manually from 1 to 16.</p>
@@ -2894,12 +2888,18 @@ games:</p>
   <code>pavucontrol</code>, or the KDE volume applet now show &ldquo;DOSBox Staging&rdquo; as the
   application&rsquo;s name instead of the generic &ldquo;SDL Application&rdquo;.</p>
 </li>
+<li>
+<p>Auto-detecting valid MT-32 ROMs is now a lot faster when using <code>mixer
+  /listmidi</code> or changing the MT-32 model at runtime. The improvement is
+  especially noticeable on networked drives.</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of sound-related changes</summary>
 <ul>
 <li>Add a simple DC bias remover for the OPL output (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3310" title="GitHub Issue dosbox-staging/dosbox-staging #3310">#3310</a>)</li>
 <li>Add support for ESS mixer registers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3702" title="GitHub Issue dosbox-staging/dosbox-staging #3702">#3702</a>)</li>
+<li>Cache MT32 ROM records (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4002" title="GitHub Issue dosbox-staging/dosbox-staging #4002">#4002</a>)</li>
 <li>Decouple CMS and OPL emulations (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3559" title="GitHub Issue dosbox-staging/dosbox-staging #3559">#3559</a>)</li>
 <li>ESFM emulation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3614" title="GitHub Issue dosbox-staging/dosbox-staging #3614">#3614</a>)</li>
 <li>Fix CD audio support on physical USB drives on Windows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3840" title="GitHub Issue dosbox-staging/dosbox-staging #3840">#3840</a>)</li>
@@ -2908,6 +2908,7 @@ games:</p>
 <li>Fix Sound Blaster programmatic low-pass filter toggling behaviour (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3712" title="GitHub Issue dosbox-staging/dosbox-staging #3712">#3712</a>)</li>
 <li>Fix SoundBlaster DMA stuttering in The Rocketeer (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3915" title="GitHub Issue dosbox-staging/dosbox-staging #3915">#3915</a>)</li>
 <li>Fix data race on mixer volume change (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3923" title="GitHub Issue dosbox-staging/dosbox-staging #3923">#3923</a>)</li>
+<li>Fix deadlock on exit in GUS (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4001" title="GitHub Issue dosbox-staging/dosbox-staging #4001">#4001</a>)</li>
 <li>Fix decrementing of MPU-401 track and conductor counters (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3766" title="GitHub Issue dosbox-staging/dosbox-staging #3766">#3766</a>)</li>
 <li>Fix programmatic toggling of the Sound Blaster Pro 2 output filter (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3815" title="GitHub Issue dosbox-staging/dosbox-staging #3815">#3815</a>)</li>
 <li>Fix the GUS reset register&rsquo;s startup behavior (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3755" title="GitHub Issue dosbox-staging/dosbox-staging #3755">#3755</a>)</li>
@@ -2920,6 +2921,7 @@ games:</p>
 <li>Make the <code>impulse</code> PC speaker model the default (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3851" title="GitHub Issue dosbox-staging/dosbox-staging #3851">#3851</a>)</li>
 <li>Map &lsquo;Capture MIDI action&rsquo; to Ctrl+Alt+F6 (Cmd+Opt+F6) by default (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3714" title="GitHub Issue dosbox-staging/dosbox-staging #3714">#3714</a>)</li>
 <li>Mirror the Adlib command port (388h) in the GUS (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3763" title="GitHub Issue dosbox-staging/dosbox-staging #3763">#3763</a>)</li>
+<li>Move GUS rendering to main thread (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3999" title="GitHub Issue dosbox-staging/dosbox-staging #3999">#3999</a>)</li>
 <li>Move mixer to a seperate thread (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3848" title="GitHub Issue dosbox-staging/dosbox-staging #3848">#3848</a>)</li>
 <li>Rework physical CDROM interface (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3591" title="GitHub Issue dosbox-staging/dosbox-staging #3591">#3591</a>)</li>
 <li>Show the mixer who&rsquo;s boss 😎 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3650" title="GitHub Issue dosbox-staging/dosbox-staging #3650">#3650</a>)</li>
@@ -3287,6 +3289,7 @@ builds yet.</p>
 <li>Fix Windows 3.1 regression from SFT change (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3744" title="GitHub Issue dosbox-staging/dosbox-staging #3744">#3744</a>)</li>
 <li>Fix byte calculation overflow using pages per MB (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3942" title="GitHub Issue dosbox-staging/dosbox-staging #3942">#3942</a>)</li>
 <li>Fix file open error in ISO Drive (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3804" title="GitHub Issue dosbox-staging/dosbox-staging #3804">#3804</a>)</li>
+<li>Fix file time handling on Windows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3997" title="GitHub Issue dosbox-staging/dosbox-staging #3997">#3997</a>)</li>
 <li>Fix switch to dynamic core warning edge case (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3732" title="GitHub Issue dosbox-staging/dosbox-staging #3732">#3732</a>)</li>
 <li>Fix warning when using a high cycles value on a non-dynamic core (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3716" title="GitHub Issue dosbox-staging/dosbox-staging #3716">#3716</a>)</li>
 <li>Follow-up fix for Debian package on <code>main</code> push (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3930" title="GitHub Issue dosbox-staging/dosbox-staging #3930">#3930</a>)</li>
@@ -3302,6 +3305,7 @@ builds yet.</p>
 <li>Add warning about CMake support being experimental (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3790" title="GitHub Issue dosbox-staging/dosbox-staging #3790">#3790</a>)</li>
 <li>Clarify build instructions for low memory targets (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3658" title="GitHub Issue dosbox-staging/dosbox-staging #3658">#3658</a>)</li>
 <li>Create .clang-tidy (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3423" title="GitHub Issue dosbox-staging/dosbox-staging #3423">#3423</a>)</li>
+<li>Host release notes assets on GitHub <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4005" title="GitHub Issue dosbox-staging/dosbox-staging #4005">#4005</a> </li>
 <li>Improve the GUS config setting descriptions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3862" title="GitHub Issue dosbox-staging/dosbox-staging #3862">#3862</a>)</li>
 <li>Remove -usecd and -listcd MOUNT parameters from INTRO and the README (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3625" title="GitHub Issue dosbox-staging/dosbox-staging #3625">#3625</a>)</li>
 <li>Simple documentation fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3782" title="GitHub Issue dosbox-staging/dosbox-staging #3782">#3782</a>)</li>
@@ -3333,20 +3337,22 @@ builds yet.</p>
 <li>Do not auto-run DOSBox Staging after installing it on Windows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3583" title="GitHub Issue dosbox-staging/dosbox-staging #3583">#3583</a>)</li>
 <li>Eliminate excessive repeat heap calls during normal runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3812" title="GitHub Issue dosbox-staging/dosbox-staging #3812">#3812</a>)</li>
 <li>Enable SDL atomic subsystem in Meson wrap (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3934" title="GitHub Issue dosbox-staging/dosbox-staging #3934">#3934</a>)</li>
+<li>Fix &lsquo;launchable&rsquo; in the Flathub metainfo.xml file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3933" title="GitHub Issue dosbox-staging/dosbox-staging #3933">#3933</a>)</li>
 <li>Fix ARM64 Windows builds (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3973" title="GitHub Issue dosbox-staging/dosbox-staging #3973">#3973</a>)</li>
 <li>Fix CDROM_Interface pointer ownership issue (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3634" title="GitHub Issue dosbox-staging/dosbox-staging #3634">#3634</a>)</li>
 <li>Fix MSVC CI builds (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3474" title="GitHub Issue dosbox-staging/dosbox-staging #3474">#3474</a>)</li>
 <li>Fix compilation warnings reported by g++ 14.1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3783" title="GitHub Issue dosbox-staging/dosbox-staging #3783">#3783</a>)</li>
 <li>Fix data race in the mapper when using <code>autotype</code> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3928" title="GitHub Issue dosbox-staging/dosbox-staging #3928">#3928</a>)</li>
 <li>Fix issue with replace() (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3533" title="GitHub Issue dosbox-staging/dosbox-staging #3533">#3533</a>)</li>
-<li>Fix &lsquo;launchable&rsquo; in the Flathub metainfo.xml file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3933" title="GitHub Issue dosbox-staging/dosbox-staging #3933">#3933</a>)</li>
 <li>Fix macOS CI workflow (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3505" title="GitHub Issue dosbox-staging/dosbox-staging #3505">#3505</a>)</li>
+<li>Fix platform specific parameters for ppc64le (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3996" title="GitHub Issue dosbox-staging/dosbox-staging #3996">#3996</a>)</li>
 <li>Fix sed creating backup files ending with &ldquo;-e&rdquo; in macOS bundle (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3406" title="GitHub Issue dosbox-staging/dosbox-staging #3406">#3406</a>)</li>
 <li>Fix some PVS warnings (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3484" title="GitHub Issue dosbox-staging/dosbox-staging #3484">#3484</a>)</li>
 <li>Fix variables optimizing away when debugging MSClang builds (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3397" title="GitHub Issue dosbox-staging/dosbox-staging #3397">#3397</a>)</li>
 <li>Fix vcredist version for MSVC CI runner (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3480" title="GitHub Issue dosbox-staging/dosbox-staging #3480">#3480</a>)</li>
 <li>Handle SDL2 like the other dependencies (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3864" title="GitHub Issue dosbox-staging/dosbox-staging #3864">#3864</a>)</li>
 <li>Ignore meson.build in VS tests project (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3422" title="GitHub Issue dosbox-staging/dosbox-staging #3422">#3422</a>)</li>
+<li>Improve platform builds workflow (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4000" title="GitHub Issue dosbox-staging/dosbox-staging #4000">#4000</a>)</li>
 <li>Introduce custom release notes drafter script &amp; workflow (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3398" title="GitHub Issue dosbox-staging/dosbox-staging #3398">#3398</a>)</li>
 <li>Make GCC 11 / Ubuntu 22.04 the minimum build target (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3674" title="GitHub Issue dosbox-staging/dosbox-staging #3674">#3674</a>)</li>
 <li>Mass update copyright dates (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3584" title="GitHub Issue dosbox-staging/dosbox-staging #3584">#3584</a>)</li>
@@ -3457,6 +3463,7 @@ project going.</p>
 <li>kklobe</li>
 <li>LowLevelMahn</li>
 <li>MeAreJeenius</li>
+<li>Otto Liljalaakso</li>
 <li>rderooy</li>
 <li>Ringdingcoder</li>
 <li>shermp</li>
