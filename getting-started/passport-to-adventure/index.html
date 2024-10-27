@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
       
 
@@ -551,11 +551,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release-notes/0.82.0-rc/" class="md-nav__link">
+      <a href="../../releases/release-notes/0.82.0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    0.82.0-RC
+    0.82.0
   </span>
   
 
@@ -1729,15 +1729,13 @@
 
 
 <h1 id="passport-to-adventure">Passport to Adventure<a class="headerlink" href="#passport-to-adventure" title="Permanent link">&para;</a></h1>
-<p>Okay, so what we&rsquo;ll set up next is not a single game, but a collection called
-<strong>Passport to Adventure</strong> which contains playable demos of three classic
-LucasArts point-and-click adventure games:
-<a href="https://www.mobygames.com/game/534/indiana-jones-and-the-last-crusade-the-graphic-adventure/">Indiana Jones and the Last Crusade</a>,
-<a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island</a>,
-and <a href="https://www.mobygames.com/game/176/loom/">Loom</a>. These were the
-blockbusters of the adventure gaming genre back in the day, and they still
-offer countless hours of fun if you like puzzle-solving and well-written,
-intriguing storylines.</p>
+<p>Okay, so what we&rsquo;ll set up next is not a single game but a collection called
+<strong>Passport to Adventure</strong>, which contains playable demos of three classic
+LucasArts point-and-click adventure games: <a href="https://www.mobygames.com/game/534/indiana-jones-and-the-last-crusade-the-graphic-adventure/">Indiana Jones and the Last
+Crusade</a>, <a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island</a>, and
+<a href="https://www.mobygames.com/game/176/loom/">Loom</a>. These were the blockbusters of the adventure gaming genre
+back in the day, and they still offer countless hours of fun if you like
+puzzle-solving and well-written, intriguing storylines.</p>
 <p>But before we begin, let&rsquo;s discuss something fundamental to DOSBox Staging!</p>
 <h2 id="primary-configuration">Primary configuration<a class="headerlink" href="#primary-configuration" title="Permanent link">&para;</a></h2>
 <p>Have you wondered how do you learn about all the available configuration
@@ -1746,9 +1744,9 @@ so-called <em>primary configuration</em> file in a standard location with the na
 <code>dosbox-staging.conf</code>. This file contains the full list of available settings
 with their default values and a short description for each.</p>
 <p>For example, this is the start of the description of the <code>viewport</code> setting:</p>
-<div class="highlight"><pre><span></span><code>Set the viewport size (maximum drawable area). The video output is always
-contained within the viewport while taking the configured aspect ratio into
-account (see &#39;aspect&#39;). Possible values:
+<div class="highlight"><pre><span></span><code>Set the viewport size (&#39;fit&#39; by default). This is the maximum drawable area;
+the video output is always contained within the viewport while taking the
+configured aspect ratio into account (see &#39;aspect&#39;). Possible values:
   fit:          Fit the viewport into the available window/screen (default).
                 There might be padding (black areas) around the image with
                 &#39;integer_scaling&#39; enabled.
@@ -1756,6 +1754,8 @@ account (see &#39;aspect&#39;). Possible values:
                 (e.g., 960x720). The specified size must not be larger than
                 the desktop. If it&#39;s larger than the window size, it&#39;s
                 scaled to fit within the window.
+  N%:           Similar to &#39;WxH&#39; but the size is specified as a percentage
+                of the desktop size.
   ...
 </code></pre></div>
 <p>Here are the locations of <code>dosbox-staging.conf</code> on each platform:</p>
@@ -1793,33 +1793,26 @@ account (see &#39;aspect&#39;). Possible values:
 <p>If you know the exact name of a configuration setting, you can display its
 explanatory text using the built-in <code>config</code> command. The invocation is
 <code>config -h &lt;setting_name&gt;</code>. </p>
-<p>However, if the description is longer than what can fit into a single screen,
-this is not too fruitful as the <code>config</code> command will effectively only display
-the last page. In such cases, we can &ldquo;pipe&rdquo; the output of the <code>config</code> command
-through the <code>more</code> command that will paginate the preceding command&rsquo;s output.
-For example, this is how to display the description of the <code>viewport</code> setting
-which is rather long:</p>
-<div class="highlight"><pre><span></span><code>config -h viewport | more
-</code></pre></div>
-<p>The <code>|</code> is called the &ldquo;pipe&rdquo; character&mdash;how fitting! You can type it by
-pressing <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-backslash">\</kbd></span>, which is located above the <span class="keys"><kbd class="key-enter">Enter</kbd></span> key on the
-standard US keyboard.</p>
-<p>This is how the output of the command looks like:</p>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/config-help.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Displaying the description of a config setting using the 'config' command" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/config-help.png" style="margin: 0.9rem 0;" /></a></p>
-<p>When piping the output through <code>more</code>, you can press <span class="keys"><kbd class="key-space">Space</kbd></span> to go to the
-next page, <span class="keys"><kbd class="key-enter">Enter</kbd></span> to advance to the next line, or <span class="keys"><kbd class="key-q">Q</kbd></span> to quit the viewer,
-as the bottom line indicates. The viewer will also automatically quit once
-we&rsquo;ve reached the end of the output.</p>
-<p>It is highly recommended to look up the descriptions of the various settings
-as you encounter them in this guide. That&rsquo;s a good way to get gradually
-acquainted with the available options.</p>
+<p>Let&rsquo;s see what <code>config -h viewport</code> gives us!</p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/config-help.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Displaying the description of a config setting using the 'config' command" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/config-help.png" style="margin: 0.9rem 0;" /></a></p>
+<p>That&rsquo;s quite a handy online help system, isn&rsquo;t it? As the bottom line
+indicates, you can press <span class="keys"><kbd class="key-space">Space</kbd></span> to go to the next page, <span class="keys"><kbd class="key-enter">Enter</kbd></span> to
+advance to the next line, or <span class="keys"><kbd class="key-q">Q</kbd></span> to quit the help viewer. The help viewer
+will also automatically quit once we&rsquo;ve reached the end of the output.</p>
+<p>You can run <code>config -h &lt;section_name&gt;</code>, too, to get the names of all available
+settings in a given config section. For example, this is the result of <code>config
+-h render</code>:</p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/config-render.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Output of the 'config -h render' command" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/config-render.png" /></a></p>
+<p>It is highly recommended that you look up the descriptions of the various
+settings as you encounter them in this guide. That&rsquo;s a good way to get
+gradually acquainted with the available options.</p>
 <h2 id="layered-configurations">Layered configurations<a class="headerlink" href="#layered-configurations" title="Permanent link">&para;</a></h2>
 <p>In our Prince of Persia example, we created a <code>dosbox.conf</code> configuration file
-in the game&rsquo;s folder, then we started DOSBox Staging from that folder. In such
-a scenario, DOSBox loads the <em>primary configuration</em> first, then
-applies the <em>local</em> <code>dosbox.conf</code> <em>configuration</em> found in the folder it was started
-from (the game&rsquo;s folder). Because of this loading order, you can override
-any primary config setting in your local config.</p>
+in the game&rsquo;s folder, and then we started DOSBox Staging from that folder. In
+such a scenario, DOSBox loads the <em>primary configuration</em> first, then applies
+the <em>local</em> <code>dosbox.conf</code> <em>configuration</em> found in the folder from which it
+was started from (the game&rsquo;s folder). Because of this loading order, you can
+override any primary config setting in your local config.</p>
 <p>This <em>layered configuration</em> approach is very useful; you can apply broad,
 general settings in your primary configuration that will apply to all games,
 then fine-tune these defaults on a per-game basis via local <code>dosbox.conf</code>
@@ -1836,7 +1829,7 @@ game.</p>
 <p class="admonition-title">A word of advice</p>
 <p>It&rsquo;s best not to change the primary configuration while you&rsquo;re still a
 beginner. Even more experienced DOSBox users are generally better off
-changing the primary configuration very sparingly as those settings will
+changing the primary configuration very sparingly, as those settings will
 affect all games.</p>
 <p>A few things that you might want to consider setting globally in the
 primary config include enabling fullscreen mode, turning on auto-pausing,
@@ -1849,23 +1842,29 @@ examine these later.</p>
 folder in <code>DOS Games</code> next to <code>Prince of Persia</code> and name it <code>Passport to
 Adventure</code>. Create the <code>drives</code> subfolder in it and the <code>c</code> subfolder in the
 <code>drives</code> folder.</p>
-<p>Download the <a href="https://archive.org/download/PassportToAdventure/PassportToAdventuredemo1990lucasartsadventureCompilation.zip">ZIP archive</a>
-from the <a href="https://archive.org/details/PassportToAdventure">Passport of Adventure</a> item at the
-Internet Archive, then extract its contents into the <code>c</code> subfolder.</p>
+<p>Download the <a href="https://archive.org/download/PassportToAdventure/PassportToAdventuredemo1990lucasartsadventureCompilation.zip">ZIP archive</a> from the <a href="https://archive.org/details/PassportToAdventure">Passport of
+Adventure</a> item at the Internet Archive (or from this
+<a href="https://files.dosbox-staging.org/Files/Games/Demos/PassportToAdventure.zip">mirror</a>), then extract its contents into the <code>c</code> subfolder.</p>
 <p>Below is the folder structure you should end up with. As explained before,
-we&rsquo;ll create one subfolder within <code>DOS Games</code> for each game, then each game
+we&rsquo;ll create one subfolder within <code>DOS Games</code> for each game; then each game
 folder will contain its own local <code>dosbox.conf</code> configuration specific to that
 game, along with its own &ldquo;emulated C drive&rdquo; in the <code>drives/c</code> subfolder.</p>
-<p><img alt="Passport to Adventure folder structure" class="skip-lightbox" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/passport-tree.png" style="width: 13.25rem; margin: 0.9rem max(calc((50% - 13.25rem/2) * 0.85), 0rem);" /></p>
+<p><img alt="Passport to Adventure folder structure" class="skip-lightbox" src="../images/passport-to-adventure-dirtree1.png" style="width: 14.75rem; margin: 0.3rem max(calc((50% - 14.75rem/2) * 0.85), 0rem);" /></p>
 <h2 id="examining-text-files">Examining text files<a class="headerlink" href="#examining-text-files" title="Permanent link">&para;</a></h2>
 <p>By poking around on the C drive a little bit with the <code>dir</code> command, we&rsquo;ll
 quickly realise we only have two executables: <code>INSTALL.BAT</code> and <code>SAMPLER.EXE</code>.
 But there&rsquo;s also a <code>README.TXT</code>, so let&rsquo;s check that one out first!</p>
 <p>We can try displaying its contents with the <code>type README.TXT</code> command
 (remember, use tab-completion), but we&rsquo;ll only see the end of the file that
-way because it&rsquo;s longer than a single page. Good thing we&rsquo;ve just learned
-about the <code>more</code> command, so let&rsquo;s put it to good use by executing the
-following:</p>
+way because it&rsquo;s longer than a single page. The <code>type</code> command prints out the
+entire contents of the file, which will cause the screen to scroll, so we&rsquo;ll
+effectively only see the last page. Yep, that&rsquo;s DOS for you!</p>
+<p>Fortunately, there is a way to fix this: we can &ldquo;pipe&rdquo; the output of the <code>type</code> command
+through the <code>more</code> command that will paginate the preceding command&rsquo;s output,
+just like the <code>config</code> command does. The <code>|</code> is called the &ldquo;pipe&rdquo; character&mdash;how fitting! You can
+type it by pressing <span class="keys"><kbd class="key-shift">Shift</kbd><span>+</span><kbd class="key-backslash">\</kbd></span>, which is located above the <span class="keys"><kbd class="key-enter">Enter</kbd></span>
+key on the standard US keyboard.</p>
+<p>Okay, so let&rsquo;s try it! </p>
 <div class="highlight"><pre><span></span><code>type README.TXT | more
 </code></pre></div>
 <p>Now we can read the whole file, starting from the beginning. But there&rsquo;s an
@@ -1882,7 +1881,7 @@ just do that!</p>
 <p>If you&rsquo;re playing the game in windowed mode, you&rsquo;ll need to click on the
 DOSBox Staging window first to &ldquo;capture&rdquo; the mouse so you can move the
 crosshair-shaped in-game cursor.</p>
-<p>To &ldquo;release&rdquo; the &ldquo;captured&rdquo; mouse cursor, middle-click on your mouse, or press
+<p>To &ldquo;release&rdquo; the &ldquo;captured&rdquo; mouse cursor, middle-click on your mouse or press
 the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> shortcut (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> on macOS). The title bar of the DOSBox
 Staging window informs you about the current mouse capture state.</p>
 <p>It&rsquo;s also possible to tell DOSBox Staging to start with the mouse captured
@@ -1896,7 +1895,7 @@ screen to read the general instructions, then start a game demo by clicking on
 one of the three game icons on the left. Pressing <span class="keys"><kbd class="key-f1">F1</kbd></span> during the game
 displays further game-specific help; make sure you read them if you actually
 want to play these demos. They&rsquo;re worth playing even if you intend to play the
-full games later as the demos contain slightly different scenes, puzzles, and
+full games later, as the demos contain slightly different scenes, puzzles, and
 dialogues, plus some fun easter-eggs.</p>
 <p>For people who really don&rsquo;t like to read: <span class="keys"><kbd class="key-f5">F5</kbd></span> brings up the save/load/quit
 dialog, and you can pause/unpause the game with the <span class="keys"><kbd class="key-space">Space</kbd></span> key.</p>
@@ -1906,8 +1905,8 @@ Jones theme during the intro, and we&rsquo;re going to investigate the various s
 options next!</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-title.png" >
-    <img alt="Indiana Jones and the Last Crusade -- Title screen" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-title-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/indy3-title.png" >
+    <img alt="Indiana Jones and the Last Crusade -- Title screen" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/indy3-title-small.jpg" />
   </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash; Title screen
@@ -1915,8 +1914,8 @@ options next!</p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-start.png" >
-    <img alt="Indiana Jones and the Last Crusade -- Opening scene" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-start-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/indy3-start.png" >
+    <img alt="Indiana Jones and the Last Crusade -- Opening scene" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/indy3-start-small.jpg" />
   </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash; Opening scene
@@ -1969,7 +1968,7 @@ only need to add a few lines to our config:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Prince of Persia can also auto-detect our Sound Blaster 16, but most games
-are not this clever. As we&rsquo;ll see in our later game examples, usually we
+are not this clever. As we&rsquo;ll see in our later game examples, usually, we
 need to manually configure the audio devices using the game&rsquo;s setup
 utility.</p>
 </div>
@@ -1988,7 +1987,7 @@ utility.</p>
 <li>
 <p><strong>AdLib</strong> was an early sound card predating Sound Blasters that featured
     the same OPL chip. Perfect AdLib compatibility was one of the Sound
-    Blasters&rsquo; main selling points, therefore in games that support both
+    Blasters&rsquo; main selling points; therefore, in games that support both
     AdLib and Sound Blaster for synthesised sound, both options will
     usually yield the exact same result.</p>
 <p>The AdLib card, however, had no support for digital audio, so it&rsquo;s
@@ -2004,7 +2003,7 @@ you might also get digital speech and sound effects by doing so.</p>
 </li>
 </ul>
 <p>All in all, the terms <strong>OPL</strong>, <strong>AdLib</strong>, and <strong>FM</strong> are used
-interchangeably in practice, and usually they refer to the exact same
+interchangeably in practice, and usually, they refer to the exact same
 thing.</p>
 </div>
 <h3 id="pc-speaker-sound">PC speaker sound<a class="headerlink" href="#pc-speaker-sound" title="Permanent link">&para;</a></h3>
@@ -2070,10 +2069,10 @@ command-line argument. Let&rsquo;s try it!</p>
 the Tandy line of home computers that were mostly compatible with standard PCs
 but also offered improved sound and graphics capabilities. Developers had to
 specifically support the Tandy to take advantage of these features. There are
-relatively few such games, but they are worth seeking out as they provide
-a better experience, especially in the sound department. The
-<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-enhanced-Tandy-&amp;-PCjr-graphics-and-sound">Games with enhanced Tandy &amp; PCjr graphics and sound</a>
-page on our wiki should help you find these pre-1990 Tandy specials.</p>
+relatively few such games, but they are worth seeking out as they provide a
+better experience, especially in the sound department. The <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-enhanced-Tandy-&amp;-PCjr-graphics-and-sound">Games with
+enhanced Tandy &amp; PCjr graphics and sound</a> page on our wiki should
+help you find these pre-1990 Tandy specials.</p>
 <p>DOSBox can emulate a Tandy machine&mdash;we only need to instruct it to do so in
 our config:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[dosbox]</span>
@@ -2081,8 +2080,8 @@ our config:</p>
 </code></pre></div>
 <p>Emulating the Tandy will cause the standard DOS font to be a bit different;
 this is normal, so don&rsquo;t be alarmed by it.</p>
-<p>After a restart, we&rsquo;re finally hearing different synthesised music which
-sounds definitely better than the PC speaker rendition, but not as good as the
+<p>After a restart, we&rsquo;re finally hearing different synthesised music, which
+sounds definitely better than the PC speaker rendition but not as good as the
 OPL music. Interestingly, the Tandy music plays a little bit faster than the
 other sound options.</p>
 <div class="admonition note">
@@ -2122,7 +2121,7 @@ channel into the right, and vice versa:</p>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">crossfeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 </code></pre></div>
 <p>Naturally, you can combine crossfeed with chorus and reverb. You can also set
-<code>crossfeed</code> to <code>light</code>, <code>normal</code>, or <code>strong</code> according to your preference, or
+<code>crossfeed</code> to <code>light</code>, <code>normal</code>, or <code>strong</code> according to your preference or
 specify a custom crossfeed amount as a percentage from 0% (no crossfeed) to
 100% (collapse the stereo image to mono):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">crossfeed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50</span>
@@ -2133,7 +2132,7 @@ specify a custom crossfeed amount as a percentage from 0% (no crossfeed) to
 LucasArts catalogue and this collection of game demos, feature EGA graphics.
 The most commonly used EGA screen mode in games is 320&times;200 with a fixed
 16-colour palette.</p>
-<p>EGA monitors had visible &ldquo;fat&rdquo; scanlines and the pixels were a bit round,
+<p>EGA monitors had visible &ldquo;fat&rdquo; scanlines, and the pixels were a bit round,
 whereas later VGA monitors displayed EGA graphics without strong scanlines,
 and the pixels appeared as little sharp rectangles. It&rsquo;s as if EGA monitors
 had a &ldquo;built-in filter&rdquo; that smoothed the image somewhat while adding a subtle
@@ -2153,15 +2152,14 @@ to emulate a double-scanning VGA card in all screen modes with the
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[render]</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt-auto-machine</span>
 </code></pre></div>
-<p>Technically, this setting instructs DOSBox Staging to always emulate a CRT
-monitor appropriate for the configured <code>machine</code> type which is VGA by
-default.</p>
+<p>Technically, this setting instructs DOSBox Staging to emulate a CRT monitor
+appropriate for the configured <code>machine</code> type, which is VGA by default.</p>
 <p>The below screenshots illustrate the difference between the &ldquo;true EGA&rdquo; and
 &ldquo;EGA as displayed on VGA&rdquo; look:</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-vga.png" >
-    <img alt="Indiana Jones and the Last Crusade -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-vga-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/indy3-ingame-vga.png" >
+    <img alt="Indiana Jones and the Last Crusade -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/indy3-ingame-vga-small.jpg" />
   </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash;<br>EGA as displayed on VGA monitors
@@ -2169,8 +2167,8 @@ default.</p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-ega.jpg" >
-    <img alt="Indiana Jones and the Last Crusade -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-indy3/indy3-ingame-ega-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/indy3-ingame-ega.jpg" >
+    <img alt="Indiana Jones and the Last Crusade -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/indy3-ingame-ega-small.jpg" />
   </a></p>
 <figcaption>
 <p>Indiana Jones and the Last Crusade &mdash;<br>&ldquo;True EGA&rdquo; emulation
@@ -2180,8 +2178,8 @@ default.</p>
 </div>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-vga.jpg" >
-    <img alt="The Secret of Monkey Island -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-vga-small.jpeg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/monkey-ingame-vga.jpg" >
+    <img alt="The Secret of Monkey Island -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/monkey-ingame-vga-small.jpeg" />
   </a></p>
 <figcaption>
 <p>The Secret of Monkey Island &mdash;<br>EGA as displayed on VGA monitors
@@ -2189,8 +2187,8 @@ default.</p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-ega.jpg" >
-    <img alt="The Secret of Monkey Island -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-monkey-island/monkey-ingame-ega-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/monkey-ingame-ega.jpg" >
+    <img alt="The Secret of Monkey Island -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/monkey-ingame-ega-small.jpg" />
   </a></p>
 <figcaption>
 <p>The Secret of Monkey Island &mdash;<br>&ldquo;True EGA&rdquo; emulation
@@ -2200,8 +2198,8 @@ default.</p>
 </div>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-vga.jpg" >
-    <img alt="Loom -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-vga-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/loom-ingame-vga.jpg" >
+    <img alt="Loom -- EGA as displayed on VGA monitors" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/loom-ingame-vga-small.jpg" />
   </a></p>
 <figcaption>
 <p>Loom &mdash; EGA as displayed on VGA monitors
@@ -2209,8 +2207,8 @@ default.</p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-ega.jpg" >
-    <img alt="Loom -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-loom/loom-ingame-ega-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/loom-ingame-ega.jpg" >
+    <img alt="Loom -- &quot;True EGA&quot; emulation" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/loom-ingame-ega-small.jpg" />
   </a></p>
 <figcaption>
 <p>Loom &mdash; &ldquo;True EGA&rdquo; emulation
@@ -2218,24 +2216,25 @@ default.</p>
 </figcaption>
 </figure>
 </div>
-<div class="admonition note">
+<div class="admonition info">
 <p class="admonition-title">On recolouring the classics</p>
-<p>Some adventure games that originally supported EGA graphics only also got
-later VGA remakes. While many of these VGA versions are competent, they
-rarely reach the artistic genius of the EGA originals, plus often they
-don&rsquo;t have the exact same gameplay either. This is especially true for the
-three classic LucasArts games included in this demo collection. You can
-check out the comparison and analysis of the EGA versus VGA versions of
-<strong>Indiana Jones and the Last Crusade</strong> and <strong>Loom</strong>
+<p>Some adventure games that originally supported EGA graphics only got later
+VGA remakes. While many of these VGA versions are competent, they rarely
+reach the artistic genius of the EGA originals, plus often they don&rsquo;t have
+the exact same gameplay either. This is especially true for the three
+classic LucasArts games included in this demo collection. Check out the
+comparison and analysis of the EGA versus VGA versions of <strong>Indiana Jones
+and the Last Crusade</strong> and <strong>Loom</strong>
 <a href="https://www.superrune.com/tutorials/lucasfilm_ega.php">here</a>.</p>
 <p>In <a href="https://www.arcadeattack.co.uk/brian-moriarty/">another article</a>,
 Brian Moriatry, the creator of <strong>Loom</strong>, shares his opinion about the VGA
-remake of the game (he calls it &ldquo;an abomination&rdquo;, so apparently he&rsquo;s quite
-unimpressed&hellip;)</p>
-<p>In any case, the point here is it would be a mistake to outright dismiss
-the original EGA experiences, thinking they are &ldquo;inferior&rdquo; somehow. Even
+remake of the game (he calls it &ldquo;an abomination&rdquo;, so apparently, he&rsquo;s quite
+unimpressed&hellip;) Note that about one-third of the original game&rsquo;s dialogue
+had been cut from the VGA remake.</p>
+<p>In any case, the point here is it would be a mistake to dismiss
+the original EGA games outright, thinking they are &ldquo;inferior&rdquo; somehow. Even
 if you might prefer the VGA remakes in the end, you should at least give
-the EGA originals a chance.</p>
+the EGA versions a chance to experience the creators&rsquo; original vision.</p>
 </div>
 <h2 id="authentic-image-size">Authentic image size<a class="headerlink" href="#authentic-image-size" title="Permanent link">&para;</a></h2>
 <p>DOS games appear overly blocky at fullscreen on 24&rdquo; or larger modern monitors.
@@ -2253,8 +2252,8 @@ graphics will start looking overly blocky from a normal viewing distance.</p>
 <p>The rationale behind the &ldquo;magic 89% value&rdquo; is explained in detail in the last
 <a href="../advanced-graphics-options/#custom-viewport-resolution">advanced graphics options</a> chapter.</p>
 <h2 id="cpu-sensitive-games">CPU sensitive games<a class="headerlink" href="#cpu-sensitive-games" title="Permanent link">&para;</a></h2>
-<p>Certain older games, such as these three demos, are sensitive to CPU speed.
-This can manifest in different ways:</p>
+<p>Certain older games, such as these three demos, are sensitive to CPU speed.</p>
+<p>This can manifest in different ways:</p>
 <ul>
 <li>
 <p>The game may run too fast or may generally act weird if the emulated CPU is
@@ -2268,15 +2267,15 @@ This can manifest in different ways:</p>
 <p>This game falls into the second category. Note we&rsquo;re talking about the speed
 of the <em>emulated CPU</em> here, not the speed of the physical CPU in your
 computer!</p>
-<p>DOSBox defaults to emulating 3000 CPU instructions, or <em>cycles</em>, per
+<p>DOSBox defaults to emulating 3000 CPU instructions, or <em>CPU cycles</em>, per
 millisecond. For the more technically inclined among you, this corresponds to
 ~3 MIPS (Million Instructions Per Second). When running in windowed mode, the
 text in the title bar informs you about the current cycles value, e.g.:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>DOSBOX - 3000 cycles/ms
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>DOSBox Staging - 3000 cycles/ms - to capture the mouse press...
 </code></pre></div>
 <p>Let&rsquo;s see what happens if we double the emulated CPU speed!</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">[cpu]</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">6000</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">6000</span>
 </code></pre></div>
 <p>Now we&rsquo;re greeted by an error when trying to start the game:</p>
 <div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>run-time error R6003
@@ -2284,6 +2283,12 @@ text in the title bar informs you about the current cycles value, e.g.:</p>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>C:\&gt;
 </code></pre></div>
+<p>These problems happen because the game&rsquo;s creators did not anticipate the
+massive advancements in consumer CPU technology that started at the beginning
+of the 1990s (CPU power roughly doubling every three years). This is not too
+surprising as this is a 1990 release. Later DOS games tended to be more
+resilient to wildly varying CPU speeds as more programmers became aware of the
+issue, but many games from the 1980s and the early 90s are affected.</p>
 <p>We will discuss the CPU speed settings in more detail
 <a href="../beneath-a-steel-sky/#adjusting-the-emulated-cpu-speed">in the next chapter</a>,
 but it was worth mentioning this interesting quirk here.</p>
@@ -2443,7 +2448,7 @@ but it was worth mentioning this interesting quirk here.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});

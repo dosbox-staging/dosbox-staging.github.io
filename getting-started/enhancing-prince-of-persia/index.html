@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
       
 
@@ -551,11 +551,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../releases/release-notes/0.82.0-rc/" class="md-nav__link">
+      <a href="../../releases/release-notes/0.82.0/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    0.82.0-RC
+    0.82.0
   </span>
   
 
@@ -1699,7 +1699,7 @@ turning it <em>off</em>.</p>
 </div>
 <p>Note we&rsquo;ve also added the <code>exit</code> command to the end of the <code>[autoexec]</code>
 section; with this in place, DOSBox Staging will quit after we exit from the
-game by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span>. Not strictly necessary, but a nice touch.</p>
+game by pressing <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-q">Q</kbd></span>. Not strictly necessary, but it&rsquo;s a nice touch.</p>
 <div class="admonition important">
 <p class="admonition-title">Making configuration changes</p>
 <p>Every time you modify <code>dosbox.conf</code>, you need to restart DOSBox Staging
@@ -1717,28 +1717,28 @@ Apple has decided for you that your MacBook doesn&rsquo;t need a Home key,
 <p>DOSBox emulates an SVGA (Super VGA) display adapter by default; this gives you
 good compatibility with most DOS games. DOSBox can also emulate all common
 display adapters from the history of the PC compatibles: the Hercules, CGA,
-and EGA adapters among several others.</p>
+and EGA adapters, among several others.</p>
 <p>Although the VGA standard was introduced in 1987, it took a good five years
 until it gained widespread adoption. Games had to support all commonly used
 graphical standards during this transitional period. Prince of Persia,
 released in 1990, is such a game; it not only supports all common display
 adapters, but it also correctly auto-detects them. This is in contrast with
-the majority of DOS games where you need to configure the graphics manually
-(we&rsquo;ll discuss how to do that too in later chapters).</p>
+the majority of DOS games, where you need to configure the graphics manually
+(we&rsquo;ll discuss how to do that, too, in later chapters).</p>
 <h3 id="vga">VGA<a class="headerlink" href="#vga" title="Permanent link">&para;</a></h3>
-<p>The art in Prince of Persia was created for VGA first, so quite naturally the
+<p>The art in Prince of Persia was created for VGA first, so quite naturally, the
 game looks best on a VGA adapter. Most DOS games from the 1990s use the
 320&times;200 low-resolution VGA mode. This video mode allows up to 256
 colours to be displayed simultaneously on the screen from a total palette of
 16 million colours.</p>
 <p>This is how the start of the game looks with the <a href="../setting-up-prince-of-persia/#authentic-crt-monitor-emulation">authentic CRT emulation
-feature</a> which is enabled by
-default. As mentioned previously, make sure to view all screenshots at 100%
-magnification to avoid weird artifacts caused by the browser rescaling the
-image.</p>
+feature</a>,
+which is enabled by default. As mentioned previously, make sure to view all
+screenshots at 100% magnification to avoid weird artifacts caused by the
+browser rescaling the image.</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-vga.jpg" >
-    <img alt="Prince of Persia in VGA mode with the default settings" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-vga-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-vga.jpg" >
+    <img alt="Prince of Persia in VGA mode with the default settings" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-vga-small.jpg" />
   </a></p>
 <figcaption>
 <p>Prince of Persia in VGA mode with the default settings
@@ -1748,12 +1748,12 @@ image.</p>
 <p>But wait a minute, this doesn&rsquo;t look like anything I&rsquo;m used to from console
 emulators. Where are those visible thick scanlines?</p>
 <p>VGA display adapters have a peculiarity in that they display not one but <em>two</em>
-scanlines per pixel in low-resolution video modes having less than about 350
-lines of vertical resolution. This means the 320&times;200 VGA mode is really
-640&times;400, just pixel and line-doubled. In fact, the vast majority of VGA
-monitors from the 1980s and &rsquo;90s are incapable of displaying &ldquo;true&rdquo; 200-line
-graphics, so it&rsquo;s physically impossible to get the &ldquo;thick scanline&rdquo; arcade and
-home computer monitor look on a real VGA CRT.</p>
+scanlines per pixel in low-resolution video modes, which have less than about
+350 lines of vertical resolution. This means the 320&times;200 VGA mode is
+really 640&times;400, just pixel and line-doubled. In fact, the vast majority
+of VGA monitors from the 1980s and &rsquo;90s are incapable of displaying &ldquo;true&rdquo;
+200-line graphics, so it&rsquo;s physically impossible to get the &ldquo;thick scanline&rdquo;
+arcade and home computer monitor look on a real VGA CRT.</p>
 <p>Double-scanned VGA emulation looks stellar on a 4K monitor and even on 1440p,
 but on 1080p, there is simply not enough vertical resolution to accurately
 represent all those 400 tightly-packed scanlines. Therefore, the best thing
@@ -1779,7 +1779,7 @@ altogether:</p>
 </code></pre></div>
 </div>
 <h3 id="ega">EGA<a class="headerlink" href="#ega" title="Permanent link">&para;</a></h3>
-<p>The next graphics adapter the game supports is the EGA adapter released in
+<p>The next graphics adapter the game supports is the EGA adapter, released in
 1984. The EGA standard was quite popular until the early 1990s because VGA
 cards were initially prohibitively expensive for most hobbyists. The majority
 of games with EGA support use the 320&times;200 low-resolution EGA mode that
@@ -1794,8 +1794,8 @@ following configuration snippet:</p>
 EGA monitors can display true 320&times;200 resolution with the well-known
 thick scanline look.</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-ega.jpg" >
-    <img alt="Prince of Persia in EGA mode" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-ega-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-ega.jpg" >
+    <img alt="Prince of Persia in EGA mode" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-ega-small.jpg" />
   </a></p>
 <figcaption>
 <p>Prince of Persia in EGA mode&mdash;EGA monitors can display 200-line modes
@@ -1806,7 +1806,7 @@ thick scanline look.</p>
 <h3 id="cga">CGA<a class="headerlink" href="#cga" title="Permanent link">&para;</a></h3>
 <p>The notorious CGA adapter, the first colour graphics adapter created for the
 original IBM PC in 1981, is a serious contender for the worst graphics
-standard ever invented. In its 320&times;200 low-resolution mode, only 4 colours
+standard ever invented. In its 320&times;200 low-resolution mode, only four colours
 can be displayed simultaneously on the screen chosen from a small number of fixed
 palettes. Frankly, all combinations look pretty horrifying&hellip;</p>
 <p>But no matter; the game supports it, so we&rsquo;ll have a
@@ -1815,11 +1815,11 @@ forget to put on your safety goggles! <img alt="😎" class="twemoji" src="https
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[dosbox]</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cga</span>
 </code></pre></div>
-<p>Ready? Behold the formidable 4-colour CGA graphics&mdash;and what 4 colours those
+<p>Ready? Behold the formidable 4-colour CGA graphics&mdash;and what four colours those
 are! Similarly to EGA, CGA is capable of displaying true 200-line modes.</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-cga.jpg" >
-    <img alt="Prince of Persia in CGA mode. Yeah, it's not pretty..." class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-cga-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-cga.jpg" >
+    <img alt="Prince of Persia in CGA mode. Yeah, it's not pretty..." class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-cga-small.jpg" />
   </a></p>
 <figcaption>
 <p>Prince of Persia in CGA mode. Yeah, it&rsquo;s not pretty&hellip;
@@ -1844,15 +1844,15 @@ in this case; this is exactly how the game would look on a PC equipped with a
 Hercules card connected to a period-accurate monochrome monitor (but we&rsquo;ll
 examine some advanced techniques on <a href="../advanced-graphics-options/#custom-aspect-ratios">how to fix that</a>).</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-amber.png" >
-    <img alt="Prince of Persia in Hercules mode using the default 'amber' palette" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-amber.png" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-amber.png" >
+    <img alt="Prince of Persia in Hercules mode using the default 'amber' palette" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-amber.png" />
   </a></p>
 <figcaption>
 <p>Prince of Persia in Hercules mode using the default <code>amber</code> palette
   </p>
 </figcaption>
 </figure>
-<p>Monochrome monitors come in different colours and DOSBox Staging can emulate
+<p>Monochrome monitors come in different colours, and DOSBox Staging can emulate
 all these variations via the <code>monochrome_palette</code> setting. The available
 options are <code>amber</code> (the default), <code>green</code>, <code>white</code>, and <code>paperwhite</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[render]</span>
@@ -1862,8 +1862,8 @@ options are <code>amber</code> (the default), <code>green</code>, <code>white</c
 key.</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-green.png" >
-    <img alt="Hercules mode using the 'green' palette" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-green.png" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-green.png" >
+    <img alt="Hercules mode using the 'green' palette" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-green.png" />
   </a></p>
 <figcaption>
 <p>Hercules mode using the <code>green</code> palette
@@ -1871,8 +1871,8 @@ key.</p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-white.png" >
-    <img alt="Hercules mode using the 'white' palette" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-prince-of-persia/pop-hercules-white.png" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-white.png" >
+    <img alt="Hercules mode using the 'white' palette" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-white.png" />
   </a></p>
 <figcaption>
 <p>Hercules mode using the <code>white</code> palette
@@ -1883,16 +1883,16 @@ key.</p>
 <div class="admonition note">
 <p class="admonition-title">Only for masochists and archeologists!</p>
 <p>The art in DOS games was usually created for the best graphics standard
-the game supported, then variants for &ldquo;lesser&rdquo; standards
-were derived from that. If you were an unlucky person still stuck with a
-Hercules or CGA adapter in 1990, being able to play Prince of Persia with
-<em>any</em> graphics surely beat no game at all!</p>
+the game supported, and then variants for &ldquo;lesser&rdquo; standards were derived
+from that. If you were an unlucky person still stuck with a Hercules or
+CGA adapter in 1990, being able to play Prince of Persia with <em>any</em>
+graphics surely beat no game at all!</p>
 <p>Although we&rsquo;ve shown how to emulate these earlier graphics standards for
 completeness&rsquo; sake, there&rsquo;s generally little reason <em>not</em> to play a
 DOS game with the best graphics. The list of possible reasons includes a)
-nostalgic feelings towards a particular display adapter; b) research
-purposes; c) you like your games to look like the user interface of an
-industrial CNC machine; d) a strong preference for pain. But hey, who are
+nostalgic feelings towards a particular display adapter, b) research
+purposes, c) you like your games to look like the user interface of an
+industrial CNC machine, and d) a strong preference for pain. But hey, who are
 we to judge?</p>
 <p>In any case, preserving all relevant aspects of PC gaming history is
 important for the DOSBox Staging project, so these display options are
@@ -1913,8 +1913,8 @@ emulation.</p>
 <h2 id="chorus-reverb">Chorus &amp; reverb<a class="headerlink" href="#chorus-reverb" title="Permanent link">&para;</a></h2>
 <p>We&rsquo;ve been discussing graphics at great length, but what about sound? Can&rsquo;t
 we do something cool to the sound as well?</p>
-<p>Yes, we can! DOSBox Staging has an exciting feature to add chorus and reverb
-effects to the output of any of the emulated sound devices.</p>
+<p>Yes, we can! DOSBox Staging has an exciting feature that adds chorus and
+reverb effects to the output of any of the emulated sound devices.</p>
 <p>Create a new <code>[mixer]</code> section in your config with the following content:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[mixer]</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
@@ -1923,22 +1923,22 @@ effects to the output of any of the emulated sound devices.</p>
 <p>Now the intro music sounds a lot more spacious and pleasant to listen to,
 especially through headphones. There&rsquo;s even some reverb added to the in-game
 footsteps and sound effects, although to a much lesser extent.</p>
-<p>You might want to experiment with the <code>small</code> and <code>medium</code> reverb presets, and
-the <code>light</code> and <code>strong</code> chorus settings as well.</p>
+<p>You might want to experiment with the <code>small</code> and <code>medium</code> reverb presets, as
+well as the the <code>light</code> and <code>strong</code> chorus settings.</p>
 <div class="admonition note">
 <p class="admonition-title">Purist alert!</p>
-<p>To calm the purists among you: adding reverb and chorus to the OPL
+<p>To calm the purists among you, adding reverb and chorus to the OPL
 synthesiser&rsquo;s output is something you can do on certain Sound Blaster
-AWE32 and AWE64 models too with the standard drivers.</p>
+AWE32 and AWE64 models, too, with the standard drivers.</p>
 </div>
 <h2 id="joystick-support">Joystick support<a class="headerlink" href="#joystick-support" title="Permanent link">&para;</a></h2>
 <p>Okay, so if we want to play the game with the keyboard, we need to press
 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-k">K</kbd></span> to enter keyboard mode every single time we start the game. As
-mentioned, that&rsquo;s because by default DOSBox Staging either lets you use your
-gamepad as the joystick, or it emulates a PC joystick even if you don&rsquo;t have a
+mentioned, that&rsquo;s because by default, DOSBox Staging either lets you use your
+gamepad as the joystick or emulates a PC joystick even if you don&rsquo;t have a
 physical game controller plugged in. Either way, the game will always &ldquo;see&rdquo; a
 joystick at startup and will therefore auto-switch to joystick mode.</p>
-<p>From this follows that if we disable the joystick in the config, the game
+<p>From this, it follows that if we disable the joystick in the config, the game
 will have no other choice than to default to keyboard mode:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[joystick]</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">joysticktype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">disabled</span>
@@ -1957,19 +1957,19 @@ drift. It&rsquo;s 10% by default, so let&rsquo;s increase it to 15% instead:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">[joystick]</span>
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">deadzone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">15</span>
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">The PC is not a console</p>
+<div class="admonition important">
+<p class="admonition-title">The PC is not a console!</p>
 <p>Note that Prince of Persia requires a lot of precise control, so playing it
 with the analog stick makes the game quite a bit harder and somewhat
 frustrating. This is a common theme with many DOS games; most of them were
-really optimised for keyboard controls, or require you to use the keyboard
+really optimised for keyboard controls or require you to use the keyboard
 anyway to perform some essential actions.</p>
 <p>While playing DOS games from the couch with a controller in your hand
 might be cool, for the best results, just stick with the keyboard
 controls. Apart from some space and flight simulators, joystick support
 was often an afterthought in DOS games.</p>
 </div>
-<div class="admonition danger">
+<div class="admonition warning">
 <p class="admonition-title">Issues with multiple controllers</p>
 <p>You might get some weird behaviour or even crashes if you have multiple
 game controllers plugged in. If that&rsquo;s the case, please disconnect all
@@ -2057,12 +2057,12 @@ a continuous stream of timestamped messages in a separate window.</p>
 <h3>Windows</h3>
 
 <p>The log window is opened by default when you start DOSBox Staging. You can
-hide the log window by passing the <code>-noconsole</code> argument to the DOSBox
+hide the log window by passing the <code>--noconsole</code> argument to the DOSBox
 Staging executable.</p>
 <h3>macOS</h3>
 
 <p>DOSBox Staging does not open the log window by default when started via its
-application icon, or with the <em>Start DOSBox Staging</em> icon you copied from the
+application icon or with the <em>Start DOSBox Staging</em> icon you copied from the
 <code>.dmg</code> installer archive earlier.</p>
 <p>To make the log window appear, you need to use another shortcut icon called
 <em>Start DOSBox Staging (logging)</em>, which you can copy into your game folder
@@ -2071,7 +2071,7 @@ icon).</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Remember, for the first time you&rsquo;ll need to right-click or <span class="keys"><kbd class="key-control">Ctrl</kbd></span>-click
-on this icon, select the topmost <em>Open</em> menu item, then press the
+on this icon, select the topmost <em>Open</em> menu item, and then press the
 <em>Open</em> button in the appearing dialog. After the first start, you can simply
 double-click on it.</p>
 </div>
@@ -2083,7 +2083,7 @@ double-click on it.</p>
 details about what DOSBox Staging is currently doing, what exact settings it
 uses, and so on. For example, this is the start of the logs when running the
 game on macOS:</p>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example DOSBox logs" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs1.png" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-logs1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example DOSBox logs" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-logs1.png" /></a></p>
 <p>That&rsquo;s all good and well, but what&rsquo;s even better is if an invalid
 configuration setting has been detected, or something went wrong when running
 the game, DOSBox Staging will inform us about it in the logs!</p>
@@ -2109,8 +2109,8 @@ errors:</p>
 <a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">xsharp</span>
 </code></pre></div>
 <p>As expected, we&rsquo;ll see some warnings and errors in the logs after a restart:</p>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example DOSBox logs showcasing warnings and errors" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-logging/pop-logs2.png" /></a></p>
-<p>Warnings are yellow, errors are red. Errors are generally reserved for more
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-logs2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Example DOSBox logs showcasing warnings and errors" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-logs2.png" /></a></p>
+<p>Warnings are yellow; errors are red. Errors are generally reserved for more
 severe problems. In this example, we have the following:</p>
 <ul>
 <li>
@@ -2119,7 +2119,7 @@ severe problems. In this example, we have the following:</p>
   of <code>false</code>.</p>
 </li>
 <li>
-<p>Then it reprimands us about <code>no_such_config_param</code> that we made up.</p>
+<p>Then it reprimands us for the <code>no_such_config_param</code> that we made up.</p>
 </li>
 <li>
 <p>The third warning complains about an invalid <code>machine</code> value being used
@@ -2127,7 +2127,7 @@ severe problems. In this example, we have the following:</p>
   Control Program from Tron yet!)</p>
 </li>
 <li>
-<p>Then we have an error because we&rsquo;re trying to use a non-existing shader.</p>
+<p>Then, we have an error because we&rsquo;re trying to use a non-existing shader.</p>
 </li>
 <li>
 <p>This is followed by yet another rather large warning block that very
@@ -2143,7 +2143,7 @@ doing.</p>
 <p>While you might prefer to hide the log window for aesthetic reasons, it&rsquo;s
 wiser to just let it be so you can take a peek at it if something goes
 sideways. Without having access to the logs, your chances of fixing problems
-are significantly reduced as basically you would be just stumbling in the
+are significantly reduced, as, basically, you would be just stumbling in the
 dark. You&rsquo;ve been warned!</p>
 <hr />
 <p>Okay, we&rsquo;ve pretty much maxed out Prince of Persia for demonstration purposes.
@@ -2266,7 +2266,7 @@ Time to move on to another game!</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
