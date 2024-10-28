@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.36">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.40">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.06209087.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
       
 
@@ -1273,9 +1273,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-the-game-for-mt-32" class="md-nav__link">
+  <a href="#configuring-the-game-for-the-mt-32" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring the game for MT-32
+      Configuring the game for the MT-32
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-mt-32-music-with-speech-after-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting MT-32 music with speech (after all)
     </span>
   </a>
   
@@ -1703,9 +1712,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#configuring-the-game-for-mt-32" class="md-nav__link">
+  <a href="#configuring-the-game-for-the-mt-32" class="md-nav__link">
     <span class="md-ellipsis">
-      Configuring the game for MT-32
+      Configuring the game for the MT-32
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-mt-32-music-with-speech-after-all" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting MT-32 music with speech (after all)
     </span>
   </a>
   
@@ -1765,10 +1783,10 @@ sci-fi adventure game from 1994. It&rsquo;s one of the standout timeless classic
 the adventure genre and best of all, Revolution Software released the game as
 freeware in 2003 (see their accompanying notes <a href="../bass-readme.txt">here</a>).</p>
 <h2 id="launching-games-more-easily">Launching games more easily<a class="headerlink" href="#launching-games-more-easily" title="Permanent link">&para;</a></h2>
-<p>Before we delve into the setup instructions, a few words about launching our
-growing collection of games more easily. Having to navigate to the game&rsquo;s
-folder whenever we want to launch it gets old really fast. Here&rsquo;s how we can
-skip this step:</p>
+<p>Before we delve into the setup instructions, here are a few words about
+launching our growing collection of games more easily. Having to navigate to
+the game&rsquo;s folder whenever we want to launch gets old really fast. Here&rsquo;s
+how we can skip this step:</p>
 <h3>Windows</h3>
 
 <ol>
@@ -1799,7 +1817,7 @@ to a different folder, you should adjust the path accordingly.</p>
 <h3>macOS</h3>
 
 <p>You can rename the <em>Start DOSBox Staging</em> icons in the individual game folders
-to the names of the games, then you can use Spotlight Search to start a game.</p>
+to the names of the games; then, you can use Spotlight Search to start a game.</p>
 <p>For example, rename <em>Start DOSBox Staging</em> in the <code>Prince of Persia</code> folder to
 <em>Prince of Persia</em>. Start Spotlight Search by pressing <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-space">Space</kbd></span>, then
 type in &ldquo;Prince&rdquo;. The <em>Prince of Persia</em> icon will show up in the search
@@ -1812,34 +1830,38 @@ to your game directory):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ch">#!/bin/bash</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>dosbox<span class="w"> </span>--working-dir<span class="w"> </span><span class="s2">&quot;~/Documents/DOS Games/Prince of Persia&quot;</span>
 </code></pre></div>
-<p>Then create an icon on your desktop that launches this script, or start it
+<p>Then, create an icon on your desktop that launches this script, or start it
 however you like.</p>
 <h2 id="mounting-a-cd-rom-image">Mounting a CD-ROM image<a class="headerlink" href="#mounting-a-cd-rom-image" title="Permanent link">&para;</a></h2>
-<p>We&rsquo;re going to set up the liberated &ldquo;talkie&rdquo; CD-ROM version of the game that
-has full voice-acting. You know the drill; create a new <code>Beneath a Steel Sky</code>
-subfolder inside your <code>DOS Games</code> folder, and then the usual <code>drives/c</code>
+<p>We will set up the liberated &ldquo;talkie&rdquo; CD-ROM version of the game that
+has full voice-acting. You know the drill: create a new <code>Beneath a Steel Sky</code>
+subfolder inside your <code>DOS Games</code> folder and then the usual <code>drives/c</code>
 subfolder within it. Download the <a href="https://archive.org/download/Beneath_a_Steel_Sky_1995_Virgin/Beneath%20a%20Steel%20Sky%20%281995%29%28Virgin%29.iso">ISO CD-ROM
 image</a>
 from the <a href="https://archive.org/details/Beneath_a_Steel_Sky_1995_Virgin">Beneath a Steel
 Sky</a> item at the
-Internet Archive and put it into a <code>cd</code> subfolder inside your <code>Beneath a Steel
+Internet Archive (or from this
+<a href="https://files.dosbox-staging.org/Files/Games/Demos/Beneath%20a%20Steel%20Sky.iso">mirror</a>)
+and put it into a <code>cd</code> subfolder inside your <code>Beneath a Steel
 Sky</code> game folder. The name of the <code>cd</code> subfolder has no special significance;
 you could put the <code>.iso</code> image anywhere, but it&rsquo;s good to get into the habit
 of organising your game files systematically (e.g., you could create a
 <code>Manual</code> or <code>Extras</code> subfolder too for the scanned manuals and other extra
 files). It&rsquo;s a good idea to rename <code>Beneath a Steel Sky (1995)(Virgin).iso</code> to
-<code>cdrom1.iso</code>; our game folder has the full name of the game anyway. </p>
+<code>cdrom1.iso</code>; our game folder has the game&rsquo;s full name anyway.</p>
 <p>Speaking of manuals, make sure to get the scan of the <a href="https://archive.org/details/beneath-a-steel-sky-security-manual/">Security
-Manual</a> and
+Manual</a>
+(<a href="https://files.dosbox-staging.org/Files/Games/Manuals/Beneath%20A%20Steel%20Sky%20-%20Security%20Manual.pdf">mirror</a>) and
 the <a href="https://ia802200.us.archive.org/13/items/beneath-a-steel-sky-comic-book/Beneath_a_Steel_Sky.pdf">comic
 book</a>
-that was included in the boxed version of the game.</p>
+(<a href="https://files.dosbox-staging.org/Files/Games/Manuals/Beneath%20A%20Steel%20Sky%20-%20User%20Manual.pdf">mirror</a>)
+included in the boxed version of the game.</p>
 <p>For the visually inclined, this is the structure we&rsquo;ll end up with:</p>
-<p><img alt="Beneath a Steel Sky folder structure" class="skip-lightbox" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-tree.png" style="width: 12.4rem; margin: 0.9rem max(calc((50% - 12.4rem/2) * 0.85), 0rem);" /></p>
-<p>We need to mount the CD image to be able to use it. Our C drive is the hard
-drive, so we&rsquo;ll mount the CD-ROM image as the next letter D by convention.
-This is equivalent to having a CD-ROM drive in our emulated computer assigned
-to the drive letter D and inserting the game CD into it.</p>
+<p><img alt="Beneath a Steel Sky folder structure" class="skip-lightbox" src="../images/beneath-a-steel-sky-dirtree1.png" style="width: 14rem; margin: 0.3rem max(calc((50% - 14rem/2) * 0.85), 0rem);" /></p>
+<p>We need to mount the CD image to use it. Our C drive is the hard drive, so
+we&rsquo;ll mount the CD-ROM image using the following letter D by convention. This
+is equivalent to having a CD-ROM drive in our emulated computer assigned to
+the drive letter D and inserting the game CD into it.</p>
 <p>Mounting an image file, such as a floppy or CD-ROM image, is accomplished with
 the <code>imgmount</code> command. It is pretty simple to use: the first argument is the
 drive letter (<code>d</code>), the second the path to the CD-ROM image (<code>cd/cdrom1.iso</code>),
@@ -1854,6 +1876,10 @@ and the third the type of the image file (<code>-t iso</code>).</p>
 enclose it in double quotes because it contains spaces:</p>
 <div class="highlight"><pre><span></span><code>imgmount d &quot;cd/Beneath a Steel Sky (1995)(Virgin).iso&quot; -t iso
 </code></pre></div>
+<p>If you&rsquo;re on Linux, make sure to get the casing of the ISO file exactly
+right. Commands that operate on emulated DOS drives are case-insensitive,
+just like real MS-DOS, but <code>imgmount</code> opens a file on your host directly,
+so the casing rules of your host filesystem apply.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -1873,21 +1899,22 @@ everything is set up correctly:</p>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>ISO image cd/cdrom1.iso mounted as D drive
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Z:\&gt;_
 </code></pre></div>
-<p>MSCDEX is the name of the MS-DOS CD-ROM driver, and the next line just informs
-us that our CD image is mounted as drive D. Time to get down to business then!</p>
+<p>MSCDEX is the name of the MS-DOS CD-ROM driver, and the following line just
+informs us that our CD image has been mounted as drive D. Time to get down to
+business then!</p>
 <div class="admonition danger">
 <p class="admonition-title">Always mount CD-ROM images with <code>imgmount</code></p>
-<p>While you could mount CD-ROM images outside of DOSBox with other programs
+<p>While you could mount CD-ROM images outside of DOSBox with other programs,
 too (e.g., Daemon Tools, ImgDrive, WinCDEmu, or the built-in Windows 10/11
 ISO mounting feature), these alternative approaches often lead to
 compatibility problems. That&rsquo;s because these tools don&rsquo;t emulate the
-MSCDEX MS-DOS driver that DOS games expect. </p>
-<p>For a trouble-free life, always just use the built-in <code>imgmount</code> command.
-There&rsquo;s nothing to be gained from using these 3<sup>rd</sup> party mounting tools for
+MSCDEX MS-DOS driver that DOS games expect.</p>
+<p>For a trouble-free life, always use the built-in <code>imgmount</code> command.
+There&rsquo;s nothing to gain from using these 3<sup>rd</sup> party mounting tools for
 DOS games.</p>
 </div>
 <h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">&para;</a></h2>
-<p>Most games that come on CD images need to be installed on the hard drive
+<p>Most games that come on CD images must be installed on the hard drive
 first. Usually, there&rsquo;s an executable called <code>INSTALL.EXE</code> or <code>SETUP.EXE</code> in
 the root directory of the CD (the extension could be <code>.COM</code> or <code>.BAT</code> as
 well).</p>
@@ -1905,15 +1932,15 @@ the contents of the CD:</p>
 <a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>                6 file(s)            72,956,935 bytes
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>                0 dir(s)                      0 bytes free
 </code></pre></div>
-<p>Okay, so we&rsquo;ve got two executables with the <code>.EXE</code> extension and one text
+<p>Okay, so we have two executables with the <code>.EXE</code> extension and one text
 file. View <code>README.TXT</code> using the <code>more</code> command (run <code>more README.TXT</code>). It
-turns out it just contains some legal notice we don&rsquo;t really care about.
+turns out it only contains some legal notice we don&rsquo;t really care about.
 <code>INSTALL.EXE</code> is what we&rsquo;re after, so let&rsquo;s run that!</p>
 <p>We&rsquo;re greeted by a pretty standard-looking text-mode installer. Either press
-any key or wait a few seconds to progress to the second screen where you&rsquo;ll need
-to select the installation path:</p>
+any key or wait a few seconds to progress to the second screen, where you&rsquo;ll
+need to select the installation path:</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-setup1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Beneath a Steel Sky setup -- Installation path" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-setup1.png" width="80%" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-setup1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Beneath a Steel Sky setup -- Installation path" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-setup1.png" width="80%" /></a></p>
 </figure>
 <p>You can navigate the interface with the cursor keys, <span class="keys"><kbd class="key-escape">Esc</kbd></span>, <span class="keys"><kbd class="key-enter">Enter</kbd></span>, and
 the mouse. The default <code>C:\SKY</code> install location is perfectly fine, so just
@@ -1922,24 +1949,24 @@ accept that by pressing <span class="keys"><kbd class="key-enter">Enter</kbd></s
 language of the in-game text (the voice-acting is English-only), and the sound
 settings:</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Beneath a Steel Sky setup -- Game settings" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-setup2.png" width="80%" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-setup2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Beneath a Steel Sky setup -- Game settings" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-setup2.png" width="80%" /></a></p>
 </figure>
 <p>English is fine, and the game has auto-detected our sound card correctly
 (Sound Blaster 16&mdash;this is the sound card DOSBox emulates by default), so
-just accept these settings for now. And now, the counterintuitive part: to
+accept these settings for now. And now, the counterintuitive part: to
 finish the installation and save the settings, we need to press the <em>Exit
 Install</em> button, which will take us to the (guess what?) <em>Exit Install</em>
 dialog:</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-setup3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Beneath a Steel Sky setup -- Finalising the setup" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-setup3.png" width="80%" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-setup3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Beneath a Steel Sky setup -- Finalising the setup" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-setup3.png" width="80%" /></a></p>
 </figure>
 <p>Here you need to press the <em>Save Setup</em> button to finalise the settings and
 exit the installer.</p>
 <p>As you can see, this is not exactly a masterclass in user interface design,
 but it does the job. Expect many DOS-era install and setup utilities to be
-similarly slightly illogical&mdash;often it&rsquo;s not completely obvious what to do,
-but it&rsquo;s not too hard to figure it out either. Reading the manual or some trial and
-error might help too.</p>
+similarly slightly illogical&mdash;often, it&rsquo;s not completely obvious what to do,
+but it&rsquo;s not too hard to figure out either. Reading the manual or some trial
+and error might help, too.</p>
 <p>Anyway, after pressing <em>Save Setup</em>, the installer will exit and print out the
 following instructions:</p>
 <div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>BENEATH A STEEL SKY has been installed to directory:
@@ -1957,7 +1984,7 @@ following instructions:</p>
 commands into the <code>[autoexec]</code> section of our config, but let&rsquo;s comment the
 last <code>sky</code> command out for now by preceding it with a <code>#</code> character because we
 don&rsquo;t want to start the game just yet:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[autexec]</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[autoexec]</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">imgmount d cd/cdrom1.iso -t iso</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="na">c</span><span class="o">:</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="na">cd \sky</span>
@@ -1965,10 +1992,10 @@ don&rsquo;t want to start the game just yet:</p>
 </code></pre></div>
 <h2 id="changing-the-current-directory">Changing the current directory<a class="headerlink" href="#changing-the-current-directory" title="Permanent link">&para;</a></h2>
 <p>So before we run the game, what is this <code>cd \sky</code> command? Does it have
-something to do with the <code>cd</code> subfolder where we put out CD-ROM image,
+something to do with the <code>cd</code> subfolder where we put our CD-ROM image,
 perhaps?</p>
 <p>No, that&rsquo;s just a coincidence. The <code>cd</code> command stands for Change Directory;
-it is used to change the current directory that&rsquo;s displayed as part of the
+you use it to change the current directory, which is displayed as part of the
 DOS prompt. So let&rsquo;s analyse what these lines we put into the <code>[autoexec]</code>
 section do:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>c:
@@ -1976,10 +2003,10 @@ section do:</p>
 </code></pre></div>
 <p>The first command <code>c:</code> switches to the C drive (remember, the current drive is
 the special built-in Z drive when DOSBox starts).</p>
-<p>Then the second <code>cd \sky</code> command changes the current directory to the <code>sky</code>
-directory at the root level of the C drive. <code>cd sky</code> would work as well
-because the current directory is the root when we switch to the C drive right
-after startup.</p>
+<p>Then, the second <code>cd \sky</code> command changes the current directory to the <code>sky</code>
+directory at the root level of the C drive. <code>cd sky</code> would also work because
+the current directory is the root directory when we switch to the C drive
+right after startup.</p>
 <p>How do you go up one level to the parent directory? With the <code>cd ..</code> command
 (two dots means &ldquo;parent directory&rdquo;, and a single dot means &ldquo;current
 directory&rdquo;).</p>
@@ -2006,15 +2033,15 @@ you&rsquo;ve had enough, uncomment the last <code>sky</code> command in the <cod
 <p class="admonition-title">Warning</p>
 <p>You cannot switch to a different drive with the <code>cd</code> command (e.g., <code>cd
 z:</code> or <code>cd z</code> won&rsquo;t work); you <em>must</em> use the drive letter followed by a
-semicolon (<code>z:</code> in this example)!</p>
+semicolon (<code>z:</code> in this example).</p>
 </div>
 <h2 id="adjusting-volume-levels">Adjusting volume levels<a class="headerlink" href="#adjusting-volume-levels" title="Permanent link">&para;</a></h2>
 <p>After starting the game, don&rsquo;t watch the intro just yet; press <span class="keys"><kbd class="key-escape">Esc</kbd></span> to jump
-straight to the opening scene. There&rsquo;s music playing, so far so good. Move the
-cursor over the door on the right side of the screen, and when it turns into a
-crosshair and the word &ldquo;Door&rdquo; appears next to it, press the left mouse button
-to inspect it. Lo and behold, you&rsquo;ll hear our protagonist speak! But it&rsquo;s
-barely audible, the music is just too loud.</p>
+straight to the opening scene. There&rsquo;s music playing&mdash;so far so good. Move
+the cursor over the door on the right side of the screen, and when it turns
+into a crosshair and the word &ldquo;Door&rdquo; appears next to it, press the left mouse
+button to inspect it. Lo and behold, you&rsquo;ll hear our protagonist speak! But
+it&rsquo;s barely audible; the music is just too loud.</p>
 <p>There are a couple of ways to fix that. You can press <span class="keys"><kbd class="key-f5">F5</kbd></span> to bring up the
 game&rsquo;s options dialog where you can lower the music volume, but that would
 make the total audio output too quiet. Worse yet, the setting doesn&rsquo;t get
@@ -2024,35 +2051,35 @@ before</a>, games with Sound
 Blaster support tend to use the sound card&rsquo;s OPL synthesiser for the music and
 its digital audio capabilities for the speech. As the OPL synth and the
 digital audio have their dedicated mixer channels, their volumes can be
-adjusted independently of each other.</p>
+adjusted independently.</p>
 <p><em>&ldquo;Wait a minute, what mixer channels now?!&rdquo;</em></p>
 <p>Okay, so DOSBox has an integrated audio mixer. All emulated sound cards have
 their own channels in the mixer, and certain &ldquo;composite&rdquo; audio devices may
-have multiple channels. The Sound Blaster is such a composite device, so it
-has two mixer channels: one for the OPL synthesiser, and one for digital
+have multiple channels. The Sound Blaster is such a composite device; it
+has two mixer channels: one for the OPL synthesiser and one for digital
 audio.</p>
 <p>Execute the <code>mixer</code> command at the DOS prompt to view the current state of the
 mixer:</p>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-mixer1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="DOSBox Staging mixer -- Displaying the current state" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-mixer1.png" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-mixer1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="DOSBox Staging mixer -- Displaying the current state" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-mixer1.png" /></a></p>
 <p>The first channel is the <code>MASTER</code> channel; this is the summed output of all
-other channels and it&rsquo;s always present. Below that is the <code>CDAUDIO</code> channel,
+other channels, and it&rsquo;s always present. Below that is the <code>CDAUDIO</code> channel,
 the <code>OPL</code> and <code>PCSPEAKER</code> channels (you can guess these two, right?), and
 finally, the <code>SB</code> channel, which is for the digital audio output of the Sound
 Blaster.</p>
-<p>The Sound Blaster card and PC speaker are enabled by default, that&rsquo;s why their
-channels appear in the mixer, and the <code>CDAUDIO</code> channel is added automatically
-whenever we mount a CD-ROM image (as it might contain audio tracks).</p>
+<p>The Sound Blaster card and PC speaker are enabled by default, which is why their
+channels appear in the mixer. The <code>CDAUDIO</code> channel is added automatically
+whenever we mount a CD-ROM image (as the CD image might contain audio tracks).</p>
 <p>To adjust the volume of any mixer channel, we use the <code>mixer</code> command and pass
-in the channel&rsquo;s name as the first argument, and the volume expressed as a
-percentage value as the second. So, to raise the volume of the <code>SB</code> channel to
-500%, we need to execute the following:</p>
+in the channel&rsquo;s name as the first argument and the volume as the second,
+expressed as a percentage value. So, to raise the volume of the <code>SB</code> channel
+to 500%, we need to execute the following:</p>
 <div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mixer sb 500
 </code></pre></div>
 <p>By default, the command prints out the new state of the mixer after the
 adjustment:</p>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-mixer2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="DOSBox Staging mixer -- Adjusting channel volumes" loading="lazy" src="https://archive.org/download/dosbox-staging-getting-started-guide-assets/bass-mixer2.png" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-mixer2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="DOSBox Staging mixer -- Adjusting channel volumes" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-mixer2.png" /></a></p>
 <p>You can combine multiple mixer commands in a single line, e.g., in the below
-example, we&rsquo;re setting the <code>OPL</code> channel&rsquo;s volume to 50%, and the <code>SB</code>
+example, we&rsquo;re setting the <code>OPL</code> channel&rsquo;s volume to 50% and the <code>SB</code>
 channel&rsquo;s to 500%:</p>
 <div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mixer opl 50 sb 500
 </code></pre></div>
@@ -2075,14 +2102,14 @@ startup script.</p>
 all earlier Sound Blaster models and offers the widest compatibility with DOS
 games.</p>
 <p>But back in the day, there were more Sound Blaster variants and clones you
-could shake a stick at, many of them have quite different default volume
-levels. We simply don&rsquo;t know what particular model the developers used, so
+could shake a stick at, and many of them have quite different default volume
+levels. We don&rsquo;t know what particular model the developers this game used, so
 it&rsquo;s worth experimenting with a few different ones. Let&rsquo;s start with a
 first-revision Sound Blaster Pro! Add the following snippet to your config:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sbpro1</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sbpro2</span>
 </code></pre></div>
-<p>We want to hear how the Sound Blaster Pro 1 sounds with the default, unaltered
+<p>We want to hear how the Sound Blaster Pro 2 sounds with the default, unaltered
 volume levels, so make sure to comment out the previously added <code>mixer</code>
 command in the <code>[autoexec]</code> section by prefixing it with a <code>#</code> character:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">[autoexec]</span>
@@ -2093,49 +2120,49 @@ command in the <code>[autoexec]</code> section by prefixing it with a <code>#</c
 <a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="na">sky</span>
 </code></pre></div>
 <p>It seems this simple change alone does the trick; now the speech can be heard
-clearly over the music and the overall volume level is good too! Of course,
+clearly over the music, and the overall volume level is good too! Of course,
 you can still fine-tune the individual channel volumes with the <code>mixer</code>
 command if you wish to do so.</p>
 <h2 id="disabling-the-sound-blaster-mixer">Disabling the Sound Blaster mixer<a class="headerlink" href="#disabling-the-sound-blaster-mixer" title="Permanent link">&para;</a></h2>
 <p>Another option we can try is not letting the game mess around with the OPL and
-digital audio volumes. Starting from the Sound Blaster Pro, programs can alter
-the volume levels of the Sound Blaster card&rsquo;s internal mixer, but we can
+digital audio volumes. Starting from the Sound Blaster Pro 1, programs can
+alter the volume levels of the Sound Blaster card&rsquo;s internal mixer, but we can
 disallow that by turning off the <code>sbmixer</code> setting. Comment out the <code>sbtype</code>
-setting because we want to experiment with our default Sound Blaster 16 model,
-and leave the <code>mixer</code> command in the <code>[autoexec]</code> section commented out too,
+setting because we want to experiment with our default Sound Blaster 16 model
+and leave the <code>mixer</code> command in the <code>[autoexec]</code> section commented out, too,
 of course.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1">#sbtype = sbpro1</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1">#sbtype = sbpro2</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="na">sbmixer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
 </code></pre></div>
-<p>Well, that&rsquo;s another way of fixing the issue; the volume levels are now
-perfect!</p>
+<p>Well, that&rsquo;s another way to fix the issue&mdash;the speech is now loud and
+clear!</p>
+<p>But it&rsquo;s a bit too loud. While the balance between the music and speech was
+just perfect on the Sound Blaster Pro 2, the speech is now overpowering the
+music. Compensating for that by lowering the <code>SB</code> channels volume in the mixer
+is certainly an option, but we can conclude the developers must have tuned the
+volume levels for a Sound Blaser Pro, so setting <code>sbtype = sbpro2</code> is the best
+solution.</p>
 <div class="admonition warning">
 <p class="admonition-title">When the game knows best</p>
 <p>Not letting a game adjust volume levels can sometimes backfire, e.g., in a
 game that intelligently lowers the OPL music level whenever speech is
-playing. But it&rsquo;s worth a shot; quite a few games benefit from wrestling
-the control from them and putting the mixer into &ldquo;manual mode&rdquo;.</p>
+playing. But it&rsquo;s worth a shot; some games benefit from wrestling the
+control from them and putting the mixer into &ldquo;manual mode&rdquo;.</p>
 </div>
 <h2 id="adjusting-the-emulated-cpu-speed">Adjusting the emulated CPU speed<a class="headerlink" href="#adjusting-the-emulated-cpu-speed" title="Permanent link">&para;</a></h2>
-<p>Okay, we&rsquo;re going to do a little experiment next!</p>
-<p>In the opening scene, keep pressing the left mouse button repeatedly on the
-door, about two times per second, to keep starting and then stopping the
-speech. You&rsquo;ll very likely hear audio stuttering and dropouts, ranging from
-subtle to quite severe, depending on how powerful your computer is. Also, if
-you <em>did</em> watch the intro video (which I told you to skip, but no hard
-feelings), you must have heard similar random audio stutterings from time to
-time.</p>
-<p>What&rsquo;s happening here? Well, DOS gaming spans almost two decades, and there
-were lots of different CPUs in use during that period, all having wildly
-different performance or <em>clock speeds</em>. DOSBox doesn&rsquo;t emulate any specific
-CPU but a &ldquo;generic&rdquo; one. So how does it know at what speed to run a particular
-game then?</p>
+<p>If you <em>did</em> watch the intro video (which I told you to skip, but no hard
+feelings), you must have heard quite severe audio stutterings from the moment
+the narrator starts speaking. Well, if you haven&rsquo;t, watch it now!</p>
+<p>What&rsquo;s happening here? DOS gaming spans almost two decades, and many different
+CPUs were in use during that period, all having wildly different performance
+or <em>clock speeds</em>. DOSBox doesn&rsquo;t emulate any specific CPU but a &ldquo;generic&rdquo;
+one. So how does it know the speed at which to run a particular game then?</p>
 <p>It doesn&rsquo;t.</p>
 <p>To explain what&rsquo;s going on, we&rsquo;ll need to understand a few technical details.
 It won&rsquo;t hurt too much, I promise!</p>
 <h3 id="real-and-protected-mode">Real and protected mode<a class="headerlink" href="#real-and-protected-mode" title="Permanent link">&para;</a></h3>
-<p>DOS games can be divided into two categories: older games, and newer games
+<p>DOS games can be divided into two categories: older games and newer games
 (who would&rsquo;ve guessed?) Older games released before about 1993 use something
 called <em>real mode</em>, while newer games released from 1993 onwards use
 <em>protected mode</em>. The important distinction here is that most CPU-hungry games
@@ -2147,12 +2174,12 @@ real or protected mode is trivial. Therefore, DOSBox does the following
 automatic speed calibration by default:</p>
 <ul>
 <li>
-<p>For real mode games, it defaults to emulating 3000 CPU instructions
-  per millisecond.</p>
+<p>For <strong>real mode</strong> games, it emulates <strong>3000</strong> CPU instructions
+  per millisecond (roughly equivalent to a 386SX running at 20 MHz)</p>
 </li>
 <li>
-<p>For protected mode games, it emulates <em>as many CPU instructions as it can</em>
-  per millisecond.</p>
+<p>For <strong>protected mode</strong> games, it emulates <strong>60&thinsp;000</strong> CPU instructions
+  per millisecond (roughly equivalent to a Pentium running at 90 MHz).</p>
 </li>
 </ul>
 <p>The reasoning here is that older games are often sensitive to CPU speed; they
@@ -2162,17 +2189,17 @@ extra speed advantage and can generally handle faster processors without
 negative side effects.</p>
 <p>While this approach generally gets all games <em>running</em>, manual tweaking of the
 emulated CPU speed is often required to make any particular game run
-<em>smoothly</em>. Protected mode games running at the maximum emulable CPU speed are
+<em>smoothly</em>. Protected mode games running at &ldquo;too high&rdquo; CPU speeds are
 particularly problematic because there might not be enough power left for
 smooth, glitch-free audio emulation. There&rsquo;s zero point in emulating a faster
-CPU than what the game needs as all that extra work could be put to better
+CPU than the game needs as all that extra work could be put to better
 use&mdash;such as smoother audio emulation.</p>
 <p>Beyond a Steel Sky is a protected mode game, but how we do know that? Let&rsquo;s
 comment out the last <code>sky</code> command in the <code>[autoexec]</code> section to prevent the
 game from auto-starting, then launch DOSBox Staging in windowed mode. DOSBox
 itself <em>always</em> starts in real mode, and let&rsquo;s take a look at the text in the
 DOSBox window&rsquo;s title bar! It starts with the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="na">DOSBOX - 3000 cycles/ms</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="na">DOSBox Staging - 3000 cycles/ms - to capture the mouse press...</span>
 </code></pre></div>
 <p>Remember what we learned earlier: in real mode, DOSBox defaults to emulating
 3000 CPU instructions, or <em>cycles</em>, per millisecond. The text in the
@@ -2180,24 +2207,23 @@ title bar tells us the current cycles value, so indeed, we must be running in
 real mode now!</p>
 <p>Now start the game with the <code>sky</code> command and keep your eyes peeled on the
 title bar. The text will soon change to the following:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="na">SKY - max 100% cycles/ms</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="na">SKY.EXE - 60000 cycles/ms - to capture the mouse press...</span>
 </code></pre></div>
-<p><code>SKY</code> is the name of the executable that&rsquo;s running, and what do we see after
-that? <code>max 100%</code>! That&rsquo;s the tell-tale sign of a protected mode game because,
-as mentioned, DOSBox tries to emulate the fastest CPU it can in protected
-mode.</p>
+<p><code>SKY.EXE</code> is the name of the currently running program, and what do we see
+right after that? <code>60000 cycles/ms</code>! That&rsquo;s the tell-tale sign of a protected mode game
+because 60&thinsp;000 cycles is our protected mode default.</p>
 <p>And that&rsquo;s the crux of the problem&mdash;there&rsquo;s not enough horsepower left to
 emulate the time-critical audio output without stuttering and glitches. The
 solution is kind of obvious: instead of letting DOSBox run amok with the CPU
-emulation, we&rsquo;ll restrict it to a reasonable speed.</p>
-<p>We do that by specifying the number of CPU instructions, or cycles, to emulate
-per millisecond with the following config snippet:</p>
+emulation, we&rsquo;ll restrict it to a reasonable speed. <code>cpu_cycles</code> sets the
+cycles value for real mode, and <code>cpu_cycles_protected</code> for protected mode.</p>
+<p>Let&rsquo;s insert the following snippet into our config:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">[cpu]</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">12000</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="na">cpu_cycles_protected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25000</span>
 </code></pre></div>
-<p>Restart DOSBox Staging and do the &ldquo;door test&rdquo; again. All the audio glitches
-are now gone! Well done, time for a beer (or your beverage of choice)!
-<img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f37a.svg" title=":beer:" /></p>
+<p>Restart DOSBox Staging and watch the intro again. The audio glitches are now
+gone! Well done, time for a beer (or your beverage of choice)! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" />
+<img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f37a.svg" title=":beer:" /></p>
 <div class="admonition info">
 <p class="admonition-title">Real and protected mode</p>
 <p>In very simple terms, <em>real mode</em> is a programming model that uses the
@@ -2214,20 +2240,22 @@ popular ones. These extenders also print out some fairly characteristic
 messages as they start up when launching the game, so they&rsquo;re easy to
 recognise.</p>
 <p>But you don&rsquo;t need to worry about all that detail as DOSBox will indicate
-with 100% accuracy whether a game runs in real or protected mode. Just set
-<code>cycles</code> to <code>auto</code>, then watch the title bar of the DOSBox Staging window
+with 100% accuracy whether a game runs in real or protected mode. Just
+leave <code>cpu_cycles</code> and <code>cpu_cycles_protected</code> at their default 3000 and
+60&thinsp;000 cycles values, respectively (or set some different custom values
+of your choosing), then watch the title bar of the DOSBox Staging window
 while running the game.</p>
 </div>
 <h3 id="finding-the-correct-speed-for-a-game">Finding the correct speed for a game<a class="headerlink" href="#finding-the-correct-speed-for-a-game" title="Permanent link">&para;</a></h3>
-<p>Ok, so why 12&thinsp;000 and not any other number? The game&rsquo;s manual states
+<p>Ok, so why set <code>cpu_cycles_protected</code> to 25&thinsp;000 and not any other number? The game&rsquo;s manual states
 that a 386 or better processor is required. Indeed, the game works fine at
-6000 cycles which approximates a 386DX CPU running at 33 MHz, but the loading
-times are a bit on the slow side. Setting cycles to 12&thinsp;000&mdash;which
-roughly corresponds to a 486DX2/66 with &ldquo;turbo mode&rdquo; off, running at 33
-MHz&mdash;speeds up the loading considerably while not causing any negative side
-effects. This is not surprising as the DX2/66 was one of the most popular CPUs
-in the 1990s for gaming. This is what
-<a href="https://en.wikipedia.org/wiki/Intel_DX2#:~:text=The%20i486DX2%2D66,performance%20and%20longevity.">Wikipedia says about it</a>:</p>
+6000 cycles, which approximates a 386DX CPU running at 33 MHz, but the loading
+times are a bit on the slow side. Setting the CPU cycles to
+25&thinsp;000&mdash;which roughly corresponds to a 486DX2/66&mdash;speeds up the
+loading considerably without causing any negative side effects. This is not
+surprising as the DX2/66 was one of the
+most popular CPUs in the 1990s for gaming. This is <a href="https://en.wikipedia.org/wiki/Intel_DX2#:~:text=The%20i486DX2%2D66,performance%20and%20longevity.">what Wikipedia says about
+it</a>:</p>
 <blockquote>
 <p>The i486DX2-66 was a very popular processor for video game enthusiasts in
 the early to mid-90s. Often coupled with 4 to 8 MB of RAM and a VLB video
@@ -2311,11 +2339,19 @@ popular processors:</p>
 </tbody>
 </table>
 </div>
+<p>You can look up this handy table in the online help as well with the
+<code>config -h cpu_cycles</code> command.</p>
 <p>Always treat these values only as starting points; as explained
 previously, accurately emulating the speed of any given processor is not
 possible due to the &ldquo;abstract&rdquo; nature of DOSBox&rsquo;s CPU emulation approach. But
 from a practical point of view, this does not matter much&mdash;you just need to find
 the optimal cycles value the game works well with.</p>
+<p>If you&rsquo;re playing 2D games from the 90s, an emulated 486DX2/66 will handle
+anything you throw at it. For 3D games, however, you&rsquo;ll probably need to go up
+to Pentium or Pentium MMX levels, and Pentium II speeds are a must for 3D SVGA
+gaming at 640&times;480 or higher resolutions. For older real mode games, the
+default 3000 cycles is a good starting point, but try the 300 to 10&thinsp;000
+range and see if that improves anything.</p>
 <p>You can fine-tune the cycles setting while playing the game with the
 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f11">F11</kbd></span> and <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> shortcuts (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f11">F11</kbd></span> and <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> on the
 Mac); these will increase the cycles value by 10%, or decrease it by 20%,
@@ -2324,7 +2360,7 @@ according to the cycles value displayed in the DOSBox Staging window&rsquo;s tit
 bar.</p>
 <p>Always try to find the minimum cycles value for each game that gives you an
 adequate performance to conserve host CPU power and reduce the likelihood of
-audio glitches&mdash;overdoing it only makes things worse. Finally, here&rsquo;s a
+audio glitches&mdash;overdoing it only makes things worse. Here&rsquo;s a
 <a href="https://www.vogonswiki.com/index.php/List_of_CPU_speed_sensitive_games">List of CPU speed sensitive games</a>
 that should give you further tips and pointers.</p>
 <h2 id="setting-up-roland-mt-32-sound">Setting up Roland MT-32 sound<a class="headerlink" href="#setting-up-roland-mt-32-sound" title="Permanent link">&para;</a></h2>
@@ -2333,12 +2369,14 @@ that should give you further tips and pointers.</p>
 setup utility. What this refers to is the Roland MT-32 family of MIDI sound
 modules. These were external devices you could connect to your PC that offered
 far more realistic and higher-quality music than any Sound Blaster or AdLib
-sound card. They were the Cadillacs of DOS gaming audio for a while, they were
-priced accordingly, and they still sound excellent even by today&rsquo;s standards.</p>
+sound card was capable of. They were the Cadillacs of DOS gaming audio for a
+while (they were priced accordingly, too), and many find they still sound
+excellent even by today&rsquo;s standards.</p>
 <p>DOSBox Staging can emulate all common variants of the MT-32 family, but it
-requires ROM dumps of the original hardware devices to do so. So first we need
-to download these ROMs <a href="https://archive.org/details/Roland-MT-32-ROMs">from
-here</a> as a ZIP package, then
+requires ROM dumps of the original hardware devices to do so. So first, we
+need to download these ROMs <a href="https://archive.org/details/Roland-MT-32-ROMs">from
+here</a> as a ZIP package
+(<a href="https://files.dosbox-staging.org/Files/ROMs/roland-mt-32-roms.zip">mirror</a>), then
 copy the contents of the archive into our designated MT&#8209;32 ROM folder:</p>
 <div class="compact">
 <table>
@@ -2373,7 +2411,7 @@ This will verify your MT-32 ROM files and print a <strong><code>y</code></strong
 MT-32 ROM versions that have been successfully detected. The green <strong><code>y</code></strong>
 character indicates the currently selected MT-32 version. You should get an
 output similar to this:</p>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-improved-mixer-command/mixer-listmidi.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="DOSBox Staging mixer -- Listing available MIDI devices" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-improved-mixer-command/mixer-listmidi.png" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="DOSBox Staging mixer -- Listing available MIDI devices" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi.png" /></a></p>
 <h3 id="selecting-the-mt-32-version">Selecting the MT-32 version<a class="headerlink" href="#selecting-the-mt-32-version" title="Permanent link">&para;</a></h3>
 <p>As you might have guessed already, you can tell DOSBox Staging to emulate an
 MT-32 model of a specific revision; you can read all about that <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#mt32emu">on our
@@ -2382,7 +2420,7 @@ in practice, these two models will cover 99% of your gaming needs:</p>
 <dl>
 <dt><code>cm32l</code></dt>
 <dd>Unless a specific MT-32 model is requested, DOSBox Staging emulates the
-  Roland CM-32L by default which gives you the best overall compatibility.
+  Roland CM-32L by default, which gives you the best overall compatibility.
   This is a 2<sup>nd</sup> generation MT-32 with 32 additional sound effects that many
   games make good use of. Some studios, such as LucasArts, tended to favour
   the CM-32L, so their games sound a little bit better on this module.</dd>
@@ -2411,25 +2449,25 @@ that tells you the correct model to use for most well-known games.</p>
 <p>Well, the list knows best, so we&rsquo;ll use the CM-32L for our game (as we&rsquo;ve done
 in the above config example).</p>
 <p>To appreciate the difference, you can try running the game with the
-<code>mt32_old</code> model after you&rsquo;ve had it successfully set up for the <code>cm32l</code>.
+<code>mt32_old</code> model after you have successfully set it up for the <code>cm32l</code>.
 You&rsquo;ll find the sound effects in the opening scene sound a lot better on the
 CM-32L.</p>
-<h3 id="configuring-the-game-for-mt-32">Configuring the game for MT-32<a class="headerlink" href="#configuring-the-game-for-mt-32" title="Permanent link">&para;</a></h3>
+<h3 id="configuring-the-game-for-the-mt-32">Configuring the game for the MT-32<a class="headerlink" href="#configuring-the-game-for-the-mt-32" title="Permanent link">&para;</a></h3>
 <p>So now DOSBox Staging emulates the CM-32L, but we also need to set up the game
 for &ldquo;Roland sound&rdquo;. (They could&rsquo;ve been a bit more precise and told us the
 game works best with the CM-32L, couldn&rsquo;t they? It&rsquo;s not even mentioned in the
 manual!)</p>
 <p>Many games have a dedicated setup utility in the same directory where the main
 game executable resides. This is usually called <code>SETUP.EXE</code>, <code>SETSOUND.EXE</code>,
-<code>SOUND.EXE</code>, <code>SOUND.BAT</code>, or something similar. There is no standard, every
+<code>SOUND.EXE</code>, <code>SOUND.BAT</code>, or something similar. There is no standard; every
 game is different. You&rsquo;ll need to poke around a bit; a good starting point is
 to list all executables in the main game folder with the <code>dir *.exe</code>, <code>dir
-*.com</code>, and <code>dir *.bat</code> commands or the <code>ls</code> command, and attempt running the
+*.com</code>, and <code>dir *.bat</code> commands or the <code>ls</code> command and attempt running the
 most promising-looking ones. The manual might also offer some helpful
 pointers, and so can the odd text file (<code>.TXT</code> extension) in the installation
 directory or the root directory of the CD (if the game came on a CD-ROM).
-Certain games have a combined installer and setup utility usually called
-<code>INSTALL.EXE</code> or <code>SETUP.EXE</code> which can be slightly disorienting for people
+Certain games have a combined installer and setup utility, usually called
+<code>INSTALL.EXE</code> or <code>SETUP.EXE</code>, which can be slightly disorienting for people
 with modern sensibilities. You&rsquo;ll get used to it.</p>
 <p>This particular game turns things up a notch and does <em>not</em> copy the
 combined installer-and-setup utility into <code>C:\SKY</code> as one would rightly expect. To
@@ -2439,26 +2477,27 @@ adventure!)</p>
 <p>So let&rsquo;s do that. As we&rsquo;ve already installed the game on our C drive, we&rsquo;ll
 need to press <span class="keys"><kbd class="key-escape">Esc</kbd></span> instead of <span class="keys"><kbd class="key-enter">Enter</kbd></span> in the first <em>Path Selection
 Window</em>. Not exactly intuitive, but whatever. Now we&rsquo;re in the <em>Setup Menu</em>
-screen where we can change the language and configure the sound options.
+screen, where we can change the language and configure the sound options.
 Select <em>Roland</em> sound, then press the <em>Exit Install</em> and <em>Save Setup</em> buttons
 to save your settings (don&rsquo;t even get me started&hellip;)</p>
 <p>Okay, now the moment of truth: start the game with the <code>sky</code> command. If
 nothing went sideways, we should hear the much-improved, glorious MT-32
 soundtrack! Now we&rsquo;re cooking with gas!</p>
-<p>So let&rsquo;s inspect our favourite door one more time&mdash;hey, where did the
-voice-over go?! Yeah&hellip; you&rsquo;ve probably glossed over this little detail in the
-tip from the MT-32 wiki page:</p>
+<p>So let&rsquo;s inspect our favourite door one more time by moving the cursor over it
+and then pressing the left mouse button&mdash;hey, where did the voice-over go?!
+Yeah&hellip; you&rsquo;ve probably glossed over this little detail in the tip from the
+MT-32 wiki page:</p>
 <blockquote>
 <p style="margin: 1.3rem 0">Combined MT-32/SB output <em>only possible</em> using ScummVM</p>
 </blockquote>
-<p>What this means for us ordinary mortals is that in the original game you
-can either use MT-32 for music and sound effects, and you get <em>no</em> speech; or
-you can use Sound Blaster for music, sound effects, <em>and</em> speech. MT-32 music
-and sound effects <em>with</em> speech via the Sound Blaster&mdash;the computer says no,
-buddy.</p>
+<p>What this means for us ordinary mortals is that the original game can either
+use the MT-32 for MIDI music and sound effects, and you get <em>no</em> digital
+speech, or only the Sound Blaster for OPL music, digital sound effects, <em>and</em>
+speech. MT-32 MIDI music and sound effects combined with digital
+speech via the Sound Blaster&mdash;the computer says no, buddy.</p>
 <p>The game has just taught us an important life lesson: you can&rsquo;t have
 everything, especially not in the world of older DOS games. You&rsquo;ll have to
-pick what you value most: better music and only subtitles, or full
+pick what you value most: better music and only subtitles or full
 voice-acting with a slightly worse soundtrack. I&rsquo;m opting for the latter, and
 remember, we can always enhance the Sound Blaster / AdLib music by adding
 chorus and reverb. This will get us a little bit closer to the MT-32
@@ -2467,16 +2506,33 @@ soundtrack:</p>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">strong</span>
 </code></pre></div>
+<h3 id="getting-mt-32-music-with-speech-after-all">Getting MT-32 music with speech (after all)<a class="headerlink" href="#getting-mt-32-music-with-speech-after-all" title="Permanent link">&para;</a></h3>
+<p>Except some people go, &ldquo;Yeah, screw life lessons, I won&rsquo;t have it!&rdquo; Believe it
+or not, some people are still creating patches for 30-year-old DOS games to
+improve them in various ways. One such distinguished gentleman found a way to get
+MT-32 music and Sound Blaster digital speech and sound effects playing at the
+same time in Beneath a Steel Sky, so we&rsquo;ll use his patch to get the most out
+of the game.</p>
+<p>Download the <code>skydrv.zip</code> from
+<a href="https://www.vogons.org/viewtopic.php?p=1276241#p1276241">here</a>, unzip it, and
+then copy <code>skydrv.com</code> into <code>drives/c/SKY</code>. As per the forum post, you can run
+the patched game from the mounted CD with this command:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>d:
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>c:\sky\skydrv cfg=c:\sky
+</code></pre></div>
+<p>Skip the intro and inspect the door again. Whoa, magic! MT-32 music <em>and</em>
+speech at the same time! Yikes! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f60e.svg" title=":sunglasses:" /> Best put this into our
+<code>[autoexec]</code> section!</p>
 <h2 id="aspect-ratio-correction">Aspect ratio correction<a class="headerlink" href="#aspect-ratio-correction" title="Permanent link">&para;</a></h2>
 <p>We&rsquo;re on a roll here; the game seems to provide us with endless education
 opportunities. We&rsquo;ll divert our eyes (ears?) from the audio to the graphics
 next!</p>
 <p>If you&rsquo;ve checked out the comic book included with the game (and you
 definitely should!) and you have a keen eye for detail, you might have noticed
-that the images in the intro sequence, which are scanned from the comics,
-appear vertically stretched on-screen. In fact, they appear <em>exactly 20% taller</em>
-than they should (just trust me on that for a moment).</p>
-<p>So where&rsquo;s this magical 20% vertical stretch factor coming from? DOSBox
+that the images in the intro sequence are scanned from the comics, and they
+appear vertically stretched on-screen. In fact, they appear <em>exactly 20%
+taller</em> than they should (just trust me on that for a moment).</p>
+<p>So, where&rsquo;s this magical 20% vertical stretch factor coming from? DOSBox
 Staging enables aspect ratio correction by default to make 320&times;200
 graphics appear exactly as it would on a 4:3 aspect ratio VGA monitor, which
 requires pixels to be drawn 20% taller. This is the most sensible default as
@@ -2490,7 +2546,7 @@ explained in a lot more detail in the <a href="../advanced-graphics-options/#asp
 options</a>
 chapter at the end.</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.82.0-beneath-a-steel-sky-aspect/bass-aspect.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Left: Screenshot from the intro with aspect ratio correction disabled (square pixels), Right: The original image from the comic book included with the game" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.82.0-beneath-a-steel-sky-aspect/bass-aspect.jpg" width="90%" /></a></p>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-aspect.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Left: Screenshot from the intro with aspect ratio correction disabled (square pixels), Right: The original image from the comic book included with the game" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-aspect.jpg" width="90%" /></a></p>
 <figcaption>
   Left: Screenshot from the intro with aspect ratio correction disabled (square pixels)<br>
   Right: The original image from the comic book included with the game
@@ -2499,14 +2555,14 @@ chapter at the end.</p>
 <p>That&rsquo;s quite easy to do, and we&rsquo;re also setting the viewport resolution to 4x
 integer scaling, effectively, because the game would appear too blocky when
 fit to fullscreen:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="k">[render]</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x800</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">[render]</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x800</span>
 </code></pre></div>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-bass/bass-ingame1.jpg" >
-    <img alt="Beneath a Steel Sky with aspect ratio correction disabled" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-bass/bass-ingame1-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-ingame1.jpg" >
+    <img alt="Beneath a Steel Sky with aspect ratio correction disabled" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-ingame1-small.jpg" />
   </a></p>
 <figcaption>
 <p>Beneath a Steel Sky with aspect ratio correction disabled
@@ -2514,8 +2570,8 @@ fit to fullscreen:</p>
 </figcaption>
 </figure>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-bass/bass-ingame2.jpg" >
-    <img alt="Well, we won't escape this way..." class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-bass/bass-ingame2-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-ingame2.jpg" >
+    <img alt="Well, we won't escape this way..." class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-ingame2-small.jpg" />
   </a></p>
 <figcaption>
 <p>Well, we won&rsquo;t escape this way&hellip;
@@ -2527,12 +2583,12 @@ fit to fullscreen:</p>
 intro graphics but not the in-game visuals. Fortunately, it turns out both the
 intro and the in-game content had been drawn assuming square pixels. For
 example, note how the floppy icon looks like a tallish rectangle with aspect
-ratio correction enabled; that&rsquo;s wrong, floppies should appear as perfect
+ratio correction enabled; that&rsquo;s wrong; floppies should appear as perfect
 squares. Human figures and circular objects would also appear slightly
 elongated vertically with aspect ratio correction enabled. Ultimately, we know
 the game was developed by Revolution, a European studio, and they also
 released the game for PAL Amigas that have square pixels. We also know that
-Revolution was very fond of the Amiga, and thus can be considered an
+Revolution was very fond of the Amiga and thus can be considered an
 Amiga-first developer. For such games, disabling aspect ratio correction is
 almost always the correct answer.</p>
 <p>So, the rules of thumb:</p>
@@ -2546,7 +2602,7 @@ almost always the correct answer.</p>
 <li>
 <p>For games primarily developed for the Amiga or Atari ST by a North American
   studio for the NTSC standard. (Note that even if the work was <em>performed</em> by
-  a European studio, but it was <em>commissioned</em> by North Americans, that
+  a European studio but was <em>commissioned</em> by North Americans, that
   usually means the game was primarily intended for the NTSC-only North
   American market, so you need aspect ratio correction.)</p>
 </li>
@@ -2556,8 +2612,7 @@ almost always the correct answer.</p>
 <li>For most games primarily developed by European studios for the Amiga
   or Atari ST.</li>
 </ul>
-<p>Here&rsquo;s a non-exclusive list of the most important Amiga-first European
-studios:</p>
+<p>Here&rsquo;s a non-exclusive list of the most important European studios:</p>
 <p><em>Bitmap Brothers, Bullfrog, Coktel Vision, Core Design, DMA Design, Delphine,
 Digital Illusions, Firebird, Horror Soft / Adventure Soft, Infogrames, Level
 9, Magnetic Scrolls, Ocean, Psygnosis, Revolution, Sensible Software,
@@ -2565,121 +2620,137 @@ Silmarils, Team 17, Thalamus, Thalion, Ubisoft</em></p>
 <div class="admonition info">
 <p class="admonition-title">From squares to rectangles</p>
 <p>For the vast majority of computer games from the 1980s and &rsquo;90s featuring
-2D graphics, the art was created <em>once</em> for the &ldquo;leading platform&rdquo; which
-was then reused in the various other platform conversions. It was just not
+2D graphics, the art was created <em>once</em> for the &ldquo;leading platform&rdquo; and
+then reused in the various other platform conversions. It was just not
 economical to draw the graphics multiple times in different aspect ratios
 and resolutions, hence this was done extremely rarely.</p>
 <p>We&rsquo;ve explained earlier that CRT monitors in the DOS era had a 4:3 aspect
 ratio, so in 320&times;200 mode the pixels had to be 20% taller for the
 image to completely fill the screen. DOSBox Staging does this aspect ratio
-correction by default which results in games primarily developed for DOS
+correction by default, which results in games primarily developed for DOS
 PCs assuming 1:1.2 pixel aspect ratio to look correct (as the artist
 intended). We&rsquo;ll get to the detailed mathematical derivation of the 1:1.2
 PAR in <a href="../advanced-graphics-options/#aspect-ratios-square-pixels-black-borders">the last chapter</a>.</p>
 <p>But what about games where the leading platform was the Amiga or the Atari
 ST, and the game was developed by a European studio? The analog TV
-standard in Europe was PAL, therefore Amigas sold in Europe were PAL
+standard in Europe was PAL. Therefore, Amigas sold in Europe were PAL
 machines that had square pixels in the 320&times;256 screen mode, the
 resolution most commonly used by PAL Amiga games. So what these European
 studios usually did was to draw the art assuming square pixels, but using
 only a 320&times;200 portion of the 320&times;256 total available area. On
-PAL Amigas, the art appeared in the correct aspect ratio, but letterboxed;
+PAL Amigas, the art appeared in the correct aspect ratio but letterboxed;
 on NTSC Amigas and DOS PCs that had the 320&times;200 low-res screen mode,
 the art filled the whole screen but appeared slightly stretched vertically
 (by 20%). No one seemed to complain about this, and they saved a lot of
 money by not having to draw the art twice, so this economically motivated
 compromise became a common practice.</p>
 <p>However, now you have the option to enjoy these games in their correct
-aspect ratio, as per the artists&rsquo; <em>original intention</em> by simply
+aspect ratio, as per the artists&rsquo; <em>original intention</em>, by simply
 disabling DOSBox Staging&rsquo;s default aspect ratio correction.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Don&rsquo;t trust the circles!</p>
 <p>Even keener observers might notice the image from the intro on the left
 features a circle that only appears perfect with aspect ratio correction
-<em>enabled</em>, in which case the image from the comics is stretched. But with
-aspect ratio correction <em>disabled</em> (as shown above), the circle appears to
-be a squashed oval, but the image from the comics looks perfect.</p>
+<em>enabled</em>, in which case the image from the comics is stretched. However,
+with aspect ratio correction <em>disabled</em> (as shown above), the circle
+appears to be a squashed oval, but the image from the comics looks
+perfect.</p>
 <p>The explanation is simple: the person who drew the circle around the
 scanned image did it assuming 1:1.2 pixel aspect ratio, so it looked
 like a perfect circle to him on his PC VGA monitor.</p>
 <p>That&rsquo;s a common theme: some games end up with assets added to them during
 the porting process, which can sometimes result in mixed aspect ratio
-assets in a single game. Sometimes it&rsquo;s just impossible to make the game
+assets in a single game. Sometimes, it&rsquo;s just impossible to make the game
 appear correctly using a single fixed pixel aspect ratio, especially if
 such mixed aspect ratio assets are being displayed on screen at the same
 time.</p>
-<p>Generally, you cannot trust the circles. <em>Sometimes</em> they will appear
-perfect when the correct aspect ratio is used, sometimes they won&rsquo;t. It&rsquo;s
+<p>Generally, you cannot trust the circles. <em>Sometimes</em>, they will appear
+perfect when the correct aspect ratio is used; sometimes, they won&rsquo;t. It&rsquo;s
 much more reliable to judge aspect ratio correctness by looking at common
 objects, human bodies, and human faces.</p>
 </div>
 <h2 id="arcade-monitor-emulation">Arcade monitor emulation<a class="headerlink" href="#arcade-monitor-emulation" title="Permanent link">&para;</a></h2>
-<p>Now that we brought up the Amiga, it&rsquo;s worthwhile mentioning a special feature
-of the CRT emulation which is not quite authentic, but still a lot of fun!</p>
+<p>Now that we have brought up the Amiga, it&rsquo;s worthwhile mentioning a special
+feature of the CRT emulation, which is not quite authentic but still a lot of
+fun!</p>
 <p>Home computer and arcade monitors (also known as 15 kHz monitors), such as the
 Commodore monitors typically used with Amiga computers, were quite different
 from VGA CRTs. They displayed low-resolution content with thick scanlines,
-similary to EGA monitors, and they were a lot less sharp. While this wasn&rsquo;t
+similar to EGA monitors, and were a lot less sharp. While this wasn&rsquo;t
 great for displaying text and spreadsheets, it made low-resolution pixel art
 appear in a more favourable light.</p>
 <p>We can enable this special fantasy mode with the following setting:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="k">[render]</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt-auto-arcade</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">[render]</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt-auto-arcade</span>
 </code></pre></div>
 <p>Now you can play the game with Amiga-like graphics and MT-32 or OPL sound from
 a strange parallel universe! 😎</p>
 <figure>
-<p><a class="glightbox" href="https://archive.org/download/dosbox-staging-v0.81.0-bass/bass-amiga.jpg" >
-    <img alt="Beneath a Steel Sky from a parellel universe running on an Amiga in 256 colour mode" class="skip-lightbox" loading="lazy" src="https://archive.org/download/dosbox-staging-v0.81.0-bass/bass-amiga-small.jpg" />
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-amiga.jpg" >
+    <img alt="Beneath a Steel Sky from a parallel universe running on an Amiga in 256-colour mode" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/bass-amiga-small.jpg" />
   </a></p>
 <figcaption>
-<p>Beneath a Steel Sky from a parellel universe running on an Amiga in 256 colour mode
+<p>Beneath a Steel Sky from a parallel universe running on an Amiga in 256-colour mode
   </p>
 </figcaption>
 </figure>
 <h2 id="final-configuration">Final configuration<a class="headerlink" href="#final-configuration" title="Permanent link">&para;</a></h2>
 <p>Putting it all together, this is our final config:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="k">[cpu]</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="na">cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">12000</span>
-<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>
-<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="k">[sdl]</span>
-<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>
-<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="k">[render]</span>
-<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
-<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x800</span>
-<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>
-<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="c1"># uncomment for arcade monitor emulation</span>
-<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="c1">#glshader = crt-auto-arcade</span>
-<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>
-<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="na">sbmixer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
-<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>
-<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="k">[midi]</span>
-<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mt32</span>
-<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a>
-<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="k">[mt32]</span>
-<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="na">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cm32l</span>
-<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>
-<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="k">[mixer]</span>
-<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
-<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">strong</span>
-<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>
-<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="na">imgmount d &quot;cd/cdrom1.iso&quot; -t iso</span>
-<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="na">cd sky</span>
-<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="na">sky</span>
-<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="na">exit</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="k">[cpu]</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="na">cpu_cycles_protected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25000</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="k">[sdl]</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="k">[render]</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x800</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="c1"># uncomment for arcade monitor emulation</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="c1">#glshader = crt-auto-arcade</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="na">sbmixer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="k">[midi]</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mt32</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="k">[mixer]</span>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">strong</span>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="na">imgmount d &quot;cd/cdrom1.iso&quot; -t iso</span>
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="c1"># original game</span>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a><span class="c1">#c:</span>
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a><span class="c1">#cd sky</span>
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a><span class="c1">#sky</span>
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>
+<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a><span class="c1"># patched game (MT-32 music &amp; SB speech/sfx)</span>
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a><span class="na">d</span><span class="o">:</span>
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a><span class="na">c</span><span class="o">:</span><span class="s">\sky\skydrv cfg=c:\sky</span>
+<a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a>
+<a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a><span class="na">exit</span>
 </code></pre></div>
-<p>With this config, you can switch between Roland MT-32 and Sound Blaster /
-AdLib sound at will by only reconfiguring the game via <code>INSTALL.EXE</code>&mdash;you
-don&rsquo;t need to make any further changes to the DOSBox config. In case you&rsquo;re
-wondering, enabling reverb and chorus does not add these effects to the MT-32
-output by default; that&rsquo;s undesirable as the MT-32 has its own built-in reverb
-and chorus, so DOSBox Staging is intelligent enough not to apply these effects
-twice on its output.</p>
+<p>The patched game is clearly superior, but you can still run the original
+version: just uncomment the three lines below <code># original game</code>,
+then comment out the two lines after <code># patched game</code>. You can switch
+between Roland MT-32 and Sound Blaster &amp; AdLib sound at will by only
+reconfiguring the game via <code>INSTALL.EXE</code>&mdash;you won&rsquo;t need to make any further
+changes to the DOSBox config.</p>
+<div class="admonition note">
+<p class="admonition-title">About reverb presets</p>
+<p>In case you&rsquo;re wondering, enabling reverb and chorus does not add these
+effects to the output of the MT-32. That&rsquo;s undesirable as the MT-32 has
+its own built-in reverb and chorus, so DOSBox Staging is intelligent enough
+not to apply these effects twice on its output.</p>
+<p>The reverb presets add a tiny little bit of reverb to the digital audio
+(PCM) outputs, such as the <code>SB</code> channel, mostly just to help the PCM
+output blend better with the synthesiser&rsquo;s output (e.g., the <code>OPL</code>
+channel), which features a prominent reverb.</p>
+</div>
 
 
 
@@ -2798,7 +2869,7 @@ twice on its output.</p>
     <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
