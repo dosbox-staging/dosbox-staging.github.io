@@ -12,13 +12,13 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://www.dosbox-staging.org/releases/release-notes/0.79.1/">
+        <link rel="canonical" href="https://www.dosbox-staging.org/releases/release-notes/0.82.1/">
       
       
-        <link rel="prev" href="../0.80.0/">
+        <link rel="prev" href="../../linux/">
       
       
-        <link rel="next" href="../0.79.0/">
+        <link rel="next" href="../0.82.0/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>0.79.1 - DOSBox Staging</title>
+        <title>0.82.1 - DOSBox Staging</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#0791-release-notes" class="md-skip">
+        <a href="#0821-release-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -557,10 +557,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0.82.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    0.82.1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -569,6 +589,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regression-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements-and-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements and fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#downloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Downloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0821-commit-authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.82.1 commit authors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thank you
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -704,30 +804,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    0.79.1
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0.79.1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,98 +816,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to upgrade
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#fixes-and-regressions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fixes and regressions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#functionality-refinements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Functionality refinements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#translation-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Translation improvements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wiki-updates-since-0790" class="md-nav__link">
-    <span class="md-ellipsis">
-      Wiki updates since 0.79.0
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packaging-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Packaging fixes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#thank-you" class="md-nav__link">
-    <span class="md-ellipsis">
-      Thank you
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1517,57 +1505,45 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regression-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhancements-and-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enhancements and fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-upgrade" class="md-nav__link">
+  <a href="#downloads" class="md-nav__link">
     <span class="md-ellipsis">
-      How to upgrade
+      Downloads
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#fixes-and-regressions" class="md-nav__link">
+  <a href="#0821-commit-authors" class="md-nav__link">
     <span class="md-ellipsis">
-      Fixes and regressions
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#functionality-refinements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Functionality refinements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#translation-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Translation improvements
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#wiki-updates-since-0790" class="md-nav__link">
-    <span class="md-ellipsis">
-      Wiki updates since 0.79.0
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#packaging-fixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Packaging fixes
+      0.82.1 commit authors
     </span>
   </a>
   
@@ -1597,156 +1573,82 @@
                   
 
 
-<h1 id="0791-release-notes">0.79.1 release notes<a class="headerlink" href="#0791-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong>  2022-09-30</p>
+<h1 id="0821-release-notes">0.82.1 release notes<a class="headerlink" href="#0821-release-notes" title="Permanent link">&para;</a></h1>
+<p><strong>Release date:</strong> 2025-??-??</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
-<p>We recommend repository maintainers move to 0.79.1, which should be much
-easier to package. Details in the <a href="#packaging-fixes">Packaging fixes</a> section below.</p>
-<p>We recommend users of our zip, dmg, and Windows installer packages upgrade
-from 0.79.0 to fix some audio and usability bugs.</p>
-<p>This maintenance release was made possible by everyone who tried 0.79.0,
-submitted bugs and pull requests, and tested the updates: thank you!</p>
-<h2 id="how-to-upgrade">How to upgrade<a class="headerlink" href="#how-to-upgrade" title="Permanent link">&para;</a></h2>
-<p>Download and launch the latest version:</p>
+<p>The focus of this minor maintenance release is to fix a few regressions introduced
+in 0.82.0, and to add a few small enhancements.</p>
+<h3 id="regression-fixes">Regression fixes<a class="headerlink" href="#regression-fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fixed dual-mouse gaming support not working on Windows. This broke 
+  the dual-mouse feature in the <strong>The Settlers</strong> and <strong>The Settlers II: Veni,
+  Vidi, Vici</strong> on Windows only.</p>
+</li>
+<li>
+<p>A new <code>file_locking</code> setting has been introduced to allow disabling file
+  locking (previously, file locking was always enabled). Setting
+  <code>file_locking = off</code> fixes the regression of the demo <a href="https://www.pouet.net/prod.php?which=1">Astral Blur by The Black
+  Lotus</a> not starting up.
+  Please refer to the setting&rsquo;s description to learn more (e.g., run <code>config
+  -h file_locking</code> from the DOS prompt).</p>
+</li>
+<li>
+<p>Fixed a regression where configuration settings were handled in a
+  case-sensitive manner across the board (they should be case-insentive; e.g., 
+  <code>cpu_cycles</code>, <code>CPU_CYCLES</code> and <code>Cpu_CYCles</code> should refer to the same setting).</p>
+</li>
+</ul>
+<h3 id="enhancements-and-fixes">Enhancements and fixes<a class="headerlink" href="#enhancements-and-fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Now you can queue setting changes that are unchangeable at runtime. The
+  queued setting will be applied on the next emulator restart (via the <code>config
+  -r</code> command or the restart hotkey). For example, execute the following
+  commands to change the machine type to CGA and use 1 MB of RAM:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>machine cga
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>memsize 1
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>config -r
+</code></pre></div>
+</li>
+<li>
+<p>Config files written with <code>config -wc PATH</code> and <code>-wcd</code> commands now have a
+  blank line inserted after each setting&rsquo;s description to improve readability.</p>
+</li>
+<li>
+<p>Fixed a bug where certain <code>startup_verbosity</code> settings could lead to a blank
+  console.</p>
+</li>
+</ul>
+<h2 id="downloads">Downloads<a class="headerlink" href="#downloads" title="Permanent link">&para;</a></h2>
+<p>Start by downloading the latest version:</p>
 <div class="compact">
 <ul>
-<li><a href="../../linux/">Linux</a> (or <a href="../../linux/#steam">Steam on Linux</a>)</li>
 <li><a href="../../windows/">Windows</a></li>
 <li><a href="../../macos/">macOS</a></li>
+<li><a href="../../linux/">Linux</a></li>
 </ul>
 </div>
-<p>At the<code>Z:\&gt;</code> prompt, run <code>config -wc</code> to write the new configuration file. Any
-existing settings will be retained, however, extraneous comments will be
-dropped.</p>
-<h2 id="fixes-and-regressions">Fixes and regressions<a class="headerlink" href="#fixes-and-regressions" title="Permanent link">&para;</a></h2>
+<p>This is a drop-in upgrade for users already on <strong>0.82.0</strong>&mdash;no configuration
+changes are necessary.</p>
+<p>For those upgrading from an earlier DOSBox Staging version, please follow
+these <a href="../0.82.0/#how-to-upgrade">upgrade instructions</a> and read the
+<a href="../0.82.0/">0.82.0 release notes</a>.</p>
+<p>If you&rsquo;re a first-time user (i.e., you&rsquo;ve never used DOSBox Staging before, or
+you&rsquo;re migrating from some other DOSBox variant), please follow the <a href="../../../getting-started/">Getting
+started guide</a>.</p>
+<h2 id="0821-commit-authors">0.82.1 commit authors<a class="headerlink" href="#0821-commit-authors" title="Permanent link">&para;</a></h2>
+<div class="compact">
 <ul>
-<li>
-<p>Fixed a CD-DA playback regression in <strong>Might and Magic 6</strong> when using
-  multi-image mounts <em>(kcgen)</em></p>
-</li>
-<li>
-<p>Allowed the <span class="keys"><kbd class="key-escape">Esc</kbd></span> key and window-close events to exit from the paused
-  state <em>(Wengier)</em></p>
-</li>
-<li>
-<p>Fixed a bug that prevented automounted drives from being used by
-  <code>[autoexec]</code> commands <em>(kcgen)</em></p>
-</li>
-<li>
-<p>Fixed an audio filter reset regression flagged in <strong>Blues Brothers: Jukebox
-  Adventure</strong> <em>(kcgen)</em></p>
-</li>
-<li>
-<p>Fixed a 16-bit stereo DMA regression detected when using the Sound Blaster&rsquo;s
-  <code>modern</code> filter <em>(kcgen)</em></p>
-</li>
+<li>FeralChild64</li>
+<li>interloper98</li>
+<li>johnnovak</li>
+<li>weirddan455</li>
 </ul>
-<figure>
-<video controls="controls" width="690"><source src="https://www.dosbox-staging.org/static/videos/release-notes/0.79.1/303-by-acme-sb16-modern.mp4" type="video/mp4">Your browser does not support the <code>video</code> element.</video>
-<figcaption>
-<p>303 by Acme &mdash; 30fps encoding, 120k cycles, and SB16 using the <code>modern</code> filter
-  </p>
-</figcaption>
-</figure>
-<h2 id="functionality-refinements">Functionality refinements<a class="headerlink" href="#functionality-refinements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Improved ability to pipe between applications by using <code>Y:</code> as a temporary
-  path <em>(Wengier)</em></p>
-</li>
-<li>
-<p>Switched to warning-level logging for MIDI configuration issues <em>(Michael
-  Drueing)</em></p>
-</li>
-<li>
-<p>Improved the lookup of resources when XDG variables aren&rsquo;t set correctly
-  <em>(kcgen, Eli Schwartz)</em></p>
-</li>
-<li>
-<p>Updated the Dutch language to use the US keyboard layout by default
-  <em>(Wengier)</em></p>
-</li>
-<li>
-<p>Included Xbox compatible controller mapperfiles for 180+ games:
-  <a href="https://github.com/dosbox-staging/dosbox-staging/pull/1977">conf</a>,
-  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Keymapper">wiki</a>
-  <em>(nemo93)</em></p>
-</li>
-</ul>
-<h2 id="translation-improvements">Translation improvements<a class="headerlink" href="#translation-improvements" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Added Dutch translation <em>(Robert de Rooy)</em></li>
-<li>Fixed outdated content in German translation <em>(Burrito78)</em></li>
-<li>
-<p>Synced Italian translation <em>(Kappa971)</em></p>
-</li>
-<li>
-<p>Dropped non-existant <code>KEYB</code> help messages from translation system
-  <em>(Wengier)</em></p>
-</li>
-<li>
-<p>Replaced more escape codes with markup tags in the translations <em>(Robert de
-  Rooy)</em></p>
-</li>
-<li>
-<p>Moved the mount type descriptions into the translation system <em>(Wengier)</em></p>
-</li>
-</ul>
-<h2 id="wiki-updates-since-0790">Wiki updates since 0.79.0<a class="headerlink" href="#wiki-updates-since-0790" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>New <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Keymapper">Keymapper page</a>
-  with examples for those with Xbox controllers (nemo93)</p>
-</li>
-<li>
-<p>New <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Frequently-Asked-Questions">FAQ</a>
-  answering questions about audio settings, configuration files, video output,
-  and other topics <em>(nemo93)</em></p>
-</li>
-<li>
-<p>Notable additions to the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/UniVBE">UniVBE</a>,
-  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Special-Keys">Special keys</a>,
-  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Get-Started">Getting started</a>,
-  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Audio-configuration-recommendations">Suggested audio settings</a>,
-  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Config-file-examples">Config examples</a>,
-  <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/AUTOTYPE-Candidates">AUTOTYPE candidates</a>,
-  and <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Games-with-CD-DA,-GUS-and-MIDI-audio">Games with CD-DA, GUS and MIDI audio</a>
-  pages <em>(nemo93)</em></p>
-</li>
-</ul>
-<h2 id="packaging-fixes">Packaging fixes<a class="headerlink" href="#packaging-fixes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Adjusted Meson&rsquo;s FluidSynth dependency spec to match upstream&rsquo;s packaging
-  <em>(Kirk Klobe)</em></p>
-</li>
-<li>
-<p>Switched Meson to use SpeexDSP from the host first and fallback to wrap
-  <em>(kcgen)</em></p>
-</li>
-<li>
-<p>Switched Meson to use shared (instead of static) libraries by default
-  <em>(kcgen)</em></p>
-</li>
-<li>
-<p>Fixed installation of <code>resources</code> when using <code>meson install</code> <em>(kcgen, Eli
-  Schwartz)</em></p>
-</li>
-</ul>
-<p>Packagers will get shared libs and installed resources with these standard
-steps:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>meson setup --prefix /writable/install/path build
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>meson install -C build
-</code></pre></div>
+</div>
 <h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
-<p>Thanks to our financial contributors who allow us to purchase
-hardware, licenses, and other non-trivial expenses to keep the team
-and project going.</p>
-<p>To support our work, donate to our
-<a href="https://github.com/sponsors/dosbox-staging">GitHub Sponsors</a> or
-<a href="https://opencollective.com/dosbox-staging">Open Collective</a>.</p>
-<p>We are grateful for all community contributions as well as the
-original DOSBox project, upon which DOSBox Staging is based.</p>
+<p>We are grateful for all the community contributions and the original DOSBox
+project, on which DOSBox Staging is based.</p>
 
 
 
@@ -1791,9 +1693,9 @@ original DOSBox project, upon which DOSBox Staging is based.</p>
       
         
         <a
-          href="../0.80.0/"
+          href="../../linux/"
           class="md-footer__link md-footer__link--prev"
-          aria-label="Previous: 0.80.0"
+          aria-label="Previous: Linux"
           rel="prev"
         >
           <div class="md-footer__button md-icon">
@@ -1804,7 +1706,7 @@ original DOSBox project, upon which DOSBox Staging is based.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              0.80.0
+              Linux
             </div>
           </div>
         </a>
@@ -1814,9 +1716,9 @@ original DOSBox project, upon which DOSBox Staging is based.</p>
       
         
         <a
-          href="../0.79.0/"
+          href="../0.82.0/"
           class="md-footer__link md-footer__link--next"
-          aria-label="Next: 0.79.0"
+          aria-label="Next: 0.82.0"
           rel="next"
         >
           <div class="md-footer__title">
@@ -1824,7 +1726,7 @@ original DOSBox project, upon which DOSBox Staging is based.</p>
               <span class="md-footer__direction">
                 Next
               </span>
-              0.79.0
+              0.82.0
             </div>
           </div>
           <div class="md-footer__button md-icon">
