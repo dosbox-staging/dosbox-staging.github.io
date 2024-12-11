@@ -513,8 +513,6 @@
       
         
       
-        
-      
     
     
       
@@ -545,27 +543,6 @@
             Release notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../releases/release-notes/0.82.1/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    0.82.1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -1702,10 +1679,8 @@ three ZIP archives,
 <a href="https://archive.org/download/StarWarsDarkForces/dforces1.zip">dforces1.zip</a>,
 <a href="https://archive.org/download/StarWarsDarkForces/dforces2.zip">dforces2.zip</a>,
 and <a href="https://archive.org/download/StarWarsDarkForces/dforces3.zip">dforces3.zip</a>;
-we&rsquo;ll need to copy their contents to our virtual C drive
-(<a href="https://files.dosbox-staging.org/Files/Games/Demos/Star%20Wars%20-%20Dark%20Forces/">mirror</a>). Make sure to
-download the <a href="https://archive.org/details/dark-forces-manual">manual</a> as well
-(<a href="https://files.dosbox-staging.org/Files/Games/Manuals/Dark%20Forces%20-%20User%20Manual.pdf">mirror</a>).</p>
+we&rsquo;ll need to copy their contents to our virtual C drive. Make sure to
+download the <a href="https://archive.org/details/dark-forces-manual">manual</a> as well.</p>
 <p>There&rsquo;s a <code>README.TXT</code> included with the demo; it&rsquo;s recommended to read at
 least the installation and the keyboard shortcuts sections (use <code>more
 README.TXT</code>). The instructions tell us exactly what we need to do (this is why
@@ -2193,9 +2168,8 @@ realistic the General MIDI rendition of this orchestral piece sounds compared
 to the OPL synth.</p>
 <p>Of course, you can always try other GM or GS-compatible SoundFonts
 too&mdash;that&rsquo;s the beauty of General MIDI!
-<a href="https://archive.org/details/fluidr3-gm-gs">FluidR3_GM_GS</a> (<a href="https://files.dosbox-staging.org/Files/SoundFonts/FluidR3_GM_GS.sf2">mirror</a>) and
+<a href="https://archive.org/details/fluidr3-gm-gs">FluidR3_GM_GS</a> and
 <a href="https://archive.org/download/free-soundfonts-sf2-2019-04/Creative%20Labs%204M%20GM_4gmgsmt.sf2">Creative Labs 4M GM_4gmgsmt</a>
-(<a href="https://files.dosbox-staging.org/Files/SoundFonts/Creative%20Labs%204M%20GM_4gmgsmt.sf2">mirror</a>)
 are good candidates as they sound fairly close to the SC-55 sound set. The
 <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#soundfonts">list of recommended SoundFonts</a>
 on our wiki should also give you some further pointers on which SoundFonts
@@ -2250,18 +2224,14 @@ about it again.</p>
 <p class="admonition-title">Turn it down, please!</p>
 <p>Some SoundFonts are <em>way</em> too loud; if you encounter such a SoundFont,
 you&rsquo;ll most likely want to lower its output level. The best way to do so
-is via the <code>soundfont_volume</code> setting which takes a percentage volume value:</p>
+is by including an additional percentage volume value after the
+SoundFont&rsquo;s name in the config, e.g.:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[fluidsynth]
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>soundfont = Arachno
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>soundfont_volume = 40
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>soundfont = Arachno 40
 </code></pre></div>
 <p>This will scale back the volume to 40%. A few SoundFonts are <em>extremely
-loud</em>&mdash;you&rsquo;ll need to turn the volume down to 10-20% to get usable levels
-out of them. It&rsquo;s a mystery what the authors were thinking&hellip;</p>
-<p>The big advantage of using <code>soundfont_volume</code> is that you can normalise
-the SoundFont&rsquo;s volume in your primary config globally, then you don&rsquo;t
-need to touch any of your game configs that fine-tune the volume of the
-<code>FSYNTH</code> channel via <code>mixer</code> commands.</p>
+loud</em>&mdash;you need to turn the volume down to 10-20% to get usable levels.
+It&rsquo;s a mystery what the authors were thinking&hellip;</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Roland MT-32 is not General MIDI</p>
