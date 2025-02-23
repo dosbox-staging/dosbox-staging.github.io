@@ -1792,6 +1792,25 @@ and pull requests, and tested the updates. Thank you! <img alt="😎" class="twe
   colours.</p>
 </li>
 <li>
+<p>Fixed regression where an executable could not be started by its
+  extensionless-name if another file with the same name and no extension was
+  present in the same directory (e.g., if you had <code>SKI.EXE</code> and <code>SKI</code> in the
+  same directory, <code>SKI.EXE</code> would start the executable, but <code>SKI</code> resulted in
+  an error). Non-exclusive list of affected games:</p>
+<p><div class="compact">
+  <ul>
+    <li><strong>Fahrenheit 451</strong></li>
+    <li><strong>Overkill</strong></li>
+    <li><strong>Ski or Die</strong> </li>
+    <li><strong>Treaure Island</strong></li>
+    <li><strong>Wizard of Oz</strong></li>
+  </ul>
+</div></p>
+</li>
+<li>
+<p>Fix regression where the audio was not muted when the mapper was open.</p>
+</li>
+<li>
 <p>Fix old regression introduced in <a href="../0.78.0/">0.78.0</a> where the zoom-rotator
   effects in the demos <strong>Show</strong> and <strong>Face</strong> by <strong>Majic 12</strong> were offset
   horizontally by roughly half the screen.</p>
@@ -1800,15 +1819,6 @@ and pull requests, and tested the updates. Thank you! <img alt="😎" class="twe
 <p>Fixed dual-mouse gaming support not working on Windows. This broke the
   dual-mouse support in <strong>The Settlers</strong> and <strong>The Settlers II: Veni, Vidi,
   Vici</strong>.</p>
-</li>
-<li>
-<p>Fix regression where <strong>Overkill</strong> and <strong>Ski or Die</strong> could not be started
-  unless you specified the full executable name including the extension in the
-  run command (e.g., <code>SKI.EXE</code> worked, but <code>SKI</code> resulted in an error).
-  Probably more games were affected; now they all should be fixed.</p>
-</li>
-<li>
-<p>Fix regression where the audio was not muted when the mapper was open.</p>
 </li>
 </ul>
 <h3 id="enhancements">Enhancements<a class="headerlink" href="#enhancements" title="Permanent link">&para;</a></h3>
@@ -1904,12 +1914,21 @@ file_locking</code> from the DOS prompt).</p>
 <h3 id="other-fixes_1">Other fixes<a class="headerlink" href="#other-fixes_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Fixed a bug where an extension-less file with the same name as an executable
-  incorrectly threw an &ldquo;Invalid command&rdquo; error when attempting to launch the
-  executable from the command line (e.g., if you had both <code>OVERKILL.EXE</code> and a
-  file called <code>OVERKILL</code> without an extension in the same directory, and you tried
-  to start the game by only typing <code>OVERKILL</code>). This fixes at least the games
-  <strong>Overkill</strong> and <strong>Ski or Die</strong>, but probably more games are affected.</p>
+<p>Fixed a regression where an executable could not be started by its
+  extensionless-name if another file with the same name and no extension was
+  present in the same directory. E.g., if you had <code>SKI.EXE</code> and <code>SKI</code> in the
+  same directory, <code>SKI.EXE</code> would start the executable, but <code>SKI</code> resulted in
+  an &ldquo;Invalid command&rdquo; error. Here&rsquo;s a non-exclusive list of affected games
+  (probably a lot more games were affected):</p>
+<p><div class="compact">
+  <ul>
+    <li><strong>Fahrenheit 451</strong></li>
+    <li><strong>Overkill</strong></li>
+    <li><strong>Ski or Die</strong> </li>
+    <li><strong>Treaure Island</strong></li>
+    <li><strong>Wizard of Oz</strong></li>
+  </ul>
+</div></p>
 </li>
 <li>
 <p>Fixed an obscure issue where the game <strong>Abuse</strong> failed to launch on Windows
