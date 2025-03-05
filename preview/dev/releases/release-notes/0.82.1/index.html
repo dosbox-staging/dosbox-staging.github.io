@@ -1808,6 +1808,14 @@ and pull requests, and tested the updates. Thank you! <img alt="😎" class="twe
 </div></p>
 </li>
 <li>
+<p>Fixed <strong>Epic Pinball: Super Android (shareware v1.1)</strong> regression where the
+  music was playing too quickly with doubled notes on the Gravis UltraSound.</p>
+</li>
+<li>
+<p>Fixed audio stuttering regression above ~100k cycles in <strong>Nethack:
+  Falcon&rsquo;s Eye</strong>.</p>
+</li>
+<li>
 <p>Fix regression where the audio was not muted when the mapper was open.</p>
 </li>
 <li>
@@ -1874,11 +1882,19 @@ Sound Blaster digital output twice as loud).</p>
 <h3 id="other-fixes">Other fixes<a class="headerlink" href="#other-fixes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
-<p>Fixed regression where the Gravis UltraSound would play back static after it
-  was enabled, disabled, and then re-enabled via the <code>CONFIG</code> command.</p>
+<p>Fixed audio stuttering regression above ~100k cycles in <strong>Nethack:
+  Falcon&rsquo;s Eye</strong>.</p>
 </li>
 <li>
-<p>Fix regression where the audio was not muted when the mapper was open.</p>
+<p>Fixed <strong>Epic Pinball: Super Android (shareware v1.1)</strong> regression where the
+  music was playing too quickly with doubled notes on the Gravis UltraSound.</p>
+</li>
+<li>
+<p>Fixed regression where the audio was not muted when the mapper was open.</p>
+</li>
+<li>
+<p>Fixed regression where the Gravis UltraSound would play back static noise
+  after it was enabled, disabled, and then re-enabled via the <code>CONFIG</code> command.</p>
 </li>
 </ul>
 <details class="note">
@@ -1887,6 +1903,8 @@ Sound Blaster digital output twice as loud).</p>
 <li>Delete the GUS tick handler in the destructor (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4183" title="GitHub Issue dosbox-staging/dosbox-staging #4183">#4183</a>)</li>
 <li>Lower default master volume (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4105" title="GitHub Issue dosbox-staging/dosbox-staging #4105">#4105</a>)</li>
 <li>Mute audio when the mapper is active (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4195" title="GitHub Issue dosbox-staging/dosbox-staging #4195">#4195</a>)</li>
+<li>Remove std::atomic from performance critical global variables (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4181" title="GitHub Issue dosbox-staging/dosbox-staging #4181">#4181</a>)</li>
+<li>Revert &ldquo;Keep GUS running (and rendering) on IO port reads&rdquo; (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4216" title="GitHub Issue dosbox-staging/dosbox-staging #4216">#4216</a>)</li>
 </ul>
 </details>
 <h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h2>
