@@ -1862,7 +1862,7 @@
 
 
 <h1 id="0821-release-notes">0.82.1 release notes<a class="headerlink" href="#0821-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong> 2025-03-22</p>
+<p><strong>Release date:</strong> 2025-04-06</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>The main focus of this maintenance release is to fix a couple of regressions
 introduced in 0.82.0 and older releases, mostly related to game compatibility.
@@ -1902,6 +1902,11 @@ and pull requests, and tested the updates. Thank you!</p>
     <li><strong>Wizard of Oz</strong></li>
   </ul>
 </div></p>
+</li>
+<li>
+<p>Fix <strong>Jane&rsquo;s Combat Simulations AH-64D Longbow</strong> (original non-Gold
+  version) regression where the in-game options menu could not be opened
+  (v1.07), and fix the game crashing when launching any mission (v1.08).</p>
 </li>
 <li>
 <p>Fix emulator crash in <strong>Chess Housers (1993)</strong> which happened a few
@@ -1991,6 +1996,11 @@ by reading the <a href="../../../getting-started/">Getting started guide</a>.</p
   the demos <strong>Show</strong> and <strong>Face</strong> by <strong>Majic 12</strong> were offset horizontally by
   roughly half the screen.</p>
 </li>
+<li>
+<p>The 132x28, 132x30, and 132x34 DOSBox-special VESA text modes are now only
+  available if <code>vesa_modes = all</code> is set (e.g., when trying to set them via
+  the <code>MODE</code> command).</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of graphics-related changes</summary>
@@ -1998,6 +2008,7 @@ by reading the <a href="../../../getting-started/">Getting started guide</a>.</p
 <li>Fix VGA draw address calculation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4062" title="GitHub Issue dosbox-staging/dosbox-staging #4062">#4062</a>)</li>
 <li>Fix <code>INT10_SetVideoMode()</code> regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4182" title="GitHub Issue dosbox-staging/dosbox-staging #4182">#4182</a>)</li>
 <li>Use std::atomic&rsquo;s wait over busy wait in Voodoo (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4220" title="GitHub Issue dosbox-staging/dosbox-staging #4220">#4220</a>)</li>
+<li>VESA 2.0 mode list regression fix (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4245" title="GitHub Issue dosbox-staging/dosbox-staging #4245">#4245</a>)</li>
 </ul>
 </details>
 <h2 id="sound">Sound<a class="headerlink" href="#sound" title="Permanent link">&para;</a></h2>
