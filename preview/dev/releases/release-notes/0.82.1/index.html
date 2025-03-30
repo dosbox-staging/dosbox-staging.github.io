@@ -676,9 +676,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-changs" class="md-nav__link">
+  <a href="#other-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Other changs
+      Other changes
     </span>
   </a>
   
@@ -1713,9 +1713,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#other-changs" class="md-nav__link">
+  <a href="#other-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Other changs
+      Other changes
     </span>
   </a>
   
@@ -1862,7 +1862,7 @@
 
 
 <h1 id="0821-release-notes">0.82.1 release notes<a class="headerlink" href="#0821-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong> 2025-04-06</p>
+<p><strong>Release date:</strong> 2025-04-04</p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>The main focus of this maintenance release is to fix a couple of regressions
 introduced in 0.82.0 and older releases, mostly related to game compatibility.
@@ -1889,16 +1889,16 @@ and pull requests, and tested the updates. Thank you!</p>
 </li>
 <li>
 <p>Fix regression where an executable could not be started by its
-  extensionless-name if another file with the same name and no extension was
+  extensionless name if another file with the same name and no extension was
   present in the same directory (e.g., if you had <code>SKI.EXE</code> and <code>SKI</code> in the
   same directory, <code>SKI.EXE</code> would start the executable, but <code>SKI</code> resulted in
-  an error). Non-exhaustive list of affected games:</p>
+  an error). A non-exhaustive list of affected games:</p>
 <p><div class="compact">
   <ul>
     <li><strong>Fahrenheit 451</strong></li>
     <li><strong>Overkill</strong></li>
     <li><strong>Ski or Die</strong> </li>
-    <li><strong>Treaure Island</strong></li>
+    <li><strong>Treasure Island</strong></li>
     <li><strong>Wizard of Oz</strong></li>
   </ul>
 </div></p>
@@ -1981,11 +1981,18 @@ by reading the <a href="../../../getting-started/">Getting started guide</a>.</p
 <li>
 <p>You can now manually set <code>voodoo_threads</code> to a maximum of 128 threads (up
   from 16). We don&rsquo;t know how well it will perform at high thread counts, but
-  if you have a AMD Ryzen Threadripper, please let us know if it scales
+  if you have an AMD Ryzen Threadripper, please let us know if it scales
   <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
 </li>
+<li>
+<p>Bilinear filtering is now enabled by default to emulate the characteristic
+  Voodoo look more authentically.</p>
+</li>
+<li>
+<p>The descriptions of the Voodoo settings have been improved.</p>
+</li>
 </ul>
-<h3 id="other-changs">Other changs<a class="headerlink" href="#other-changs" title="Permanent link">&para;</a></h3>
+<h3 id="other-changes_1">Other changes<a class="headerlink" href="#other-changes_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
 <p>Fix <strong>DreamWeb</strong> regression introduced in 0.81.2 where the grayscale text in
@@ -2005,6 +2012,7 @@ by reading the <a href="../../../getting-started/">Getting started guide</a>.</p
 <details class="note">
 <summary>Full PR list of graphics-related changes</summary>
 <ul>
+<li>Enable bilinear filtering for the 3dfx Voodoo by default (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4250" title="GitHub Issue dosbox-staging/dosbox-staging #4250">#4250</a>)</li>
 <li>Fix VGA draw address calculation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4062" title="GitHub Issue dosbox-staging/dosbox-staging #4062">#4062</a>)</li>
 <li>Fix <code>INT10_SetVideoMode()</code> regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4182" title="GitHub Issue dosbox-staging/dosbox-staging #4182">#4182</a>)</li>
 <li>Use std::atomic&rsquo;s wait over busy wait in Voodoo (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4220" title="GitHub Issue dosbox-staging/dosbox-staging #4220">#4220</a>)</li>
@@ -2100,17 +2108,17 @@ file_locking</code> from the DOS prompt).</p>
 <ul>
 <li>
 <p>Fixed a regression where an executable could not be started by its
-  extensionless-name if another file with the same name and no extension was
+  extensionless name if another file with the same name and no extension was
   present in the same directory. E.g., if you had <code>SKI.EXE</code> and <code>SKI</code> in the
-  same directory, <code>SKI.EXE</code> would start the executable, but <code>SKI</code> resulted in
-  an &ldquo;Invalid command&rdquo; error. Here&rsquo;s a non-exhaustive list of affected games
-  (probably a lot more games were affected):</p>
+  same directory, <code>SKI.EXE</code> would start the executable, but <code>SKI</code> would result
+  in an &ldquo;Invalid command&rdquo; error. Here&rsquo;s a non-exhaustive list of affected
+  games (probably a lot more games were affected):</p>
 <p><div class="compact">
   <ul>
     <li><strong>Fahrenheit 451</strong></li>
     <li><strong>Overkill</strong></li>
     <li><strong>Ski or Die</strong> </li>
-    <li><strong>Treaure Island</strong></li>
+    <li><strong>Treasure Island</strong></li>
     <li><strong>Wizard of Oz</strong></li>
   </ul>
 </div></p>
