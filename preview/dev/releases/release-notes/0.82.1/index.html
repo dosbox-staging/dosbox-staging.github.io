@@ -2156,10 +2156,18 @@ Sound Blaster digital output twice as loud).</p>
   wanted.  You can apply crossfeed to other channels as well with the <code>MIXER</code>
   command if you want (e.g., <code>MIXER GUS x50</code>).</p>
 </li>
+<li>
+<p>Downgrade FluidSynth to v2.3.5 on Windows and use single-precision float
+  mode. This fixes at least <strong>Trevor0402&rsquo;s SC-55 SoundFont</strong> on Windows
+  (typically called <code>SC-55.SoundFont.v1.2b.sf2</code> or <code>SC-55 SoundFont.v1.2b
+  [Trevor0402].sf2</code>) and ensures identical SoundFont playback on all
+  supported platforms when using our official builds.</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of sound-related changes</summary>
 <ul>
+<li>Add custom vcpkg overlay port for FluidSynth (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4267" title="GitHub Issue dosbox-staging/dosbox-staging #4267">#4267</a>)</li>
 <li>Delete the GUS tick handler in the destructor (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4183" title="GitHub Issue dosbox-staging/dosbox-staging #4183">#4183</a>)</li>
 <li>Fix GUS resampling regression &amp; emulate the GUS&rsquo; output more authentically (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4219" title="GitHub Issue dosbox-staging/dosbox-staging #4219">#4219</a>)</li>
 <li>Improve default crossfeed setting behaviour (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4223" title="GitHub Issue dosbox-staging/dosbox-staging #4223">#4223</a>)</li>
