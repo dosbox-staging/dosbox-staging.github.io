@@ -12,13 +12,13 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://www.dosbox-staging.org/releases/release-notes/0.77.0/">
+        <link rel="canonical" href="https://www.dosbox-staging.org/releases/release-notes/0.82.1/">
       
       
-        <link rel="prev" href="../0.77.1/">
+        <link rel="prev" href="../../linux/">
       
       
-        <link rel="next" href="../0.76.0/">
+        <link rel="next" href="../0.82.0/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.ico">
@@ -26,7 +26,7 @@
     
     
       
-        <title>0.77.0 - DOSBox Staging</title>
+        <title>0.82.1 - DOSBox Staging</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#0770-release-notes" class="md-skip">
+        <a href="#0821-release-notes" class="md-skip">
           Skip to content
         </a>
       
@@ -578,10 +578,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../0.82.1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    0.82.1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -592,6 +614,230 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#game-compatibility-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Game compatibility fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-fixes-and-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes and enhancements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphics
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3dfx-voodoo-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      3dfx Voodoo improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-changes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other changes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sound
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lower-the-default-master-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lower the default master volume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gravis-ultrasound-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gravis UltraSound changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-fixes-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes &amp; improvements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOS integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-file-locking-configurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make file locking configurable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Localisation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      General
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0821-commit-authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.82.1 commit authors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#thank-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Thank you
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -854,32 +1100,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    0.77.0
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../0.77.0/" class="md-nav__link">
         
   
   
@@ -890,227 +1114,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#how-to-upgrade" class="md-nav__link">
-    <span class="md-ellipsis">
-      How to upgrade
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#significant-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Significant changes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Significant changes">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#migrated-to-the-meson-build-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      Migrated to the Meson build system
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-and-selinux-security-policy-compliance" class="md-nav__link">
-    <span class="md-ellipsis">
-      macOS and SELinux security policy compliance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#variable-expansion-in-the-interactive-dos-shell" class="md-nav__link">
-    <span class="md-ellipsis">
-      Variable expansion in the interactive DOS shell
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finished-fluidsynth-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finished FluidSynth integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finished-mt-32-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finished MT-32 integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibm-ps1-audio-device-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      IBM PS/1 Audio device support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#innovation-ssi-2001-audio-device-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Innovation SSI-2001 audio device support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-hotkey-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      macOS hotkey changes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#translation-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Translation improvements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#improved-startup-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Improved startup settings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relative-window-size-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relative window size support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#window-resizing-enabled-by-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      Window resizing enabled by default
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bugfixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bugfixes
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#contributions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Contributions
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Contributions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dosbox-staging-members" class="md-nav__link">
-    <span class="md-ellipsis">
-      DOSBox Staging members
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#direct-contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Direct contributors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dosbox-contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      DOSBox contributors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#indirect-contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Indirect contributors
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#thank-you" class="md-nav__link">
-    <span class="md-ellipsis">
-      Thank you
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1727,127 +1730,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-upgrade" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      How to upgrade
+      Summary
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#significant-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Significant changes
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Significant changes">
+    <nav class="md-nav" aria-label="Summary">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#migrated-to-the-meson-build-system" class="md-nav__link">
+  <a href="#game-compatibility-fixes" class="md-nav__link">
     <span class="md-ellipsis">
-      Migrated to the Meson build system
+      Game compatibility fixes
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#macos-and-selinux-security-policy-compliance" class="md-nav__link">
+  <a href="#other-fixes-and-enhancements" class="md-nav__link">
     <span class="md-ellipsis">
-      macOS and SELinux security policy compliance
+      Other fixes and enhancements
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#variable-expansion-in-the-interactive-dos-shell" class="md-nav__link">
+  <a href="#other-changes" class="md-nav__link">
     <span class="md-ellipsis">
-      Variable expansion in the interactive DOS shell
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finished-fluidsynth-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finished FluidSynth integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#finished-mt-32-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Finished MT-32 integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ibm-ps1-audio-device-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      IBM PS/1 Audio device support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#innovation-ssi-2001-audio-device-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Innovation SSI-2001 audio device support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#macos-hotkey-changes" class="md-nav__link">
-    <span class="md-ellipsis">
-      macOS hotkey changes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#translation-improvements" class="md-nav__link">
-    <span class="md-ellipsis">
-      Translation improvements
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#improved-startup-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Improved startup settings
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#relative-window-size-support" class="md-nav__link">
-    <span class="md-ellipsis">
-      Relative window size support
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#window-resizing-enabled-by-default" class="md-nav__link">
-    <span class="md-ellipsis">
-      Window resizing enabled by default
+      Other changes
     </span>
   </a>
   
@@ -1859,55 +1772,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bugfixes" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
-      Bugfixes
+      Installation
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#contributions" class="md-nav__link">
+  <a href="#graphics" class="md-nav__link">
     <span class="md-ellipsis">
-      Contributions
+      Graphics
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Contributions">
+    <nav class="md-nav" aria-label="Graphics">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dosbox-staging-members" class="md-nav__link">
+  <a href="#3dfx-voodoo-improvements" class="md-nav__link">
     <span class="md-ellipsis">
-      DOSBox Staging members
+      3dfx Voodoo improvements
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#direct-contributors" class="md-nav__link">
+  <a href="#other-changes_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Direct contributors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#dosbox-contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      DOSBox contributors
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#indirect-contributors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Indirect contributors
+      Other changes
     </span>
   </a>
   
@@ -1915,6 +1810,117 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sound
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lower-the-default-master-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lower the default master volume
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gravis-ultrasound-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gravis UltraSound changes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-fixes-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes &amp; improvements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input" class="md-nav__link">
+    <span class="md-ellipsis">
+      Input
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dos-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      DOS integration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOS integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#make-file-locking-configurable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Make file locking configurable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other fixes
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Localisation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#general" class="md-nav__link">
+    <span class="md-ellipsis">
+      General
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#0821-commit-authors" class="md-nav__link">
+    <span class="md-ellipsis">
+      0.82.1 commit authors
+    </span>
+  </a>
   
 </li>
       
@@ -1943,236 +1949,376 @@
 
 
 
-<h1 id="0770-release-notes">0.77.0 release notes<a class="headerlink" href="#0770-release-notes" title="Permanent link">&para;</a></h1>
-<p><strong>Release date:</strong> 2021-07-21</p>
-<h2 id="how-to-upgrade">How to upgrade<a class="headerlink" href="#how-to-upgrade" title="Permanent link">&para;</a></h2>
-<p>Download and launch the latest version:</p>
+<h1 id="0821-release-notes">0.82.1 release notes<a class="headerlink" href="#0821-release-notes" title="Permanent link">&para;</a></h1>
+<p><strong>Release date:</strong> 2025-04-04</p>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>The main focus of this maintenance release is to fix a couple of regressions
+introduced in 0.82.0 and older releases, mostly related to game compatibility.
+The other big improvement is the CPU usage of the 3dfx Voodoo emulation has
+been reduced by about 50%, so your computer won&rsquo;t go into hoover-mode anymore
+when playing those Voodoo games <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f60e.svg" title=":sunglasses:" /> <img alt="🌀" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f300.svg" title=":cyclone:" /></p>
+<p>This release was made possible by everyone who tried 0.82.0, submitted bugs
+and pull requests, and tested the updates. Thank you!</p>
+<h3 id="game-compatibility-fixes">Game compatibility fixes<a class="headerlink" href="#game-compatibility-fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fix <strong>DreamWeb</strong> regression introduced in <a href="../0.81.2/">0.81.2</a> where the
+  grayscale text in the intro appeared &ldquo;quantised&rdquo; to pure black and white
+  colours.</p>
+</li>
+<li>
+<p>Fix <strong>Epic Pinball: Super Android (shareware v1.1)</strong> regression where the
+  music was playing too quickly with doubled notes on the Gravis UltraSound
+  (the <strong>Epic Pinball: The Complete Collection</strong> CD version was not affected).</p>
+</li>
+<li>
+<p>Fix audio stuttering regression above ~100k cycles in <strong>Nethack:
+  Falcon&rsquo;s Eye</strong>.</p>
+</li>
+<li>
+<p>Fix regression where an executable could not be started by its
+  extensionless name if another file with the same name and no extension was
+  present in the same directory (e.g., if you had <code>SKI.EXE</code> and <code>SKI</code> in the
+  same directory, <code>SKI.EXE</code> would start the executable, but <code>SKI</code> resulted in
+  an error). A non-exhaustive list of affected games:</p>
+<p><div class="compact">
+  <ul>
+    <li><strong>Fahrenheit 451</strong></li>
+    <li><strong>Overkill</strong></li>
+    <li><strong>Ski or Die</strong> </li>
+    <li><strong>Treasure Island</strong></li>
+    <li><strong>Wizard of Oz</strong></li>
+  </ul>
+</div></p>
+</li>
+<li>
+<p>Fix <strong>Jane&rsquo;s Combat Simulations AH-64D Longbow</strong> (original non-Gold
+  version) regression where the in-game options menu could not be opened
+  (v1.07), and fix the game crashing when launching any mission (v1.08).</p>
+</li>
+<li>
+<p>Fix emulator crash in <strong>Chess Housers (1993)</strong> which happened a few
+  seconds after starting the game.</p>
+</li>
+<li>
+<p>Fix dual-mouse gaming support not working on Windows. This broke dual-mouse
+  support in <strong>The Settlers</strong> and <strong>The Settlers II: Veni, Vidi, Vici</strong>.</p>
+</li>
+</ul>
+<h3 id="other-fixes-and-enhancements">Other fixes and enhancements<a class="headerlink" href="#other-fixes-and-enhancements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The CPU usage of the 3dfx Voodoo emulation has been reduced by about 50%.</p>
+</li>
+<li>
+<p>Fix regression where the audio was not muted when the mapper was open.</p>
+</li>
+<li>
+<p>Fix subtle Gravis UltraSound regression where the high-frequency content
+  of the GUS&rsquo;s output was a little harsher than before in some games.</p>
+</li>
+<li>
+<p>The default audio volume (master channel volume) has been reduced to 50% (-6
+  dB) in the mixer to avoid audible distortion in games with a loud output.</p>
+</li>
+<li>
+<p>Enabling crossfeed (e.g., by setting <code>crossfeed = on</code> in the config) now
+  only applies the crossfeed effect to the <strong>OPL</strong> and <strong>CMS</strong> channels.</p>
+</li>
+<li>
+<p>Fix old regression introduced in <a href="../0.78.0/">0.78.0</a> where the zoom-rotator
+  effects in the demos <strong>Show</strong> and <strong>Face</strong> by <strong>Majic 12</strong> were offset
+  horizontally by roughly half the screen.</p>
+</li>
+<li>
+<p>Fix regression where sometimes the real mode cycles value was incorrectly
+  displayed in the DOSBox Staging window&rsquo;s title bar in protected mode
+  programs.</p>
+</li>
+<li>
+<p>File sharing and locking emulation introduced in <a href="../0.82.0/">0.82.0</a> can now
+  be disabled with the new <code>file_locking</code> setting. A very small number of DOS
+  programs might misbehave or crash with file locking enabled (e.g., the demo
+  <a href="https://www.pouet.net/prod.php?which=1">Astral Blur by TBL</a>).</p>
+</li>
+</ul>
+<h3 id="other-changes">Other changes<a class="headerlink" href="#other-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The minimum required macOS version has been increased from <strong>macOS 10.15
+  Catalina</strong> to <strong>macOS 11 Big Sur</strong>.</li>
+</ul>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>This is a drop-in upgrade for users already on <a href="../0.82.0/">0.82.0</a>&mdash;no
+configuration changes are necessary.</p>
+<p>For those upgrading from an earlier DOSBox Staging version, please follow
+these <a href="../0.82.0/#how-to-upgrade">upgrade instructions</a> and read the 
+earlier release notes to learn about the changes and new features.</p>
+<p>First-time users and people migrating from other DOSBox variants should start
+by reading the <a href="../../../getting-started/">Getting started guide</a>.</p>
+<h2 id="graphics">Graphics<a class="headerlink" href="#graphics" title="Permanent link">&para;</a></h2>
+<h3 id="3dfx-voodoo-improvements">3dfx Voodoo improvements<a class="headerlink" href="#3dfx-voodoo-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>The CPU usage of the Voodoo emulation has been reduced by about 50%.</p>
+</li>
+<li>
+<p><code>voodoo_threads = auto</code> now sets threads equal to the number of logical
+  (hyperthreaded) CPU cores rather than just physical cores. The maximum
+  number of threads <code>auto</code> will set has been raised from 8 to 16.</p>
+</li>
+<li>
+<p>You can now manually set <code>voodoo_threads</code> to a maximum of 128 threads (up
+  from 16). We don&rsquo;t know how well it will perform at high thread counts, but
+  if you have an AMD Ryzen Threadripper, please let us know if it scales
+  <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f60e.svg" title=":sunglasses:" /></p>
+</li>
+<li>
+<p>Bilinear filtering is now enabled by default to emulate the characteristic
+  Voodoo look more authentically.</p>
+</li>
+<li>
+<p>The descriptions of the Voodoo settings have been improved.</p>
+</li>
+</ul>
+<h3 id="other-changes_1">Other changes<a class="headerlink" href="#other-changes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fix <strong>DreamWeb</strong> regression introduced in 0.81.2 where the grayscale text in
+  the intro appeared &ldquo;quantised&rdquo; to pure black and white colours.</p>
+</li>
+<li>
+<p>Fix old regression introduced in 0.78.0 where the zoom-rotator effects in
+  the demos <strong>Show</strong> and <strong>Face</strong> by <strong>Majic 12</strong> were offset horizontally by
+  roughly half the screen.</p>
+</li>
+<li>
+<p>The 132x28, 132x30, and 132x34 DOSBox-special VESA text modes are now only
+  available if <code>vesa_modes = all</code> is set (e.g., when trying to set them via
+  the <code>MODE</code> command).</p>
+</li>
+</ul>
+<details class="note">
+<summary>Full PR list of graphics-related changes</summary>
+<ul>
+<li>Enable bilinear filtering for the 3dfx Voodoo by default (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4250" title="GitHub Issue dosbox-staging/dosbox-staging #4250">#4250</a>)</li>
+<li>Fix VGA draw address calculation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4062" title="GitHub Issue dosbox-staging/dosbox-staging #4062">#4062</a>)</li>
+<li>Fix <code>INT10_SetVideoMode()</code> regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4182" title="GitHub Issue dosbox-staging/dosbox-staging #4182">#4182</a>)</li>
+<li>Use std::atomic&rsquo;s wait over busy wait in Voodoo (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4220" title="GitHub Issue dosbox-staging/dosbox-staging #4220">#4220</a>)</li>
+<li>VESA 2.0 mode list regression fix (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4245" title="GitHub Issue dosbox-staging/dosbox-staging #4245">#4245</a>)</li>
+</ul>
+</details>
+<h2 id="sound">Sound<a class="headerlink" href="#sound" title="Permanent link">&para;</a></h2>
+<h3 id="lower-the-default-master-volume">Lower the default master volume<a class="headerlink" href="#lower-the-default-master-volume" title="Permanent link">&para;</a></h3>
+<p>The default audio volume (master channel volume) has been reduced to 50% (-6
+dB) in the mixer to avoid audible distortion in games with a loud output. This
+also helps with overly loud SoundFonts.</p>
+<p>You can use the <code>mixer master 100</code> DOS command to restore the previous
+behaviour, but it&rsquo;s advised to only do that for games that are too quiet on a
+case-by-case basis. An even better solution is to only raise the volume of the
+channels that need a bit of a boost (e.g., run <code>mixer sb 200</code> to make the
+Sound Blaster digital output twice as loud).</p>
+<h3 id="gravis-ultrasound-changes">Gravis UltraSound changes<a class="headerlink" href="#gravis-ultrasound-changes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fixed <strong>Epic Pinball: Super Android (shareware v1.1)</strong> regression where the
+  music was playing too quickly with doubled notes on the Gravis UltraSound
+  (the <strong>Epic Pinball: The Complete Collection</strong> CD version was not affected).</p>
+</li>
+<li>
+<p>Fixed regression where the Gravis UltraSound would play back static noise
+  after it was enabled, disabled, and then re-enabled via the <code>CONFIG</code> command.</p>
+</li>
+<li>
+<p>Fixed subtle Gravis UltraSound regression where the high-frequency content
+  of the GUS&rsquo;s output was a little harsher than before. This was mostly only
+  noticeable in music with lots of hi-hats and similar high-pitched sounds.</p>
+</li>
+<li>
+<p>Additionally, the sound of the Gravis UltraSound Classic and MAX models are
+  emulated more faithfully now. This includes the emulation of the analog
+  low-pass output filter which is enabled by default.</p>
+</li>
+</ul>
+<h3 id="other-fixes-improvements">Other fixes &amp; improvements<a class="headerlink" href="#other-fixes-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fixed audio stuttering regression above ~100k cycles in <strong>Nethack:
+  Falcon&rsquo;s Eye</strong>.</p>
+</li>
+<li>
+<p>Fixed regression where the audio was not muted when the mapper was open.</p>
+</li>
+<li>
+<p>Enabling crossfeed (e.g., by setting <code>crossfeed = on</code> in the config) now
+  only applies the crossfeed effect to the <strong>OPL</strong> and <strong>CMS</strong> channels. These
+  are the two devices that typically feature hard-panned sounds. Previously,
+  crossfeed presets applied to all stereo channels, but this was rarely
+  wanted.  You can apply crossfeed to other channels as well with the <code>MIXER</code>
+  command if you want (e.g., <code>MIXER GUS x50</code>).</p>
+</li>
+<li>
+<p>Downgrade FluidSynth to v2.3.5 on Windows and use single-precision float
+  mode. This fixes at least <strong>Trevor0402&rsquo;s SC-55 SoundFont</strong> on Windows
+  (typically called <code>SC-55.SoundFont.v1.2b.sf2</code> or <code>SC-55 SoundFont.v1.2b
+  [Trevor0402].sf2</code>) and ensures identical SoundFont playback on all
+  supported platforms when using our official builds.</p>
+</li>
+</ul>
+<details class="note">
+<summary>Full PR list of sound-related changes</summary>
+<ul>
+<li>Add custom vcpkg overlay port for FluidSynth (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4267" title="GitHub Issue dosbox-staging/dosbox-staging #4267">#4267</a>)</li>
+<li>Delete the GUS tick handler in the destructor (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4183" title="GitHub Issue dosbox-staging/dosbox-staging #4183">#4183</a>)</li>
+<li>Fix GUS resampling regression &amp; emulate the GUS&rsquo; output more authentically (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4219" title="GitHub Issue dosbox-staging/dosbox-staging #4219">#4219</a>)</li>
+<li>Improve default crossfeed setting behaviour (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4223" title="GitHub Issue dosbox-staging/dosbox-staging #4223">#4223</a>)</li>
+<li>Lower default master volume (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4105" title="GitHub Issue dosbox-staging/dosbox-staging #4105">#4105</a>)</li>
+<li>Mute audio when the mapper is active (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4195" title="GitHub Issue dosbox-staging/dosbox-staging #4195">#4195</a>)</li>
+<li>Remove std::atomic from performance critical global variables (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4181" title="GitHub Issue dosbox-staging/dosbox-staging #4181">#4181</a>)</li>
+<li>Revert &ldquo;Keep GUS running (and rendering) on IO port reads&rdquo; (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4216" title="GitHub Issue dosbox-staging/dosbox-staging #4216">#4216</a>)</li>
+</ul>
+</details>
+<h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Fixed dual-mouse gaming support not working on Windows. This broke the
+  dual-mouse support in <strong>The Settlers</strong> and <strong>The Settlers II: Veni, Vidi,
+  Vici</strong>.</li>
+</ul>
+<details class="note">
+<summary>Full PR list of input-related changes</summary>
+<ul>
+<li>Fix ManyMouse support in Windows builds (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4035" title="GitHub Issue dosbox-staging/dosbox-staging #4035">#4035</a>)</li>
+<li>Improve some mouse setting descriptions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4206" title="GitHub Issue dosbox-staging/dosbox-staging #4206">#4206</a>)</li>
+</ul>
+</details>
+<h2 id="dos-integration">DOS integration<a class="headerlink" href="#dos-integration" title="Permanent link">&para;</a></h2>
+<h3 id="make-file-locking-configurable">Make file locking configurable<a class="headerlink" href="#make-file-locking-configurable" title="Permanent link">&para;</a></h3>
+<p>We&rsquo;ve added a new <code>file_locking</code> setting to allow disabling the <a href="../0.82.0/#file-sharing-support">file sharing
+and locking</a> support introduced in
+<a href="../0.82.0/">0.82.0</a>.</p>
+<p>Previously, the feature was always enabled which did not cause problems for
+the vast majority of DOS software, but it did cause a regression for the demo
+<a href="https://www.pouet.net/prod.php?which=1">Astral Blur by TBL</a>.</p>
+<p>Please refer to the setting&rsquo;s description to learn more (e.g., run <code>config -h
+file_locking</code> from the DOS prompt).</p>
+<h3 id="other-fixes">Other fixes<a class="headerlink" href="#other-fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Fixed a regression where an executable could not be started by its
+  extensionless name if another file with the same name and no extension was
+  present in the same directory. E.g., if you had <code>SKI.EXE</code> and <code>SKI</code> in the
+  same directory, <code>SKI.EXE</code> would start the executable, but <code>SKI</code> would result
+  in an &ldquo;Invalid command&rdquo; error. Here&rsquo;s a non-exhaustive list of affected
+  games (probably a lot more games were affected):</p>
+<p><div class="compact">
+  <ul>
+    <li><strong>Fahrenheit 451</strong></li>
+    <li><strong>Overkill</strong></li>
+    <li><strong>Ski or Die</strong> </li>
+    <li><strong>Treasure Island</strong></li>
+    <li><strong>Wizard of Oz</strong></li>
+  </ul>
+</div></p>
+</li>
+<li>
+<p>Fixed an obscure issue where the game <strong>Abuse</strong> failed to launch on Windows
+  7 and newer versions of Windows when using a network drive.</p>
+</li>
+</ul>
+<details class="note">
+<summary>Full PR list of DOS integration-related changes</summary>
+<ul>
+<li>Add a file_locking config option (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4024" title="GitHub Issue dosbox-staging/dosbox-staging #4024">#4024</a>)</li>
+<li>Fix command line parser bug where an extension-less file prevents execution (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4185" title="GitHub Issue dosbox-staging/dosbox-staging #4185">#4185</a> )</li>
+<li>Rename files on Windows before delete (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4152" title="GitHub Issue dosbox-staging/dosbox-staging #4152">#4152</a>)</li>
+</ul>
+</details>
+<h2 id="localisation">Localisation<a class="headerlink" href="#localisation" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Update the Polish translation.</li>
+</ul>
+<details class="note">
+<summary>Full PR list of localisation-related changes</summary>
+</details>
+<h2 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Fixed emulator crash in <strong>Chess Housers (1993)</strong> which happened a few
+  seconds after starting the game.</p>
+</li>
+<li>
+<p>Fixed a bug where setting the startup verbosity level could lead to a black
+  screen after starting the emulator.</p>
+</li>
+<li>
+<p>Fixed a regression where configuration settings were handled in a
+  case-sensitive manner across the board (they should be case-insensitive;
+  <code>cpu_cycles</code>, <code>CPU_CYCLES</code> and <code>Cpu_CYCles</code> should refer to the same
+  setting).</p>
+</li>
+<li>
+<p>Fixed an old regression where path names passed to the DOSBox Staging
+  executable were not always handled properly. This caused problems when
+  passing a directory name with spaces in it to mount it as the C drive (e.g.,
+  <code>dosbox.exe "some directory name"</code>).</p>
+</li>
+<li>
+<p>Improved the formatting of newly written config files by separating setting
+  descriptions with blank lines.</p>
+</li>
+<li>
+<p>DOSBox Staging will now queue changes for unchangeable settings such as
+  <code>machine</code> and <code>memsize</code>, and use them when restarting with <code>CONFIG -r</code> or
+  via the restart hotkey. For example, run the following commands to change
+  the machine type to CGA and use 1 MB of RAM:</p>
+<div class="highlight"><pre><span></span><code>Z:\&gt; machine cga
+Z:\&gt; memsize 1
+Z:\&gt; config -r
+</code></pre></div>
+</li>
+<li>
+<p>Fixed regression where sometimes the real mode cycles value was incorrectly
+  displayed in the DOSBox Staging window&rsquo;s title bar in protected mode
+  programs.</p>
+</li>
+</ul>
+<details class="note">
+<summary>Full PR list of project maintenance-related changes</summary>
+<ul>
+<li>Remove Coverity static analysis (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4171" title="GitHub Issue dosbox-staging/dosbox-staging #4171">#4171</a>)</li>
+</ul>
+</details>
+<details class="note">
+<summary>Full PR list of miscellaneous changes</summary>
+<ul>
+<li>Display the correct real or protected mode cycles value in the title bar (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4221" title="GitHub Issue dosbox-staging/dosbox-staging #4221">#4221</a>)</li>
+<li>Do not hard exit when encountering unimplemented PIC functions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4225" title="GitHub Issue dosbox-staging/dosbox-staging #4225">#4225</a>) </li>
+<li>Eliminate the internal <code>InstantLaunch</code> verbosity level (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4054" title="GitHub Issue dosbox-staging/dosbox-staging #4054">#4054</a>)</li>
+<li>Fix configuration setting case sensitivity regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4057" title="GitHub Issue dosbox-staging/dosbox-staging #4057">#4057</a>)</li>
+<li>Fix support for space in the directory name argument (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4150" title="GitHub Issue dosbox-staging/dosbox-staging #4150">#4150</a>)</li>
+<li>Improve the formatting of the written config file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4048" title="GitHub Issue dosbox-staging/dosbox-staging #4048">#4048</a>)</li>
+<li>Let unchangeable settings be queued and used on restart (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4055" title="GitHub Issue dosbox-staging/dosbox-staging #4055">#4055</a>)</li>
+</ul>
+</details>
+<details class="note">
+<summary>Full PR list of other changes</summary>
+<ul>
+<li>Bump macOS runner to macOS-13 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4038" title="GitHub Issue dosbox-staging/dosbox-staging #4038">#4038</a>)</li>
+<li>Set &lsquo;actions/cache&rsquo; to &lsquo;v4&rsquo; (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4153" title="GitHub Issue dosbox-staging/dosbox-staging #4153">#4153</a>)</li>
+</ul>
+</details>
+<h2 id="0821-commit-authors">0.82.1 commit authors<a class="headerlink" href="#0821-commit-authors" title="Permanent link">&para;</a></h2>
 <div class="compact">
 <ul>
-<li><a href="../../linux/">Linux</a> (or <a href="../../linux/#steam">Steam on Linux</a>)</li>
-<li><a href="../../windows/">Windows</a></li>
-<li><a href="../../macos/">macOS</a></li>
-</ul>
-</div>
-<p>At the<code>Z:\&gt;</code> prompt, run <code>config -wc</code> to write the new configuration file. Any
-existing settings will be retained, however, extraneous comments will be
-dropped.</p>
-<h2 id="significant-changes">Significant changes<a class="headerlink" href="#significant-changes" title="Permanent link">&para;</a></h2>
-<h3 id="migrated-to-the-meson-build-system">Migrated to the Meson build system<a class="headerlink" href="#migrated-to-the-meson-build-system" title="Permanent link">&para;</a></h3>
-<p>Migrated Staging from autotools to the Meson build system. Those building from
-source, please see <code>BUILD.md</code> in the repository. See: <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/854" title="GitHub Issue dosbox-staging/dosbox-staging #854">#854</a></p>
-<h3 id="macos-and-selinux-security-policy-compliance">macOS and SELinux security policy compliance<a class="headerlink" href="#macos-and-selinux-security-policy-compliance" title="Permanent link">&para;</a></h3>
-<p>Added write-xor-execute page support to comply with the latest macOS and
-SELinux security policies</p>
-<p>Thanks to <em>jmarsh</em> and <em>Jonathan Campbell</em> for discussions on vogons.
-See: <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1031" title="GitHub Issue dosbox-staging/dosbox-staging #1031">#1031</a></p>
-<h3 id="variable-expansion-in-the-interactive-dos-shell">Variable expansion in the interactive DOS shell<a class="headerlink" href="#variable-expansion-in-the-interactive-dos-shell" title="Permanent link">&para;</a></h3>
-<p>See: <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/1059" title="GitHub Issue dosbox-staging/dosbox-staging #1059">#1059</a></p>
-<h3 id="finished-fluidsynth-integration">Finished FluidSynth integration<a class="headerlink" href="#finished-fluidsynth-integration" title="Permanent link">&para;</a></h3>
-<p>FluidSynth is now included in all release binaries. See the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#fluidsynth">wiki
-notes</a>
-for how to use it. Run <code>MIXER /LISTMIDI</code> in the DOS shell to see your
-available soundfonts.</p>
-<p>Thanks to:</p>
-<ul>
-<li>
-<p><em>Christian Lestrade</em> for
-  <a href="https://sourceforge.net/p/dosbox/patches/107/">authoring</a> this support in
-  2005, and all subsequent maintainers.</p>
-</li>
-<li>
-<p><em>Meson</em> for
-  <a href="https://github.com/mesonbuild/fluidsynth/tree/2.2.0">adding</a> FluidSynth
-  to the WrapDB.</p>
-</li>
-</ul>
-<h3 id="finished-mt-32-integration">Finished MT-32 integration<a class="headerlink" href="#finished-mt-32-integration" title="Permanent link">&para;</a></h3>
-<p>The MT-32 emulator is now included in all release binaries. See the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/MIDI#mt32emu">wiki
-notes</a> for
-how to use it. Run <code>MIXER /LISTMIDI</code> in the DOS shell to see the available
-MT-32 models and versions.</p>
-<p>See the list of <a href="https://www.vogons.org/viewtopic.php?f=62&amp;t=77567"><em>unmissable</em> MT-32
-experiences</a>, courtesy
-vogons.org forum user <em>Shreddoc</em> and contributors.</p>
-<p>Thanks to:</p>
-<ul>
-<li>
-<p><em>Canadacow</em> for <a href="https://www.vogons.org/viewtopic.php?p=15519#p15519">authoring</a>
-  MT-32 emulation in 2003, <em>KingGuppy</em> and <em>Mok</em> for the follow-on work, and
-  <em>SergM</em> who continues to maintain and improve the Munt project today.</p>
-</li>
-<li>
-<p><em>Meson</em> for <a href="https://github.com/mesonbuild/mt32emu/tree/2.5.0">adding</a>
-  libmt32emu to the WrapDB.</p>
-</li>
-<li>
-<p><em>Microsoft</em> for <a href="https://github.com/microsoft/vcpkg/issues/16813">adding</a>
-  libmt32emu to Vcpkg.</p>
-</li>
-</ul>
-<h3 id="ibm-ps1-audio-device-support">IBM PS/1 Audio device support<a class="headerlink" href="#ibm-ps1-audio-device-support" title="Permanent link">&para;</a></h3>
-<p>See the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Sound-cards#ibm-ps1-audio-card">wiki notes</a> for how to use it.</p>
-<p>Thanks to <em>JMK</em> for
-<a href="https://www.vogons.org/viewtopic.php?p=132826#p132826">authoring</a> PS/1 Audio
-emulation in 2008.</p>
-<h3 id="innovation-ssi-2001-audio-device-support">Innovation SSI-2001 audio device support<a class="headerlink" href="#innovation-ssi-2001-audio-device-support" title="Permanent link">&para;</a></h3>
-<p>See the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Sound-cards#innovation-ssi-2001">wiki
-notes</a>
-for how to use it.</p>
-<p>Thanks to:</p>
-<ul>
-<li>
-<p><em>Vasyl</em> for <a href="https://www.vogons.org/viewtopic.php?p=93689#p93689">authoring</a>
-  SSI-2001 emulation in 2006.</p>
-</li>
-<li>
-<p><em>Dag Lem</em> for authoring, and <em>Antti Lankila</em> and <em>Leandro Nini</em> for
-  improving the SID chip emulator.</p>
-</li>
-</ul>
-<h3 id="macos-hotkey-changes">macOS hotkey changes<a class="headerlink" href="#macos-hotkey-changes" title="Permanent link">&para;</a></h3>
-<p>Replaced the default <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f1">F1</kbd></span> - <span class="keys"><kbd class="key-f12">F12</kbd></span> hotkeys <a href="https://github.com/dosbox-staging/dosbox-staging/pull/996#issuecomment-834960586">on
-macOS</a>
-with <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f1">F1</kbd></span> - <span class="keys"><kbd class="key-f12">F12</kbd></span> to reduce conflicts with the OS.</p>
-<p>Thanks to <em>Antti Peltola</em>, <em>Burrito78</em>, and <em>Kirk Klobe</em> for guidance and
-testing.</p>
-<h3 id="translation-improvements">Translation improvements<a class="headerlink" href="#translation-improvements" title="Permanent link">&para;</a></h3>
-<p>Added or improved translations for French, Italian, Polish, Russian, and
-Spanish.</p>
-<p>Thanks to <em>Draky50110</em> (fr), <em>Kappa971</em> (it), <em>dreamer</em> (po), <em>IlyaIndigo</em>
-(ru), and <em>Peluchito</em> (es).</p>
-<h3 id="improved-startup-settings">Improved startup settings<a class="headerlink" href="#improved-startup-settings" title="Permanent link">&para;</a></h3>
-<p>Added <code>splash_only</code> to the <code>startup_verbosity</code> settings. This shows the splash
-but skips the help banner.</p>
-<h3 id="relative-window-size-support">Relative window size support<a class="headerlink" href="#relative-window-size-support" title="Permanent link">&para;</a></h3>
-<p>Three relative window sizes, <code>small</code>, <code>medium</code>, or <code>large</code>, are now understood
-by the <code>windowresolution</code> config setting. These T-shirt sizes correspond to a
-window that&rsquo;s 25%, 50%, or 80% of your desktop&rsquo;s area, regardless of DPI or
-type of monitor (be it 720p, 1080p, or 4K).</p>
-<h3 id="window-resizing-enabled-by-default">Window resizing enabled by default<a class="headerlink" href="#window-resizing-enabled-by-default" title="Permanent link">&para;</a></h3>
-<p>Window resizing using corner-drag is now auto-enabled on all platforms when
-conditions permit.</p>
-<h2 id="bugfixes">Bugfixes<a class="headerlink" href="#bugfixes" title="Permanent link">&para;</a></h2>
-<p>The following user-visible bugs were fixed:</p>
-<ul>
-<li>
-<p>Will no longer lose focus on Raspberry Pi when launched fullscreen in an Xorg
-  session. (<a href="https://github.com/dosbox-staging/dosbox-staging/pull/995">#995</a>)</p>
-</li>
-<li>
-<p>Release builds now use <code>dosbox-staging.conf</code> as the primary config file instead of
-  <code>dosbox-staging-git.conf</code>. (<a href="https://github.com/dosbox-staging/dosbox-staging/pull/932">#932</a>)</p>
-</li>
-<li>
-<p>Windows release builds once again mount Opus CD-DA tracks, which was a
-  regression in 0.76. (<a href="https://github.com/dosbox-staging/dosbox-staging/pull/855">#885</a>)</p>
-</li>
-<li>
-<p><code>AUTOTYPE</code> now works with all games. Until now, a subset of games didn&rsquo;t
-  respond to its keystrokes.
-  (<a href="https://github.com/dosbox-staging/dosbox-staging/pull/942">#942</a>)</p>
-</li>
-<li>
-<p>Shoulder triggers on some six-axis controllers, such as the PS4 and
-  Logitech&rsquo;s F310 and F710 controllers, can now be mapped.
-  (<a href="https://github.com/dosbox-staging/dosbox-staging/pull/944">#944</a>)</p>
-</li>
-<li>
-<p>When toggling out of fullscreen mode, in some corner cases this resulted in
-  a <a href="https://github.com/dosbox-staging/dosbox-staging/issues/1094">blank window</a>. This
-  is now fixed. (<a href="https://github.com/dosbox-staging/dosbox-staging/pull/1096">#1096</a>)</p>
-</li>
-</ul>
-<h2 id="contributions">Contributions<a class="headerlink" href="#contributions" title="Permanent link">&para;</a></h2>
-<p>The 0.77 release includes <strong>920</strong> commits plus <strong>35</strong> commits originating from
-the DOSBox project.</p>
-<h3 id="dosbox-staging-members">DOSBox Staging members<a class="headerlink" href="#dosbox-staging-members" title="Permanent link">&para;</a></h3>
-<p>The following members actively supported the project during the 0.77
-timeframe:</p>
-<div class="compact">
-<ul>
-<li>Antti Peltola (macOS testing and feedback)</li>
-<li>Brandon Munger (collaborator)</li>
-<li>Burrito78 (macOS testing and feedback)</li>
-<li>GranMinigun (testing and triage)</li>
-<li>kcgen (maintainer)</li>
-<li>Kirk Klobe (maintainer)</li>
-<li>Dennis Lühring (collaborator)</li>
-<li>nemo93 (Wiki maintainer)</li>
-<li>Patryk Obara (maintainer)</li>
-<li>Ruben Genoese (testing and triage)</li>
-<li>Wengier (collaborator)</li>
-</ul>
-</div>
-<h3 id="direct-contributors">Direct contributors<a class="headerlink" href="#direct-contributors" title="Permanent link">&para;</a></h3>
-<p>The following authors, co-authors, wiki editors, translators, testers, and bug reporters directly contributed to the 0.77 release:</p>
-<div class="compact">
-<ul>
-<li>Allofich</li>
-<li>Antti Peltola</li>
-<li>Brandon Munger</li>
-<li>Burrito78</li>
-<li>Dennis Lühring</li>
-<li>Didu</li>
-<li>Draky50110</li>
-<li>Dugan Chen</li>
-<li>eli-schwart</li>
-<li>Emmanuel Gil Peyrot</li>
-<li>Feignint</li>
-<li>Gilles</li>
-<li>GranMinigun</li>
-<li>hail-to-the-ryzen</li>
-<li>IlyaIndigo</li>
-<li>IPeluchito</li>
-<li>jmarsh</li>
-<li>Joshua Krämer</li>
-<li>Kappa971</li>
-<li>kcgen</li>
-<li>Ken Händel</li>
-<li>Kirk Klobe</li>
-<li>mdmallard</li>
-<li>nemo93</li>
-<li>Otto Urpelainen</li>
-<li>Patryk Obara</li>
-<li>Peluchito</li>
-<li>Ruben Genoese</li>
-<li>rhys073</li>
-<li>Sarah Whitman</li>
-<li>Toby Jennings</li>
-<li>warpdesign</li>
-<li>Wengier</li>
-</ul>
-</div>
-<h3 id="dosbox-contributors">DOSBox contributors<a class="headerlink" href="#dosbox-contributors" title="Permanent link">&para;</a></h3>
-<p>The following DOSBox authors&rsquo; SVN commits (r4393 through r4459) were merged during the 0.77 timeframe:</p>
-<div class="compact">
-<ul>
-<li>jmarsh</li>
-<li>Peter Veenstra</li>
-<li>ripsaw8080</li>
-<li>Sjoerd van der Berg</li>
-</ul>
-</div>
-<h3 id="indirect-contributors">Indirect contributors<a class="headerlink" href="#indirect-contributors" title="Permanent link">&para;</a></h3>
-<p>The following patch or external project authors&rsquo; sources were merged during the 0.77 timeframe:</p>
-<div class="compact">
-<ul>
-<li>Antti S. Lankila (reSIDfp maintainer)</li>
-<li>Dag Lem (original reSID author)</li>
-<li>David Reid (dr_libs audio codecs author)</li>
-<li>Dean Beeler (original MT-32 patch author)</li>
-<li>Jason Kim (PS/1 patch author)</li>
-<li>Jonathan Campbell (DOSBox-X maintainer)</li>
-<li>nukeykt (Nuked OPL emulator author)</li>
-<li>sergm (Munt and MT-32 patch maintainer)</li>
-<li>Vasyl Tsvirkunov (SS1-2001 patch author)</li>
-<li>Wengier (DOSBox-X maintainer)</li>
-<li>ykhwong (DOSBox Daum maintainer)</li>
+<li>interloper98</li>
+<li>johnnovak</li>
+<li>weirddan455</li>
+<li>FeralChild64</li>
+<li>Torinde</li>
 </ul>
 </div>
 <h2 id="thank-you">Thank you<a class="headerlink" href="#thank-you" title="Permanent link">&para;</a></h2>
-<p>We are extremely grateful for all contributions, including the invaluable improvements merged in from the DOSBox project.</p>
-<p>The project maintains original authorship on all commits (including those from upstream, patches, and external projects) to ensure correct attribution is recorded in the version control system.</p>
+<p>We are grateful for all the community contributions and the original DOSBox
+project, on which DOSBox Staging is based.</p>
 
 
 
@@ -2217,9 +2363,9 @@ timeframe:</p>
       
         
         <a
-          href="../0.77.1/"
+          href="../../linux/"
           class="md-footer__link md-footer__link--prev"
-          aria-label="Previous: 0.77.1"
+          aria-label="Previous: Linux"
           rel="prev"
         >
           <div class="md-footer__button md-icon">
@@ -2230,7 +2376,7 @@ timeframe:</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              0.77.1
+              Linux
             </div>
           </div>
         </a>
@@ -2240,9 +2386,9 @@ timeframe:</p>
       
         
         <a
-          href="../0.76.0/"
+          href="../0.82.0/"
           class="md-footer__link md-footer__link--next"
-          aria-label="Next: 0.76.0"
+          aria-label="Next: 0.82.0"
           rel="next"
         >
           <div class="md-footer__title">
@@ -2250,7 +2396,7 @@ timeframe:</p>
               <span class="md-footer__direction">
                 Next
               </span>
-              0.76.0
+              0.82.0
             </div>
           </div>
           <div class="md-footer__button md-icon">
