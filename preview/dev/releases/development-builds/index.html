@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -540,6 +540,8 @@
       
         
       
+        
+      
     
     
     
@@ -573,6 +575,29 @@
             Release notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/0.82.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0.82.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1087,54 +1112,36 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fedora
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debian-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debian, Ubuntu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arch-manjaro" class="md-nav__link">
-    <span class="md-ellipsis">
-      Arch, Manjaro
-    </span>
-  </a>
-  
 </li>
         
       </ul>
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-upgrade-your-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to upgrade your configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to upgrade your configuration">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upgrading-your-primary-configuration" class="md-nav__link">
+  <a href="#the-easy-way" class="md-nav__link">
     <span class="md-ellipsis">
-      Upgrading your primary configuration
+      The easy way
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#after-upgrading" class="md-nav__link">
+  <a href="#the-correct-way" class="md-nav__link">
     <span class="md-ellipsis">
-      After upgrading
+      The correct way
     </span>
   </a>
   
@@ -1655,54 +1662,36 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Linux">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#fedora" class="md-nav__link">
-    <span class="md-ellipsis">
-      Fedora
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debian-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debian, Ubuntu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#arch-manjaro" class="md-nav__link">
-    <span class="md-ellipsis">
-      Arch, Manjaro
-    </span>
-  </a>
-  
 </li>
         
       </ul>
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-upgrade-your-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to upgrade your configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to upgrade your configuration">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#upgrading-your-primary-configuration" class="md-nav__link">
+  <a href="#the-easy-way" class="md-nav__link">
     <span class="md-ellipsis">
-      Upgrading your primary configuration
+      The easy way
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#after-upgrading" class="md-nav__link">
+  <a href="#the-correct-way" class="md-nav__link">
     <span class="md-ellipsis">
-      After upgrading
+      The correct way
     </span>
   </a>
   
@@ -1877,9 +1866,9 @@ function set_ci_status(workflow_file, os_name, description) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  set_ci_status("windows-msvc.yml", "windows", "Windows ¹")
-  set_ci_status("macos.yml",        "macos",   "macOS ²")
-  set_ci_status("linux.yml",        "linux",   "Linux ³")
+  set_ci_status("windows.yml", "windows", "Windows")
+  set_ci_status("macos.yml",   "macos",   "macOS")
+  set_ci_status("linux.yml",   "linux",   "Linux")
 })
 
 </script>
@@ -1887,16 +1876,22 @@ document.addEventListener("DOMContentLoaded", () => {
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>These are unstable development snapshots intended for testing and
-showcasing new features; if you want to download a stable build, head on
-to the <a href="../windows/">Windows</a>, <a href="../macos/">macOS</a>, or <a href="../linux/">Linux</a>
-download pages.</p>
-<p>Build artifacts are hosted on GitHub; you need to be logged in to GitHub
-to download them.</p>
+showcasing new features. Things might blow up! <img alt="💣" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f4a3.svg" title=":bomb:" /> <img alt="🔥" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f525.svg" title=":fire:" /> <img alt="💀" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f480.svg" title=":skull:" /></p>
+<p>Less adventurous users wanting to download the latest stable build should
+head on to the <a href="../windows/">Windows</a>, <a href="../macos/">macOS</a>, or
+<a href="../linux/">Linux</a> download pages.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>The development builds are hosted on GitHub; you need to have a GitHub
+account to download them. If you&rsquo;re not logged in to GitHub, you will see
+the build artifacts but clicking on their names won&rsquo;t initiate the
+download.</p>
 </div>
 <div class="compact">
 <table>
   <tr>
-    <th style="width: 240px">Download link</th>
+    <th style="width: 240px">Download page</th>
     <th style="width: 250px">Build version</th>
     <th style="width: 300px">Date</th>
   </tr>
@@ -1936,42 +1931,27 @@ to download them.</p>
 </table>
 </div>
 
-<p>¹ Windows builds include x86_64 installer and portable ZIP packages, and the
-experimental ARM64 portable ZIP package.</p>
-<p>² macOS builds include Intel, Apple silicon, and universal binary package.</p>
-<p>³ We provide a statically linked x86_64 Linux package (only depends
-on C/C++, ALSA, and OpenGL system libraries).</p>
 <h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">&para;</a></h2>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">&para;</a></h3>
-<p>Windows executables in snapshot packages are not signed, therefore Windows 10
-or later might prevent the program from starting.</p>
-<p>See <a href="../windows/#windows-defender">this guide</a> to learn how to
-deal with this.</p>
+<p>Windows builds include x86_64 installer (artifact name ending with <code>-setup</code>)
+and portable ZIP packages.</p>
+<p>The Windows executables are not signed, therefore Windows 10 or later might
+prevent the program from starting. See <a href="../windows/#windows-defender">this
+guide</a> to learn how to deal with this.</p>
 <h3 id="macos">macOS<a class="headerlink" href="#macos" title="Permanent link">&para;</a></h3>
-<p>macOS development builds are not notarized (but the public releases are);
-Apple Gatekeeper will try to prevent the program from running.</p>
-<p>See <a href="../macos/#apple-gatekeeper">this guide</a> to learn how to deal with
-this.</p>
+<p>Please download the universal binary package named
+<code>dosbox-staging-macOS-universal-*</code>.</p>
+<p>macOS development builds are not notarized (but the stable releases are);
+Apple Gatekeeper will try to prevent the program from running. See <a href="../macos/#apple-gatekeeper">this
+guide</a> to learn how to deal with this.</p>
 <h3 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h3>
-<p>The tarball contains a dynamically-linked x86-64 build; you&rsquo;ll need additional
-dependencies installed via your package manager.</p>
-<h4 id="fedora">Fedora<a class="headerlink" href="#fedora" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>sudo dnf install SDL2 SDL2_net opusfile
-</code></pre></div>
-<h4 id="debian-ubuntu">Debian, Ubuntu<a class="headerlink" href="#debian-ubuntu" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>sudo apt install libsdl2-2.0-0 libsdl2-net-2.0-0 libopusfile0
-</code></pre></div>
-<h4 id="arch-manjaro">Arch, Manjaro<a class="headerlink" href="#arch-manjaro" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code>sudo pacman -S sdl2 sdl2_net opusfile
-</code></pre></div>
-<h3 id="upgrading-your-primary-configuration">Upgrading your primary configuration<a class="headerlink" href="#upgrading-your-primary-configuration" title="Permanent link">&para;</a></h3>
+<p>We provide statically linked x86_64 Linux packages that only depend on C/C++,
+ALSA, and OpenGL system libraries.</p>
+<h2 id="how-to-upgrade-your-configuration">How to upgrade your configuration<a class="headerlink" href="#how-to-upgrade-your-configuration" title="Permanent link">&para;</a></h2>
 <p>Testing new features might require a manual reset of the configuration
 file.</p>
-<p>Since config settings might get renamed, altered, or deprecated between
-builds, it&rsquo;s best to let DOSBox Staging write the new default primary config
-on the first launch, then reapply your old settings manually.</p>
-<p>Start by backing up your existing primary config. This is where to find
-it on each platform:</p>
+<p>Start by backing up your existing primary config. These are the standard
+non-portable mode locations for each platform:</p>
 <div class="compact">
 <table>
 <thead>
@@ -1996,29 +1976,28 @@ it on each platform:</p>
 </tbody>
 </table>
 </div>
-<p>You can also execute DOSBox Staging with the <code>--printconf</code> option to have the
-location of the primary config printed to your console.</p>
-<p>After backing up the existing primary config, simply start the new version&mdash;a
-new <code>dosbox-staging.conf</code> will be written containing the new defaults and
-updated setting descriptions.</p>
-<div class="admonition note">
-<p class="admonition-title">Portable mode notes</p>
 <p>In portable mode, <code>dosbox-staging.conf</code> resides in the same folder as your
-DOSBox Staging executable. The migration steps for portable mode users are
-as follows:</p>
-<ul>
-<li>Unpack the new version into a <em>new</em> folder (this is important).</li>
-<li>Create a new <em>empty</em> <code>dosbox-staging.conf</code> file in the new folder to
-    enable portable mode.</li>
-<li>Launch the new version.</li>
-</ul>
-<p>DOSBox Staging will write the new defaults to the empty
-<code>dosbox-staging.conf</code> file. After this, you carry over your settings from
-the old primary config manually.</p>
-</div>
-<h3 id="after-upgrading">After upgrading<a class="headerlink" href="#after-upgrading" title="Permanent link">&para;</a></h3>
-<p>Look for deprecation warnings in the logs (in yellow or orange colours) and
-update your configs accordingly.</p>
+DOSBox Staging executable. </p>
+<p>Alternatively, run DOSBox Staging with the <code>--printconf</code> option, which will
+print the location of the primary config to your console.</p>
+<h3 id="the-easy-way">The easy way<a class="headerlink" href="#the-easy-way" title="Permanent link">&para;</a></h3>
+<p>Once you&rsquo;ve backed up your primary config, start the new version, then run
+<code>config -wcd</code> to update the primary config. That&rsquo;s it!</p>
+<p>This method will work 90% of the time, but certain setting changes cannot be
+automatically migrated. Look for deprecation warnings in the logs (in yellow
+or orange colour), then compare your current and old configs and update your
+settings accordingly.</p>
+<p>Check out the new config descriptions for guidance, and also make sure to read
+the release notes carefully&mdash;everything you need to know about upgrading your
+settings is described there.</p>
+<h3 id="the-correct-way">The correct way<a class="headerlink" href="#the-correct-way" title="Permanent link">&para;</a></h3>
+<p>The 100% correct (but more cumbersome) way is to let DOSBox Staging write the
+new default primary config on the first launch, then reapply your old settings
+manually. This is very simple: after backing up your existing primary
+config, delete it, then start the new version.</p>
+<p>For portable installations, put an <em>empty</em> <code>dosbox-staging.conf</code> file in the
+installation folder to enable portable mode (otherwise DOSBox Staging would
+create the new default primary config in the standard non-portable location).</p>
 
 
 
@@ -2143,10 +2122,10 @@ update your configs accordingly.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});

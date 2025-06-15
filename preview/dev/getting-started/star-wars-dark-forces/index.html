@@ -22,7 +22,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.10">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
@@ -30,7 +30,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
       
 
@@ -533,6 +533,8 @@
       
         
       
+        
+      
     
     
     
@@ -566,6 +568,29 @@
             Release notes
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/release-notes/0.82.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    0.82.2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2335,18 +2360,14 @@ about it again.</p>
 <p class="admonition-title">Turn it down, please!</p>
 <p>Some SoundFonts are <em>way</em> too loud; if you encounter such a SoundFont,
 you&rsquo;ll most likely want to lower its output level. The best way to do so
-is via the <code>soundfont_volume</code> setting which takes a percentage volume value:</p>
+is by including an additional percentage volume value after the
+SoundFont&rsquo;s name in the config, e.g.:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[fluidsynth]
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>soundfont = Arachno
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>soundfont_volume = 40
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>soundfont = Arachno 40
 </code></pre></div>
 <p>This will scale back the volume to 40%. A few SoundFonts are <em>extremely
-loud</em>&mdash;you&rsquo;ll need to turn the volume down to 10-20% to get usable levels
-out of them. It&rsquo;s a mystery what the authors were thinking&hellip;</p>
-<p>The big advantage of using <code>soundfont_volume</code> is that you can normalise
-the SoundFont&rsquo;s volume in your primary config globally, then you don&rsquo;t
-need to touch any of your game configs that fine-tune the volume of the
-<code>FSYNTH</code> channel via <code>mixer</code> commands.</p>
+loud</em>&mdash;you need to turn the volume down to 10-20% to get usable levels.
+It&rsquo;s a mystery what the authors were thinking&hellip;</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Roland MT-32 is not General MIDI</p>
@@ -2616,10 +2637,10 @@ should be set to one of these values: 256, 512, 1024, 2048, 4096, or 8192.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
