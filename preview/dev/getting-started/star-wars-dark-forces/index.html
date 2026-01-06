@@ -548,6 +548,8 @@
       
         
       
+        
+      
     
     
     
@@ -590,6 +592,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../releases/release-notes/0.82.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -2581,18 +2611,14 @@ about it again.</p>
 <p class="admonition-title">Turn it down, please!</p>
 <p>Some SoundFonts are <em>way</em> too loud; if you encounter such a SoundFont,
 you’ll most likely want to lower its output level. The best way to do so
-is via the <code>soundfont_volume</code> setting which takes a percentage volume value:</p>
+is by including an additional percentage volume value after the
+SoundFont’s name in the config, e.g.:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[fluidsynth]
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>soundfont = Arachno
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>soundfont_volume = 40
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>soundfont = Arachno 40
 </code></pre></div>
 <p>This will scale back the volume to 40%. A few SoundFonts are <em>extremely
-loud</em>—you’ll need to turn the volume down to 10-20% to get usable levels
-out of them. It’s a mystery what the authors were thinking…</p>
-<p>The big advantage of using <code>soundfont_volume</code> is that you can normalise
-the SoundFont’s volume in your primary config globally, then you don’t
-need to touch any of your game configs that fine-tune the volume of the
-<code>FSYNTH</code> channel via <code>mixer</code> commands.</p>
+loud</em>—you need to turn the volume down to 10-20% to get usable levels.
+It’s a mystery what the authors were thinking…</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Roland MT-32 is not General MIDI</p>
