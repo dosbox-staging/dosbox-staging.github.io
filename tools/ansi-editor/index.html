@@ -635,12 +635,16 @@ document.getElementById('strip-btn').addEventListener('click', () => {
 input.addEventListener('keydown', (e) => {
     if (e.ctrlKey || e.metaKey) {
         if (e.key === 'z' && !e.shiftKey) { e.preventDefault(); undo(); }
-        else if (e.key === 'y' || (e.key === 'Z' && e.shiftKey)) { e.preventDefault(); redo(); }
+        else if (e.key === 'y' || (e.key === 'z' && e.shiftKey) || (e.key === 'Z' && e.shiftKey)) { e.preventDefault(); redo(); }
         else if (e.key === 'r' && !e.shiftKey) { e.preventDefault(); removeTagPair(); }
-        else if (e.key >= '1' && e.key <= '8') {
-            e.preventDefault();
-            const idx = parseInt(e.key) - 1 + (e.shiftKey ? 8 : 0);
-            if (COLORS[idx]) applyColor(COLORS[idx].name);
+        else {
+            // Use e.code for number keys to handle Shift correctly across browsers
+            const digitMatch = e.code && e.code.match(/^Digit([1-8])$/);
+            if (digitMatch) {
+                e.preventDefault();
+                const idx = parseInt(digitMatch[1]) - 1 + (e.shiftKey ? 8 : 0);
+                if (COLORS[idx]) applyColor(COLORS[idx].name);
+            }
         }
     }
 });
