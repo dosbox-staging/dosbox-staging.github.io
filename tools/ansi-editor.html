@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANSI Markup Editor</title>
+    <style>
+        @font-face {
+            font-family: 'Px437_IBM_VGA_9x16';
+            src: url('https://int10h.org/oldschool-pc-fonts/download/Web/Px437_IBM_VGA_9x16-2y.woff') format('woff');
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Px437_IBM_VGA_9x16', monospace;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #1e1e1e;
+            color: #d4d4d4;
+        }
+        .container { display: flex; flex: 1; overflow: hidden; }
+        .pane { display: flex; flex-direction: column; padding: 20px; overflow: hidden; }
+        .left-pane { flex: 1; min-width: 200px; }
+        .right-pane { flex: 1; min-width: 200px; }
+        .divider { width: 5px; background: #3e3e3e; cursor: col-resize; flex-shrink: 0; transition: background 0.15s; }
+        .divider:hover, .divider.dragging { background: #0e639c; }
+        h2 { font-size: 14px; margin-bottom: 10px; color: #fff; display: flex; align-items: center; gap: 10px; }
+        h2 .shortcuts-hint { font-size: 11px; color: #888; font-weight: normal; }
+
+        .input-container { flex: 1; position: relative; overflow: hidden; }
+        #input-area, #highlight-overlay {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 10px;
+            margin: 0;
+            border: 1px solid #3e3e3e;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%;
+            overflow: auto;
+            tab-size: 4;
+        }
+        #input-area {
+            background: transparent;
+            color: transparent;
+            caret-color: #fff;
+            resize: none;
+            z-index: 2;
+        }
+        #input-area:focus { outline: none; }
+        #input-area::selection { background: rgba(100, 150, 255, 0.4); }
+        #highlight-overlay {
+            background: #252526;
+            color: #d4d4d4;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .tag-hl { background: rgba(255, 200, 0, 0.35); border-radius: 2px; }
+        .tag-err { background: rgba(255, 80, 80, 0.4); border-radius: 2px; }
+
+        #preview-area {
+            flex: 1;
+            font-family: 'Px437_IBM_VGA_9x16', monospace;
+            font-size: 16px;
+            padding: 10px;
+            background: #000;
+            border: 1px solid #3e3e3e;
+            overflow: auto;
+            white-space: pre;
+            line-height: 1.2;
+            position: relative;
+        }
+        #preview-area.light-mode { background: #c0c0c0; }
+        .column-marker {
+            position: absolute;
+            left: calc(10px + 80ch);
+            top: 10px; bottom: 10px;
+            width: 1px;
+            background: #444;
+            z-index: 1;
+            pointer-events: none;
+        }
+        #preview-area.light-mode .column-marker { background: #999; }
+        
+        .button-group { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+        .color-toolbar {
+            margin-top: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            padding: 10px;
+            background: #2d2d2d;
+            border: 1px solid #3e3e3e;
+            border-radius: 3px;
+            align-items: center;
+        }
+        .color-row { display: flex; gap: 4px; }
+        .color-btn {
+            width: 26px; height: 26px;
+            border: 2px solid #444;
+            cursor: pointer;
+            padding: 0;
+            transition: all 0.15s;
+            position: relative;
+            font-size: 9px;
+            color: #fff;
+            text-shadow: 0 0 2px #000, 0 0 2px #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .color-btn:hover { border-color: #fff; transform: scale(1.1); z-index: 1; }
+        .color-btn.action-btn {
+            width: auto;
+            padding: 0 10px;
+            background: #444;
+            color: #fff;
+            font-size: 11px;
+            text-shadow: none;
+            margin-left: 8px;
+        }
+        .color-btn.action-btn:hover { background: #666; }
+        .toolbar-sep { width: 1px; height: 24px; background: #555; margin: 0 6px; }
+
+        button {
+            font-family: 'Courier New', monospace;
+            padding: 8px 16px;
+            background: #0e639c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            border-radius: 2px;
+        }
+        button:hover { background: #1177bb; }
+        button:active { background: #0d5a8f; }
+        button:disabled { background: #444; color: #888; cursor: default; }
+        
+        .status-bar {
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            margin: 8px 0;
+            min-height: 20px;
+            align-items: center;
+        }
+        .status-item { color: #888; }
+        .status-item.success { color: #4ec9b0; }
+        .status-item.error { color: #f55; }
+        .status-color { display: flex; align-items: center; gap: 5px; }
+        .status-color-swatch {
+            width: 12px; height: 12px;
+            border: 1px solid #666;
+            display: inline-block;
+        }
+
+        .c-black { color: #000; } .c-blue { color: #00A; } .c-green { color: #0A0; }
+        .c-cyan { color: #0AA; } .c-red { color: #A00; } .c-magenta { color: #A0A; }
+        .c-brown { color: #A50; } .c-light-grey { color: #AAA; } .c-dark-grey { color: #555; }
+        .c-light-blue { color: #55F; } .c-light-green { color: #5F5; } .c-light-cyan { color: #5FF; }
+        .c-light-red { color: #F55; } .c-light-magenta { color: #F5F; } .c-yellow { color: #FF5; }
+        .c-white { color: #FFF; }
+        
+        #preview-area.light-mode .c-black { color: #000; }
+        #preview-area.light-mode .c-light-grey { color: #555; }
+        #preview-area.light-mode .c-dark-grey { color: #333; }
+        #preview-area.light-mode .c-white { color: #000; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pane left-pane">
+            <h2>Input <span class="shortcuts-hint">Ctrl+1-8 colors · Ctrl+Shift+1-8 bright colors · Ctrl+R remove tag</span></h2>
+            <div class="color-toolbar">
+                <div class="color-row" id="color-row-1"></div>
+                <div class="color-row" id="color-row-2"></div>
+                <div class="toolbar-sep"></div>
+                <button class="color-btn action-btn" id="remove-btn" title="Remove tag pair (Ctrl+R)">Remove Tag</button>
+                <button class="color-btn action-btn" id="strip-btn" title="Strip all tags">Strip All Tags</button>
+            </div>
+            <div class="status-bar">
+                <span class="status-item" id="cursor-pos">Line 1, Column 1</span>
+                <span class="status-item status-color" id="active-color">Color: <span class="status-color-swatch" style="background:#AAA"></span> light-grey</span>
+                <span class="status-item" id="status-msg"></span>
+            </div>
+            <div class="input-container">
+                <div id="highlight-overlay"></div>
+                <textarea id="input-area" spellcheck="false" placeholder="Type or paste markup here..."></textarea>
+            </div>
+            <div class="button-group">
+                <button id="extract-btn">Copy as C++ String</button>
+                <button id="undo-btn" title="Ctrl+Z">Undo</button>
+                <button id="redo-btn" title="Ctrl+Y">Redo</button>
+            </div>
+        </div>
+        <div class="divider" id="divider"></div>
+        <div class="pane right-pane">
+            <h2>Preview</h2>
+            <div id="preview-area"><div class="column-marker"></div><div id="preview-content"></div></div>
+            <div class="button-group">
+                <button id="dec-font">−</button>
+                <button id="inc-font">+</button>
+                <span class="status-item" id="font-display">16px</span>
+                <button id="toggle-bg" style="margin-left:auto">Toggle Background</button>
+            </div>
+        </div>
+    </div>
+<script>
+const COLORS = [
+    { name: 'black', hex: '#000', key: '1', shift: false },
+    { name: 'blue', hex: '#00A', key: '2', shift: false },
+    { name: 'green', hex: '#0A0', key: '3', shift: false },
+    { name: 'cyan', hex: '#0AA', key: '4', shift: false },
+    { name: 'red', hex: '#A00', key: '5', shift: false },
+    { name: 'magenta', hex: '#A0A', key: '6', shift: false },
+    { name: 'brown', hex: '#A50', key: '7', shift: false },
+    { name: 'light-grey', hex: '#AAA', key: '8', shift: false },
+    { name: 'dark-grey', hex: '#555', key: '1', shift: true },
+    { name: 'light-blue', hex: '#55F', key: '2', shift: true },
+    { name: 'light-green', hex: '#5F5', key: '3', shift: true },
+    { name: 'light-cyan', hex: '#5FF', key: '4', shift: true },
+    { name: 'light-red', hex: '#F55', key: '5', shift: true },
+    { name: 'light-magenta', hex: '#F5F', key: '6', shift: true },
+    { name: 'yellow', hex: '#FF5', key: '7', shift: true },
+    { name: 'white', hex: '#FFF', key: '8', shift: true },
+];
+const colorSet = new Set(COLORS.map(c => c.name));
+const colorHex = Object.fromEntries(COLORS.map(c => [c.name, c.hex]));
+const tagRe = /\[color=([a-z-]+)\]|\[reset\]/g;
+
+const input = document.getElementById('input-area');
+const overlay = document.getElementById('highlight-overlay');
+const preview = document.getElementById('preview-content');
+const previewArea = document.getElementById('preview-area');
+const statusMsg = document.getElementById('status-msg');
+const cursorPos = document.getElementById('cursor-pos');
+const activeColor = document.getElementById('active-color');
+
+// Build color buttons
+const row1 = document.getElementById('color-row-1');
+const row2 = document.getElementById('color-row-2');
+COLORS.forEach((c, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'color-btn';
+    btn.dataset.color = c.name;
+    btn.style.background = c.hex;
+    const shortcut = c.shift ? `Ctrl+Shift+${c.key}` : `Ctrl+${c.key}`;
+    btn.title = `${c.name} (${shortcut})`;
+    btn.textContent = c.key;
+    (i < 8 ? row1 : row2).appendChild(btn);
+});
+
+// Undo/Redo
+const history = { stack: [], idx: -1, maxSize: 100 };
+function saveHistory() {
+    const state = { text: input.value, start: input.selectionStart, end: input.selectionEnd };
+    if (history.idx >= 0 && history.stack[history.idx].text === state.text) return;
+    history.stack = history.stack.slice(0, history.idx + 1);
+    history.stack.push(state);
+    if (history.stack.length > history.maxSize) history.stack.shift();
+    history.idx = history.stack.length - 1;
+    updateUndoRedoBtns();
+}
+function undo() {
+    if (history.idx <= 0) return;
+    history.idx--;
+    restoreHistory();
+}
+function redo() {
+    if (history.idx >= history.stack.length - 1) return;
+    history.idx++;
+    restoreHistory();
+}
+function restoreHistory() {
+    const s = history.stack[history.idx];
+    input.value = s.text;
+    input.selectionStart = s.start;
+    input.selectionEnd = s.end;
+    update();
+    updateUndoRedoBtns();
+}
+function updateUndoRedoBtns() {
+    document.getElementById('undo-btn').disabled = history.idx <= 0;
+    document.getElementById('redo-btn').disabled = history.idx >= history.stack.length - 1;
+}
+
+// Sync scroll
+input.addEventListener('scroll', () => {
+    overlay.scrollTop = input.scrollTop;
+    overlay.scrollLeft = input.scrollLeft;
+});
+
+// Parse tags
+function parseTags(text) {
+    const tags = [];
+    let m;
+    tagRe.lastIndex = 0;
+    while ((m = tagRe.exec(text)) !== null) {
+        const isColor = m[0].startsWith('[color=');
+        const color = isColor ? m[1] : null;
+        if (isColor && !colorSet.has(color)) continue;
+        tags.push({ start: m.index, end: m.index + m[0].length, isColor, color, text: m[0] });
+    }
+    return tags;
+}
+
+// Find first tag violating the strict color/reset alternating pattern
+function findFirstViolation(tags) {
+    let expectColor = true;
+    for (let i = 0; i < tags.length; i++) {
+        const t = tags[i];
+        if (expectColor) {
+            if (!t.isColor) return i;
+            expectColor = false;
+        } else {
+            if (t.isColor) return i;
+            expectColor = true;
+        }
+    }
+    if (!expectColor && tags.length > 0) return tags.length - 1;
+    return -1;
+}
+
+// Match tags into pairs
+function matchTags(tags) {
+    const pairs = new Map();
+    let i = 0;
+    while (i < tags.length - 1) {
+        if (tags[i].isColor && !tags[i + 1].isColor) {
+            pairs.set(i, i + 1);
+            pairs.set(i + 1, i);
+            i += 2;
+        } else {
+            i++;
+        }
+    }
+    return pairs;
+}
+
+// Find which pair the cursor is in
+function findPairAtCursor(tags, pairs, pos) {
+    for (let i = 0; i < tags.length; i++) {
+        if (!pairs.has(i)) continue;
+        const j = pairs.get(i);
+        const colorIdx = tags[i].isColor ? i : j;
+        const resetIdx = tags[i].isColor ? j : i;
+        const colorTag = tags[colorIdx];
+        const resetTag = tags[resetIdx];
+        if (pos >= colorTag.start && pos <= resetTag.end) {
+            return { colorIdx, resetIdx };
+        }
+    }
+    return null;
+}
+
+function tagAtCursor(tags, pos) {
+    for (let i = 0; i < tags.length; i++) {
+        if (pos >= tags[i].start && pos <= tags[i].end) return i;
+    }
+    return -1;
+}
+
+function esc(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Get color at position
+function getColorAtPos(text, pos) {
+    const tags = parseTags(text);
+    let color = 'light-grey';
+    for (const t of tags) {
+        if (t.start >= pos) break;
+        if (t.isColor) color = t.color;
+        else color = 'light-grey';
+    }
+    return color;
+}
+
+// Update highlight overlay
+function updateHighlight() {
+    const text = input.value;
+    const pos = input.selectionStart;
+    const tags = parseTags(text);
+    const pairs = matchTags(tags);
+    const violation = findFirstViolation(tags);
+    
+    const idx = tagAtCursor(tags, pos);
+    const hlSet = new Set();
+    if (idx !== -1) {
+        hlSet.add(idx);
+        if (pairs.has(idx)) hlSet.add(pairs.get(idx));
+    }
+    
+    let html = '', last = 0;
+    for (let i = 0; i < tags.length; i++) {
+        const t = tags[i];
+        if (t.start > last) html += esc(text.slice(last, t.start));
+        
+        let cls = '';
+        if (i === violation) cls = 'tag-err';
+        else if (hlSet.has(i)) cls = 'tag-hl';
+        
+        html += cls ? `<span class="${cls}">${esc(text.slice(t.start, t.end))}</span>` : esc(text.slice(t.start, t.end));
+        last = t.end;
+    }
+    if (last < text.length) html += esc(text.slice(last));
+    if (text.endsWith('\n') || text === '') html += '\n';
+    
+    overlay.innerHTML = html;
+}
+
+// Update cursor position display
+function updateCursorInfo() {
+    const text = input.value;
+    const pos = input.selectionStart;
+    const lines = text.slice(0, pos).split('\n');
+    const ln = lines.length;
+    const col = lines[lines.length - 1].length + 1;
+    cursorPos.textContent = `Line ${ln}, Column ${col}`;
+    
+    const color = getColorAtPos(text, pos);
+    activeColor.innerHTML = `Color: <span class="status-color-swatch" style="background:${colorHex[color]}"></span> ${color}`;
+}
+
+// Extract from C++
+function extractCpp(text) {
+    if (!text.includes('"')) return text;
+    const parts = [];
+    for (const line of text.split('\n')) {
+        const m = line.match(/"((?:[^"\\]|\\.)*)"/);
+        if (m) parts.push(m[1]);
+    }
+    return parts.join('').replace(/\\n/g, '\n').replace(/\\t/g, '\t').replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+}
+
+// Optimized preview rendering
+function renderPreview(text) {
+    const tags = parseTags(text);
+    let html = '', color = 'light-grey', i = 0, tagIdx = 0;
+    let run = '', runColor = color;
+    
+    const flush = () => {
+        if (run) {
+            html += `<span class="c-${runColor}">${esc(run)}</span>`;
+            run = '';
+        }
+    };
+    
+    while (i < text.length) {
+        while (tagIdx < tags.length && tags[tagIdx].start === i) {
+            flush();
+            const t = tags[tagIdx];
+            color = t.isColor ? t.color : 'light-grey';
+            i = t.end;
+            tagIdx++;
+        }
+        if (i >= text.length) break;
+        
+        if (color !== runColor) {
+            flush();
+            runColor = color;
+        }
+        run += text[i];
+        i++;
+    }
+    flush();
+    return html;
+}
+
+function updatePreview() {
+    let text = input.value;
+    if (text.includes('"') && (text.includes('\\n"') || text.includes('format_str'))) {
+        text = extractCpp(text);
+    }
+    text = text.replace(/\\n/g, '\n').replace(/\\t/g, '\t').replace(/\\"/g, '"').replace(/\\\\/g, '\\');
+    preview.innerHTML = renderPreview(text);
+}
+
+function update() {
+    updateHighlight();
+    updatePreview();
+    updateCursorInfo();
+}
+
+// Debounced history save
+let historyTimer;
+function scheduleHistorySave() {
+    clearTimeout(historyTimer);
+    historyTimer = setTimeout(saveHistory, 300);
+}
+
+input.addEventListener('input', () => { update(); scheduleHistorySave(); });
+input.addEventListener('click', () => { updateHighlight(); updateCursorInfo(); });
+input.addEventListener('keyup', () => { updateHighlight(); updateCursorInfo(); });
+input.addEventListener('select', () => { updateHighlight(); updateCursorInfo(); });
+
+// Paste handling
+input.addEventListener('paste', (e) => {
+    const text = e.clipboardData.getData('text/plain');
+    if (text.includes('"') && (text.includes('\\n"') || text.includes('format_str'))) {
+        e.preventDefault();
+        const extracted = extractCpp(text);
+        const start = input.selectionStart, end = input.selectionEnd;
+        input.value = input.value.slice(0, start) + extracted + input.value.slice(end);
+        input.selectionStart = input.selectionEnd = start + extracted.length;
+        update();
+        saveHistory();
+    }
+});
+
+// Apply color - either replace existing or wrap new
+function applyColor(colorName) {
+    saveHistory();
+    const text = input.value;
+    let start = input.selectionStart, end = input.selectionEnd;
+    const tags = parseTags(text);
+    const pairs = matchTags(tags);
+    
+    if (start === end) {
+        const pairInfo = findPairAtCursor(tags, pairs, start);
+        if (pairInfo) {
+            const colorTag = tags[pairInfo.colorIdx];
+            const newTag = `[color=${colorName}]`;
+            input.value = text.slice(0, colorTag.start) + newTag + text.slice(colorTag.end);
+            
+            if (start > colorTag.end) {
+                const delta = newTag.length - colorTag.text.length;
+                input.selectionStart = input.selectionEnd = start + delta;
+            } else if (start >= colorTag.start) {
+                input.selectionStart = input.selectionEnd = colorTag.start + newTag.length;
+            }
+            
+            input.focus();
+            update();
+            saveHistory();
+            return;
+        }
+    }
+    
+    if (start === end) {
+        while (start > 0 && /\S/.test(text[start - 1])) start--;
+        while (end < text.length && /\S/.test(text[end])) end++;
+    }
+    
+    const sel = text.slice(start, end);
+    const tag = `[color=${colorName}]${sel}[reset]`;
+    input.value = text.slice(0, start) + tag + text.slice(end);
+    input.selectionStart = start + `[color=${colorName}]`.length;
+    input.selectionEnd = input.selectionStart + sel.length;
+    input.focus();
+    update();
+    saveHistory();
+}
+
+// Color button clicks
+document.querySelectorAll('.color-btn[data-color]').forEach(btn => {
+    btn.addEventListener('click', () => applyColor(btn.dataset.color));
+});
+
+// Remove tag pair
+function removeTagPair() {
+    saveHistory();
+    const text = input.value;
+    const pos = input.selectionStart;
+    const tags = parseTags(text);
+    const pairs = matchTags(tags);
+    
+    const pairInfo = findPairAtCursor(tags, pairs, pos);
+    if (pairInfo) {
+        const colorTag = tags[pairInfo.colorIdx];
+        const resetTag = tags[pairInfo.resetIdx];
+        let newText = text.slice(0, resetTag.start) + text.slice(resetTag.end);
+        newText = newText.slice(0, colorTag.start) + newText.slice(colorTag.end);
+        input.value = newText;
+        input.selectionStart = input.selectionEnd = colorTag.start;
+        input.focus();
+        update();
+        saveHistory();
+        return;
+    }
+    
+    let idx = tagAtCursor(tags, pos);
+    if (idx === -1) {
+        for (let i = tags.length - 1; i >= 0; i--) {
+            if (tags[i].end <= pos) { idx = i; break; }
+        }
+    }
+    if (idx === -1) { input.focus(); return; }
+    
+    const toRemove = [tags[idx]];
+    if (pairs.has(idx)) toRemove.push(tags[pairs.get(idx)]);
+    toRemove.sort((a, b) => b.start - a.start);
+    
+    let newText = text;
+    for (const t of toRemove) {
+        newText = newText.slice(0, t.start) + newText.slice(t.end);
+    }
+    
+    input.value = newText;
+    input.selectionStart = input.selectionEnd = Math.min(toRemove[toRemove.length - 1].start, newText.length);
+    input.focus();
+    update();
+    saveHistory();
+}
+
+document.getElementById('remove-btn').addEventListener('click', removeTagPair);
+
+// Strip all tags
+document.getElementById('strip-btn').addEventListener('click', () => {
+    saveHistory();
+    const start = input.selectionStart, end = input.selectionEnd;
+    const text = input.value;
+    const strip = s => s.replace(/\[color=[a-z-]+\]/g, '').replace(/\[reset\]/g, '');
+    
+    if (start !== end) {
+        const cleaned = strip(text.slice(start, end));
+        input.value = text.slice(0, start) + cleaned + text.slice(end);
+        input.selectionStart = start;
+        input.selectionEnd = start + cleaned.length;
+    } else {
+        const cleaned = strip(text);
+        input.value = cleaned;
+        input.selectionStart = input.selectionEnd = Math.min(start, cleaned.length);
+    }
+    input.focus();
+    update();
+    saveHistory();
+});
+
+// Keyboard shortcuts
+input.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey) {
+        if (e.key === 'z' && !e.shiftKey) { e.preventDefault(); undo(); }
+        else if (e.key === 'y' || (e.key === 'Z' && e.shiftKey)) { e.preventDefault(); redo(); }
+        else if (e.key === 'r' && !e.shiftKey) { e.preventDefault(); removeTagPair(); }
+        else if (e.key >= '1' && e.key <= '8') {
+            e.preventDefault();
+            const idx = parseInt(e.key) - 1 + (e.shiftKey ? 8 : 0);
+            if (COLORS[idx]) applyColor(COLORS[idx].name);
+        }
+    }
+});
+
+// Extract & Copy as C++
+document.getElementById('extract-btn').addEventListener('click', () => {
+    let text = input.value;
+    if (text.includes('"') && (text.includes('\\n"') || text.includes('format_str'))) {
+        text = extractCpp(text);
+    }
+    text = text.trim();
+    
+    const cpp = text.split('\n').map((line, i, arr) => {
+        line = line.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+        return i === arr.length - 1 ? `"${line}"` : `"${line}\\n"`;
+    }).join('\n');
+    
+    navigator.clipboard.writeText(cpp).then(() => {
+        statusMsg.textContent = '✓ Copied!';
+        statusMsg.className = 'status-item success';
+        setTimeout(() => { statusMsg.textContent = ''; }, 2000);
+    }).catch(() => {
+        statusMsg.textContent = '✗ Copy failed';
+        statusMsg.className = 'status-item error';
+    });
+});
+
+// Undo/Redo buttons
+document.getElementById('undo-btn').addEventListener('click', undo);
+document.getElementById('redo-btn').addEventListener('click', redo);
+
+// Font size
+let fontSize = 16;
+const updateFontSize = () => {
+    previewArea.style.fontSize = fontSize + 'px';
+    previewArea.style.lineHeight = (fontSize * 1.2) + 'px';
+    document.getElementById('font-display').textContent = fontSize + 'px';
+};
+document.getElementById('dec-font').addEventListener('click', () => { if (fontSize > 8) { fontSize--; updateFontSize(); } });
+document.getElementById('inc-font').addEventListener('click', () => { if (fontSize < 32) { fontSize++; updateFontSize(); } });
+
+// Toggle preview background
+document.getElementById('toggle-bg').addEventListener('click', () => {
+    previewArea.classList.toggle('light-mode');
+});
+
+// Divider drag
+let dragging = false;
+const divider = document.getElementById('divider');
+const leftPane = document.querySelector('.left-pane');
+const rightPane = document.querySelector('.right-pane');
+
+divider.addEventListener('mousedown', () => {
+    dragging = true;
+    divider.classList.add('dragging');
+    document.body.style.cursor = 'col-resize';
+    document.body.style.userSelect = 'none';
+});
+document.addEventListener('mousemove', (e) => {
+    if (!dragging) return;
+    const rect = document.querySelector('.container').getBoundingClientRect();
+    const pct = ((e.clientX - rect.left) / rect.width) * 100;
+    if (pct > 15 && pct < 85) {
+        leftPane.style.flex = `0 0 ${pct}%`;
+        rightPane.style.flex = `0 0 ${100 - pct}%`;
+    }
+});
+document.addEventListener('mouseup', () => {
+    if (dragging) {
+        dragging = false;
+        divider.classList.remove('dragging');
+        document.body.style.cursor = '';
+        document.body.style.userSelect = '';
+    }
+});
+
+// Initialize
+saveHistory();
+update();
+</script>
+</body>
+</html>
