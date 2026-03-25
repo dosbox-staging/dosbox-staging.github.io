@@ -1,0 +1,5078 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+      
+      
+        <meta name="author" content="DOSBox Staging Authors">
+      
+      
+        <link rel="canonical" href="https://www.dosbox-staging.org/documentation/graphics/rendering/">
+      
+      
+        <link rel="prev" href="../display-and-window/">
+      
+      
+        <link rel="next" href="../composite-video/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Rendering - DOSBox Staging</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#rendering" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<div class="banner dev-site">
+  <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
+<p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
+
+</div>
+
+<script>
+	if (window.location.pathname.startsWith("/preview/")) {
+    document.getElementsByClassName("dev-site")[0].classList.add("show");
+	}
+</script>
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
+
+    <!-- Link to home -->
+    <a href="../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../releases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Releases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../get-involved/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Get involved
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+    DOSBox Staging
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../releases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Release notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.82.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.82.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.82.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.81.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.81.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.81.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.80.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.80.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.79.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.79.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.78.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.78.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.77.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.77.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.76.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.76.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.0-rc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0-RC1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/development-builds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development builds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enhancing Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/passport-to-adventure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passport to Adventure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beneath a Steel Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/star-wars-dark-forces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Star Wars: Dark Forces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced graphics options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/next-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Next steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dos-primer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A short DOS primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dos-eras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DOS eras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-and-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display &amp; window
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crt-shaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRT shaders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aspect-ratio-viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect ratio &amp; viewport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cga-palette-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CGA palette override
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aspect-ratio-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect ratio &amp; scaling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aspect ratio &amp; scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aspect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        aspect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer_scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        integer_scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        viewport
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shaders
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image adjustments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image adjustments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brightness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        brightness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contrast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital_contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        digital_contrast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gamma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gamma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        saturation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#black_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        black_level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#red_gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        red_gain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green_gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        green_gain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blue_gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blue_gain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image_adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image_adjustments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color_space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        color_space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color_temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        color_temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color_temperature_luma_preserve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        color_temperature_luma_preserve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color palettes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color palettes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cga_colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cga_colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monochrome_palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        monochrome_palette
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crt_color_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        crt_color_profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deinterlacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        deinterlacing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composite-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composite video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3dfx-voodoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3dfx Voodoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/on-subjectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On subjectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/dosbox-mixer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOSBox mixer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/mixer-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixer effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/analog-output-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analog output filter emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_7" id="__nav_3_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound devices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound devices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib, CMS &amp; Sound Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/roland-mt-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland MT-32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/general-midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/pc-speaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PC speaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/tandy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tandy 3 Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/gravis-ultrasound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravis UltraSound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/ibm-ps1audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM PS/1 Audio Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/covox-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Covox variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Innovation SSI-2001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/imfc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM Music Feature Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/capture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio capture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/disk-noise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disk noise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../input/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../input/keyboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../input/mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../input/joystick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Joystick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9">
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/cpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/dos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10">
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/serial-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serial ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/ipx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reelmagic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReelMagic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../regional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regional settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../autoexec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autoexec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../get-involved/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get involved
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get involved
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../get-involved/code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crt-shaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CRT shaders
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integer-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer scaling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aspect-ratio-viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect ratio &amp; viewport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cga-palette-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CGA palette override
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aspect-ratio-scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect ratio &amp; scaling
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aspect ratio &amp; scaling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aspect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        aspect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integer_scaling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        integer_scaling
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        viewport
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shaders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shaders
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shaders">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        shader
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image adjustments
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Image adjustments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#brightness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        brightness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contrast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digital_contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        digital_contrast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gamma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gamma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saturation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        saturation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#black_level" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        black_level
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#red_gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        red_gain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#green_gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        green_gain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blue_gain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blue_gain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image_adjustments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        image_adjustments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color_space" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        color_space
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color_temperature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        color_temperature
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color_temperature_luma_preserve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        color_temperature_luma_preserve
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#color-palettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Color palettes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Color palettes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cga_colors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cga_colors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#monochrome_palette" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        monochrome_palette
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crt_color_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        crt_color_profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Other">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#deinterlacing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        deinterlacing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="rendering">Rendering<a class="headerlink" href="#rendering" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>DOSBox Staging uses adaptive CRT shaders by default that emulate the look
+of period-appropriate monitors. A VGA game gets a VGA-style CRT look, an
+EGA game gets an EGA-era monitor, and so on. The result is surprisingly
+close to what these games looked like on the real hardware they were
+designed for.</p>
+<p>Most DOS games used non-square pixels — a 320×200 image was stretched to
+fill a 4:3 CRT monitor. Aspect ratio correction is enabled by default so
+games look as they were intended. Without it, everything appears slightly
+squished, which is especially noticeable with pixel art-heavy games like
+<em>Monkey Island</em> or <em>Loom</em>.</p>
+<p>The image adjustment controls — brightness, contrast, saturation, colour
+temperature — work much like the knobs on an old CRT monitor. They’re
+useful for fine-tuning the picture to your taste or compensating for
+differences in display characteristics.</p>
+<p>If you prefer a crisp, pixel-perfect look without any CRT emulation, set
+<code>shader = sharp</code>. For completely unprocessed output, use <code>shader = none</code>.</p>
+<h2 id="crt-shaders">CRT shaders<a class="headerlink" href="#crt-shaders" title="Permanent link">¶</a></h2>
+<p>DOSBox Staging includes adaptive CRT shaders that automatically select the
+appropriate monitor emulation based on the current video mode:</p>
+<ul>
+<li>
+<p><code>crt-auto</code> (default) — Prioritises developer intent and how people
+  experienced games at the time. VGA games appear double-scanned (as on a real
+  VGA monitor), EGA games appear single-scanned with thicker scanlines, and so
+  on, regardless of the <a href="../../system/general/#machine"><code>machine</code></a> setting.</p>
+</li>
+<li>
+<p><code>crt-auto-machine</code> — Emulates a fixed CRT monitor for the video adapter
+  configured via the <a href="../../system/general/#machine"><code>machine</code></a> setting. CGA and EGA modes on a VGA machine
+  always appear double-scanned with chunky pixels, as on a real VGA adapter.</p>
+</li>
+<li>
+<p><code>crt-auto-arcade</code> — A fantasy option that emulates a 15 kHz arcade or home
+  computer monitor with thick scanlines in low-resolution modes. Fun for
+  playing DOS VGA ports of Amiga and Atari ST games.</p>
+</li>
+<li>
+<p><code>crt-auto-arcade-sharp</code> — A sharper arcade variant that retains the thick
+  scanlines but with the sharpness of a typical PC monitor.</p>
+</li>
+</ul>
+<p>Here are the shaders in action at 4K resolution (click on images to view at
+full size):</p>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/gods.jpg">
+    <img alt="Gods --- 320×200 VGA" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/gods-small.jpg">
+  </a></p>
+<figcaption>
+<p>Gods — 320×200 VGA
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/ultima-underworld.jpg">
+    <img alt="Ultima Underworld: The Stygian Abyss -- 320×200 VGA" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/ultima-underworld-small.jpg">
+  </a></p>
+<figcaption>
+<p>Ultima Underworld: The Stygian Abyss —<br>320×200 VGA
+  </p>
+</figcaption>
+</figure>
+</div>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/celtic-tales.jpg">
+    <img alt="Celtic Tales: Balor of the Evil Eye -- 640×480 VGA" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/celtic-tales-small.jpg">
+  </a></p>
+<figcaption>
+<p>Celtic Tales: Balor of the Evil Eye — 640×480 VGA
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/dark-seed.jpg">
+    <img alt="Dark Seed --640×350 EGA" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/dark-seed-small.jpg">
+  </a></p>
+<figcaption>
+<p>Dark Seed — 640×350 EGA
+  </p>
+</figcaption>
+</figure>
+</div>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/monkey-island.jpg">
+    <img alt="The Secret of Monkey Island -- 320×200 EGA" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/monkey-island-small.jpg">
+  </a></p>
+<figcaption>
+<p>The Secret of Monkey Island — 320×200 EGA
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/space-quest-iii.jpg">
+    <img alt="Space Quest III: The Pirates of Pestulon -- 320×200 EGA" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/space-quest-iii-small.jpg">
+  </a></p>
+<figcaption>
+<p>Space Quest III: The Pirates of Pestulon — 320×200 EGA
+  </p>
+</figcaption>
+</figure>
+</div>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/wizardry.jpg">
+    <img alt="Wizardry: Proving Grounds of the Mad Overlord -- 320×200 CGA" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/wizardry-small.jpg">
+  </a></p>
+<figcaption>
+<p>Wizardry: Proving Grounds of the Mad Overlord — 320×200 CGA
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/smoker.jpg">
+    <img alt="Smoker by Fairfax --320×200 15kHz &quot;arcade&quot; shader" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/smoker-small.jpg">
+  </a></p>
+<figcaption>
+<p>Smoker by Fairfax —<br>320×200 15kHz “arcade” shader
+  </p>
+</figcaption>
+</figure>
+</div>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/zak.jpg">
+    <img alt="Zak McKracken and the Alien Mindbenders -- 320×200 CGA composite" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/zak-small.jpg">
+  </a></p>
+<figcaption>
+<p>Zak McKracken and the Alien Mindbenders —<br>320×200 CGA composite
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/starblade.jpg">
+    <img alt="Starblade -- 720×348 Hercules" class="skip-lightbox" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/starblade-small.jpg">
+  </a></p>
+<figcaption>
+<p>Starblade — 720×348 Hercules
+  </p>
+</figcaption>
+</figure>
+</div>
+<p>If you don’t like CRT shaders, set <code>shader</code> to <code>sharp</code> to get crisp
+pixel-perfect output. The deprecated legacy CRT shaders are still available
+as a <a href="https://archive.org/download/dosbox-staging-legacy-svn-shaders/svn-shaders.zip">separate download</a>.</p>
+<h2 id="integer-scaling">Integer scaling<a class="headerlink" href="#integer-scaling" title="Permanent link">¶</a></h2>
+<p>The <code>integer_scaling</code> setting constrains the horizontal or vertical scaling
+factor to integer values when upscaling the image. This avoids uneven
+scanlines and interference artifacts with CRT shaders.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[render]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">integer_scaling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vertical</span>
+</code></pre></div>
+<p>The correct aspect ratio is always maintained, so the other dimension’s
+scaling factor may become fractional. With the <code>sharp</code> shader, this is not a
+problem as the interpolation band is at most 1 pixel wide at the edges—still
+sharp, especially at 1440p or 4K. With CRT shaders, non-integer horizontal
+scaling is practically a non-issue.</p>
+<p>The default <code>auto</code> mode enables vertical integer scaling only for the adaptive
+CRT shaders, with refinements: 3.5x and 4.5x scaling factors are also
+allowed, and integer scaling is disabled above 5.0x.</p>
+<h2 id="aspect-ratio-viewport">Aspect ratio &amp; viewport<a class="headerlink" href="#aspect-ratio-viewport" title="Permanent link">¶</a></h2>
+<p>Most DOS games used non-square pixels and were designed for 4:3 CRT displays.
+Aspect ratio correction is enabled by default (<code>aspect = auto</code>) so games look
+as intended.</p>
+<p>The <code>stretch</code> mode calculates the aspect ratio from the viewport dimensions,
+allowing you to force arbitrary aspect ratios. For example, to stretch a game
+to fill the entire screen:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">[render]</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">stretch</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">fit</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="na">integer_scaling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+</code></pre></div>
+<p>The <code>relative</code> viewport mode starts from a 4:3 rectangle and scales it by
+horizontal and vertical stretch factors. This is useful for aspect-correcting
+lazy Hercules conversions that reused EGA/VGA assets. For example, Prince of
+Persia in Hercules mode:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[render]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">stretch</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">relative 112% 173%</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="na">integer_scaling</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+</code></pre></div>
+<p>Use the <em>Stretch Axis</em>, <em>Inc Stretch</em>, and <em>Dec Stretch</em> hotkey actions to
+adjust stretching in real-time, then copy the logged viewport setting to your
+config.</p>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/pop-hercules.png" data-desc-position="bottom"><img alt="Prince of Persia (default)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/pop-hercules.png"></a></p>
+<figcaption>
+<p>Prince of Persia without any custom stretching
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/pop-hercules-aspect-corrected.jpg" data-desc-position="bottom"><img alt="Prince of Persia (aspect ratio corrected)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.81.0/pop-hercules-aspect-corrected.jpg"></a></p>
+<figcaption>
+<p>Prince of Persia with <code>aspect = stretch</code> and <code>viewport = relative 112% 173%</code>
+  </p>
+</figcaption>
+</figure>
+</div>
+<h2 id="cga-palette-override">CGA palette override<a class="headerlink" href="#cga-palette-override" title="Permanent link">¶</a></h2>
+<p>The 16-colour CGA/EGA RGBI palette can be overridden with alternative colour
+interpretations via the <code>cga_colors</code> setting. This affects CGA/EGA-like modes
+even on emulated VGA or Tandy graphics adapters.</p>
+<p>Several built-in presets are available, including Amiga and Atari ST colours
+for Sierra AGI games, various CGA/EGA monitor emulations, and Commodore 64
+inspired colours. Custom palettes can also be specified.</p>
+<p><strong>Defender of the Crown</strong></p>
+<p>The <code>tandy-warm</code> preset emulates colours as they appear on an actual Tandy
+monitor, resulting in more subdued and pleasant colours—especially apparent
+on the greens.</p>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/dotc-default.png" data-desc-position="bottom"><img alt="Defender of the Crown (default)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/dotc-default.png"></a></p>
+<figcaption>
+<p><code>cga_colors = default</code>
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/dotc-tandy-warm.png" data-desc-position="bottom"><img alt="Defender of the Crown (tandy-warm)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/dotc-tandy-warm.png"></a></p>
+<figcaption>
+<p><code>cga_colors = tandy-warm</code>
+  </p>
+</figcaption>
+</figure>
+</div>
+<p><strong>Gold Rush!</strong></p>
+<p>The Amiga/Atari ST ports of Sierra AGI games use a tweaked CGA palette with
+improved skin tones and sky colours.</p>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/gold-rush-default.png" data-desc-position="bottom"><img alt="Gold Rush! (default)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/gold-rush-default.png"></a></p>
+<figcaption>
+<p><code>cga_colors = default</code>
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/gold-rush-agi-amigaish.png" data-desc-position="bottom"><img alt="Gold Rush! (agi-amigaish)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/gold-rush-agi-amigaish.png"></a></p>
+<figcaption>
+<p><code>cga_colors = agi-amigaish</code>
+  </p>
+</figcaption>
+</figure>
+</div>
+<p><strong>Zak McKracken and the Alien Mindbenders</strong></p>
+<p>Play the PC version with Tandy sound and Commodore 64 colours!</p>
+<div class="image-grid">
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/zak-default.png" data-desc-position="bottom"><img alt="Zak McKracken (default)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/zak-default.png"></a></p>
+<figcaption>
+<p><code>cga_colors = default</code>
+  </p>
+</figcaption>
+</figure>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/zak-colodore.png" data-desc-position="bottom"><img alt="Zak McKracken (colodore)" loading="lazy" src="https://www.dosbox-staging.org/static/images/release-notes/0.79.0/zak-colodore.png"></a></p>
+<figcaption>
+<p><code>cga_colors = colodore</code>
+  </p>
+</figcaption>
+</figure>
+</div>
+<h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
+<p>You can set the rendering parameters in the <code>[render]</code> configuration section.</p>
+<h3 id="aspect-ratio-scaling">Aspect ratio &amp; scaling<a class="headerlink" href="#aspect-ratio-scaling" title="Permanent link">¶</a></h3>
+<h5 id="aspect">aspect<a class="headerlink" href="#aspect" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the aspect ratio correction mode.</p>
+<p>Possible values:</p>
+<ul>
+<li>
+<p><code>auto</code> <em class="default">default</em>, <code>on</code> – Apply aspect ratio correction
+  for modern square-pixel flat-screen displays, so DOS video modes with
+  non-square pixels appear as they would on a 4:3 display aspect ratio
+  CRT monitor the majority of DOS games were designed for. This setting
+  only affects video modes that use non-square pixels, such as 320x200
+  or 640x400; square pixel modes (e.g., 320x240, 640x480, and 800x600)
+  are displayed as-is.</p>
+</li>
+<li>
+<p><code>square-pixels</code>, <code>off</code> – Don’t apply aspect ratio correction; all DOS
+  video modes will be displayed with square pixels. Most 320x200 games
+  will appear squashed, but a minority of titles (e.g., DOS ports of PAL
+  Amiga games) need square pixels to appear as the artists intended.</p>
+</li>
+<li>
+<p><code>stretch</code> – Calculate the aspect ratio from the viewport’s dimensions.
+  Combined with the <a href="#viewport">viewport</a> setting, this mode is useful to
+  force arbitrary aspect ratios (e.g., stretching DOS games to fullscreen
+  on 16:9 displays) and to emulate the horizontal and vertical stretch
+  controls of CRT monitors.</p>
+</li>
+</ul>
+</dd>
+</dl>
+<h5 id="integer_scaling">integer_scaling<a class="headerlink" href="#integer_scaling" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Constrain the horizontal or vertical scaling factor to the largest
+integer value so the image still fits into the viewport. The configured
+aspect ratio is always maintained according to the <a href="#aspect">aspect</a> and
+<a href="#viewport">viewport</a> settings, which may result in a non-integer scaling
+factor in the other dimension. If the image is larger than the viewport,
+the integer scaling constraint is auto-disabled (same as <code>off</code>).</p>
+<p>Possible values:</p>
+<ul>
+<li><code>auto</code> <em class="default">default</em> – A special vertical mode auto-enabled
+  only for the adaptive CRT shaders (see <a href="#shader">shader</a>). This mode
+  has refinements over standard vertical integer scaling: 3.5x and 4.5x
+  scaling factors are also allowed, and integer scaling is disabled above
+  5.0x scaling.</li>
+<li><code>vertical</code> – Constrain the vertical scaling factor to integer values.
+  This is the recommended setting for third-party shaders to avoid uneven
+  scanlines and interference artifacts.</li>
+<li><code>horizontal</code> – Constrain the horizontal scaling factor to integer
+  values.</li>
+<li><code>off</code> – No integer scaling constraint is applied; the image fills the
+  viewport while maintaining the configured aspect ratio.</li>
+</ul>
+</dd>
+</dl>
+<h5 id="viewport">viewport<a class="headerlink" href="#viewport" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the viewport size. This is the maximum drawable area; the video
+output is always contained within the viewport while taking the configured
+aspect ratio into account (see <a href="#aspect">aspect</a>).</p>
+<p>Possible values:</p>
+<ul>
+<li>
+<p><code>fit</code> <em class="default">default</em> – Fit the viewport into the available
+  window/screen. There might be padding (black areas) around the image
+  with <a href="#integer_scaling">integer_scaling</a> enabled.</p>
+</li>
+<li>
+<p><code>WxH</code> – Set a fixed viewport size in WxH format in logical units
+  (e.g., <code>960x720</code>). The specified size must not be larger than the
+  desktop. If it’s larger than the window size, it will be scaled to fit
+  within the window.</p>
+</li>
+<li>
+<p><code>N%</code> – Similar to <code>WxH</code>, but the size is specified as a percentage of
+  the desktop size.</p>
+</li>
+<li>
+<p><code>relative H% V%</code> – The viewport is set to a 4:3 aspect ratio rectangle
+  fit into the available window or screen, then is scaled by the H and V
+  horizontal and vertical scaling factors (valid range is from 20% to
+  300%). The resulting viewport is allowed to extend beyond the bounds of
+  the window or screen. Useful to force arbitrary display aspect ratios
+  with <a href="#aspect">aspect</a> set to <code>stretch</code> and to “zoom” into the image.
+  This effectively emulates the horizontal and vertical stretch controls
+  of CRT monitors.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>Using <code>relative</code> mode with <a href="#integer_scaling">integer_scaling</a>
+  enabled could lead to surprising (but correct) results.</p>
+</li>
+<li>
+<p>Use the <code>Stretch Axis</code>, <code>Inc Stretch</code>, and <code>Dec Stretch</code> hotkey
+  actions to adjust the image size in <code>relative</code> mode in real-time,
+  then copy the new settings from the logs into your config.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+<h3 id="shaders">Shaders<a class="headerlink" href="#shaders" title="Permanent link">¶</a></h3>
+<h5 id="shader">shader<a class="headerlink" href="#shader" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set an adaptive CRT monitor emulation shader or a regular shader.
+Shaders are only supported in the OpenGL output mode (see
+<a href="../display-and-window/#output">output</a>).</p>
+<p>Adaptive CRT shader options:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>crt-auto</code> <em class="default">default</em> – Adaptive CRT shader that
+  prioritises developer intent and how people experienced the games at
+  the time of release. An appropriate shader variant is auto-selected
+  based on the graphics standard of the current video mode and the
+  viewport size, irrespective of the <a href="../../system/general/#machine"><code>machine</code></a> setting.</li>
+<li><code>crt-auto-machine</code> – A variation of <code>crt-auto</code>; this emulates a fixed
+  CRT monitor for the video adapter configured via the <a href="../../system/general/#machine"><code>machine</code></a> setting.</li>
+<li><code>crt-auto-arcade</code> – Emulation of an arcade or home computer monitor
+  with a less sharp image and thick scanlines in low-resolution video
+  modes. This is a fantasy option that never existed in real life, but it
+  can be a lot of fun, especially with DOS ports of Amiga games.</li>
+<li><code>crt-auto-arcade-sharp</code> – A sharper arcade shader variant for those
+  who like the thick scanlines but want to retain the sharpness of a
+  typical PC monitor.</li>
+</ul>
+</div>
+<p>Other shader options include (non-exhaustive list):</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>sharp</code> – Upscale the image treating the pixels as small rectangles,
+  resulting in a sharp image with minimum blur while maintaining the
+  correct pixel aspect ratio. This is the recommended option for those
+  who don’t want to use the adaptive CRT shaders.</li>
+<li><code>bilinear</code> – Upscale the image using bilinear interpolation (results
+  in a blurry image).</li>
+<li><code>nearest</code> – Upscale the image using nearest-neighbour interpolation
+  (also known as “no bilinear”). This results in the sharpest possible
+  image at the expense of uneven pixels, especially with non-square pixel
+  aspect ratios (this is less of an issue on high resolution monitors).</li>
+<li><code>jinc2</code> – Upscale the image using jinc 2-lobe interpolation with
+  anti-ringing. This blends together dithered colour patterns at the cost
+  of image sharpness.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Start DOSBox Staging with the <a href="../../command-line/#-list-shaders"><code>--list-shaders</code></a>
+command line option to see the full list of available shaders. You can also use an absolute
+or relative path to a file. In all cases, you may omit the shader’s
+<code>.glsl</code> file extension.</p>
+</div>
+</dd>
+</dl>
+<h3 id="image-adjustments">Image adjustments<a class="headerlink" href="#image-adjustments" title="Permanent link">¶</a></h3>
+<h5 id="brightness">brightness<a class="headerlink" href="#brightness" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set the brightness of the video output (<code>45</code> by default). Valid range is
+0 to 100. This emulates the brightness control of CRT monitors that sets
+the black point; higher values will result in raised blacks.</dd>
+</dl>
+<h5 id="contrast">contrast<a class="headerlink" href="#contrast" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set the contrast of the video output (<code>65</code> by default). Valid range is 0
+to 100. This emulates the contrast control of CRT monitors that sets the
+white point; higher values will result in raised blacks (lower the
+<a href="#brightness">brightness</a> control to compensate).</dd>
+</dl>
+<h5 id="digital_contrast">digital_contrast<a class="headerlink" href="#digital_contrast" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set the digital contrast of the video output (<code>0</code> by default). Valid
+range is -50 to 50. This works very differently from the
+<a href="#contrast">contrast</a> virtual monitor setting; digital contrast is applied
+to the raw RGB values of the framebuffer image.</dd>
+</dl>
+<h5 id="gamma">gamma<a class="headerlink" href="#gamma" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set the gamma of the video output (<code>0</code> by default). Valid range is -50
+to 50. This is additional gamma adjustment relative to the emulated
+virtual monitor’s gamma.</dd>
+</dl>
+<h5 id="saturation">saturation<a class="headerlink" href="#saturation" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set the saturation of the video output (<code>0</code> by default). Valid range is
+-50 to 50. This is digital saturation applied to the raw RGB values of
+the framebuffer image, similarly to <a href="#digital_contrast">digital_contrast</a>.</dd>
+</dl>
+<h5 id="black_level">black_level<a class="headerlink" href="#black_level" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Raise the black level of the video output. It is applied before the
+<a href="#brightness">brightness</a> and <a href="#contrast">contrast</a> settings which can
+also raise the black level, so it effectively acts as a black level
+boost.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>auto</code> <em class="default">default</em> – Raise the black level for PCjr, Tandy,
+  CGA and EGA video modes only for adaptive CRT shaders; for any other
+  shader, use 0.</li>
+<li><code>&lt;number&gt;</code> – Set the black level raise amount. Valid range is 0 to
+  100. 0 does not raise the black level.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Raising the black level is useful for “black scanline” emulation;
+this adds visual interest to PCjr, Tandy, CGA, and EGA games with
+simple graphics.</p>
+</div>
+</dd>
+</dl>
+<h5 id="red_gain">red_gain<a class="headerlink" href="#red_gain" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set gain factor of the video output’s red channel (<code>100</code> by default).
+Valid range is 0 to 200. 100 results in no gain change.</dd>
+</dl>
+<h5 id="green_gain">green_gain<a class="headerlink" href="#green_gain" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set gain factor of the video output’s green channel (<code>100</code> by default).
+Valid range is 0 to 200. 100 results in no gain change.</dd>
+</dl>
+<h5 id="blue_gain">blue_gain<a class="headerlink" href="#blue_gain" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Set gain factor of the video output’s blue channel (<code>100</code> by default).
+Valid range is 0 to 200. 100 results in no gain change.</dd>
+</dl>
+<h5 id="image_adjustments">image_adjustments<a class="headerlink" href="#image_adjustments" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Enable image adjustments. When disabled, the image adjustment settings in
+the render section (e.g., <a href="#crt_color_profile">crt_color_profile</a>,
+<a href="#brightness">brightness</a>, <a href="#contrast">contrast</a>, etc.) have no effect
+and the raw RGB values are used for the video output. The colour space
+conversion is always active, that cannot be disabled (see
+<a href="#color_space">color_space</a>).</p>
+<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>
+<p>Image adjustments only work in OpenGL output mode.</p>
+</li>
+<li>
+<p>Adjustments are applied to rendered screenshots, but not to raw and
+  upscaled screenshots and video captures.</p>
+</li>
+<li>
+<p>Use the <code>PrevImageAdj</code> and <code>NextImageAdj</code> hotkeys to select an
+  image adjustment setting and the <code>DecImageAdj</code> and <code>IncImageAdj</code>
+  hotkeys to adjust the settings in real-time. Copy the new settings
+  from the logs into your config, or write a new config with the
+  <code>CONFIG -wc</code> command.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+<h5 id="color_space">color_space<a class="headerlink" href="#color_space" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the colour space of the video output. On macOS, this is always
+<code>display-p3</code>; the OS performs the conversion to the colour profile set in
+your system settings.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>display-p3</code> – Display P3 wide gamut colour space with 6500K white
+  point and sRGB gamma.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Colour space transforms are applied to rendered screenshots, but not
+to raw and upscaled screenshots and video captures (those are always
+in sRGB).</p>
+</div>
+</dd>
+</dl>
+<h5 id="color_temperature">color_temperature<a class="headerlink" href="#color_temperature" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the colour temperature (white point) of the video output.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>auto</code> <em class="default">default</em> – Select an authentic colour temperature
+  for adaptive CRT shaders; for any other shader, use 6500.</li>
+<li><code>&lt;number&gt;</code> – Specify colour temperature in Kelvin (K). Valid range is
+  3000 to 10000. The Kelvin value only makes sense if
+  <a href="#crt_color_profile">crt_color_profile</a> is set to <code>none</code> or to one of
+  the profiles with 6500K white point, otherwise it acts as a relative
+  colour temperature adjustment (less than 6500 results in warmer
+  colours, more than 6500 in cooler colours).</li>
+</ul>
+</dd>
+</dl>
+<h5 id="color_temperature_luma_preserve">color_temperature_luma_preserve<a class="headerlink" href="#color_temperature_luma_preserve" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Preserve image luminosity prior to colour temperature adjustment (<code>0</code> by
+default). Valid range is 0 to 100. 0 doesn’t perform any luminosity
+preservation, 100 fully preserves the luminosity. Values greater than 0
+result in inaccurate colour temperatures in the brighter shades, so it’s
+best to set this to 0 or close to 0 if your monitor is bright enough.</dd>
+</dl>
+<h3 id="color-palettes">Color palettes<a class="headerlink" href="#color-palettes" title="Permanent link">¶</a></h3>
+<h5 id="cga_colors">cga_colors<a class="headerlink" href="#cga_colors" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the interpretation of CGA RGBI colours. Affects all machine types
+capable of displaying CGA or better graphics, including the PCjr, the
+Tandy, and CGA/EGA modes on VGA adapters.</p>
+<p>Built-in presets:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>default</code> <em class="default">default</em> – The canonical CGA palette, as
+  emulated by VGA adapters.</li>
+<li><code>tandy &lt;bl&gt;</code> – Emulation of an idealised Tandy monitor with adjustable
+  brown level. The brown level can be provided as an optional second
+  parameter (0–red, 50–brown, 100–dark yellow; defaults to 50).</li>
+<li><code>tandy-warm</code> – Emulation of the actual colour output of an unknown
+  Tandy monitor. Intended to be used with <code>crt_color_profile = none</code> and
+  <code>color_temperature = 6500</code>.</li>
+<li><code>ibm5153 &lt;c&gt;</code> – Emulation of the actual colour output of an IBM 5153
+  monitor with a unique contrast control that dims non-bright colours
+  only. The contrast can be optionally provided as a second parameter (0
+  to 100; defaults to 100). Intended to be used with
+  <code>crt_color_profile = none</code> and <code>color_temperature = 6500</code>.</li>
+<li><code>agi-amiga-v1</code>, <code>agi-amiga-v2</code>, <code>agi-amiga-v3</code> – Palettes used by the
+  Amiga ports of Sierra AGI games.</li>
+<li><code>agi-amigaish</code> – A mix of EGA and Amiga colours used by the Sarien
+  AGI-interpreter.</li>
+<li><code>scumm-amiga</code> – Palette used by the Amiga ports of LucasArts EGA
+  games.</li>
+<li><code>colodore</code> – Commodore 64 inspired colours based on the Colodore
+  palette.</li>
+<li><code>colodore-sat</code> – Colodore palette with 20% more saturation.</li>
+<li><code>dga16</code> – A modern take on the canonical CGA palette with dialled back
+  contrast.</li>
+</ul>
+</div>
+<p>You can also set custom colours by specifying 16 space or comma separated
+sRGB colour values, either as 3 or 6-digit hex codes (e.g., <code>#f00</code> or
+<code>#ff0000</code> for full red), or decimal RGB triplets (e.g., <code>(255, 0, 255)</code>
+for magenta).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These colours will be further adjusted by the video output settings
+(see <a href="#crt_color_profile">crt_color_profile</a>,
+<a href="#brightness">brightness</a>, <a href="#saturation">saturation</a>, etc.)</p>
+</div>
+</dd>
+</dl>
+<h5 id="monochrome_palette">monochrome_palette<a class="headerlink" href="#monochrome_palette" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the palette for monochrome display emulation. Works only with the
+<code>hercules</code> and <code>cga_mono</code> machine types.</p>
+<p>Possible values: <code>amber</code> <em class="default">default</em>, <code>green</code>, <code>white</code>,
+<code>paperwhite</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also cycle through the available palettes via hotkeys.</p>
+</div>
+</dd>
+</dl>
+<h5 id="crt_color_profile">crt_color_profile<a class="headerlink" href="#crt_color_profile" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set a CRT colour profile for more authentic video output emulation. All
+profiles have a built-in colour temperature (white point) that you can
+tweak further with the <a href="#color_temperature">color_temperature</a> setting.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>auto</code> <em class="default">default</em> – Select an authentic colour profile for
+  adaptive CRT shaders; for any other shader, use <code>none</code>.</li>
+<li><code>none</code> – Display raw colours without any colour profile transforms.</li>
+<li><code>ebu</code> – EBU standard phosphor emulation, used in high-end professional
+  CRT monitors, such as the Sony BVM/PVM series (6500K white point).</li>
+<li><code>p22</code> – P22 phosphor emulation, the most commonly used in lower-end
+  CRT monitors (6500K white point).</li>
+<li><code>smpte-c</code> – SMPTE “C” phosphor emulation, the standard for American
+  broadcast video monitors (6500K white point).</li>
+<li><code>philips</code> – Philips CRT monitor colours typical to 15 kHz home
+  computer monitors, such as the Commodore 1084S (~6100K white point).
+  Needs a wide gamut DCI-P3 display for the best results.</li>
+<li><code>trinitron</code> – Typical Sony Trinitron CRT TV and monitor colours
+  (~9300K white point). Needs a wide gamut DCI-P3 display for the best
+  results.</li>
+</ul>
+</div>
+</dd>
+</dl>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">¶</a></h3>
+<h5 id="deinterlacing">deinterlacing<a class="headerlink" href="#deinterlacing" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Remove black lines from interlaced videos. Use with games that display
+video content with alternating black lines. This trick worked well on CRT
+monitors to increase perceptual resolution while saving storage space, but
+it resulted in brightness loss.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>off</code> <em class="default">default</em> – Disable deinterlacing.</li>
+<li><code>on</code> – Enable deinterlacing at <code>medium</code> strength.</li>
+<li><code>light</code> – Light deinterlacing. Black scanlines are softened to mimic
+  the CRT look.</li>
+<li><code>medium</code> – Medium deinterlacing. Best balance between removing black
+  lines, increasing brightness, and keeping the higher resolution look.</li>
+<li><code>strong</code> – Strong deinterlacing. Image brightness is almost completely
+  restored at the expense of diminishing the higher resolution look.</li>
+<li><code>full</code> – Full deinterlacing. Completely removes black lines and
+  maximises brightness, but the image will appear blockier.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Enabling vertical <a href="#integer_scaling">integer_scaling</a> is recommended
+on lower resolution displays to avoid interference artifacts when
+using lower deinterlacing strengths. Alternatively, use <code>full</code>
+strength to completely eliminate all potential interference patterns.</p>
+</div>
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="footer.title">
+
+      <!-- Link to previous page -->
+      
+        
+        <a href="../display-and-window/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Display &amp;amp; window" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Display &amp; window
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a href="../composite-video/" class="md-footer__link md-footer__link--next" aria-label="Next: Composite video" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Composite video
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+          <li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+          <li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+          <!-- Mastodon verification -->
+	  <li><a rel="me" href="https://corteximplant.com/@DOSBox_Staging">Mastodon</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

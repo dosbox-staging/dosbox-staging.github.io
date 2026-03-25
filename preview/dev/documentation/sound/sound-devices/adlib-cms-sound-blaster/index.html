@@ -1,0 +1,5412 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+      
+      
+        <meta name="author" content="DOSBox Staging Authors">
+      
+      
+        <link rel="canonical" href="https://www.dosbox-staging.org/documentation/sound/sound-devices/adlib-cms-sound-blaster/">
+      
+      
+        <link rel="prev" href="../../midi/">
+      
+      
+        <link rel="next" href="../roland-mt-32/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>AdLib, CMS &amp; Sound Blaster - DOSBox Staging</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#adlib-cms-sound-blaster" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<div class="banner dev-site">
+  <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
+<p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
+
+</div>
+
+<script>
+	if (window.location.pathname.startsWith("/preview/")) {
+    document.getElementsByClassName("dev-site")[0].classList.add("show");
+	}
+</script>
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
+
+    <!-- Link to home -->
+    <a href="../../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../releases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Releases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../introduction/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Documentation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../get-involved/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Get involved
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+    DOSBox Staging
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../releases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Release notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.82.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.82.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.82.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.81.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.81.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.81.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.80.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.80.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.79.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.79.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.78.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.78.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.77.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.77.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.76.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.76.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.75.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.75.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.75.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/release-notes/0.75.0-rc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0-RC1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../releases/development-builds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development builds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enhancing Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/passport-to-adventure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passport to Adventure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beneath a Steel Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/star-wars-dark-forces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Star Wars: Dark Forces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Advanced graphics options
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/next-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Next steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Documentation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Documentation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dos-primer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A short DOS primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../dos-eras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DOS eras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/display-and-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display &amp; window
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/composite-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composite video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/3dfx-voodoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3dfx Voodoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-subjectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On subjectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dosbox-mixer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOSBox mixer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mixer-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixer effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analog-output-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analog output filter emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_7" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_7" id="__nav_3_7_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound devices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_7_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound devices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib, CMS &amp; Sound Blaster
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib, CMS &amp; Sound Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-board-synthesisers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On-board synthesisers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emulated-sound-blaster-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emulated Sound Blaster models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixer-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixer channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-the-best-sound-blaster-model-for-a-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting the best Sound Blaster model for a game
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adlib-music-synthesizer-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdLib Music Synthesizer Card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creative-music-system-cms-game-blaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creative Music System (CMS) / Game Blaster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster 1.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster 2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-pro-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster Pro 2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adlib-gold-1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdLib Gold 1000
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ess-enhanced-fm-audio-esfm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESS Enhanced FM Audio (ESFM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESS Enhanced FM Audio (ESFM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#games-with-esfm-enhanced-fm-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Games with ESFM Enhanced FM support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-comparison-esfm-vs-opl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio comparison: ESFM vs OPL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sound-blaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Blaster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hdma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        irq
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sb_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sb_filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sb_filter_always_on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sb_filter_always_on
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbbase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbmixer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbmixer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbtype
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbwarmup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbwarmup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opl_fadeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        opl_fadeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opl_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        opl_filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opl_remove_dc_bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        opl_remove_dc_bias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oplmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oplmode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cms_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cms_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cms_filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roland-mt-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland MT-32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general-midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pc-speaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PC speaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tandy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tandy 3 Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gravis-ultrasound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravis UltraSound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ibm-ps1audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM PS/1 Audio Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../covox-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Covox variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Innovation SSI-2001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imfc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM Music Feature Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../capture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio capture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disk-noise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disk noise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/keyboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/joystick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Joystick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9">
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/cpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/dos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10">
+        
+          
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/serial-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serial ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/ipx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reelmagic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReelMagic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../webserver/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../regional/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Regional settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../autoexec/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autoexec
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../get-involved/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get involved
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get involved
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../get-involved/code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#on-board-synthesisers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        On-board synthesisers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#emulated-sound-blaster-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Emulated Sound Blaster models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixer-channels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixer channels
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Default settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-the-best-sound-blaster-model-for-a-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting the best Sound Blaster model for a game
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adlib-music-synthesizer-card" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdLib Music Synthesizer Card
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creative-music-system-cms-game-blaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creative Music System (CMS) / Game Blaster
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster 1.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster 2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-pro" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster Pro
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-pro-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster Pro 2.0
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-blaster-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster 16
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adlib-gold-1000" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AdLib Gold 1000
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ess-enhanced-fm-audio-esfm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ESS Enhanced FM Audio (ESFM)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="ESS Enhanced FM Audio (ESFM)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#games-with-esfm-enhanced-fm-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Games with ESFM Enhanced FM support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audio-comparison-esfm-vs-opl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audio comparison: ESFM vs OPL
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sound-blaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sound Blaster
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sound Blaster">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hdma
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#irq" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        irq
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sb_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sb_filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sb_filter_always_on" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sb_filter_always_on
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbbase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbmixer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbmixer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbtype
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sbwarmup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sbwarmup
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OPL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="OPL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opl_fadeout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        opl_fadeout
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opl_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        opl_filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opl_remove_dc_bias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        opl_remove_dc_bias
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oplmode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        oplmode
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CMS
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CMS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cms_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cms_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cms_filter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="adlib-cms-sound-blaster">AdLib, CMS &amp; Sound Blaster<a class="headerlink" href="#adlib-cms-sound-blaster" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>For many who owned a gaming PC in the 1990s, the name <strong>Sound Blaster</strong> is a
+synonym for “sound card”—and rightly so, as the Sound Blaster family of
+cards by Creative Technology was the de facto standard for DOS gaming. The
+first Sound Blaster was released in 1989, and it quickly became the
+best-selling expansion card for the PC. Virtually all games from 1990 onwards
+had Sound Blaster support in some shape or form, and this remained unchanged
+for the rest of the DOS-era until the late 90s.</p>
+<p>DOSBox can emulate all major revisions of the Sound Blaster family. One of the
+most common models was the <a href="#sound-blaster-16">Sound Blaster 16</a> which has
+good (but not perfect) backward-compatibility with earlier cards. This is the
+sound card DOSBox emulates by default to ensure the widest possible
+compatibility with games,</p>
+<p>Most games that support the AdLib or Sound Blaster work fine with the DOSBox
+defaults, and don’t require you to load any DOS drivers. A small percentage of
+games, however—especially from the early Sound Blaster days—only work with
+a specific model, or require a driver to be loaded. Please refer to the <a external="external" href="#">List
+of games that require a sound driver</a> on the wiki for further
+details.</p>
+<h3 id="on-board-synthesisers">On-board synthesisers<a class="headerlink" href="#on-board-synthesisers" title="Permanent link">¶</a></h3>
+<p>In addition to their digital audio playback capabilities (also referred to as
+<strong>PCM sound</strong>), all Sound Blaster models feature at least one on-board
+synthesiser for the generation of music and sound effects. The most important
+of these is the <a href="#adlib-music-synthesizer-card">AdLib</a> that is present on all
+Sound Blaster cards. The AdLib is also referred to as <strong>OPL sound</strong> (after the
+Yamaha OPL range of chips responsible for the “AdLib sound”), or <strong>FM sound</strong>
+(after the OPL chip’s FM sound synthesis capabilities). DOSBox uses the highly
+accurate NukedOPL library to achieve a nearly bit-perfect emulation of the OPL
+chips.</p>
+<p>The other less common synthesiser is the <a href="#creative-music-system-cms-game-blaster">Creative Music
+System</a> (also referred to as <strong>C/MS</strong>, or
+<strong>CMS</strong>) which is only present on the earliest Sound Blaster models.</p>
+<p>Because the history and even the emulation of these synthesisers are so
+closely entwined with those of the Sound Blaster, we are going to discuss them
+together.</p>
+<h3 id="emulated-sound-blaster-models">Emulated Sound Blaster models<a class="headerlink" href="#emulated-sound-blaster-models" title="Permanent link">¶</a></h3>
+<p>The below table lists all Sound Blaster models emulated by DOSBox, along with
+their main capabilities:</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th><code>sbtype</code> value</th>
+<th>Digital audio</th>
+<th>Synthesiser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#creative-music-system-cms-game-blaster">Game Blaster</a></td>
+<td><code>gb</code></td>
+<td>N/A</td>
+<td>CMS (stereo)</td>
+</tr>
+<tr>
+<td><a href="#sound-blaster-10">Sound Blaster 1.0</a></td>
+<td><code>sb1</code></td>
+<td>8-bit mono 23kHz</td>
+<td>OPL2 (mono)<br>CMS (stereo)</td>
+</tr>
+<tr>
+<td><a href="#sound-blaster-20">Sound Blaster 2.0</a></td>
+<td><code>sb2</code></td>
+<td>8-bit mono 23kHz</td>
+<td>OPL2 (mono)<br>CMS (stereo)</td>
+</tr>
+<tr>
+<td><a href="#sound-blaster-pro">Sound Blaster Pro</a></td>
+<td><code>sbpro1</code></td>
+<td>8-bit mono 44kHz<br>8-bit stereo 23kHz</td>
+<td>Dual OPL2 (stereo)</td>
+</tr>
+<tr>
+<td><a href="#sound-blaster-pro-20">Sound&nbsp;Blaster&nbsp;Pro&nbsp;2.0</a></td>
+<td><code>sbpro2</code></td>
+<td>8-bit mono 44kHz<br>8-bit stereo 23kHz</td>
+<td>OPL3 (stereo)</td>
+</tr>
+<tr>
+<td><a href="#sound-blaster-16">Sound Blaster 16</a></td>
+<td><code>sb16</code></td>
+<td>16-bit stereo 44kHz</td>
+<td>OPL3 (stereo)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mixer-channels">Mixer channels<a class="headerlink" href="#mixer-channels" title="Permanent link">¶</a></h3>
+<p>The digital audio of the Sound Blaster is output to the <strong><code>SB</code></strong> mixer channel,
+while the AdLib (OPL) synthesiser has its own dedicated <strong><code>OPL</code></strong> channel. Both
+channels can be either mono or stereo, depending on the particular Sound
+Blaster model being emulated.</p>
+<p>The Creative Music System synthesiser has its own dedicated <strong><code>CMS</code></strong> channel,
+which is always stereo.</p>
+<p>The upshot of this is that the digital audio and synthesiser volumes can be
+adjusted independently via the DOSBox mixer (e.g., in games that use
+digital audio for speech and sound effects, and the synthesiser for music).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Starting with the Sound Blaster Pro, programs can adjust the volume of the
+digital audio, OPL, and CD Audio channels via the Sound Blaster software
+mixer. By default, DOSBox forwards these adjustments to the DOSBox mixer,
+allowing programs to change the volumes of these channels. This can
+potentially result in your manually set volumes being overridden. To
+prevent this from happening, set the <a href="#sbmixer"><code>sbmixer</code></a> configuration
+setting to <code>off</code>.</p>
+</div>
+<h3 id="default-settings">Default settings<a class="headerlink" href="#default-settings" title="Permanent link">¶</a></h3>
+<p>The default Sound Blaster settings shown below have been selected for the
+widest possible compatibility with games. Most games can auto-detect the
+presence of a Sound Blaster card and these settings, but in case they need a
+little help, here are the values to use:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Config setting</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base address (or I/O address, or port)</td>
+<td><a href="#sbbase">sbbase</a></td>
+<td>220</td>
+</tr>
+<tr>
+<td>IRQ (or interrupt)</td>
+<td><a href="#irq">irq</a></td>
+<td>7</td>
+</tr>
+<tr>
+<td>DMA (or low DMA)</td>
+<td><a href="#dma">dma</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td>High DMA (or HDMA)</td>
+<td><a href="#hdma">hdma</a></td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If you have configured a game for Sound Blaster speech and music but can’t
+hear both or maybe there is no sound at all, or if the game hangs or crashes,
+first double check that the above settings have been set in the game’s
+configuration. Many games don’t let you to set all of them manually and just
+assume some common fixed values instead. Please refer to the detailed
+description of the config settings for troubleshooting tips.</p>
+<h3 id="selecting-the-best-sound-blaster-model-for-a-game">Selecting the best Sound Blaster model for a game<a class="headerlink" href="#selecting-the-best-sound-blaster-model-for-a-game" title="Permanent link">¶</a></h3>
+<p>DOSBox emulates the <a href="#sound-blaster-16">Sound Blaster 16</a> by default to ensure
+the widest overall compatibility with DOS games. This lowest common
+denominator setting will serve you well if you just want to play some games
+with minimum hassle. If that’s the case, you might as well stop reading this
+chapter now, and only come back to it if you’ve encountered issues with
+certain titles, or if you want to further your understanding of the subtler
+differences between the various Sound Blaster models.</p>
+<p>For the audio enthusiasts who are still with us, here’s the thing: if you want
+to coax the best sound out of a particular game, often you’ll need to select a
+specific Sound Blaster model the game was primarily developed for.  Although
+the Sound Blaster 16 is compatible with earlier models, this compatibility is
+imperfect and is plagued by a range of issues:</p>
+<dl>
+<dt>Stereo bug</dt>
+<dd>Due to a design flaw, games with support for stereo digital audio on
+Sound Blaster Pro output mono sound only on the Sound Blaster 16.</dd>
+<dt>Different analog low-pass output filters</dt>
+<dd>
+<p>Sound Blaster cards before the Sound Blaster 16 have a fixed frequency
+low-pass filter on the output to reduce the effects of aliasing which sounds
+like metallic overtones when playing digital audio at low sample rates.</p>
+<p>This fixed filter was changed to a variable-frequency design on the Sound
+Blaster 16, and the character of the filter was also altered. The old
+filter let a good amount of the metallic overtones through, resulting in a
+characteristic gritty, crunchy sound, while the new variable brick-wall
+filter was much more effective at reducing these overtones.</p>
+<p>The result is that low sample rate digital audio typical to earlier DOS games
+sounds overly muffled on the Sound Blaster 16 compared to earlier models.</p>
+</dd>
+<dt>Dual OPL2 support</dt>
+<dd>The Sound Blaster Pro 1.0 is capable of stereo “dual OPL2” operation
+thanks to its two on-board OPL2 chips. This is the only Sound Blaster
+model with a dual OPL2 configuration. Previous models feature a single
+OPL2 chip that can output mono sound only, and later cards have the
+improved OPL3 chip that can also output stereo. Stereo sound on dual OPL2
+and OPL3 needs to be programmed differently, and some games were targeting
+only one of these two incompatible stereo OPL modes. Therefore, games that
+were written for dual OPL2 will only produce stereo synthesised sound on
+the Sound Blaster Pro 1.0 and no other model.</dd>
+</dl>
+<p>To provide a good out-of-the-box experience that works well enough with most
+games without tinkering, DOSBox defaults to the imaginary <code>modern</code> <a href="#sb_filter">filter
+setting</a> on all Sound Blaster models. This implements simple
+linear-interpolation instead of accurately emulating the analog output
+filter—this makes most games sound decent regardless of the Sound Blaster
+model in use, but it’s not authentic.</p>
+<p>For the best authentic results, set the most appropriate Sound Blaster model
+for each game via the <a href="#sbtype">sb_type</a> configuration setting. Additionally,
+set the <a href="#sb_filter">sb_filter</a> setting to <code>auto</code> to let DOSBox select the
+output filter appropriate for the emulated Sound Blaster model.</p>
+<p>For example, use the following settings to enable authentic Sound Blaster Pro
+1.0 emulation with dual OPL2 support:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sbpro1</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">sb_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+</code></pre></div>
+<p>Determining the best Sound Blaster model for a game can be tricky as the
+different cards were released very close to each other; simply looking at the
+game’s release date often doesn’t help much. Ultimately, you’ll need to do a
+little bit of research, experiment, and trust your ears.</p>
+<hr>
+<h2 id="adlib-music-synthesizer-card">AdLib Music Synthesizer Card<a class="headerlink" href="#adlib-music-synthesizer-card" title="Permanent link">¶</a></h2>
+<p>The <strong>AdLib Music Synthesizer Card</strong> (typically simply referred to as
+<strong>AdLib</strong>) was released by Ad Lib in 1987. It was the first popular sound card
+for IBM PC compatibles, capable of producing multichannel music and sound
+effects via its Yamaha OPL2 synthesizer chip.</p>
+<p>Being such a huge step up from the PC speaker, the AdLib took the market by
+storm. As it quickly became a de facto standard, many competing sound card
+manufacturers started including full AdLib compatibility on their cards. The
+result of this is that virtually all DOS games from 1990 onwards support the
+AdLib, at least as a fallback option.</p>
+<figure>
+<p><audio controls="" src="https://archive.org/download/dosbox-staging-v0.79.0-reverb-and-chorus/alone-in-the-dark.mp3"> Your browser does not support the <code>audio</code> element.</audio></p>
+<figcaption>
+<p>Intro music of Alone in the Dark (floppy version) on the AdLib card
+  </p>
+</figcaption>
+</figure>
+<p>Digital audio is not supported on the card, but some games were able to
+approximate it with various tricks (e.g., <strong>F-15 Strike Eagle II</strong> by
+MicroProse).</p>
+<figure>
+<p><audio controls="" src="https://archive.org/download/dosbox-staging-v0.79.0-reverb-and-chorus/alone-in-the-dark.mp3"> Your browser does not support the <code>audio</code> element.</audio></p>
+<figcaption>
+<p>F-15 Strike Eagle II on the AdLib card
+  </p>
+</figcaption>
+</figure>
+<p>Use the following settings to enable AdLib (OPL2) emulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">opl2</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When <a href="#oplmode">oplmode</a> is set to <code>opl2</code>, CMS emulation is always
+enabled as well. This is legacy DOSBox behaviour, and will be addressed in
+a future version.</p>
+</div>
+<h2 id="creative-music-system-cms-game-blaster">Creative Music System (CMS) / Game Blaster<a class="headerlink" href="#creative-music-system-cms-game-blaster" title="Permanent link">¶</a></h2>
+<p>The <strong>Creative Music System</strong> (also referred to as <strong>CMS</strong> or <strong>C/MS</strong>) was
+released in August 1987 by Creative Technology. This was the first sound card
+of the company, it sounded like a much simpler variant of the AdLib card, and
+it did not sell that well.</p>
+<p>The card was rebranded as <strong>Game Blaster</strong> a year later, without making any
+changes to the hardware.</p>
+<p>Use the following setting to enable Game Blaster emulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">gb</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As the CMS is also present on the Sound Blaster 1.0, and optionally on the
+Sound Blaster 2.0, CMS support in some early games might only work with
+either the Game Blaster or one of the Sound Blaster models, but not both.</p>
+</div>
+<h2 id="sound-blaster-10">Sound Blaster 1.0<a class="headerlink" href="#sound-blaster-10" title="Permanent link">¶</a></h2>
+<p>The original <strong>Sound Blaster 1.0</strong> was released by Creative Technology in 1989
+as the successor of their Game Blaster card. It was the first sound card on
+the market to have digital audio playback capabilities; it could output 8-bit
+digital audio at up to 23kHz sample rates on a single mono channel. Full
+compatibility with the CMS and the AdLib (Yamaha OPL2) played a critical role
+in the card’s enourmous success. In less than a year, the Sound Blaster became
+the best-selling expansion card for the PC.</p>
+<p>This had transformed DOS gaming, as games could use realistic digital audio
+effects while simultaneously playing music via the OPL2 or CMS synthesiser
+chips.</p>
+<p>Use the following setting to enable Sound Blaster 1.0 emulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb1</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Certain games from the early Sound Blaster days might only work with the
+Sound Blaster 1.0 and no other models.</p>
+</div>
+<h2 id="sound-blaster-20">Sound Blaster 2.0<a class="headerlink" href="#sound-blaster-20" title="Permanent link">¶</a></h2>
+<p>The <strong>Sound Blaster 2.0</strong> was released by Creative Technology in October 1991.
+Similarly to its predecessor, the Sound Blaster 1.0, it can play back 8-bit
+digital audio on a single mono channel, but the maximum sample rate has been
+increased to 44kHz.</p>
+<p>The card retains the perfect AdLib (OPL2) compatibility, but CMS support was
+only available as an optional add-on. Some early games specifically written
+for Sound Blaster 1.0 might have problems with this or later cards.</p>
+<p>Use the following setting to enable Sound Blaster 2.0 emulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb2</span>
+</code></pre></div>
+<h2 id="sound-blaster-pro">Sound Blaster Pro<a class="headerlink" href="#sound-blaster-pro" title="Permanent link">¶</a></h2>
+<p>The <strong>Sound Blaster Pro</strong> (retroactively also referred to as <strong>Sound Blaster
+Pro 1.0</strong>) was released by Creative Technology in May 1991. This was the first
+model that introduced stereo sound into the Sound Blaster lineup. It is
+backward-compatible with earlier models, but in addition to 8-bit mono
+playback of digital audio at up to to 44kHz, it’s also capable of stereo 8-bit
+output at a maximum of 23kHz. A distinctive feature of the card is a <em>pair</em> of
+on-board Yamaha OPL2 chips to support stereo synthesised sound.</p>
+<p>This is the only Sound Blaster model with such a dual OPL2 configuration; many
+games take advantage of it and output stereo OPL music when configured for the
+Sound Blaster Pro. Please refer to the <a href="TODO">List of games that support stereo OPL
+sound</a> for further details.</p>
+<p>Use the following setting to enable Sound Blaster Pro emulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sbpro1</span>
+</code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Games with stereo OPL sound are usually targeting either the dual OPL2
+equipped Sound Blaster Pro 1.0, or the OPL3 chip of later models (OPL3 is
+capable of stereo sound in a single chip). It is important to configure
+these games for the appropriate Sound Blaster model via the
+<a href="#sbtype">sbtype</a> setting, and select the same model in the game’s sound
+setup. Failing to do so will produce mono OPL sound at best, or no sound
+at all at worst.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is the only card supported by the known OEM releases of Microsoft Windows
+3.0a with Multimedia Extensions.</p>
+</div>
+<h2 id="sound-blaster-pro-20">Sound Blaster Pro 2.0<a class="headerlink" href="#sound-blaster-pro-20" title="Permanent link">¶</a></h2>
+<p>The <strong>Sound Blaster Pro 2.0</strong> was released by Creative Technology in 1991,
+quickly replacing its predecessor, the Sound Blaster Pro.</p>
+<p>It is functionally the same as the earlier Sound Blaster Pro with one key
+difference: instead of the dual OPL2 chips, it sports a single Yamaha OPL3
+chip also capable of producing stereo sound. The OPL3 has perfect backward
+compatibility with the single-OPL2 configuration of earlier cards, but not
+with dual OPL2. Please refer to the <a href="TODO">List of games that support stereo OPL
+sound</a> for further details.</p>
+<p>Use the following setting to enable Sound Blaster Pro 2.0 emulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sbpro2</span>
+</code></pre></div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Games with stereo OPL sound are usually targeting either the dual OPL2
+equipped Sound Blaster Pro 1.0, or the OPL3 chip of later models, such as
+the Sound Blaster Pro 2.0 (OPL3 is capable of stereo sound in a single
+chip). It is important to configure these games for the appropriate Sound
+Blaster model via the <a href="#sbtype">sbtype</a> setting, and select the same model
+in the game’s sound setup. Failing to do so will produce mono OPL sound at
+best, or no sound at all at worst.</p>
+</div>
+<h2 id="sound-blaster-16">Sound Blaster 16<a class="headerlink" href="#sound-blaster-16" title="Permanent link">¶</a></h2>
+<p>The <strong>Sound Blaster 16</strong> was released by Creative Technology in June 1992.
+This is the first Sound Blaster card to support CD-quality sound (stereo
+16-bit digital audio at 44kHz sample rate). The card features the Yahama OPL3
+chip that has perfect backward-compatibility with OPL2 (but not dual OPL2),
+and supports stereo operation in a single chip.</p>
+<p>DOSBox emulates the Sound Blaster 16 by default. Most games either support
+this card directly, or will work with selecting an earlier Sound Blaster model
+in the game’s setup, making use of the card’s backward-compatibility feature.
+This is a good overall default, but if you’re an audio enthusiast or would
+just like to get the best possible experience out of a given game, reading the
+<a href="#selecting-the-best-sound-blaster-model-for-a-game">Selecting the best Sound Blaster model for a
+game</a> section is highly
+recommended.</p>
+<p>Use the following setting to enable Sound Blaster 16 emulation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
+</code></pre></div>
+<h2 id="adlib-gold-1000">AdLib Gold 1000<a class="headerlink" href="#adlib-gold-1000" title="Permanent link">¶</a></h2>
+<p>The <strong>AdLib Gold 1000</strong> was released in 1992. It has a Yamaha OPL3 chip and a
+stereo audio processor on-board, and it also supports 12-bit digital audio. An
+optional surround module is available to add further spatial effects to the
+OPL output (e.g., chorus and reverb).</p>
+<p>DOSBox fully emulates the card, including the surround module, except for the
+digital audio capabilities.</p>
+<p>Very few games have direct support for the AdLib Gold 1000, and no known game
+makes use of its digital audio features. The single game in existence that
+really takes advantage of the AdLib Gold and its surround module is the
+adventure game <strong>Dune</strong> from 1992.</p>
+<p>Use the following settings to enable AdLib Gold 1000 emulation. Typically, you
+would use the card together with a Sound Blaster for digital audio. The setup
+utility of <a href="https://en.wikipedia.org/wiki/Dune_(video_game)">Dune</a> should
+auto-detect AdLib Gold and the surround module correctly with these settings.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">opl3gold</span>
+</code></pre></div>
+<h2 id="ess-enhanced-fm-audio-esfm">ESS Enhanced FM Audio (ESFM)<a class="headerlink" href="#ess-enhanced-fm-audio-esfm" title="Permanent link">¶</a></h2>
+<p><strong>ESFM</strong> is the OPL3-compatible FM synthesiser found on later ESS AudioDrive
+cards. In “legacy mode”, ESFM is fully compatible with the Yamaha OPL3 and
+yields almost identical output on most material. What sets it apart is its
+“native mode”, which offers advanced synthesis features surpassing the OPL3’s
+capabilities—it bridges the gap between synthetic-sounding OPL music and
+sample-based MIDI music.</p>
+<p>Since ESFM was released in 1995, only a handful of games support native mode,
+but in the few that do, the results sound quite spectacular.</p>
+<ul>
+<li>
+<p>To run ESFM in <strong>legacy mode</strong>, use <code>oplmode = esfm</code> with any Sound Blaster
+  model and configure the game for Sound Blaster and AdLib/OPL as usual.</p>
+</li>
+<li>
+<p>To use <strong>native mode</strong>, set <code>sbtype = ess</code> and configure the <strong>ESS Technology
+  ES1688, ES1788, ES1888 Enhanced FM Audio</strong> MIDI music driver in the game’s
+  setup utility (most games that support ESFM natively use the Miles Sound
+  System). For the digital audio driver, select the Sound Blaster Pro option
+  (ESS AudioDrive cards are Sound Blaster Pro compatible).</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ess</span>
+</code></pre></div>
+<h3 id="games-with-esfm-enhanced-fm-support">Games with ESFM Enhanced FM support<a class="headerlink" href="#games-with-esfm-enhanced-fm-support" title="Permanent link">¶</a></h3>
+<div class="compact">
+<ul>
+<li>11<sup>th</sup> Hour, The</li>
+<li>Advanced Civilization</li>
+<li>Callahan’s Crosstime Saloon</li>
+<li>Gene Machine, The</li>
+<li>Heaven’s Dawn</li>
+<li>Heroes of Might and Magic II</li>
+<li>Magic Carpet 2</li>
+<li>Settlers II, The</li>
+<li>Shannara</li>
+<li>Theme Hospital</li>
+<li>WarCraft II</li>
+<li>Z</li>
+</ul>
+</div>
+<h3 id="audio-comparison-esfm-vs-opl">Audio comparison: ESFM vs OPL<a class="headerlink" href="#audio-comparison-esfm-vs-opl" title="Permanent link">¶</a></h3>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Game</th>
+<th>Audio example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Heroes of Might and Magic II — Title (ESFM)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/heroes2-title-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Heroes of Might and Magic II — Title (OPL)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/heroes2-title-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Heroes of Might and Magic II — In-game (ESFM)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/heroes2-ingame-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Heroes of Might and Magic II — In-game (OPL)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/heroes2-ingame-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Settlers 2 — Track 5 (ESFM)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/settlers2-track5-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Settlers 2 — Track 5 (OPL)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/settlers2-track5-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Settlers 2 — Track 14 (ESFM)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/settlers2-track14-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Settlers 2 — Track 14 (OPL)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/settlers2-track14-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Gene Machine (ESFM)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/the-gene-machine-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>The Gene Machine (OPL)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/the-gene-machine-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Heaven’s Dawn (ESFM)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/heavens-dawn-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Heaven’s Dawn (OPL)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/heavens-dawn-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can also try to “retrofit” the <code>ESFM.MID</code> driver from Miles Sound
+System games that have it into earlier ones that don’t. For example,
+<strong>Discworld</strong> sounds great with the ESFM driver from <strong>Heaven’s Dawn</strong>.</p>
+<div class="compact" markdown="">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Discworld (ESFM)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/discworld-kitchen-esfm.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+<tr>
+<td>Discworld (OPL)</td>
+<td><audio controls="" src="https://dosbox-staging.github.io/static/audio/release-notes/0.82.0/discworld-kitchen-opl.mp3"> Your browser does not support the <code>audio</code> element.</audio></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
+<p>Due to their tightly coupled nature, all AdLib, Creative Music System (CMS),
+Game Blaster and Sound Blaster settings are to be configured in the
+<code>[sblaster]</code> section.</p>
+<h3 id="sound-blaster">Sound Blaster<a class="headerlink" href="#sound-blaster" title="Permanent link">¶</a></h3>
+<p>Many DOS programs use the <code>BLASTER</code> DOS environment variable to auto-detect
+and auto-configure the Sound Blaster card. On a real machine, this variable is
+set up in <code>AUTOEXEC.BAT</code> during the Sound Blaster driver installation process.</p>
+<p>DOSBox injects the <code>BLASTER</code> environment variable at startup based on the
+card’s configuration in the <code>[sblaster]</code> section. You should never set this
+variable manually.</p>
+<p>To view the value of the variable, execute the <code>SET BLASTER</code> DOS
+command. For example, this is the output you’ll get with the default settings:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>BLASTER=A220 I7 D1 H5 T6
+</code></pre></div>
+<p>The meaning of the space-separated values are as follows:</p>
+<div class="compact">
+<ul>
+<li><code>Axyz</code> — base address (<a href="#sbbase">sbbase</a>)</li>
+<li><code>Ix</code> — IRQ number (<a href="#irq">irq</a>)</li>
+<li><code>Dx</code> — DMA channel (<a href="#dma">dma</a>)</li>
+<li><code>Hx</code> — High DMA channel (<a href="#hdma">hdma</a>)</li>
+</ul>
+</div>
+<p>The number after the <code>T</code> parameter describes the type of the card:</p>
+<div class="compact">
+<ul>
+<li><code>1</code> – Sound Blaster 1.x</li>
+<li><code>2</code> –  Sound Blaster Pro</li>
+<li><code>3</code> –  Sound Blaster 2.x</li>
+<li><code>4</code> –  Sound Blaster Pro 2</li>
+<li><code>5</code> –  Sound Blaster Pro MCA <em>— not used by DOSBox</em></li>
+<li><code>6</code> –  Sound Blaster 16, 32, AWE32/64, or ViBRA</li>
+<li><code>10</code> – Sound Blaster MCA <em>— not used by DOSBox</em></li>
+</ul>
+</div>
+<h5 id="dma">dma<a class="headerlink" href="#dma" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>The DMA (also referred to as low DMA) channel used for 8-bit
+digital audio on the Sound Blaster.</p>
+<p>Possible values: <code>0</code>, <code>1</code> <em class="default">default</em>, <code>3</code>, <code>5</code>, <code>6</code>, <code>7</code>.</p>
+<p>You can typically only choose between <code>0</code>, <code>1</code> and <code>3</code> on real cards.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Many earlier games assume DMA 1 and do not let the user to change
+it, making it the most compatible setting.</p>
+</div>
+</dd>
+</dl>
+<h5 id="hdma">hdma<a class="headerlink" href="#hdma" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>The high DMA channel used for 16-bit digital audio on the Sound Blaster
+16.</p>
+<p>Possible values: <code>0</code>, <code>1</code>, <code>3</code>, <code>5</code> <em class="default">default</em>, <code>6</code>, <code>7</code>.</p>
+<p>You can typically only choose between <code>5</code>, <code>6</code> and <code>7</code> on real cards.</p>
+</dd>
+</dl>
+<h5 id="irq">irq<a class="headerlink" href="#irq" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>The IRQ (interrupt) number of the Game Blaster / Sound Blaster.</p>
+<p>Possible values: <code>3</code>, <code>5</code>, <code>7</code> <em class="default">default</em>, <code>9</code>, <code>10</code>, <code>11</code>, <code>12</code>.</p>
+<p>You can typically only choose between <code>3</code>, <code>5</code>, <code>7</code> and <code>10</code> on real cards,</p>
+<p>Many games do not recognize IRQs higher than 7.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Cards before the Sound Blaster 16 defaulted to IRQ 7. From the Sound
+Blaster 16 onwards, the default had been changed to IRQ 5. Because of
+this, many earlier games assume IRQ 7 and do not let the user to
+change it. Games that assume IRQ 5 are rarer, making <code>7</code> the overall
+most compatible setting.</p>
+</div>
+</dd>
+</dl>
+<h5 id="sb_filter">sb_filter<a class="headerlink" href="#sb_filter" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Filter settings for the Sound Blaster digital audio output:</p>
+<ul>
+<li><code>auto</code> – Use the appropriate filter determined by the <a href="#sbtype">sbtype</a>
+  setting.</li>
+<li><code>sb1</code>, <code>sb2</code>, <code>sbpro1</code>, <code>sbpro2</code>, <code>sb16</code> – Use the digital audio filter
+  of this Sound Blaster model.</li>
+<li><code>modern</code> <em class="default">default</em> – Use linear interpolation upsampling
+  regardless of the <code>sbtype</code> setting. This is the legacy DOSBox
+  behaviour; it acts as a sort of a low-pass filter. Use <code>auto</code> instead
+  to enable model-authentic filter emulation.</li>
+<li><code>off</code> – Don’t filter the digital audio output.</li>
+<li><code>&lt;custom&gt;</code> – Custom filter definition; see
+  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  for details.</li>
+</ul>
+<p>These are the model specific low-pass filter settings for the digital
+audio output:</p>
+<div class="compact" markdown="">
+<table>
+<thead>
+<tr>
+<th><code>sbtype</code></th>
+<th>Filter type</th>
+<th>Cutoff frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sb1</code></td>
+<td>2<sup>nd</sup> order (12dB/oct)</td>
+<td>3.8kHz</td>
+</tr>
+<tr>
+<td><code>sb2</code></td>
+<td>2<sup>nd</sup> order (12dB/oct)</td>
+<td>4.8kHz</td>
+</tr>
+<tr>
+<td><code>sbpro1</code><br><code>sbpro2</code></td>
+<td>2<sup>nd</sup> order (12dB/oct)</td>
+<td>3.2kHz</td>
+</tr>
+<tr>
+<td><code>sb16</code></td>
+<td>brickwall</td>
+<td>variable;<br>half of the playback rate</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>TODO – audio samples</p>
+</dd>
+</dl>
+<h5 id="sb_filter_always_on">sb_filter_always_on<a class="headerlink" href="#sb_filter_always_on" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Force the Sound Blaster digital audio filter to be always on (disallow
+programs from turning the filter off on models that allow this).</p>
+<p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
+</dd>
+</dl>
+<h5 id="sbbase">sbbase<a class="headerlink" href="#sbbase" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>The base address (also referred to as I/O address, or port) of the Game
+Blaster / Sound Blaster.</p>
+<p>Possible values: <code>220</code> <em class="default">default</em>, <code>240</code>, <code>260</code>, <code>280</code>, <code>2a0</code>, <code>2c0</code>, <code>2e0</code>, <code>300</code>.</p>
+<p>You can typically only choose between <code>220</code>, <code>240</code> and <code>260</code> on real cards.</p>
+<p>The AdLib Music Synthesizer Card has a fixed base address of <code>380</code> that
+cannot be changed. Games can access the Yamaha OPL chip on Sound Blaster
+cards either at base address <code>380</code> (this is the AdLib compatibility mode),
+or at the Sound Blaster’s base address.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Virtually all games with Game Blaster / Creative Music System (CMS)
+support only work with the base address set to <code>220</code>. A significant
+number of early 90s games with Sound Blaster support also assume a
+base address of <code>220</code> and do not let the user the change it, making
+this the most compatible setting.</p>
+</div>
+</dd>
+</dl>
+<h5 id="sbmixer">sbmixer<a class="headerlink" href="#sbmixer" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Allow the Sound Blaster mixer to modify the DOSBox mixer.</p>
+<p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
+<p>Starting with the Sound Blaster Pro, programs can adjust the volume of the
+digital audio, OPL, and CD Audio channels via the Sound Blaster software
+mixer. By default, DOSBox forwards these adjustments to the DOSBox mixer
+which can potentially result in your manually set volumes being
+overridden. To prevent this from happening, set the <code>sbmixer</code>
+configuration setting to <code>off</code> to retain full manual control over the
+channel volumes. Note that this might break some games that use the mixer
+to achieve certain effects (e.g., dynamically lowering the music volume
+when voice-overs are playing).</p>
+</dd>
+</dl>
+<h5 id="sbtype">sbtype<a class="headerlink" href="#sbtype" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Sound Blaster model to emulate.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>none</code> – Disable Sound Blaster emulation.</li>
+<li><code>gb</code> – <a href="#creative-music-system-cms-game-blaster">Creative Music System (CMS) / Game Blaster</a></li>
+<li><code>sb1</code> – <a href="#sound-blaster-10">Sound Blaster 1.0</a></li>
+<li><code>sb2</code> – <a href="#sound-blaster-20">Sound Blaster 2.0</a></li>
+<li><code>sbpro1</code> – <a href="#sound-blaster-pro">Sound Blaster Pro</a></li>
+<li><code>sbpro2</code> – <a href="#sound-blaster-pro-20">Sound Blaster Pro 2.0</a></li>
+<li><code>sb16</code> <em class="default">default</em> – <a href="#sound-blaster-16">Sound Blaster 16</a></li>
+<li><code>ess</code> – ESS ES1688 AudioDrive. The ESS DAC is not emulated but the
+  card is Sound Blaster Pro compatible; just configure the game for Sound
+  Blaster digital sound. Use this for getting ESS Enhanced FM music via
+  the card’s ESFM synthesiser in games that support it.</li>
+</ul>
+</div>
+<p>Please refer to the <a href="#emulated-sound-blaster-models">Emulated Sound Blaster
+models</a> section for an overview of the
+capabilities of the different models.</p>
+</dd>
+</dl>
+<h5 id="sbwarmup">sbwarmup<a class="headerlink" href="#sbwarmup" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Silence initial digital audio after card power-on for this many
+milliseconds.</p>
+<p>Default value: <code>100</code></p>
+<p>This mitigates pops heard when starting many Sound Blaster based games.
+Reduce this if you notice intial playback is missing digital audio.</p>
+</dd>
+</dl>
+<h3 id="opl">OPL<a class="headerlink" href="#opl" title="Permanent link">¶</a></h3>
+<h5 id="opl_fadeout">opl_fadeout<a class="headerlink" href="#opl_fadeout" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>OPL mode to emulate.</p>
+<p>DOSBox uses the highly accurate NukedOPL library to achieve a nearly
+bit-perfect emulation of the Yamaha OPL chips.</p>
+<p>Possible values:</p>
+<ul>
+<li>
+<p><code>none</code> – Disable OPL emulation.</p>
+</li>
+<li>
+<p><code>auto</code> <em class="default">default</em> – Automaticaly select the appropriate OPL
+    mode for the emulated Sound Blaster card, based on the value of the
+    <a href="#sbtype">sbtype</a> setting (see <a href="#emulated-sound-blaster-models">Emulated Sound Blaster
+    models</a> for an overview).</p>
+</li>
+<li>
+<p><code>cms</code> – Two Philips SAA1099 chips in a stereo configuration as used
+    on the Creative Music System / Game Blaster (<em>not</em> OPL compatible).</p>
+</li>
+<li>
+<p><code>opl2</code> – A single Yamaha YM3812 (OPL2) as found on the original AdLib
+    Music Synthesizer Card and early Sound Blaster models.</p>
+</li>
+<li>
+<p><code>dualopl2</code> – Two Yamaha OPL2 chips in a stereo configuration as
+     found on the Sound Blaster Pro 1.0.</p>
+</li>
+<li>
+<p><code>opl3</code> – Yamaha YMF262 (OPL3) as found on the Sound Blaster Pro 2.0
+    and later cards.</p>
+</li>
+<li>
+<p><code>opl3gold</code> – Yamaha OPL3 as found on the AdLib Gold 1000. Also
+    enables the emulation of the on-board Philips TDA8425 Hi-fi Stereo
+    Audio Processor, plus the Yamaha YM7128 Surround Processor found on
+    the optional surround module.</p>
+</li>
+<li>
+<p><code>esfm</code> – ESS ESFM (enhanced Yamaha OPL3 compatible FM synth).
+    Use with <code>sbtype = ess</code> for ESS Enhanced FM music. Can also be used
+    with original Sound Blaster models for ESFM-flavoured OPL.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When <code>oplmode</code> is set to <code>opl2</code>, CMS emulation is always enabled as
+well. This is legacy DOSBox behaviour, and will be addressed in a
+future version.</p>
+<p>Also, <code>cms</code> should not be an OPL mode as it has nothing to do with
+Yamaha OPL; it’s an entirely different chip from Philips. This is
+another legacy wrinkle that will be ironed out in the future.</p>
+</div>
+</dd>
+</dl>
+<h5 id="opl_filter">opl_filter<a class="headerlink" href="#opl_filter" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Filter settings for the OPL output:</p>
+<ul>
+<li><code>auto</code> <em class="default">default</em> – Use the appropriate filter determined by the <a href="#sbtype">sbtype</a> setting.</li>
+<li><code>sb1</code>, <code>sb2</code>, <code>sbpro1</code>, <code>sbpro2</code>, <code>sb16</code> – Use the OPL filter of this Sound Blaster model.</li>
+<li><code>off</code> – Don’t filter the OPL output.</li>
+<li><code>&lt;custom&gt;</code> – Custom filter definition; see
+  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  for details.</li>
+</ul>
+<p>These are the model specific low-pass filter settings for OPL output: </p>
+<div class="compact" markdown="">
+<table>
+<thead>
+<tr>
+<th><code>sbtype</code></th>
+<th>Filter type</th>
+<th>Cutoff frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sb1</code><br><code>sb2</code></td>
+<td>1<sup>st</sup> order (6dB/oct)</td>
+<td>12kHz</td>
+</tr>
+<tr>
+<td><code>sbpro1</code><br><code>sbpro2</code></td>
+<td>1<sup>st</sup> order (6dB/oct)</td>
+<td>8kHz</td>
+</tr>
+<tr>
+<td><code>sb16</code></td>
+<td>no filter</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>TODO – audio samples</p>
+</dd>
+</dl>
+<h5 id="opl_remove_dc_bias">opl_remove_dc_bias<a class="headerlink" href="#opl_remove_dc_bias" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Remove DC bias from the OPL output.</p>
+<p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
+<p>Some games play digitised music and sound effects using the OPL (AdLib)
+channels by rapidly changing the volume in very crude steps, similar to
+how the Disney Sound Source and Covox LPT DAC operate. This can produce
+annoying pops. Enable this setting to eliminate them.</p>
+<p>Known affected games: Golden Eagle (1991), Wizardry VI: Bane of the
+Cosmic Forge (1990), Wizardry VII (1992).</p>
+<p>Recommended settings for <strong>Wizardry VI</strong> when configured for AdLib sound:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">opl2</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="na">opl_remove_dc_bias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="na">opl_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lpf 2 5500</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">[speaker]</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="na">pcspeaker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="na">mixer opl 500</span>
+</code></pre></div>
+</dd>
+</dl>
+<h5 id="oplmode">oplmode<a class="headerlink" href="#oplmode" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>OPL mode to emulate.</p>
+<p>DOSBox uses the highly accurate NukedOPL library to achieve a nearly
+bit-perfect emulation of the Yamaha OPL chips.</p>
+<p>Possible values:</p>
+<ul>
+<li>
+<p><code>none</code> – Disable OPL emulation.</p>
+</li>
+<li>
+<p><code>auto</code> <em class="default">default</em> – Automaticaly select the appropriate OPL
+    mode for the emulated Sound Blaster card, based on the value of the
+    <a href="#sbtype">sbtype</a> setting (see <a href="#emulated-sound-blaster-models">Emulated Sound Blaster
+    models</a> for an overview).</p>
+</li>
+<li>
+<p><code>cms</code> – Two Philips SAA1099 chips in a stereo configuration as used
+    on the Creative Music System / Game Blaster (<em>not</em> OPL compatible).</p>
+</li>
+<li>
+<p><code>opl2</code> – A single Yamaha YM3812 (OPL2) as found on the original AdLib
+    Music Synthesizer Card and early Sound Blaster models.</p>
+</li>
+<li>
+<p><code>dualopl2</code> – Two Yamaha OPL2 chips in a stereo configuration as
+     found on the Sound Blaster Pro 1.0.</p>
+</li>
+<li>
+<p><code>opl3</code> – Yamaha YMF262 (OPL3) as found on the Sound Blaster Pro 2.0
+    and later cards.</p>
+</li>
+<li>
+<p><code>opl3gold</code> – Yamaha OPL3 as found on the AdLib Gold 1000. Also
+    enables the emulation of the on-board Philips TDA8425 Hi-fi Stereo
+    Audio Processor, plus the Yamaha YM7128 Surround Processor found on
+    the optional surround module.</p>
+</li>
+<li>
+<p><code>esfm</code> – ESS ESFM (enhanced Yamaha OPL3 compatible FM synth).
+    Use with <code>sbtype = ess</code> for ESS Enhanced FM music. Can also be used
+    with original Sound Blaster models for ESFM-flavoured OPL.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When <code>oplmode</code> is set to <code>opl2</code>, CMS emulation is always enabled as
+well. This is legacy DOSBox behaviour, and will be addressed in a
+future version.</p>
+<p>Also, <code>cms</code> should not be an OPL mode as it has nothing to do with
+Yamaha OPL; it’s an entirely different chip from Philips. This is
+another legacy wrinkle that will be ironed out in the future.</p>
+</div>
+</dd>
+</dl>
+<h3 id="cms">CMS<a class="headerlink" href="#cms" title="Permanent link">¶</a></h3>
+<h5 id="cms_1">cms<a class="headerlink" href="#cms_1" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Enable CMS emulation.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>auto</code> <em class="default">default</em> – Auto-enable CMS emulation for Sound
+  Blaster 1 and Game Blaster.</li>
+<li><code>on</code> – Enable CMS emulation on Sound Blaster 1 and 2.</li>
+<li><code>off</code> – Disable CMS emulation (except when the Game Blaster is
+  selected).</li>
+</ul>
+</dd>
+</dl>
+<h5 id="cms_filter">cms_filter<a class="headerlink" href="#cms_filter" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Filter for the Creative Music System (CMS) / Game Blaster output:</p>
+<ul>
+<li><code>on</code> <em class="default">default</em> – Filter the CMS output (1<sup>st</sup> order (6dB/oct)
+  low-pass filter at 6kHz).</li>
+<li><code>off</code> – Don’t filter the CMS output.</li>
+<li><code>&lt;custom&gt;</code> – Custom filter definition; see
+  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  for details.</li>
+</ul>
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="footer.title">
+
+      <!-- Link to previous page -->
+      
+        
+        <a href="../../midi/" class="md-footer__link md-footer__link--prev" aria-label="Previous: MIDI" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              MIDI
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a href="../roland-mt-32/" class="md-footer__link md-footer__link--next" aria-label="Next: Roland MT-32" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Roland MT-32
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+          <li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+          <li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+          <!-- Mastodon verification -->
+	  <li><a rel="me" href="https://corteximplant.com/@DOSBox_Staging">Mastodon</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
