@@ -3691,17 +3691,19 @@ Matching the emulated hardware to a game’s era gives the most authentic
 experience.</p>
 <p>The key settings to adjust are <a href="../system/general/#machine"><code>machine</code></a> (graphics
 standard), <a href="../system/cpu/#cputype"><code>cputype</code></a>,
-<a href="../system/cpu/#cpu_cycles"><code>cpu_cycles</code></a> (CPU speed), and the sound device. See
+<a href="../system/cpu/#cpu_cycles"><code>cpu_cycles</code></a> (CPU speed), and the <a href="../sound/overview/">sound device</a>. See
 <a href="../dos-primer/">A short DOS primer</a> for an explanation of these concepts.</p>
 <h2 id="the-early-days-19811984">The early days (1981–1984)<a class="headerlink" href="#the-early-days-19811984" title="Permanent link">¶</a></h2>
 <p>The IBM PC launched in 1981 as a business machine, but games appeared almost
-immediately. The hardware was modest: an Intel 8088 running at 4.77 MHz, CGA
-graphics offering four colours at 320x200, and the PC speaker as the only sound
-source. Software arrived on 360 KB floppy disks, and many early games were
-“booter” titles that ran directly from the floppy without an operating system.</p>
+immediately. The hardware was modest: an Intel 8088 running at 4.77 MHz,
+monochrome Hercules graphics or CGA graphics offering four colours at
+320×200, and the PC speaker as the only sound source. Software arrived
+on 360 KB floppy disks, and many early games were “booter” titles that ran
+directly from the floppy without an operating system.</p>
 <h3 id="notable-games">Notable games<a class="headerlink" href="#notable-games" title="Permanent link">¶</a></h3>
+<div class="compact">
 <ul>
-<li><a href="https://www.mobygames.com/game/1209/wizardry-proving-grounds-of-the-mad-overlord/">Wizardry (1981)</a> — pioneering dungeon-crawling RPG</li>
+<li><a href="https://www.mobygames.com/game/1209/wizardry-proving-grounds-of-the-mad-overlord/">Wizardry (1981)</a> — the granddaddy of dungeon crawler RPGs in forced ironman mode</li>
 <li><a href="https://www.mobygames.com/game/3115/castle-wolfenstein/">Castle Wolfenstein (1981)</a> — stealth action pioneer</li>
 <li><a href="https://www.mobygames.com/game/4003/microsoft-flight-simulator-v10/">Microsoft Flight Simulator (1982)</a> — one of the first major PC games</li>
 <li><a href="https://www.mobygames.com/game/50/zork-the-great-underground-empire/">Zork (1982)</a> — iconic text adventure</li>
@@ -3709,9 +3711,10 @@ source. Software arrived on 360 KB floppy disks, and many early games were
 <li><a href="https://www.mobygames.com/game/243/lode-runner/">Lode Runner (1983)</a> — influential puzzle-platformer</li>
 <li><a href="https://www.mobygames.com/game/88/the-hitchhikers-guide-to-the-galaxy/">The Hitchhiker’s Guide to the Galaxy (1984)</a> — legendary Infocom text adventure</li>
 <li><a href="https://www.mobygames.com/game/190/alley-cat/">Alley Cat (1984)</a> — beloved CGA platformer</li>
-<li><a href="https://www.mobygames.com/game/122/kings-quest/">King’s Quest (1984)</a> — first animated adventure game</li>
-<li><a href="https://www.mobygames.com/game/1743/rogue/">Rogue (1984)</a> — the original roguelike</li>
+<li><a href="https://www.mobygames.com/game/122/kings-quest/">King’s Quest (1984)</a> — first animated adventure game of the iconic Sierra On-Line</li>
+<li><a href="https://www.mobygames.com/game/1743/rogue/">Rogue (1984)</a> — the original textmode roguelike</li>
 </ul>
+</div>
 <h3 id="typical-hardware">Typical hardware<a class="headerlink" href="#typical-hardware" title="Permanent link">¶</a></h3>
 <div class="compact">
 <table>
@@ -3728,7 +3731,7 @@ source. Software arrived on 360 KB floppy disks, and many early games were
 </tr>
 <tr>
 <td>Graphics</td>
-<td>CGA</td>
+<td>CGA (or Hercules)</td>
 </tr>
 <tr>
 <td>Sound</td>
@@ -3748,21 +3751,21 @@ source. Software arrived on 360 KB floppy disks, and many early games were
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">[cpu]</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">300</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">[speaker]</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="na">pcspeaker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
 </code></pre></div>
+<p>Alternatively, use <code>machine = hercules</code> to emulate the Hercules graphics
+adapter.</p>
 <h2 id="ega-and-tandy-19841987">EGA and Tandy (1984–1987)<a class="headerlink" href="#ega-and-tandy-19841987" title="Permanent link">¶</a></h2>
 <p>The IBM PC/AT introduced the 286 CPU in 1984 alongside EGA graphics, which
-offered 16 colours from a palette of 64—a big step up from CGA. Around the
-same time, Tandy cloned the failed IBM PCjr’s enhanced graphics and sound
-hardware into the much more successful Tandy 1000 line, giving budget-conscious
-gamers 16-colour graphics and three-voice sound. The PC speaker remained the
-dominant sound source on non-Tandy machines, though the AdLib card appeared in
-1987 to change that.</p>
+offered 16 colours graphics — a big step up from the fixed 4-colour palettes
+of CGA. Around the same time, Tandy cloned the failed IBM PCjr’s enhanced
+graphics and sound hardware into the much more successful Tandy 1000 line,
+giving budget-conscious gamers 16-colour graphics and three-voice sound. The
+PC speaker remained the dominant sound source on non-Tandy machines, though
+the AdLib card appeared in 1987 to change that.</p>
 <h3 id="notable-games_1">Notable games<a class="headerlink" href="#notable-games_1" title="Permanent link">¶</a></h3>
+<div class="compact">
 <ul>
 <li><a href="https://www.mobygames.com/game/884/ultima-iv-quest-of-the-avatar/">Ultima IV: Quest of the Avatar (1985)</a> — pioneering RPG with a moral system</li>
 <li><a href="https://www.mobygames.com/game/819/tales-of-the-unknown-volume-i-the-bards-tale/">The Bard’s Tale (1985)</a> — classic party-based RPG</li>
@@ -3775,6 +3778,7 @@ dominant sound source on non-Tandy machines, though the AdLib card appeared in
 <li><a href="https://www.mobygames.com/game/714/maniac-mansion/">Maniac Mansion (1987)</a> — SCUMM engine debut</li>
 <li><a href="https://www.mobygames.com/game/834/dungeon-master/">Dungeon Master (1987)</a> — real-time dungeon crawling pioneer</li>
 </ul>
+</div>
 <h3 id="typical-hardware_1">Typical hardware<a class="headerlink" href="#typical-hardware_1" title="Permanent link">¶</a></h3>
 <div class="compact">
 <table>
@@ -3810,9 +3814,6 @@ dominant sound source on non-Tandy machines, though the AdLib card appeared in
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">[cpu]</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1500</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">[speaker]</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="na">pcspeaker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 </code></pre></div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -3822,13 +3823,14 @@ in Tandy mode.</p>
 </div>
 <h2 id="the-vga-and-sound-blaster-revolution-19871990">The VGA and Sound Blaster revolution (1987–1990)<a class="headerlink" href="#the-vga-and-sound-blaster-revolution-19871990" title="Permanent link">¶</a></h2>
 <p>Two hardware breakthroughs transformed PC gaming in the late 1980s. VGA
-graphics arrived in 1987 with 256 colours in Mode 13h (320x200), enabling
-visuals that could rival the Amiga. On the audio side, the AdLib card (1987)
-brought FM synthesis to the PC, followed by the Sound Blaster (1989) which
-added digital audio playback. The 386 CPU provided the processing power to
-drive increasingly ambitious games. This period marks the moment PC gaming
+graphics arrived in 1987 with 256 colours at 320×200 resolution,
+enabling visuals that could rival the Amiga. On the audio side, the AdLib card
+brought FM synthesis to the PC in 1987, followed by the Sound Blaster in 1989
+which added digital audio playback. The 386 CPU provided the processing power
+to drive increasingly ambitious games. This period marks the moment PC gaming
 became a serious force.</p>
 <h3 id="notable-games_2">Notable games<a class="headerlink" href="#notable-games_2" title="Permanent link">¶</a></h3>
+<div class="compact">
 <ul>
 <li><a href="https://www.mobygames.com/game/287/wasteland/">Wasteland (1988)</a> — post-apocalyptic RPG that inspired Fallout</li>
 <li><a href="https://www.mobygames.com/game/502/pool-of-radiance/">Pool of Radiance (1988)</a> — first Gold Box D&amp;D RPG</li>
@@ -3836,11 +3838,12 @@ became a serious force.</p>
 <li><a href="https://www.mobygames.com/game/848/simcity/">SimCity (1989)</a> — city-building pioneer</li>
 <li><a href="https://www.mobygames.com/game/196/prince-of-persia/">Prince of Persia (1989)</a> — rotoscoped animation breakthrough</li>
 <li><a href="https://www.mobygames.com/game/168/heros-quest-so-you-want-to-be-a-hero/">Quest for Glory: So You Want to Be a Hero (1989)</a> — adventure-RPG hybrid</li>
-<li><a href="https://www.mobygames.com/game/613/populous/">Populous (1989)</a> — the original god game</li>
-<li><a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island (1990)</a> — peak LucasArts adventure</li>
+<li><a href="https://www.mobygames.com/game/613/populous/">Populous (1989)</a> — the original god simulator</li>
+<li><a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island (1990)</a> — peak LucasArts adventure blockbuster</li>
 <li><a href="https://www.mobygames.com/game/3/wing-commander/">Wing Commander (1990)</a> — cinematic space combat</li>
 <li><a href="https://www.mobygames.com/game/70/sid-meiers-railroad-tycoon/">Railroad Tycoon (1990)</a> — business simulation classic</li>
 </ul>
+</div>
 <h3 id="typical-hardware_2">Typical hardware<a class="headerlink" href="#typical-hardware_2" title="Permanent link">¶</a></h3>
 <div class="compact">
 <table>
@@ -3871,37 +3874,35 @@ became a serious force.</p>
 </table>
 </div>
 <h3 id="dosbox-staging-config_2">DOSBox Staging config<a class="headerlink" href="#dosbox-staging-config_2" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[dosbox]</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vgaonly</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[cpu]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">6000</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">[cpu]</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">6000</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb1</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb1</span>
 </code></pre></div>
 <h2 id="the-486-era-19901993">The 486 era (1990–1993)<a class="headerlink" href="#the-486-era-19901993" title="Permanent link">¶</a></h2>
-<p>The 486 brought a huge performance leap: tighter pipelining, an on-chip cache,
-and optional integrated math coprocessor made it far more than just a faster
-386. The AMD 386DX-40 offered near-486 performance at a fraction of the cost,
-extending the 386’s life for budget users. Sound hardware matured
-rapidly—the Sound Blaster Pro added stereo output, the Gravis UltraSound
-offered wavetable synthesis, and the Sound Blaster 16 arrived in 1992. Hard
-drives became affordable for home users, and games grew to fill them.</p>
+<p>The 486 brought a huge performance leap in the early 1990s. The AMD 386DX-40
+offered near-486 performance at a fraction of the cost, extending the 386’s
+life for budget users. Sound hardware matured rapidly — the Sound Blaster
+Pro and 16 added stereo output, and the Gravis UltraSound offered advanced
+wavetable synthesis. Hard drives became affordable for home users, and games
+grew to fill them.</p>
 <h3 id="notable-games_3">Notable games<a class="headerlink" href="#notable-games_3" title="Permanent link">¶</a></h3>
+<div class="compact">
 <ul>
 <li><a href="https://www.mobygames.com/game/585/sid-meiers-civilization/">Civilization (1991)</a> — the strategy game by which all others are measured</li>
-<li><a href="https://www.mobygames.com/game/835/eye-of-the-beholder/">Eye of the Beholder (1991)</a> — acclaimed dungeon crawler</li>
-<li><a href="https://www.mobygames.com/game/683/lemmings/">Lemmings (1991)</a> — addictive puzzle classic</li>
+<li><a href="https://www.mobygames.com/game/835/eye-of-the-beholder/">Eye of the Beholder (1991)</a> — stone-cold dungeon crawler classic</li>
+<li><a href="https://www.mobygames.com/game/683/lemmings/">Lemmings (1991)</a> — genre-defying addictive puzzle game</li>
 <li><a href="https://www.mobygames.com/game/306/wolfenstein-3d/">Wolfenstein 3D (1992)</a> — the first-person shooter prototype</li>
-<li><a href="https://www.mobygames.com/game/241/dune-ii-the-building-of-a-dynasty/">Dune II (1992)</a> — established the real-time strategy genre</li>
-<li><a href="https://www.mobygames.com/game/690/ultima-underworld-the-stygian-abyss/">Ultima Underworld (1992)</a> — first true 3D RPG</li>
+<li><a href="https://www.mobygames.com/game/241/dune-ii-the-building-of-a-dynasty/">Dune II (1992)</a> — a forerunner of the real-time strategy genre</li>
+<li><a href="https://www.mobygames.com/game/690/ultima-underworld-the-stygian-abyss/">Ultima Underworld (1992)</a> — the first true 3D RPG</li>
 <li><a href="https://www.mobygames.com/game/316/indiana-jones-and-the-fate-of-atlantis/">Indiana Jones and the Fate of Atlantis (1992)</a> — LucasArts adventure masterpiece</li>
 <li><a href="https://www.mobygames.com/game/608/ultima-vii-the-black-gate/">Ultima VII: The Black Gate (1992)</a> — one of the greatest RPGs ever made</li>
 <li><a href="https://www.mobygames.com/game/179/star-control-ii/">Star Control II (1992)</a> — epic space adventure</li>
 <li><a href="https://www.mobygames.com/game/281/syndicate/">Syndicate (1993)</a> — cyberpunk real-time tactics</li>
 <li><a href="https://www.mobygames.com/game/719/maniac-mansion-day-of-the-tentacle/">Day of the Tentacle (1993)</a> — pinnacle of point-and-click adventures</li>
 </ul>
+</div>
 <div class="compact">
 <h3 id="typical-hardware_3">Typical hardware<a class="headerlink" href="#typical-hardware_3" title="Permanent link">¶</a></h3>
 <table>
@@ -3932,31 +3933,34 @@ drives became affordable for home users, and games grew to fill them.</p>
 </table>
 </div>
 <h3 id="dosbox-staging-config_3">DOSBox Staging config<a class="headerlink" href="#dosbox-staging-config_3" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[dosbox]</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">vgaonly</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">memsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">16</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">[cpu]</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">30000</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[cpu]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">30000</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">[gus]</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Only enable it for games that use the Gravis Ultrasound</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="na">gus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
 <a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">[sblaster]</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sbpro2</span>
 </code></pre></div>
+<p>Alternatively, use <code>sbtype = sb16</code> to emulate the Sound Blaster 16.</p>
 <h2 id="the-pentium-era-19931996">The Pentium era (1993–1996)<a class="headerlink" href="#the-pentium-era-19931996" title="Permanent link">¶</a></h2>
 <p>Intel’s Pentium processor arrived in 1993 and rapidly became the standard for
 serious gaming. The Sound Blaster 16 was ubiquitous, SVGA cards pushed
 higher resolutions and colour depths, and CD-ROM drives became standard,
 ushering in the era of full-motion video and CD audio soundtracks. This was
-the golden age of DOS gaming—the period that produced many of the
-platform’s most celebrated titles.</p>
+the golden age of DOS gaming — the period that produced many of the
+platform’s most celebrated titles that served as blueprints for the modern
+gaming industry.</p>
 <h3 id="notable-games_4">Notable games<a class="headerlink" href="#notable-games_4" title="Permanent link">¶</a></h3>
+<div class="compact">
 <ul>
-<li><a href="https://www.mobygames.com/game/1068/doom/">DOOM (1993)</a> — defined the FPS genre</li>
 <li><a href="https://www.mobygames.com/game/212/master-of-orion/">Master of Orion (1993)</a> — definitive 4X space strategy</li>
+<li><a href="https://www.mobygames.com/game/1068/doom/">DOOM (1993)</a> — defined the FPS genre</li>
 <li><a href="https://www.mobygames.com/game/521/x-com-ufo-defense/">X-COM: UFO Defense (1994)</a> — tactical strategy masterpiece</li>
 <li><a href="https://www.mobygames.com/game/1021/panzer-general/">Panzer General (1994)</a> — accessible wargaming classic</li>
 <li><a href="https://www.mobygames.com/game/240/star-wars-tie-fighter/">Star Wars: TIE Fighter (1994)</a> — best Star Wars space sim</li>
-<li><a href="https://www.mobygames.com/game/681/system-shock/">System Shock (1994)</a> — immersive sim pioneer</li>
+<li><a href="https://www.mobygames.com/game/681/system-shock/">System Shock (1994)</a> — cyberpunk immersive sim cult classic</li>
 <li><a href="https://www.mobygames.com/game/850/under-a-killing-moon/">Tex Murphy: Under a Killing Moon (1994)</a> — FMV detective adventure</li>
 <li><a href="https://www.mobygames.com/game/338/command-conquer/">Command &amp; Conquer (1995)</a> — popularised real-time strategy</li>
 <li><a href="https://www.mobygames.com/game/1339/warcraft-ii-tides-of-darkness/">Warcraft II: Tides of Darkness (1995)</a> — landmark RTS</li>
@@ -3965,6 +3969,7 @@ platform’s most celebrated titles.</p>
 <li><a href="https://www.mobygames.com/game/184/discworld/">Discworld (1995)</a> — Terry Pratchett point-and-click adventure</li>
 <li><a href="https://www.mobygames.com/game/778/the-elder-scrolls-chapter-ii-daggerfall/">The Elder Scrolls: Daggerfall (1996)</a> — massive open-world RPG</li>
 </ul>
+</div>
 <h3 id="typical-hardware_4">Typical hardware<a class="headerlink" href="#typical-hardware_4" title="Permanent link">¶</a></h3>
 <div class="compact">
 <table>
@@ -3981,7 +3986,7 @@ platform’s most celebrated titles.</p>
 </tr>
 <tr>
 <td>Graphics</td>
-<td>SVGA (S3-based)</td>
+<td>SVGA (</td>
 </tr>
 <tr>
 <td>Sound</td>
@@ -3995,23 +4000,21 @@ platform’s most celebrated titles.</p>
 </table>
 </div>
 <h3 id="dosbox-staging-config_4">DOSBox Staging config<a class="headerlink" href="#dosbox-staging-config_4" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[dosbox]</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">svga_s3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[cpu]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">80000</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">[cpu]</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">80000</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
 </code></pre></div>
 <h2 id="the-twilight-of-dos-19961998">The twilight of DOS (1996–1998)<a class="headerlink" href="#the-twilight-of-dos-19961998" title="Permanent link">¶</a></h2>
 <p>By the mid-1990s, Windows 95 and DirectX were rapidly taking over PC gaming.
-The final wave of DOS games pushed hardware hard—fast Pentiums and Pentium
-MMX processors, AWE32/64 wavetable sound cards, and SVGA graphics with early
-3D acceleration. These late DOS titles often demanded top-of-the-line hardware
-and represent the platform’s technical peak, even as the ecosystem was
-transitioning to Windows.</p>
+The final wave of DOS games pushed hardware hard — fast Pentiums and Pentium
+MMX processors, AWE32/64 wavetable sound cards, and SVGA graphics at
+640×480 or higher resultion with early Voodoo 3D acceleration. These
+late DOS titles often demanded top-of-the-line hardware and represent the
+platform’s technical peak, even as the ecosystem was transitioning to Windows.</p>
 <h3 id="notable-games_5">Notable games<a class="headerlink" href="#notable-games_5" title="Permanent link">¶</a></h3>
+<div class="compact">
 <ul>
 <li><a href="https://www.mobygames.com/game/374/quake/">Quake (1996)</a> — true 3D engine revolution</li>
 <li><a href="https://www.mobygames.com/game/365/duke-nukem-3d/">Duke Nukem 3D (1996)</a> — interactive environments and humour</li>
@@ -4022,8 +4025,8 @@ transitioning to Windows.</p>
 <li><a href="https://www.mobygames.com/game/156/dungeon-keeper/">Dungeon Keeper (1997)</a> — play the villain strategy classic</li>
 <li><a href="https://www.mobygames.com/game/223/fallout/">Fallout (1997)</a> — post-apocalyptic RPG masterpiece</li>
 <li><a href="https://www.mobygames.com/game/674/theme-hospital/">Theme Hospital (1997)</a> — Bullfrog management sim</li>
-<li><a href="https://www.mobygames.com/game/367/carmageddon/">Carmageddon (1997)</a> — controversial vehicular combat racer</li>
 </ul>
+</div>
 <h3 id="typical-hardware_5">Typical hardware<a class="headerlink" href="#typical-hardware_5" title="Permanent link">¶</a></h3>
 <div class="compact">
 <table>
@@ -4040,11 +4043,11 @@ transitioning to Windows.</p>
 </tr>
 <tr>
 <td>Graphics</td>
-<td>SVGA (S3-based)</td>
+<td>SVGA</td>
 </tr>
 <tr>
 <td>Sound</td>
-<td>Sound Blaster 16 / AWE32</td>
+<td>Sound Blaster 16 (or AWE32)</td>
 </tr>
 <tr>
 <td>RAM</td>
@@ -4055,135 +4058,41 @@ transitioning to Windows.</p>
 </div>
 <h3 id="dosbox-staging-config_5">DOSBox Staging config<a class="headerlink" href="#dosbox-staging-config_5" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[dosbox]</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">svga_s3</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">memsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">32</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">[cpu]</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">400000</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">memsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">32</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">[cpu]</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1"># 640x480 3D might require up to 400000 to run smoothly</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">150000</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="k">[sblaster]</span>
 <a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
 </code></pre></div>
 <h2 id="windows-3x-games">Windows 3.x games<a class="headerlink" href="#windows-3x-games" title="Permanent link">¶</a></h2>
-<p>DOSBox Staging fully supports Windows 3.x, which was not a standalone operating
-system but an operating environment running on top of DOS. A number of games
-were released exclusively for Windows 3.1 with no DOS version—particularly
-FMV adventures and multimedia titles that leveraged Windows’ built-in video
-and audio APIs. Many of these are cult classics well worth rediscovering.</p>
-<h3 id="notable-windows-3x-exclusives">Notable Windows 3.x exclusives<a class="headerlink" href="#notable-windows-3x-exclusives" title="Permanent link">¶</a></h3>
+<p>DOSBox Staging fully supports Windows 3.x, which was not a standalone
+operating system but an operating environment running on top of DOS. A number
+of games were released exclusively for Windows 3.1 with no DOS version —
+particularly full-motion video (FMV) adventures and multimedia titles that
+leveraged Windows’ built-in video and audio support. Many of these are cult
+classics well worth rediscovering.</p>
+<h3 id="notable-games_6">Notable games<a class="headerlink" href="#notable-games_6" title="Permanent link">¶</a></h3>
+<div class="compact">
 <ul>
-<li><a href="https://www.mobygames.com/game/842/castle-of-the-winds/">Castle of the Winds (1993)</a> — charming tile-based roguelike RPG</li>
+<li><a href="https://www.mobygames.com/game/1223/myst/">Myst (1993)</a> — landmark first-person adventure</li>
+<li><a href="https://www.mobygames.com/game/22007/the-journeyman-project/">The Journeyman Project (1993)</a> — time-travel sci-fi puzzle adventure</li>
 <li><a href="https://www.mobygames.com/game/1782/the-dark-eye/">The Dark Eye (1995)</a> — surreal Edgar Allan Poe horror adventure</li>
-<li><a href="https://www.mobygames.com/game/4365/cosmology-of-kyoto/">Cosmology of Kyoto (1995)</a> — haunting Japanese historical multimedia experience</li>
-<li><a href="https://www.mobygames.com/game/118/the-beast-within-a-gabriel-knight-mystery/">Gabriel Knight 2: The Beast Within (1995)</a> — FMV mystery adventure masterpiece</li>
+<li><a href="https://www.mobygames.com/game/663/shivers/">Shivers (1995)</a> —  horror-themed first-person adventure</li>
 <li><a href="https://www.mobygames.com/game/3990/dust-a-tale-of-the-wired-west/">Dust: A Tale of the Wired West (1995)</a> — FMV western adventure</li>
-<li><a href="https://www.mobygames.com/game/31910/mordor-the-depths-of-dejenol/">Mordor: The Depths of Dejenol (1995)</a> — deep first-person dungeon crawler</li>
 <li><a href="https://www.mobygames.com/game/3962/burncycle/">Burn:Cycle (1995)</a> — cyberpunk FMV adventure</li>
-<li><a href="https://www.mobygames.com/game/2176/9-the-last-resort/">9: The Last Resort (1996)</a> — surreal FMV puzzle adventure</li>
-<li><a href="https://www.mobygames.com/game/2892/titanic-adventure-out-of-time/">Titanic: Adventure Out of Time (1996)</a> — historical FMV adventure on the doomed liner</li>
 <li><a href="https://www.mobygames.com/game/15/sid-meiers-civilization-ii/">Civilization II (1996)</a> — definitive Windows 3.x strategy game</li>
+<li><a href="https://www.mobygames.com/game/2176/9-the-last-resort/">9: The Last Resort (1996)</a> — surreal FMV puzzle adventure</li>
+<li><a href="https://www.mobygames.com/game/2892/titanic-adventure-out-of-time/">Titanic: Adventure Out of Time (1996)</a> — historical FMV adventure</li>
+<li><a href="https://www.mobygames.com/game/4954/blue-heat/">Blue Heat (1997)</a> — mature-themed video adventure</li>
 </ul>
+</div>
+<hr>
 <h2 id="cpu-cycles-quick-reference">CPU cycles quick reference<a class="headerlink" href="#cpu-cycles-quick-reference" title="Permanent link">¶</a></h2>
 <p>The <code>cpu_cycles</code> setting controls the speed of the emulated CPU. Use this table
 as a rough guide for matching cycles to real-world hardware.</p>
-<div class="compact">
-<table>
-<thead>
-<tr>
-<th>Emulated CPU</th>
-<th style="text-align: right;">MHz</th>
-<th style="text-align: right;">Cycles</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>8088</td>
-<td style="text-align: right;">4.77</td>
-<td style="text-align: right;">300</td>
-</tr>
-<tr>
-<td>286</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">700</td>
-</tr>
-<tr>
-<td>286</td>
-<td style="text-align: right;">12</td>
-<td style="text-align: right;">1500</td>
-</tr>
-<tr>
-<td>286</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">3000</td>
-</tr>
-<tr>
-<td>386DX</td>
-<td style="text-align: right;">25</td>
-<td style="text-align: right;">4500</td>
-</tr>
-<tr>
-<td>386DX</td>
-<td style="text-align: right;">33</td>
-<td style="text-align: right;">6000</td>
-</tr>
-<tr>
-<td>386DX</td>
-<td style="text-align: right;">40</td>
-<td style="text-align: right;">9000</td>
-</tr>
-<tr>
-<td>486DX</td>
-<td style="text-align: right;">33</td>
-<td style="text-align: right;">12000</td>
-</tr>
-<tr>
-<td>486DX2</td>
-<td style="text-align: right;">66</td>
-<td style="text-align: right;">25000</td>
-</tr>
-<tr>
-<td>486DX4</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">35000</td>
-</tr>
-<tr>
-<td>Intel Pentium</td>
-<td style="text-align: right;">90</td>
-<td style="text-align: right;">50000</td>
-</tr>
-<tr>
-<td>Intel Pentium</td>
-<td style="text-align: right;">100</td>
-<td style="text-align: right;">60000</td>
-</tr>
-<tr>
-<td>Intel Pentium</td>
-<td style="text-align: right;">120</td>
-<td style="text-align: right;">75000</td>
-</tr>
-<tr>
-<td>Intel Pentium</td>
-<td style="text-align: right;">133</td>
-<td style="text-align: right;">80000</td>
-</tr>
-<tr>
-<td>Intel Pentium MMX</td>
-<td style="text-align: right;">166</td>
-<td style="text-align: right;">100000</td>
-</tr>
-<tr>
-<td>Intel Pentium II</td>
-<td style="text-align: right;">300</td>
-<td style="text-align: right;">200000</td>
-</tr>
-<tr>
-<td>Intel Pentium III</td>
-<td style="text-align: right;">866</td>
-<td style="text-align: right;">400000</td>
-</tr>
-</tbody>
-</table>
-</div>
 
 
 
