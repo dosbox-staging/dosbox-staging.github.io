@@ -9,13 +9,13 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://www.dosbox-staging.org/documentation/sound/capture/">
+        <link rel="canonical" href="https://www.dosbox-staging.org/documentation/graphics/reelmagic/">
       
       
-        <link rel="prev" href="../sound-devices/imfc/">
+        <link rel="prev" href="../3dfx-voodoo/">
       
       
-        <link rel="next" href="../disk-noise/">
+        <link rel="next" href="../../sound/overview/">
       
       
         
@@ -26,7 +26,7 @@
     
     
       
-        <title>Audio capture - DOSBox Staging</title>
+        <title>ReelMagic - DOSBox Staging</title>
       
     
     
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#audio-capture" class="md-skip">
+        <a href="#reelmagic" class="md-skip">
           Skip to content
         </a>
       
@@ -1539,10 +1539,6 @@
       
         
       
-        
-      
-        
-      
     
     
     
@@ -1744,8 +1740,6 @@
       
         
       
-        
-      
     
     
     
@@ -1767,7 +1761,7 @@
   <span class="md-ellipsis">
     
   
-    Graphics
+    System
   
 
     
@@ -1783,7 +1777,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Graphics
+    System
   
 
           </label>
@@ -1796,14 +1790,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/display-and-window/" class="md-nav__link">
+      <a href="../../system/general/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Display &amp; window
+    General
   
 
     
@@ -1824,14 +1818,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/rendering/" class="md-nav__link">
+      <a href="../../system/cpu/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Rendering
+    CPU
   
 
     
@@ -1852,42 +1846,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/composite-video/" class="md-nav__link">
+      <a href="../../system/dos/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Composite video
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../graphics/3dfx-voodoo/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    3dfx Voodoo
+    DOS
   
 
     
@@ -1913,22 +1879,10 @@
                 
   
   
-    
   
   
-  
     
     
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
       
         
       
@@ -1945,752 +1899,14 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7">
         
           
           <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sound
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Sound
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sound overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../on-subjectivity/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    On subjectivity
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../dosbox-mixer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    DOSBox mixer
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../mixer-effects/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mixer effects
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../analog-output-filters/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Analog output filter emulation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../midi/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MIDI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_7">
-        
-          
-          <label class="md-nav__link" for="__nav_3_7_7" id="__nav_3_7_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sound devices
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Sound devices
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AdLib, CMS &amp; Sound Blaster
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/roland-mt-32/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Roland MT-32
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/general-midi/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    General MIDI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/pc-speaker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PC speaker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/tandy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tandy 3 Voice
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/gravis-ultrasound/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Gravis UltraSound
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/ibm-ps1audio/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IBM PS/1 Audio Card
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/covox-variants/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Covox variants
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/innovation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Innovation SSI-2001
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/imfc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IBM Music Feature Card
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Audio capture
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Audio capture
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        <li class="md-nav__item">
-  <a href="#configuration-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration settings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#capture_dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        capture_dir
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#default_image_capture_formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        default_image_capture_formats
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../disk-noise/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Disk noise
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
-        
-          
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
             
   
   
@@ -2708,8 +1924,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2843,10 +2059,340 @@
                 
   
   
+    
+  
   
   
     
     
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-and-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display &amp; window
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../composite-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composite video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3dfx-voodoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3dfx Voodoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReelMagic
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReelMagic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reelmagic_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reelmagic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reelmagic_fcode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reelmagic_fcode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reelmagic_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reelmagic_key
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -2875,7 +2421,7 @@
   <span class="md-ellipsis">
     
   
-    System
+    Sound
   
 
     
@@ -2891,7 +2437,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    System
+    Sound
   
 
           </label>
@@ -2904,14 +2450,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/general/" class="md-nav__link">
+      <a href="../../sound/overview/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    General
+    Sound overview
   
 
     
@@ -2932,14 +2478,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/cpu/" class="md-nav__link">
+      <a href="../../sound/on-subjectivity/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    CPU
+    On subjectivity
   
 
     
@@ -2960,14 +2506,486 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/dos/" class="md-nav__link">
+      <a href="../../sound/dosbox-mixer/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    DOS
+    DOSBox mixer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/mixer-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixer effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/analog-output-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analog output filter emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_7" id="__nav_3_9_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound devices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound devices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib, CMS &amp; Sound Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/roland-mt-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland MT-32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/general-midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/pc-speaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PC speaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/tandy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tandy 3 Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/gravis-ultrasound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravis UltraSound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/ibm-ps1audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM PS/1 Audio Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/covox-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Covox variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Innovation SSI-2001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/imfc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM Music Feature Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/disk-noise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disk noise
   
 
     
@@ -3146,14 +3164,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../reelmagic/" class="md-nav__link">
+      <a href="../../capture/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    ReelMagic
+    Capture
   
 
     
@@ -3201,15 +3219,35 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../../regional/" class="md-nav__link">
+    
+    
+      
         
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13">
+        
+          
+          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
     
   
-    Regional settings
+    Appendices
   
 
     
@@ -3217,11 +3255,19 @@
   
   
 
-      </a>
-    </li>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
   
 
-              
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -3230,7 +3276,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../shortcuts/" class="md-nav__link">
+      <a href="../../appendices/shortcuts/" class="md-nav__link">
         
   
   
@@ -3258,14 +3304,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../autoexec/" class="md-nav__link">
+      <a href="../../appendices/keymapper/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Autoexec
+    Keymapper reference
   
 
     
@@ -3274,6 +3320,14 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -3509,6 +3563,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configuration-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3521,10 +3586,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#capture_dir" class="md-nav__link">
+  <a href="#reelmagic_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        capture_dir
+        reelmagic
       
     </span>
   </a>
@@ -3532,10 +3597,21 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#default_image_capture_formats" class="md-nav__link">
+  <a href="#reelmagic_fcode" class="md-nav__link">
     <span class="md-ellipsis">
       
-        default_image_capture_formats
+        reelmagic_fcode
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reelmagic_key" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reelmagic_key
       
     </span>
   </a>
@@ -3564,44 +3640,76 @@
 
 
 
-<h1 id="audio-capture">Audio capture<a class="headerlink" href="#audio-capture" title="Permanent link">¶</a></h1>
-<p>DOSBox Staging can capture screenshots, record audio, and record video
-directly from the emulator. Screenshots can be saved in multiple formats:
-upscaled (clean, aspect-corrected), rendered (post-shader, exactly what you
-see on screen), or raw (the framebuffer contents with square pixels).</p>
-<p>The most common <a href="../../shortcuts/">shortcuts</a>: <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> for
-screenshots, <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f6">F6</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f6">F6</kbd></span> to start and stop audio recording, and
-<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f7">F7</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f7">F7</kbd></span> for video recording. Raw MIDI and OPL output can
-also be captured for those who want to tinker with game music outside the
-emulator.</p>
-<p>All captures are saved to the <code>capture/</code> directory in the current working
-directory by default. You can change this with the <code>capture_dir</code> setting.</p>
+<h1 id="reelmagic">ReelMagic<a class="headerlink" href="#reelmagic" title="Permanent link">¶</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>The ReelMagic (marketed as REALmagic) was an MPEG-1 hardware decoder card
+from Sigma Designs, released in 1993. At a time when PCs could barely
+handle software video playback, this card enabled smooth full-motion video
+in a handful of DOS games — <a href="https://www.mobygames.com/game/1219/return-to-zork/">Return to Zork</a>, <a href="https://www.mobygames.com/game/3870/jrr-tolkiens-the-lord-of-the-rings-vol-i/">Lord of the Rings</a>,
+and <a href="https://www.mobygames.com/game/6142/the-horde/">The Horde</a> among them.</p>
+<p>Only a small number of titles ever supported it, so this is a niche feature.
+If you’re not specifically trying to run one of those games, you can safely
+ignore this section entirely.</p>
+<p>The following DOS games are known to use the ReelMagic card:</p>
+<div class="compact">
+<ul>
+<li><a href="https://www.mobygames.com/game/459/crime-patrol/">Crime Patrol</a></li>
+<li><a href="https://www.mobygames.com/game/768/drug-wars/">Crime Patrol 2: Drug Wars</a></li>
+<li><a href="https://www.mobygames.com/game/1504/dragons-lair/">Dragon’s Lair</a></li>
+<li><a href="https://www.mobygames.com/game/6072/entity/">Entity</a></li>
+<li><a href="https://www.mobygames.com/game/14651/flash-traffic-city-of-angels/">Flash Traffic: City of Angels</a></li>
+<li><a href="https://www.mobygames.com/game/3870/jrr-tolkiens-the-lord-of-the-rings-vol-i/">Lord of the Rings</a> (Interplay, 1993)</li>
+<li><a href="https://www.mobygames.com/game/29122/man-enough/">Man Enough</a></li>
+<li><a href="https://www.mobygames.com/game/1219/return-to-zork/">Return to Zork</a></li>
+<li><a href="https://www.mobygames.com/game/6009/space-ace/">Space Ace</a></li>
+<li><a href="https://www.mobygames.com/game/6142/the-horde/">The Horde</a></li>
+</ul>
+</div>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
-<p>Capture settings are to be configured in the <code>[capture]</code> section.</p>
-<h5 id="capture_dir">capture_dir<a class="headerlink" href="#capture_dir" title="Permanent link">¶</a></h5>
-<dl>
-<dd>Directory where the various captures are saved, such as audio, video,
-MIDI, and screenshot captures (<code>capture</code> in the current working directory
-by default).</dd>
-</dl>
-<h5 id="default_image_capture_formats">default_image_capture_formats<a class="headerlink" href="#default_image_capture_formats" title="Permanent link">¶</a></h5>
+<p>You can set the ReelMagic parameters in the <code>[reelmagic]</code> configuration
+section.</p>
+<h5 id="reelmagic_1">reelmagic<a class="headerlink" href="#reelmagic_1" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Set the capture format of the default screenshot action.</p>
-<p>If multiple formats are specified separated by spaces, the default
-screenshot action will save multiple images in the specified formats.
-Keybindings for taking single screenshots in specific formats are also
-available.</p>
+<p>ReelMagic (aka REALmagic) MPEG playback support.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>off</code> <em class="default">default</em> – Disable support.</li>
+<li><code>cardonly</code> – Initialise the card without loading the <code>FMPDRV.EXE</code>
+  driver.</li>
+<li><code>on</code> – Initialise the card and load the <code>FMPDRV.EXE</code> on startup.</li>
+</ul>
+</div>
+</dd>
+</dl>
+<h5 id="reelmagic_fcode">reelmagic_fcode<a class="headerlink" href="#reelmagic_fcode" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Override the frame rate code used during video playback.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>upscaled</code> <em class="default">default</em> – The image is bilinear-sharp
-  upscaled and the correct aspect ratio is maintained, depending on the
-  <code>aspect</code> setting. The vertical scaling factor is always an integer.</li>
-<li><code>rendered</code> – The post-rendered, post-shader image shown on the screen
-  is captured. Filenames end with <code>-rendered</code>.</li>
-<li><code>raw</code> – The contents of the raw framebuffer is captured (always results
-  in square pixels). Filenames end with <code>-raw</code>.</li>
+<li><code>0</code> <em class="default">default</em> – No override: attempt automatic rate
+  discovery.</li>
+<li><code>1</code> to <code>7</code> – Override the frame rate to one of the following: 1=23.976,
+  2=24, 3=25, 4=29.97, 5=30, 6=50, or 7=59.94 FPS.</li>
 </ul>
+</dd>
+</dl>
+<h5 id="reelmagic_key">reelmagic_key<a class="headerlink" href="#reelmagic_key" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the 32-bit magic key used to decode the game’s videos.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>auto</code> <em class="default">default</em> – Use the built-in routines to determine
+  the key.</li>
+<li><code>common</code> – Use the most commonly found key, which is <code>0x40044041</code>.</li>
+<li><code>thehorde</code> – Use The Horde’s key, which is <code>0xC39D7088</code>.</li>
+<li><code>&lt;custom&gt;</code> – Set a custom key in hex format (e.g., <code>0x12345678</code>).</li>
+</ul>
+</div>
 </dd>
 </dl>
 
@@ -3643,7 +3751,7 @@ available.</p>
       <!-- Link to previous page -->
       
         
-        <a href="../sound-devices/imfc/" class="md-footer__link md-footer__link--prev" aria-label="Previous: IBM Music Feature Card" rel="prev">
+        <a href="../3dfx-voodoo/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 3dfx Voodoo" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
           </div>
@@ -3652,7 +3760,7 @@ available.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              IBM Music Feature Card
+              3dfx Voodoo
             </div>
           </div>
         </a>
@@ -3661,13 +3769,13 @@ available.</p>
       <!-- Link to next page -->
       
         
-        <a href="../disk-noise/" class="md-footer__link md-footer__link--next" aria-label="Next: Disk noise" rel="next">
+        <a href="../../sound/overview/" class="md-footer__link md-footer__link--next" aria-label="Next: Sound overview" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Disk noise
+              Sound overview
             </div>
           </div>
           <div class="md-footer__button md-icon">

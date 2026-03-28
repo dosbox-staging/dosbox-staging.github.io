@@ -2,318 +2,314 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.dosbox-staging.org/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/about/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
-         <loc>https://www.dosbox-staging.org/documentation/autoexec/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <loc>https://www.dosbox-staging.org/documentation/capture/</loc>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/command-line/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/configuration/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/dos-eras/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/dos-primer/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/introduction/</loc>
-         <lastmod>2026-03-25</lastmod>
-    </url>
-    <url>
-         <loc>https://www.dosbox-staging.org/documentation/reelmagic/</loc>
-         <lastmod>2026-03-25</lastmod>
-    </url>
-    <url>
-         <loc>https://www.dosbox-staging.org/documentation/regional/</loc>
-         <lastmod>2026-03-25</lastmod>
-    </url>
-    <url>
-         <loc>https://www.dosbox-staging.org/documentation/shortcuts/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/webserver/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
+    </url>
+    <url>
+         <loc>https://www.dosbox-staging.org/documentation/appendices/keymapper/</loc>
+         <lastmod>2026-03-28</lastmod>
+    </url>
+    <url>
+         <loc>https://www.dosbox-staging.org/documentation/appendices/shortcuts/</loc>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/graphics/3dfx-voodoo/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/graphics/composite-video/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/graphics/display-and-window/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
+    </url>
+    <url>
+         <loc>https://www.dosbox-staging.org/documentation/graphics/reelmagic/</loc>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/graphics/rendering/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/input/joystick/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/input/keyboard/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/input/mouse/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/input/overview/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/networking/ethernet/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/networking/ipx/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/networking/serial-ports/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/analog-output-filters/</loc>
-         <lastmod>2026-03-25</lastmod>
-    </url>
-    <url>
-         <loc>https://www.dosbox-staging.org/documentation/sound/capture/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/disk-noise/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/dosbox-mixer/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/midi/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/mixer-effects/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/on-subjectivity/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/overview/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/adlib-cms-sound-blaster/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/covox-variants/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/general-midi/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/gravis-ultrasound/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/ibm-ps1audio/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/imfc/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/innovation/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/pc-speaker/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/roland-mt-32/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/sound/sound-devices/tandy/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/system/cpu/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/system/dos/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/documentation/system/general/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/get-involved/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/get-involved/code-of-conduct/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/advanced-graphics-options/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/beneath-a-steel-sky/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/enhancing-prince-of-persia/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/introduction/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/next-steps/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/passport-to-adventure/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/setting-up-prince-of-persia/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/getting-started/star-wars-dark-forces/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/development-builds/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/linux/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/macos/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/windows/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.75.0-rc1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.75.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.75.1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.75.2/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.76.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.77.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.77.1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.78.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.78.1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.79.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.79.1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.80.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.80.1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.81.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.81.1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.81.2/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.82.0/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.82.1/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
     <url>
          <loc>https://www.dosbox-staging.org/releases/release-notes/0.82.2/</loc>
-         <lastmod>2026-03-25</lastmod>
+         <lastmod>2026-03-28</lastmod>
     </url>
 </urlset>
