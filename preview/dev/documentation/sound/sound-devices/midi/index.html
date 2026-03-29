@@ -9,28 +9,28 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://www.dosbox-staging.org/documentation/sound/dosbox-mixer/">
+        <link rel="canonical" href="https://www.dosbox-staging.org/documentation/sound/sound-devices/midi/">
       
       
-        <link rel="prev" href="../on-subjectivity/">
+        <link rel="prev" href="../roland-mt-32/">
       
       
-        <link rel="next" href="../mixer-effects/">
+        <link rel="next" href="../general-midi/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <link rel="icon" href="../../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>DOSBox mixer - DOSBox Staging</title>
+        <title>MIDI - DOSBox Staging</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -49,15 +49,15 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -79,7 +79,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#dosbox-mixer" class="md-skip">
+        <a href="#midi" class="md-skip">
           Skip to content
         </a>
       
@@ -113,9 +113,9 @@
   <nav class="md-header__inner md-grid" aria-label="header.title">
 
     <!-- Link to home -->
-    <a href="../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+    <a href="../../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
       
-  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
 
     </a>
 
@@ -205,7 +205,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../releases/" class="md-tabs__link">
+        <a href="../../../../releases/" class="md-tabs__link">
           
   
   
@@ -227,7 +227,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../getting-started/" class="md-tabs__link">
+        <a href="../../../../getting-started/" class="md-tabs__link">
           
   
   
@@ -251,7 +251,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../introduction/" class="md-tabs__link">
+        <a href="../../../introduction/" class="md-tabs__link">
           
   
   
@@ -273,7 +273,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../get-involved/" class="md-tabs__link">
+        <a href="../../../../get-involved/" class="md-tabs__link">
           
   
   
@@ -295,7 +295,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../about/" class="md-tabs__link">
+        <a href="../../../../about/" class="md-tabs__link">
           
   
   
@@ -356,9 +356,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+    <a href="../../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
       
-  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
 
     </a>
     DOSBox Staging
@@ -404,7 +404,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../releases/" class="md-nav__link ">
+            <a href="../../../../releases/" class="md-nav__link ">
               
   
   
@@ -448,7 +448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/windows/" class="md-nav__link">
+      <a href="../../../../releases/windows/" class="md-nav__link">
         
   
   
@@ -476,7 +476,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/macos/" class="md-nav__link">
+      <a href="../../../../releases/macos/" class="md-nav__link">
         
   
   
@@ -504,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/linux/" class="md-nav__link">
+      <a href="../../../../releases/linux/" class="md-nav__link">
         
   
   
@@ -622,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.82.2/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.82.2/" class="md-nav__link">
         
   
   
@@ -650,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.82.1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.82.1/" class="md-nav__link">
         
   
   
@@ -678,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.82.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.82.0/" class="md-nav__link">
         
   
   
@@ -706,7 +706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.81.2/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.81.2/" class="md-nav__link">
         
   
   
@@ -734,7 +734,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.81.1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.81.1/" class="md-nav__link">
         
   
   
@@ -762,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.81.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.81.0/" class="md-nav__link">
         
   
   
@@ -790,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.80.1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.80.1/" class="md-nav__link">
         
   
   
@@ -818,7 +818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.80.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.80.0/" class="md-nav__link">
         
   
   
@@ -846,7 +846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.79.1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.79.1/" class="md-nav__link">
         
   
   
@@ -874,7 +874,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.79.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.79.0/" class="md-nav__link">
         
   
   
@@ -902,7 +902,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.78.1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.78.1/" class="md-nav__link">
         
   
   
@@ -930,7 +930,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.78.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.78.0/" class="md-nav__link">
         
   
   
@@ -958,7 +958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.77.1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.77.1/" class="md-nav__link">
         
   
   
@@ -986,7 +986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.77.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.77.0/" class="md-nav__link">
         
   
   
@@ -1014,7 +1014,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.76.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.76.0/" class="md-nav__link">
         
   
   
@@ -1042,7 +1042,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.75.2/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.75.2/" class="md-nav__link">
         
   
   
@@ -1070,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.75.1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.75.1/" class="md-nav__link">
         
   
   
@@ -1098,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.75.0/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.75.0/" class="md-nav__link">
         
   
   
@@ -1126,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/release-notes/0.75.0-rc1/" class="md-nav__link">
+      <a href="../../../../releases/release-notes/0.75.0-rc1/" class="md-nav__link">
         
   
   
@@ -1162,7 +1162,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../releases/development-builds/" class="md-nav__link">
+      <a href="../../../../releases/development-builds/" class="md-nav__link">
         
   
   
@@ -1234,7 +1234,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../getting-started/" class="md-nav__link ">
+            <a href="../../../../getting-started/" class="md-nav__link ">
               
   
   
@@ -1278,7 +1278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/introduction/" class="md-nav__link">
+      <a href="../../../../getting-started/introduction/" class="md-nav__link">
         
   
   
@@ -1306,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
+      <a href="../../../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
         
   
   
@@ -1334,7 +1334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
         
   
   
@@ -1362,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/passport-to-adventure/" class="md-nav__link">
+      <a href="../../../../getting-started/passport-to-adventure/" class="md-nav__link">
         
   
   
@@ -1390,7 +1390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
+      <a href="../../../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
         
   
   
@@ -1418,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/star-wars-dark-forces/" class="md-nav__link">
+      <a href="../../../../getting-started/star-wars-dark-forces/" class="md-nav__link">
         
   
   
@@ -1446,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
+      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
         
   
   
@@ -1474,7 +1474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/next-steps/" class="md-nav__link">
+      <a href="../../../../getting-started/next-steps/" class="md-nav__link">
         
   
   
@@ -1512,6 +1512,8 @@
   
     
     
+      
+        
       
         
       
@@ -1592,7 +1594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../introduction/" class="md-nav__link">
+      <a href="../../../introduction/" class="md-nav__link">
         
   
   
@@ -1620,7 +1622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dos-primer/" class="md-nav__link">
+      <a href="../../../dos-primer/" class="md-nav__link">
         
   
   
@@ -1648,7 +1650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dos-eras/" class="md-nav__link">
+      <a href="../../../dos-eras/" class="md-nav__link">
         
   
   
@@ -1676,7 +1678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
+      <a href="../../../configuration/" class="md-nav__link">
         
   
   
@@ -1704,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../command-line/" class="md-nav__link">
+      <a href="../../../command-line/" class="md-nav__link">
         
   
   
@@ -1790,7 +1792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/general/" class="md-nav__link">
+      <a href="../../../system/general/" class="md-nav__link">
         
   
   
@@ -1818,7 +1820,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/cpu/" class="md-nav__link">
+      <a href="../../../system/cpu/" class="md-nav__link">
         
   
   
@@ -1846,7 +1848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/dos/" class="md-nav__link">
+      <a href="../../../system/dos/" class="md-nav__link">
         
   
   
@@ -1881,6 +1883,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../../storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -1903,10 +1933,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
         
           
-          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
             
   
   
@@ -1924,8 +1954,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1942,7 +1972,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../input/overview/" class="md-nav__link">
+      <a href="../../../input/overview/" class="md-nav__link">
         
   
   
@@ -1970,7 +2000,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../input/keyboard/" class="md-nav__link">
+      <a href="../../../input/keyboard/" class="md-nav__link">
         
   
   
@@ -1998,7 +2028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../input/mouse/" class="md-nav__link">
+      <a href="../../../input/mouse/" class="md-nav__link">
         
   
   
@@ -2026,7 +2056,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../input/joystick/" class="md-nav__link">
+      <a href="../../../input/joystick/" class="md-nav__link">
         
   
   
@@ -2085,10 +2115,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9">
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
   
@@ -2106,8 +2136,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2124,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/display-and-window/" class="md-nav__link">
+      <a href="../../../graphics/display-and-window/" class="md-nav__link">
         
   
   
@@ -2152,7 +2182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/rendering/" class="md-nav__link">
+      <a href="../../../graphics/rendering/" class="md-nav__link">
         
   
   
@@ -2180,7 +2210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/composite-video/" class="md-nav__link">
+      <a href="../../../graphics/composite-video/" class="md-nav__link">
         
   
   
@@ -2208,7 +2238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/3dfx-voodoo/" class="md-nav__link">
+      <a href="../../../graphics/3dfx-voodoo/" class="md-nav__link">
         
   
   
@@ -2236,7 +2266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphics/reelmagic/" class="md-nav__link">
+      <a href="../../../graphics/reelmagic/" class="md-nav__link">
         
   
   
@@ -2290,8 +2320,6 @@
       
         
       
-        
-      
     
     
     
@@ -2303,10 +2331,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" checked="">
         
           
-          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
             
   
   
@@ -2324,8 +2352,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3_9">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2342,7 +2370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../overview/" class="md-nav__link">
         
   
   
@@ -2370,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../on-subjectivity/" class="md-nav__link">
+      <a href="../../on-subjectivity/" class="md-nav__link">
         
   
   
@@ -2378,6 +2406,224 @@
     
   
     On subjectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mixer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOSBox mixer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mixer-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixer effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analog-output-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analog output filter emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10_6" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_10_6" id="__nav_3_10_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound devices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_10_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_10_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound devices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adlib-cms-sound-blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib, CMS &amp; Sound Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roland-mt-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland MT-32
   
 
     
@@ -2414,7 +2660,7 @@
   <span class="md-ellipsis">
     
   
-    DOSBox mixer
+    MIDI
   
 
     
@@ -2432,7 +2678,7 @@
   <span class="md-ellipsis">
     
   
-    DOSBox mixer
+    MIDI
   
 
     
@@ -2458,10 +2704,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#a-brief-introduction-to-midi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        A brief introduction to MIDI
       
     </span>
   </a>
@@ -2469,10 +2715,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-mixer-command" class="md-nav__link">
+  <a href="#midi-in-dos-gaming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The MIXER command
+        MIDI in DOS gaming
       
     </span>
   </a>
@@ -2480,82 +2726,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#changing-channel-settings" class="md-nav__link">
+  <a href="#setting-up-midi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Changing channel settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Changing channel settings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#volume" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Volume
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reverb-and-chorus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverb and chorus
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crossfeed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Crossfeed
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advanced usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-of-mixer-channels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        List of mixer channels
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#minimising-audio-glitches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Minimising audio glitches
+        Setting up MIDI
       
     </span>
   </a>
@@ -2575,10 +2749,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blocksize" class="md-nav__link">
+  <a href="#midiconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        blocksize
+        midiconfig
       
     </span>
   </a>
@@ -2586,10 +2760,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#compressor" class="md-nav__link">
+  <a href="#mididevice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        compressor
+        mididevice
       
     </span>
   </a>
@@ -2597,10 +2771,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#denoiser" class="md-nav__link">
+  <a href="#mpu401" class="md-nav__link">
     <span class="md-ellipsis">
       
-        denoiser
+        mpu401
       
     </span>
   </a>
@@ -2608,43 +2782,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#negotiate" class="md-nav__link">
+  <a href="#raw_midi_output" class="md-nav__link">
     <span class="md-ellipsis">
       
-        negotiate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nosound" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        nosound
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prebuffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        prebuffer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        rate
+        raw_midi_output
       
     </span>
   </a>
@@ -2672,219 +2813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mixer-effects/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mixer effects
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../analog-output-filters/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Analog output filter emulation
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../midi/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MIDI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_7">
-        
-          
-          <label class="md-nav__link" for="__nav_3_9_7" id="__nav_3_9_7_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Sound devices
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_9_7">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Sound devices
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix="">
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    AdLib, CMS &amp; Sound Blaster
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/roland-mt-32/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Roland MT-32
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/general-midi/" class="md-nav__link">
+      <a href="../general-midi/" class="md-nav__link">
         
   
   
@@ -2912,7 +2841,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/pc-speaker/" class="md-nav__link">
+      <a href="../pc-speaker/" class="md-nav__link">
         
   
   
@@ -2940,7 +2869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/tandy/" class="md-nav__link">
+      <a href="../tandy/" class="md-nav__link">
         
   
   
@@ -2968,7 +2897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/gravis-ultrasound/" class="md-nav__link">
+      <a href="../gravis-ultrasound/" class="md-nav__link">
         
   
   
@@ -2996,7 +2925,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/ibm-ps1audio/" class="md-nav__link">
+      <a href="../cd-da/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CD-DA audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ibm-ps1audio/" class="md-nav__link">
         
   
   
@@ -3024,7 +2981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/covox-variants/" class="md-nav__link">
+      <a href="../covox-variants/" class="md-nav__link">
         
   
   
@@ -3052,7 +3009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/innovation/" class="md-nav__link">
+      <a href="../innovation/" class="md-nav__link">
         
   
   
@@ -3080,7 +3037,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/imfc/" class="md-nav__link">
+      <a href="../imfc/" class="md-nav__link">
         
   
   
@@ -3116,7 +3073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../disk-noise/" class="md-nav__link">
+      <a href="../../disk-noise/" class="md-nav__link">
         
   
   
@@ -3171,10 +3128,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11">
         
           
-          <label class="md-nav__link" for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
             
   
   
@@ -3192,8 +3149,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_10">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3210,7 +3167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/serial-ports/" class="md-nav__link">
+      <a href="../../../networking/serial-ports/" class="md-nav__link">
         
   
   
@@ -3238,7 +3195,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/ipx/" class="md-nav__link">
+      <a href="../../../networking/ipx/" class="md-nav__link">
         
   
   
@@ -3266,7 +3223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../networking/ethernet/" class="md-nav__link">
+      <a href="../../../networking/ethernet/" class="md-nav__link">
         
   
   
@@ -3302,7 +3259,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../capture/" class="md-nav__link">
+      <a href="../../../capture/" class="md-nav__link">
         
   
   
@@ -3330,7 +3287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../webserver/" class="md-nav__link">
+      <a href="../../../webserver/" class="md-nav__link">
         
   
   
@@ -3375,10 +3332,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14">
         
           
-          <label class="md-nav__link" for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
             
   
   
@@ -3396,8 +3353,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_13">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_14">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3414,7 +3371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendices/shortcuts/" class="md-nav__link">
+      <a href="../../../appendices/shortcuts/" class="md-nav__link">
         
   
   
@@ -3442,7 +3399,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../appendices/keymapper/" class="md-nav__link">
+      <a href="../../../appendices/keymapper/" class="md-nav__link">
         
   
   
@@ -3508,7 +3465,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../get-involved/" class="md-nav__link ">
+            <a href="../../../../get-involved/" class="md-nav__link ">
               
   
   
@@ -3552,7 +3509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../get-involved/code-of-conduct/" class="md-nav__link">
+      <a href="../../../../get-involved/code-of-conduct/" class="md-nav__link">
         
   
   
@@ -3608,7 +3565,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../about/" class="md-nav__link ">
+            <a href="../../../../about/" class="md-nav__link ">
               
   
   
@@ -3701,10 +3658,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#a-brief-introduction-to-midi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Overview
+        A brief introduction to MIDI
       
     </span>
   </a>
@@ -3712,10 +3669,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#the-mixer-command" class="md-nav__link">
+  <a href="#midi-in-dos-gaming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The MIXER command
+        MIDI in DOS gaming
       
     </span>
   </a>
@@ -3723,82 +3680,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#changing-channel-settings" class="md-nav__link">
+  <a href="#setting-up-midi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Changing channel settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Changing channel settings">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#volume" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Volume
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#reverb-and-chorus" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Reverb and chorus
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#crossfeed" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Crossfeed
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#advanced-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advanced usage
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#list-of-mixer-channels" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        List of mixer channels
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#minimising-audio-glitches" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Minimising audio glitches
+        Setting up MIDI
       
     </span>
   </a>
@@ -3818,10 +3703,10 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#blocksize" class="md-nav__link">
+  <a href="#midiconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        blocksize
+        midiconfig
       
     </span>
   </a>
@@ -3829,10 +3714,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#compressor" class="md-nav__link">
+  <a href="#mididevice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        compressor
+        mididevice
       
     </span>
   </a>
@@ -3840,10 +3725,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#denoiser" class="md-nav__link">
+  <a href="#mpu401" class="md-nav__link">
     <span class="md-ellipsis">
       
-        denoiser
+        mpu401
       
     </span>
   </a>
@@ -3851,43 +3736,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#negotiate" class="md-nav__link">
+  <a href="#raw_midi_output" class="md-nav__link">
     <span class="md-ellipsis">
       
-        negotiate
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#nosound" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        nosound
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#prebuffer" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        prebuffer
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#rate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        rate
+        raw_midi_output
       
     </span>
   </a>
@@ -3916,294 +3768,237 @@
 
 
 
-<h1 id="dosbox-mixer">DOSBox mixer<a class="headerlink" href="#dosbox-mixer" title="Permanent link">¶</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>The DOSBox mixer combines the output of all emulated sound devices into a
-final stereo signal. Each device gets its own mixer channel, and you can
-adjust volume, stereo panning, reverb, chorus, and crossfeed levels
-independently per channel.</p>
-<p>The mixer uses a 32-bit floating-point processing path internally, so
-individual channels cannot be overloaded into clipping by high per-channel
-volume settings. A fixed 20 Hz high-pass filter on the master output removes
-DC offset and subsonic rumble. An auto-levelling
-<a href="#compressor">compressor</a> on the master channel prevents clipping of the final
-output.</p>
-<p>The default master volume is 50% (-6 dB) to avoid audible distortion in games
-with loud output. You can raise it per game as needed (e.g., <code>MIXER MASTER
-100</code>), but it’s better to boost only the channels that are too quiet (e.g.,
-<code>MIXER SB 200</code>).</p>
-<p>The mixer runs in its own dedicated thread, which greatly reduces and often
-completely eliminates audio stuttering and glitches. This is especially
-noticeable with the Roland MT-32, FluidSynth, OPL synth, and Red Book CD
-Audio.</p>
-<h2 id="the-mixer-command">The MIXER command<a class="headerlink" href="#the-mixer-command" title="Permanent link">¶</a></h2>
-<p>To manage all these mixer channels, DOSBox provides the handy <code>MIXER</code> command
-that you can use from the DOS command line. If you run <code>MIXER</code> without any
-arguments, it prints out the current state of the mixer. This is what we get
-with the default configuration:</p>
-<p>As we can see, we have four channels enabled by default:</p>
+<h1 id="midi">MIDI<a class="headerlink" href="#midi" title="Permanent link">¶</a></h1>
+<p>Between about 1998 and 1994, MIDI music was <em>the</em> ultimate high-end audio
+option in DOS gaming, offering never-heard-before realism and CD quality audio
+fidelity. Not many could afford the high price tag of MIDI sound modules back
+in the day — they often sold for 3 to 5 times higher as a Sound Blaster card.
+But thanks to the wonders of emulation, now all DOS enthusiasts can experience
+MIDI music nirvana in its full glory!</p>
+<p>Because MIDI plays such a pivotal role in DOS gaming history, it is important
+to understand its origins and how it works at a basic level.</p>
+<h3 id="a-brief-introduction-to-midi">A brief introduction to MIDI<a class="headerlink" href="#a-brief-introduction-to-midi" title="Permanent link">¶</a></h3>
+<p>The MIDI standard (Musical Instrument Digital Interface) was created in the
+early 1980s to allow audio equipment from different manufacturers to
+communicate with each other. Originally aimed at the professional market, it
+soon found its way into home studios and computer games thanks to the home
+computer revolution.</p>
+<p>MIDI is essentially a communication protocol. When you press a key on a MIDI
+keyboard, a short message is sent to a sound module instructing it to play a
+certain instrument at a certain pitch. Because the communication is digital,
+the keyboard can be replaced with a computer — a MIDI sequencer program can
+send thousands of precisely timed messages, controlling a full orchestra’s
+worth of instruments.</p>
+<p>MIDI compositions are best viewed as the computer music equivalent of sheet
+music — a MIDI score only contains note data and abstract descriptions of
+the instruments, while the sound module is responsible for generating the
+actual sounds using its on-board samples or synthesis capabilities.</p>
+<h3 id="midi-in-dos-gaming">MIDI in DOS gaming<a class="headerlink" href="#midi-in-dos-gaming" title="Permanent link">¶</a></h3>
+<p>In the beginning, all DOS games came on floppies. Even if a game came on 10
+floppies or more, there was simply not enough space for long musical pieces
+stored as digital audio! Given that MIDI scores take very little disk space
+compared to digital audio (generally, just a few tens of kilobytes per
+composition), MIDI music was an ideal match for DOS games before the
+wide-spread adoption of the CD-ROM with its huge 650 to 700 megabytes of
+capacity on a single CD. This is similar in principle to how the Creative
+Music System and AdLib synthesisers were used in games, only these MIDI sound
+modules were capable of producing much higher quality music using sampled
+sounds of real-world instruments.</p>
+<p>Initially, you had to buy the Roland MPU-401 MIDI interface to connect an
+external MIDI sound module to your PC. Later on, sound cards started
+incorporating integrated MPU-401 compatible interfaces, so you could connect
+the sound module directly to your sound card.</p>
+<p>DOS games featuring MIDI music support either or both of the following two
+major MIDI standards:</p>
 <ul>
 <li>
-<p><code>MASTER</code> – This is the final summed stereo output of all other
-    mixer channels. The <code>MASTER</code> channel is always enabled, always comes first,
-    and is always stereo.</p>
+<p><a href="../roland-mt-32/">Roland MT-32 and variants</a> — Released in
+  1987, this module was the only option for MIDI music in DOS games until
+  about 1992. Most notably, you need the MT-32 for the best music in older
+  Sierra and LucasArts adventure games.</p>
 </li>
 <li>
-<p><code>OPL</code> – Stereo output of the Yamaha OPL3 synthesiser on the emulated
-    Sound Blaster 16 card.</p>
+<p><a href="../general-midi/">General MIDI</a> — The world’s first General
+  MIDI capable module, the Roland Sound Canvas SC-55, was released 1991.
+  Games started adding General MIDI support from about 1992 onwards, which
+  resulted in the MT-32 losing most of its relevance by the mid-90s.</p>
 </li>
-<li><code>PCSPEAKER</code> – Mono output of the ubiquitous small loudspeaker built into most old IBM PC compatibles.</li>
-<li><code>SB</code> – Stereo digital audio output of the emulated Sound Blaster 16 card.</li>
 </ul>
-<p>There is an important thing to note here: some emulated sound devices contain
-multiple sub-devices, each having their own mixer channel. The Sound Blaster 16
-is such a device—its digital output is routed to the
-<code>SB</code> channel, while the output of the onboard Yamaha OPL3 synthesiser chip has
-its dedicated <code>OPL</code> channel.</p>
-<p>This is actually similar to how the Sound Blaster software mixer works on later Sound
-Blaster cards. The <code>MIXER</code> command extends this concept so you can adjust the
-parameters of all emulated audio devices via a unified interface.</p>
-<p>If you can’t remember all this, don’t worry—just run <code>MIXER /?</code> to display
-a handy little summary all available options.</p>
-<h2 id="changing-channel-settings">Changing channel settings<a class="headerlink" href="#changing-channel-settings" title="Permanent link">¶</a></h2>
-<h3 id="volume">Volume<a class="headerlink" href="#volume" title="Permanent link">¶</a></h3>
-<p>Set the volume of a channel as a percentage:</p>
-<div class="highlight"><pre><span></span><code>MIXER OPL 150
-</code></pre></div>
-<p>This sets the <code>OPL</code> channel to 150% volume. You can set the left and right
-channels independently by separating the values with a colon:</p>
-<div class="highlight"><pre><span></span><code>MIXER OPL 200:100
-</code></pre></div>
-<h3 id="reverb-and-chorus">Reverb and chorus<a class="headerlink" href="#reverb-and-chorus" title="Permanent link">¶</a></h3>
-<p>Set the reverb and chorus levels of a channel with <code>R</code> and <code>C</code> followed by
-the level:</p>
-<div class="highlight"><pre><span></span><code>MIXER OPL R50 C30
-</code></pre></div>
-<p>This sets the <code>OPL</code> channel’s reverb level to 50 and chorus level to 30.
-For details on the available presets and what reverb and chorus do, see
-<a href="../mixer-effects/">Mixer effects</a>.</p>
-<h3 id="crossfeed">Crossfeed<a class="headerlink" href="#crossfeed" title="Permanent link">¶</a></h3>
-<p>Set the crossfeed strength of a channel with <code>X</code> followed by the level:</p>
-<div class="highlight"><pre><span></span><code>MIXER OPL X50
-</code></pre></div>
-<p>For details on what crossfeed does and the available presets, see
-<a href="../mixer-effects/#crossfeed">Mixer effects — Crossfeed</a>.</p>
-<h3 id="advanced-usage">Advanced usage<a class="headerlink" href="#advanced-usage" title="Permanent link">¶</a></h3>
-<p>You may change the settings of more than one channel in a single command.
-For example, the command <code>MIXER x30 opl 150 r50 c30 sb x10 reverse</code> accomplishes the
-following:</p>
+<p>You can read more about these modules in their respective documentation sections.</p>
+<h3 id="setting-up-midi">Setting up MIDI<a class="headerlink" href="#setting-up-midi" title="Permanent link">¶</a></h3>
+<p>DOSBox emulates a Roland MPU-401 compatible MIDI interface which is enabled by
+default. The emulated MPU-401 operates in the so-called <em>Intelligent Mode</em>
+out-of-the-box; this provides certain extra features many older games depend
+on, and more recent games that do not use these feature are generally not
+affected negatively by it.</p>
+<p>MIDI related settings are to be configured in the <code>[midi]</code> section. The most
+common usage scenario is to leave <a href="#mididevice">mididevice</a> at its default
+<code>auto</code> setting, then set <a href="#midiconfig">midiconfig</a> to:</p>
 <ul>
-<li>Set the global crossfeed to 30 (<code>x30</code>)</li>
-<li>Set the volume of the <code>OPL</code> channel to 150%, the reverb level to 50, and the
-    chorus level to 30 (<code>fm 150 r50 c30</code>)</li>
-<li>Set the crossfeed of the <code>SB</code> channel to 10 and use reverse stereo (<code>sb x10
-    reverse</code>)</li>
+<li><code>mt32</code> to use the built-in <a href="../roland-mt-32/">Roland MT-32</a> emulation,</li>
+<li><code>fluidsynth</code> to use the built-in <a href="#">FluidSynth</a> MIDI synthesiser,</li>
+<li>or to an ID that identifies an external MIDI device.</li>
 </ul>
-<h2 id="list-of-mixer-channels">List of mixer channels<a class="headerlink" href="#list-of-mixer-channels" title="Permanent link">¶</a></h2>
-<div class="compact">
-<p>The below table lists all possible mixer channels with links to the respective
-sections of the manual where they’re described in detail.</p>
+<p>You can use the <code>mixer /listmidi</code> DOS command to see the list of available
+external MIDI devices.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To easily switch between a built-in and an external MIDI device per game
+(typically between the built-in MT-32 emulation and Roland’s Sound Canvas
+VA running in an external MIDI host program), you can use the <a href="../../../configuration/#config-layering">layered
+configuration approach</a> to your
+advantage.</p>
+<p>As an example, to easily switch between the built-in MT-32 emulation and
+an external MIDI device that contains “loopMIDI” in its name, put this
+into your global configuration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mt32</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">midiconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">loopMIDI</span>
+</code></pre></div>
+<p>Without any futher MIDI configuration in your local DOSBox config, this
+will default to using the built-in Roland MT-32 emulation. To switch to
+the external MIDI device, set <code>mididevice</code> to <code>auto</code> in your local config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+</code></pre></div>
+</div>
+<h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
+<p>MIDI related settings are to be configured in the <code>[midi]</code> section.</p>
+<h5 id="midiconfig">midiconfig<a class="headerlink" href="#midiconfig" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Configuration options for the selected MIDI device.</p>
+<p>Depending on the <a href="#mididevice">mididevice</a> setting, the <code>midiconfig</code>
+setting is interpreted as follows:</p>
+<div class="compact" markdown="">
 <table>
 <thead>
 <tr>
-<th>Channel name</th>
-<th>Device</th>
-<th>Stereo?</th>
+<th><code>mididevice</code> setting</th>
+<th><code>midiconfig</code> setting</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>CDAUDIO</code></td>
-<td>CD-DA digital audio</td>
-<td>Yes</td>
+<td><code>none</code></td>
+<td>N/A</td>
 </tr>
 <tr>
-<td><code>CMS</code></td>
-<td><a href="../sound-devices/adlib-cms-sound-blaster/#cms">Creative Music System (C/MS) synthesiser</a></td>
-<td>Yes</td>
+<td><code>fluidsynth</code></td>
+<td>N/A</td>
 </tr>
 <tr>
-<td><code>COVOX</code></td>
-<td><a href="../sound-devices/covox-variants/#covox-speech-thing">Covox Speech Thing digital audio</a></td>
-<td>No</td>
+<td><code>mt32</code></td>
+<td>N/A</td>
 </tr>
 <tr>
-<td><code>DISNEY</code></td>
-<td><a href="../sound-devices/covox-variants/#disney-sound-source">Disney Sound Source (DSS) digital audio</a></td>
-<td>No</td>
+<td><code>auto</code></td>
+<td><ul><li><code>mt32</code> — Use the built-in MT-32 synthesiser</li><li><code>fluidsynth</code> — Use the built-in FluidSynth MIDI synthesiser</li><li><code>ID [delaysysex]</code> — Use MIDI device external to DOSBox with this ID. The <code>delaysysex</code> option might be needed for some older external MIDI modules.</li></ul></td>
 </tr>
 <tr>
-<td><code>FSYNTH</code></td>
-<td><a href="../sound-devices/general-midi/#fluidsynth">FluidSynth MIDI synthesiser</a></td>
-<td>Yes</td>
+<td><code>coreaudio</code></td>
+<td>Name of the SoundFont to use.</td>
 </tr>
 <tr>
-<td><code>GUS</code></td>
-<td><a href="../sound-devices/gravis-ultrasound/">Gravis UltraSound digital audio</a></td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><code>MASTER</code></td>
-<td>Master output channel</td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><code>INNOVATION</code></td>
-<td><a href="../sound-devices/innovation/">Innovation SSI-2001 synthesiser</a></td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>MT32</code></td>
-<td><a href="../sound-devices/roland-mt-32/">Roland MT-32 MIDI synthesiser</a></td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><code>OPL</code></td>
-<td><a href="../sound-devices/adlib-cms-sound-blaster/">Yamaha OPL synthesiser</a></td>
-<td>Yes<sup id="fnref:stereo"><a class="footnote-ref" href="#fn:stereo">1</a></sup></td>
-</tr>
-<tr>
-<td><code>PCSPEAKER</code></td>
-<td><a href="../sound-devices/pc-speaker/">PC speaker</a></td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>PS1</code></td>
-<td><a href="../sound-devices/ibm-ps1audio/">IBM PS/1 Audio synthesiser</a></td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>PS1DAC</code></td>
-<td><a href="../sound-devices/ibm-ps1audio/">IBM PS/1 Audio digital audio</a></td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>SB</code></td>
-<td><a href="../sound-devices/adlib-cms-sound-blaster/">Sound Blaster digital audio</a></td>
-<td>Yes<sup id="fnref2:stereo"><a class="footnote-ref" href="#fn:stereo">1</a></sup></td>
-</tr>
-<tr>
-<td><code>STON1</code></td>
-<td><a href="../sound-devices/covox-variants/#stereo-on-1-dac">Stereo-on-1 digital audio</a></td>
-<td>Yes</td>
-</tr>
-<tr>
-<td><code>TANDY</code></td>
-<td><a href="../sound-devices/tandy/">Tandy 1000 synthesiser</a></td>
-<td>No</td>
-</tr>
-<tr>
-<td><code>TANDYDAC</code></td>
-<td><a href="../sound-devices/tandy/">Tandy 1000 digital audio</a></td>
-<td>No</td>
+<td><code>coremidi</code></td>
+<td>N/A</td>
 </tr>
 </tbody>
 </table>
 </div>
-<h2 id="minimising-audio-glitches">Minimising audio glitches<a class="headerlink" href="#minimising-audio-glitches" title="Permanent link">¶</a></h2>
-<p>Even after setting the optimal <a href="../../system/cpu/#cpu_cycles">cpu_cycles</a>
-value, you may hear occasional clicks or pops. This depends on your
-particular hardware, audio driver, and operating system combination.</p>
-<p>Increasing the audio buffer sizes usually helps. The trade-off is higher
-audio latency (a longer delay between an action and its sound). The
-default <code>blocksize</code> is 1024 on Windows and 512 on macOS and Linux
-(in sample frames). The default <code>prebuffer</code> is 25 ms on Windows and 20 ms
-on the other platforms.</p>
-<p>Try doubling both values as a starting point:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[mixer]</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">blocksize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">prebuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50</span>
-</code></pre></div>
-<p>The <code>blocksize</code> should be a power of two: 256, 512, 1024, 2048, 4096, or
-8192. The <code>prebuffer</code> can be any value in milliseconds. Increase
-further if glitches persist, but keep in mind that larger buffers mean more
-noticeable input-to-sound delay.</p>
-<p>Also make sure your <a href="../../system/cpu/#cpu_cycles">cpu_cycles</a> isn’t set
-higher than the game actually needs — overdoing it wastes host CPU
-resources that could otherwise go towards glitch-free audio emulation.</p>
-<h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
-<p>Mixer settings are to be configured in the <code>[mixer]</code> section. For effects
-settings (crossfeed, reverb, chorus), see <a href="../mixer-effects/#configuration-settings">Mixer effects</a>.</p>
-<h5 id="blocksize">blocksize<a class="headerlink" href="#blocksize" title="Permanent link">¶</a></h5>
-<dl>
-<dd>Block size of the host audio device in sample frames (<code>512</code> by default).
-Valid range is 64 to 8192. Should be set to power-of-two values (e.g.,
-256, 512, 1024). Larger values might help with sound stuttering but will
-introduce more latency. Also see <a href="#negotiate">negotiate</a>.</dd>
-</dl>
-<h5 id="compressor">compressor<a class="headerlink" href="#compressor" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Enable the auto-leveling compressor on the master channel to prevent
-clipping of the audio output.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
+<p>In <code>auto</code> mode, the <code>ID</code> can be either the numeric identifier of the MIDI
+device (MIDI port) or a part of its name. Using the name-based
+identification is preferable as the numbers can change if you unplug then
+reattach your external MIDI adapters or audio interfaces.</p>
+<p>Use the <code>mixer /listmidi</code> command to list the IDs and names of all MIDI
+devices available on your system.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you’re using a physical Roland MT-32 with revision 0 PCB, the
+hardware may require a delay in order to prevent its buffer from
+overflowing. In that case, add <code>delaysysex</code>, e.g., <code>midiconfig = 2
+delaysysex</code>.</p>
+</div>
 </dd>
 </dl>
-<h5 id="denoiser">denoiser<a class="headerlink" href="#denoiser" title="Permanent link">¶</a></h5>
+<h5 id="mididevice">mididevice<a class="headerlink" href="#mididevice" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Remove low-level residual noise from the output of the OPL synth and the
-Roland Sound Canvas. The emulation of these devices is accurate to the
-original hardware, which includes the emulation of very low-level
-semi-random noise. Although this is authentic, most people would find it
-slightly annoying.</p>
+<p>Selects the MIDI device where data from the emulated MPU-401 MIDI
+interface is sent.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>on</code> <em class="default">default</em> – Enable the denoiser on the OPL and
-  SOUNDCANVAS channels. The denoiser does not introduce any sound quality
-  degradation; it only removes the barely audible residual noise in quiet
-  passages.</li>
-<li><code>off</code> – Disable the denoiser.</li>
+<li>
+<p><code>port</code> <em class="default">default</em> — A MIDI port of the host operating
+    system’s MIDI interface. You can configure the port to use with the
+    <a href="#midiconfig">midiconfig</a> setting.</p>
+</li>
+<li>
+<p><code>fluidsynth</code> — The built-in FluidSynth MIDI synthesiser (SoundFont
+    player). See the <a href="../general-midi/#fluidsynth">FluidSynth</a> configuration
+    settings for further details.</p>
+</li>
+<li>
+<p><code>mt32</code> — The built-in Roland MT-32 synthesiser. See the <a href="../roland-mt-32/#configuration-settings">Roland
+    MT-32</a>
+    configuration settings for further details.</p>
+</li>
+<li>
+<p><code>soundcanvas</code> — The internal Roland SC-55 synthesiser (requires a
+    CLAP audio plugin). See the <a href="../general-midi/#sound-canvas">Sound
+    Canvas</a> configuration settings for
+    further details.</p>
+</li>
+<li>
+<p><code>coreaudio</code> <em>(macOS only)</em> — Use the built-in macOS MIDI synthesiser.
+    The SoundFont to use can be specified with <a href="#midiconfig">midiconfig</a>.</p>
+</li>
+<li>
+<p><code>none</code> — Disable MIDI output.</p>
+</li>
 </ul>
 </dd>
 </dl>
-<h5 id="negotiate">negotiate<a class="headerlink" href="#negotiate" title="Permanent link">¶</a></h5>
+<h5 id="mpu401">mpu401<a class="headerlink" href="#mpu401" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Negotiate a possibly better <a href="#blocksize">blocksize</a> setting (<code>on</code> by
-default). Enable if you’re not getting audio or the sound is stuttering
-with your <code>blocksize</code> setting. Disable to force the manually set
-<code>blocksize</code> value.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
+<p>MPU-401 MIDI interface mode to emulate.</p>
+<p>Possible values:</p>
+<ul>
+<li>
+<p><code>none</code> — Disable MPU-401 emulation.</p>
+</li>
+<li>
+<p><code>intelligent</code> <em class="default">default</em> — The intelligent mode was present
+  on the original MPU-401 manufactured by Roland and on some clones. It
+  provides MIDI sequencer features and a precise MIDI event sending
+  mechanism via timestamped messages among a few other things. Applications could offload MIDI related , freeing up
+  slow CPUs to do other tasks. Earlier MT-32 games depend on these
+  features and will not produce sound in <code>uart</code> mode.</p>
+</li>
+<li>
+<p><code>uart</code> — Use UART mode of the MPU-401 that simply forwards each byte
+  written to the MPU to the MIDI device in real-time. Sound Blaster cards
+  can only operate in UART mode, and virtually all General MIDI games need
+  require only UART mode.</p>
+</li>
+</ul>
 </dd>
 </dl>
-<h5 id="nosound">nosound<a class="headerlink" href="#nosound" title="Permanent link">¶</a></h5>
+<h5 id="raw_midi_output">raw_midi_output<a class="headerlink" href="#raw_midi_output" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Enable silent mode (<code>off</code> by default). Sound is still emulated in silent
-mode, but DOSBox outputs no sound to the host. Capturing the emulated
-audio output to a WAV file works in silent mode.</p>
+<p>Enable raw, unaltered MIDI output (<code>off</code> by default). The MIDI drivers of
+many games don’t fully conform to the MIDI standard, which makes editing
+their MIDI recordings error-prone in MIDI sequencers. DOSBox corrects the
+MIDI output of such games by default with no audible difference; it only
+affects the data representation.</p>
+<p>Only enable this if you need to capture the raw, unaltered MIDI output of
+a program, e.g., when working with music applications or debugging MIDI
+issues.</p>
 <p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
 </dd>
 </dl>
-<h5 id="prebuffer">prebuffer<a class="headerlink" href="#prebuffer" title="Permanent link">¶</a></h5>
-<dl>
-<dd>How many milliseconds of sound to render in advance on top of
-<a href="#blocksize">blocksize</a> (<code>20</code> by default). Larger values might help with
-sound stuttering but will introduce more latency.</dd>
-</dl>
-<h5 id="rate">rate<a class="headerlink" href="#rate" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Sample rate of DOSBox’s internal audio mixer in Hz (<code>48000</code> by default).
-Valid range is 8000 to 96000 Hz. The vast majority of consumer-grade audio
-hardware uses a native rate of 48000 Hz.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The OS will most likely resample non-standard sample rates to 48000 Hz
-anyway. Recommend leaving this as-is unless you have good reason to
-change it.</p>
-</div>
-</dd>
-</dl>
-<div class="footnote">
-<hr>
-<ol>
-<li id="fn:stereo">
-<p>The output can either mono or stereo, depending on the selected model.&nbsp;<a class="footnote-backref" href="#fnref:stereo" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:stereo" title="Jump back to footnote 1 in the text">↩</a></p>
-</li>
-</ol>
-</div>
 
 
 
@@ -4243,7 +4038,7 @@ change it.</p>
       <!-- Link to previous page -->
       
         
-        <a href="../on-subjectivity/" class="md-footer__link md-footer__link--prev" aria-label="Previous: On subjectivity" rel="prev">
+        <a href="../roland-mt-32/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Roland MT-32" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
           </div>
@@ -4252,7 +4047,7 @@ change it.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              On subjectivity
+              Roland MT-32
             </div>
           </div>
         </a>
@@ -4261,13 +4056,13 @@ change it.</p>
       <!-- Link to next page -->
       
         
-        <a href="../mixer-effects/" class="md-footer__link md-footer__link--next" aria-label="Next: Mixer effects" rel="next">
+        <a href="../general-midi/" class="md-footer__link md-footer__link--next" aria-label="Next: General MIDI" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Mixer effects
+              General MIDI
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -4308,10 +4103,10 @@ change it.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   
