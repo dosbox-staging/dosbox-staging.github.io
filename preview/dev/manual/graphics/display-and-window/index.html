@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2295,6 +2265,8 @@
       
         
       
+        
+      
     
     
     
@@ -2434,15 +2406,15 @@
       
         
 <li class="md-nav__item">
-  <a href="#presentation-modes" class="md-nav__link">
+  <a href="#frame-presentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Presentation modes
+        Frame presentation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Presentation modes">
+    <nav class="md-nav" aria-label="Frame presentation">
       <ul class="md-nav__list">
         
           
@@ -2473,32 +2445,6 @@
         
       </ul>
     </nav>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#dedithering" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dedithering
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#deinterlacing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deinterlacing
-      
-    </span>
-  </a>
   
 </li>
 
@@ -2869,6 +2815,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../composite-video/" class="md-nav__link">
         
   
@@ -3139,14 +3113,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4357,15 +4331,15 @@
       
         
 <li class="md-nav__item">
-  <a href="#presentation-modes" class="md-nav__link">
+  <a href="#frame-presentation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Presentation modes
+        Frame presentation
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Presentation modes">
+    <nav class="md-nav" aria-label="Frame presentation">
       <ul class="md-nav__list">
         
           
@@ -4396,32 +4370,6 @@
         
       </ul>
     </nav>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#dedithering" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dedithering
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#deinterlacing" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Deinterlacing
-      
-    </span>
-  </a>
   
 </li>
 
@@ -4766,20 +4714,23 @@
 
 
 <h1 id="display-window">Display &amp; window<a class="headerlink" href="#display-window" title="Permanent link">¶</a></h1>
-<p>DOSBox Staging opens in a resizable window by default. Press
-<span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-enter">Enter</kbd></span> to toggle fullscreen mode.</p>
-<p>The <code>opengl</code> <a href="#output">output mode</a> is the recommended default because it’s required
-for CRT shaders and other post-processing effects (see
-<a href="../rendering/">Rendering</a>). If your system doesn’t
-support OpenGL, <code>texture</code> is a solid fallback that still looks good.</p>
-<p>For monitors with variable refresh rates (G-Sync, FreeSync, or VRR), you’ll
-want to disable <a href="#vsync"><code>vsync</code></a> for the smoothest frame pacing. On
-fixed-rate monitors, enable it to prevent screen tearing.</p>
-<p>Window size and position are remembered between sessions, so you only need
-to set things up once. Most users won’t need to change the display defaults
-at all — the out-of-the-box settings work well for the vast majority of
-games.</p>
-<h2 id="presentation-modes">Presentation modes<a class="headerlink" href="#presentation-modes" title="Permanent link">¶</a></h2>
+<p>DOSBox Staging opens in a resizable window by default — press ++alt+Enter++
+to toggle fullscreen at any time. For most games, the out-of-the-box display
+settings will serve you well and need no adjustment. This chapter covers the
+cases where you might want to dig deeper.</p>
+<p>The most important decision for most users is how to handle <a href="#frame-presentation">frame
+presentation</a> and <a href="#vsync">vsync</a>. If you have a
+variable refresh rate monitor (G-Sync, FreeSync, or VRR), the defaults
+give you perfect frame pacing with no tearing and no further configuration
+needed. On a fixed refresh rate monitor, enabling vsync eliminates tearing
+in fast-paced games, but it can’t fully solve the judder that comes from the
+mismatch between DOS refresh rates and your display’s fixed rate. Most VGA
+games run at 70 Hz, and that difference is perceptible in scrolling and
+animation. A VRR monitor is the only complete solution.</p>
+<p>For image output settings such as shaders, CRT emulation, aspect ratio
+correction, dedithering, deinterlacing, and image adjustments, see
+<a href="../rendering/">Rendering</a>.</p>
+<h2 id="frame-presentation">Frame presentation<a class="headerlink" href="#frame-presentation" title="Permanent link">¶</a></h2>
 <p>DOSBox Staging offers two frame presentation strategies, controlled by the
 <a href="#presentation_mode">presentation_mode</a> setting:</p>
 <ul>
@@ -4788,8 +4739,7 @@ games.</p>
 mode (e.g., 70 Hz for standard VGA). This is the ideal choice for variable
 refresh rate (VRR) monitors (G-Sync, FreeSync, or VRR) — the display
 synchronises directly to the emulated refresh rate, giving you perfect frame
-pacing with no tearing and low input lag. No configuration is needed; the
-defaults just work.</p>
+pacing with no tearing and low input lag.</p>
 </li>
 <li>
 <p><strong><code>host-rate</code></strong> presents the most recent frame at the host display’s refresh
@@ -4797,20 +4747,26 @@ rate. This is intended for fixed refresh rate monitors (typically 60 Hz) with
 <a href="#vsync">vsync</a> enabled to eliminate screen tearing in fast-paced games.</p>
 </li>
 </ul>
-<p>The default <code>auto</code> mode selects <code>dos-rate</code> when vsync is off and <code>host-rate</code>
+<p>The default <strong><code>auto</code></strong> mode selects <code>dos-rate</code> when vsync is off and <code>host-rate</code>
 when vsync is on, which is the right choice for most setups. For a practical
 example of configuring vsync and presentation modes for a specific game, see
 the <a href="../../../getting-started/star-wars-dark-forces/#display-refresh-rate">Star Wars: Dark Forces</a>
 chapter of the getting started guide.</p>
 <p>In practice, most users fall into one of three categories:</p>
 <ul>
-<li><strong>VRR monitor</strong>: Use the defaults (<code>dos-rate</code>, vsync off). Perfect pacing,
-  no tearing.</li>
-<li><strong>Fixed 60 Hz monitor, fast-paced games</strong>: Set <code>vsync = on</code> to eliminate
+<li>
+<p><strong>VRR monitor</strong>: Use the defaults (<code>dos-rate</code> and <code>vsync</code> will be off).
+  Perfect pacing, no tearing.</p>
+</li>
+<li>
+<p><strong>Fixed 60 Hz monitor, fast-paced games</strong>: Set <code>vsync = on</code> to eliminate
   tearing in fullscreen. The <code>auto</code> presentation mode will switch to
-  <code>host-rate</code> accordingly.</li>
-<li><strong>Fixed 60 Hz monitor, slower games</strong> (RPGs, adventures, strategy): The
-  defaults work fine — tearing is rarely noticeable in these genres.</li>
+  <code>host-rate</code> accordingly.</p>
+</li>
+<li>
+<p><strong>Fixed 60 Hz monitor, slower games</strong> (RPGs, adventures, strategy): The
+  defaults work fine — tearing is rarely noticeable in these genres.</p>
+</li>
 </ul>
 <h3 id="refresh-rates-of-dos-graphics-standards">Refresh rates of DOS graphics standards<a class="headerlink" href="#refresh-rates-of-dos-graphics-standards" title="Permanent link">¶</a></h3>
 <p>Each DOS graphics standard has its own native refresh rate. The mismatch
@@ -4842,12 +4798,12 @@ main source of judder in DOS games.</p>
 </tr>
 </tbody>
 </table>
-<p>Most VGA games run at 70 Hz. On a fixed 60 Hz display, the 60/70 Hz
-mismatch causes a slight but perceptible judder on scrolling and
-animation. A VRR monitor eliminates this entirely by syncing to the
-emulated refresh rate. On fixed-rate monitors, enabling vsync prevents
-tearing but cannot eliminate the judder inherent in the refresh rate
-mismatch.</p>
+<p>Most VGA games run at 70 Hz. On a fixed 60 Hz display, the 60/70 Hz mismatch
+causes perceptible judder on scrolling and animation. A VRR monitor eliminates
+this entirely by syncing to the emulated refresh rate (the frame presentation
+of the emulator dictates the effective refresh rate of the monitor). On
+fixed-rate monitors, enabling vsync prevents tearing but cannot eliminate the
+judder inherent in the refresh rate mismatch.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For perfectly smooth scrolling in 2D games (e.g., <a href="https://www.mobygames.com/game/703/pinball-dreams/">Pinball Dreams</a>, <a href="https://www.mobygames.com/game/263/epic-pinball/">Epic
@@ -4878,17 +4834,24 @@ at <em>two levels</em>:</p>
   hardware too (DOSBox faithfully emulates this).</p>
 </li>
 <li>
-<p>DOSBox Staging might not present the emulated frames to the host operating
-  system vsync’ed, which could result in a <em>second layer</em> of tearing, solely
-  introduced by the emulator.</p>
+<p>DOSBox might not present the emulated frames to the host operating
+  system vsync’ed, which could result in a <em>second layer</em> of tearing on fixed
+  refresh monitors, solely introduced by the emulator.</p>
 </li>
 </ul>
-<p>To get zero tearing, <em>both</em> conditions must be met: the game must vsync its
-own video output (i.e., no tearing on real hardware), and vsync must be
-enabled at the DOSBox Staging level.</p>
-<p>You have no control over the game’s own vsync behaviour. Many DOS games
-hardcode it (e.g., Doom runs at a fixed 35 FPS with vsync). The DOSBox-level
-vsync is what you can control via the <a href="#vsync">vsync</a> setting.</p>
+<p>To get zero tearing on <strong>fixed refresh rate</strong> monitors, both conditions must
+be met: the game must vsync its own video output (i.e., no tearing on real
+hardware), and <a href="#vsync">vsync</a> must be enabled at the DOSBox Staging level.</p>
+<p>On <strong>VRR monitors</strong>, the <a href="#vsync">vsync</a> setting must be left at its default <code>off</code> setting
+— the monitor will sync automatically to the emulator’s frame presentation
+rate, so you’ll get no additional tearing.</p>
+<p>The most important thing to understand is that you have no control over the
+game’s own vsync behaviour. Many DOS games hardcode it (e.g.,
+<a href="https://www.mobygames.com/game/1068/doom/">Doom</a> runs at a fixed 35 FPS with
+vsync). With games that ignore vsync and thus on real hardware too, the best
+you can do is not to introduce <em>additional</em> tearing at the emulator level.</p>
+<p>The below table summarise all possible combinations between game and DOSBox
+level vsync on <strong>fixed refresh monitors</strong>:</p>
 <div class="compact vsync">
 <table>
 <thead>
@@ -4922,6 +4885,28 @@ vsync is what you can control via the <a href="#vsync">vsync</a> setting.</p>
 </tbody>
 </table>
 </div>
+<p>The below table summarise all possible combinations between game and DOSBox
+level vsync on <strong>fixed refresh monitors</strong>:</p>
+<div class="compact vsync">
+<table>
+<thead>
+<tr>
+<th>Game uses vsync?</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>yes</td>
+<td>No tearing</td>
+</tr>
+<tr>
+<td>no</td>
+<td>Some tearing (also present on real hardware)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do <strong>not</strong> force vsync globally at the GPU driver level (e.g., in Nvidia
@@ -4930,44 +4915,6 @@ defaults (“let the application decide”) and only configure vsync via the
 DOSBox Staging <a href="#vsync">vsync</a> setting. Forcing global vsync causes
 problems with virtually all emulators, not just DOSBox Staging.</p>
 </div>
-<h2 id="dedithering">Dedithering<a class="headerlink" href="#dedithering" title="Permanent link">¶</a></h2>
-<p>Many DOS games used dithering — alternating pixel patterns — to simulate
-more colours than their limited palette could display. This was especially
-common in 16-colour EGA games, where checkerboard patterns created the
-illusion of intermediate shades.</p>
-<p>The <code>dedithering</code> setting (in the <code>[render]</code> section) detects these
-checkerboard patterns and blends them into solid colours. It works with any
-graphics adapter (CGA, EGA, VGA, Hercules) and any resolution, and can be
-combined with any shader.</p>
-<p>Games that benefit most from dedithering include early Sierra SCI0 adventures
-(<a href="https://www.mobygames.com/game/409/leisure-suit-larry-goes-looking-for-love-in-several-wrong-places/">Leisure Suit Larry 2</a> &amp; <a href="https://www.mobygames.com/game/412/leisure-suit-larry-iii-passionate-patti-in-pursuit-of-the-pulsat/">3</a>, <a href="https://www.mobygames.com/game/168/heros-quest-so-you-want-to-be-a-hero/">Quest for Glory I</a> &amp; <a href="https://www.mobygames.com/game/169/quest-for-glory-ii-trial-by-fire/">II</a>, <a href="https://www.mobygames.com/game/142/space-quest-iii-the-pirates-of-pestulon/">Space Quest III</a>),
-EGA LucasArts titles (<a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island</a> EGA version, <a href="https://www.mobygames.com/game/176/loom/">Loom</a>),
-and early Legend Entertainment games (<a href="https://www.mobygames.com/game/1027/spellcasting-101-sorcerers-get-all-the-girls/">Spellcasting 101</a>, <a href="https://www.mobygames.com/game/1026/timequest/">Timequest</a>,
-<a href="https://www.mobygames.com/game/317/frederik-pohls-gateway/">Gateway</a>).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Dedithering is <em>not</em> a more authentic representation. On real PC CRT
-monitors, dither patterns were clearly visible — blending them into solid
-colours was only a thing on consoles connected to consumer TV sets. For a
-more authentic look, use <code>shader = crt-auto</code> instead.</p>
-</div>
-<h2 id="deinterlacing">Deinterlacing<a class="headerlink" href="#deinterlacing" title="Permanent link">¶</a></h2>
-<p>Many 90s DOS games displayed full-motion video (FMV) using interlaced
-rendering, showing only every second line of the video frame. This halved
-storage requirements and looked fine on small CRTs where the brain filled in
-the gaps, but on modern flat screens the alternating black lines look
-distracting and halve the apparent brightness.</p>
-<p>The <code>deinterlacing</code> setting (in the <code>[render]</code> section) automatically detects
-interlaced regions within each frame and reconstructs the missing lines. The
-detection is intelligent; it only touches interlaced areas while leaving
-HUDs, UI frames, subtitles, and mouse cursors untouched.</p>
-<p>Both common interlacing patterns are supported: standard line interlacing
-(alternating black horizontal lines, used by most games) and dot interlacing
-(a checkerboard pattern, used by the CD-ROM versions of <a href="https://www.mobygames.com/game/380/dune/">Dune</a> and <a href="https://www.mobygames.com/game/2894/kgb/">KGB</a>).</p>
-<p>Games that benefit from deinterlacing include <a href="https://www.mobygames.com/game/343/wing-commander-iv-the-price-of-freedom/">Wing Commander IV</a>,
-<a href="https://www.mobygames.com/game/1164/roberta-williams-phantasmagoria/">Phantasmagoria</a>, <a href="https://www.mobygames.com/game/118/the-beast-within-a-gabriel-knight-mystery/">Gabriel Knight 2</a>, <a href="https://www.mobygames.com/game/851/crusader-no-remorse/">Crusader: No Remorse</a>, <a href="https://www.mobygames.com/game/852/crusader-no-regret/">Crusader: No
-Regret</a>, <a href="https://www.mobygames.com/game/791/cybermage-darklight-awakening/">CyberMage</a>, <a href="https://www.mobygames.com/game/3468/angel-devoid-face-of-the-enemy/">Angel Devoid</a>, and <a href="https://www.mobygames.com/game/1513/heroes-of-might-and-magic-ii-the-succession-wars/">Heroes of Might and Magic II</a>,
-among others. Enable it per-game rather than globally for best results.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>You can set the display and window parameters in the <code>[sdl]</code> configuration
 section.</p>
@@ -4987,6 +4934,10 @@ section.</p>
 <ul>
 <li><code>standard</code> <em class="default">default</em> – Use the standard fullscreen mode
   of your operating system.</li>
+<li><code>forced-borderless</code> – Force borderless fullscreen operation on Windows.
+  Use this if your graphics card driver opts out of fullscreen
+  optimisations, resulting in exclusive fullscreen that makes Alt+Tabbing
+  cumbersome. This mode is only available on Windows.</li>
 </ul>
 </dd>
 </dl>

@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2699,14 +2699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog-output-filters/" class="md-nav__link">
+      <a href="../../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -3071,10 +3071,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#mt32_filter" class="md-nav__link">
+  <a href="#romdir" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mt32_filter
+        romdir
       
     </span>
   </a>
@@ -3084,10 +3084,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#romdir" class="md-nav__link">
+  <a href="#mt32_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        romdir
+        mt32_filter
       
     </span>
   </a>
@@ -4296,10 +4296,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#mt32_filter" class="md-nav__link">
+  <a href="#romdir" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mt32_filter
+        romdir
       
     </span>
   </a>
@@ -4309,10 +4309,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#romdir" class="md-nav__link">
+  <a href="#mt32_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        romdir
+        mt32_filter
       
     </span>
   </a>
@@ -4682,7 +4682,8 @@ inside the game’s working directory.</p>
 <li><code>$XDG_CONFIG_HOME/dosbox/mt32-roms/</code> (defaults to <code>~/.config/dosbox/mt32-roms/</code>)</li>
 </ol>
 <h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
-<p>The Roland MT-32 outputs to the <strong>MT32</strong> <a href="../../mixer/">mixer</a> channel.</p>
+<p>The Roland MT-32 outputs to the <strong>MT32</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
+channel</a>.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Roland MT-32 settings are to be configured in the <code>[mt32]</code> section.</p>
 <h5 id="model">model<a class="headerlink" href="#model" title="Permanent link">¶</a></h5>
@@ -4708,19 +4709,6 @@ models is performed in order as listed.</p>
 </div>
 </dd>
 </dl>
-<h5 id="mt32_filter">mt32_filter<a class="headerlink" href="#mt32_filter" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Filter for the Roland MT-32/CM-32L audio output.</p>
-<p>Possible values:</p>
-<ul>
-<li><code>off</code> <em class="default">default</em> – Don’t filter the output.</li>
-<li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
-  for details.</li>
-</ul>
-</dd>
-</dl>
 <h5 id="romdir">romdir<a class="headerlink" href="#romdir" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
@@ -4734,6 +4722,19 @@ system locations will be checked as well.</p>
 by their checksums. Both interleaved and non-interleaved ROM files are
 supported.</p>
 </div>
+</dd>
+</dl>
+<h5 id="mt32_filter">mt32_filter<a class="headerlink" href="#mt32_filter" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Filter for the Roland MT-32/CM-32L audio output.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>off</code> <em class="default">default</em> – Don’t filter the output.</li>
+<li><code>&lt;custom&gt;</code> – Custom filter definition; see
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
+  for details.</li>
+</ul>
 </dd>
 </dl>
 

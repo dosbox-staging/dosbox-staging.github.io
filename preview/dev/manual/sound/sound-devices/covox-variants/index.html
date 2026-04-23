@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2699,14 +2699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog-output-filters/" class="md-nav__link">
+      <a href="../../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4176,34 +4176,34 @@
 
 
 <h1 id="covox-variants">Covox variants<a class="headerlink" href="#covox-variants" title="Permanent link">¶</a></h1>
-<p>Several inexpensive Covox variants <strong>Covox variants</strong> (digital-to-analog
-converter (DAC) devices) appeared in the late 1980s as a cheap way to get
-digital audio output from a PC. They were far simpler than a Sound Blaster —
-just a small dongle that plugged into your parallel port — but they could
-play back digitised sound and speech at decent quality for the era.</p>
+<p>Several inexpensive <strong>Covox variants</strong> appeared in the late 1980s as a cheap
+way to get digital audio output from a PC. These small digital-to-analog
+converter (DAC) devices were far simpler than a <a href="../adlib-cms-sound-blaster/">Sound
+Blaster</a> — just a dongle that plugged into the
+parallel port, also known as the LPT (Line Print Terminal) port — but they
+could play back digitised sound and speech at decent quality for the era. For
+this reason, they are also sometimes called LPT DAC devices.</p>
 <h2 id="covox-speech-thing">Covox Speech Thing<a class="headerlink" href="#covox-speech-thing" title="Permanent link">¶</a></h2>
-<p>The Covox Speech Thing (1986) was a simple R-2R resistor ladder DAC that
-plugged into the parallel port. It was cheap to build (even as a DIY project)
-and provided 8-bit mono audio output. Around 60 games supported it,
-including several Sierra titles and <a href="https://www.mobygames.com/game/413/leisure-suit-larry-1-in-the-land-of-the-lounge-lizards/">Leisure Suit Larry 1
-VGA</a>.</p>
+<p>Released in 1986, the <strong>Covox Speech Thing</strong> (or just <strong>Covox</strong>) was a simple,
+cheap DAC that plugged into the parallel port — popular enough that it was
+often built as a DIY project. It provided 8-bit mono audio output and was
+supported by around 60 games, including several Sierra titles.</p>
 <h2 id="disney-sound-source">Disney Sound Source<a class="headerlink" href="#disney-sound-source" title="Permanent link">¶</a></h2>
-<p>The Disney Sound Source (1990) was a parallel port audio device
-backwards-compatible with the Covox Speech Thing, but it added a small FIFO
-buffer and control logic to reduce CPU overhead during playback. Around 150
-games supported it, making it the most popular parallel port audio device. DOSBox
-Staging emulates the Disney Sound Source, which is also compatible with Covox
-Speech Thing titles and Intersound MDO software.</p>
+<p>Introduced in 1990, the <strong>Disney Sound Source</strong> was a parallel port audio
+device backwards-compatible with the <a href="#covox-speech-thing">Covox Speech Thing</a>,
+but with lower CPU overhead during playback. It was supported by around 150
+games, making it the most popular parallel port audio device. DOSBox Staging
+emulates the Disney Sound Source, which is also compatible with Covox Speech
+Thing titles and Intersound MDO software.</p>
 <h2 id="stereo-on-1-dac">Stereo-on-1 DAC<a class="headerlink" href="#stereo-on-1-dac" title="Permanent link">¶</a></h2>
-<p>The Stereo-on-1 was a stereo variant of the parallel port DAC concept. It
-split the parallel port’s 8 data lines into two 4-bit channels (one for left,
-one for right), giving you stereo output at the cost of halving the bit depth.
-Less common than the mono Covox, but supported by some tracker players and a
-handful of games.</p>
+<p>The <strong>Stereo-on-1</strong> was a stereo variant of the parallel port DAC concept,
+splitting the signal into left and right channels at the cost of halving the
+bit depth. Less common than the mono <a href="#covox-speech-thing">Covox</a>, but
+supported by some tracker music players and a handful of games.</p>
 <h2 id="mixer-channels">Mixer channels<a class="headerlink" href="#mixer-channels" title="Permanent link">¶</a></h2>
-<p>The Covox Speech Thing outputs to the <strong>COVOX</strong> <a href="../../mixer/">mixer</a> channel,
-the Disney Sound Source to the <strong>DISNEY</strong> channel, and the Stereo-on-1 to the
-<strong>STON1</strong> channel.</p>
+<p>The Covox Speech Thing outputs to the <strong>COVOX</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
+channel</a>, the Disney Sound Source to the
+<strong>DISNEY</strong> channel, and the Stereo-on-1 to the <strong>STON1</strong> channel.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Parallel port DAC settings are to be configured in the <code>[speaker]</code> section.</p>
 <h5 id="lpt_dac">lpt_dac<a class="headerlink" href="#lpt_dac" title="Permanent link">¶</a></h5>
@@ -4261,7 +4261,7 @@ the Disney Sound Source to the <strong>DISNEY</strong> channel, and the Stereo-o
 <p><code>off</code> – Don’t filter the output.</p>
 </li>
 <li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
   for details.</li>
 </ul>
 </dd>

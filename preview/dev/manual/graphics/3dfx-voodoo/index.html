@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2295,6 +2265,8 @@
       
         
       
+        
+      
     
     
     
@@ -2409,6 +2381,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2544,19 +2544,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#voodoo_bilinear_filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        voodoo_bilinear_filtering
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#voodoo_memsize" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2574,6 +2561,19 @@
     <span class="md-ellipsis">
       
         voodoo_threads
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#voodoo_bilinear_filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        voodoo_bilinear_filtering
       
     </span>
   </a>
@@ -2817,14 +2817,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4061,19 +4061,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#voodoo_bilinear_filtering" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        voodoo_bilinear_filtering
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#voodoo_memsize" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4091,6 +4078,19 @@
     <span class="md-ellipsis">
       
         voodoo_threads
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#voodoo_bilinear_filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        voodoo_bilinear_filtering
       
     </span>
   </a>
@@ -4122,24 +4122,66 @@
 
 
 <h1 id="3dfx-voodoo">3dfx Voodoo<a class="headerlink" href="#3dfx-voodoo" title="Permanent link">¶</a></h1>
-<p>The <strong>3dfx Voodoo</strong> released in 1996 was a dedicated 3D-only accelerator card;
-it couldn’t even output 2D graphics on its own. You’d install it alongside
-your regular video card and connect them with a pass-through cable. A
-gloriously awkward setup, but the results were stunning for the era. When a
-Glide game launched, the Voodoo took over the display output; when you quit,
-the signal switched back to your 2D card.</p>
-<p>Games accessed the Voodoo through 3dfx’s proprietary Glide API. Titles like
-<a href="https://www.mobygames.com/game/348/tomb-raider/">Tomb Raider</a>,
-<a href="https://www.mobygames.com/game/374/quake/">Quake</a>, and <a href="https://www.mobygames.com/game/2113/need-for-speed-ii-se/">Need for Speed II
-SE</a> looked
-dramatically better with Voodoo hardware.</p>
-<p>Most Glide games need a DOS driver file called <code>GLIDE2X.OVL</code> placed in the
-game’s directory. Many games shipped with their own version of this driver;
-for those that didn’t, you’ll need to provide a suitable one.</p>
-<p>DOSBox Staging emulates the Voodoo at the hardware level – no shortcuts or
-OpenGL passthrough — which makes it CPU-intensive but very accurate. Voodoo
+<p>Released in 1996, the <strong>3dfx Voodoo</strong> was a dedicated 3D-only accelerator —
+it handled nothing but 3D rendering. You’d install it alongside your regular
+video card and connect the two with a pass-through cable — a gloriously
+awkward arrangement that made your PC look like it was held together with good
+intentions. But the results were something else. Smoother geometry, bilinear
+filtering, atmospheric fog effects: things that simply weren’t possible on a
+CPU alone.</p>
+<p>Games accessed the Voodoo through 3dfx’s proprietary <strong>Glide API</strong>, which
+talked to the hardware directly and unlocked effects that software rendering
+couldn’t touch. When a Glide game launched, the Voodoo took over the display
+entirely; quit to DOS, and the signal fell back to your 2D card. Titles like
+<a href="https://www.mobygames.com/game/348/tomb-raider/">Tomb Raider</a> and <a href="https://www.mobygames.com/game/375/screamer-2/">Screamer
+2</a> were transformed by it. Even
+the fastest Pentium MMX machines could barely manage software-rendered 3D at
+640×480 — we’re talking single-digit framerates. The Voodoo was a luxury, but
+what a luxury it was!</p>
+<p>Most Glide games need a DOS driver file called <strong><code>GLIDE2X.OVL</code></strong> in the
+game’s directory. Many shipped with their own version of this driver;
+for those that didn’t, you’ll need to supply a suitable one (not all drivers
+work with every game).</p>
+<p>DOSBox Staging emulates the Voodoo at the hardware level (no shortcuts or
+OpenGL passthrough), which makes it CPU-intensive but highly accurate. Voodoo
 emulation is enabled by default, so most DOS Glide games should work out of
-the box.</p>
+the box. If a game doesn’t use Voodoo graphics, there is not performance
+penalty whatsoever.</p>
+<details class="note">
+<summary>Complete list of DOS games with 3dfx Voodoo graphics support</summary>
+<div class="compact" markdown="">
+<ul>
+<li><a href="https://www.mobygames.com/game/5573/action-soccer/">Actua Soccer (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/2881/archimedean-dynasty/">Archimedean Dynasty (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/6238/battle-arena-toshinden/">Battle Arena Toshinden (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/42358/battlecruiser-3000ad/">Battlecruiser 3000AD (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/980/blood/">Blood (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/4544/burnout-championship-drag-racing/">Burnout: Championship Drag Racing (1998)</a></li>
+<li><a href="https://www.mobygames.com/game/367/carmageddon/">Carmageddon (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/694/descent-ii/">Descent II (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/6882/dreams-to-reality/">Dreams to Reality (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/4478/ef-2000/">EuroFighter 2000 (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/1396/extreme-assault/">Extreme Assault (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/417/grand-theft-auto/">Grand Theft Auto (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/5219/jetfighter-iii/">Jet Fighter III (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/491/lands-of-lore-guardians-of-destiny/">Lands Of Lore 2: Guardians of Destiny (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/3223/nascar-racing-1999-edition/">NASCAR Racing 1999 Edition (1999)</a></li>
+<li><a href="https://www.mobygames.com/game/1607/nascar-racing-2/">NASCAR Racing 2 (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/20599/prost-grand-prix-1998/">Prost Grand Prix 1998 (1998)</a></li>
+<li><a href="https://www.mobygames.com/game/59965/py%C5%82/">Pył (1999)</a></li>
+<li><a href="https://www.mobygames.com/game/972/the-elder-scrolls-adventures-redguard/">Redguard: The Elder Scroll Adventures (1998)</a></li>
+<li><a href="https://www.mobygames.com/game/375/screamer-2/">Screamer 2 (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/387/shadow-warrior/">Shadow Warrior (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/26049/star-fighter/">Starfighter 3000 (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/34251/extreme-tennis/">Tie Break Tennis 98 (1998)</a></li>
+<li><a href="https://www.mobygames.com/game/348/tomb-raider/">Tomb Raider (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/41198/uefa-champions-league-199697/">UEFA Champions League 1996/97 (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/1190/vr-soccer-96/">VR Soccer ‘96 (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/685/whiplash/">Whiplash (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/6481/xcar-experimental-racing/">XCar: Experimental Racing (1997)</a></li>
+</ul>
+</div>
+</details>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>You can set the 3dfx Voodoo parameters in the <code>[voodoo]</code> configuration
 section.</p>
@@ -4153,15 +4195,6 @@ the path for 3dfx mode to work. Many games include their own Glide driver
 variants, but for some you need to provide a suitable <code>GLIDE2X.OVL</code>
 version. A small number of games integrate the Glide driver into their
 code, so they don’t need <code>GLIDE2X.OVL</code>.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
-</dd>
-</dl>
-<h5 id="voodoo_bilinear_filtering">voodoo_bilinear_filtering<a class="headerlink" href="#voodoo_bilinear_filtering" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Use bilinear filtering to emulate the 3dfx Voodoo’s texture smoothing
-effect. Bilinear filtering can impact frame rates on slower systems; try
-turning it off if you’re not getting adequate performance.</p>
 <p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
 </dd>
 </dl>
@@ -4197,6 +4230,17 @@ measured to scale well up to 8–16 threads, but it has not been tested
 on a many-core CPU. If you have a Threadripper or similar CPU, please
 let us know how it goes.</p>
 </div>
+</dd>
+</dl>
+<h5 id="voodoo_bilinear_filtering">voodoo_bilinear_filtering<a class="headerlink" href="#voodoo_bilinear_filtering" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Use bilinear filtering to emulate the 3dfx Voodoo’s texture smoothing
+effect. This is enabled by default to match the look of real Voodoo
+hardware, which always applied bilinear texture filtering. Disabling it
+gives a sharper but less authentic look, and may help performance on
+slower systems.</p>
+<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
 </dd>
 </dl>
 

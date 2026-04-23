@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2699,14 +2699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog-output-filters/" class="md-nav__link">
+      <a href="../../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -3157,10 +3157,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#ps1audio_dac_filter" class="md-nav__link">
+  <a href="#ps1audio_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ps1audio_dac_filter
+        ps1audio_filter
       
     </span>
   </a>
@@ -3170,10 +3170,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#ps1audio_filter" class="md-nav__link">
+  <a href="#ps1audio_dac_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ps1audio_filter
+        ps1audio_dac_filter
       
     </span>
   </a>
@@ -4076,10 +4076,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#ps1audio_dac_filter" class="md-nav__link">
+  <a href="#ps1audio_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ps1audio_dac_filter
+        ps1audio_filter
       
     </span>
   </a>
@@ -4089,10 +4089,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#ps1audio_filter" class="md-nav__link">
+  <a href="#ps1audio_dac_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ps1audio_filter
+        ps1audio_dac_filter
       
     </span>
   </a>
@@ -4124,12 +4124,12 @@
 
 
 <h1 id="ibm-ps1-audio-card">IBM PS/1 Audio Card<a class="headerlink" href="#ibm-ps1-audio-card" title="Permanent link">¶</a></h1>
-<p>DOSBox Staging can emulate the rare <strong>PS/1 Audio Card</strong> released in 1990 for
-IBM PS/1 computers (models 2011 and 2121). Relatively few games support this
-option, and the FM sounds very much like the PCjr or <a href="../tandy/">Tandy 1000</a>,
-as they all use the same or similar TI sound chips. By the time the PS/1 Audio
-Card was released, the Sound Blaster was already available, making it largely
-obsolete.</p>
+<p>DOSBox Staging can emulate the rare <strong>IBM PS/1 Audio Card</strong> released in 1990
+for IBM PS/1 computers (models 2011 and 2121). Relatively few games support
+this option, and the FM sounds very much like the PCjr or <a href="../tandy/">Tandy
+1000</a>, as they all use the same or similar TI sound chips. By the
+time the PS/1 Audio Card was released, the Sound Blaster was already
+available, making it largely obsolete.</p>
 <p>PS/1 Audio support appears primarily in Sierra SCI1-era titles. Many of these
 games detect the card automatically.</p>
 <details class="note">
@@ -4166,8 +4166,9 @@ games detect the card automatically.</p>
 </div>
 </details>
 <h2 id="mixer-channels">Mixer channels<a class="headerlink" href="#mixer-channels" title="Permanent link">¶</a></h2>
-<p>The PS/1 Audio synthesiser outputs to the <strong>PS1</strong> <a href="../../mixer/">mixer</a>
-channel, and the DAC to the <strong>PS1DAC</strong> channel.</p>
+<p>The PS/1 Audio synthesiser outputs to the <strong>PS1</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
+channel</a>, and the DAC to the <strong>PS1DAC</strong>
+channel.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>IBM PS/1 Audio settings are to be configured in the <code>[speaker]</code> section.</p>
 <h5 id="ps1audio">ps1audio<a class="headerlink" href="#ps1audio" title="Permanent link">¶</a></h5>
@@ -4175,20 +4176,6 @@ channel, and the DAC to the <strong>PS1DAC</strong> channel.</p>
 <dd>
 <p>Enable IBM PS/1 Audio emulation.</p>
 <p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
-</dd>
-</dl>
-<h5 id="ps1audio_dac_filter">ps1audio_dac_filter<a class="headerlink" href="#ps1audio_dac_filter" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Filter for the PS/1 Audio DAC output.</p>
-<p>Possible values:</p>
-<ul>
-<li><code>on</code> <em class="default">default</em> – Filter the output. This applies a 3<sup>rd</sup> order high-pass filter at 160 Hz, and a 1<sup>st</sup> order low-pass filter at 2.1 kHz (<code>hpf 3 160 lpf 1 2100</code>).</li>
-<li><code>off</code> – Don’t filter the output.</li>
-<li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
-  for details.</li>
-</ul>
 </dd>
 </dl>
 <h5 id="ps1audio_filter">ps1audio_filter<a class="headerlink" href="#ps1audio_filter" title="Permanent link">¶</a></h5>
@@ -4200,7 +4187,21 @@ channel, and the DAC to the <strong>PS1DAC</strong> channel.</p>
 <li><code>on</code> <em class="default">default</em> – Filter the output. This applies a 3<sup>rd</sup> order high-pass filter at 160 Hz, and a 1<sup>st</sup> order low-pass filter at 2.1 kHz (<code>hpf 3 160 lpf 1 2100</code>).</li>
 <li><code>off</code> – Don’t filter the output.</li>
 <li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
+  for details.</li>
+</ul>
+</dd>
+</dl>
+<h5 id="ps1audio_dac_filter">ps1audio_dac_filter<a class="headerlink" href="#ps1audio_dac_filter" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Filter for the PS/1 Audio DAC output.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>on</code> <em class="default">default</em> – Filter the output. This applies a 3<sup>rd</sup> order high-pass filter at 160 Hz, and a 1<sup>st</sup> order low-pass filter at 2.1 kHz (<code>hpf 3 160 lpf 1 2100</code>).</li>
+<li><code>off</code> – Don’t filter the output.</li>
+<li><code>&lt;custom&gt;</code> – Custom filter definition; see
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
   for details.</li>
 </ul>
 </dd>

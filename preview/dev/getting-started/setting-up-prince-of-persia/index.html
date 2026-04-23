@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1621,34 +1619,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2429,6 +2399,8 @@
       
         
       
+        
+      
     
     
     
@@ -2543,6 +2515,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2833,14 +2833,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../manual/sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../manual/sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4286,9 +4286,9 @@ then run the <code>dosbox</code> command from there.</p>
 <p>Make sure to check with the <code>--version</code> argument that you’re running DOSBox
 Staging and not some other DOSBox variant:</p>
 <div class="highlight"><pre><span></span><code>% dosbox --version
-dosbox-staging, version 0.81.0
+dosbox-staging, version 0.83.0
 
-Copyright (C) 2020-2022  The DOSBox Staging Team
+Copyright (C) 2020-2026  The DOSBox Staging Team
 License: GNU GPL-2.0-or-later &lt;https://www.gnu.org/licenses/gpl-2.0.html&gt;
 </code></pre></div>
 <p>Alternatively, create a shell script or a shortcut on your desktop that
@@ -4314,10 +4314,10 @@ this correctly, DOS will follow our instructions to the letter (pun intended).
 DOS is <em>not</em> a multitasking operating system; you can only do a single thing
 in it at any given point in time.</p>
 <p>Let’s analyse the prompt a little bit. It always starts with a letter followed
-by a semicolon, which denotes the current drive. Right after startup, this is
+by a colon, which denotes the current drive. Right after startup, this is
 always the <code>Z</code> drive. This is a special drive that’s always available; DOSBox
 stores some of its commands on it — you don’t need to worry about it now.</p>
-<p>After the semicolon is the path of the current folder or current <em>directory</em>
+<p>After the colon is the path of the current folder or current <em>directory</em>
 in DOS terminology; this is currently the <em>root directory</em> of the <code>Z</code> drive as
 indicated by the <code>\</code> (backslash) character. The <code>&gt;</code> character just signifies
 the end of the prompt, and the blinking underscore (<code>_</code>) character after it
@@ -4416,6 +4416,12 @@ mark (<code>!</code>).</p>
 lowercase filenames (<code>pop1.txt</code> and <code>pop1demo.exe</code>). This does not matter
 as DOSBox automatically converts all filenames in our <code>drives/c</code> folder to
 uppercase behind the scenes.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Want to learn more about DOS?</p>
+<p>The <a href="../../manual/dos-primer/">DOS primer</a> in the manual covers the basics
+of the DOS environment, and the <a href="../../manual/commands/">Commands</a> page
+documents all available built-in commands.</p>
 </div>
 <h2 id="starting-the-game">Starting the game<a class="headerlink" href="#starting-the-game" title="Permanent link">¶</a></h2>
 <p>There’s nothing else left to do than to start <code>PRINCE.EXE</code> (type in the letter

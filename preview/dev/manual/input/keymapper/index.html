@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2697,14 +2697,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4272,9 +4272,7 @@ reports to the running DOS program. Clicking an event shows its current
 <li><strong>Del</strong> — Remove the currently displayed binding from the selected event.</li>
 <li><strong>Next</strong> — Cycle through multiple bindings for the same event (an event
   can have more than one binding).</li>
-<li><strong>Save</strong> — Save the current mappings to a mapper file and return to the
-  game.</li>
-<li><strong>Exit</strong> — Return to the game without saving.</li>
+<li><strong>Exit</strong> — Return to the game. All changes are saved automatically.</li>
 </ul>
 </div>
 <p>The modifier checkboxes (<strong>mod1</strong>, <strong>mod2</strong>, <strong>mod3</strong>) let you create
@@ -4290,10 +4288,12 @@ key. This is how DOSBox’s own shortcuts work (e.g., <span class="keys"><kbd cl
 <li>Now click the <strong>Z</strong> key on the virtual keyboard.</li>
 <li>Click <strong>Del</strong> to remove its default binding.</li>
 <li>Click <strong>Add</strong>, then press the physical <strong>Y</strong> key.</li>
-<li>Click <strong>Save</strong> to store the mappings.</li>
+<li>Click <strong>Exit</strong> to return to the game.</li>
 </ol>
 <p>The same process works for any key — click the event on the virtual layout,
-remove the old binding, add a new one.</p>
+remove the old binding, add a new one. All changes are saved automatically
+to the <a href="#mapper-files">mapper file</a>. To discard all customisations and start
+fresh, see <a href="#resetting-the-mapper">Resetting the mapper</a>.</p>
 <h2 id="remapping-joystick-axes">Remapping joystick axes<a class="headerlink" href="#remapping-joystick-axes" title="Permanent link">¶</a></h2>
 <p>To invert a joystick axis (e.g., reverse the Y-axis):</p>
 <ol>
@@ -4301,7 +4301,7 @@ remove the old binding, add a new one.</p>
 <li>Click <strong>Del</strong> to remove the default binding.</li>
 <li>Click <strong>Add</strong>, then push your physical joystick in the <em>opposite</em> direction.</li>
 <li>Repeat for the other direction of the same axis.</li>
-<li>Click <strong>Save</strong>.</li>
+<li>Click <strong>Exit</strong> to return to the game.</li>
 </ol>
 <h2 id="mapping-controller-buttons-to-keys">Mapping controller buttons to keys<a class="headerlink" href="#mapping-controller-buttons-to-keys" title="Permanent link">¶</a></h2>
 <p>The key mapper can bind gamepad buttons to keyboard keys, which is how you
@@ -4314,7 +4314,7 @@ play keyboard-only DOS games with a controller. The basic approach:</p>
 <li>Click <strong>Add</strong>, then press the corresponding button or direction on your
    controller.</li>
 <li>Repeat for all keys the game uses.</li>
-<li>Click <strong>Save</strong>.</li>
+<li>Click <strong>Exit</strong> to return to the game.</li>
 </ol>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

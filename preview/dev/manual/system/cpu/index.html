@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2343,6 +2313,19 @@
         
           
 <li class="md-nav__item">
+  <a href="#cputype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cputype
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#cpu_cycles" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2369,36 +2352,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#cpu_idle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cpu_idle
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#cpu_throttle" class="md-nav__link">
     <span class="md-ellipsis">
       
         cpu_throttle
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#cputype" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cputype
       
     </span>
   </a>
@@ -2425,6 +2382,19 @@
     <span class="md-ellipsis">
       
         cycleup
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#cpu_idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cpu_idle
       
     </span>
   </a>
@@ -2491,6 +2461,8 @@
   
     
     
+      
+        
       
         
       
@@ -2618,6 +2590,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2908,14 +2908,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4191,6 +4191,19 @@
         
           
 <li class="md-nav__item">
+  <a href="#cputype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cputype
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#cpu_cycles" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4217,36 +4230,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#cpu_idle" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cpu_idle
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#cpu_throttle" class="md-nav__link">
     <span class="md-ellipsis">
       
         cpu_throttle
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#cputype" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        cputype
       
     </span>
   </a>
@@ -4273,6 +4260,19 @@
     <span class="md-ellipsis">
       
         cycleup
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#cpu_idle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cpu_idle
       
     </span>
   </a>
@@ -4456,6 +4456,37 @@ section.</p>
 </ul>
 </dd>
 </dl>
+<h5 id="cputype">cputype<a class="headerlink" href="#cputype" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>CPU type to emulate. You should only change this if the program doesn’t
+run correctly on <code>auto</code>.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>auto</code> <em class="default">default</em> – The fastest and most compatible
+  setting. Technically, this is <code>386_fast</code> plus 486 CPUID, 486 CR
+  register behaviour, and extra 486 instructions.</li>
+<li><code>386</code> – 386 CPUID and 386-specific page access level calculation.</li>
+<li><code>386_fast</code> – Same as <code>386</code> but with loose page privilege checks which
+  is much faster.</li>
+<li><code>386_prefetch</code> – Same as <code>386_fast</code> plus accurate CPU prefetch queue
+  emulation. Requires <code>core = normal</code>. This setting is necessary for
+  programs that self-modify their code or employ anti-debugging tricks.
+  Games that require <code>386_prefetch</code> include Contra, FIFA International
+  Soccer (1994), Terminator 1, and X-Men: Madness in The Murderworld.</li>
+<li><code>486</code> – 486 CPUID, 486+ specific page access level calculation, 486 CR
+  register behaviour, and extra 486 instructions.</li>
+<li><code>pentium</code> – Same as <code>486</code> but with Pentium CPUID, Pentium CR register
+  behaviour, and RDTSC instruction support. Recommended for Windows 3.1
+  games (e.g., Betrayal in Antara).</li>
+<li><code>pentium_mmx</code> – Same as <code>pentium</code> plus MMX instruction set support.
+  Very few games use MMX instructions; it’s mostly only useful for
+  demoscene productions.</li>
+</ul>
+</div>
+</dd>
+</dl>
 <h5 id="cpu_cycles">cpu_cycles<a class="headerlink" href="#cpu_cycles" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
@@ -4622,16 +4653,6 @@ fine-tune per game):</p>
 </div>
 </dd>
 </dl>
-<h5 id="cpu_idle">cpu_idle<a class="headerlink" href="#cpu_idle" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Reduce the CPU usage in the DOS shell and in some applications when
-DOSBox is idle. This is done by emulating the HLT CPU instruction, so it
-might interfere with other power management tools such as DOSidle and
-FDAPM when enabled.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
-</dd>
-</dl>
 <h5 id="cpu_throttle">cpu_throttle<a class="headerlink" href="#cpu_throttle" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
@@ -4640,37 +4661,6 @@ CPU cannot keep up. Only affects fixed cycles settings. When enabled, the
 number of cycles per millisecond can vary; this might cause issues in
 some DOS programs.</p>
 <p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
-</dd>
-</dl>
-<h5 id="cputype">cputype<a class="headerlink" href="#cputype" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>CPU type to emulate. You should only change this if the program doesn’t
-run correctly on <code>auto</code>.</p>
-<p>Possible values:</p>
-<div class="compact" markdown="">
-<ul>
-<li><code>auto</code> <em class="default">default</em> – The fastest and most compatible
-  setting. Technically, this is <code>386_fast</code> plus 486 CPUID, 486 CR
-  register behaviour, and extra 486 instructions.</li>
-<li><code>386</code> – 386 CPUID and 386-specific page access level calculation.</li>
-<li><code>386_fast</code> – Same as <code>386</code> but with loose page privilege checks which
-  is much faster.</li>
-<li><code>386_prefetch</code> – Same as <code>386_fast</code> plus accurate CPU prefetch queue
-  emulation. Requires <code>core = normal</code>. This setting is necessary for
-  programs that self-modify their code or employ anti-debugging tricks.
-  Games that require <code>386_prefetch</code> include Contra, FIFA International
-  Soccer (1994), Terminator 1, and X-Men: Madness in The Murderworld.</li>
-<li><code>486</code> – 486 CPUID, 486+ specific page access level calculation, 486 CR
-  register behaviour, and extra 486 instructions.</li>
-<li><code>pentium</code> – Same as <code>486</code> but with Pentium CPUID, Pentium CR register
-  behaviour, and RDTSC instruction support. Recommended for Windows 3.1
-  games (e.g., Betrayal in Antara).</li>
-<li><code>pentium_mmx</code> – Same as <code>pentium</code> plus MMX instruction set support.
-  Very few games use MMX instructions; it’s mostly only useful for
-  demoscene productions.</li>
-</ul>
-</div>
 </dd>
 </dl>
 <h5 id="cycledown">cycledown<a class="headerlink" href="#cycledown" title="Permanent link">¶</a></h5>
@@ -4684,6 +4674,20 @@ run correctly on <code>auto</code>.</p>
 <dd>Number of cycles to add with the <code>Inc Cycles</code>
 <a href="../../appendices/shortcuts/">hotkey</a> (<code>10</code> by default). Values lower than
 100 are treated as a percentage increase.</dd>
+</dl>
+<h5 id="cpu_idle">cpu_idle<a class="headerlink" href="#cpu_idle" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Reduce host CPU usage when the DOS shell or an application is idle. With
+<a href="#cpu_cycles"><code>cpu_cycles</code></a> set to <code>max</code>, this can reduce host CPU core
+usage from ~100% to around 25% when the shell is idle.</p>
+<p>This also makes the shell more multitasking-friendly, which benefits
+<a href="../../windows-31/">Windows 3.1</a> DOS prompts.</p>
+<p>The feature works by emulating the HLT CPU instruction, so it might
+interfere with third-party DOS power management tools such as DOSidle and
+FDAPM — disable it if you use those.</p>
+<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
+</dd>
 </dl>
 
 

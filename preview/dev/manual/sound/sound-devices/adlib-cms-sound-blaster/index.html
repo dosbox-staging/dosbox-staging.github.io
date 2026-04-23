@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2699,14 +2699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog-output-filters/" class="md-nav__link">
+      <a href="../../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -5089,11 +5089,11 @@ their main capabilities:</p>
 </tbody>
 </table>
 <h3 id="mixer-channels">Mixer channels<a class="headerlink" href="#mixer-channels" title="Permanent link">¶</a></h3>
-<p>The digital audio of the Sound Blaster is output to the <strong>SB</strong>
-<a href="../../mixer/">mixer</a> channel, while the AdLib (OPL) synthesiser has its own
-dedicated <strong>OPL</strong> channel. Both
-channels can be either mono or stereo, depending on the particular Sound
-Blaster model being emulated.</p>
+<p>The digital audio of the Sound Blaster is output to the <strong>SB</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
+channel</a>, while the AdLib (OPL)
+synthesiser has its own dedicated <strong>OPL</strong> channel. Both channels can be either
+mono or stereo, depending on the particular Sound Blaster model being
+emulated.</p>
 <p>The Creative Music System synthesiser has its own dedicated <strong>CMS</strong> channel,
 which is always stereo.</p>
 <p>The upshot of this is that the digital audio and synthesiser volumes can be
@@ -5706,7 +5706,7 @@ most compatible setting.</p>
   to enable model-authentic filter emulation.</li>
 <li><code>off</code> – Don’t filter the digital audio output.</li>
 <li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
   for details.</li>
 </ul>
 <p>These are the model specific low-pass filter settings for the digital
@@ -5828,6 +5828,12 @@ Reduce this if you notice intial playback is missing digital audio.</p>
 </dd>
 </dl>
 <h3 id="opl">OPL<a class="headerlink" href="#opl" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some games trigger low-level residual noise from the OPL synth in quiet
+passages. The <a href="../../mixer/#denoiser">Denoiser</a> removes this without
+degrading sound quality.</p>
+</div>
 <h5 id="opl_fadeout">opl_fadeout<a class="headerlink" href="#opl_fadeout" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
@@ -5857,7 +5863,7 @@ Reduce this if you notice intial playback is missing digital audio.</p>
 <li><code>sb1</code>, <code>sb2</code>, <code>sbpro1</code>, <code>sbpro2</code>, <code>sb16</code> – Use the OPL filter of this Sound Blaster model.</li>
 <li><code>off</code> – Don’t filter the OPL output.</li>
 <li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
   for details.</li>
 </ul>
 <p>These are the model specific low-pass filter settings for OPL output: </p>
@@ -5990,7 +5996,7 @@ bit-perfect emulation of the Yamaha OPL chips.</p>
 <li><code>on</code> <em class="default">default</em> – Filter the CMS output. This applies a 1<sup>st</sup> order low-pass filter at 6 kHz (<code>lpf 1 6000</code>).</li>
 <li><code>off</code> – Don’t filter the CMS output.</li>
 <li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
   for details.</li>
 </ul>
 </dd>

@@ -13,7 +13,7 @@
         <link rel="prev" href="../mixer/">
       
       
-        <link rel="next" href="../analog-output-filters/">
+        <link rel="next" href="../output-filters/">
       
       
         
@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2797,19 +2797,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#chorus_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        chorus
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#crossfeed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2827,6 +2814,19 @@
     <span class="md-ellipsis">
       
         reverb
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#chorus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chorus
       
     </span>
   </a>
@@ -2856,14 +2856,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../analog-output-filters/" class="md-nav__link">
+      <a href="../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4139,19 +4139,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#chorus_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        chorus
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#crossfeed_1" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4169,6 +4156,19 @@
     <span class="md-ellipsis">
       
         reverb
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#chorus_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        chorus
       
     </span>
   </a>
@@ -4270,35 +4270,12 @@ sounds. You can apply crossfeed to other channels as well with the
 <h2 id="combining-effects">Combining effects<a class="headerlink" href="#combining-effects" title="Permanent link">¶</a></h2>
 <p>Crossfeed, reverb, and chorus can be combined, and doing so is highly
 recommended for achieving the best results. Together with the
-<a href="../analog-output-filters/">analog output filters</a>, these effects can
+<a href="../output-filters/">analog output filters</a>, these effects can
 give old DOS game soundtracks a new life.</p>
 <p>Suggested audio configurations for many games are available
 <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Audio-configuration-recommendations">on the wiki</a>.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Mixer effects settings are to be configured in the <code>[mixer]</code> section.</p>
-<h5 id="chorus_1">chorus<a class="headerlink" href="#chorus_1" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Chorus effect that adds a sense of stereo movement to the sound.</p>
-<p>Possible values:</p>
-<div class="compact" markdown="">
-<ul>
-<li><code>off</code> <em class="default">default</em> – No chorus.</li>
-<li><code>on</code> – Enable chorus (normal preset).</li>
-<li><code>light</code> – A light chorus effect (especially suited for synth music that
-  features lots of white noise).</li>
-<li><code>normal</code> – Normal chorus that works well with a wide variety of games.</li>
-<li><code>strong</code> – An obvious and upfront chorus effect.</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The presets apply the chorus effect to the synth channels only (except
-for synths with built-in chorus, e.g., the Roland MT-32). Use the
-<code>MIXER</code> command to fine-tune the chorus levels per channel.</p>
-</div>
-</dd>
-</dl>
 <h5 id="crossfeed_1">crossfeed<a class="headerlink" href="#crossfeed_1" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
@@ -4353,6 +4330,29 @@ as well and to fine-tune the crossfeed strength per channel.</p>
 channels (except for synths with built-in reverb, e.g., the Roland
 MT-32), and a subtle amount to the digital audio channels. Use the
 <code>MIXER</code> command to fine-tune the reverb levels per channel.</p>
+</div>
+</dd>
+</dl>
+<h5 id="chorus_1">chorus<a class="headerlink" href="#chorus_1" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Chorus effect that adds a sense of stereo movement to the sound.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>off</code> <em class="default">default</em> – No chorus.</li>
+<li><code>on</code> – Enable chorus (normal preset).</li>
+<li><code>light</code> – A light chorus effect (especially suited for synth music that
+  features lots of white noise).</li>
+<li><code>normal</code> – Normal chorus that works well with a wide variety of games.</li>
+<li><code>strong</code> – An obvious and upfront chorus effect.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The presets apply the chorus effect to the synth channels only (except
+for synths with built-in chorus, e.g., the Roland MT-32). Use the
+<code>MIXER</code> command to fine-tune the chorus levels per channel.</p>
 </div>
 </dd>
 </dl>
@@ -4413,13 +4413,13 @@ MT-32), and a subtle amount to the digital audio channels. Use the
       <!-- Link to next page -->
       
         
-        <a href="../analog-output-filters/" class="md-footer__link md-footer__link--next" aria-label="Next: Analog output filter emulation" rel="next">
+        <a href="../output-filters/" class="md-footer__link md-footer__link--next" aria-label="Next: Output filter emulation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Analog output filter emulation
+              Output filter emulation
             </div>
           </div>
           <div class="md-footer__button md-icon">

@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2699,14 +2699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog-output-filters/" class="md-nav__link">
+      <a href="../../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -3172,36 +3172,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#gus_filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gus_filter
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#gusbase" class="md-nav__link">
     <span class="md-ellipsis">
       
         gusbase
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#gusdma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gusdma
       
     </span>
   </a>
@@ -3224,10 +3198,36 @@
         
           
 <li class="md-nav__item">
+  <a href="#gusdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gusdma
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#ultradir" class="md-nav__link">
     <span class="md-ellipsis">
       
         ultradir
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#gus_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gus_filter
       
     </span>
   </a>
@@ -4257,36 +4257,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#gus_filter" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gus_filter
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#gusbase" class="md-nav__link">
     <span class="md-ellipsis">
       
         gusbase
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#gusdma" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        gusdma
       
     </span>
   </a>
@@ -4309,10 +4283,36 @@
         
           
 <li class="md-nav__item">
+  <a href="#gusdma" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gusdma
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#ultradir" class="md-nav__link">
     <span class="md-ellipsis">
       
         ultradir
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#gus_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        gus_filter
       
     </span>
   </a>
@@ -4475,7 +4475,7 @@ some purists had in the 1990s), disable the other sound devices:</p>
 each other, or when you want to ensure a game uses its GUS code path
 exclusively.</p>
 <h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
-<p>The Gravis UltraSound outputs to the <strong>GUS</strong> <a href="../../mixer/">mixer</a> channel.</p>
+<p>The Gravis UltraSound outputs to the <strong>GUS</strong> <a href="../../mixer/#list-of-mixer-channels">mixer channel</a>.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Gravis UltraSound settings are to be configured in the <code>[gus]</code> section.</p>
 <div class="admonition note">
@@ -4497,33 +4497,12 @@ also require <code>ULTRAMID.EXE</code> to be loaded prior to starting the game.<
 <p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
 </dd>
 </dl>
-<h5 id="gus_filter">gus_filter<a class="headerlink" href="#gus_filter" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Filter for the Gravis UltraSound audio output.</p>
-<p>Possible values:</p>
-<ul>
-<li><code>on</code> <em class="default">default</em> – Filter the output. This applies a 1<sup>st</sup> order low-pass filter at 8 kHz (<code>lpf 1 8000</code>).</li>
-<li><code>off</code> – Don’t filter the output.</li>
-<li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
-  for details.</li>
-</ul>
-</dd>
-</dl>
 <h5 id="gusbase">gusbase<a class="headerlink" href="#gusbase" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
 <p>The IO base address of the Gravis UltraSound.</p>
 <p>Possible values: <code>210</code>, <code>220</code>, <code>230</code>, <code>240</code> <em class="default">default</em>, <code>250</code>,
 <code>260</code>.</p>
-</dd>
-</dl>
-<h5 id="gusdma">gusdma<a class="headerlink" href="#gusdma" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>The DMA channel of the Gravis UltraSound.</p>
-<p>Possible values: <code>1</code>, <code>3</code> <em class="default">default</em>, <code>5</code>, <code>6</code>, <code>7</code>.</p>
 </dd>
 </dl>
 <h5 id="gusirq">gusirq<a class="headerlink" href="#gusirq" title="Permanent link">¶</a></h5>
@@ -4534,6 +4513,13 @@ also require <code>ULTRAMID.EXE</code> to be loaded prior to starting the game.<
 <code>15</code>.</p>
 </dd>
 </dl>
+<h5 id="gusdma">gusdma<a class="headerlink" href="#gusdma" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>The DMA channel of the Gravis UltraSound.</p>
+<p>Possible values: <code>1</code>, <code>3</code> <em class="default">default</em>, <code>5</code>, <code>6</code>, <code>7</code>.</p>
+</dd>
+</dl>
 <h5 id="ultradir">ultradir<a class="headerlink" href="#ultradir" title="Permanent link">¶</a></h5>
 <dl>
 <dd>Path to the UltraSound directory (<code>C:\ULTRASND</code> by default). This should
@@ -4541,6 +4527,20 @@ have a <code>MIDI</code> subdirectory containing the patches (instrument files)
 required by some games for MIDI music playback. Not all games need these
 patches; many GUS-native games and all demos upload their own custom sounds
 instead.</dd>
+</dl>
+<h5 id="gus_filter">gus_filter<a class="headerlink" href="#gus_filter" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Filter for the Gravis UltraSound audio output.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>on</code> <em class="default">default</em> – Filter the output. This applies a 1<sup>st</sup> order low-pass filter at 8 kHz (<code>lpf 1 8000</code>).</li>
+<li><code>off</code> – Don’t filter the output.</li>
+<li><code>&lt;custom&gt;</code> – Custom filter definition; see
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
+  for details.</li>
+</ul>
+</dd>
 </dl>
 
 

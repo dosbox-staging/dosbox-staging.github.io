@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2699,14 +2699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog-output-filters/" class="md-nav__link">
+      <a href="../../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -3028,10 +3028,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#midiconfig" class="md-nav__link">
+  <a href="#mididevice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        midiconfig
+        mididevice
       
     </span>
   </a>
@@ -3041,10 +3041,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#mididevice" class="md-nav__link">
+  <a href="#midiconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mididevice
+        midiconfig
       
     </span>
   </a>
@@ -4180,10 +4180,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#midiconfig" class="md-nav__link">
+  <a href="#mididevice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        midiconfig
+        mididevice
       
     </span>
   </a>
@@ -4193,10 +4193,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#mididevice" class="md-nav__link">
+  <a href="#midiconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mididevice
+        midiconfig
       
     </span>
   </a>
@@ -4382,6 +4382,44 @@ speakers or audio interface.</p>
 can change when you unplug and reattach USB devices.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>MIDI related settings are to be configured in the <code>[midi]</code> section.</p>
+<h5 id="mididevice">mididevice<a class="headerlink" href="#mididevice" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Selects the MIDI device where data from the emulated MPU-401 MIDI
+interface is sent.</p>
+<p>Possible values:</p>
+<ul>
+<li>
+<p><code>port</code> <em class="default">default</em> — A MIDI port of the host operating
+    system’s MIDI interface. You can configure the port to use with the
+    <a href="#midiconfig">midiconfig</a> setting.</p>
+</li>
+<li>
+<p><code>fluidsynth</code> — The built-in FluidSynth MIDI synthesiser (SoundFont
+    player). See the <a href="../general-midi/#fluidsynth">FluidSynth</a> configuration
+    settings for further details.</p>
+</li>
+<li>
+<p><code>mt32</code> — The built-in Roland MT-32 synthesiser. See the <a href="../roland-mt-32/#configuration-settings">Roland
+    MT-32</a>
+    configuration settings for further details.</p>
+</li>
+<li>
+<p><code>soundcanvas</code> — The internal Roland SC-55 synthesiser (requires a
+    CLAP audio plugin). See the <a href="../general-midi/#sound-canvas">Sound
+    Canvas</a> configuration settings for
+    further details.</p>
+</li>
+<li>
+<p><code>coreaudio</code> <em>(macOS only)</em> — Use the built-in macOS MIDI synthesiser.
+    The SoundFont to use can be specified with <a href="#midiconfig">midiconfig</a>.</p>
+</li>
+<li>
+<p><code>none</code> — Disable MIDI output.</p>
+</li>
+</ul>
+</dd>
+</dl>
 <h5 id="midiconfig">midiconfig<a class="headerlink" href="#midiconfig" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
@@ -4437,44 +4475,6 @@ hardware may require a delay in order to prevent its buffer from
 overflowing. In that case, add <code>delaysysex</code>, e.g., <code>midiconfig = 2
 delaysysex</code>.</p>
 </div>
-</dd>
-</dl>
-<h5 id="mididevice">mididevice<a class="headerlink" href="#mididevice" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Selects the MIDI device where data from the emulated MPU-401 MIDI
-interface is sent.</p>
-<p>Possible values:</p>
-<ul>
-<li>
-<p><code>port</code> <em class="default">default</em> — A MIDI port of the host operating
-    system’s MIDI interface. You can configure the port to use with the
-    <a href="#midiconfig">midiconfig</a> setting.</p>
-</li>
-<li>
-<p><code>fluidsynth</code> — The built-in FluidSynth MIDI synthesiser (SoundFont
-    player). See the <a href="../general-midi/#fluidsynth">FluidSynth</a> configuration
-    settings for further details.</p>
-</li>
-<li>
-<p><code>mt32</code> — The built-in Roland MT-32 synthesiser. See the <a href="../roland-mt-32/#configuration-settings">Roland
-    MT-32</a>
-    configuration settings for further details.</p>
-</li>
-<li>
-<p><code>soundcanvas</code> — The internal Roland SC-55 synthesiser (requires a
-    CLAP audio plugin). See the <a href="../general-midi/#sound-canvas">Sound
-    Canvas</a> configuration settings for
-    further details.</p>
-</li>
-<li>
-<p><code>coreaudio</code> <em>(macOS only)</em> — Use the built-in macOS MIDI synthesiser.
-    The SoundFont to use can be specified with <a href="#midiconfig">midiconfig</a>.</p>
-</li>
-<li>
-<p><code>none</code> — Disable MIDI output.</p>
-</li>
-</ul>
 </dd>
 </dl>
 <h5 id="mpu401">mpu401<a class="headerlink" href="#mpu401" title="Permanent link">¶</a></h5>

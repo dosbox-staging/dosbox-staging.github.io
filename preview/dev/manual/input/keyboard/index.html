@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2697,14 +2697,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -3347,10 +3347,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#keyboard_capture" class="md-nav__link">
+  <a href="#keyboard_layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        keyboard_capture
+        keyboard_layout
       
     </span>
   </a>
@@ -3360,10 +3360,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#keyboard_layout" class="md-nav__link">
+  <a href="#keyboard_capture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        keyboard_layout
+        keyboard_capture
       
     </span>
   </a>
@@ -4022,10 +4022,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#keyboard_capture" class="md-nav__link">
+  <a href="#keyboard_layout" class="md-nav__link">
     <span class="md-ellipsis">
       
-        keyboard_capture
+        keyboard_layout
       
     </span>
   </a>
@@ -4035,10 +4035,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#keyboard_layout" class="md-nav__link">
+  <a href="#keyboard_capture" class="md-nav__link">
     <span class="md-ellipsis">
       
-        keyboard_layout
+        keyboard_capture
       
     </span>
   </a>
@@ -4084,19 +4084,26 @@ default bindings.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>The keyboard capture setting is configured in the <code>[sdl]</code> configuration
 section.</p>
+<h5 id="keyboard_layout">keyboard_layout<a class="headerlink" href="#keyboard_layout" title="Permanent link">¶</a></h5>
+<dl>
+<dd>See <a href="../../system/dos/#keyboard_layout">keyboard_layout</a>.</dd>
+</dl>
 <h5 id="keyboard_capture">keyboard_capture<a class="headerlink" href="#keyboard_capture" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
 <p>Capture system keyboard shortcuts. When enabled, most system shortcuts
-such as Alt+Tab are captured and sent to DOSBox Staging. This is useful
-for Windows 3.1 and some DOS programs with unchangeable keyboard
-shortcuts that conflict with system shortcuts.</p>
+are captured and sent to DOSBox Staging instead of being intercepted by
+the host OS. Examples of captured shortcuts:</p>
+<ul>
+<li><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span> (task switching on all platforms)</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-escape">Esc</kbd></span> (Start menu on Windows)</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> (virtual desktop switching on KDE)</li>
+<li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> (show desktop on macOS)</li>
+</ul>
+<p>This is particularly useful for <a href="../../windows-31/">Windows 3.1</a> and DOS
+programs that use key combinations which conflict with your OS shortcuts.</p>
 <p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
 </dd>
-</dl>
-<h5 id="keyboard_layout">keyboard_layout<a class="headerlink" href="#keyboard_layout" title="Permanent link">¶</a></h5>
-<dl>
-<dd>See <a href="../../system/dos/#keyboard_layout">keyboard_layout</a>.</dd>
 </dl>
 
 

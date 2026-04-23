@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -1960,10 +1930,23 @@
       
         
 <li class="md-nav__item">
-  <a href="#config-file-locations" class="md-nav__link">
+  <a href="#primary-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Config file locations
+        Primary configuration
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#local-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local configuration
       
     </span>
   </a>
@@ -2029,6 +2012,32 @@
     <span class="md-ellipsis">
       
         Generating a default config
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#changing-settings-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing settings at runtime
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#configuration-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration best practices
       
     </span>
   </a>
@@ -2420,6 +2429,8 @@
       
         
       
+        
+      
     
     
     
@@ -2534,6 +2545,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2824,14 +2863,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound/analog-output-filters/" class="md-nav__link">
+      <a href="../sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4042,10 +4081,23 @@
       
         
 <li class="md-nav__item">
-  <a href="#config-file-locations" class="md-nav__link">
+  <a href="#primary-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Config file locations
+        Primary configuration
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#local-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local configuration
       
     </span>
   </a>
@@ -4118,6 +4170,32 @@
 </li>
 
       
+        
+<li class="md-nav__item">
+  <a href="#changing-settings-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing settings at runtime
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#configuration-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration best practices
+      
+    </span>
+  </a>
+  
+</li>
+
+      
     </ul>
   
 </nav>
@@ -4137,11 +4215,18 @@
 
 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">¶</a></h1>
 <p>DOSBox Staging uses plain-text configuration files to control every aspect of
-the emulation. If you’ve ever edited an <code>.ini</code> file, the format will feel
-familiar.</p>
-<h2 id="config-file-locations">Config file locations<a class="headerlink" href="#config-file-locations" title="Permanent link">¶</a></h2>
-<p>The <strong>primary configuration file</strong> is stored in a platform-specific
-location:</p>
+the emulation. If you’ve ever edited an <code>.ini</code> file, the <a href="#syntax">syntax</a>
+will feel familiar.</p>
+<p>The two main configuration types in DOSBox Staging are the <a href="#primary-configuration">primary
+configuration</a> and <a href="#local-configuration">local
+configuration</a>. They have the exact same format and you
+can configure the same things in both — they only different by their
+purpose and their location on the filesystem.</p>
+<h2 id="primary-configuration">Primary configuration<a class="headerlink" href="#primary-configuration" title="Permanent link">¶</a></h2>
+<p>The primary configuration holds <strong>global settings</strong> for DOSBox Staging. It is
+always loaded if it exists; if it doesn’t, it will be created when you start
+the emulator with the default settings.</p>
+<p>The primary config file is stored in a platform-specific location:</p>
 <div class="compact">
 <table>
 <thead>
@@ -4166,23 +4251,64 @@ location:</p>
 </tbody>
 </table>
 </div>
+<p>On Linux, the primary config is looked up in other common XDG path locations as
+well.</p>
 <p>Run DOSBox Staging with the <a href="../command-line/#-printconf"><code>--printconf</code></a>
-argument from the command line to see the exact path on your system. On macOS
-and Linux, you can use <a href="../command-line/#-editconf"><code>--editconf</code></a> to open the
-primary config in your default text editor.</p>
-<p>A <strong>local configuration file</strong> named <code>dosbox.conf</code> can be placed in a game’s
-directory. DOSBox Staging automatically loads it when started from that
-directory, making it easy to maintain per-game settings. The <a href="../../getting-started/passport-to-adventure/#layered-configurations">Getting Started
+argument from the command line to see the exact path on your system. You can
+use <a href="../command-line/#-editconf"><code>--editconf</code></a> to open the primary config in
+your default text editor.</p>
+<h2 id="local-configuration">Local configuration<a class="headerlink" href="#local-configuration" title="Permanent link">¶</a></h2>
+<p>DOSBox Staging also supports <strong>local configurations</strong>, which are also referred
+to as <strong>per-game configuration</strong>. If DOSBox finds a config named
+<code>dosbox.conf</code> in its startup folder (working directory), it will load it
+<em>after</em> the primary configuration, thus potentially overriding global
+settings.</p>
+<p>Local configs are typically used in setups where you create a subfolder for
+each game in your “DOS games” folder. Broad settings controlling general
+emulator behaviour and settings applicable for applicable for each game
+should live in your primary config, then per-game overrides in the local
+configs. </p>
+<p>This folder structure illustrates how a per-game setup would typically look
+like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>DOS Games
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── Azrael's Tear
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│&nbsp;&nbsp; └── dosbox.conf
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│&nbsp;&nbsp;     ...
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── Dungeon Master
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│&nbsp;&nbsp; └── dosbox.conf
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│&nbsp;&nbsp;     ...
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── Ultima Underworld
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│&nbsp;&nbsp; └── dosbox.conf
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│&nbsp;&nbsp;     ...
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>...
+</code></pre></div>
+<p>The <a href="../../getting-started/passport-to-adventure/#layered-configurations">Getting Started
 guide</a>
 walks through creating several per-game configs in detail.</p>
+<p>If you start DOSBox Staging from a different folder, you can still set the
+<a href="../command-line/#-working-dir-path">working directory</a> via command line
+arguments, then the local <code>dosbox.conf</code> will be loaded from that directory.</p>
 <h2 id="portable-setup">Portable setup<a class="headerlink" href="#portable-setup" title="Permanent link">¶</a></h2>
 <p>If a <code>dosbox-staging.conf</code> file is placed in the same directory as the DOSBox
 Staging executable, DOSBox will use that directory as its configuration
 directory instead of the platform-specific location. This is useful for
 running DOSBox from a USB drive or keeping everything self-contained in a
 single folder — a setup commonly preferred by Windows users.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can “convert” a non-portable installation intto a portable one by moving
+the primary config from its platform-specific location into the directory
+where the DOSBox Staging executable resides.</p>
+</div>
 <h2 id="config-layering">Config layering<a class="headerlink" href="#config-layering" title="Permanent link">¶</a></h2>
-<p>Multiple config files can be loaded, and later values override earlier ones:</p>
+<p>In addition to the <a href="#primary-configuration">primary</a> and <a href="#local-configuration">local
+configuration</a>, you can specify additional config files
+to be loaded with the <a href="../command-line/#-conf-config_file"><code>--conf</code></a> command
+line argument. The possibilities don’t end there; you can also set config
+values directly via <a href="../command-line/#-set-settingvalue"><code>--set
+&lt;setting&gt;=&lt;value&gt;</code></a> arguments.</p>
+<p>The various configuration mechanism are applied in this order (later values
+override earlier ones):</p>
 <ol>
 <li>The primary config file is loaded first (unless the
    <a href="../command-line/#-noprimaryconf"><code>--noprimaryconf</code></a> command line parameter
@@ -4204,26 +4330,26 @@ more detailed description.</p>
 <p>Config files are divided into sections, each starting with a <code>[section]</code>
 header. Settings use <code>key = value</code> syntax. Lines starting with <code>#</code> are
 comments and are ignored.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[render]</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1"># Use the 'sharp' shader instead of the default CRT emulation</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">shader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sharp</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">[cpu]</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Set 486DX2/66 speed</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25000</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="na">mixer opl 50</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="na">prince</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[render]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1"># Use the 'sharp' shader instead of the default CRT emulation</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">shader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sharp</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">[cpu]</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="c1"># Set 486DX2/66 speed</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25000</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="na">c</span><span class="o">:</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="na">mixer opl 50</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="na">prince</span>
 </code></pre></div>
 <p>The <code>[autoexec]</code> section is special; see <a href="#autoexec">Autoexec</a> for details.</p>
 <div class="admonition warning">
 <p class="admonition-title">End of line comments</p>
 <p>You cannot use <code>#</code> for end of line comments, e.g., this will result in an
 error:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[cpu]</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25000</span><span class="w">  </span><span class="c1"># Set 486DX2/66 speed</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[cpu]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25000</span><span class="w">  </span><span class="c1"># Set 486DX2/66 speed</span>
 </code></pre></div>
 </div>
 <h2 id="autoexec">Autoexec<a class="headerlink" href="#autoexec" title="Permanent link">¶</a></h2>
@@ -4238,19 +4364,19 @@ similar to how the <code>AUTOEXEC.BAT</code> file works on a real DOS PC.</p>
 from the C: drive, then exits DOSBox Staging after you quit the game (taken from the
 <a href="../../getting-started/enhancing-prince-of-persia/#final-configuration">Getting started
 guide</a>;
-you will find more such config examples there):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[sdl]</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">[mixer]</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="na">c</span><span class="o">:</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="na">prince</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="na">exit</span>
+you’ll find more such config examples there):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[sdl]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">pause_when_inactive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">yes</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">[mixer]</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">normal</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="na">c</span><span class="o">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="na">prince</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="na">exit</span>
 </code></pre></div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -4264,6 +4390,71 @@ how autoexec sections from multiple config files are handled.</p>
 <a href="../command-line/#-eraseconf"><code>--eraseconf</code></a>. DOSBox Staging will create a new
 primary config with default settings on next launch.</p>
 <p>See <a href="../command-line/">Command-line usage</a> for all available launch options.</p>
+<h2 id="changing-settings-at-runtime">Changing settings at runtime<a class="headerlink" href="#changing-settings-at-runtime" title="Permanent link">¶</a></h2>
+<p>Most configuration settings can be changed while DOSBox is running, directly
+from the DOS prompt. This is useful for experimenting with settings without
+restarting — you can try different shaders, adjust audio levels, or tweak
+CPU speed on the fly and hear or see the difference immediately.</p>
+<p>There are two ways to change a setting:</p>
+<ul>
+<li>
+<p><strong>Full form</strong>: <code>CONFIG -set section setting = value</code>(e.g.,
+  <code>CONFIG -set render shader = sharp</code>)</p>
+</li>
+<li>
+<p><strong>Shortcut form</strong>: <code>setting = value</code>, or simply <code>setting value</code> (e.g.,
+  <code>shader = sharp</code>, or just <code>shader sharp</code>)</p>
+</li>
+</ul>
+<p>The shortcut form works for most settings and is the quickest way to
+experiment. If a value is invalid, the error is displayed in the DOS console
+so you can see what went wrong.</p>
+<p>To get help for any setting, use the <code>/?</code> shortcut:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sbtype /?
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>shader /?
+</code></pre></div>
+<p>This is equivalent to <code>CONFIG -h setting</code> but much quicker to type.</p>
+<p>Some settings — such as <a href="../system/general/#machine"><code>machine</code></a> — require
+a reboot to take effect. After changing such a setting, use <code>CONFIG -r</code> to
+restart DOSBox. The setting’s help text will tell you if a restart is needed.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use <code>CONFIG -wc</code> to write the current settings to a new config
+file, which is handy after you’ve found the right values by experimenting
+at runtime.</p>
+</div>
+<h2 id="configuration-best-practices">Configuration best practices<a class="headerlink" href="#configuration-best-practices" title="Permanent link">¶</a></h2>
+<ul>
+<li>
+<p><a href="#local-configuration">Local configurations</a> are great for customising
+  your settings per game. This is especially true if you’re interested in
+  playing games from different <a href="../dos-eras/">DOS eras</a> that require very different
+  hardware configurations.</p>
+</li>
+<li>
+<p>As DOSBox Staging comes with sensible defaults, you can keep your
+  local configs quite minimal. There’s absolutely no need to
+  specify every single setting in your local game-specific configs.
+  Fully-populated configs are very cumbersome to manage if you have a large
+  game library. The Getting Started guide contains
+  several such local config examples (<a href="../../getting-started/enhancing-prince-of-persia/#final-configuration">Prince of Persia</a>,
+  <a href="../../getting-started/passport-to-adventure/#final-configuration">Passport to Adventure</a>,
+  <a href="../../getting-started/beneath-a-steel-sky/#final-configuration">Beneath A Steel Sky</a>,
+  <a href="../../getting-started/star-wars-dark-forces/#final-configuration">Star Wars: Dark Forces</a>).</p>
+</li>
+<li>
+<p>A good, easy-to-manage approach is to only change settings in the primary
+  config that affect the general workings of the emulator (e.g.,
+  <a href="../graphics/display-and-window/#fullscreen">fullscreen</a>,
+  <a href="../graphics/display-and-window/#pause_when_inactive">pause_when_inactive</a>,
+  <a href="../system/general/#language">language</a>, setting the <a href="../sound/mixer/#volume">master
+  volume</a>, etc.) Settings that set up specific
+  hardware required by a game can then go into the local configs. If you
+  reconfigure hardware in the primary config, there’s always a risk that
+  games configured for a certain hardware in their setup utility will stop
+  working.</p>
+</li>
+</ul>
 
 
 

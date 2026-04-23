@@ -1426,8 +1426,6 @@
       
         
       
-        
-      
     
     
     
@@ -1635,34 +1633,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2443,6 +2413,8 @@
       
         
       
+        
+      
     
     
     
@@ -2557,6 +2529,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2847,14 +2847,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../manual/sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../manual/sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4235,7 +4235,7 @@ function set_build_version(gh_api_artifacts, os_name) {
         //
         let platform_re = "[\\w-]*"
         let version_re  = "(\\d+\.\\d+\.\\d+)"
-        let hash_re     = "([\\w-\.]+)"
+        let hash_re     = "(alpha-[\\w-\\.]{5})"
 
         let re = `dosbox-staging-${platform_re}-${version_re}-${hash_re}`
         let release = data.artifacts.find(a => a.name.match(re))
@@ -4322,7 +4322,14 @@ function set_ci_status(workflow_file, os_name, description) {
         build_link_tr_el.appendChild(build_link)
 
         let build_date = new Date(status.updated_at)
-        get_build_date_el(os_name).textContent = build_date.toUTCString()
+
+        let date_string_utc = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'UTC', timeZoneName: 'short',
+            year: 'numeric', month: 'short', day: '2-digit',
+            hour: '2-digit', minute: '2-digit', second: '2-digit'
+        }).format(build_date);
+
+        get_build_date_el(os_name).textContent = date_string_utc
 
         set_build_version(status.artifacts_url, os_name)
       })
@@ -4350,10 +4357,14 @@ head on to the <a href="../windows/">Windows</a>, <a href="../macos/">macOS</a>,
 </div>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>The development builds are hosted on GitHub; you need to have a GitHub
+<p>The <strong>development builds</strong> are hosted on GitHub; you’ll need a GitHub
 account to download them. If you’re not logged in to GitHub, you will see
-the build artifacts but clicking on their names won’t initiate the
+the build artifacts, but clicking on their names won’t initiate the
 download.</p>
+<p>We release a new dev snapshot build whenever a PR is merged. Make sure to
+check out the automaticaly generated <strong>release notes HTML</strong> included with
+the snapshot builds. This lists all the changes since the last stable
+release, with links to the individual PRs on GitHub.</p>
 </div>
 <div class="compact">
 <table>

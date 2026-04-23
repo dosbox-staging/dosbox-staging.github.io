@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1744,34 +1742,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2552,6 +2522,8 @@
       
         
       
+        
+      
     
     
     
@@ -2666,6 +2638,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../manual/graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2956,14 +2956,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../manual/sound/analog-output-filters/" class="md-nav__link">
+      <a href="../../manual/sound/output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -4466,9 +4466,9 @@ configured aspect ratio into account (see 'aspect'). Possible values:
 </div>
 <h2 id="online-help">Online help<a class="headerlink" href="#online-help" title="Permanent link">¶</a></h2>
 <p>If you know the exact name of a configuration setting, you can display its
-explanatory text using the built-in <code>config</code> command. The invocation is
-<code>config -h &lt;setting_name&gt;</code>. </p>
-<p>Let’s see what <code>config -h viewport</code> gives us!</p>
+explanatory text by typing the setting’s name followed by <code>/?</code>. Alternatively,
+you can use the <code>config -h &lt;setting_name&gt;</code> syntax.</p>
+<p>Let’s see what <code>viewport /?</code> gives us!</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/getting-started/config-help.png" data-desc-position="bottom"><img alt="Displaying the description of a config setting using the 'config' command" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/config-help.png" style="margin: 0.9rem 0;"></a></p>
 <p>That’s quite a handy online help system, isn’t it? As the bottom line
 indicates, you can press <span class="keys"><kbd class="key-space">Space</kbd></span> to go to the next page, <span class="keys"><kbd class="key-enter">Enter</kbd></span> to
@@ -4562,7 +4562,9 @@ crosshair-shaped in-game cursor.</p>
 the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> shortcut (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> on macOS). The title bar of the DOSBox
 Staging window informs you about the current mouse capture state.</p>
 <p>It’s also possible to tell DOSBox Staging to start with the mouse captured
-(this might not work on all operating systems, though):</p>
+(this might not work on all operating systems, though). See the
+<a href="../../manual/input/mouse/">Mouse</a> page in the manual for all available capture
+modes and mouse settings.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[mouse]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">mouse_capture</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">onstart</span>
 </code></pre></div>
@@ -4823,13 +4825,13 @@ graphics were simply line and pixel-doubled to 640×400.</p>
 original EGA look. After all, this is what the artists saw on their screens
 when creating the artwork. Because of this, the authentic CRT emulation
 feature displays EGA graphics with the “true EGA look” out of the box with the
-<code>glshader = crt-auto</code> setting.</p>
+<code>shader = crt-auto</code> setting.</p>
 <p>However, if you grew up with a VGA-equipped PC, then you only ever saw EGA
 games double-scanned. To appease such people, you can instruct DOSBox Staging
 to emulate a double-scanning VGA card in all screen modes with the
 <code>crt-auto-machine</code> setting:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">[render]</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">glshader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt-auto-machine</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">shader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">crt-auto-machine</span>
 </code></pre></div>
 <p>Technically, this setting instructs DOSBox Staging to emulate a CRT monitor
 appropriate for the configured <code>machine</code> type, which is VGA by default.</p>
@@ -4928,8 +4930,9 @@ the brief 640×480 SVGA period at the end of the DOS days.</p>
 sensibilities” and the authentic original experience. It’s still on the large
 end of the spectrum, but not overly so. If you go higher than this, the
 graphics will start looking overly blocky from a normal viewing distance.</p>
-<p>The rationale behind the “magic 89% value” is explained in detail in the last
-<a href="../advanced-graphics-options/#custom-viewport-resolution">advanced graphics options</a> chapter.</p>
+<p>The rationale behind the “magic 89% value” is explained in detail in the
+[Aspect ratios &amp; black borders] options](../manual/graphics/aspect-ratios.md)
+section of the user manual.</p>
 <h2 id="cpu-sensitive-games">CPU sensitive games<a class="headerlink" href="#cpu-sensitive-games" title="Permanent link">¶</a></h2>
 <p>Certain older games, such as these three demos, are sensitive to CPU speed
 (see the <a href="../../manual/system/cpu/">CPU</a> page for a full discussion of
@@ -4988,7 +4991,7 @@ but it was worth mentioning this interesting quirk here.</p>
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="k">[render]</span>
 <a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">89%</span>
 <a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1"># uncomment for double-scanned VGA CRT emulation</span>
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1">#glshader = crt-auto-machine</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1">#shader = crt-auto-machine</span>
 <a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>
 <a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="k">[sblaster]</span>
 <a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="c1"># uncomment for Game Blaster audio</span>

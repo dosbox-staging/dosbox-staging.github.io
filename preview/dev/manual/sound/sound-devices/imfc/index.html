@@ -1271,8 +1271,6 @@
       
         
       
-        
-      
     
     
     
@@ -1480,34 +1478,6 @@
     
   
     Star Wars: Dark Forces
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../getting-started/advanced-graphics-options/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Advanced graphics options
   
 
     
@@ -2293,6 +2263,8 @@
       
         
       
+        
+      
     
     
     
@@ -2407,6 +2379,34 @@
     
   
     Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
   
 
     
@@ -2699,14 +2699,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../analog-output-filters/" class="md-nav__link">
+      <a href="../../output-filters/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Analog output filter emulation
+    Output filter emulation
   
 
     
@@ -3254,10 +3254,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#imfc_filter" class="md-nav__link">
+  <a href="#imfc_irq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        imfc_filter
+        imfc_irq
       
     </span>
   </a>
@@ -3267,10 +3267,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#imfc_irq" class="md-nav__link">
+  <a href="#imfc_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        imfc_irq
+        imfc_filter
       
     </span>
   </a>
@@ -4102,10 +4102,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#imfc_filter" class="md-nav__link">
+  <a href="#imfc_irq" class="md-nav__link">
     <span class="md-ellipsis">
       
-        imfc_filter
+        imfc_irq
       
     </span>
   </a>
@@ -4115,10 +4115,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#imfc_irq" class="md-nav__link">
+  <a href="#imfc_filter" class="md-nav__link">
     <span class="md-ellipsis">
       
-        imfc_irq
+        imfc_filter
       
     </span>
   </a>
@@ -4184,7 +4184,8 @@ ports.</p>
 </div>
 </details>
 <h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
-<p>The IBM Music Feature Card outputs to the <strong>IMFC</strong> <a href="../../mixer/">mixer</a> channel.</p>
+<p>The IBM Music Feature Card outputs to the <strong>IMFC</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
+channel</a>.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>IBM Music Feature Card settings are to be configured in the <code>[imfc]</code> section.</p>
 <h5 id="imfc">imfc<a class="headerlink" href="#imfc" title="Permanent link">¶</a></h5>
@@ -4201,6 +4202,13 @@ ports.</p>
 <p>Possible values: <code>2A20</code> <em class="default">default</em>, <code>2A30</code>.</p>
 </dd>
 </dl>
+<h5 id="imfc_irq">imfc_irq<a class="headerlink" href="#imfc_irq" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>The IRQ number of the IBM Music Feature Card.</p>
+<p>Possible values: <code>2</code>, <code>3</code> <em class="default">default</em>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>.</p>
+</dd>
+</dl>
 <h5 id="imfc_filter">imfc_filter<a class="headerlink" href="#imfc_filter" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
@@ -4210,16 +4218,9 @@ ports.</p>
 <li><code>on</code> <em class="default">default</em> – Filter the output. This applies a 2<sup>nd</sup> order low-pass filter at 3.5 kHz (<code>lpf 2 3500</code>).</li>
 <li><code>off</code> – Don’t filter the output.</li>
 <li><code>&lt;custom&gt;</code> – Custom filter definition; see
-  <a href="../../analog-output-filters/#custom-filter-settings">Custom filter settings</a>
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
   for details.</li>
 </ul>
-</dd>
-</dl>
-<h5 id="imfc_irq">imfc_irq<a class="headerlink" href="#imfc_irq" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>The IRQ number of the IBM Music Feature Card.</p>
-<p>Possible values: <code>2</code>, <code>3</code> <em class="default">default</em>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>.</p>
 </dd>
 </dl>
 
