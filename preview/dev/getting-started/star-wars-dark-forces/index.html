@@ -4440,8 +4440,6 @@ full list of available options and check out the list of <a href="https://github
 candidates</a>
 on our wiki for assorted real-life examples.</p>
 <h2 id="display-refresh-rate">Display refresh rate<a class="headerlink" href="#display-refresh-rate" title="Permanent link">¶</a></h2>
-<p>See <a href="../../manual/graphics/display-and-window/#frame-presentation">Presentation modes</a>
-in the manual for the full reference on refresh rates and vsync.</p>
 <p>Dark Forces uses the 320×200 256-colour VGA screen mode, just like the
 majority of DOS games from the 1990s. This mode uses a fixed 70 Hz screen
 refresh rate, so if your emulated CPU is fast enough, you can get 70 FPS out
@@ -4511,6 +4509,8 @@ by DOSBox Staging:</p>
 </tr>
 </tbody>
 </table>
+<p>See <a href="../../manual/graphics/display-and-window/#frame-presentation">Presentation modes</a>
+in the manual for the full reference on refresh rates and vsync.</p>
 <div class="admonition tip">
 <p class="admonition-title">Creating custom 60 and 70 Hz screen modes</p>
 <p>“Custom resolution” is a bit of a misnomer because what we’re after is
@@ -4600,7 +4600,8 @@ causes jerky scrolling and movement in games that feature smooth
 scrolling.</p>
 </div>
 <p>Again, you have absolutely no control over the vertical syncing behaviour in
-most DOS games. For example, <a href="https://www.mobygames.com/game/219/commander-keen-4-secret-of-the-oracle/">Commander Keen 4–6</a>, <a href="https://www.mobygames.com/game/1068/doom/">Doom</a>, and many other FPS
+most DOS games. For example, <a href="https://www.mobygames.com/game/219/commander-keen-4-secret-of-the-oracle/">Commander Keen 4–6</a>,
+<a href="https://www.mobygames.com/game/1068/doom/">Doom</a>, and many other FPS
 games have hardcoded vsync with a fixed 35 FPS cap. These games were
 programmed with fixed refresh rates in mind from the ground up; trying to
 disable the vsync or altering the FPS cap would break them (but the
@@ -4657,9 +4658,9 @@ basis.</p>
 not running when you use DOSBox Staging, or whitelist individual games to
 be frame limited instead of letting them throttle every program globally.</p>
 <p>By the way, forcing vsync globally would wreak havoc not just on DOSBox
-Staging, but pretty much every single home computer and console
-emulator — that’s just how they work. In contrast to modern 3D games, they
-need full control over frame pacing and vsync without any external “help”.</p>
+Staging, but pretty much every single home computer and console emulator
+— that’s just how they work. In contrast to modern 3D games, they need
+full control over frame pacing and vsync without any external “help”.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Here be dragons</p>
@@ -4804,7 +4805,7 @@ into the DOSBox Staging <code>soundcanvas-roms</code> folder:</p>
 </tr>
 <tr>
 <td><strong>Linux</strong></td>
-<td><code>~/.local/share/dosbox/soundcanvas-roms/</code></td>
+<td><code>~/.config/dosbox/soundcanvas-roms/</code></td>
 </tr>
 </tbody>
 </table>
@@ -4911,7 +4912,7 @@ SoundFont file with the <code>.sf2</code> extension into its designated folder:<
 </tr>
 <tr>
 <td><strong>Linux</strong></td>
-<td><code>~/.local/share/dosbox/soundfonts/</code></td>
+<td><code>~/.config/dosbox/soundfonts/</code></td>
 </tr>
 </tbody>
 </table>

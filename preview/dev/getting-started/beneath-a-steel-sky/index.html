@@ -4548,22 +4548,22 @@ we’ll mount the CD-ROM image using the following letter D by convention. This
 is equivalent to having a CD-ROM drive in our emulated computer assigned to
 the drive letter D and inserting the game CD into it.</p>
 <p>Mounting an image file, such as a floppy or CD-ROM image, is accomplished with
-the <code>imgmount</code> command. It is pretty simple to use: the first argument is the
+the <code>MOUNT</code> command. It is pretty simple to use: the first argument is the
 drive letter (<code>d</code>), the second the path to the CD-ROM image (<code>cd/cdrom1.iso</code>),
 and the third the type of the image file (<code>-t iso</code>).</p>
 <p>So this is what we need to put into our config:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">imgmount d cd/cdrom1.iso -t iso</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">mount d cd/cdrom1.iso -t iso</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If you’ve decided to keep the original name of the ISO, you’ll need to
 enclose it in double quotes because it contains spaces:</p>
-<div class="highlight"><pre><span></span><code>imgmount d "cd/Beneath a Steel Sky (1995)(Virgin).iso" -t iso
+<div class="highlight"><pre><span></span><code>mount d "cd/Beneath a Steel Sky (1995)(Virgin).iso" -t iso
 </code></pre></div>
 <p>If you’re on Linux, make sure to get the casing of the ISO file exactly
 right. Commands that operate on emulated DOS drives are case-insensitive,
-just like real MS-DOS, but <code>imgmount</code> opens a file on your host directly,
+just like real MS-DOS, but <code>MOUNT</code> opens a file on your host directly,
 so the casing rules of your host filesystem apply.</p>
 </div>
 <div class="admonition tip">
@@ -4573,13 +4573,13 @@ subfolder within your game folder and renaming the ISO files to <code>cdrom1.iso
 <code>cdrom2.iso</code>, and so on, it’s easier to reuse the mount commands between
 configs.</p>
 </div>
-<p>You can always run <code>imgmount /?</code> or <code>help imgmount</code> if you need a little
+<p>You can always run <code>MOUNT /?</code> or <code>HELP MOUNT</code> if you need a little
 reminder on how to use the command (although the full list of options can be a
 little overwhelming).</p>
 <p>This is what you should see in the DOSBox Staging window after startup if
 everything is set up correctly:</p>
 <div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Local directory drives/c/ mounted as C drive
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Z:\&gt;imgmount d cd/cdrom1.iso -t iso
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Z:\&gt;mount d cd/cdrom1.iso -t iso
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>MSCDEX installed.
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>ISO image cd/cdrom1.iso mounted as D drive
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Z:\&gt;_
@@ -4588,13 +4588,13 @@ everything is set up correctly:</p>
 informs us that our CD image has been mounted as drive D. Time to get down to
 business then!</p>
 <div class="admonition danger">
-<p class="admonition-title">Always mount CD-ROM images with <code>imgmount</code></p>
+<p class="admonition-title">Always mount CD-ROM images with <code>MOUNT</code></p>
 <p>While you could mount CD-ROM images outside of DOSBox with other programs,
 too (e.g., Daemon Tools, ImgDrive, WinCDEmu, or the built-in Windows 10/11
 ISO mounting feature), these alternative approaches often lead to
 compatibility problems. That’s because these tools don’t emulate the
 MSCDEX MS-DOS driver that DOS games expect.</p>
-<p>For a trouble-free life, always use the built-in <code>imgmount</code> command.
+<p>For a trouble-free life, always use the built-in <code>MOUNT</code> command.
 There’s nothing to gain from using these 3<sup>rd</sup> party mounting tools for
 DOS games.</p>
 </div>
@@ -4670,7 +4670,7 @@ commands into the <code>[autoexec]</code> section of our config, but let’s com
 last <code>sky</code> command out for now by preceding it with a <code>#</code> character because we
 don’t want to start the game just yet:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">imgmount d cd/cdrom1.iso -t iso</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">mount d cd/cdrom1.iso -t iso</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="na">c</span><span class="o">:</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="na">cd \sky</span>
 <a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="c1">#sky</span>
@@ -4776,7 +4776,7 @@ before running the game? Of course not! We can simply include them in our
 displaying its current state; there’s no need for that in our automated
 startup script.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="na">imgmount D "cd/cdrom1.iso" -t iso</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="na">mount D "cd/cdrom1.iso" -t iso</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="na">c</span><span class="o">:</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="na">cd sky</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="na">mixer opl 50 sb 500 /noshow</span>
@@ -4800,7 +4800,7 @@ first-revision Sound Blaster Pro! Add the following snippet to your config:</p>
 volume levels, so make sure to comment out the previously added <code>mixer</code>
 command in the <code>[autoexec]</code> section by prefixing it with a <code>#</code> character:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="na">imgmount D "cd/cdrom1.iso" -t iso</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="na">mount D "cd/cdrom1.iso" -t iso</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="na">c</span><span class="o">:</span>
 <a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="na">cd sky</span>
 <a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="c1">#mixer opl 50 sb 500 /noshow</span>
@@ -5104,7 +5104,7 @@ MT‑32 ROM folder:</p>
 </tr>
 <tr>
 <td><strong>Linux</strong></td>
-<td><code>~/.local/share/dosbox/mt32-roms/</code></td>
+<td><code>~/.config/dosbox/mt32-roms/</code></td>
 </tr>
 </tbody>
 </table>
@@ -5429,7 +5429,7 @@ a strange parallel universe! 😎</p>
 <a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">strong</span>
 <a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
 <a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="na">imgmount d "cd/cdrom1.iso" -t iso</span>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="na">mount d "cd/cdrom1.iso" -t iso</span>
 <a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>
 <a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="c1"># original game</span>
 <a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a><span class="c1">#c:</span>
