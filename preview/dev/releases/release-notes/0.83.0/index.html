@@ -5967,6 +5967,13 @@ killer features:</p>
   small enhancements.</p>
 </li>
 <li>
+<p>DOSBox Staging now uses a <a href="#migrating-to-the-gettext-po-localisation-format"><code>gettext</code> compatible <code>*.po</code> translation file
+  format</a>. This makes
+  translation work a lot easier, and allows the use of specialised
+  translation-aiding software, such as the well-known
+  <a href="https://poedit.net/">Poedit</a>.</p>
+</li>
+<li>
 <p><a href="#localisation">Several locale handling improvements</a>, in particular, making
   the locale autodetection work more reliably with less surprises.</p>
 </li>
@@ -7522,9 +7529,11 @@ very unstable.</p>
 </li>
 </ul>
 <h3 id="keyboard-layout-autodetection-changes">Keyboard layout autodetection changes<a class="headerlink" href="#keyboard-layout-autodetection-changes" title="Permanent link">¶</a></h3>
-<p>Keyboard layout now defaults to <code>us</code> as a safe option for almost everyone. If
-you want to experiment, the <code>auto</code> option is still there, but you have to set
-it explicitly.</p>
+<p>Keyboard layout auto-detection has been rewritten; now it tries to match one
+of the configured host OS layouts. The mechanism also takes into account the
+DOSBox Staging translation and the language setting of the host OS. It should
+work much better than the old solution, but in case of problems, you can
+always set <code>keyboard_layout = us</code> manually.</p>
 <details class="note">
 <summary>Full PR list of input-related changes</summary>
 <ul>
@@ -7860,8 +7869,9 @@ around 25% on a fast desktop CPU with <code>cpu_cycles = max</code>. This is acc
 with an emulated HLT CPU instruction.</p>
 <p>If you want to use other DOS idling software, disable the new behaviour by
 setting <code>cpu_idle</code> to <code>off</code> to prevent conflicts</p>
-<p>Additionally, our shell is now more multitasking-friendly, so DOS window
-software like <code>WQGHLT</code> will work better under Windows 3.1.</p>
+<p>Additionally, our shell is now more multitasking-friendly; Windows 3.1 DOS
+window will use less CPU power and will work better with power saving drivers
+like <code>WQGHLT</code>.</p>
 <h3 id="other-general-improvements">Other general improvements<a class="headerlink" href="#other-general-improvements" title="Permanent link">¶</a></h3>
 <ul>
 <li>
