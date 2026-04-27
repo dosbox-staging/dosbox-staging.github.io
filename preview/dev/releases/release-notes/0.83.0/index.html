@@ -5934,6 +5934,12 @@ killer features:</p>
   <img alt="🤘" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f918.svg" title=":metal:">). Again, you can combine dedithering with any shader.</p>
 </li>
 <li>
+<p>A <a href="#user-manual">comprehensive user manual</a> that goes beyond a reference
+  guide: it covers basic concepts through detailed device configuration, and
+  offers a historical overview of the DOS era for users who didn’t live
+  through it.</p>
+</li>
+<li>
 <p><a href="#http-api-for-modding-external-tools">HTTP API</a> to muck around with
   the emulated memory and DOS internals to write modding and cheat tools as
   simple single-page web applications. The first one to reimplement
@@ -6475,9 +6481,9 @@ Run <code>colour_space /?</code> from the DOS prompt for the list of available o
 colour management in Windows and Linux when using the feature, especially
 <strong>Automatic Colour Management (ACM)</strong> in Windows 11, which is known to behave
 erratically.</p>
-<p>macOS users don’t need to configure anything; thanks macOS’s excellent
-system-wide colour management, DOSBox Staging will automatically take advantage of
-wide-gamut displays.</p>
+<p>macOS users don’t need to configure anything; thanks to macOS’s excellent
+system-wide colour management, DOSBox Staging will automatically take
+advantage of wide-gamut displays.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Wide-gamut support is only available in the OpenGL output mode.</p>
@@ -6575,7 +6581,7 @@ encourage you to do so for the best-looking results.</p>
 <li><a href="https://www.mobygames.com/game/3468/angel-devoid-face-of-the-enemy/">Angel Devoid: Face of the Enemy</a></li>
 <li><a href="https://www.mobygames.com/game/791/cybermage-darklight-awakening/">CyberMage: Darklight Awakening</a></li>
 <li><a href="https://www.mobygames.com/game/852/crusader-no-regret/">Crusader: No Regret</a></li>
-<li><a href="https://www.mobygames.com/game/852/crusader-no-regret/">Crusader: No Remorse</a></li>
+<li><a href="https://www.mobygames.com/game/851/crusader-no-remorse/">Crusader: No Remorse</a></li>
 <li><a href="https://www.mobygames.com/game/380/dune/">Dune</a> (CD-ROM version; the game uses a special “dot pattern” interlacing style()</li>
 <li><a href="https://www.mobygames.com/game/118/the-beast-within-a-gabriel-knight-mystery/">Gabriel Knight 2: The Beast Within</a></li>
 <li><a href="https://www.mobygames.com/game/1792/hardline/">Hardline</a></li>
@@ -6799,7 +6805,7 @@ forth between the before/after images.</p>
 <p class="admonition-title">Note</p>
 <p>Blending dither patterns into solid colours and achieving
 transparency-like effects were only a thing on consoles connected to
-consumer TV sets. Dither patterns were clearly visible on tack sharp (and
+consumer TV sets. Dither patterns were clearly visible on tack-sharp (and
 expensive!) PC CRT monitors from the 80s and 90s. Therefore, the
 dedithering feature <em>does not</em> result in more authentic results — it
 goes in the opposite direction. It’s a “fantasy representation” of the
@@ -7162,14 +7168,14 @@ suffer from cut-off note issues on the mk2.</p>
 preserve an important part of DOS gaming history for all to freely enjoy
 for posterity. The feature is <em>only intended</em> for personal use (e.g.,
 retro gaming, or writing music as a hobby) and research purposes.</p>
-<p>As per the original Nuked SC-55 license, the use of the feature <em>strictly prohibited</em> for the
-creating commercial Roland SC-55 emulation hardware boxes or in
-commercial music production is. Moreover, you are
-not allowed to include the bundled <code>Nuked-SC55.clap</code> plugin in any
-commercial software package without both Roland’s and nukeykt’s express
-permissions (in other words, if you delete the plugin from your commercial
-package, you’re fine — DOSBox Staging will continue to work, just
-without Sound Canvas support).</p>
+<p>As per the original Nuked SC-55 license, the use of the feature is
+<em>strictly prohibited</em> for the creating commercial Roland SC-55 emulation
+hardware boxes or in commercial music production is. Moreover, you are not
+allowed to include the bundled <code>Nuked-SC55.clap</code> plugin in any commercial
+software package without both Roland’s and nukeykt’s express permissions
+(in other words, if you delete the plugin from your commercial package,
+you’re fine — DOSBox Staging will continue to work, just without Sound
+Canvas support).</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">License notes</p>
@@ -7440,7 +7446,7 @@ wheel mouse. This was problematic in a few games that misinterpreted
 middle mouse button presses, e.g., <a href="https://www.mobygames.com/game/835/eye-of-the-beholder/">Eye of the
 Beholder</a>.
 2-button mice without a scrollwheel were the most widespread in gaming
-circles throughout the entire DOS era, make <code>2button</code> the best overall
+circles throughout the entire DOS era, making <code>2button</code> the best overall
 model.</dd>
 </dl>
 <h4 id="builtin_dos_mouse_driver_move_threshold">builtin_dos_mouse_driver_move_threshold<a class="headerlink" href="#builtin_dos_mouse_driver_move_threshold" title="Permanent link">¶</a></h4>
@@ -7453,8 +7459,8 @@ counter crosses the threshold set with this new option. Setting this to
 <a href="https://www.mobygames.com/game/690/ultima-underworld-the-stygian-abyss/">Ultima Underworld I</a>
 &amp; <a href="https://www.mobygames.com/game/691/ultima-underworld-ii-labyrinth-of-worlds/">II</a>,
 which happens when you move the mouse very slowly (the issue is present on
-real hardware too, so with this setting we are providing <em>better than
-hardware</em> behaviour <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f60e.svg" title=":sunglasses:">).</dd>
+real hardware too, so with this setting we are providing
+<em>better-than-hardware</em> behaviour <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f60e.svg" title=":sunglasses:">).</dd>
 </dl>
 <h4 id="builtin_dos_mouse_driver_options">builtin_dos_mouse_driver_options<a class="headerlink" href="#builtin_dos_mouse_driver_options" title="Permanent link">¶</a></h4>
 <dl>
@@ -7656,7 +7662,7 @@ crashing), so it is now disabled by default when not running Windows.</p>
 </li>
 <li>
 <p>The <code>BOOT</code>, <code>LOADROM</code>, and <code>MOUSE</code> commands won’t allow performing
-  actions that are not safe wne run from the Windows 2.x or 3.x command
+  actions that are not safe when run from the Windows 2.x or 3.x command
   prompt.</p>
 </li>
 <li>
@@ -7691,7 +7697,7 @@ error messages.</p>
 <p>Added support for <strong>DR-DOS</strong> and <strong>Windows NT</strong> CPI file formats.</p>
 </li>
 <li>
-<p>Most MS-DOS style CPI files over 64 KB in size should work now.</p>
+<p>Most MS-DOS style CPI files over 64 KB in size will work now.</p>
 </li>
 <li>
 <p>Removed direct support for the <strong>FreeDOS CPX</strong> files; they can still be used
@@ -7817,9 +7823,9 @@ emulated floppy and hard drives. It is recommended to use this together with
 the new <a href="#disk-noise-emulation">disk noise emulation</a> feature for a more
 authentic experience.</p>
 <p>You can set the desired disk speed via the new <code>hard_disk_speed</code> and
-<code>floppy_disk_speed</code> config options (valid settings are <code>slow</code>, <code>medium</code>,
-<code>fast</code>, and <code>maximum</code>). The default is <code>maximum</code>, which does not introduce any
-speed throttling.</p>
+<code>floppy_disk_speed</code> config options in the <code>[dosbox]</code> section (valid settings
+are <code>slow</code>, <code>medium</code>, <code>fast</code>, and <code>maximum</code>). The default is <code>maximum</code>, which
+does not introduce any speed throttling.</p>
 <h3 id="macos-dosbox-staging-document-packages">macOS DOSBox Staging document packages<a class="headerlink" href="#macos-dosbox-staging-document-packages" title="Permanent link">¶</a></h3>
 <p>Added support for DOSBox Staging document packages on macOS. Simply add the
 <code>.dosbox</code> extension to a game folder that contains a <code>dosbox.conf</code> file and
@@ -7896,6 +7902,7 @@ like <code>WQGHLT</code>.</p>
 <li>API: Add more control over allocation strategy (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4776" title="GitHub Issue dosbox-staging/dosbox-staging #4776">#4776</a>)</li>
 <li>Change display names of bool conf settings to ‘on’ and ‘off’ (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4248" title="GitHub Issue dosbox-staging/dosbox-staging #4248">#4248</a>)</li>
 <li>Config setting help shortcut (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4247" title="GitHub Issue dosbox-staging/dosbox-staging #4247">#4247</a>)</li>
+<li>HTTP API improvements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4847" title="GitHub Issue dosbox-staging/dosbox-staging #4847">#4847</a>)</li>
 <li>Fixes for “toggle” config setting values (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4727" title="GitHub Issue dosbox-staging/dosbox-staging #4727">#4727</a>)</li>
 <li>Improve FPU emulation on non-x86 platforms (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4534" title="GitHub Issue dosbox-staging/dosbox-staging #4534">#4534</a>)</li>
 <li>Mapper layout fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4600" title="GitHub Issue dosbox-staging/dosbox-staging #4600">#4600</a>)</li>
@@ -7943,6 +7950,7 @@ like <code>WQGHLT</code>.</p>
 <li>Improve unit testing instructions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4659" title="GitHub Issue dosbox-staging/dosbox-staging #4659">#4659</a>)</li>
 <li>Minor bundled libraries and legal notes cleanup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4673" title="GitHub Issue dosbox-staging/dosbox-staging #4673">#4673</a>)</li>
 <li>Spring cleaning, part 2 🌷 🧹 🗑️ 🔥 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4332" title="GitHub Issue dosbox-staging/dosbox-staging #4332">#4332</a>)</li>
+<li>The <code>GUIDE</code> and <code>MANUAL</code> commands open a versioned URL now (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4849" title="GitHub Issue dosbox-staging/dosbox-staging #4849">#4849</a>)</li>
 <li>Update CONTRIBUTING.md (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4459" title="GitHub Issue dosbox-staging/dosbox-staging #4459">#4459</a>)</li>
 <li>Update contribution guidelines (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4327" title="GitHub Issue dosbox-staging/dosbox-staging #4327">#4327</a>)</li>
 <li>Update Linux build instructions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4652" title="GitHub Issue dosbox-staging/dosbox-staging #4652">#4652</a>)</li>
@@ -7965,6 +7973,7 @@ like <code>WQGHLT</code>.</p>
 <li>Add macOS CMake + vcpkg release build workflow (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4170" title="GitHub Issue dosbox-staging/dosbox-staging #4170">#4170</a>)</li>
 <li>Add more metadata to the macOS executable for better observabilty (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4687" title="GitHub Issue dosbox-staging/dosbox-staging #4687">#4687</a>)</li>
 <li>Add release management script &amp; make release notes draft public (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4773" title="GitHub Issue dosbox-staging/dosbox-staging #4773">#4773</a>)</li>
+<li>Add release notes differ script (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4845" title="GitHub Issue dosbox-staging/dosbox-staging #4845">#4845</a>)</li>
 <li>Add sanitizer options to CMake build system, for Linux and macOS (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4401" title="GitHub Issue dosbox-staging/dosbox-staging #4401">#4401</a>)</li>
 <li>Add several missing checks to the CMake build system + other fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4396" title="GitHub Issue dosbox-staging/dosbox-staging #4396">#4396</a>)</li>
 <li>Add Windows presets for CMake (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4184" title="GitHub Issue dosbox-staging/dosbox-staging #4184">#4184</a>)</li>
@@ -8059,6 +8068,7 @@ like <code>WQGHLT</code>.</p>
 <li>Use short SPDX copyright headers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4389" title="GitHub Issue dosbox-staging/dosbox-staging #4389">#4389</a>)</li>
 <li>Warn about implicit fall-throughs in switch/case blocks (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4685" title="GitHub Issue dosbox-staging/dosbox-staging #4685">#4685</a>)</li>
 <li>Webserver security hardening (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4772" title="GitHub Issue dosbox-staging/dosbox-staging #4772">#4772</a>)</li>
+<li>Website release notes draft generation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4818" title="GitHub Issue dosbox-staging/dosbox-staging #4818">#4818</a>)</li>
 </ul>
 </details>
 <details class="note">
