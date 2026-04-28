@@ -9,14 +9,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fetch(deployPrefix + "/versions.json")
             .then(function (r) { return r.json(); })
-            .then(populate)
+            .then(function (sections) { populate(sections, deployPrefix); })
             .then(adjustScrollMargin)
             .catch(adjustScrollMargin);
     } else {
         adjustScrollMargin();
     }
 
-    function populate(sections) {
+    function populate(sections, deployPrefix) {
         // Detect current version and section from URL
         var currentVersion = null;
         var currentSection = null;
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var versions = sections[section];
 
             for (var j = 0; j < versions.length; j++) {
-                var prefix = "/" + versions[j] + "/" + section + "/";
+                var prefix = deployPrefix + "/" + versions[j] + "/" + section + "/";
 
                 if (path.startsWith(prefix)) {
                     currentVersion = versions[j];
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
             var a = document.createElement("a");
             a.className = "md-version__link";
             a.textContent = v;
-            a.href = "/" + v + "/" + currentSection + "/" + restOfPath;
+            a.href = deployPrefix + "/" + v + "/" + currentSection + "/" + restOfPath;
 
             if (v === currentVersion) {
                 a.setAttribute("aria-current", "page");
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
             inner.className = "md-banner__inner md-grid md-typeset";
             inner.innerHTML =
                 "You're viewing an outdated version of this document. " +
-                '<a href="/' + latestVersion + "/" + currentSection + "/" + restOfPath + '">' +
+                '<a href="' + deployPrefix + "/" + latestVersion + "/" + currentSection + "/" + restOfPath + '">' +
                 "<strong>Click here to go to the latest version.</strong></a>";
 
             aside.appendChild(inner);
