@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    var path = window.location.pathname;
+
     var topic = document.querySelector(".md-header__topic");
 
     if (topic) {
-        fetch("/versions.json")
+        var base = path.substring(0, path.lastIndexOf("/") + 1);
+
+        fetch(base + "versions.json")
             .then(function (r) { return r.json(); })
             .then(populate)
             .then(adjustScrollMargin)
@@ -12,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function populate(sections) {
-        var path = window.location.pathname;
-
         // Detect current version and section from URL
         var currentVersion = null;
         var currentSection = null;
