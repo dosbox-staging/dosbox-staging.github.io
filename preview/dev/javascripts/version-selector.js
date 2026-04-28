@@ -2,11 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     var path = window.location.pathname;
 
     var topic = document.querySelector(".md-header__topic");
+    var match = path.match(/^(.*?)\/[0-9]\.[0-9]{2}\//);
 
-    if (topic) {
-        var base = path.substring(0, path.lastIndexOf("/") + 1);
+    if (topic && match) {
+        var deployPrefix = match[1];
 
-        fetch(base + "versions.json")
+        fetch(deployPrefix + "/versions.json")
             .then(function (r) { return r.json(); })
             .then(populate)
             .then(adjustScrollMargin)
