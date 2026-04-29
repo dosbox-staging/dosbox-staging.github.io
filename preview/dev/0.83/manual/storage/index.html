@@ -1,0 +1,5145 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+      
+      
+        <meta name="author" content="DOSBox Staging Authors">
+      
+      
+      
+        <link rel="prev" href="../commands/">
+      
+      
+        <link rel="next" href="../hardware-resources/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Storage - DOSBox Staging</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#storage" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<div class="dev-site" hidden="">
+  <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
+  <p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
+</div>
+
+<script>
+  if (window.location.pathname.startsWith("/preview/")) {
+    document.querySelector(".dev-site").removeAttribute("hidden");
+  }
+</script>
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
+
+    <!-- Link to home -->
+    
+      <a href="../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+        
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+      </a>
+    
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../releases/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Releases
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  User manual
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../get-involved/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Get involved
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+        
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+    DOSBox Staging
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../releases/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Releases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Release notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.83.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.83.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.82.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.82.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.82.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.81.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.81.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.81.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.80.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.80.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.79.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.79.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.78.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.78.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.77.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.77.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.76.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.76.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/release-notes/0.75.0-rc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0-RC1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../releases/development-builds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development builds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Enhancing Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/passport-to-adventure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passport to Adventure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beneath a Steel Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/star-wars-dark-forces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Star Wars: Dark Forces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/next-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Next steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about-this-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../what-is-dosbox-staging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is DOSBox Staging?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dos-primer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A short DOS primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dos-eras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DOS eras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using DOSBox Staging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using DOSBox Staging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOS commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        
+<li class="md-nav__item">
+  <a href="#how-dos-uses-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How DOS uses drives
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#dos-storage-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS storage media
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOS storage media">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#floppy-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floppy disks
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#hard-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard disks
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#cd-roms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CD-ROMs
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#dosbox-staging-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOSBox Staging drives
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#automounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automounting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automounting">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory structure
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#floppy-and-cd-rom-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floppy and CD-ROM images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#drive-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drive configuration files
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#manual-mounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual mounting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual mounting">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting directories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mounting directories">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#volume-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Volume labels
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#overlay-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlay mounts
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-floppy-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting floppy images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mounting floppy images">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#floppy-disk-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floppy disk formats
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-cd-rom-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting CD-ROM images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-multiple-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting multiple images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-hard-disk-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting hard disk images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#read-only-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read-only mounts
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#booting-from-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting from images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#dos-filesystem-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS filesystem limitations
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#unmounting-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmounting drives
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hardware-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows-31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Windows 3.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system/general/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system/cpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system/dos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/adapters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/display-and-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display &amp; window
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/rendering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/aspect-ratios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; black borders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/composite-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composite video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/3dfx-voodoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3dfx Voodoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graphics/reelmagic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReelMagic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5">
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/on-subjectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On subjectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/mixer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOSBox mixer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/mixer-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixer effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/output-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Output filter emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/disk-noise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disk noise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_7" id="__nav_3_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound devices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound devices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib, CMS &amp; Sound Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/roland-mt-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland MT-32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/general-midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/pc-speaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PC speaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/tandy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tandy 3 Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/gravis-ultrasound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravis UltraSound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/cd-da/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CD-DA audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/ibm-ps1audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM PS/1 Audio Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/covox-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Covox variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Innovation SSI-2001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/sound-devices/imfc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM Music Feature Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input/keyboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input/mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input/joystick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Joystick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../input/keymapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key mapper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/serial-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serial ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/ipx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../networking/multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
+        
+          
+          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendices/keymapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keymapper reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../get-involved/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get involved
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get involved
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../get-involved/code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        
+<li class="md-nav__item">
+  <a href="#how-dos-uses-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How DOS uses drives
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#dos-storage-media" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS storage media
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DOS storage media">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#floppy-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floppy disks
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#hard-disks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hard disks
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#cd-roms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CD-ROMs
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#dosbox-staging-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOSBox Staging drives
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#automounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automounting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automounting">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Directory structure
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#floppy-and-cd-rom-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floppy and CD-ROM images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#drive-configuration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Drive configuration files
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#manual-mounting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual mounting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Manual mounting">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting directories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mounting directories">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#volume-labels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Volume labels
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#overlay-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overlay mounts
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-floppy-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting floppy images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mounting floppy images">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#floppy-disk-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Floppy disk formats
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-cd-rom-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting CD-ROM images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-multiple-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting multiple images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mounting-hard-disk-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mounting hard disk images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#read-only-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read-only mounts
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#booting-from-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Booting from images
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#dos-filesystem-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS filesystem limitations
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#unmounting-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unmounting drives
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="storage">Storage<a class="headerlink" href="#storage" title="Permanent link">¶</a></h1>
+<h2 id="how-dos-uses-drives">How DOS uses drives<a class="headerlink" href="#how-dos-uses-drives" title="Permanent link">¶</a></h2>
+<p>DOS identifies storage devices by drive letters, not by names or mount points.
+Each drive letter (A: through Z:) maps to exactly one storage device or
+partition. Unlike modern operating systems, there is no single unified file
+tree — each drive is its own independent root.</p>
+<p>The letter assignments follow a fixed convention:</p>
+<ul>
+<li>
+<p><strong>A:</strong> and <strong>B:</strong> are reserved for floppy disk drives. If only one physical
+  floppy drive is present, B: acts as a “phantom” mapped to the same drive
+  — DOS prompts you to swap disks when you access it.</p>
+</li>
+<li>
+<p><strong>C:</strong> is the first hard disk partition. A single physical hard disk can be
+  divided into multiple partitions, each getting its own letter (C:, D:, E:,
+  etc.).</p>
+</li>
+<li>
+<p>The <strong>first available letter after the hard disk partitions</strong> is typically
+  assigned to the CD-ROM drive. On a system with a single hard disk
+  partition, the CD-ROM is usually D:; with two partitions, it becomes E:,
+  and so on.</p>
+</li>
+</ul>
+<p>In DOSBox Staging, you assign drive letters yourself when you mount
+directories or disk images, so you have full control over the layout. The
+conventions above are worth following because many games assume them —
+especially C: for the hard disk and D: for the CD-ROM.</p>
+<h2 id="dos-storage-media">DOS storage media<a class="headerlink" href="#dos-storage-media" title="Permanent link">¶</a></h2>
+<p>If you grew up with modern computers where everything lives on a single
+internal SSD, the DOS storage landscape might seem alien. DOS PCs used three
+types of storage media, each with its own drive letter.</p>
+<h3 id="floppy-disks">Floppy disks<a class="headerlink" href="#floppy-disks" title="Permanent link">¶</a></h3>
+<p>Floppy disks (drives A: and B:) were the primary way software was distributed.
+Games came on one or more floppies and usually had to be <strong>installed</strong> to the
+hard disk before you could play — unlike a console cartridge, you couldn’t
+just insert a floppy and go. Two form factors existed: the flexible 5.25-inch
+disk (1981–late 1980s) and the sturdier 3.5-inch disk (late 1980s–mid
+1990s). See <a href="#floppy-disk-formats">Floppy disk formats</a> for the full list of
+supported sizes.</p>
+<h3 id="hard-disks">Hard disks<a class="headerlink" href="#hard-disks" title="Permanent link">¶</a></h3>
+<p>Hard disks (drive C: and up) held the operating system and installed games.
+Capacities ranged from 10–20 MB in 1985 to over 1 GB by the mid-1990s. The
+DOS FAT16 filesystem limits individual partitions to <strong>2 GB</strong> — larger disks
+needed multiple partitions.</p>
+<h3 id="cd-roms">CD-ROMs<a class="headerlink" href="#cd-roms" title="Permanent link">¶</a></h3>
+<p>CD-ROMS (typically drive D:) appeared in the early 1990s and became mainstream
+by 1994–1995. A single CD held 650–700 MB — roughly 500 floppy disks’
+worth. This enabled full-motion video, voice acting, and CD-quality audio
+soundtracks. Some games ran entirely from the CD; others installed partially
+to the hard disk.</p>
+<h2 id="dosbox-staging-drives">DOSBox Staging drives<a class="headerlink" href="#dosbox-staging-drives" title="Permanent link">¶</a></h2>
+<p>DOSBox Staging provides two special drives in addition to whatever you mount:</p>
+<ul>
+<li>
+<p><strong>Z:</strong> contains the built-in programs and commands (MOUNT, CONFIG, MIXER,
+  etc.). It is always present and always in the PATH. See
+  <a href="../commands/">DOS commands &amp; programs</a> for the full list.</p>
+</li>
+<li>
+<p><strong>Y:</strong> contains a small set of bundled third-party utilities (DEBUG,
+  DELTREE, XCOPY). It is <a href="../system/general/#automount">automounted</a> by
+  default with its <code>Y:\DOS</code> directory added to the PATH.</p>
+</li>
+</ul>
+<h2 id="automounting">Automounting<a class="headerlink" href="#automounting" title="Permanent link">¶</a></h2>
+<p>The easiest way to set up drives is automounting. Place your game files in a
+<code>drives/</code> directory structure, and DOSBox mounts them automatically on
+startup. The
+<a href="../../getting-started/setting-up-prince-of-persia/#the-c-drive">Getting Started guide</a>
+demonstrates this approach step by step.</p>
+<h3 id="directory-structure">Directory structure<a class="headerlink" href="#directory-structure" title="Permanent link">¶</a></h3>
+<p>Create lowercase single-letter subdirectories under <code>drives/</code> to mount as DOS
+drives:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>drives/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  c/          -&gt; mounted as C:
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  d/          -&gt; mounted as D:
+</code></pre></div>
+<p>The <code>drives/</code> folder is looked up relative to the current working directory or
+from the built-in resources directory.</p>
+<h3 id="floppy-and-cd-rom-images">Floppy and CD-ROM images<a class="headerlink" href="#floppy-and-cd-rom-images" title="Permanent link">¶</a></h3>
+<p>Automounting also supports disk images for floppy and CD-ROM drives:</p>
+<ul>
+<li>Place IMG or IMA floppy images in <code>drives/a/</code> or <code>drives/b/</code> to mount
+  them as floppy drives.</li>
+<li>Place ISO, CUE/BIN, or MDS/MDF CD-ROM images in any drive directory (e.g.,
+  <code>drives/d/</code>) to mount them as CD-ROM drives.</li>
+</ul>
+<p>When image files are detected, DOSBox automatically uses the appropriate mount
+type.</p>
+<h3 id="drive-configuration-files">Drive configuration files<a class="headerlink" href="#drive-configuration-files" title="Permanent link">¶</a></h3>
+<p>Each drive directory can have an accompanying configuration file named
+<code>[letter].conf</code> (e.g., <code>c.conf</code>) placed alongside the directory. Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[drive]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">type</span><span class="w">     </span><span class="o">=</span><span class="w"> </span><span class="s">dir</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">label</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="s">MYGAME</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="na">readonly</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+</code></pre></div>
+<p>Available options:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Values</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><code>dir</code>, <code>overlay</code>, <code>floppy</code>, <code>cdrom</code>, <code>iso</code></td>
+<td>Drive type. <code>iso</code> is an alias for <code>cdrom</code>.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>any string</td>
+<td>Custom volume label.</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>PATH specification</td>
+<td>Extend the DOS PATH (e.g., <code>path = %path%;c:\tools</code>).</td>
+</tr>
+<tr>
+<td><code>override_drive</code></td>
+<td>single letter (a–y)</td>
+<td>Mount to a different drive letter.</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>on</code>, <code>off</code></td>
+<td>Mount as read-only.</td>
+</tr>
+<tr>
+<td><code>verbose</code></td>
+<td><code>on</code>, <code>off</code></td>
+<td>Show mount command output during startup.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="manual-mounting">Manual mounting<a class="headerlink" href="#manual-mounting" title="Permanent link">¶</a></h2>
+<p>For more control, use the <code>MOUNT</code> command directly, either at the DOS prompt
+or in the <code>[autoexec]</code> section of your config file. Type <code>MOUNT /?</code> at the
+DOS prompt for the full reference.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>IMGMOUNT</code> is deprecated. Use <code>MOUNT</code> for both directories and disk
+images.</p>
+</div>
+<h3 id="mounting-directories">Mounting directories<a class="headerlink" href="#mounting-directories" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mount C /path/to/game/files
+</code></pre></div>
+<p>This mounts a host directory as a DOS hard disk drive. This is the most common
+way to make game files accessible to DOS.</p>
+<p>By default, directory-mounted hard disks report approximately 250 MB of free
+space. Some games check for free disk space and refuse to install if there
+isn’t enough. Use the <code>-freesize</code> flag to adjust the reported free space (in
+MB for hard disks, KB for floppies):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mount C /path/to/game -freesize 1024
+</code></pre></div>
+<h4 id="volume-labels">Volume labels<a class="headerlink" href="#volume-labels" title="Permanent link">¶</a></h4>
+<p>Some games — particularly those with copy protection — check the volume
+label of the drive. Use the <code>-label</code> flag to set it explicitly:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>mount A /path/to/floppy -t floppy -label DISK1
+</code></pre></div>
+<p>This is most commonly needed for floppy-based games that verify the disk
+label during copy protection checks.</p>
+<h4 id="overlay-mounts">Overlay mounts<a class="headerlink" href="#overlay-mounts" title="Permanent link">¶</a></h4>
+<p>An overlay mount adds a write layer on top of an existing drive. Modified
+files are stored in the overlay directory on the host, leaving the original
+drive data unchanged. This is useful for keeping a clean copy of game files
+while still allowing the game to save data:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>mount C /path/to/game
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>mount C /path/to/saves -t overlay
+</code></pre></div>
+<h3 id="mounting-floppy-images">Mounting floppy images<a class="headerlink" href="#mounting-floppy-images" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>mount A floppy.img -t floppy
+</code></pre></div>
+<p>Supported floppy image formats: <code>.img</code>, <code>.ima</code> (raw sector images).</p>
+<h4 id="floppy-disk-formats">Floppy disk formats<a class="headerlink" href="#floppy-disk-formats" title="Permanent link">¶</a></h4>
+<p>The 5.25-inch disk was a flexible magnetic disk visible through a slot in its
+cardboard sleeve. The 3.5-inch disk housed the magnetic medium in a rigid
+plastic shell with a spring-loaded metal shutter. Capacities grew as
+recording density improved: <strong>DD</strong> (Double Density), <strong>HD</strong> (High Density),
+and <strong>ED</strong> (Extra Density) describe the magnetic coating and recording
+method. Some software distributors squeezed extra capacity using non-standard
+formats like Microsoft’s <strong>DMF</strong> (Distribution Media Format) at 1.68 MB or
+IBM’s <strong>XDF</strong> at 1.84 MB.</p>
+<p>DOSBox Staging supports all standard PC floppy formats and several extended
+formats. The format is detected automatically from the image file size.</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Size</th>
+<th>Type</th>
+<th>Capacity</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5.25”</td>
+<td>SS/DD</td>
+<td>160 KB</td>
+<td>Original IBM PC (1981)</td>
+</tr>
+<tr>
+<td>5.25”</td>
+<td>SS/DD</td>
+<td>180 KB</td>
+<td>9 sectors/track variant</td>
+</tr>
+<tr>
+<td>5.25”</td>
+<td>DS/DD</td>
+<td>320 KB</td>
+<td>Double-sided (1982)</td>
+</tr>
+<tr>
+<td>5.25”</td>
+<td>DS/DD</td>
+<td>360 KB</td>
+<td>Standard 5.25” DD</td>
+</tr>
+<tr>
+<td>5.25”</td>
+<td>DS/HD</td>
+<td>1.2 MB</td>
+<td>Standard 5.25” HD</td>
+</tr>
+<tr>
+<td>3.5”</td>
+<td>DS/DD</td>
+<td>720 KB</td>
+<td>Standard 3.5” DD</td>
+</tr>
+<tr>
+<td>3.5”</td>
+<td>DS/HD</td>
+<td>1.44 MB</td>
+<td>Standard 3.5” HD</td>
+</tr>
+<tr>
+<td>3.5”</td>
+<td>DS/HD</td>
+<td>1.68 MB</td>
+<td>Microsoft DMF</td>
+</tr>
+<tr>
+<td>3.5”</td>
+<td>DS/HD</td>
+<td>1.72 MB</td>
+<td>Microsoft DMF (82-track variant)</td>
+</tr>
+<tr>
+<td>3.5”</td>
+<td>DS/ED</td>
+<td>2.88 MB</td>
+<td>Extra Density (rare)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="mounting-cd-rom-images">Mounting CD-ROM images<a class="headerlink" href="#mounting-cd-rom-images" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>mount D game.cue -t iso
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mount D game.iso -t iso
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>mount D game.mds -t iso
+</code></pre></div>
+<p>Supported CD-ROM image formats:</p>
+<ul>
+<li><strong>CUE/BIN</strong> — CUE sheet with data and optional audio tracks.</li>
+<li><strong>ISO</strong> — Standard ISO 9660 images (data only).</li>
+<li><strong>MDS/MDF</strong> — Alcohol 120% disc images.</li>
+</ul>
+<p>For games with CD-DA music, use CUE/BIN or MDS/MDF format images with audio
+tracks. See <a href="../sound/sound-devices/cd-da/">CD-DA audio</a> for details on
+supported audio track formats.</p>
+<h3 id="mounting-multiple-images">Mounting multiple images<a class="headerlink" href="#mounting-multiple-images" title="Permanent link">¶</a></h3>
+<p>You can mount multiple images at the same drive letter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mount A disk1.img disk2.img disk3.img -t floppy
+</code></pre></div>
+<p>Wildcard patterns are also supported:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>mount D cd/*.cue -t iso
+</code></pre></div>
+<p>Press the <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f4">F4</kbd></span> hotkeys to cycle between the mounted images
+during gameplay. This is essential for multi-disk games that prompt you to
+insert the next disk.</p>
+<h3 id="mounting-hard-disk-images">Mounting hard disk images<a class="headerlink" href="#mounting-hard-disk-images" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mount C hdd.img -t hdd
+</code></pre></div>
+<p>For images that require explicit geometry:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mount C hdd.img -t hdd -chs 304,64,63
+</code></pre></div>
+<p>FAT12, FAT16, and FAT32 filesystems are supported.</p>
+<h3 id="read-only-mounts">Read-only mounts<a class="headerlink" href="#read-only-mounts" title="Permanent link">¶</a></h3>
+<p>Use the <code>-ro</code> flag to mount a drive as read-only:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mount D /path/to/shared -ro
+</code></pre></div>
+<h3 id="booting-from-images">Booting from images<a class="headerlink" href="#booting-from-images" title="Permanent link">¶</a></h3>
+<p>For bootable disk images (real MS-DOS, Windows 9x, etc.), mount with
+<code>-fs none</code> using a drive number instead of a letter:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mount 0 boot.img -t floppy -fs none
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>boot -l a
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mount 2 win95.img -t hdd -fs none -chs 304,64,63
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>boot -l c
+</code></pre></div>
+<p>Drive numbers 0 and 1 correspond to floppy drives A: and B:; 2 and 3
+correspond to hard disks C: and D:.</p>
+<div class="admonition note">
+<p class="admonition-title">Booter games</p>
+<p>Some early games (roughly 1981–1986) bypassed DOS entirely and booted
+directly from floppy disk. These “booter” games took over the whole
+machine, using non-standard disk formats as a form of copy protection
+and to squeeze out every last byte of available memory. They need the
+<code>boot</code> command shown above rather than <code>mount</code>.</p>
+</div>
+<details class="note">
+<summary>Notable booter games</summary>
+<div class="compact" markdown="">
+<ul>
+<li><a href="https://www.mobygames.com/game/190/alley-cat/">Alley Cat (1984)</a></li>
+<li><a href="https://www.mobygames.com/game/227/archon-the-light-and-the-dark/">Archon (1984)</a></li>
+<li><a href="https://www.mobygames.com/game/6561/bcs-quest-for-tires/">BC’s Quest for Tires (1983)</a></li>
+<li><a href="https://www.mobygames.com/game/11736/bouncing-babies/">Bouncing Babies (1984)</a></li>
+<li><a href="https://www.mobygames.com/game/7563/dig-dug/">Dig Dug (1983)</a></li>
+<li><a href="https://www.mobygames.com/game/1552/microsoft-flight-simulator-20/">Flight Simulator 2.0 (1984)</a></li>
+<li><a href="https://www.mobygames.com/game/252/the-hitchhikers-guide-to-the-galaxy/">Hitchhiker’s Guide to the Galaxy (1984)</a></li>
+<li><a href="https://www.mobygames.com/game/1583/karateka/">Karateka (1986)</a></li>
+<li><a href="https://www.mobygames.com/game/123/kings-quest/">King’s Quest (1984)</a></li>
+<li><a href="https://www.mobygames.com/game/17011/lode-runner/">Lode Runner (1983)</a></li>
+<li><a href="https://www.mobygames.com/game/1826/mule/">M.U.L.E. (1983)</a></li>
+<li><a href="https://www.mobygames.com/game/13851/pac-man/">Pac-Man (1983)</a></li>
+<li><a href="https://www.mobygames.com/game/795/paratrooper/">Paratrooper (1982)</a></li>
+<li><a href="https://www.mobygames.com/game/4/zork-the-great-underground-empire/">Zork I (1982)</a></li>
+</ul>
+</div>
+</details>
+<h3 id="dos-filesystem-limitations">DOS filesystem limitations<a class="headerlink" href="#dos-filesystem-limitations" title="Permanent link">¶</a></h3>
+<p>DOS filenames follow the <strong>8.3</strong> convention: a maximum of 8 characters for
+the name and 3 for the extension (e.g., <code>DUKE3D.EXE</code>). Names are
+case-insensitive, cannot contain spaces, and only a limited set of special
+characters is allowed. When mounting host directories, DOSBox Staging
+automatically truncates long filenames to 8.3 format for DOS programs.</p>
+<p>The FAT16 filesystem used by DOS limits individual partitions to a maximum
+of <strong>2 GB</strong>. Larger hard disk images must be split into multiple partitions.
+DOSBox Staging also supports FAT12 (used on floppy disks) and FAT32
+(used by Windows 95/98, with a theoretical 2 TB limit).</p>
+<h3 id="unmounting-drives">Unmounting drives<a class="headerlink" href="#unmounting-drives" title="Permanent link">¶</a></h3>
+<p>To unmount a previously mounted drive:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>mount -u D
+</code></pre></div>
+<h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
+<p>Storage-related settings are in the <code>[dosbox]</code> section:</p>
+<div class="compact">
+<ul>
+<li><a href="../system/general/#automount"><code>automount</code></a></li>
+<li><a href="../system/general/#hard_disk_speed"><code>hard_disk_speed</code></a></li>
+<li><a href="../system/general/#floppy_disk_speed"><code>floppy_disk_speed</code></a></li>
+</ul>
+</div>
+<p>For emulated drive sounds (floppy chatter, hard disk clicking), see
+<a href="../sound/disk-noise/">Disk noise</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="footer.title">
+
+      <!-- Link to previous page -->
+      
+        
+        <a href="../commands/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DOS commands" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              DOS commands
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a href="../hardware-resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Hardware resources" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Hardware resources
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+          <li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+          <li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+          <!-- Mastodon verification -->
+	  <li><a rel="me" href="https://corteximplant.com/@DOSBox_Staging">Mastodon</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../assets/javascripts/version-selector.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
