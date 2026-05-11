@@ -1097,6 +1097,29 @@
         
           
 <li class="md-nav__item">
+  <a href="#innovation-ssi-2001-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Innovation SSI-2001 changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Innovation SSI-2001 changes">
+      <ul class="md-nav__list">
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#other-sound-related-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5299,6 +5322,29 @@
         
           
 <li class="md-nav__item">
+  <a href="#innovation-ssi-2001-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Innovation SSI-2001 changes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Innovation SSI-2001 changes">
+      <ul class="md-nav__list">
+        
+          
+        
+          
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#other-sound-related-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5885,7 +5931,7 @@
 
 
 <h1 id="0830-rc1-release-notes">0.83.0-RC1 release notes<a class="headerlink" href="#0830-rc1-release-notes" title="Permanent link">¶</a></h1>
-<p><strong>Release date:</strong> 2026-05-04</p>
+<p><strong>Release date:</strong> 2026-05-11</p>
 <div class="admonition warning">
 <p class="admonition-title">Release candidate notes</p>
 <p>Welcome to <strong>DOSBox Staging 0.83.0 Release Candidate 1 (RC1)</strong>!</p>
@@ -6132,17 +6178,25 @@ create the new default primary config in the standard non-portable location).</p
 <li>
 <p><strong>Doom 1.9 patch</strong> now works correctly.</p>
 </li>
+<li>
+<p>Support Microprose’s “The Entertainer” sound card (Innovation SSI-2001
+  variant) in <a href="https://www.mobygames.com/game/335/gunship/">Gunship</a>
+  (v429.04 and 429.05) and
+  <a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates!</a>
+  (v432.1, v432.2, and v432.3).</p>
+</li>
 </ul>
 <details class="note">
 <summary>Full PR list of game compatibility improvements</summary>
 <ul>
 <li>Add configurable mouse mickey threshold (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4681" title="GitHub Issue dosbox-staging/dosbox-staging #4681">#4681</a>)</li>
 <li>Add mouse hack for ‘Joan of Arc: Siege &amp; the Sword’ game on Hercules machine (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4699" title="GitHub Issue dosbox-staging/dosbox-staging #4699">#4699</a>)</li>
+<li>Add support for Microprose’s ‘The Entertainer’ variant of the Innovation SSI-2001 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4857" title="GitHub Issue dosbox-staging/dosbox-staging #4857">#4857</a>)</li>
 <li>CDROM Audio: Do not continue to the next track if less than 2 seconds remains (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4487" title="GitHub Issue dosbox-staging/dosbox-staging #4487">#4487</a>)</li>
 <li>Filesystem fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4645" title="GitHub Issue dosbox-staging/dosbox-staging #4645">#4645</a>)</li>
+<li>Fix GUS hang in KQ4 enhanced (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4787" title="GitHub Issue dosbox-staging/dosbox-staging #4787">#4787</a>)</li>
 <li>Fix aspect ratio of 40-column text modes on VGA with shaders that force no pixel doubling (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4397" title="GitHub Issue dosbox-staging/dosbox-staging #4397">#4397</a>)</li>
 <li>Fix edge case where CDROM mixer hangs at the end of a track (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4302" title="GitHub Issue dosbox-staging/dosbox-staging #4302">#4302</a>)</li>
-<li>Fix GUS hang in KQ4 enhanced (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4787" title="GitHub Issue dosbox-staging/dosbox-staging #4787">#4787</a>)</li>
 <li>Implement auto config option for file_locking (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4721" title="GitHub Issue dosbox-staging/dosbox-staging #4721">#4721</a>)</li>
 <li>Improve DOS builtin mouse driver configurability (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4284" title="GitHub Issue dosbox-staging/dosbox-staging #4284">#4284</a>)</li>
 <li>Improve <code>MODE</code> command compatibility (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4668" title="GitHub Issue dosbox-staging/dosbox-staging #4668">#4668</a>)</li>
@@ -6982,6 +7036,7 @@ adapter for the time being.</p>
 <li>Fix setting <code>shader = crt-auto-machine</code> causing a crash at startup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4660" title="GitHub Issue dosbox-staging/dosbox-staging #4660">#4660</a>)</li>
 <li>Fix tripping debug assert when starting with <code>--startmapper</code> and exiting the mapper (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4554" title="GitHub Issue dosbox-staging/dosbox-staging #4554">#4554</a>)</li>
 <li>Fix two broken shaders (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4655" title="GitHub Issue dosbox-staging/dosbox-staging #4655">#4655</a>)</li>
+<li>Fix VGA double scan regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4864" title="GitHub Issue dosbox-staging/dosbox-staging #4864">#4864</a>)</li>
 <li>Fix VGA double scanning when setting a shader preset at startup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4616" title="GitHub Issue dosbox-staging/dosbox-staging #4616">#4616</a>)</li>
 <li>Fix video output freezing 35 minutes, 47 seconds, 483 milliseconds, and 648 microseconds after startup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4490" title="GitHub Issue dosbox-staging/dosbox-staging #4490">#4490</a>)</li>
 <li>Fix wrong 640x200 mode ID in SHOWPIC.EXE (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4640" title="GitHub Issue dosbox-staging/dosbox-staging #4640">#4640</a>)</li>
@@ -7334,6 +7389,28 @@ we can send the portamento messages again, and they will sound correct.</p>
   a warning and are mapped to <code>mididevice = port</code>.</p>
 </li>
 </ul>
+<h3 id="innovation-ssi-2001-changes">Innovation SSI-2001 changes<a class="headerlink" href="#innovation-ssi-2001-changes" title="Permanent link">¶</a></h3>
+<h4 id="simplified-settings">Simplified settings<a class="headerlink" href="#simplified-settings" title="Permanent link">¶</a></h4>
+<p>The Innovation SSI-2001’s configuration has been simplified to the following
+settings:</p>
+<div class="compact">
+<ul>
+<li><code>innovation</code></li>
+<li><code>innovation_sid_filter</code> (replaces <code>6581filter</code>)</li>
+<li><code>innovation_filter</code></li>
+</ul>
+</div>
+<p>The <code>sidmodel</code>, <code>sidport</code>, <code>sidclock</code>, and <code>8580filter</code> settings have been
+removed — now we only emulate the original card that uses the SID 6581 chip
+at base port 280h. All 15 games in existence that support the card and its
+variants will run fine with these settings.</p>
+<h4 id="microproses-the-entertainer-support">Microprose’s “The Entertainer” support<a class="headerlink" href="#microproses-the-entertainer-support" title="Permanent link">¶</a></h4>
+<p>Microprose’s “The Entertainer” variant of the Innovation SSI-2001 sound card
+is now also also emulated when <code>innovation</code> is enabled.</p>
+<p>Only two games that support the card: Microprose’s
+<a href="https://www.mobygames.com/game/335/gunship/">Gunship</a> (v429.04 and v429.05)
+and <a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates!</a>
+(v432.1, v432.2, and v432.3). </p>
 <h3 id="other-sound-related-changes">Other sound-related changes<a class="headerlink" href="#other-sound-related-changes" title="Permanent link">¶</a></h3>
 <ul>
 <li>
@@ -7384,11 +7461,11 @@ we can send the portamento messages again, and they will sound correct.</p>
 <details class="note">
 <summary>Full PR list of sound-related changes</summary>
 <ul>
-<li><code>soundcanvas_model</code> setting description fix. (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4298" title="GitHub Issue dosbox-staging/dosbox-staging #4298">#4298</a>)</li>
-<li>Add <code>soundcanvas_rom_dir</code> config setting and environment variable helpers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4572" title="GitHub Issue dosbox-staging/dosbox-staging #4572">#4572</a>)</li>
 <li>Add bounds checking to SoundBlaster’s read_dma_16bit() and read_dma_8bit() (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4188" title="GitHub Issue dosbox-staging/dosbox-staging #4188">#4188</a>)</li>
 <li>Add denoiser to filter out residual OPL and Sound Canvas mk1 noise (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4230" title="GitHub Issue dosbox-staging/dosbox-staging #4230">#4230</a>)</li>
 <li>Add seek-only mode for disk noise emulation, fix hdd noises missing i… (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4486" title="GitHub Issue dosbox-staging/dosbox-staging #4486">#4486</a>)</li>
+<li>Add <code>soundcanvas_rom_dir</code> config setting and environment variable helpers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4572" title="GitHub Issue dosbox-staging/dosbox-staging #4572">#4572</a>)</li>
+<li>Add support for Microprose’s ‘The Entertainer’ variant of the Innovation SSI-2001 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4857" title="GitHub Issue dosbox-staging/dosbox-staging #4857">#4857</a>)</li>
 <li>Added disk noise emulation and configurable IO throttling (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4325" title="GitHub Issue dosbox-staging/dosbox-staging #4325">#4325</a>)</li>
 <li>Allow changing the current FluidSynth <code>soundfont</code> config and the MT-32 <code>model</code> on-the-fly (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3982" title="GitHub Issue dosbox-staging/dosbox-staging #3982">#3982</a>)</li>
 <li>Always set SB per-frame callback for DAC (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4563" title="GitHub Issue dosbox-staging/dosbox-staging #4563">#4563</a>)</li>
@@ -7426,6 +7503,7 @@ we can send the portamento messages again, and they will sound correct.</p>
 <li>Restore deprecated mixer channel name aliases (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4400" title="GitHub Issue dosbox-staging/dosbox-staging #4400">#4400</a>)</li>
 <li>Simplify <code>mididevice</code> and <code>midiconfig</code> settings (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4040" title="GitHub Issue dosbox-staging/dosbox-staging #4040">#4040</a>)</li>
 <li>Sort SoundFonts in <code>MIXER /LISTMIDI</code> output &amp; fix current SF2 matching (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3981" title="GitHub Issue dosbox-staging/dosbox-staging #3981">#3981</a>)</li>
+<li><code>soundcanvas_model</code> setting description fix. (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4298" title="GitHub Issue dosbox-staging/dosbox-staging #4298">#4298</a>)</li>
 <li>Standardize the Sound Blaster against other audio devices (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3875" title="GitHub Issue dosbox-staging/dosbox-staging #3875">#3875</a>)</li>
 <li>Tone down FluidSynth logging (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4569" title="GitHub Issue dosbox-staging/dosbox-staging #4569">#4569</a>)</li>
 <li>Upgrade external vcpkg dependencies to v0.83.0-1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4348" title="GitHub Issue dosbox-staging/dosbox-staging #4348">#4348</a>)</li>
@@ -7548,6 +7626,9 @@ very unstable.</p>
 <li>
 <p>The mapper layout has been improved (it had regressed a bit in 0.81.0).</p>
 </li>
+<li>
+<p>Unpausing now works if the pause hotkey has been remapped.</p>
+</li>
 </ul>
 <h3 id="keyboard-layout-autodetection-changes">Keyboard layout autodetection changes<a class="headerlink" href="#keyboard-layout-autodetection-changes" title="Permanent link">¶</a></h3>
 <p>Keyboard layout auto-detection has been rewritten; now it tries to match one
@@ -7593,6 +7674,7 @@ always set <code>keyboard_layout = us</code> manually.</p>
 <li>Synchronize the reported DOS mouse driver language with the translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4669" title="GitHub Issue dosbox-staging/dosbox-staging #4669">#4669</a>)</li>
 <li>Use floating point inputs in the mouse emulation code (SDL 3 preparation) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4065" title="GitHub Issue dosbox-staging/dosbox-staging #4065">#4065</a>)</li>
 <li>Use ‘reg_dx’ for the mouse double speed threshold, as stated in the Microsoft specification (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4838" title="GitHub Issue dosbox-staging/dosbox-staging #4838">#4838</a>)</li>
+<li>Unpause the emulator with a remapped pause key (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4851" title="GitHub Issue dosbox-staging/dosbox-staging #4851">#4851</a>)</li>
 <li>Warn about MOUSE.COM options which are not going to be implemented (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4544" title="GitHub Issue dosbox-staging/dosbox-staging #4544">#4544</a>)</li>
 </ul>
 </details>
@@ -7917,11 +7999,12 @@ like <code>WQGHLT</code>.</p>
 <li>API: Add more control over allocation strategy (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4776" title="GitHub Issue dosbox-staging/dosbox-staging #4776">#4776</a>)</li>
 <li>Change display names of bool conf settings to ‘on’ and ‘off’ (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4248" title="GitHub Issue dosbox-staging/dosbox-staging #4248">#4248</a>)</li>
 <li>Config setting help shortcut (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4247" title="GitHub Issue dosbox-staging/dosbox-staging #4247">#4247</a>)</li>
-<li>HTTP API improvements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4847" title="GitHub Issue dosbox-staging/dosbox-staging #4847">#4847</a>)</li>
 <li>Fixes for “toggle” config setting values (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4727" title="GitHub Issue dosbox-staging/dosbox-staging #4727">#4727</a>)</li>
+<li>HTTP API improvements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4847" title="GitHub Issue dosbox-staging/dosbox-staging #4847">#4847</a>)</li>
 <li>Improve FPU emulation on non-x86 platforms (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4534" title="GitHub Issue dosbox-staging/dosbox-staging #4534">#4534</a>)</li>
 <li>Mapper layout fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4600" title="GitHub Issue dosbox-staging/dosbox-staging #4600">#4600</a>)</li>
 <li>Platforms builds workflow - add RISC-V, update to Debian 12 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4025" title="GitHub Issue dosbox-staging/dosbox-staging #4025">#4025</a>)</li>
+<li>Small improvements to the web server (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4871" title="GitHub Issue dosbox-staging/dosbox-staging #4871">#4871</a>)</li>
 <li>Use emulated HLT to lower the host CPU usage in some cases (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4535" title="GitHub Issue dosbox-staging/dosbox-staging #4535">#4535</a>)</li>
 <li>User manual related fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4843" title="GitHub Issue dosbox-staging/dosbox-staging #4843">#4843</a>)</li>
 <li>Windows activeCodePage and resource file build improvements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4526" title="GitHub Issue dosbox-staging/dosbox-staging #4526">#4526</a>)</li>
@@ -7957,10 +8040,12 @@ like <code>WQGHLT</code>.</p>
 <li>Config setting help text improvements &amp; fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4761" title="GitHub Issue dosbox-staging/dosbox-staging #4761">#4761</a>)</li>
 <li>Convert PVS-Studio workflow to CMake &amp; big build system cleanup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4299" title="GitHub Issue dosbox-staging/dosbox-staging #4299">#4299</a>)</li>
 <li>docs: Add Visual Studio troubleshooting tips (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4718" title="GitHub Issue dosbox-staging/dosbox-staging #4718">#4718</a>)</li>
+<li>Fix broken anchor: <code>documenetation</code> -&gt; <code>documentation</code> in DOCUMENTATION.md (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4859" title="GitHub Issue dosbox-staging/dosbox-staging #4859">#4859</a>)</li>
 <li>Fix ‘expand_shell_variable’ description (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4624" title="GitHub Issue dosbox-staging/dosbox-staging #4624">#4624</a>)</li>
 <li>Fix ‘lpf’ acronym in help text messages (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4615" title="GitHub Issue dosbox-staging/dosbox-staging #4615">#4615</a>)</li>
 <li>Fix and improve copyright year updater script &amp; update copyright year (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4765" title="GitHub Issue dosbox-staging/dosbox-staging #4765">#4765</a>)</li>
 <li>Fix outdated links in the pull request template (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4676" title="GitHub Issue dosbox-staging/dosbox-staging #4676">#4676</a>)</li>
+<li>Implement documentation versioning (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4854" title="GitHub Issue dosbox-staging/dosbox-staging #4854">#4854</a>)</li>
 <li>Improve setting help formatting (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4606" title="GitHub Issue dosbox-staging/dosbox-staging #4606">#4606</a>)</li>
 <li>Improve unit testing instructions (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4659" title="GitHub Issue dosbox-staging/dosbox-staging #4659">#4659</a>)</li>
 <li>Minor bundled libraries and legal notes cleanup (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4673" title="GitHub Issue dosbox-staging/dosbox-staging #4673">#4673</a>)</li>
@@ -8055,6 +8140,7 @@ like <code>WQGHLT</code>.</p>
 <li>Print VCPKG error log on workflow failure (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4006" title="GitHub Issue dosbox-staging/dosbox-staging #4006">#4006</a>)</li>
 <li>Prune all code for unsupported platforms (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4796" title="GitHub Issue dosbox-staging/dosbox-staging #4796">#4796</a>)</li>
 <li>PVS Studio warning fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4363" title="GitHub Issue dosbox-staging/dosbox-staging #4363">#4363</a>)</li>
+<li>Recommend and list cmake presets (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4863" title="GitHub Issue dosbox-staging/dosbox-staging #4863">#4863</a>)</li>
 <li>Remove <code>ModuleBase</code> (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4556" title="GitHub Issue dosbox-staging/dosbox-staging #4556">#4556</a>)</li>
 <li>Remove FluidSynth vcpkg port (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4347" title="GitHub Issue dosbox-staging/dosbox-staging #4347">#4347</a>)</li>
 <li>Remove function pointer for DOSBOX_Restart (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4558" title="GitHub Issue dosbox-staging/dosbox-staging #4558">#4558</a>)</li>
@@ -8079,6 +8165,7 @@ like <code>WQGHLT</code>.</p>
 <li>Sync with SVN r4485-r4494 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4710" title="GitHub Issue dosbox-staging/dosbox-staging #4710">#4710</a>)</li>
 <li>Sync/update Visual Studio filters (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4095" title="GitHub Issue dosbox-staging/dosbox-staging #4095">#4095</a>)</li>
 <li>Update and always use the vcpkg baseline in CI (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4012" title="GitHub Issue dosbox-staging/dosbox-staging #4012">#4012</a>)</li>
+<li>Update macOS notarize script (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4858" title="GitHub Issue dosbox-staging/dosbox-staging #4858">#4858</a>)</li>
 <li>Use CMake to control macOS minimum version (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4692" title="GitHub Issue dosbox-staging/dosbox-staging #4692">#4692</a>)</li>
 <li>Use short SPDX copyright headers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4389" title="GitHub Issue dosbox-staging/dosbox-staging #4389">#4389</a>)</li>
 <li>Warn about implicit fall-throughs in switch/case blocks (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4685" title="GitHub Issue dosbox-staging/dosbox-staging #4685">#4685</a>)</li>
@@ -8265,6 +8352,7 @@ browser.</p>
 <li>Update italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4312" title="GitHub Issue dosbox-staging/dosbox-staging #4312">#4312</a>)</li>
 <li>Update italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4235" title="GitHub Issue dosbox-staging/dosbox-staging #4235">#4235</a>)</li>
 <li>Update italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4125" title="GitHub Issue dosbox-staging/dosbox-staging #4125">#4125</a>)</li>
+<li>Update italian (it) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4853" title="GitHub Issue dosbox-staging/dosbox-staging #4853">#4853</a>)</li>
 <li>Update Italian (it_IT) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4808" title="GitHub Issue dosbox-staging/dosbox-staging #4808">#4808</a>)</li>
 <li>Update Italian (it_IT) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4625" title="GitHub Issue dosbox-staging/dosbox-staging #4625">#4625</a>)</li>
 <li>Update Polish (pl) translation (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4237" title="GitHub Issue dosbox-staging/dosbox-staging #4237">#4237</a>)</li>
