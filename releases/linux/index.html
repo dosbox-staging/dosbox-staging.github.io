@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,8 +9,6 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://www.dosbox-staging.org/releases/linux/">
-      
       
         <link rel="prev" href="../macos/">
       
@@ -21,8 +16,11 @@
         <link rel="next" href="../release-notes/0.82.2/">
       
       
+        
+      
+      
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -30,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -43,13 +41,13 @@
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -57,17 +55,17 @@
 
     
     
-    
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     <body dir="ltr">
@@ -90,16 +88,15 @@
     
     
 
-<div class="banner dev-site">
+<div class="dev-site" hidden="">
   <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
-<p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
-
+  <p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
 </div>
 
 <script>
-	if (window.location.pathname.startsWith("/preview/")) {
-    document.getElementsByClassName("dev-site")[0].classList.add("show");
-	}
+  if (window.location.pathname.startsWith("/preview/")) {
+    document.querySelector(".dev-site").removeAttribute("hidden");
+  }
 </script>
 
 <!-- Determine class according to configuration -->
@@ -110,27 +107,20 @@
 
 <!-- Header -->
 <header class="md-header md-header--lifted" data-md-component="header">
-  <nav
-    class="md-header__inner md-grid"
-    aria-label="header.title"
-  >
+  <nav class="md-header__inner md-grid" aria-label="header.title">
 
     <!-- Link to home -->
-    <a
-      href="../.."
-      title="DOSBox Staging"
-      class="md-header__button md-logo"
-      aria-label="DOSBox Staging"
-      data-md-component="logo"
-    >
-      
+    
+      <a href="../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+        
   <img src="../../assets/images/dosbox-staging-nobg.svg" alt="logo">
 
-    </a>
+      </a>
+    
 
     <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
 
     <!-- Header title -->
@@ -152,7 +142,7 @@
     <!-- Button to open search modal -->
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
 
       <!-- Search interface -->
@@ -160,23 +150,23 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -184,7 +174,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -207,6 +197,7 @@
     <ul class="md-tabs__list">
       
         
+          
   
   
   
@@ -229,8 +220,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -238,7 +231,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started/" class="md-tabs__link">
+        <a href="../../0.82/getting-started/" class="md-tabs__link">
           
   
   
@@ -251,8 +244,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -273,8 +268,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -295,8 +292,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -314,6 +313,7 @@
     </li>
   
 
+        
       
     </ul>
   </div>
@@ -334,7 +334,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -353,7 +353,7 @@
     DOSBox Staging
   </label>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -394,7 +394,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked="">
         
           
           <div class="md-nav__link md-nav__container">
@@ -403,9 +403,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Releases
+  
+
     
   </span>
+  
   
 
             </a>
@@ -420,9 +425,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
-            Releases
+            
+  
+    Releases
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -438,9 +447,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Windows
+  
+
     
   </span>
+  
   
 
       </a>
@@ -461,9 +475,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     macOS
+  
+
     
   </span>
+  
   
 
       </a>
@@ -493,9 +512,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Linux
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -506,9 +530,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Linux
+  
+
     
   </span>
+  
   
 
       </a>
@@ -526,61 +555,85 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#current-stable-version" class="md-nav__link">
     <span class="md-ellipsis">
-      Current stable version
+      
+        Current stable version
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#hardware-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware requirements
+      
+        Hardware requirements
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#non-official-repackaged-releases" class="md-nav__link">
     <span class="md-ellipsis">
-      Non-official repackaged releases
+      
+        Non-official repackaged releases
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#development-snapshot-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      Development snapshot builds
+      
+        Development snapshot builds
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#older-releases" class="md-nav__link">
     <span class="md-ellipsis">
-      Older releases
+      
+        Older releases
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#building-from-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Building from source
+      
+        Building from source
+      
     </span>
   </a>
   
 </li>
+
       
     </ul>
   
@@ -649,7 +702,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5">
         
           
           <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
@@ -657,9 +710,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Release notes
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -668,9 +726,13 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_5">
             <span class="md-nav__icon md-icon"></span>
-            Release notes
+            
+  
+    Release notes
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -684,9 +746,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.82.2
+  
+
     
   </span>
+  
   
 
       </a>
@@ -707,9 +774,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.82.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -730,9 +802,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.82.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -753,9 +830,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.81.2
+  
+
     
   </span>
+  
   
 
       </a>
@@ -776,9 +858,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.81.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -799,9 +886,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.81.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -822,9 +914,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.80.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -845,9 +942,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.80.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -868,9 +970,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.79.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -891,9 +998,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.79.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -914,9 +1026,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.78.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -937,9 +1054,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.78.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -960,9 +1082,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.77.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -983,9 +1110,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.77.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1006,9 +1138,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.76.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1029,9 +1166,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.2
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1052,9 +1194,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1075,9 +1222,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1098,9 +1250,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.0-RC1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1129,9 +1286,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Development builds
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1187,18 +1349,23 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../getting-started/" class="md-nav__link ">
+            <a href="../../0.82/getting-started/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
+    
+  
     Getting started
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1213,9 +1380,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Getting started
+            
+  
+    Getting started
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1226,14 +1397,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/introduction/" class="md-nav__link">
+      <a href="../../0.82/getting-started/introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Introduction
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1249,14 +1425,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
+      <a href="../../0.82/getting-started/setting-up-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Setting up Prince of Persia
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1272,14 +1453,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../0.82/getting-started/enhancing-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Enhancing Prince of Persia
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1295,14 +1481,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/passport-to-adventure/" class="md-nav__link">
+      <a href="../../0.82/getting-started/passport-to-adventure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Passport to Adventure
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1318,14 +1509,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
+      <a href="../../0.82/getting-started/beneath-a-steel-sky/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Beneath a Steel Sky
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1341,14 +1537,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/star-wars-dark-forces/" class="md-nav__link">
+      <a href="../../0.82/getting-started/star-wars-dark-forces/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Star Wars: Dark Forces
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1364,14 +1565,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/advanced-graphics-options/" class="md-nav__link">
+      <a href="../../0.82/getting-started/advanced-graphics-options/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Advanced graphics options
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1387,14 +1593,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/next-steps/" class="md-nav__link">
+      <a href="../../0.82/getting-started/next-steps/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Next steps
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1436,7 +1647,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1445,9 +1656,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Get involved
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1462,9 +1678,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Get involved
+            
+  
+    Get involved
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1480,9 +1700,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Code of conduct
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1522,7 +1747,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1531,9 +1756,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     About
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1543,9 +1773,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            About
+            
+  
+    About
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1568,9 +1802,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Wiki
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1588,7 +1827,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1604,61 +1843,85 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#current-stable-version" class="md-nav__link">
     <span class="md-ellipsis">
-      Current stable version
+      
+        Current stable version
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#hardware-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware requirements
+      
+        Hardware requirements
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#non-official-repackaged-releases" class="md-nav__link">
     <span class="md-ellipsis">
-      Non-official repackaged releases
+      
+        Non-official repackaged releases
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#development-snapshot-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      Development snapshot builds
+      
+        Development snapshot builds
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#older-releases" class="md-nav__link">
     <span class="md-ellipsis">
-      Older releases
+      
+        Older releases
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#building-from-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Building from source
+      
+        Building from source
+      
     </span>
   </a>
   
 </li>
+
       
     </ul>
   
@@ -1670,6 +1933,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1678,8 +1942,13 @@
 
 
 
-<h1 id="linux-releases">Linux releases<a class="headerlink" href="#linux-releases" title="Permanent link">&para;</a></h1>
-<h2 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">&para;</a></h2>
+<h1 id="linux-releases">Linux releases<a class="headerlink" href="#linux-releases" title="Permanent link">¶</a></h1>
+<h2 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you’re new to DOSBox Staging, we highly recommend reading the
+<a href="../getting-started/index.md">Getting Started guide</a> first.</p>
+</div>
 <section class="release-downloads">
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.82.2/dosbox-staging-linux-x86_64-v0.82.2.tar.xz">Download DOSBox Staging 0.82.2 (x86_64)</a>
 <br>
@@ -1692,14 +1961,12 @@ now). It only depends on the C/C++, ALSA, and OpenGL system libraries; all
 other libraries are statically linked.</p>
 <p>Please run the <code>install-icons.sh</code> script included with the release to install
 the application icons.</p>
-<p>Check out the <a href="../release-notes/0.82.2/">0.82.2 release notes</a> to learn
+<p>Read the <a href="../release-notes/0.82.2/">0.82.2 release notes</a> to learn
 about the changes and improvements introduced in this release.</p>
-<p>If you&rsquo;re new to DOSBox Staging, we highly recommend following the
-<a href="../../getting-started/">Getting started guide</a>.</p>
-<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h2>
+<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">¶</a></h2>
 <p>From the x86 family of processors, a processor with SSSE3 (Supplemental
 Streaming SIMD Extensions 3) is required.</p>
-<h2 id="non-official-repackaged-releases">Non-official repackaged releases<a class="headerlink" href="#non-official-repackaged-releases" title="Permanent link">&para;</a></h2>
+<h2 id="non-official-repackaged-releases">Non-official repackaged releases<a class="headerlink" href="#non-official-repackaged-releases" title="Permanent link">¶</a></h2>
 <p>DOSBox Staging is also repackaged by external teams as distribution-specific
 repository packages, containerised images, etc. These repackaged releases may
 have variations in configuration file locations, filesystem or network
@@ -1709,7 +1976,7 @@ different library versions than what we have tested out official releases
 with.</p>
 <p>The DOSBox Staging team does <em>not</em> track or document these differences.
 For issues specific to these non-official packages, we recommend referring to the
-repository&rsquo;s documentation, and when in doubt, please contact the respective
+repository’s documentation, and when in doubt, please contact the respective
 repository owners.</p>
 <div class="admonition warning">
 <p class="admonition-title">Non-official releases and support</p>
@@ -1717,19 +1984,19 @@ repository owners.</p>
 issues can happen if you start using different library versions, different
 compilers, different compiler flags or revisions, etc. Many of these
 issues are hard to notice without being intimately familiar with
-our software and doing hundreds of hours of testing&mdash;the amount of
+our software and doing hundreds of hours of testing — the amount of
 testing we typically put into each release.</p>
-<p>Therefore, if you believe you&rsquo;ve found a bug, and you&rsquo;re not using our
+<p>Therefore, if you believe you’ve found a bug, and you’re not using our
 official Linux release, the first thing to do is to re-test with that.
 <strong>Please only report issues that are reproducible using our official
 release!</strong> If the problem is only present in the non-official package, you
 should ask the person or team who did the repackaging for help.</p>
 </div>
-<h2 id="development-snapshot-builds">Development snapshot builds<a class="headerlink" href="#development-snapshot-builds" title="Permanent link">&para;</a></h2>
-<p>You can always see what&rsquo;s cooking on the main branch! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f60e.svg" title=":sunglasses:" /> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f37a.svg" title=":beer:" /></p>
+<h2 id="development-snapshot-builds">Development snapshot builds<a class="headerlink" href="#development-snapshot-builds" title="Permanent link">¶</a></h2>
+<p>You can always see what’s cooking on the main branch! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f60e.svg" title=":sunglasses:"> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f37a.svg" title=":beer:"></p>
 <p>These <a href="../development-builds/">snapshot builds</a> might be slow or unstable as they
 are designed with developers and testers in mind.</p>
-<h2 id="older-releases">Older releases<a class="headerlink" href="#older-releases" title="Permanent link">&para;</a></h2>
+<h2 id="older-releases">Older releases<a class="headerlink" href="#older-releases" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.82.1/dosbox-staging-linux-x86_64-v0.82.1.tar.xz">DOSBox Staging 0.82.1 (x86_64)</a>
@@ -1851,9 +2118,9 @@ are designed with developers and testers in mind.</p>
   </small></p>
 </li>
 </ul>
-<h2 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">&para;</a></h2>
+<h2 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">¶</a></h2>
 <p>Of course, you can always <a href="https://github.com/dosbox-staging/dosbox-staging">build DOSBox Staging straight from the source</a>.</p>
-<p>Send us patches if you improve something! <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f604.svg" title=":smile:" /></p>
+<p>Send us patches if you improve something! <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f604.svg" title=":smile:"></p>
 
 
 
@@ -1879,9 +2146,9 @@ are designed with developers and testers in mind.</p>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -1895,23 +2162,14 @@ are designed with developers and testers in mind.</p>
     
       
     
-    <nav
-      class="md-footer__inner md-grid"
-      aria-label="footer.title"
-      hidden
-    >
+    <nav class="md-footer__inner md-grid" aria-label="footer.title" hidden="">
 
       <!-- Link to previous page -->
       
         
-        <a
-          href="../macos/"
-          class="md-footer__link md-footer__link--prev"
-          aria-label="Previous: macOS"
-          rel="prev"
-        >
+        <a href="../macos/" class="md-footer__link md-footer__link--prev" aria-label="Previous: macOS" rel="prev">
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
@@ -1927,12 +2185,7 @@ are designed with developers and testers in mind.</p>
       <!-- Link to next page -->
       
         
-        <a
-          href="../release-notes/0.82.2/"
-          class="md-footer__link md-footer__link--next"
-          aria-label="Next: 0.82.2"
-          rel="next"
-        >
+        <a href="../release-notes/0.82.2/" class="md-footer__link md-footer__link--next" aria-label="Next: 0.82.2" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -1942,7 +2195,7 @@ are designed with developers and testers in mind.</p>
             </div>
           </div>
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
           </div>
         </a>
       
@@ -1978,13 +2231,16 @@ are designed with developers and testers in mind.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/version-selector.js"></script>
       
     
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

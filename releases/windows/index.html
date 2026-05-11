@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="en" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -12,8 +9,6 @@
         <meta name="author" content="DOSBox Staging Authors">
       
       
-        <link rel="canonical" href="https://www.dosbox-staging.org/releases/windows/">
-      
       
         <link rel="prev" href="../">
       
@@ -21,8 +16,11 @@
         <link rel="next" href="../macos/">
       
       
+        
+      
+      
       <link rel="icon" href="../../assets/images/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
@@ -30,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
       
 
@@ -43,13 +41,13 @@
       
         
         
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -57,17 +55,17 @@
 
     
     
-    
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     <body dir="ltr">
@@ -90,16 +88,15 @@
     
     
 
-<div class="banner dev-site">
+<div class="dev-site" hidden="">
   <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
-<p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
-
+  <p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
 </div>
 
 <script>
-	if (window.location.pathname.startsWith("/preview/")) {
-    document.getElementsByClassName("dev-site")[0].classList.add("show");
-	}
+  if (window.location.pathname.startsWith("/preview/")) {
+    document.querySelector(".dev-site").removeAttribute("hidden");
+  }
 </script>
 
 <!-- Determine class according to configuration -->
@@ -110,27 +107,20 @@
 
 <!-- Header -->
 <header class="md-header md-header--lifted" data-md-component="header">
-  <nav
-    class="md-header__inner md-grid"
-    aria-label="header.title"
-  >
+  <nav class="md-header__inner md-grid" aria-label="header.title">
 
     <!-- Link to home -->
-    <a
-      href="../.."
-      title="DOSBox Staging"
-      class="md-header__button md-logo"
-      aria-label="DOSBox Staging"
-      data-md-component="logo"
-    >
-      
+    
+      <a href="../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+        
   <img src="../../assets/images/dosbox-staging-nobg.svg" alt="logo">
 
-    </a>
+      </a>
+    
 
     <!-- Button to open drawer -->
     <label class="md-header__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
 
     <!-- Header title -->
@@ -152,7 +142,7 @@
     <!-- Button to open search modal -->
     
       <label class="md-header__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
       </label>
 
       <!-- Search interface -->
@@ -160,23 +150,23 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
             
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
           </a>
         
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -184,7 +174,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Initializing search
@@ -207,6 +197,7 @@
     <ul class="md-tabs__list">
       
         
+          
   
   
   
@@ -229,8 +220,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -238,7 +231,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started/" class="md-tabs__link">
+        <a href="../../0.82/getting-started/" class="md-tabs__link">
           
   
   
@@ -251,8 +244,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -273,8 +268,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -295,8 +292,10 @@
     
   
 
+        
       
         
+          
   
   
   
@@ -314,6 +313,7 @@
     </li>
   
 
+        
       
     </ul>
   </div>
@@ -334,7 +334,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -353,7 +353,7 @@
     DOSBox Staging
   </label>
   
-  <ul class="md-nav__list" data-md-scrollfix>
+  <ul class="md-nav__list" data-md-scrollfix="">
     
       
       
@@ -394,7 +394,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked="">
         
           
           <div class="md-nav__link md-nav__container">
@@ -403,9 +403,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Releases
+  
+
     
   </span>
+  
   
 
             </a>
@@ -420,9 +425,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
-            Releases
+            
+  
+    Releases
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -447,9 +456,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Windows
+  
+
     
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -460,9 +474,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Windows
+  
+
     
   </span>
+  
   
 
       </a>
@@ -480,163 +499,214 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#current-stable-version" class="md-nav__link">
     <span class="md-ellipsis">
-      Current stable version
+      
+        Current stable version
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#hardware-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware requirements
+      
+        Hardware requirements
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#legacy-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
-      Legacy Windows support
+      
+        Legacy Windows support
+      
     </span>
   </a>
   
     <nav class="md-nav" aria-label="Legacy Windows support">
       <ul class="md-nav__list">
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#windows-810-32-bit" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows 8/10 32-bit
+      
+        Windows 8/10 32-bit
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#windows-7" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows 7
+      
+        Windows 7
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#windows-vista" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows Vista
+      
+        Windows Vista
+      
     </span>
   </a>
   
 </li>
+
         
       </ul>
     </nav>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#development-snapshot-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      Development snapshot builds
+      
+        Development snapshot builds
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
-  <a href="#experimental-windows-arm64-builds" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experimental Windows ARM64 builds
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#windows-defender" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows Defender
+      
+        Windows Defender
+      
     </span>
   </a>
   
     <nav class="md-nav" aria-label="Windows Defender">
       <ul class="md-nav__list">
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#method-1" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 1
+      
+        Method 1
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#method-2" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 2
+      
+        Method 2
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#method-3" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 3
+      
+        Method 3
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation
+      
+        Explanation
+      
     </span>
   </a>
   
 </li>
+
         
       </ul>
     </nav>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#custom-install-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom install parameters
+      
+        Custom install parameters
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#older-releases" class="md-nav__link">
     <span class="md-ellipsis">
-      Older releases
+      
+        Older releases
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#building-from-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Building from source
+      
+        Building from source
+      
     </span>
   </a>
   
 </li>
+
       
     </ul>
   
@@ -659,9 +729,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     macOS
+  
+
     
   </span>
+  
   
 
       </a>
@@ -682,9 +757,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Linux
+  
+
     
   </span>
+  
   
 
       </a>
@@ -751,7 +831,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5">
         
           
           <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
@@ -759,9 +839,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Release notes
+  
+
     
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -770,9 +855,13 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_5">
             <span class="md-nav__icon md-icon"></span>
-            Release notes
+            
+  
+    Release notes
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
                 
@@ -786,9 +875,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.82.2
+  
+
     
   </span>
+  
   
 
       </a>
@@ -809,9 +903,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.82.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -832,9 +931,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.82.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -855,9 +959,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.81.2
+  
+
     
   </span>
+  
   
 
       </a>
@@ -878,9 +987,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.81.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -901,9 +1015,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.81.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -924,9 +1043,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.80.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -947,9 +1071,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.80.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -970,9 +1099,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.79.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -993,9 +1127,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.79.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1016,9 +1155,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.78.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1039,9 +1183,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.78.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1062,9 +1211,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.77.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1085,9 +1239,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.77.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1108,9 +1267,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.76.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1131,9 +1295,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.2
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1154,9 +1323,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1177,9 +1351,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.0
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1200,9 +1379,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     0.75.0-RC1
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1231,9 +1415,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Development builds
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1289,18 +1478,23 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../getting-started/" class="md-nav__link ">
+            <a href="../../0.82/getting-started/" class="md-nav__link ">
               
   
   
   <span class="md-ellipsis">
+    
+  
     Getting started
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1315,9 +1509,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Getting started
+            
+  
+    Getting started
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1328,14 +1526,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/introduction/" class="md-nav__link">
+      <a href="../../0.82/getting-started/introduction/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Introduction
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1351,14 +1554,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
+      <a href="../../0.82/getting-started/setting-up-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Setting up Prince of Persia
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1374,14 +1582,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../0.82/getting-started/enhancing-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Enhancing Prince of Persia
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1397,14 +1610,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/passport-to-adventure/" class="md-nav__link">
+      <a href="../../0.82/getting-started/passport-to-adventure/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Passport to Adventure
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1420,14 +1638,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
+      <a href="../../0.82/getting-started/beneath-a-steel-sky/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Beneath a Steel Sky
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1443,14 +1666,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/star-wars-dark-forces/" class="md-nav__link">
+      <a href="../../0.82/getting-started/star-wars-dark-forces/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Star Wars: Dark Forces
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1466,14 +1694,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/advanced-graphics-options/" class="md-nav__link">
+      <a href="../../0.82/getting-started/advanced-graphics-options/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Advanced graphics options
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1489,14 +1722,19 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/next-steps/" class="md-nav__link">
+      <a href="../../0.82/getting-started/next-steps/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
+    
+  
     Next steps
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1538,7 +1776,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1547,9 +1785,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Get involved
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1564,9 +1807,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            Get involved
+            
+  
+    Get involved
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1582,9 +1829,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Code of conduct
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1624,7 +1876,7 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
         
           
           <div class="md-nav__link md-nav__container">
@@ -1633,9 +1885,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     About
+  
+
     
   </span>
+  
   
 
             </a>
@@ -1645,9 +1902,13 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
-            About
+            
+  
+    About
+  
+
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
+          <ul class="md-nav__list" data-md-scrollfix="">
             
               
             
@@ -1670,9 +1931,14 @@
   
   
   <span class="md-ellipsis">
+    
+  
     Wiki
+  
+
     
   </span>
+  
   
 
       </a>
@@ -1690,7 +1956,7 @@
               
                 
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1706,163 +1972,214 @@
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#current-stable-version" class="md-nav__link">
     <span class="md-ellipsis">
-      Current stable version
+      
+        Current stable version
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#hardware-requirements" class="md-nav__link">
     <span class="md-ellipsis">
-      Hardware requirements
+      
+        Hardware requirements
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#legacy-windows-support" class="md-nav__link">
     <span class="md-ellipsis">
-      Legacy Windows support
+      
+        Legacy Windows support
+      
     </span>
   </a>
   
     <nav class="md-nav" aria-label="Legacy Windows support">
       <ul class="md-nav__list">
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#windows-810-32-bit" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows 8/10 32-bit
+      
+        Windows 8/10 32-bit
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#windows-7" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows 7
+      
+        Windows 7
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#windows-vista" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows Vista
+      
+        Windows Vista
+      
     </span>
   </a>
   
 </li>
+
         
       </ul>
     </nav>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#development-snapshot-builds" class="md-nav__link">
     <span class="md-ellipsis">
-      Development snapshot builds
+      
+        Development snapshot builds
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
-  <a href="#experimental-windows-arm64-builds" class="md-nav__link">
-    <span class="md-ellipsis">
-      Experimental Windows ARM64 builds
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#windows-defender" class="md-nav__link">
     <span class="md-ellipsis">
-      Windows Defender
+      
+        Windows Defender
+      
     </span>
   </a>
   
     <nav class="md-nav" aria-label="Windows Defender">
       <ul class="md-nav__list">
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#method-1" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 1
+      
+        Method 1
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#method-2" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 2
+      
+        Method 2
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#method-3" class="md-nav__link">
     <span class="md-ellipsis">
-      Method 3
+      
+        Method 3
+      
     </span>
   </a>
   
 </li>
+
         
-          <li class="md-nav__item">
+          
+<li class="md-nav__item">
   <a href="#explanation" class="md-nav__link">
     <span class="md-ellipsis">
-      Explanation
+      
+        Explanation
+      
     </span>
   </a>
   
 </li>
+
         
       </ul>
     </nav>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#custom-install-parameters" class="md-nav__link">
     <span class="md-ellipsis">
-      Custom install parameters
+      
+        Custom install parameters
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#older-releases" class="md-nav__link">
     <span class="md-ellipsis">
-      Older releases
+      
+        Older releases
+      
     </span>
   </a>
   
 </li>
+
       
-        <li class="md-nav__item">
+        
+<li class="md-nav__item">
   <a href="#building-from-source" class="md-nav__link">
     <span class="md-ellipsis">
-      Building from source
+      
+        Building from source
+      
     </span>
   </a>
   
 </li>
+
       
     </ul>
   
@@ -1874,6 +2191,7 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
@@ -1882,8 +2200,13 @@
 
 
 
-<h1 id="windows-releases">Windows releases<a class="headerlink" href="#windows-releases" title="Permanent link">&para;</a></h1>
-<h2 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">&para;</a></h2>
+<h1 id="windows-releases">Windows releases<a class="headerlink" href="#windows-releases" title="Permanent link">¶</a></h1>
+<h2 id="current-stable-version">Current stable version<a class="headerlink" href="#current-stable-version" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you’re new to DOSBox Staging, we highly recommend reading the
+<a href="../getting-started/index.md">Getting Started guide</a> first.</p>
+</div>
 <section class="release-downloads">
 <ul>
 <li>
@@ -1903,25 +2226,23 @@
 </ul>
 </section>
 <p>DOSBox Staging requires <strong>64-bit Windows 8, 10, or 11</strong>.</p>
-<p>Check out the <a href="../release-notes/0.82.2/">0.82.2 release notes</a> to learn about
+<p>Read the <a href="../release-notes/0.82.2/">0.82.2 release notes</a> to learn about
 the changes and improvements introduced in this release.</p>
-<p>If you&rsquo;re new to DOSBox Staging, we highly recommend following the
-<a href="../../getting-started/">Getting started guide</a>.</p>
-<div class="admonition important">
+<div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>If Windows Security prevents you from running DOSBox Staging via <strong>Windows
 Defender SmartScreen</strong> (the built-in Windows antivirus), please follow
 <a href="#windows-defender">these instructions</a>.</p>
 </div>
-<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">&para;</a></h2>
+<h2 id="hardware-requirements">Hardware requirements<a class="headerlink" href="#hardware-requirements" title="Permanent link">¶</a></h2>
 <p>An x86 processor with SSSE3 (Supplemental Streaming SIMD Extensions 3) is
 required.</p>
-<h2 id="legacy-windows-support">Legacy Windows support<a class="headerlink" href="#legacy-windows-support" title="Permanent link">&para;</a></h2>
-<p>If you&rsquo;re still on a legacy Windows version, you can use the following older
+<h2 id="legacy-windows-support">Legacy Windows support<a class="headerlink" href="#legacy-windows-support" title="Permanent link">¶</a></h2>
+<p>If you’re still on a legacy Windows version, you can use the following older
 releases. Note these earlier version come with <em>zero official support</em>; the
-core team won&rsquo;t be able to help you if you run into issues. Our recommendation
+core team won’t be able to help you if you run into issues. Our recommendation
 will always be to upgrade your Windows and use the latest stable version.</p>
-<h3 id="windows-810-32-bit">Windows 8/10 32-bit<a class="headerlink" href="#windows-810-32-bit" title="Permanent link">&para;</a></h3>
+<h3 id="windows-810-32-bit">Windows 8/10 32-bit<a class="headerlink" href="#windows-810-32-bit" title="Permanent link">¶</a></h3>
 <p>The official distribution packages only support 32-bit Windows 8 or 10 up to
 version 0.80.1:</p>
 <ul>
@@ -1932,7 +2253,7 @@ version 0.80.1:</p>
 <p>For 64-bit Windows 8 or 10, use the <a href="#current-stable-version">current stable version</a>.</p>
 </li>
 </ul>
-<h3 id="windows-7">Windows 7<a class="headerlink" href="#windows-7" title="Permanent link">&para;</a></h3>
+<h3 id="windows-7">Windows 7<a class="headerlink" href="#windows-7" title="Permanent link">¶</a></h3>
 <p>The official distribution packages only support Windows 7 up to version
 0.80.1:</p>
 <ul>
@@ -1944,68 +2265,63 @@ version 0.80.1:</p>
 <p>For 32-bit Windows 7, use the <a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.80.1/dosbox-staging-windows-x86_32-v0.80.1.zip">0.80.1 portable ZIP package</a>.</p>
 </li>
 </ul>
-<h3 id="windows-vista">Windows Vista<a class="headerlink" href="#windows-vista" title="Permanent link">&para;</a></h3>
+<h3 id="windows-vista">Windows Vista<a class="headerlink" href="#windows-vista" title="Permanent link">¶</a></h3>
 <p>The official distribution packages only support Windows Vista up to version
 0.78.1.</p>
-<h2 id="development-snapshot-builds">Development snapshot builds<a class="headerlink" href="#development-snapshot-builds" title="Permanent link">&para;</a></h2>
-<p>You can always see what&rsquo;s cooking on the main branch! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f60e.svg" title=":sunglasses:" /> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f37a.svg" title=":beer:" /></p>
+<h2 id="development-snapshot-builds">Development snapshot builds<a class="headerlink" href="#development-snapshot-builds" title="Permanent link">¶</a></h2>
+<p>You can always see what’s cooking on the main branch! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f60e.svg" title=":sunglasses:"> <img alt="🍺" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f37a.svg" title=":beer:"></p>
 <p>These <a href="../development-builds/">snapshot builds</a> might be slow or unstable as they
 are designed with developers and testers in mind.</p>
-<h2 id="experimental-windows-arm64-builds">Experimental Windows ARM64 builds<a class="headerlink" href="#experimental-windows-arm64-builds" title="Permanent link">&para;</a></h2>
-<p>We started providing experimental Windows ARM64 packages for devices such as
-the Snapdragon X Elite. Note we don&rsquo;t provide any official support for these
-builds yet.</p>
-<p>The ARM64 packages can be downloaded from our <a href="../development-builds/">development builds</a> page.</p>
-<h2 id="windows-defender">Windows Defender<a class="headerlink" href="#windows-defender" title="Permanent link">&para;</a></h2>
+<h2 id="windows-defender">Windows Defender<a class="headerlink" href="#windows-defender" title="Permanent link">¶</a></h2>
 <p>Windows Defender (the built-in Windows antivirus starting from Windows 8)
 might prevent you from running DOSBox Staging when you start it for the first
 time.</p>
 <p>This is a false positive; DOSBox Staging has no malicious code whatsoever,
-just antivirus software tend to be mistakenly flag emulators as &ldquo;malware&rdquo;.</p>
+just antivirus software tend to be mistakenly flag emulators as “malware”.</p>
 <p>If this happens, please follow the below steps to grant Windows permission to
 run DOSBox Staging. You may need to repeat these steps after upgrading
 to a newer version.</p>
-<h3 id="method-1">Method 1<a class="headerlink" href="#method-1" title="Permanent link">&para;</a></h3>
+<h3 id="method-1">Method 1<a class="headerlink" href="#method-1" title="Permanent link">¶</a></h3>
 <p>Start the application, then click on <strong>More info</strong> in the appearing dialog.
 Click the <strong>Run anyway</strong> button in the second dialog.</p>
 <div class="image-grid">
 <figure>
-<p><a class="glightbox" href="../images/smartscreen1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SmartScreen window 1" src="../images/smartscreen1.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/smartscreen1.png" data-desc-position="bottom"><img alt="SmartScreen window 1" src="../images/smartscreen1.png"></a></p>
 </figure>
 <figure>
-<p><a class="glightbox" href="../images/smartscreen2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="SmartScreen window 2" src="../images/smartscreen2.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/smartscreen2.png" data-desc-position="bottom"><img alt="SmartScreen window 2" src="../images/smartscreen2.png"></a></p>
 </figure>
 </div>
 <p>Consider also performing <a href="#method-3">Method 3</a> to make DOSBox Staging start up
 faster.</p>
-<h3 id="method-2">Method 2<a class="headerlink" href="#method-2" title="Permanent link">&para;</a></h3>
+<h3 id="method-2">Method 2<a class="headerlink" href="#method-2" title="Permanent link">¶</a></h3>
 <p>In your installation folder, right-click on the <code>dosbox.exe</code>, select <strong>Properties</strong>, tick
 <strong>Unblock</strong> in the appearing dialog, then press <strong>Ok</strong>.</p>
 <figure>
-<p><a class="glightbox" href="../images/properties.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Properties window" src="../images/properties.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/properties.png" data-desc-position="bottom"><img alt="Properties window" src="../images/properties.png"></a></p>
 </figure>
 <p>Consider also performing <a href="#method-3">Method 3</a> to make DOSBox Staging start up
 faster.</p>
-<h3 id="method-3">Method 3<a class="headerlink" href="#method-3" title="Permanent link">&para;</a></h3>
+<h3 id="method-3">Method 3<a class="headerlink" href="#method-3" title="Permanent link">¶</a></h3>
 <p>Add an exclusion to Windows Security to whitelist the DOSBox Staging
 executable or the folder in which it resides. We recommend doing so even if
-you&rsquo;ve already performed either of the previous methods, as it can eliminate
-the 3&ndash;5 second startup delay caused by the real-time antivirus scan.</p>
+you’ve already performed either of the previous methods, as it can eliminate
+the 3–5 second startup delay caused by the real-time antivirus scan.</p>
 <p>See the steps on how to do this <a href="https://support.microsoft.com/en-au/windows/add-an-exclusion-to-windows-security-811816c0-4dfd-af4a-47e4-c301afe13b26">here</a>
 and <a href="https://docs.rackspace.com/docs/set-windows-defender-folder-exclusions">here</a>.</p>
-<h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">&para;</a></h3>
-<p>Starting in Windows 8, <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview">Microsoft Defender SmartScreen&rsquo;s</a> pop-up encumbers the execution
+<h3 id="explanation">Explanation<a class="headerlink" href="#explanation" title="Permanent link">¶</a></h3>
+<p>Starting in Windows 8, <a href="https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview">Microsoft Defender SmartScreen’s</a> pop-up encumbers the execution
 of newly-developed applications.  To prevent this, developers are expected to pay
-Microsoft&rsquo;s <a href="https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates">EV certification</a> vendors a yearly fee and put the software on Windows
+Microsoft’s <a href="https://docs.microsoft.com/en-gb/archive/blogs/ie/microsoft-smartscreen-extended-validation-ev-code-signing-certificates">EV certification</a> vendors a yearly fee and put the software on Windows
 Store.</p>
 <p>As DOSBox Staging is a volunteer effort, we are not in a position to make such
 payments. We, therefore, ask users to manually unblock DOSBox Staging and be
-patient while Microsoft&rsquo;s Application Reputation Scheme eventually whitelists
+patient while Microsoft’s Application Reputation Scheme eventually whitelists
 DOSBox Staging.</p>
-<h2 id="custom-install-parameters">Custom install parameters<a class="headerlink" href="#custom-install-parameters" title="Permanent link">&para;</a></h2>
+<h2 id="custom-install-parameters">Custom install parameters<a class="headerlink" href="#custom-install-parameters" title="Permanent link">¶</a></h2>
 <p>The installer is built with <a href="https://jrsoftware.org/isinfo.php">Inno Setup</a>. For the available
-command-line install parameters, please see <a href="https://jrsoftware.org/ishelp/index.php?topic=setupcmdline">Inno&rsquo;s documentation page</a>.</p>
-<h2 id="older-releases">Older releases<a class="headerlink" href="#older-releases" title="Permanent link">&para;</a></h2>
+command-line install parameters, please see <a href="https://jrsoftware.org/ishelp/index.php?topic=setupcmdline">Inno’s documentation page</a>.</p>
+<h2 id="older-releases">Older releases<a class="headerlink" href="#older-releases" title="Permanent link">¶</a></h2>
 <ul>
 <li>
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.82.1/dosbox-staging-windows-x64-v0.82.1-setup.exe">DOSBox Staging 0.82.1 (x86_64, Installer)</a> (Windows 8 or newer)
@@ -2232,9 +2548,9 @@ command-line install parameters, please see <a href="https://jrsoftware.org/ishe
   </small></p>
 </li>
 </ul>
-<h2 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">&para;</a></h2>
+<h2 id="building-from-source">Building from source<a class="headerlink" href="#building-from-source" title="Permanent link">¶</a></h2>
 <p>Of course, you can always <a href="https://github.com/dosbox-staging/dosbox-staging">build DOSBox Staging straight from the source</a>.</p>
-<p>Send us patches if you improve something! <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f604.svg" title=":smile:" /></p>
+<p>Send us patches if you improve something! <img alt="😄" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f604.svg" title=":smile:"></p>
 
 
 
@@ -2260,9 +2576,9 @@ command-line install parameters, please see <a href="https://jrsoftware.org/ishe
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Back to top
 </button>
         
@@ -2276,23 +2592,14 @@ command-line install parameters, please see <a href="https://jrsoftware.org/ishe
     
       
     
-    <nav
-      class="md-footer__inner md-grid"
-      aria-label="footer.title"
-      hidden
-    >
+    <nav class="md-footer__inner md-grid" aria-label="footer.title" hidden="">
 
       <!-- Link to previous page -->
       
         
-        <a
-          href="../"
-          class="md-footer__link md-footer__link--prev"
-          aria-label="Previous: Index"
-          rel="prev"
-        >
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index" rel="prev">
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
           </div>
           <div class="md-footer__title">
             <div class="md-ellipsis">
@@ -2308,12 +2615,7 @@ command-line install parameters, please see <a href="https://jrsoftware.org/ishe
       <!-- Link to next page -->
       
         
-        <a
-          href="../macos/"
-          class="md-footer__link md-footer__link--next"
-          aria-label="Next: macOS"
-          rel="next"
-        >
+        <a href="../macos/" class="md-footer__link md-footer__link--next" aria-label="Next: macOS" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
@@ -2323,7 +2625,7 @@ command-line install parameters, please see <a href="https://jrsoftware.org/ishe
             </div>
           </div>
           <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
           </div>
         </a>
       
@@ -2359,13 +2661,16 @@ command-line install parameters, please see <a href="https://jrsoftware.org/ishe
     
     
       
-      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/version-selector.js"></script>
       
     
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
