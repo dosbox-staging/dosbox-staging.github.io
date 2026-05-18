@@ -1920,7 +1920,7 @@
   <span class="md-ellipsis">
     
   
-    The DOSBox shell
+    The DOS shell
   
 
     
@@ -2680,6 +2680,8 @@
       
         
       
+        
+      
     
     
     
@@ -2842,6 +2844,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../sound/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../sound/output-filters/" class="md-nav__link">
         
   
@@ -2935,10 +2965,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8">
         
           
-          <label class="md-nav__link" for="__nav_3_5_7" id="__nav_3_5_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5_8" id="__nav_3_5_8_label" tabindex="0">
             
   
   
@@ -2956,8 +2986,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3030,14 +3060,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/midi/" class="md-nav__link">
+      <a href="../../sound/sound-devices/sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MIDI
+    Sound Canvas
   
 
     
@@ -3058,14 +3088,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/general-midi/" class="md-nav__link">
+      <a href="../../sound/sound-devices/fluidsynth/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    General MIDI
+    FluidSynth
   
 
     
@@ -4183,10 +4213,19 @@
 
 <h1 id="running-windows-31">Running Windows 3.1<a class="headerlink" href="#running-windows-31" title="Permanent link">¶</a></h1>
 <p>DOSBox Staging fully supports Windows 3.1, which was not a standalone
-operating system but an operating environment running on top of DOS. A number
-of games were released exclusively for Windows 3.1 — see <a href="../../introduction/dos-eras/#windows-31-games">The DOS
-eras</a> for notable titles and
-recommended hardware settings.</p>
+operating system but an operating environment running on top of DOS. Windows
+3.1 was the platform that kicked off the CD-ROM gaming era: its built-in
+multimedia support made it the natural home for FMV-heavy interactive movies
+and lavish point-and-click adventures that were simply too large for floppy
+disk — titles like
+<a href="https://www.mobygames.com/game/1223/myst/">Myst</a>,
+<a href="https://www.mobygames.com/game/22007/the-journeyman-project/">The Journeyman Project</a>,
+and the cult Western adventure
+<a href="https://www.mobygames.com/game/3990/dust-a-tale-of-the-wired-west/">Dust: A Tale of the Wired West</a>.
+Many of these games were never ported elsewhere and can only be played this
+way.</p>
+<p>See <a href="../../introduction/dos-eras/#windows-31-games">The DOS eras</a> for more
+notable titles and recommended hardware settings.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Windows 9x (95, 98, ME) is <strong>not</strong> supported by DOSBox Staging.</p>
@@ -4195,28 +4234,42 @@ recommended hardware settings.</p>
 <p>You’ll need <strong>Windows 3.1</strong> (or <strong>Windows for Workgroups 3.11</strong>) installation
 media, either as floppy disk images or the files extracted from them.</p>
 <ul>
-<li>Mount your installation files so they’re accessible from DOS (e.g., copy
-  them to <code>C:\INSTALL</code>).</li>
-<li>Run <code>SETUP</code> from the installation directory.</li>
-<li>Install into <code>C:\WINDOWS</code>.</li>
-<li>When prompted, choose <strong>386 Enhanced</strong> mode (requires a 386 or better,
-  which DOSBox always emulates).</li>
-<li>After installation completes, launch Windows with the <code>WIN</code> command.</li>
+<li>
+<p>Mount your installation files so they’re accessible from DOS (e.g., copy
+  them to <code>C:\INSTALL</code>).</p>
+</li>
+<li>
+<p>Run <code>SETUP</code> from the installation directory.</p>
+</li>
+<li>
+<p>Install into <code>C:\WINDOWS</code>.</p>
+</li>
+<li>
+<p>When prompted, choose <strong>386 Enhanced</strong> mode (technically, DOSBox Staging
+  alwyas emulates at least the 386 instruction set)</p>
+</li>
+<li>
+<p>After installation completes, launch Windows with the <code>WIN</code> command.</p>
+</li>
 </ul>
-<p>Use the following DOSBox configuration:</p>
+<p>Use the following DOSBox configuration (adapt
+<a href="../../sound/midi/#mididevice"><code>mididevice</code></a>for your <a href="#midi-setup">MIDI setup</a>):</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[dosbox]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">svga_s3</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">memsize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">32</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="k">[cpu]</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">30000</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="na">cputype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pentium</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">[midi]</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1"># Emulate era-authentic 486DX2/66 speeds</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="na">cpu_cycles</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">25000</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="na">cputype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">pentium</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">[midi]</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Alternatively, set it to 'mt32' or 'fluidsynth',</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># or don't set it if you don't care about MIDI</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4234,13 +4287,23 @@ launches Windows automatically and skips the startup logo.</p>
 <a href="https://github.com/dosbox-staging/dosbox-staging/files/11050083/s3-964-141B5.ZIP">S3 Vision 964 v1.41B5</a>
 driver for proper SVGA support inside Windows.</p>
 <ul>
-<li>Extract the ZIP to a directory accessible from DOS (e.g., <code>C:\DRIVERS\S3</code>).</li>
-<li>Exit Windows and run <code>SETUP</code> from the DOS prompt.</li>
-<li>Navigate to the <strong>Display</strong> section and select <strong>Other</strong>.</li>
-<li>Point to the driver directory and choose <strong>640×480, 256 colours</strong> as
-  a safe starting point.</li>
-<li>Higher resolutions up to 1600×1200 are available if you set
-  <a href="../../system/general/#vmemsize"><code>vmemsize</code></a> to <code>4</code> or higher.</li>
+<li>
+<p>Extract the ZIP to a directory accessible from DOS (e.g., <code>C:\DRIVERS\S3</code>).</p>
+</li>
+<li>
+<p>Exit Windows and run <code>SETUP</code> from the DOS prompt.</p>
+</li>
+<li>
+<p>Navigate to the <strong>Display</strong> section and select <strong>Other</strong>.</p>
+</li>
+<li>
+<p>Point to the driver directory and choose <strong>640×480, 256 colours</strong> as
+  a safe starting point.</p>
+</li>
+<li>
+<p>Higher resolutions up to 1600×1200 are available if you set
+  <a href="../../system/general/#vmemsize"><code>vmemsize</code></a> to <code>4</code> or higher.</p>
+</li>
 </ul>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
@@ -4251,20 +4314,33 @@ changing display drivers.</p>
 <h2 id="audio-driver">Audio driver<a class="headerlink" href="#audio-driver" title="Permanent link">¶</a></h2>
 <p>Install the
 <a href="https://github.com/dosbox-staging/dosbox-staging/files/11039394/SB16W3X.ZIP">Sound Blaster 16 driver</a>
-for digital audio and OPL music inside Windows.</p>
+for digital audio and OPL music.</p>
 <ul>
-<li>Extract to <code>C:\DRIVERS\SB16</code> and run <code>INSTALL</code> from within Windows.</li>
-<li>Choose <strong>Full Installation</strong>.</li>
-<li>When prompted for hardware settings, use DOSBox’s defaults:<ul>
+<li>
+<p>Extract to <code>C:\DRIVERS\SB16</code> and run <code>INSTALL</code> from the DOS prompt (the
+  installer is a DOS program; won’t work from Windows).</p>
+</li>
+<li>
+<p>Choose <strong>Full Installation</strong>.</p>
+</li>
+<li>
+<p>When prompted for hardware settings, use the DOSBox Staging defaults:</p>
+<div class="compact" markdown="">
+<ul>
 <li>Base address: <strong>220</strong></li>
 <li>IRQ: <strong>7</strong></li>
 <li>DMA: <strong>1</strong></li>
 <li>High DMA: <strong>5</strong></li>
 </ul>
+</div>
 </li>
-<li>After installation, delete the <code>CONFIG.SYS</code> and <code>AUTOEXEC.BAT</code> files the
-  installer generates; they are not needed under DOSBox.</li>
-<li>Test by playing <code>C:\WINDOWS\CANYON.MID</code> in Media Player.</li>
+<li>
+<p>After installation, delete the <code>CONFIG.SYS</code> and <code>AUTOEXEC.BAT</code> files the
+  installer generates; they are not needed under DOSBox.</p>
+</li>
+<li>
+<p>Test by playing <code>C:\WINDOWS\CANYON.MID</code> in Media Player.</p>
+</li>
 </ul>
 <h2 id="midi-setup">MIDI setup<a class="headerlink" href="#midi-setup" title="Permanent link">¶</a></h2>
 <p>After installing the Sound Blaster 16 driver, configure MIDI output:</p>
@@ -4273,11 +4349,12 @@ for digital audio and OPL music inside Windows.</p>
 <li>Select <strong>SB16 All MIDI</strong> as the active setup.</li>
 </ul>
 <p>This routes MIDI output through DOSBox’s configured
-<a href="../../sound/sound-devices/midi/#mididevice"><code>mididevice</code></a>, so you can use
-<a href="../../sound/sound-devices/general-midi/#fluidsynth">FluidSynth</a>, <a href="../../sound/sound-devices/general-midi/#sound-canvas-emulation">Sound Canvas
-SC-55</a>,
-or <a href="../../sound/sound-devices/roland-mt-32/">Roland MT-32</a> emulation for Windows
-3.1 games — just change the <code>mididevice</code> setting in your DOSBox config.</p>
+<a href="../../sound/midi/#mididevice"><code>mididevice</code></a>, so you can use
+<a href="../../sound/sound-devices/roland-mt-32/">Roland MT-32</a>,
+<a href="../../sound/sound-devices/sound-canvas/">Sound Canvas SC-55</a>,
+or <a href="../../sound/sound-devices/fluidsynth/">FluidSynth</a>, 
+emulation for Windows 3.1 games — just change the <code>mididevice</code> setting in
+your DOSBox config.</p>
 <h2 id="mouse-setup">Mouse setup<a class="headerlink" href="#mouse-setup" title="Permanent link">¶</a></h2>
 <p>The built-in PS/2 mouse driver that Windows installs by default works fine
 and requires no additional configuration.</p>

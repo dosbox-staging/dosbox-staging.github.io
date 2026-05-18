@@ -2942,7 +2942,7 @@
   <span class="md-ellipsis">
     
   
-    The DOSBox shell
+    The DOS shell
   
 
     
@@ -3577,6 +3577,8 @@
       
         
       
+        
+      
     
     
     
@@ -3739,6 +3741,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../0.83/manual/sound/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../0.83/manual/sound/output-filters/" class="md-nav__link">
         
   
@@ -3832,10 +3862,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8">
         
           
-          <label class="md-nav__link" for="__nav_3_5_7" id="__nav_3_5_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5_8" id="__nav_3_5_8_label" tabindex="0">
             
   
   
@@ -3853,8 +3883,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3927,14 +3957,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../0.83/manual/sound/sound-devices/midi/" class="md-nav__link">
+      <a href="../../../0.83/manual/sound/sound-devices/sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MIDI
+    Sound Canvas
   
 
     
@@ -3955,14 +3985,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../0.83/manual/sound/sound-devices/general-midi/" class="md-nav__link">
+      <a href="../../../0.83/manual/sound/sound-devices/fluidsynth/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    General MIDI
+    FluidSynth
   
 
     
@@ -7943,7 +7973,7 @@ JavaScript! We’re excited to see what kind of cool tools the community
 will come up with!</p>
 <p>The HTTP API is disabled by default due to security reasons. To enable it, set
 <code>webserver_enabled = on</code> in your config in the new <code>[webserver]</code> section and
-restart Staging. Then open <code>http://localhost:8080/</code> in a browser to learn more
+restart Staging. Then open <code>http://localhost:8086/</code> in a browser to learn more
 about the API.</p>
 <p>We have included three example applications in our <a href="https://github.com/dosbox-staging/dosbox-staging/blob/3342c19993cc57e09f95a3bc7a6caf987deea17b/extras/api/">GitHub
 repository</a>:</p>
@@ -8069,6 +8099,7 @@ like <code>WQGHLT</code>.</p>
 <li>Add REST HTTP API to expose the DOS memory for game modding &amp; tools (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4730" title="GitHub Issue dosbox-staging/dosbox-staging #4730">#4730</a>)</li>
 <li>Allow switching between legacy and modern cycles settings (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4781" title="GitHub Issue dosbox-staging/dosbox-staging #4781">#4781</a>)</li>
 <li>API: Add more control over allocation strategy (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4776" title="GitHub Issue dosbox-staging/dosbox-staging #4776">#4776</a>)</li>
+<li>Change default webserver port from 8080 to 8386 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4881" title="GitHub Issue dosbox-staging/dosbox-staging #4881">#4881</a>)</li>
 <li>Change display names of bool conf settings to ‘on’ and ‘off’ (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4248" title="GitHub Issue dosbox-staging/dosbox-staging #4248">#4248</a>)</li>
 <li>Config setting help shortcut (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4247" title="GitHub Issue dosbox-staging/dosbox-staging #4247">#4247</a>)</li>
 <li>Fixes for “toggle” config setting values (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4727" title="GitHub Issue dosbox-staging/dosbox-staging #4727">#4727</a>)</li>
@@ -8095,6 +8126,7 @@ like <code>WQGHLT</code>.</p>
 <li>Fix setting queued settings on reboot sometimes failing on Windows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4782" title="GitHub Issue dosbox-staging/dosbox-staging #4782">#4782</a>)</li>
 <li>Fixed debugger command IV truncating addresses to 16-bit (issue <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4515" title="GitHub Issue dosbox-staging/dosbox-staging #4515">#4515</a>) (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4800" title="GitHub Issue dosbox-staging/dosbox-staging #4800">#4800</a>)</li>
 <li>Handle uppercase “-V” argument for version (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4690" title="GitHub Issue dosbox-staging/dosbox-staging #4690">#4690</a>)</li>
+<li>Improve disk noise and disk speed settings log output (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4880" title="GitHub Issue dosbox-staging/dosbox-staging #4880">#4880</a>)</li>
 <li>Make <code>CALLBACK_Idle()</code> loops more robust (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4629" title="GitHub Issue dosbox-staging/dosbox-staging #4629">#4629</a>)</li>
 <li>Unhardcode the layout of debugger windows (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4691" title="GitHub Issue dosbox-staging/dosbox-staging #4691">#4691</a>)</li>
 <li>Unit tests compilation fix (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4329" title="GitHub Issue dosbox-staging/dosbox-staging #4329">#4329</a>)</li>
@@ -8459,6 +8491,7 @@ browser.</p>
 <li>Player1UK</li>
 <li>rderooy</li>
 <li>runlevel5</li>
+<li>shakeyourbunny</li>
 <li>shermp</li>
 <li>tobro7BC</li>
 <li>Torinde</li>

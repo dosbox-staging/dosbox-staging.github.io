@@ -2138,7 +2138,7 @@
   <span class="md-ellipsis">
     
   
-    The DOSBox shell
+    The DOS shell
   
 
     
@@ -2773,6 +2773,8 @@
       
         
       
+        
+      
     
     
     
@@ -2935,6 +2937,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../manual/sound/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../manual/sound/output-filters/" class="md-nav__link">
         
   
@@ -3028,10 +3058,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8">
         
           
-          <label class="md-nav__link" for="__nav_3_5_7" id="__nav_3_5_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5_8" id="__nav_3_5_8_label" tabindex="0">
             
   
   
@@ -3049,8 +3079,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3123,14 +3153,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../manual/sound/sound-devices/midi/" class="md-nav__link">
+      <a href="../../manual/sound/sound-devices/sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MIDI
+    Sound Canvas
   
 
     
@@ -3151,14 +3181,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../manual/sound/sound-devices/general-midi/" class="md-nav__link">
+      <a href="../../manual/sound/sound-devices/fluidsynth/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    General MIDI
+    FluidSynth
   
 
     
@@ -4801,21 +4831,23 @@ software here, but emulation can be very demanding on your computer.</p>
 sound module to provide more realistic-sounding music than what the Sound
 Blaster’s OPL synthesiser is capable of. Dark Forces, however, was composed
 for a newer family of MIDI sound modules that support the so-called <strong>General
-MIDI standard</strong>.</p>
-<p>DOSBox Staging offers two ways to get General MIDI playback (see the
-<a href="../../manual/sound/sound-devices/general-midi/">General MIDI</a> page for
-the full reference):</p>
+MIDI standard</strong>. By the time Dark Forces was released in 1995, General MIDI
+had largely replaced the MT-32 as the standard for high-end game music. To
+learn more about the history and differences between these standards, see the
+<a href="../../manual/sound/midi/#the-general-midi-standard">MIDI</a> chapter.</p>
+<p>DOSBox Staging offers two ways to get General MIDI playback:</p>
 <ul>
 <li>
-<p><strong>Sound Canvas emulation</strong> — sample-accurate emulation of the Roland SC-55,
-  the de-facto standard General MIDI sound module for DOS games. This is the
-  most authentic option but requires SC-55 ROM files and a reasonably powerful
-  CPU.</p>
+<p><strong><a href="../../manual/sound/sound-devices/sound-canvas/">Sound Canvas</a> emulation</strong>
+  — sample-accurate emulation of the Roland SC-55, the de facto standard
+  General MIDI sound module for DOS games. This is the most authentic option
+  but requires SC-55 ROM files and a reasonably powerful CPU.</p>
 </li>
 <li>
-<p><strong>FluidSynth</strong> — a built-in software MIDI synthesiser that uses SoundFont
-  files (<code>.sf2</code>) to generate audio. Lighter on CPU and more flexible, but
-  the results depend on which SoundFont you load.</p>
+<p><strong><a href="../../manual/sound/sound-devices/fluidsynth/">FluidSynth</a></strong> — a built-in
+  software MIDI synthesiser that uses SoundFont files (<code>.sf2</code>) to generate
+  audio. Lighter on CPU and more flexible, but the results depend on which
+  SoundFont you load.</p>
 </li>
 </ul>
 <h3 id="sound-canvas-emulation">Sound Canvas emulation<a class="headerlink" href="#sound-canvas-emulation" title="Permanent link">¶</a></h3>

@@ -1918,7 +1918,7 @@
   <span class="md-ellipsis">
     
   
-    The DOSBox shell
+    The DOS shell
   
 
     
@@ -2553,6 +2553,8 @@
       
         
       
+        
+      
     
     
     
@@ -2715,6 +2717,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../sound/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sound/output-filters/" class="md-nav__link">
         
   
@@ -2808,10 +2838,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8">
         
           
-          <label class="md-nav__link" for="__nav_3_5_7" id="__nav_3_5_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5_8" id="__nav_3_5_8_label" tabindex="0">
             
   
   
@@ -2829,8 +2859,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2903,14 +2933,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound/sound-devices/midi/" class="md-nav__link">
+      <a href="../sound/sound-devices/sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MIDI
+    Sound Canvas
   
 
     
@@ -2931,14 +2961,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound/sound-devices/general-midi/" class="md-nav__link">
+      <a href="../sound/sound-devices/fluidsynth/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    General MIDI
+    FluidSynth
   
 
     
@@ -4528,7 +4558,7 @@ restart DOSBox:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[webserver]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">webserver_enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 </code></pre></div>
-<p>Then open <code>http://localhost:8080/</code> in a browser while DOSBox is running to
+<p>Then open <code>http://localhost:8086/</code> in a browser while DOSBox is running to
 see the built-in API documentation.</p>
 <h2 id="api-endpoints">API endpoints<a class="headerlink" href="#api-endpoints" title="Permanent link">¶</a></h2>
 <h3 id="cpu-registers">CPU registers<a class="headerlink" href="#cpu-registers" title="Permanent link">¶</a></h3>
@@ -4658,7 +4688,7 @@ resolution, and compare-and-swap operations. TypeScript type definitions are
 available in <code>api.d.ts</code>.</p>
 <p>The API server listens on
 <a href="#webserver_bind_address"><code>webserver_bind_address</code></a> (default <code>127.0.0.1</code>,
-localhost only) and <a href="#webserver_port"><code>webserver_port</code></a> (default <code>8080</code>). The
+localhost only) and <a href="#webserver_port"><code>webserver_port</code></a> (default <code>8086</code>). The
 default binding restricts access to the local machine. Do not bind to <code>0.0.0.0</code>
 or an external interface unless you understand the security implications — the
 API provides full control over DOSBox internals, including memory access.</p>
@@ -4675,14 +4705,14 @@ default only local connections are allowed.</dd>
 <dl>
 <dd>
 <p>Enable the HTTP REST API that exposes internal state and memory. Open
-<code>http://localhost:8080</code> in a browser (or use the configured port) to view
+<code>http://localhost:8086</code> in a browser (or use the configured port) to view
 the API documentation.</p>
 <p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
 </dd>
 </dl>
 <h5 id="webserver_port">webserver_port<a class="headerlink" href="#webserver_port" title="Permanent link">¶</a></h5>
 <dl>
-<dd>TCP port to bind to (<code>8080</code> by default).</dd>
+<dd>TCP port to bind to (<code>8086</code> by default).</dd>
 </dl>
 
 

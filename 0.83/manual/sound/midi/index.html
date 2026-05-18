@@ -10,10 +10,10 @@
       
       
       
-        <link rel="prev" href="../keyboard/">
+        <link rel="prev" href="../mixer-effects/">
       
       
-        <link rel="next" href="../joystick/">
+        <link rel="next" href="../output-filters/">
       
       
         
@@ -24,7 +24,7 @@
     
     
       
-        <title>Mouse - DOSBox Staging</title>
+        <title>MIDI - DOSBox Staging</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#mouse" class="md-skip">
+        <a href="#midi" class="md-skip">
           Skip to content
         </a>
       
@@ -2534,8 +2534,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -2562,11 +2564,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked="">
         
           
           <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
@@ -2587,7 +2589,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -2605,7 +2607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/overview/" class="md-nav__link">
+      <a href="../overview/" class="md-nav__link">
         
   
   
@@ -2633,7 +2635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/on-subjectivity/" class="md-nav__link">
+      <a href="../on-subjectivity/" class="md-nav__link">
         
   
   
@@ -2661,7 +2663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/mixer/" class="md-nav__link">
+      <a href="../mixer/" class="md-nav__link">
         
   
   
@@ -2689,7 +2691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/mixer-effects/" class="md-nav__link">
+      <a href="../mixer-effects/" class="md-nav__link">
         
   
   
@@ -2714,10 +2716,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../sound/midi/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -2733,6 +2762,298 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        
+<li class="md-nav__item">
+  <a href="#a-brief-introduction-to-midi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A brief introduction to MIDI
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#midi-in-dos-gaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIDI in DOS gaming
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#the-general-midi-standard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The General MIDI standard
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#the-mt-32-to-general-midi-transition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The MT-32 to General MIDI transition
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#which-midi-device-should-i-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which MIDI device should I use?
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#roland-mpu-401-midi-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Roland MPU-401 MIDI interface
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#setting-up-midi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up MIDI
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#using-external-midi-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using external MIDI devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using external MIDI devices">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#physical-midi-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical MIDI devices
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#virtual-midi-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual MIDI devices
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#finding-your-midi-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding your MIDI device
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#platform-specific-midi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-specific MIDI
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#macos-coreaudio-synthesiser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS CoreAudio synthesiser
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#sysex-delays-for-older-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SysEx delays for older hardware
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#midi-output-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIDI output corrections
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#mididevice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mididevice
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#midiconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        midiconfig
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#mpu401" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mpu401
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#raw_midi_output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        raw_midi_output
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2745,7 +3066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/output-filters/" class="md-nav__link">
+      <a href="../output-filters/" class="md-nav__link">
         
   
   
@@ -2773,7 +3094,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/disk-noise/" class="md-nav__link">
+      <a href="../disk-noise/" class="md-nav__link">
         
   
   
@@ -2877,7 +3198,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
+      <a href="../sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
         
   
   
@@ -2905,7 +3226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/roland-mt-32/" class="md-nav__link">
+      <a href="../sound-devices/roland-mt-32/" class="md-nav__link">
         
   
   
@@ -2933,7 +3254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/sound-canvas/" class="md-nav__link">
+      <a href="../sound-devices/sound-canvas/" class="md-nav__link">
         
   
   
@@ -2961,7 +3282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/fluidsynth/" class="md-nav__link">
+      <a href="../sound-devices/fluidsynth/" class="md-nav__link">
         
   
   
@@ -2989,7 +3310,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/pc-speaker/" class="md-nav__link">
+      <a href="../sound-devices/pc-speaker/" class="md-nav__link">
         
   
   
@@ -3017,7 +3338,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/tandy/" class="md-nav__link">
+      <a href="../sound-devices/tandy/" class="md-nav__link">
         
   
   
@@ -3045,7 +3366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/gravis-ultrasound/" class="md-nav__link">
+      <a href="../sound-devices/gravis-ultrasound/" class="md-nav__link">
         
   
   
@@ -3073,7 +3394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/cd-da/" class="md-nav__link">
+      <a href="../sound-devices/cd-da/" class="md-nav__link">
         
   
   
@@ -3101,7 +3422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/ibm-ps1audio/" class="md-nav__link">
+      <a href="../sound-devices/ibm-ps1audio/" class="md-nav__link">
         
   
   
@@ -3129,7 +3450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/covox-variants/" class="md-nav__link">
+      <a href="../sound-devices/covox-variants/" class="md-nav__link">
         
   
   
@@ -3157,7 +3478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/innovation/" class="md-nav__link">
+      <a href="../sound-devices/innovation/" class="md-nav__link">
         
   
   
@@ -3185,7 +3506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/imfc/" class="md-nav__link">
+      <a href="../sound-devices/imfc/" class="md-nav__link">
         
   
   
@@ -3226,10 +3547,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -3250,11 +3569,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" checked="">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6">
         
           
           <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
@@ -3275,7 +3594,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3293,7 +3612,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../input/overview/" class="md-nav__link">
         
   
   
@@ -3321,7 +3640,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../keyboard/" class="md-nav__link">
+      <a href="../../input/keyboard/" class="md-nav__link">
         
   
   
@@ -3346,37 +3665,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Mouse
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../input/mouse/" class="md-nav__link">
         
   
   
@@ -3392,305 +3684,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-      
-        
-<li class="md-nav__item">
-  <a href="#dos-era-mice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        DOS-era mice
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#serial-mice" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Serial mice
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#dual-mouse-gaming" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Dual mouse gaming
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#seamless-mode" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Seamless mode
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Troubleshooting
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#advanced-driver-options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Advanced driver options
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#mouse-capture-and-multi-monitor" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mouse capture and multi-monitor
-      
-    </span>
-  </a>
-  
-</li>
-
-      
-        
-<li class="md-nav__item">
-  <a href="#configuration-settings" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Configuration settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Configuration settings">
-      <ul class="md-nav__list">
-        
-          
-<li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        builtin_dos_mouse_driver
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver_model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        builtin_dos_mouse_driver_model
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver_move_threshold" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        builtin_dos_mouse_driver_move_threshold
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver_options" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        builtin_dos_mouse_driver_options
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#com_mouse_model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        com_mouse_model
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_capture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_capture
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_middle_release" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_middle_release
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_multi_display_aware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_multi_display_aware
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_raw_input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_raw_input
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_sensitivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_sensitivity
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#ps2_mouse_model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ps2_mouse_model
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#virtualbox_mouse" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        virtualbox_mouse
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#vmware_mouse" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        vmware_mouse
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-      </ul>
-    </nav>
-  
-</li>
-
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3703,7 +3696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../joystick/" class="md-nav__link">
+      <a href="../../input/joystick/" class="md-nav__link">
         
   
   
@@ -3731,7 +3724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../keymapper/" class="md-nav__link">
+      <a href="../../input/keymapper/" class="md-nav__link">
         
   
   
@@ -4319,10 +4312,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#dos-era-mice" class="md-nav__link">
+  <a href="#a-brief-introduction-to-midi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DOS-era mice
+        A brief introduction to MIDI
       
     </span>
   </a>
@@ -4332,10 +4325,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#serial-mice" class="md-nav__link">
+  <a href="#midi-in-dos-gaming" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Serial mice
+        MIDI in DOS gaming
       
     </span>
   </a>
@@ -4345,10 +4338,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#dual-mouse-gaming" class="md-nav__link">
+  <a href="#the-general-midi-standard" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dual mouse gaming
+        The General MIDI standard
       
     </span>
   </a>
@@ -4358,10 +4351,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#seamless-mode" class="md-nav__link">
+  <a href="#the-mt-32-to-general-midi-transition" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Seamless mode
+        The MT-32 to General MIDI transition
       
     </span>
   </a>
@@ -4371,10 +4364,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#troubleshooting" class="md-nav__link">
+  <a href="#which-midi-device-should-i-use" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Troubleshooting
+        Which MIDI device should I use?
       
     </span>
   </a>
@@ -4384,10 +4377,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#advanced-driver-options" class="md-nav__link">
+  <a href="#roland-mpu-401-midi-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Advanced driver options
+        Roland MPU-401 MIDI interface
       
     </span>
   </a>
@@ -4397,10 +4390,120 @@
       
         
 <li class="md-nav__item">
-  <a href="#mouse-capture-and-multi-monitor" class="md-nav__link">
+  <a href="#setting-up-midi" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Mouse capture and multi-monitor
+        Setting up MIDI
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#using-external-midi-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using external MIDI devices
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using external MIDI devices">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#physical-midi-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Physical MIDI devices
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#virtual-midi-devices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Virtual MIDI devices
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#finding-your-midi-device" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Finding your MIDI device
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#platform-specific-midi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform-specific MIDI
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#macos-coreaudio-synthesiser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        macOS CoreAudio synthesiser
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#sysex-delays-for-older-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SysEx delays for older hardware
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#midi-output-corrections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MIDI output corrections
       
     </span>
   </a>
@@ -4423,10 +4526,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver" class="md-nav__link">
+  <a href="#mididevice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        builtin_dos_mouse_driver
+        mididevice
       
     </span>
   </a>
@@ -4436,10 +4539,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver_model" class="md-nav__link">
+  <a href="#midiconfig" class="md-nav__link">
     <span class="md-ellipsis">
       
-        builtin_dos_mouse_driver_model
+        midiconfig
       
     </span>
   </a>
@@ -4449,10 +4552,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver_move_threshold" class="md-nav__link">
+  <a href="#mpu401" class="md-nav__link">
     <span class="md-ellipsis">
       
-        builtin_dos_mouse_driver_move_threshold
+        mpu401
       
     </span>
   </a>
@@ -4462,127 +4565,10 @@
         
           
 <li class="md-nav__item">
-  <a href="#builtin_dos_mouse_driver_options" class="md-nav__link">
+  <a href="#raw_midi_output" class="md-nav__link">
     <span class="md-ellipsis">
       
-        builtin_dos_mouse_driver_options
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#com_mouse_model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        com_mouse_model
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_capture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_capture
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_middle_release" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_middle_release
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_multi_display_aware" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_multi_display_aware
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_raw_input" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_raw_input
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#mouse_sensitivity" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        mouse_sensitivity
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#ps2_mouse_model" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ps2_mouse_model
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#virtualbox_mouse" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        virtualbox_mouse
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#vmware_mouse" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        vmware_mouse
+        raw_midi_output
       
     </span>
   </a>
@@ -4613,391 +4599,438 @@
 
 
 
-<h1 id="mouse">Mouse<a class="headerlink" href="#mouse" title="Permanent link">¶</a></h1>
-<p>DOSBox Staging includes a <strong>built-in mouse driver</strong> which is enabled by default,
-so you don’t need to load a real DOS mouse driver manually (e.g., <code>MOUSE.COM</code>
-or <code>CTMOUSE</code>). The vast majority of DOS games that require a mouse will work
-out-of-the-box — you’ll only need to tinker with the mouse settings for a
-small handful of problematic games, or if you have very specific niche needs.
-The built-in driver provides lower latency and smoother movement than a real
-DOS mouse driver and uses less memory, so it’s the best option for most
-people.</p>
-<p>To capture the mouse, click inside the DOSBox window. By default, the DOSBox
-Staging window’s titlebar indicates if the mouse is captured. To release the
-mouse, press the middle mouse button or <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> (see
-<a href="../../appendices/shortcuts/">Keyboard shortcuts</a>). If your mouse has no middle
-button, the keyboard shortcut is your friend. </p>
-<p>The <a href="#mouse_raw_input"><code>mouse_raw_input</code></a> setting bypasses your host OS’s
-mouse acceleration, giving you consistent sensitivity regardless of your
-desktop settings. This is particularly useful for games where precise mouse
-control matters (e.g., fast-paced FPS games).</p>
-<p>Many DOS games differ wildly in how they handle mouse movement. In many games,
-horizontal and vertical mouse movement has different sensitivity. You can
-“normalise” the X and Y axis sensitivity or adjust the global sensitivity with
-the <a href="#mouse_sensitivity"><code>mouse_sensitivity</code></a> setting.</p>
-<h2 id="dos-era-mice">DOS-era mice<a class="headerlink" href="#dos-era-mice" title="Permanent link">¶</a></h2>
-<p>The standard PC mouse throughout the DOS era had two buttons and no scroll
-wheel. Scroll wheels did not exist on consumer mice until Microsoft
-introduced the IntelliMouse in 1996, well into the twilight years of DOS
-gaming. The vast majority of DOS software was written for — and tested with
-— a simple two-button mouse.</p>
-<p>DOSBox Staging emulates a two-button mouse by default
-(<a href="#builtin_dos_mouse_driver_model"><code>builtin_dos_mouse_driver_model</code></a> =
-<code>2button</code>), and this is the safest setting. Only a small number of games from
-the 90s support a third mouse button, and some games will misbehave if an
-unexpected middle button press is detected. If you know a game supports three
-buttons, enable it explicitly by setting the model to <code>3button</code>. The <code>wheel</code>
-option exists for the rare DOS application or <a href="../../using-dosbox-staging/windows-31/">Windows 3.1</a> setup
-that can use a scroll wheel, but no DOS game is known to use it.</p>
-<h2 id="serial-mice">Serial mice<a class="headerlink" href="#serial-mice" title="Permanent link">¶</a></h2>
-<p>DOSBox Staging can emulate several serial (COM port) mouse types:</p>
+<h1 id="midi">MIDI<a class="headerlink" href="#midi" title="Permanent link">¶</a></h1>
+<p>Between about 1988 and 1994, <strong>MIDI music</strong> was <em>the</em> ultimate high-end audio
+option in DOS gaming, offering never-heard-before realism and CD quality audio
+fidelity. Not many could afford the high price tag of MIDI sound modules back
+in the day — they often cost 3 to 5 times as much as a Sound Blaster
+card. But thanks to the wonders of emulation, now all DOS enthusiasts can
+experience MIDI music nirvana in its full glory!</p>
+<p>Because MIDI plays such a pivotal role in DOS gaming history, it is important
+to understand its origins and how it works at a basic level.</p>
+<h2 id="a-brief-introduction-to-midi">A brief introduction to MIDI<a class="headerlink" href="#a-brief-introduction-to-midi" title="Permanent link">¶</a></h2>
+<p>The <strong>MIDI standard (Musical Instrument Digital Interface)</strong> was created in
+the early 1980s to allow audio equipment from different manufacturers to
+communicate with each other. Originally aimed at the professional market, it
+soon found its way into home studios and computer games thanks to the home
+computer revolution.</p>
+<p>MIDI is essentially a communication protocol. When you press a key on a MIDI
+keyboard, a short message is sent to a sound module instructing it to play a
+certain instrument at a certain pitch. Because the communication is digital,
+the keyboard can be replaced with a computer — a MIDI sequencer program can
+send thousands of precisely timed messages, controlling a full orchestra’s
+worth of instruments.</p>
+<p>MIDI compositions are best viewed as the computer music equivalent of sheet
+music — a MIDI score only contains note data and abstract descriptions of
+the instruments, while the sound module is responsible for generating the
+actual sounds using its on-board samples or synthesis capabilities.</p>
+<h2 id="midi-in-dos-gaming">MIDI in DOS gaming<a class="headerlink" href="#midi-in-dos-gaming" title="Permanent link">¶</a></h2>
+<p>In the beginning, all DOS games came on floppies. Even if a game came on 10
+floppies or more, there was simply not enough space for long musical pieces
+stored as digital audio! Given that MIDI scores take very little disk space
+compared to digital audio (generally, just a few tens of kilobytes per
+composition), MIDI music was an ideal match for DOS games before the
+wide-spread adoption of the CD-ROM with its huge 650 to 700 megabytes of
+capacity on a single CD. This is similar in principle to how the <a href="../sound-devices/adlib-cms-sound-blaster/">Creative
+Music System and AdLib</a> synthesisers were used in games, only these MIDI sound
+modules were capable of producing much higher quality music using sampled
+sounds of real-world instruments.</p>
+<h2 id="the-general-midi-standard">The General MIDI standard<a class="headerlink" href="#the-general-midi-standard" title="Permanent link">¶</a></h2>
+<p><strong>General MIDI (GM)</strong> was introduced in 1991 to solve a simple but annoying
+problem: MIDI could tell a synthesiser <em>what notes to play</em>, but not <em>which
+instruments to use</em>. GM standardised the instrument assignments — program
+number 1 is always an acoustic grand piano, program 41 is always a violin, and
+so on — so that music written for one GM device would sound recognisable on
+any other.</p>
+<p>The Roland SC-55, released the same year, was the first <a href="../sound-devices/sound-canvas/">Sound
+Canvas</a> module and quickly became the de facto
+standard for DOS game music. Roland’s own <strong>GS
+(General Standard)</strong> extension sat on top of GM, adding extra instruments,
+percussion kits, and digital effects while remaining fully
+backwards-compatible with the core GM specification.</p>
+<p>Most DOS game composers wrote and tested their music on Roland Sound Canvas
+hardware. Games like <a href="https://www.mobygames.com/game/289/monkey-island-2-lechucks-revenge/">Monkey Island
+2</a>,
+<a href="https://www.mobygames.com/game/608/ultima-vii-the-black-gate/">Ultima VII</a>,
+<a href="https://www.mobygames.com/game/1068/doom/">Doom</a>, and <a href="https://www.mobygames.com/game/365/duke-nukem-3d/">Duke Nukem
+3D</a> all sound their best
+when played through an SC-55 or a compatible device. Since different GM
+manufacturers recorded their own instrument samples, playback can sound
+noticeably different from one device to another, but the SC-55 is the gold
+standard for hearing the music as the composer intended.</p>
+<p>The <strong>Yamaha DB50XG</strong> and <strong>MU-series</strong> (MU50, MU80, MU100, etc.) are
+alternative MIDI modules that offer excellent SC-55 compatibility with a more
+modern and punchy sonic character. Many enthusiasts prefer them to the SC-55
+in certain games. For a detailed comparison of how these modules stack up
+against the SC-55, see <a href="https://blog.johnnovak.net/2023/03/05/grand-ms-dos-gaming-general-midi-showdown/">this
+article</a>.</p>
+<h2 id="the-mt-32-to-general-midi-transition">The MT-32 to General MIDI transition<a class="headerlink" href="#the-mt-32-to-general-midi-transition" title="Permanent link">¶</a></h2>
+<p>MIDI sound in DOS games evolved through three distinct periods:</p>
 <ul>
-<li><strong>Microsoft mouse</strong> — 2 buttons, the most widely compatible type</li>
-<li><strong>Logitech mouse</strong> — 3 buttons, mostly compatible with Microsoft mouse</li>
-<li><strong>Wheel mouse</strong> — 3 buttons + wheel, mostly compatible with Microsoft mouse</li>
-<li><strong>Mouse Systems mouse</strong> — 3 buttons, an older protocol NOT compatible with
-  Microsoft mice. A few programs require this type</li>
+<li><strong>1987–1991: MT-32 era</strong> — The <a href="../sound-devices/roland-mt-32/">Roland MT-32</a> was the
+  only MIDI option. Sierra On-Line, LucasArts, and Origin Systems led the
+  way with dedicated MT-32 music.</li>
+<li><strong>1991–1993: transition</strong> — The <a href="../sound-devices/sound-canvas/">SC-55</a> and General MIDI standard arrived.
+  Many games supported both MT-32 and GM, giving players a choice. Games
+  like <a href="https://www.mobygames.com/game/198/indiana-jones-and-the-fate-of-atlantis/">Indiana Jones and the Fate of Atlantis</a>
+  and <a href="https://www.mobygames.com/game/195/star-wars-x-wing/">Star Wars: X-Wing</a>
+  sound excellent on either device.</li>
+<li><strong>1993 onwards: GM dominance</strong> — General MIDI became the standard. MT-32
+  support faded as the SC-55 was cheaper, more widely available, and
+  standardised. By 1995, very few new games included MT-32 support.</li>
 </ul>
-<p>To enable a serial mouse, use the <code>SERIAL 1 mouse</code> command (this attaches it
-to the COM1 port), or edit the <a href="../../networking/serial-ports/">Serial ports</a>
-configuration.
-By default, DOSBox Staging tries to determine what type of mouse the program
-expects. See <a href="#com_mouse_model"><code>com_mouse_model</code></a> for details.</p>
-<h2 id="dual-mouse-gaming">Dual mouse gaming<a class="headerlink" href="#dual-mouse-gaming" title="Permanent link">¶</a></h2>
-<p>Multiple physical mice can be mapped to specific emulated mouse interfaces,
-enabling two-player split-screen gaming using two USB mice on a single
-computer (e.g., in <a href="https://www.mobygames.com/game/425/serf-city-life-is-feudal/">The Settlers</a> and <a href="https://www.mobygames.com/game/598/the-settlers-ii-veni-vidi-vici/">The Settlers II</a>). Use the
-<code>MOUSECTL</code> command on the DOS command line to set the per-interface mouse
-configurations.</p>
-<p>See the <a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Dual-Mouse-Gaming">Dual mouse gaming</a> wiki page for setup details.</p>
-<h2 id="seamless-mode">Seamless mode<a class="headerlink" href="#seamless-mode" title="Permanent link">¶</a></h2>
-<p>For <a href="../../using-dosbox-staging/windows-31/">Windows 3.1</a> running inside DOSBox, seamless mouse
-integration is available when using a compatible mouse driver — with this
-enabled, the mouse cursor can be moved freely between the host desktop and
-the DOSBox Staging window (see <a href="#mouse_capture"><code>mouse_capture</code></a>).</p>
-<p>The built-in mouse driver has been reworked for better Windows 3.1
-compatibility. The mouse now works properly in the Windows 3.1 MS-DOS Prompt
-run in a window — the previous garbled display and janky mouse movement
-issues are gone. If the new mouse code causes problems, set
-<a href="#builtin_dos_mouse_driver"><code>builtin_dos_mouse_driver</code></a> to <code>no-tsr</code> to
-revert to previous behaviour.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Multiple DOS windows under Windows 3.1 are not supported.</p>
+<details class="note">
+<summary>Notable games with General MIDI support</summary>
+<div class="compact" markdown="">
+<ul>
+<li><a href="https://www.mobygames.com/game/659/maniac-mansion-day-of-the-tentacle/">Day of the Tentacle (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/454/descent/">Descent (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/1068/doom/">Doom (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/365/duke-nukem-3d/">Duke Nukem 3D (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/414/full-throttle/">Full Throttle (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/665/gabriel-knight-sins-of-the-fathers/">Gabriel Knight (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/289/monkey-island-2-lechucks-revenge/">Monkey Island 2 (1991)</a></li>
+<li><a href="https://www.mobygames.com/game/672/sam-max-hit-the-road/">Sam &amp; Max Hit the Road (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/379/star-wars-dark-forces/">Star Wars: Dark Forces (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/204/star-wars-tie-fighter/">Star Wars: TIE Fighter (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/545/system-shock/">System Shock (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/499/the-dig/">The Dig (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/608/ultima-vii-the-black-gate/">Ultima VII (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/1339/warcraft-ii-tides-of-darkness/">WarCraft II (1995)</a></li>
+</ul>
 </div>
-<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">¶</a></h2>
-<p>A few games have specific mouse issues that can be resolved with the built-in
-driver settings:</p>
+</details>
+<h2 id="which-midi-device-should-i-use">Which MIDI device should I use?<a class="headerlink" href="#which-midi-device-should-i-use" title="Permanent link">¶</a></h2>
+<p>DOSBox Staging offers three main ways to get MIDI playback:</p>
+<ul>
+<li><a href="../sound-devices/roland-mt-32/">Roland MT-32 emulation</a> — built-in
+  emulation of the MT-32 and CM-32L.</li>
+<li><a href="../sound-devices/sound-canvas/">Sound Canvas emulation</a> — sample-accurate
+  SC-55 emulation via the Nuked SC55 CLAP plugin.</li>
+<li><a href="../sound-devices/fluidsynth/">FluidSynth</a> — a built-in software MIDI
+  synthesiser using SoundFont files.</li>
+</ul>
+<p>Determining whether a game supports the <a href="../sound-devices/sound-canvas/">Sound Canvas</a> (General MIDI), the <a href="../sound-devices/roland-mt-32/">Roland MT-32</a>, or both
+is not always obvious from the setup utility alone. The community-maintained
+<a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games">List of MT-32-compatible computer games</a>
+on the VOGONS Wiki is the most comprehensive reference for which MIDI devices
+each game supports and which produces the best results. There is no other
+reliable way to know for sure — game manuals and setup utilities often omit
+or misrepresent MIDI support.</p>
+<p>As a rough rule of thumb:</p>
+<ul>
+<li><strong>Pre-1992 games</strong> (especially Sierra and LucasArts adventures) — try
+  <a href="../sound-devices/roland-mt-32/">Roland MT-32</a> first.</li>
+<li><strong>1992–1993 games</strong> — check the VOGONS list; many sound excellent on
+  either the MT-32 or General MIDI.</li>
+<li><strong>Post-1993 games</strong> — almost always General MIDI. Use <a href="../sound-devices/sound-canvas/">Sound
+  Canvas</a> emulation for the most authentic
+  results, or <a href="../sound-devices/fluidsynth/">FluidSynth</a> as a lighter
+  alternative.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Roland MT-32 is not General MIDI</p>
+<p>Do not confuse the Roland MT-32 family of MIDI sound modules with General
+MIDI modules! Music composed for the MT-32 often sounds <em>utterly wrong</em> on a
+General MIDI device, and vice versa. Yes, they both have “MIDI” in their
+names, but that only refers to the MIDI communication protocol. The MT-32
+range of devices are programmable synthesisers, and most MT-32 supporting
+games take advantage of that to create custom sounds. In contrast, General
+MIDI modules feature more realistic-sounding real-world instruments with a
+standardised sound set.</p>
+<p>Quite confusingly, there is a large list of games that claim MT-32
+compatibility but only sound correct on a General MIDI module. Make sure
+to check the <a href="https://www.vogonswiki.com/index.php/List_of_MT-32-compatible_computer_games#Games_that_falsely_claim_MT-32_compatibility">List of games that falsely claim MT-32
+compatibility</a>
+as well before configuring a game for MT-32 sound.</p>
+</div>
+<h2 id="roland-mpu-401-midi-interface">Roland MPU-401 MIDI interface<a class="headerlink" href="#roland-mpu-401-midi-interface" title="Permanent link">¶</a></h2>
+<p>Initially, you had to buy the <strong>Roland MPU-401</strong> MIDI interface to connect an
+external MIDI sound module to your PC. This was an external box connected to
+your PC which then you hooked up to another external box, your sound module.
+Later on, sound cards started incorporating integrated MPU-401 compatible
+interfaces, so you could connect the sound module directly to your sound card.</p>
+<p>DOSBox Staging emulates a Roland MPU-401 compatible MIDI interface which is
+enabled by default. The emulated MPU-401 operates in the so-called
+<strong>Intelligent Mode</strong> out-of-the-box; this provides certain extra features many
+older games depend on. The other, more recent mode is <strong>UART Mode</strong>. Older
+titles often require Intelligent Mode, most more recent ones work fine with
+either.</p>
+<p>See <a href="#mpu401"><code>mpu401</code></a> for more details.</p>
+<h2 id="setting-up-midi">Setting up MIDI<a class="headerlink" href="#setting-up-midi" title="Permanent link">¶</a></h2>
+<p>MIDI related settings are to be configured in the <code>[midi]</code> section. Set the
+<a href="#mididevice"><code>mididevice</code></a> setting to select which MIDI device to use:</p>
+<ul>
+<li><code>mt32</code> to use the built-in <a href="../sound-devices/roland-mt-32/">Roland MT-32</a> emulation,</li>
+<li><code>fluidsynth</code> to use the built-in <a href="../sound-devices/fluidsynth/">FluidSynth</a> MIDI synthesiser,</li>
+<li><code>soundcanvas</code> to use the built-in <a href="../sound-devices/sound-canvas/">Sound Canvas</a> emulation,</li>
+<li>or <code>port</code> (the default) to send MIDI data to an <a href="#using-external-midi-devices">external MIDI
+  device</a> configured via
+  <a href="#midiconfig"><code>midiconfig</code></a>.</li>
+</ul>
+<p>You can use the <code>MIXER /LISTMIDI</code> DOS command to see the list of available
+external MIDI devices.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To easily switch between a built-in and an external MIDI device per game
+(typically between the built-in MT-32 emulation and Roland’s Sound Canvas
+VA running in an external MIDI host program), you can use the <a href="../../using-dosbox-staging/configuration/#config-layering">layered
+configuration
+approach</a> to
+your advantage.</p>
+<p>As an example, to easily switch between the built-in MT-32 emulation and
+an external MIDI device that contains “loopMIDI” in its name, put this
+into your global configuration:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">mt32</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">midiconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">loopMIDI</span>
+</code></pre></div>
+<p>Without any further MIDI configuration in your local DOSBox config, this
+will default to using the built-in Roland MT-32 emulation. To switch to
+the external MIDI device, set <code>mididevice</code> to <code>auto</code> in your local config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">auto</span>
+</code></pre></div>
+</div>
+<h2 id="using-external-midi-devices">Using external MIDI devices<a class="headerlink" href="#using-external-midi-devices" title="Permanent link">¶</a></h2>
+<p>DOSBox Staging can send MIDI data to any MIDI device outside of its own
+built-in synthesisers. This includes <a href="#physical-midi-devices">physical hardware modules</a> connected
+via USB, but also <a href="#virtual-midi-devices">software synthesisers</a> running on
+your machine — anything that appears as a MIDI port to the operating system.</p>
+<h3 id="physical-midi-devices">Physical MIDI devices<a class="headerlink" href="#physical-midi-devices" title="Permanent link">¶</a></h3>
+<p>If you own a physical MIDI sound module (an MT-32, SC-55, or similar), you
+can connect it to your computer and have DOSBox Staging send MIDI data
+directly to it. This is the ultimate option for enthusiasts who want
+authentic hardware playback.</p>
+<p>You’ll need a <strong>USB MIDI interface</strong> (e.g., Roland UM-ONE mk2) to connect
+the module to a modern computer. The MIDI cable carries note data only —
+you’ll also need audio cables from the module’s line outputs to your
+speakers or audio interface.</p>
+<h3 id="virtual-midi-devices">Virtual MIDI devices<a class="headerlink" href="#virtual-midi-devices" title="Permanent link">¶</a></h3>
+<p>You can also route DOSBox’s MIDI output to another software synthesiser
+running on your machine (such as Roland’s Sound Canvas VA, or any DAW or
+standalone synth plugin) by using a virtual MIDI loopback driver. This
+creates a virtual MIDI cable that connects DOSBox’s output to the other
+program’s input.</p>
+<ul>
+<li><strong>Windows</strong> — <a href="https://www.tobias-erichsen.de/software/loopmidi.html">loopMIDI</a>
+  or <a href="https://www.nerds.de/en/loopbe1.html">loopBE</a> create virtual MIDI
+  ports. Install one, create a port, then point your external synthesiser at
+  that port for input and set <code>midiconfig</code> to the port name in DOSBox.</li>
+<li><strong>macOS</strong> — Use the built-in <strong>IAC Driver</strong> in <em>Audio MIDI Setup</em> to
+  create virtual MIDI ports, or use a third-party tool.</li>
+<li><strong>Linux</strong> — ALSA’s <code>snd-virmidi</code> module or JACK MIDI can create virtual
+  ports.</li>
+</ul>
+<h3 id="finding-your-midi-device">Finding your MIDI device<a class="headerlink" href="#finding-your-midi-device" title="Permanent link">¶</a></h3>
+<p>Run <code>MIXER /LISTMIDI</code> at the DOSBox DOS prompt to list all MIDI output ports
+available on your system. Set <code>mididevice</code> to <code>port</code> and <code>midiconfig</code> to the
+device name:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">port</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">midiconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">UM-ONE</span>
+</code></pre></div>
+<p>You don’t need to type the full device name — DOSBox Staging performs a
+case-insensitive substring match against all available MIDI port names. For
+example, <code>midiconfig = UM-ONE</code> will match a port called “Roland UM-ONE MIDI
+1”. If multiple ports match, the first match is used. You can also use the
+numeric port ID shown by <code>MIXER /LISTMIDI</code>, but name-based identification is
+preferred as the numbers can change when you unplug and reattach USB devices.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">port</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">midiconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2</span>
+</code></pre></div>
+<h3 id="platform-specific-midi">Platform-specific MIDI<a class="headerlink" href="#platform-specific-midi" title="Permanent link">¶</a></h3>
+<p>DOSBox Staging uses the native MIDI subsystem on each platform:</p>
 <ul>
 <li>
-<p><strong>Games that misinterpret the middle button</strong> (e.g.,
-  <a href="https://www.mobygames.com/game/1441/eye-of-the-beholder/">Eye of the Beholder</a>)
-  — set <a href="#builtin_dos_mouse_driver_model"><code>builtin_dos_mouse_driver_model</code></a>
-  to <code>2button</code>.</p>
+<p><strong>macOS</strong> — Uses Apple’s <strong>CoreMIDI</strong> framework. All MIDI destinations
+  visible in <em>Audio MIDI Setup</em> (including virtual ports from apps like
+  loopMIDI or DAWs) are available. Use <code>MIXER /LISTMIDI</code> to see the list.</p>
 </li>
 <li>
-<p><strong>Mouse cursor doesn’t move with slow mouse movements</strong> (e.g., Ultima
-  Underworld I/II) — set
-  <a href="#builtin_dos_mouse_driver_move_threshold"><code>builtin_dos_mouse_driver_move_threshold</code></a>
-  to <code>2</code>.</p>
+<p><strong>Linux</strong> — Uses <strong>ALSA</strong> sequencer ports. You can specify the port by
+  name or by ALSA address (e.g., <code>midiconfig = 14:0</code>). ALSA prioritises
+  synthesiser-type ports when matching by name.</p>
+</li>
+<li>
+<p><strong>Windows</strong> — Uses the standard <strong>Windows MIDI</strong> API. All MIDI output
+  devices registered with the system appear in <code>MIXER /LISTMIDI</code>. If no
+  device is specified, DOSBox uses the Windows MIDI Mapper (the system
+  default).</p>
 </li>
 </ul>
-<h2 id="advanced-driver-options">Advanced driver options<a class="headerlink" href="#advanced-driver-options" title="Permanent link">¶</a></h2>
-<p>The <a href="#builtin_dos_mouse_driver_options"><code>builtin_dos_mouse_driver_options</code></a>
-setting accepts a list of options that address rare edge cases:</p>
-<ul>
-<li>
-<p><strong><code>immediate</code></strong> — Updates mouse movement counters without waiting for the
-  next interrupt, reducing input latency. This can help in fast-paced FPS and
-  arcade games, but is known to cause issues with
-  <a href="https://www.mobygames.com/game/690/ultima-underworld-the-stygian-abyss/">Ultima Underworld: The Stygian Abyss</a> and
-  <a href="https://www.mobygames.com/game/691/ultima-underworld-ii-labyrinth-of-worlds/">Ultima Underworld II: Labyrinth of Worlds</a>.</p>
-</li>
-<li>
-<p><strong><code>modern</code></strong> — Emulates Microsoft mouse driver v7.0+ behaviour instead of
-  v6.0. Only <a href="https://www.mobygames.com/game/2509/descent-ii/">Descent II</a>
-  with the official Voodoo patch is known to require this.</p>
-</li>
-<li>
-<p><strong><code>no-granularity</code></strong> — Disables mouse position granularity filtering. Only
-  <a href="https://www.mobygames.com/game/3769/joan-of-arc-siege-the-sword/">Joan of Arc: Siege &amp; the Sword</a>
-  in Hercules mode is known to require this.</p>
-</li>
-</ul>
-<p>You can combine multiple options; for example,
-<code>builtin_dos_mouse_driver_options = immediate, modern</code>.</p>
-<h2 id="mouse-capture-and-multi-monitor">Mouse capture and multi-monitor<a class="headerlink" href="#mouse-capture-and-multi-monitor" title="Permanent link">¶</a></h2>
-<p><a href="#mouse_middle_release"><code>mouse_middle_release</code></a> is enabled by default and lets
-you release the captured mouse by middle-clicking. Disable it if the game uses
-the middle mouse button.</p>
-<p><a href="#mouse_multi_display_aware"><code>mouse_multi_display_aware</code></a> allows seamless mouse
-behaviour and pointer release to work in fullscreen on multi-monitor systems.
-Disable it if DOSBox incorrectly detects multiple displays (e.g., mirrored
-displays or an HDMI audio receiver showing up as a monitor).</p>
-<p><a href="#virtualbox_mouse"><code>virtualbox_mouse</code></a> and
-<a href="#vmware_mouse"><code>vmware_mouse</code></a> enable virtual mouse interfaces for third-party
-<a href="../../using-dosbox-staging/windows-31/">Windows 3.1</a> mouse drivers. Both
-default to on and are only relevant when running Windows 3.1 under DOSBox with
-custom drivers that use these protocols.</p>
+<h3 id="macos-coreaudio-synthesiser">macOS CoreAudio synthesiser<a class="headerlink" href="#macos-coreaudio-synthesiser" title="Permanent link">¶</a></h3>
+<p>On macOS, DOSBox Staging provides a <code>coreaudio</code> MIDI device option that uses
+Apple’s built-in DLS synthesiser. Although not a physical external device, it
+is external to DOSBox — the audio is rendered by macOS’s own Audio Unit
+synthesiser, bypassing DOSBox’s mixer entirely. You can optionally point it at
+a SoundFont file:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">coreaudio</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="na">midiconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">/path/to/soundfont.sf2</span>
+</code></pre></div>
+<p>The default Apple DLS sound set is fairly basic; loading a good SoundFont
+improves results significantly.</p>
+<h3 id="sysex-delays-for-older-hardware">SysEx delays for older hardware<a class="headerlink" href="#sysex-delays-for-older-hardware" title="Permanent link">¶</a></h3>
+<p>Some older MIDI modules (notably the Roland MT-32 with revision 0 PCB) can
+overflow their internal buffers when receiving large System Exclusive (SysEx)
+messages. If you experience garbled patches or missing instruments, add
+<code>delaysysex</code> after the device identifier:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">port</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">midiconfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">UM-ONE delaysysex</span>
+</code></pre></div>
+<p>This adds a small calculated delay between SysEx messages to prevent buffer
+overflows.</p>
+<h2 id="midi-output-corrections">MIDI output corrections<a class="headerlink" href="#midi-output-corrections" title="Permanent link">¶</a></h2>
+<p>By default, DOSBox Staging corrects common MIDI protocol errors in the output
+of DOS games. Many games send “All Notes Off” messages instead of proper
+per-note Note Off commands. DOSBox converts these to individual Note Off
+messages for each active note, which prevents hanging notes and makes recorded
+MIDI data easier to edit in a sequencer. This also fixes the infamous hanging
+notes issue with the Roland RA-50 external MIDI module, which does not
+implement the “All Notes Off” message at all.</p>
+<p>The <a href="#raw_midi_output"><code>raw_midi_output</code></a> setting disables these corrections.
+This produces no audible difference on most synthesisers — it only affects
+how the MIDI data stream is represented. Enable it if you need the unmodified
+MIDI output for debugging, working with music applications, or when an
+external hardware or MIDI recording setup requires the unprocessed stream.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
-<p>You can set the mouse parameters in the <code>[mouse]</code> configuration section.</p>
-<h5 id="builtin_dos_mouse_driver">builtin_dos_mouse_driver<a class="headerlink" href="#builtin_dos_mouse_driver" title="Permanent link">¶</a></h5>
+<p>MIDI related settings are to be configured in the <code>[midi]</code> section.</p>
+<h5 id="mididevice">mididevice<a class="headerlink" href="#mididevice" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Built-in DOS mouse driver mode. It bypasses the PS/2 and serial (COM)
-ports and communicates with the mouse directly. This results in lower
-input lag, smoother movement, and increased mouse responsiveness, so only
-disable it and load a real DOS mouse driver if it’s really necessary
-(e.g., if a game is not compatible with the built-in driver).</p>
+<p>Selects the MIDI device where data from the emulated MPU-401 MIDI
+interface is sent.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>on</code> <em class="default">default</em> – Simulate a mouse driver TSR program
-  loaded from <code>AUTOEXEC.BAT</code>. This is the most compatible way to emulate
-  the DOS mouse driver, but if it doesn’t work with your game, try the
-  <code>no-tsr</code> setting.</li>
-<li><code>no-tsr</code> – Enable the mouse driver without simulating the TSR
-  program. Let us know if it fixes any software not working with the <code>on</code>
-  setting.</li>
-<li><code>off</code> – Disable the built-in mouse driver. You can still start it at
-  runtime by executing the bundled <code>MOUSE.COM</code> from drive Z.</li>
+<li>
+<p><code>port</code> <em class="default">default</em> — A MIDI port of the host operating
+    system’s MIDI interface. You can configure the port to use with the
+    <a href="#midiconfig"><code>midiconfig</code></a> setting. See <a href="#using-external-midi-devices">Using external MIDI
+    devices</a> for details.</p>
+</li>
+<li>
+<p><code>fluidsynth</code> — The built-in FluidSynth MIDI synthesiser (SoundFont
+    player). See <a href="../sound-devices/fluidsynth/">FluidSynth</a> for details.</p>
+</li>
+<li>
+<p><code>mt32</code> — The built-in Roland MT-32 synthesiser. See <a href="../sound-devices/roland-mt-32/#configuration-settings">Roland
+    MT-32</a>
+    for details.</p>
+</li>
+<li>
+<p><code>soundcanvas</code> — The internal Roland SC-55 synthesiser (requires a
+    CLAP audio plugin). See <a href="../sound-devices/sound-canvas/">Sound
+    Canvas</a> for details.</p>
+</li>
+<li>
+<p><code>coreaudio</code> <em>(macOS only)</em> — Use the built-in macOS CoreAudio
+    synthesiser. See <a href="#macos-coreaudio-synthesiser">macOS CoreAudio
+    synthesiser</a> for details. The SoundFont
+    to use can be specified with <a href="#midiconfig"><code>midiconfig</code></a>.</p>
+</li>
+<li>
+<p><code>none</code> — Disable MIDI output.</p>
+</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<ul>
-<li>
-<p>The <a href="#ps2_mouse_model"><code>ps2_mouse_model</code></a> and
-  <a href="#com_mouse_model"><code>com_mouse_model</code></a> settings have no effect on the
-  built-in driver.</p>
-</li>
-<li>
-<p>The driver is auto-disabled if you boot into real MS-DOS or Windows
-  9x under DOSBox. Under Windows 3.1, the driver is not disabled,
-  but the Windows 3.1 mouse driver takes over.</p>
-</li>
-<li>
-<p>To use a real DOS mouse driver (e.g., <code>MOUSE.COM</code> or
-  <code>CTMOUSE.EXE</code>), configure the mouse type with
-  <a href="#ps2_mouse_model"><code>ps2_mouse_model</code></a> or
-  <a href="#com_mouse_model"><code>com_mouse_model</code></a>, then load the driver.</p>
-</li>
-</ul>
-</div>
 </dd>
 </dl>
-<h5 id="builtin_dos_mouse_driver_model">builtin_dos_mouse_driver_model<a class="headerlink" href="#builtin_dos_mouse_driver_model" title="Permanent link">¶</a></h5>
+<h5 id="midiconfig">midiconfig<a class="headerlink" href="#midiconfig" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Set the mouse model to be simulated by the built-in DOS mouse driver.</p>
-<p>Possible values:</p>
+<p>Configuration options for the selected MIDI device.</p>
+<p>Depending on the <a href="#mididevice"><code>mididevice</code></a> setting, the <code>midiconfig</code>
+setting is interpreted as follows:</p>
 <div class="compact" markdown="">
-<ul>
-<li><code>2button</code> <em class="default">default</em> – 2 buttons, the safest option for
-  most games. The majority of DOS games only support 2 buttons, some
-  might misbehave if the middle button is pressed.</li>
-<li><code>3button</code> – 3 buttons, only supported by very few DOS games. Only use
-  this if the game is known to support a 3-button mouse.</li>
-<li><code>wheel</code> – 3 buttons + wheel, supports the CuteMouse WheelAPI version
-  1.0. No DOS game uses the mouse wheel, only a handful of DOS
-  applications and Windows 3.1 with special third-party drivers.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th><code>mididevice</code> setting</th>
+<th><code>midiconfig</code> setting</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>none</code></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>fluidsynth</code></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>mt32</code></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>soundcanvas</code></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><code>port</code></td>
+<td><code>ID [delaysysex]</code> — Use the MIDI device with this ID. The ID can be a numeric port index or a part of the device name (case-insensitive substring match). The <code>delaysysex</code> option might be needed for some older external MIDI modules.</td>
+</tr>
+<tr>
+<td><code>coreaudio</code></td>
+<td>Path to the SoundFont to use.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>With <code>mididevice = port</code>, using name-based identification is preferable
+as the numeric IDs can change if you unplug then reattach your external
+MIDI adapters or audio interfaces.</p>
+<p>Use the <code>MIXER /LISTMIDI</code> command to list the IDs and names of all MIDI
+devices available on your system.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>If you’re using a physical Roland MT-32 with revision 0 PCB, the
+hardware may require a delay in order to prevent its buffer from
+overflowing. In that case, add <code>delaysysex</code>, e.g., <code>midiconfig = 2
+delaysysex</code>.</p>
 </div>
 </dd>
 </dl>
-<h5 id="builtin_dos_mouse_driver_move_threshold">builtin_dos_mouse_driver_move_threshold<a class="headerlink" href="#builtin_dos_mouse_driver_move_threshold" title="Permanent link">¶</a></h5>
+<h5 id="mpu401">mpu401<a class="headerlink" href="#mpu401" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>The smallest amount of mouse movement that will be reported to the guest
-(<code>1</code> by default). Some DOS games cannot properly respond to small
-movements, which were hard to achieve using the imprecise ball mice of the
-era; in such case increase the amount to the smallest value that results
-in a proper cursor motion.</p>
+<p>MPU-401 MIDI interface mode to emulate.</p>
 <p>Possible values:</p>
-<ul>
-<li><code>1-9</code> – The smallest amount of movement to report, for both
-  horizontal and vertical axes. <code>1</code> reports all the movements (default).</li>
-<li><code>x,y</code> – Separate values for horizontal and vertical axes, can be
-  separated by spaces, commas, or semicolons.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Known games requiring the threshold to be set to <code>2</code>:</p>
-<ul>
-<li><a href="https://www.mobygames.com/game/690/ultima-underworld-the-stygian-abyss/">Ultima Underworld: The Stygian Abyss (1992)</a></li>
-<li><a href="https://www.mobygames.com/game/691/ultima-underworld-ii-labyrinth-of-worlds/">Ultima Underworld II: Labyrinth of Worlds (1993)</a></li>
-</ul>
-</div>
-</dd>
-</dl>
-<h5 id="builtin_dos_mouse_driver_options">builtin_dos_mouse_driver_options<a class="headerlink" href="#builtin_dos_mouse_driver_options" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Additional built-in DOS mouse driver settings as a list of space or comma
-separated options (unset by default).</p>
-<p>Possible values:</p>
-<div class="compact" markdown="">
-<ul>
-<li><code>immediate</code> – Update mouse movement counters immediately, without
-  waiting for interrupt. May improve mouse latency in fast-paced games
-  (arcade, FPS, etc.), but might cause issues in some titles.</li>
-<li><code>modern</code> – Emulate v7.0+ Microsoft mouse driver behaviour (instead of
-  v6.0 and earlier). Only <code>Descent II</code> with the official Voodoo patch has
-  been found to require this so far.</li>
-<li><code>no-granularity</code> – Disable mouse position granularity. Only enable if
-  the game needs it. Only <code>Joan of Arc: Siege &amp; the Sword</code> in Hercules
-  mode has been found to require this so far.</li>
-</ul>
-</div>
-</dd>
-</dl>
-<h5 id="com_mouse_model">com_mouse_model<a class="headerlink" href="#com_mouse_model" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Set the default COM (serial) mouse model, or in other words, the type of
-the virtual mouse plugged into the emulated COM ports. The setting has no
-effect on the built-in mouse driver (see
-<a href="#builtin_dos_mouse_driver"><code>builtin_dos_mouse_driver</code></a>).</p>
-<p>Possible values:</p>
-<div class="compact" markdown="">
-<ul>
-<li><code>2button</code> – 2 buttons, Microsoft mouse.</li>
-<li><code>3button</code> – 3 buttons, Logitech mouse; mostly compatible with
-  Microsoft mouse.</li>
-<li><code>wheel</code> – 3 buttons + wheel; mostly compatible with Microsoft mouse.</li>
-<li><code>msm</code> – 3 buttons, Mouse Systems mouse; NOT compatible with Microsoft
-  mouse.</li>
-<li><code>2button+msm</code> – Automatic choice between <code>2button</code> and <code>msm</code>.</li>
-<li><code>3button+msm</code> – Automatic choice between <code>3button</code> and <code>msm</code>.</li>
-<li><code>wheel+msm</code> <em class="default">default</em> – Automatic choice between <code>wheel</code>
-  and <code>msm</code>.</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Enable COM port mice in the <code>[serial]</code> section.</p>
-</div>
-</dd>
-</dl>
-<h5 id="mouse_capture">mouse_capture<a class="headerlink" href="#mouse_capture" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Set the mouse capture behaviour.</p>
-<p>Possible values:</p>
-<ul>
-<li><code>onclick</code> <em class="default">default</em> – Capture the mouse when clicking any
-  mouse button in the window.</li>
-<li><code>onstart</code> – Capture the mouse immediately on start. Might not work
-  correctly on some host operating systems.</li>
-<li><code>seamless</code> – Let the mouse move seamlessly between the DOSBox window
-  and the rest of the desktop; captures only with middle-click or hotkey.
-  Seamless mouse does not work correctly with all the games. Windows 3.1
-  can be made compatible with a custom mouse driver.</li>
-<li><code>nomouse</code> – Hide the mouse and don’t send mouse input to the game.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Use <code>seamless</code> mode for touch screens.</p>
-</div>
-</dd>
-</dl>
-<h5 id="mouse_middle_release">mouse_middle_release<a class="headerlink" href="#mouse_middle_release" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Release the captured mouse by middle-clicking, and also capture it in
-seamless mode.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
-</dd>
-</dl>
-<h5 id="mouse_multi_display_aware">mouse_multi_display_aware<a class="headerlink" href="#mouse_multi_display_aware" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Allow seamless mouse behavior and mouse pointer release to work in
-fullscreen mode on systems with more than one display.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You should disable this if it incorrectly detects multiple displays
-when only one should actually be used. This might happen if you are
-using mirrored display mode or using an AV receiver’s HDMI input for
-audio-only listening.</p>
-</div>
-</dd>
-</dl>
-<h5 id="mouse_raw_input">mouse_raw_input<a class="headerlink" href="#mouse_raw_input" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Bypass the mouse acceleration and sensitivity settings of the host
-operating system. Works in fullscreen or when the mouse is captured in
-windowed mode.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
-</dd>
-</dl>
-<h5 id="mouse_sensitivity">mouse_sensitivity<a class="headerlink" href="#mouse_sensitivity" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Set global mouse sensitivity (<code>100</code> by default).</p>
-<p>Possible values:</p>
-<ul>
-<li><code>&lt;value&gt;</code> – Set sensitivity for both axes as a percentage (e.g.,
-  <code>150</code>).</li>
-<li><code>X,Y</code> – Set X and Y axis sensitivity separately as percentages (e.g.,
-  <code>100,150</code>). The two values can be separated by a space or a semicolon
-  as well.</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
 <ul>
 <li>
-<p>Negative values invert an axis, zero disables it.</p>
+<p><code>none</code> — Disable MPU-401 emulation.</p>
 </li>
 <li>
-<p>Sensitivity can be fine-tuned further per mouse interface with the
-  internal <code>MOUSECTL.COM</code> command.</p>
+<p><code>intelligent</code> <em class="default">default</em> — The intelligent mode was present
+  on the original MPU-401 manufactured by Roland and on some clones. It
+  provides MIDI sequencer features, precise event timing via timestamped
+  messages, and the ability to offload MIDI-related tasks from slow CPUs.
+  Earlier MT-32 games depend on these features and will not produce sound
+  in <code>uart</code> mode.</p>
+</li>
+<li>
+<p><code>uart</code> — Use UART mode of the MPU-401 that simply forwards each byte
+  written to the MPU to the MIDI device in real-time. Sound Blaster cards
+  can only operate in UART mode, and virtually all General MIDI games
+  require only UART mode.</p>
 </li>
 </ul>
-</div>
 </dd>
 </dl>
-<h5 id="ps2_mouse_model">ps2_mouse_model<a class="headerlink" href="#ps2_mouse_model" title="Permanent link">¶</a></h5>
+<h5 id="raw_midi_output">raw_midi_output<a class="headerlink" href="#raw_midi_output" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Set the PS/2 AUX port mouse model, or in other words, the type of the
-virtual mouse plugged into the emulated PS/2 mouse port. The setting has
-no effect on the built-in mouse driver (see
-<a href="#builtin_dos_mouse_driver"><code>builtin_dos_mouse_driver</code></a>).</p>
-<p>Possible values:</p>
-<div class="compact" markdown="">
-<ul>
-<li><code>standard</code> – 3 buttons, standard PS/2 mouse.</li>
-<li><code>intellimouse</code> – 3 buttons + wheel, Microsoft IntelliMouse.</li>
-<li><code>explorer</code> <em class="default">default</em> – 5 buttons + wheel, Microsoft
-  IntelliMouse Explorer.</li>
-<li><code>none</code> – No PS/2 mouse.</li>
-</ul>
-</div>
-</dd>
-</dl>
-<h5 id="virtualbox_mouse">virtualbox_mouse<a class="headerlink" href="#virtualbox_mouse" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>VirtualBox mouse interface. Fully compatible only with 3<sup>rd</sup> party Windows
-3.1 driver.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Requires PS/2 mouse to be enabled.</p>
-</div>
-</dd>
-</dl>
-<h5 id="vmware_mouse">vmware_mouse<a class="headerlink" href="#vmware_mouse" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>VMware mouse interface. Fully compatible only with 3<sup>rd</sup> party Windows 3.1
-driver.</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Requires PS/2 mouse to be enabled.</p>
-</div>
+<p>Enable raw, unaltered MIDI output (<code>off</code> by default). The MIDI drivers of
+many games don’t fully conform to the MIDI standard, which makes editing
+their MIDI recordings error-prone in MIDI sequencers. DOSBox corrects the
+MIDI output of such games by default with no audible difference; it only
+affects the data representation.</p>
+<p>Only enable this if you need to capture the raw, unaltered MIDI output of
+a program, e.g., when working with music applications or debugging MIDI
+issues.</p>
+<p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
 </dd>
 </dl>
 
@@ -5039,7 +5072,7 @@ driver.</p>
       <!-- Link to previous page -->
       
         
-        <a href="../keyboard/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Keyboard" rel="prev">
+        <a href="../mixer-effects/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Mixer effects" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
           </div>
@@ -5048,7 +5081,7 @@ driver.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Keyboard
+              Mixer effects
             </div>
           </div>
         </a>
@@ -5057,13 +5090,13 @@ driver.</p>
       <!-- Link to next page -->
       
         
-        <a href="../joystick/" class="md-footer__link md-footer__link--next" aria-label="Next: Joystick" rel="next">
+        <a href="../output-filters/" class="md-footer__link md-footer__link--next" aria-label="Next: Output filter emulation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Joystick
+              Output filter emulation
             </div>
           </div>
           <div class="md-footer__button md-icon">
