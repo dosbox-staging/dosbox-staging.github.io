@@ -13,7 +13,7 @@
         <link rel="prev" href="../cpu/">
       
       
-        <link rel="next" href="../../graphics/adapters/">
+        <link rel="next" href="../localisation/">
       
       
         
@@ -264,7 +264,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../introduction/about-this-manual/" class="md-tabs__link">
           
   
   
@@ -1552,6 +1552,8 @@
       
         
       
+        
+      
     
     
     
@@ -1608,10 +1610,6 @@
     
       
         
-          
-        
-      
-        
       
         
       
@@ -1633,9 +1631,8 @@
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
         
           
-          <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
-              
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
   
   
   <span class="md-ellipsis">
@@ -1649,14 +1646,8 @@
   
   
 
-            </a>
-            
-              
-              <label class="md-nav__link " for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
-                <span class="md-nav__icon md-icon"></span>
-              </label>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_1">
@@ -1670,15 +1661,13 @@
           <ul class="md-nav__list" data-md-scrollfix="">
             
               
-            
-              
                 
   
   
   
   
     <li class="md-nav__item">
-      <a href="../../about-this-manual/" class="md-nav__link">
+      <a href="../../introduction/about-this-manual/" class="md-nav__link">
         
   
   
@@ -1706,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../what-is-dosbox-staging/" class="md-nav__link">
+      <a href="../../introduction/what-is-dosbox-staging/" class="md-nav__link">
         
   
   
@@ -1734,7 +1723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dos-primer/" class="md-nav__link">
+      <a href="../../introduction/dos-primer/" class="md-nav__link">
         
   
   
@@ -1762,7 +1751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dos-eras/" class="md-nav__link">
+      <a href="../../introduction/dos-eras/" class="md-nav__link">
         
   
   
@@ -1866,7 +1855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../configuration/" class="md-nav__link">
+      <a href="../../using-dosbox-staging/configuration/" class="md-nav__link">
         
   
   
@@ -1894,7 +1883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../command-line/" class="md-nav__link">
+      <a href="../../using-dosbox-staging/command-line/" class="md-nav__link">
         
   
   
@@ -1922,7 +1911,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../commands/" class="md-nav__link">
+      <a href="../../using-dosbox-staging/shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DOS shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using-dosbox-staging/commands/" class="md-nav__link">
         
   
   
@@ -1950,7 +1967,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../storage/" class="md-nav__link">
+      <a href="../../using-dosbox-staging/storage/" class="md-nav__link">
         
   
   
@@ -1978,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../hardware-resources/" class="md-nav__link">
+      <a href="../../using-dosbox-staging/hardware-resources/" class="md-nav__link">
         
   
   
@@ -2006,7 +2023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../capture/" class="md-nav__link">
+      <a href="../../using-dosbox-staging/capture/" class="md-nav__link">
         
   
   
@@ -2034,35 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../http-api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    HTTP API
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../windows-31/" class="md-nav__link">
+      <a href="../../using-dosbox-staging/windows-31/" class="md-nav__link">
         
   
   
@@ -2101,6 +2090,8 @@
   
     
     
+      
+        
       
         
       
@@ -2301,6 +2292,45 @@
       
         
 <li class="md-nav__item">
+  <a href="#dos-version-and-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS version and compatibility
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#shell-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell settings
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#pcjr-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCjr memory
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
   <a href="#configuration-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -2311,64 +2341,6 @@
   
     <nav class="md-nav" aria-label="Configuration settings">
       <ul class="md-nav__list">
-        
-          
-<li class="md-nav__item">
-  <a href="#regional-settings_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Regional settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Regional settings">
-      <ul class="md-nav__list">
-        
-          
-<li class="md-nav__item">
-  <a href="#country" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        country
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#keyboard_layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        keyboard_layout
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#locale_period" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        locale_period
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-      </ul>
-    </nav>
-  
-</li>
-
         
           
 <li class="md-nav__item">
@@ -2535,6 +2507,34 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../localisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -2841,6 +2841,8 @@
       
         
       
+        
+      
     
     
     
@@ -3003,6 +3005,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../../sound/midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../sound/output-filters/" class="md-nav__link">
         
   
@@ -3085,6 +3115,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3096,10 +3130,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_7">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8">
         
           
-          <label class="md-nav__link" for="__nav_3_5_7" id="__nav_3_5_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5_8" id="__nav_3_5_8_label" tabindex="0">
             
   
   
@@ -3117,8 +3151,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_5_7">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5_8">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -3135,14 +3169,154 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
+      <a href="../../sound/sound-devices/pc-speaker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AdLib, CMS &amp; Sound Blaster
+    PC speaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/tandy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tandy 3 Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/cms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creative Music System (CMS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/adlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib (OPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/covox-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Covox variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/sound-blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Blaster
   
 
     
@@ -3191,14 +3365,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/midi/" class="md-nav__link">
+      <a href="../../sound/sound-devices/sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MIDI
+    Sound Canvas
   
 
     
@@ -3219,70 +3393,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/general-midi/" class="md-nav__link">
+      <a href="../../sound/sound-devices/fluidsynth/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    General MIDI
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sound/sound-devices/pc-speaker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PC speaker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sound/sound-devices/tandy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tandy 3 Voice
+    FluidSynth
   
 
     
@@ -3387,14 +3505,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/covox-variants/" class="md-nav__link">
+      <a href="../../sound/sound-devices/imfc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Covox variants
+    IBM Music Feature Card
   
 
     
@@ -3423,34 +3541,6 @@
     
   
     Innovation SSI-2001
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../sound/sound-devices/imfc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IBM Music Feature Card
   
 
     
@@ -3876,6 +3966,34 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../../http-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
     
     
       
@@ -3894,10 +4012,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9">
         
           
-          <label class="md-nav__link" for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
             
   
   
@@ -3915,8 +4033,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_8">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -4247,6 +4365,45 @@
       
         
 <li class="md-nav__item">
+  <a href="#dos-version-and-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS version and compatibility
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#shell-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shell settings
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#pcjr-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        PCjr memory
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
   <a href="#configuration-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4257,64 +4414,6 @@
   
     <nav class="md-nav" aria-label="Configuration settings">
       <ul class="md-nav__list">
-        
-          
-<li class="md-nav__item">
-  <a href="#regional-settings_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Regional settings
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Regional settings">
-      <ul class="md-nav__list">
-        
-          
-<li class="md-nav__item">
-  <a href="#country" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        country
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#keyboard_layout" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        keyboard_layout
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#locale_period" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        locale_period
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-      </ul>
-    </nav>
-  
-</li>
-
         
           
 <li class="md-nav__item">
@@ -4508,7 +4607,7 @@ RAM, a patchwork of standards emerged to make the extra memory available:</p>
 <ul>
 <li>
 <p><strong>XMS</strong> (Extended Memory) — the main pool of memory above 1 MB. This is
-  what the <a href="../general/#memsize">memsize</a> setting controls (16 MB by default).
+  what the <a href="../general/#memsize"><code>memsize</code></a> setting controls (16 MB by default).
   Nearly all games from the late DOS era use XMS.</p>
 </li>
 <li>
@@ -4526,81 +4625,37 @@ RAM, a patchwork of standards emerged to make the extra memory available:</p>
 occasion a game misbehaves (usually an old title that chokes on EMS),
 disabling the offending memory type is a quick fix.</p>
 <h2 id="regional-settings">Regional settings<a class="headerlink" href="#regional-settings" title="Permanent link">¶</a></h2>
-<p>DOSBox Staging automatically detects your host operating system’s language
-and keyboard layout, so in most cases it just does the right thing out of
-the box. If you need to override the defaults — perhaps you’re running a
-German game on an English system, or you need a specific date format — a
-few settings let you fine-tune the regional behaviour.</p>
-<p>The <a href="#country">country</a> setting controls DOS-level formatting conventions:
-date and time format, decimal separators, currency symbols, and so on. The
-<a href="#keyboard_layout">keyboard_layout</a> setting selects the DOS keyboard layout,
-determining which characters are produced by which keys.
-<a href="./#locale_period">locale_period</a> lets you specify the decimal separator
-regardless of the country setting.</p>
-<p>To see what’s available on your system, start DOSBox Staging with the
-following command line arguments:</p>
-<ul>
-<li><a href="../../command-line/#-list-countries"><code>--list-countries</code></a> — lists all supported countries with their numeric codes</li>
-<li><a href="../../command-line/#-list-layouts"><code>--list-layouts</code></a> — lists all supported keyboard layouts with their codes</li>
-<li><a href="../../command-line/#-list-code-pages"><code>--list-code-pages</code></a> — lists all bundled code pages (screen fonts)</li>
-</ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Use the <a href="../general/#language">language</a> setting in the <code>[dosbox]</code> section
-to set the language of DOSBox Staging’s own interface.</p>
-</div>
+<p>For language, country, keyboard layout, and code page settings, see the
+dedicated <a href="../localisation/">Localisation</a> chapter.</p>
+<h2 id="dos-version-and-compatibility">DOS version and compatibility<a class="headerlink" href="#dos-version-and-compatibility" title="Permanent link">¶</a></h2>
+<p>The <a href="#ver"><code>ver</code></a> setting controls which DOS version is reported to programs.
+The default <code>5.0</code> is the most widely compatible. Some older games require
+<code>3.3</code>, while a few late-era programs need <code>6.22</code> or <code>7.1</code>. Setting the DOS
+version to 7.0 or above automatically enables environment variable expansion
+in the DOS shell (see <a href="#expand_shell_variable"><code>expand_shell_variable</code></a>).</p>
+<p>The <a href="#setver_table_file"><code>setver_table_file</code></a> setting provides persistent
+storage for the <code>SETVER</code> command, which lets you report a different DOS version
+to specific programs without changing the global version.</p>
+<p>The <a href="#file_locking"><code>file_locking</code></a> setting emulates <code>SHARE.EXE</code> file locking.
+The default <code>auto</code> only enables it when Windows 3.1 is running, as it’s
+required for some Windows 3.1 applications. In rare cases (e.g., Astral Blur
+demo), it can cause crashes in DOS games — set it to <code>off</code> if that happens.</p>
+<h2 id="shell-settings">Shell settings<a class="headerlink" href="#shell-settings" title="Permanent link">¶</a></h2>
+<p>The DOS shell supports persistent
+<a href="../../using-dosbox-staging/shell/#command-history">command history</a> and
+environment variable expansion. The
+<a href="#shell_history_file"><code>shell_history_file</code></a> setting controls where the history
+is stored; set it to empty to disable persistence. The
+<a href="#expand_shell_variable"><code>expand_shell_variable</code></a> setting controls whether
+variables like <code>%PATH%</code> are expanded in commands — the default <code>auto</code> enables
+this for DOS 7.0+ (matching real FreeDOS and MS-DOS 7 behaviour).</p>
+<h2 id="pcjr-memory">PCjr memory<a class="headerlink" href="#pcjr-memory" title="Permanent link">¶</a></h2>
+<p>The <a href="#pcjr_memory_config"><code>pcjr_memory_config</code></a> setting controls memory layout
+on the emulated PCjr. The default <code>expanded</code> provides 640 KB and is compatible
+with most games. A few very old PCjr titles (<a href="https://www.mobygames.com/game/80/jumpman/">Jumpman</a>, <a href="https://www.mobygames.com/game/14214/troll/">Troll</a>) require the
+<code>standard</code> 128 KB layout.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>You can set the DOS parameters in the <code>[dos]</code> configuration section.</p>
-<h3 id="regional-settings_1">Regional settings<a class="headerlink" href="#regional-settings_1" title="Permanent link">¶</a></h3>
-<h5 id="country">country<a class="headerlink" href="#country" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Set DOS country code (<code>auto</code> by default). This affects country-specific
-information such as date, time, and decimal formats. If set to <code>auto</code>, it
-selects the country code reflecting the host OS settings.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The list of country codes can be displayed using the
-<a href="../../command-line/#-list-countries"><code>--list-countries</code></a> command-line
-argument.</p>
-</div>
-</dd>
-</dl>
-<h5 id="keyboard_layout">keyboard_layout<a class="headerlink" href="#keyboard_layout" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Keyboard layout code (<code>auto</code> by default). Set to <code>auto</code> to guess the
-values from the host OS settings. The layout can be followed by the code
-page number, e.g., <code>uk 850</code> selects a Western European screen font. After
-startup, use the <code>KEYB</code> command to manage keyboard layouts and code pages
-(run <code>HELP KEYB</code> for details).</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The list of supported keyboard layout codes can be displayed using
-the <a href="../../command-line/#-list-layouts"><code>--list-layouts</code></a> command-line
-argument (e.g., <code>uk</code> is the British English layout).</p>
-</div>
-</dd>
-</dl>
-<h5 id="locale_period">locale_period<a class="headerlink" href="#locale_period" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Set locale epoch.</p>
-<p>Possible values:</p>
-<div class="compact" markdown="">
-<ul>
-<li><code>native</code> <em class="default">default</em> – Re-use current host OS settings,
-  regardless of the country set; use <code>modern</code> data to fill in the gaps
-  when the DOS locale system is too limited to follow the desktop
-  settings.</li>
-<li><code>historic</code> – If data is available for the given country, mimic old DOS
-  behaviour when displaying time, dates, or numbers.</li>
-<li><code>modern</code> – Follow current day practices for user experience more
-  consistent with typical host systems.</li>
-</ul>
-</div>
-</dd>
-</dl>
 <h3 id="memory">Memory<a class="headerlink" href="#memory" title="Permanent link">¶</a></h3>
 <h5 id="ems">ems<a class="headerlink" href="#ems" title="Permanent link">¶</a></h5>
 <dl>
@@ -4644,7 +4699,8 @@ be disabled to work at all.</p>
 <h5 id="ver">ver<a class="headerlink" href="#ver" title="Permanent link">¶</a></h5>
 <dl>
 <dd>Set DOS version in <code>MAJOR.MINOR</code> format (<code>5.0</code> by default). A single
-number is treated as the major version. Common settings are <code>3.3</code>, <code>5.0</code>,</dd>
+number is treated as the major version. Common settings are <code>3.3</code>, <code>5.0</code>,
+<code>6.22</code>, and <code>7.1</code>.</dd>
 </dl>
 <h5 id="expand_shell_variable">expand_shell_variable<a class="headerlink" href="#expand_shell_variable" title="Permanent link">¶</a></h5>
 <dl>
@@ -4693,7 +4749,6 @@ tab-separated format, used by <code>SETVER.EXE</code> as a persistent storage
 <dd>File containing persistent command line history (<code>shell_history.txt</code> by
 default). Setting it to empty disables persistent shell history.</dd>
 </dl>
-<p><code>6.22</code>, and <code>7.1</code>.</p>
 
 
 
@@ -4751,13 +4806,13 @@ default). Setting it to empty disables persistent shell history.</dd>
       <!-- Link to next page -->
       
         
-        <a href="../../graphics/adapters/" class="md-footer__link md-footer__link--next" aria-label="Next: Graphics adapters" rel="next">
+        <a href="../localisation/" class="md-footer__link md-footer__link--next" aria-label="Next: Localisation" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Graphics adapters
+              Localisation
             </div>
           </div>
           <div class="md-footer__button md-icon">
