@@ -5256,20 +5256,23 @@ scaling is practically a non-issue.</p>
 <h2 id="aspect-ratio-viewport">Aspect ratio &amp; viewport<a class="headerlink" href="#aspect-ratio-viewport" title="Permanent link">¶</a></h2>
 <p>Most DOS games used non-square pixels and were designed for 4:3 CRT displays.
 The standard 320×200 VGA mode fills a 4:3 screen completely, which is
-only possible if each pixel is a slightly tall rectangle — exactly 20% taller
-than wide, giving a pixel aspect ratio (PAR) of 1:1.2 (or 5:6). You can derive
-this from the display: 4:3 scales to 320:240, and 240 / 200 = 1.2.</p>
+only possible if each pixel is a slightly tall rectangle — exactly 20%
+taller than wide, giving a pixel aspect ratio (PAR) of 1:1.2 (or 5:6). You can
+derive this from the display: 4:3 scales to 320:240, and 240 / 200 = 1.2.</p>
 <p>Aspect ratio correction is enabled by default (<code>aspect = auto</code>) so games look
 as intended. Without it, 320×200 content appears squished on modern
 square-pixel displays.</p>
 <p>A small number of DOS games need square pixels (<code>aspect = square-pixels</code>).
 These are typically European games ported from the PAL Amiga, where the
-original art was designed for square pixels at 320×256. Studios
-known for this include Revolution Software (<a href="https://www.mobygames.com/game/386/beneath-a-steel-sky/">Beneath a Steel Sky</a>, <a href="https://www.mobygames.com/game/1134/lure-of-the-temptress/">Lure of
-the Temptress</a>), Delphine Software (<a href="https://www.mobygames.com/game/564/out-of-this-world/">Another World</a>, <a href="https://www.mobygames.com/game/555/flashback-the-quest-for-identity/">Flashback</a>), and
-Coktel Vision (<a href="https://www.mobygames.com/game/1154/gobliiins/">Gobliiins</a> series). The tell-tale sign is scanned or
-hand-drawn artwork that appears vertically stretched with aspect ratio
-correction enabled.</p>
+original art was designed for square pixels at 320×256. Studios known
+for this include Revolution Software
+(<a href="https://www.mobygames.com/game/386/beneath-a-steel-sky/">Beneath a Steel Sky</a>,
+<a href="https://www.mobygames.com/game/1134/lure-of-the-temptress/">Lure of the Temptress</a>),
+Delphine Software (<a href="https://www.mobygames.com/game/564/out-of-this-world/">Another World</a>,
+<a href="https://www.mobygames.com/game/555/flashback-the-quest-for-identity/">Flashback</a>),
+and Coktel Vision (<a href="https://www.mobygames.com/game/1154/gobliiins/">Gobliiins</a>
+series). The tell-tale sign is scanned or hand-drawn artwork that appears
+vertically stretched with aspect ratio correction enabled.</p>
 <p>Pixels are square (1:1 PAR) in 640×480 and higher resolutions. A few
 other modes have their own non-square PARs: 640×350 EGA (1:1.37 PAR),
 640×200 EGA (1:2.4 PAR), and 720×348 Hercules (1:1.55 PAR). DOSBox
@@ -5278,9 +5281,9 @@ pixel aspect ratios, see <a href="../aspect-ratios/">Aspect ratios &amp; black b
 <h3 id="custom-aspect-ratios">Custom aspect ratios<a class="headerlink" href="#custom-aspect-ratios" title="Permanent link">¶</a></h3>
 <p>DOSBox Staging also has a “stretch everything” mode for when aspect ratio
 authenticity isn’t the priority.</p>
-<p>The <code>stretch</code> aspect mode calculates the aspect ratio from the viewport dimensions,
-allowing you to force arbitrary aspect ratios. For example, to stretch a game
-to fill the entire screen:</p>
+<p>The <code>stretch</code> aspect mode calculates the aspect ratio from the viewport
+dimensions, allowing you to force arbitrary aspect ratios. For example, to
+stretch a game to fill the entire screen:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[sdl]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">fullscreen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
@@ -5322,32 +5325,31 @@ distinct colour character. DOSBox Staging can emulate these via the
 <a href="#crt_color_profile"><code>crt_color_profile</code></a> setting.</p>
 <ul>
 <li>
-<p><strong><code>p22</code></strong> — P22 phosphors were the most common in PC monitors, producing warmer,
-  slightly desaturated colours. This is what most people saw when playing DOS
-  games.</p>
+<p><strong><code>p22</code></strong> — P22 phosphors were the most common in PC monitors, producing
+  warmer, slightly desaturated colours. This is what most people saw when
+  playing DOS games.</p>
 </li>
 <li>
-<p><strong><code>smpte-c</code></strong> — SMPT-C broadcast standard phosphors are close to P22 but with tighter
-  colour tolerances, used in professional video monitors.</p>
+<p><strong><code>smpte-c</code></strong> — SMPT-C broadcast standard phosphors are close to P22 but
+  with tighter colour tolerances, used in professional video monitors.</p>
 </li>
 <li>
-<p><strong><code>ebu</code></strong> — EBU phosphors are the European broadcast standard, found in high-end
-  professional monitors like the Sony BVM/PVM series.</p>
+<p><strong><code>ebu</code></strong> — EBU phosphors are the European broadcast standard, found in
+  high-end professional monitors like the Sony BVM/PVM series.</p>
 </li>
 <li>
-<p><strong><code>philips</code></strong> — Philips home computer monitors (e.g., the Commodore 1084S) had
-  distinctly warm, yellowish whites at roughly 6100K.</p>
+<p><strong><code>philips</code></strong> — Philips home computer monitors (e.g., the Commodore 1084S)
+  had distinctly warm, yellowish whites at roughly 6100K.</p>
 </li>
 <li>
-<p><strong><code>trinitron</code></strong> — Sony Trinitrion monitors were known for punchy, vivid colours with a
-  cool blue-white colour temperature around 9300K.</p>
+<p><strong><code>trinitron</code></strong> — Sony Trinitrion monitors were known for punchy, vivid
+  colours with a cool blue-white colour temperature around 9300K.</p>
 </li>
 </ul>
 <p>The <code>auto</code> setting picks the profile that matches the era: CGA and EGA games
-get P22 (matching the monitors of that era), VGA games also get P22,
-composite video gets SMPTE-C, and the arcade shaders use Philips. See the
-<a href="#automatic-image-adjustments">Automatic image adjustments</a> table for the full
-mapping.</p>
+get P22 (matching the monitors of that era), VGA games also get P22, composite
+video gets SMPTE-C, and the arcade shaders use Philips. See the <a href="#automatic-image-adjustments">Automatic
+image adjustments</a> table for the full mapping.</p>
 <h2 id="monochrome-display-emulation">Monochrome display emulation<a class="headerlink" href="#monochrome-display-emulation" title="Permanent link">¶</a></h2>
 <p>For <code>hercules</code> and <code>cga_mono</code> machine types, the
 <a href="#monochrome_palette"><code>monochrome_palette</code></a> setting offers four classic
@@ -5359,15 +5361,15 @@ terminal looks:</p>
   in offices and the most comfortable for extended reading.</p>
 </li>
 <li>
-<p><strong><code>green</code></strong> — the classic green phosphor look of the original IBM 5151 green
-  screen, a staple of the early PC era.</p>
+<p><strong><code>green</code></strong> — the classic green phosphor look of the original IBM 5151
+  green screen, a staple of the early PC era.</p>
 </li>
 <li>
 <p><strong><code>white</code></strong> — a cool blue-white typical of later monochrome VGA monitors.</p>
 </li>
 <li>
-<p><strong><code>paperwhite</code></strong> — the Hercules-era paperwhite phosphor, a warmer, slightly
-  yellowish white that’s easier on the eyes than pure white.</p>
+<p><strong><code>paperwhite</code></strong> — the Hercules-era paperwhite phosphor, a warmer,
+  slightly yellowish white that’s easier on the eyes than pure white.</p>
 </li>
 </ul>
 <p>You can cycle through the available palettes via hotkeys during gameplay.</p>
@@ -5603,19 +5605,29 @@ adjustments. When disabled, the raw RGB values from the emulated video adapter
 are displayed without any processing (except colour space conversion).</p>
 <p>The available adjustments are:</p>
 <ul>
-<li><a href="#brightness"><code>brightness</code></a> and <a href="#contrast"><code>contrast</code></a> emulate the
+<li>
+<p><a href="#brightness"><code>brightness</code></a> and <a href="#contrast"><code>contrast</code></a> emulate the
   corresponding CRT monitor knobs — brightness sets the black point, contrast
-  sets the white point.</li>
-<li><a href="#gamma"><code>gamma</code></a> applies additional gamma correction relative to the
-  emulated monitor’s gamma.</li>
-<li><a href="#digital_contrast"><code>digital_contrast</code></a> and <a href="#saturation"><code>saturation</code></a> are
+  sets the white point.</p>
+</li>
+<li>
+<p><a href="#gamma"><code>gamma</code></a> applies additional gamma correction relative to the
+  emulated monitor’s gamma.</p>
+</li>
+<li>
+<p><a href="#digital_contrast"><code>digital_contrast</code></a> and <a href="#saturation"><code>saturation</code></a> are
   applied directly to the raw framebuffer RGB values, unlike the CRT-emulating
-  brightness/contrast controls.</li>
-<li><a href="#color_temperature"><code>color_temperature</code></a> adjusts the white point in Kelvin;
+  brightness/contrast controls.</p>
+</li>
+<li>
+<p><a href="#color_temperature"><code>color_temperature</code></a> adjusts the white point in Kelvin;
   <a href="#color_temperature_luma_preserve"><code>color_temperature_luma_preserve</code></a>
-  controls how much luminosity is preserved during the adjustment.</li>
-<li><a href="#red_gain"><code>red_gain</code></a>, <a href="#green_gain"><code>green_gain</code></a>, and
-  <a href="#blue_gain"><code>blue_gain</code></a> adjust individual colour channel gain.</li>
+  controls how much luminosity is preserved during the adjustment.</p>
+</li>
+<li>
+<p><a href="#red_gain"><code>red_gain</code></a>, <a href="#green_gain"><code>green_gain</code></a>, and
+  <a href="#blue_gain"><code>blue_gain</code></a> adjust individual colour channel gain.</p>
+</li>
 </ul>
 <p>The image adjustment settings can be tweaked in real-time using
 <a href="../../appendices/shortcuts/#image-adjustments">hotkeys</a> — use
@@ -5660,26 +5672,37 @@ command to write the current settings to a config file.</p>
 <h5 id="integer_scaling">integer_scaling<a class="headerlink" href="#integer_scaling" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Constrain the horizontal or vertical scaling factor to the largest
-integer value so the image still fits into the viewport. The configured
-aspect ratio is always maintained according to the <a href="#aspect"><code>aspect</code></a> and
-<a href="#viewport"><code>viewport</code></a> settings, which may result in a non-integer scaling
-factor in the other dimension. If the image is larger than the viewport,
-the integer scaling constraint is auto-disabled (same as <code>off</code>).</p>
+<p>Constrain the horizontal or vertical scaling factor to the largest integer
+value so the image still fits into the viewport. The configured aspect
+ratio is always maintained according to the <a href="#aspect"><code>aspect</code></a> and
+<a href="#viewport"><code>viewport</code></a> settings, which may result in a non-integer
+scaling factor in the other dimension. If the image is larger than the
+viewport, the integer scaling constraint is auto-disabled (same as <code>off</code>).</p>
 <p>Possible values:</p>
 <ul>
-<li><code>auto</code> <em class="default">default</em> – A special vertical mode auto-enabled
-  only for the adaptive CRT shaders (see <a href="#shader"><code>shader</code></a>). This mode
-  has refinements over standard vertical integer scaling: 3.5x and 4.5x
+<li>
+<p><code>auto</code> <em class="default">default</em> – A special vertical mode auto-enabled
+  only for the CRT shaders (see <a href="#shader"><code>shader</code></a>). This mode has
+  refinements over standard vertical integer scaling: 3.5x and 4.5x
   scaling factors are also allowed, and integer scaling is disabled above
-  5.0x scaling.</li>
-<li><code>vertical</code> – Constrain the vertical scaling factor to integer values.
-  This is the recommended setting for third-party shaders to avoid uneven
-  scanlines and interference artifacts.</li>
-<li><code>horizontal</code> – Constrain the horizontal scaling factor to integer
-  values.</li>
-<li><code>off</code> – No integer scaling constraint is applied; the image fills the
-  viewport while maintaining the configured aspect ratio.</li>
+  5.0x scaling.</p>
+</li>
+<li>
+<p><code>vertical`` -- Constrain the vertical scaling factor to integer values.
+  This is the recommended setting for 3rd party CRT shaders with scanline
+  emulation to avoid uneven scanlines and interference artifacts. For the
+  built-in CRT shaders, use</code>auto<code>. This mode is also recommended on
+  low-resolution displays with [</code>deinterlacing`](#deinterlacing) enabled.</p>
+</li>
+<li>
+<p><code>horizontal</code> – Constrain the horizontal scaling factor to integer
+  values. Might be useful on low-resolution displays to optimise for
+  horizontal text sharpness.</p>
+</li>
+<li>
+<p><code>off</code> – Apply no integer scaling constraint; the image fills the
+  viewport while maintaining the configured aspect ratio.</p>
+</li>
 </ul>
 </dd>
 </dl>
@@ -5743,35 +5766,51 @@ Shaders are only supported in the OpenGL output mode (see
 <p>Adaptive CRT shader options:</p>
 <div class="compact" markdown="">
 <ul>
-<li><code>crt-auto</code> <em class="default">default</em> – Adaptive CRT shader that
+<li>
+<p><code>crt-auto</code> <em class="default">default</em> – Adaptive CRT shader that
   prioritises developer intent and how people experienced the games at
   the time of release. An appropriate shader variant is auto-selected
   based on the graphics standard of the current video mode and the
-  viewport size, irrespective of the <a href="../../system/general/#machine"><code>machine</code></a> setting.</li>
-<li><code>crt-auto-machine</code> – A variation of <code>crt-auto</code>; this emulates a fixed
-  CRT monitor for the video adapter configured via the <a href="../../system/general/#machine"><code>machine</code></a> setting.</li>
-<li><code>crt-auto-arcade</code> – Emulation of an arcade or home computer monitor
+  viewport size, irrespective of the
+  <a href="../../system/general/#machine"><code>machine</code></a> setting.</p>
+</li>
+<li>
+<p><code>crt-auto-machine</code> – A variation of <code>crt-auto</code>; this emulates a fixed
+  CRT monitor for the video adapter configured via the
+  <a href="../../system/general/#machine"><code>machine</code></a> setting.</p>
+</li>
+<li>
+<p><code>crt-auto-arcade</code> – Emulation of an arcade or home computer monitor
   with a less sharp image and thick scanlines in low-resolution video
   modes. This is a fantasy option that never existed in real life, but it
-  can be a lot of fun, especially with DOS ports of Amiga games.</li>
-<li><code>crt-auto-arcade-sharp</code> – A sharper arcade shader variant for those
+  can be a lot of fun, especially with DOS ports of Amiga games.</p>
+</li>
+<li>
+<p><code>crt-auto-arcade-sharp</code> – A sharper arcade shader variant for those
   who like the thick scanlines but want to retain the sharpness of a
-  typical PC monitor.</li>
+  typical PC monitor.</p>
+</li>
 </ul>
 </div>
 <p>Other shader options include (non-exhaustive list):</p>
 <div class="compact" markdown="">
 <ul>
-<li><code>sharp</code> – Upscale the image treating the pixels as small rectangles,
+<li>
+<p><code>sharp</code> – Upscale the image treating the pixels as small rectangles,
   resulting in a sharp image with minimum blur while maintaining the
   correct pixel aspect ratio. This is the recommended option for those
-  who don’t want to use the adaptive CRT shaders.</li>
-<li><code>bilinear</code> – Upscale the image using bilinear interpolation (results
-  in a blurry image).</li>
-<li><code>nearest</code> – Upscale the image using nearest-neighbour interpolation
+  who don’t want to use the adaptive CRT shaders.</p>
+</li>
+<li>
+<p><code>bilinear</code> – Upscale the image using bilinear interpolation (results
+  in a blurry image).</p>
+</li>
+<li>
+<p><code>nearest</code> – Upscale the image using nearest-neighbour interpolation
   (also known as “no bilinear”). This results in the sharpest possible
   image at the expense of uneven pixels, especially with non-square pixel
-  aspect ratios (this is less of an issue on high resolution monitors).</li>
+  aspect ratios (this is less of an issue on high resolution monitors).</p>
+</li>
 </ul>
 </div>
 <p>The following short aliases are also available: <code>sharp</code> (for
@@ -5779,22 +5818,29 @@ Shaders are only supported in the OpenGL output mode (see
 <code>nearest</code> (for <code>interpolation/nearest</code>).</p>
 <p>The bundled shaders include:</p>
 <ul>
-<li><strong>Interpolation</strong>: <code>sharp</code>, <code>bilinear</code>, <code>nearest</code>, <code>catmull-rom</code></li>
-<li><strong>CRT</strong>: <code>crt-hyllian</code>,
+<li>
+<p><strong>Interpolation</strong>: <code>sharp</code>, <code>bilinear</code>, <code>nearest</code>, <code>catmull-rom</code></p>
+</li>
+<li>
+<p><strong>CRT</strong>: <code>crt-hyllian</code>,
   <code>vga-1080p</code>, <code>vga-1080p-fake-double-scan</code> (all used by the adaptive CRT
-  shaders with different presets)</li>
-<li><strong>Scaler</strong>: <code>advinterp2x</code>, <code>advinterp3x</code>, <code>advmame2x</code>, <code>advmame3x</code>,
-  <code>xbr-lv2-3d</code>, <code>xbr-lv2-noblend</code>, <code>xbr-lv3</code></li>
+  shaders with different presets)</p>
+</li>
+<li>
+<p><strong>Scaler</strong>: <code>advinterp2x</code>, <code>advinterp3x</code>, <code>advmame2x</code>, <code>advmame3x</code>,
+  <code>xbr-lv2-3d</code>, <code>xbr-lv2-noblend</code>, <code>xbr-lv3</code></p>
+</li>
 </ul>
 <p>Shaders are located in subdirectories; use the full path (e.g.,
 <code>interpolation/catmull-rom</code> or <code>scaler/xbr-lv3</code>). The <code>.glsl</code> extension
 can be omitted.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Start DOSBox Staging with the <a href="../../using-dosbox-staging/command-line/#-list-shaders"><code>--list-shaders</code></a>
-command line option to see the full list of available shaders. You can also use an absolute
-or relative path to a file. In all cases, you may omit the shader’s
-<code>.glsl</code> file extension.</p>
+<p>Start DOSBox Staging with the
+<a href="../../using-dosbox-staging/command-line/#-list-shaders"><code>--list-shaders</code></a>
+command line option to see the full list of available shaders. You can
+also use an absolute or relative path to a file. In all cases, you may
+omit the shader’s <code>.glsl</code> file extension.</p>
 </div>
 </dd>
 </dl>
@@ -5839,31 +5885,45 @@ tweak further with the <a href="#color_temperature"><code>color_temperature</cod
 <p>Possible values:</p>
 <div class="compact" markdown="">
 <ul>
-<li><code>auto</code> <em class="default">default</em> – Select an authentic colour profile
+<li>
+<p><code>auto</code> <em class="default">default</em> – Select an authentic colour profile
   appropriate for the currently active adaptive CRT shader (e.g.,
   <code>crt-auto</code>), or the current machine type for regular shaders (e.g.,
-  <code>sharp</code>).</li>
-<li><code>none</code> – Display raw colours without any colour profile transforms.
+  <code>sharp</code>).</p>
+</li>
+<li>
+<p><code>none</code> – Display raw colours without any colour profile transforms.
   This will result in inaccurate colours and gamma on modern displays
-  compared to how games looked on a real CRT in the 1980s and 90s.</li>
-<li><code>ebu</code> – EBU standard phosphor emulation, used in high-end professional
-  CRT monitors, such as the Sony BVM/PVM series.</li>
-<li><code>p22</code> – P22 phosphor emulation, most common in lower-end CRT monitors.</li>
-<li><code>smpte-c</code> – SMPTE “C” phosphor emulation, the standard for American
-  broadcast video monitors.</li>
-<li><code>philips</code> – Philips CRT monitor colours typical to 15 kHz home
+  compared to how games looked on a real CRT in the 1980s and 90s.</p>
+</li>
+<li>
+<p><code>ebu</code> – EBU standard phosphor emulation, used in high-end professional
+  CRT monitors, such as the Sony BVM/PVM series.</p>
+</li>
+<li>
+<p><code>p22</code> – P22 phosphor emulation, most common in lower-end CRT monitors.</p>
+</li>
+<li>
+<p><code>smpte-c</code> – SMPTE “C” phosphor emulation, the standard for American
+  broadcast video monitors.</p>
+</li>
+<li>
+<p><code>philips</code> – Philips CRT monitor colours typical to 15 kHz home
   computer monitors (e.g., the Commodore 1084S). The intended use of
   this profile is with <code>color_temperature</code> set to 6500. The output will
   look yellowish due to the ~6100 K Philips CRT colour temperature
   “baked into” the profile. You can still tweak the relative white
   balance by changing <code>color_temperature</code>. Needs a DCI-P3 display for
-  the most accurate results.</li>
-<li><code>trinitron</code> – Typical Sony Trinitron CRT TV and monitor colours. The
+  the most accurate results.</p>
+</li>
+<li>
+<p><code>trinitron</code> – Typical Sony Trinitron CRT TV and monitor colours. The
   intended use of this profile is with <code>color_temperature</code> set to 6500.
   The output will look blueish due to the ~9300 K Trinitron CRT colour
   temperature “baked into” the profile. You can still tweak the relative
   white balance by changing <code>color_temperature</code>. Needs a DCI-P3 display
-  for the most accurate results.</li>
+  for the most accurate results.</p>
+</li>
 </ul>
 </div>
 </dd>
@@ -5891,8 +5951,8 @@ virtual monitor’s gamma.</dd>
 <dl>
 <dd>Set the digital contrast of the video output (<code>0</code> by default). Valid
 range is -50 to 50. This works very differently from the
-<a href="#contrast"><code>contrast</code></a> virtual monitor setting; digital contrast is applied
-to the raw RGB values of the framebuffer image.</dd>
+<a href="#contrast"><code>contrast</code></a> virtual monitor setting; digital contrast is
+applied to the raw RGB values of the framebuffer image.</dd>
 </dl>
 <h5 id="black_level">black_level<a class="headerlink" href="#black_level" title="Permanent link">¶</a></h5>
 <dl>
@@ -5903,11 +5963,15 @@ also raise the black level, so it effectively acts as a black level
 boost.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>auto</code> <em class="default">default</em> – Raise the black level for PCjr, Tandy,
+<li>
+<p><code>auto</code> <em class="default">default</em> – Raise the black level for PCjr, Tandy,
   CGA and EGA video modes only for adaptive CRT shaders; for any other
-  shader, use 0.</li>
-<li><code>&lt;number&gt;</code> – Set the black level raise amount. Valid range is 0 to
-  100. 0 does not raise the black level.</li>
+  shader, use 0.</p>
+</li>
+<li>
+<p><code>&lt;number&gt;</code> – Set the black level raise amount. Valid range is 0 to
+  100. 0 does not raise the black level.</p>
+</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -5920,8 +5984,8 @@ simple graphics.</p>
 <h5 id="saturation">saturation<a class="headerlink" href="#saturation" title="Permanent link">¶</a></h5>
 <dl>
 <dd>Set the saturation of the video output (<code>0</code> by default). Valid range is
--50 to 50. This is digital saturation applied to the raw RGB values of
-the framebuffer image, similarly to <a href="#digital_contrast"><code>digital_contrast</code></a>.</dd>
+-50 to 50. This is digital saturation applied to the raw RGB values of the
+framebuffer image, similarly to <a href="#digital_contrast"><code>digital_contrast</code></a>.</dd>
 </dl>
 <h5 id="color_temperature">color_temperature<a class="headerlink" href="#color_temperature" title="Permanent link">¶</a></h5>
 <dl>
@@ -5929,14 +5993,18 @@ the framebuffer image, similarly to <a href="#digital_contrast"><code>digital_co
 <p>Set the colour temperature (white point) of the video output.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>auto</code> <em class="default">default</em> – Select an authentic colour temperature
+<li>
+<p><code>auto</code> <em class="default">default</em> – Select an authentic colour temperature
   appropriate for the currently active adaptive CRT shader (e.g.,
   <code>crt-auto</code>), or the current machine type for regular shaders (e.g.,
-  <code>sharp</code>).</li>
-<li><code>&lt;number&gt;</code> – Specify colour temperature in Kelvin (K). Valid range is
+  <code>sharp</code>).</p>
+</li>
+<li>
+<p><code>&lt;number&gt;</code> – Specify colour temperature in Kelvin (K). Valid range is
   3000 to 10000. 6500 K is the neutral point for most modern displays.
   Values below 6500 result in warmer colours, values above 6500 in
-  cooler colours.</li>
+  cooler colours.</p>
+</li>
 </ul>
 </dd>
 </dl>
@@ -6008,30 +6076,50 @@ Tandy, and CGA/EGA modes on VGA adapters.</p>
 <p>Built-in presets:</p>
 <div class="compact" markdown="">
 <ul>
-<li><code>default</code> <em class="default">default</em> – The canonical CGA palette, as
-  emulated by VGA adapters.</li>
-<li><code>tandy &lt;bl&gt;</code> – Emulation of an idealised Tandy monitor with adjustable
+<li>
+<p><code>default</code> <em class="default">default</em> – The canonical CGA palette, as
+  emulated by VGA adapters.</p>
+</li>
+<li>
+<p><code>tandy &lt;bl&gt;</code> – Emulation of an idealised Tandy monitor with adjustable
   brown level. The brown level can be provided as an optional second
-  parameter (0–red, 50–brown, 100–dark yellow; defaults to 50).</li>
-<li><code>tandy-warm</code> – Emulation of the actual colour output of an unknown
+  parameter (0–red, 50–brown, 100–dark yellow; defaults to 50).</p>
+</li>
+<li>
+<p><code>tandy-warm</code> – Emulation of the actual colour output of an unknown
   Tandy monitor. Intended to be used with <code>crt_color_profile = none</code> and
-  <code>color_temperature = 6500</code>.</li>
-<li><code>ibm5153 &lt;c&gt;</code> – Emulation of the actual colour output of an IBM 5153
+  <code>color_temperature = 6500</code>.</p>
+</li>
+<li>
+<p><code>ibm5153 &lt;c&gt;</code> – Emulation of the actual colour output of an IBM 5153
   monitor with a unique contrast control that dims non-bright colours
   only. The contrast can be optionally provided as a second parameter (0
   to 100; defaults to 100). Intended to be used with
-  <code>crt_color_profile = none</code> and <code>color_temperature = 6500</code>.</li>
-<li><code>agi-amiga-v1</code>, <code>agi-amiga-v2</code>, <code>agi-amiga-v3</code> – Palettes used by the
-  Amiga ports of Sierra AGI games.</li>
-<li><code>agi-amigaish</code> – A mix of EGA and Amiga colours used by the Sarien
-  AGI-interpreter.</li>
-<li><code>scumm-amiga</code> – Palette used by the Amiga ports of LucasArts EGA
-  games.</li>
-<li><code>colodore</code> – Commodore 64 inspired colours based on the Colodore
-  palette.</li>
-<li><code>colodore-sat</code> – Colodore palette with 20% more saturation.</li>
-<li><code>dga16</code> – A modern take on the canonical CGA palette with dialled back
-  contrast.</li>
+  <code>crt_color_profile = none</code> and <code>color_temperature = 6500</code>.</p>
+</li>
+<li>
+<p><code>agi-amiga-v1</code>, <code>agi-amiga-v2</code>, <code>agi-amiga-v3</code> – Palettes used by the
+  Amiga ports of Sierra AGI games.</p>
+</li>
+<li>
+<p><code>agi-amigaish</code> – A mix of EGA and Amiga colours used by the Sarien
+  AGI-interpreter.</p>
+</li>
+<li>
+<p><code>scumm-amiga</code> – Palette used by the Amiga ports of LucasArts EGA
+  games.</p>
+</li>
+<li>
+<p><code>colodore</code> – Commodore 64 inspired colours based on the Colodore
+  palette.</p>
+</li>
+<li>
+<p><code>colodore-sat</code> – Colodore palette with 20% more saturation.</p>
+</li>
+<li>
+<p><code>dga16</code> – A modern take on the canonical CGA palette with dialled back
+  contrast.</p>
+</li>
 </ul>
 </div>
 <p>You can also set custom colours by specifying 16 space or comma separated
@@ -6056,16 +6144,28 @@ it resulted in brightness loss.</p>
 <p>Possible values:</p>
 <div class="compact" markdown="">
 <ul>
-<li><code>off</code> <em class="default">default</em> – Disable deinterlacing.</li>
-<li><code>on</code> – Enable deinterlacing at <code>medium</code> strength.</li>
-<li><code>light</code> – Light deinterlacing. Black scanlines are softened to mimic
-  the CRT look.</li>
-<li><code>medium</code> – Medium deinterlacing. Best balance between removing black
-  lines, increasing brightness, and keeping the higher resolution look.</li>
-<li><code>strong</code> – Strong deinterlacing. Image brightness is almost completely
-  restored at the expense of diminishing the higher resolution look.</li>
-<li><code>full</code> – Full deinterlacing. Completely removes black lines and
-  maximises brightness, but the image will appear blockier.</li>
+<li>
+<p><code>off</code> <em class="default">default</em> – Disable deinterlacing.</p>
+</li>
+<li>
+<p><code>on</code> – Enable deinterlacing at <code>medium</code> strength.</p>
+</li>
+<li>
+<p><code>light</code> – Light deinterlacing. Black scanlines are softened to mimic
+  the CRT look.</p>
+</li>
+<li>
+<p><code>medium</code> – Medium deinterlacing. Best balance between removing black
+  lines, increasing brightness, and keeping the higher resolution look.</p>
+</li>
+<li>
+<p><code>strong</code> – Strong deinterlacing. Image brightness is almost completely
+  restored at the expense of diminishing the higher resolution look.</p>
+</li>
+<li>
+<p><code>full</code> – Full deinterlacing. Completely removes black lines and
+  maximises brightness, but the image will appear blockier.</p>
+</li>
 </ul>
 </div>
 <div class="admonition note">
@@ -6085,12 +6185,18 @@ CGA and EGA games that use dither patterns to create the illusion of
 more colours with the limited CGA/EGA palettes.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>off</code> <em class="default">default</em> – Disable dedithering.</li>
-<li><code>on</code> – Enable dedithering (at full strength).</li>
-<li><code>&lt;number&gt;</code> – Set dedithering strength from 0 (off) to 100 (full
+<li>
+<p><code>off</code> <em class="default">default</em> – Disable dedithering.</p>
+</li>
+<li>
+<p><code>on</code> – Enable dedithering (at full strength).</p>
+</li>
+<li>
+<p><code>&lt;number&gt;</code> – Set dedithering strength from 0 (off) to 100 (full
   strength). Lower values result in a subtle softening of dither
   patterns; higher values blend between the original and the dedithered
-  image.</li>
+  image.</p>
+</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

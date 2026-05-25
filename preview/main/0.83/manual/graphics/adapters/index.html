@@ -4475,9 +4475,9 @@ adapter DOSBox Staging emulates. This determines the graphics modes available
 to DOS programs and, in some cases, enables additional hardware like sound
 chips.</p>
 <p>The default <strong><code>svga_s3</code></strong> (<a href="#s3-trio64">S3 Trio64</a>) covers the widest range of
-games, from standard VGA through high-resolution SVGA. You only need to
-change it for titles that specifically require an older standard, typically
-early to mid-1980s games written for <a href="#cga">CGA</a>, <a href="#tandy-1000">Tandy</a>, or
+games, from standard VGA through high-resolution SVGA. You only need to change
+it for titles that specifically require an older standard, typically early to
+mid-1980s games written for <a href="#cga">CGA</a>, <a href="#tandy-1000">Tandy</a>, or
 <a href="#hercules-graphics-card">Hercules</a> hardware, or demoscene productions
 targeting specific <a href="#vga-and-svga">SVGA chipsets</a>.</p>
 <p>For an overview of which graphics standard was typical in each era, see
@@ -4498,8 +4498,7 @@ with explicit Hercules support include Lotus 1-2-3, various text adventures,
 and a number of Sierra and other titles that shipped with Hercules drivers.</p>
 <p>DOSBox Staging emulates the Hercules with selectable monochrome phosphor
 palettes (amber, green, white, paperwhite) that can be cycled with <span class="keys"><kbd class="key-f11">F11</kbd></span> or
-set via the
-<a href="../rendering/#monochrome_palette"><code>monochrome_palette</code></a> setting.</p>
+set via the <a href="../rendering/#monochrome_palette"><code>monochrome_palette</code></a> setting.</p>
 <figure>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-amber.png" data-desc-position="bottom"><img alt="Prince of Persia in Hercules mode using the default amber palette" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/pop-hercules-amber.png"></a>
   </p>
@@ -4575,9 +4574,9 @@ opportunity, cloned the PCjr’s enhanced graphics and sound into the <a href="#
 1000</a>, fixed most of what IBM got wrong, and sold it through
 their Radio Shack stores nationwide in the USA. The rest is history — the
 PCjr is a footnote, the Tandy 1000 is beloved.</p>
-<p>Setting <code>machine = pcjr</code> enables PCjr graphics, <a href="../../sound/sound-devices/tandy/">PCjr
-sound</a> and <a href="../composite-video/">composite
-video</a> emulation.</p>
+<p>Setting <code>machine = pcjr</code> enables PCjr graphics,
+<a href="../../sound/sound-devices/tandy/">PCjr sound</a> and
+<a href="../composite-video/">composite video</a> emulation.</p>
 <h3 id="tandy-1000">Tandy 1000<a class="headerlink" href="#tandy-1000" title="Permanent link">¶</a></h3>
 <p><code>machine = tandy</code></p>
 <p>The Tandy 1000 (1984) by Tandy Corporation successfully cloned the PCjr’s
@@ -4603,14 +4602,12 @@ sound</a> chip gave Tandy machines a major audio
 advantage over standard PCs.</p>
 <p>Combined with enhanced graphics and sound, the Tandy 1000 was the best
 consumer-grade DOS gaming platform of the mid-1980s. Many Sierra titles
-(<a href="https://www.mobygames.com/game/122/kings-quest/">King’s Quest</a>, <a href="https://www.mobygames.com/game/114/space-quest-chapter-i-the-sarien-encounter/">Space
-Quest</a>,
-<a href="https://www.mobygames.com/game/379/leisure-suit-larry-in-the-land-of-the-lounge-lizards/">Leisure Suit
-Larry</a>),
-<a href="https://www.mobygames.com/game/181/defender-of-the-crown/">Defender of the
-Crown</a>, and <a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Sid
-Meier’s Pirates!</a> look
-and sound noticeably better in Tandy mode compared to standard CGA.</p>
+(<a href="https://www.mobygames.com/game/122/kings-quest/">King’s Quest</a>,
+<a href="https://www.mobygames.com/game/114/space-quest-chapter-i-the-sarien-encounter/">Space Quest</a>,
+<a href="https://www.mobygames.com/game/379/leisure-suit-larry-in-the-land-of-the-lounge-lizards/">Leisure Suit Larry</a>),
+<a href="https://www.mobygames.com/game/181/defender-of-the-crown/">Defender of the Crown</a>,
+and <a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Sid Meier’s Pirates!</a>
+look and sound noticeably better in Tandy mode compared to standard CGA.</p>
 <p>Setting <code>machine = tandy</code> also enables
 <a href="../../sound/sound-devices/tandy/">Tandy sound</a> and
 <a href="../composite-video/">composite video</a> emulation.</p>
@@ -4623,9 +4620,9 @@ colours than the digital output. Game developers at Sierra On-Line and
 elsewhere deliberately exploited this effect.</p>
 <p>DOSBox Staging faithfully emulates composite output for all three adapters,
 including adjustable hue, saturation, contrast, and brightness. This is
-essential for playing early Sierra AGI games (<a href="https://www.mobygames.com/game/122/kings-quest/">King’s
-Quest</a>, <a href="https://www.mobygames.com/game/114/space-quest-chapter-i-the-sarien-encounter/">Space
-Quest</a>)
+essential for playing early Sierra AGI games
+(<a href="https://www.mobygames.com/game/122/kings-quest/">King’s Quest</a>,
+<a href="https://www.mobygames.com/game/114/space-quest-chapter-i-the-sarien-encounter/">Space Quest</a>)
 as the artists intended. See <a href="../composite-video/">Composite video</a> for
 configuration details and hotkeys.</p>
 <h2 id="ega">EGA<a class="headerlink" href="#ega" title="Permanent link">¶</a></h2>
@@ -4636,22 +4633,22 @@ step forward: 16 simultaneous colours from a 64-colour palette at up to
 memory.</p>
 <p>EGA was the dominant PC graphics standard from roughly 1985 to 1990. Most
 celebrated games of the period, including
-<a href="https://www.mobygames.com/game/176/loom/">Loom</a>, <a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey
-Island</a>, and
-the early Sierra adventures, ran in 16-colour 320×200, a resolution
+<a href="https://www.mobygames.com/game/176/loom/">Loom</a>,
+<a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island</a>,
+and the early Sierra adventures, ran in 16-colour 320×200, a resolution
 shared equally by <a href="#ega">EGA</a> and <a href="#tandy-1000">Tandy</a>. EGA’s higher 640×350
 resolution was used mainly by strategy titles, simulations, and illustrated
 text adventures that benefited from the extra detail. Legend Entertainment’s
-<a href="https://www.mobygames.com/game/1027/spellcasting-101-sorcerers-get-all-the-girls/">Spellcasting
-101</a>
-and <a href="">Timequest</a> are good examples of games built specifically around it.
-Most games used <a href="../rendering/#dedithering">dithering</a> creatively to simulate
-more colours than the 16-colour palette could display directly.</p>
+<a href="https://www.mobygames.com/game/1027/spellcasting-101-sorcerers-get-all-the-girls/">Spellcasting 101</a>
+and <a href="https://www.mobygames.com/game/1026/timequest/">Timequest</a> are good
+examples of games built specifically around it. Most games used
+<a href="../rendering/#dedithering">dithering</a> creatively to simulate more colours than
+the 16-colour palette could display directly.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>EGA is <em>not</em> backward compatible with Hercules/MDA text modes.
-Games expecting CGA monitor behaviour on an EGA card may also
-show differences, as DOSBox emulates the EGA with an EGA-class monitor.</p>
+<p>EGA is <em>not</em> backward compatible with Hercules/MDA text modes. Games
+expecting CGA monitor behaviour on an EGA card may also show differences,
+as DOSBox emulates the EGA with an EGA-class monitor.</p>
 </div>
 <figure>
 <p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/pop-ega.jpg">
@@ -4677,10 +4674,10 @@ default <code>svga_s3</code> is the best general-purpose choice.</p>
 <p class="admonition-title">Note</p>
 <p>A small number of games and demos rely on per-scanline VGA timing tricks
 that change graphics settings mid-frame (e.g.,
-<a href="https://www.mobygames.com/game/683/lemmings/">Lemmings</a>, <a href="https://www.mobygames.com/game/571/pinball-fantasies/">Pinball
-Fantasies</a>, <a href="https://www.mobygames.com/game/522/alien-carnage/">Alien
-Carnage</a>). These may
-need the <code>svga_paradise</code> machine type, which is the closest to IBM’s
+<a href="https://www.mobygames.com/game/683/lemmings/">Lemmings</a>,
+<a href="https://www.mobygames.com/game/571/pinball-fantasies/">Pinball Fantasies</a>,
+<a href="https://www.mobygames.com/game/522/alien-carnage/">Alien Carnage</a>). These
+may need the <code>svga_paradise</code> machine type, which is the closest to IBM’s
 original VGA implementation. See also
 <a href="../../system/general/#vga_render_per_scanline"><code>vga_render_per_scanline</code></a>.</p>
 </div>
@@ -4721,8 +4718,8 @@ following in the demoscene.</p>
 occasional title written specifically for this chipset.</p>
 <h3 id="tseng-labs-et4000">Tseng Labs ET4000<a class="headerlink" href="#tseng-labs-et4000" title="Permanent link">¶</a></h3>
 <p><code>machine = svga_et4000</code></p>
-<p>The <strong>Tseng Labs ET4000</strong> (1989) was the successor to the ET3000 and one of the
-most popular SVGA chipsets of the early 1990s — widely adopted,
+<p>The <strong>Tseng Labs ET4000</strong> (1989) was the successor to the ET3000 and one of
+the most popular SVGA chipsets of the early 1990s — widely adopted,
 well-supported, and significantly more capable than its predecessor. It offers
 a wider range of extended modes and defaults to 1 MB of video memory
 (configurable to 256 KB or 512 KB via
@@ -4753,18 +4750,22 @@ Games requiring these standards need the corresponding <code>machine</code> type
 <p class="admonition-title">Tip</p>
 <p>Some games and GOG releases ship with <strong>UniVBE</strong> (Universal VESA BIOS
 Extensions), a third-party VESA driver from the 1990s. DOSBox Staging’s
-built-in VESA implementation is fully compliant, making UniVBE
-unnecessary — and it can actually cause graphical glitches. If a game
-has trouble with SVGA modes, check for a bundled <code>UNIVBE.EXE</code> or
-<code>UVCONFIG.EXE</code> and try preventing it from loading (remove the line from
-the game’s batch file, or rename the file).</p>
+built-in VESA implementation is fully compliant, making UniVBE unnecessary
+— and it can actually cause graphical glitches. If a game has trouble
+with SVGA modes, check for a bundled <code>UNIVBE.EXE</code> or <code>UVCONFIG.EXE</code> and
+try preventing it from loading (remove the line from the game’s batch
+file, or rename the file).</p>
 </div>
 <p>Two variants are available for specific compatibility needs:</p>
 <ul>
-<li><code>machine = vesa_oldvbe</code> — Same S3 Trio64, but limited to VESA VBE 1.2.
-  Use for games that malfunction with VBE 2.0.</li>
-<li><code>machine = vesa_nolfb</code> — S3 Trio64 with VESA VBE 2.0 but without the
-  linear framebuffer hack. Needed by a small number of titles.</li>
+<li>
+<p><code>machine = vesa_oldvbe</code> — Same S3 Trio64, but limited to VESA VBE 1.2.
+  Use for games that malfunction with VBE 2.0.</p>
+</li>
+<li>
+<p><code>machine = vesa_nolfb</code> — S3 Trio64 with VESA VBE 2.0 but without the
+  linear framebuffer hack. Needed by a small number of titles.</p>
+</li>
 </ul>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
 <div class="compact">
