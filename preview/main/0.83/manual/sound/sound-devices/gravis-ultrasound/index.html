@@ -3269,13 +3269,71 @@
       
         
 <li class="md-nav__item">
-  <a href="#hardware-configuration" class="md-nav__link">
+  <a href="#default-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hardware configuration
+        Default settings
       
     </span>
   </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#factory-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Factory settings
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment variables">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#ultrasnd-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULTRASND variable
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#ultradir-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULTRADIR variable
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
   
 </li>
 
@@ -4380,13 +4438,71 @@
       
         
 <li class="md-nav__item">
-  <a href="#hardware-configuration" class="md-nav__link">
+  <a href="#default-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Hardware configuration
+        Default settings
       
     </span>
   </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#factory-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Factory settings
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment variables
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Environment variables">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#ultrasnd-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULTRASND variable
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#ultradir-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ULTRADIR variable
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
   
 </li>
 
@@ -4686,23 +4802,137 @@ files — they upload their own instrument samples. You only need the
 <code>ULTRASND</code> directory setup for <a href="#gus-midi-with-patch-files">GUS MIDI</a> and
 <a href="#ultramid">UltraMID</a> games.</p>
 </div>
-<h2 id="hardware-configuration">Hardware configuration<a class="headerlink" href="#hardware-configuration" title="Permanent link">¶</a></h2>
-<p>The <a href="#gusbase"><code>gusbase</code></a>, <a href="#gusirq"><code>gusirq</code></a>, and <a href="#gusdma"><code>gusdma</code></a>
-settings configure the I/O base address, interrupt, and DMA channel of the
-emulated GUS. The defaults (base address 240, IRQ 5, DMA 3) are chosen to
-avoid conflicts with the Sound Blaster card, allowing both to coexist. Some
-games and demos expect the GUS factory defaults of base address 220, IRQ 11,
-DMA 1. Note that certain versions of the DOS/4GW extender cannot handle IRQs
-above 7, so IRQ 11 may cause problems with those titles.</p>
+<h2 id="default-settings">Default settings<a class="headerlink" href="#default-settings" title="Permanent link">¶</a></h2>
+<p>The default Gravis UltraSound settings shown below have been selected to avoid
+conflicts with the Sound Blaster card, allowing both to coexist. Most games
+can auto-detect the presence of the Gravis UltraSound card and these settings,
+but in case they need a little help, here are the values to use:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Config setting</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base address (or I/O address, or port)</td>
+<td><a href="#gusbase"><code>gusbase</code></a></td>
+<td>240</td>
+</tr>
+<tr>
+<td>IRQ (or interrupt)</td>
+<td><a href="#gusirq"><code>gusirq</code></a></td>
+<td>5</td>
+</tr>
+<tr>
+<td>DMA</td>
+<td><a href="#gusdma"><code>gusdma</code></a></td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>If you have configured a game for Gravis UltraSound audio but there is no
+sound at all, or if the game hangs or crashes, first double check that the
+above settings have been set in the game’s configuration. Some games don’t let
+you to set all of them manually and just assume some common fixed values
+instead. If all fails, try using the <a href="#factory-settings">Factory settings</a>.</p>
+<h2 id="factory-settings">Factory settings<a class="headerlink" href="#factory-settings" title="Permanent link">¶</a></h2>
+<p>It was common to use the <a href="#default-settings">above settings</a> for the GUS when
+paired with a Sound Blaster card in the same PC, so most games and demos work
+fine these these, but a few expect the GUS factory default. If a game or demo
+doesn’t detect the GUS, locks up, or doesn’t have sound when configured for
+Gravis UltraSound, it’s worth trying the below factory settings:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>Config setting</th>
+<th>Default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Base address (or I/O address, or port)</td>
+<td><a href="#gusbase"><code>gusbase</code></a></td>
+<td>220</td>
+</tr>
+<tr>
+<td>IRQ (or interrupt)</td>
+<td><a href="#gusirq"><code>gusirq</code></a></td>
+<td>11</td>
+</tr>
+<tr>
+<td>DMA</td>
+<td><a href="#gusdma"><code>gusdma</code></a></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It’s also recommended to disable the Sound Blaster emulation for these
+problematic titles by setting <a href="../sound-blaster/#sbtype">sbtype</a> to <code>off</code>.
+Certain versions of the DOS/4GW extender cannot handle IRQs above 7, so IRQ 11
+may cause problems with some programs — try setting <a href="#gusirq">gusirq</a> to 7 as
+the last resort.</p>
+<h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">¶</a></h2>
+<p>Many DOS programs use the <a href="#ultrasnd-variable">ULTRASND</a> and
+<a href="#ultradir-variable">ULTRADIR</a> DOS environment variables to auto-detect and
+auto-configure the Gravis UltraSound card. On a real machine, these variable
+are set up in <code>AUTOEXEC.BAT</code> during the GUS driver installation process.</p>
+<p>DOSBox Staging injects these environment variables at startup based on the
+card’s configuration in the <code>[gus]</code> section. You should never set them
+manually.</p>
+<p>To view the values of the variables, execute the <code>SET ULTRASND</code> or <code>SET
+ULTRADIR</code> DOS command, respectively.</p>
+<h4 id="ultrasnd-variable">ULTRASND variable<a class="headerlink" href="#ultrasnd-variable" title="Permanent link">¶</a></h4>
+<p>The <code>ULTRASND</code> variable contains the hardware settings of the card.</p>
+<p>For example, this is the <code>SET ULTRASND</code> output you’ll get with the default settings:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>ULTRASND=240,3,3,5,5
+</code></pre></div>
+<p>The meaning of the comma-separated values are as follows:</p>
+<div class="compact">
+<ul>
+<li>
+<p><strong>port</strong> — the base address (<a href="#gusbase"><code>gusbase</code></a>)</p>
+</li>
+<li>
+<p><strong>dma1</strong> — First DMA channel for playback (<a href="#gusdma"><code>gusdma</code></a>)</p>
+</li>
+<li>
+<p><strong>dma2</strong> — Second DMA channel for recording (always the same as the first
+    DMA channel in DOSBox Staging)</p>
+</li>
+<li>
+<p><strong>irq1</strong> — First IRQ (interrupt) number for playback (<a href="#gusirq"><code>gusirq</code></a>)</p>
+</li>
+<li>
+<p><strong>irq2</strong> — Second IRQ (interrupt) number for recording (always the same as
+  the first IRQ in DOSBox Staging)</p>
+</li>
+</ul>
+</div>
+<h4 id="ultradir-variable">ULTRADIR variable<a class="headerlink" href="#ultradir-variable" title="Permanent link">¶</a></h4>
+<p>This variable tells GUS software where to find the system files and
+<a href="#gus-midi-with-patch-files">instrument patches</a> required to play back MIDI
+music. It contains the <a href="#ultradir">ultradir</a> path, so you must set this
+correctly.</p>
+<p>A typical <code>SET ULTRADIR</code> output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ULTRADIR=C:\ULTRASND
+</code></pre></div>
 <h2 id="gus-only-configuration">GUS-only configuration<a class="headerlink" href="#gus-only-configuration" title="Permanent link">¶</a></h2>
 <p>If you want to emulate a system with <em>only</em> a GUS and no Sound Blaster (as
 some purists had in the 1990s), disable the other sound devices:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">[gus]</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="na">gus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">[gus]</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="na">gus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 </code></pre></div>
 <p>This can be useful for games where the GUS and Sound Blaster interfere with
 each other, or when you want to ensure a game uses its GUS code path
@@ -4711,15 +4941,6 @@ exclusively.</p>
 <p>The Gravis UltraSound outputs to the <strong>GUS</strong> <a href="../../mixer/#list-of-mixer-channels">mixer channel</a>.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Gravis UltraSound settings are to be configured in the <code>[gus]</code> section.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The default settings of base address 240, IRQ 5, and DMA 3 have been
-chosen so the GUS can coexist with a Sound Blaster card. This works fine
-for the majority of programs, but some games and demos expect the GUS
-factory defaults of base address 220, IRQ 11, and DMA 1. The default
-IRQ 11 is also problematic with specific versions of the DOS4GW extender
-that cannot handle IRQs above 7.</p>
-</div>
 <h5 id="gus">gus<a class="headerlink" href="#gus" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
