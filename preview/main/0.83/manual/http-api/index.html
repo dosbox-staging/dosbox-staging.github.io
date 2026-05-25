@@ -3782,6 +3782,19 @@
 </li>
 
         
+          
+<li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shutdown
+      
+    </span>
+  </a>
+  
+</li>
+
+        
       </ul>
     </nav>
   
@@ -4379,6 +4392,19 @@
 </li>
 
         
+          
+<li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shutdown
+      
+    </span>
+  </a>
+  
+</li>
+
+        
       </ul>
     </nav>
   
@@ -4563,7 +4589,7 @@ see the built-in API documentation.</p>
 <h2 id="api-endpoints">API endpoints<a class="headerlink" href="#api-endpoints" title="Permanent link">¶</a></h2>
 <h3 id="cpu-registers">CPU registers<a class="headerlink" href="#cpu-registers" title="Permanent link">¶</a></h3>
 <dl>
-<dt><code>GET /api/cpu</code></dt>
+<dt><code>GET /api/v1/cpu/state</code></dt>
 <dd>
 <p>Returns all x86 CPU registers: <code>eax</code>, <code>ebx</code>, <code>ecx</code>, <code>edx</code>, <code>esi</code>,
 <code>edi</code>, <code>esp</code>, <code>ebp</code>, <code>eip</code>, <code>flags</code>, <code>cs</code>, <code>ds</code>, <code>es</code>, <code>ss</code>, <code>fs</code>,
@@ -4572,8 +4598,8 @@ see the built-in API documentation.</p>
 </dl>
 <h3 id="reading-memory">Reading memory<a class="headerlink" href="#reading-memory" title="Permanent link">¶</a></h3>
 <dl>
-<dt><code>GET /api/memory/:offset/:len</code></dt>
-<dt><code>GET /api/memory/:segment/:offset/:len</code></dt>
+<dt><code>GET /api/v1/memory/:offset/:len</code></dt>
+<dt><code>GET /api/v1/memory/:segment/:offset/:len</code></dt>
 <dd>
 <p>Read memory at the given address. The optional segment parameter can be
 the name of a segment register (<code>CS</code>, <code>SS</code>, <code>DS</code>, <code>ES</code>, <code>FS</code>, <code>GS</code>) or a
@@ -4583,14 +4609,14 @@ numeric value. All URL parameters accept hex values with the <code>0x</code> pre
 encoded in Base64.</p>
 <p>Maximum read size is 128 MiB per request.</p>
 <p>Example — download the entire conventional memory area:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET /api/memory/0/0x100000
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>GET /api/v1/memory/0/0x100000
 </code></pre></div>
 </dd>
 </dl>
 <h3 id="writing-memory">Writing memory<a class="headerlink" href="#writing-memory" title="Permanent link">¶</a></h3>
 <dl>
-<dt><code>PUT /api/memory/:offset</code></dt>
-<dt><code>PUT /api/memory/:segment/:offset</code></dt>
+<dt><code>PUT /api/v1/memory/:offset</code></dt>
+<dt><code>PUT /api/v1/memory/:segment/:offset</code></dt>
 <dd>
 <p>Write memory to the given address. Path parameters work the same as for
 reading.</p>
@@ -4604,7 +4630,7 @@ the current memory contents don’t match.</p>
 </dl>
 <h3 id="memory-allocation">Memory allocation<a class="headerlink" href="#memory-allocation" title="Permanent link">¶</a></h3>
 <dl>
-<dt><code>POST /api/memory/allocate</code></dt>
+<dt><code>POST /api/v1/memory/allocate</code></dt>
 <dd>
 <p>Allocate memory from the emulated machine.</p>
 <p>Request body:</p>
@@ -4626,7 +4652,7 @@ the current memory contents don’t match.</p>
 </code></pre></div>
 <p>Returns HTTP 503 if allocation fails.</p>
 </dd>
-<dt><code>POST /api/memory/free</code></dt>
+<dt><code>POST /api/v1/memory/free</code></dt>
 <dd>
 <p>Free previously allocated memory.</p>
 <p>Request body:</p>
@@ -4639,7 +4665,7 @@ the current memory contents don’t match.</p>
 </dl>
 <h3 id="dos-information">DOS information<a class="headerlink" href="#dos-information" title="Permanent link">¶</a></h3>
 <dl>
-<dt><code>GET /api/dos</code></dt>
+<dt><code>GET /api/v1/dos/internals</code></dt>
 <dd>
 <p>Returns pointers to internal DOS data structures:</p>
 <ul>
@@ -4652,9 +4678,16 @@ the current memory contents don’t match.</p>
 </dl>
 <h3 id="system-information">System information<a class="headerlink" href="#system-information" title="Permanent link">¶</a></h3>
 <dl>
-<dt><code>GET /api/info</code></dt>
+<dt><code>GET /api/v1/dosbox/info</code></dt>
 <dd>
 <p>Returns DOSBox Staging version and relevant filesystem paths.</p>
+</dd>
+</dl>
+<h3 id="shutdown">Shutdown<a class="headerlink" href="#shutdown" title="Permanent link">¶</a></h3>
+<dl>
+<dt><code>POST /api/v1/dosbox/shutdown</code></dt>
+<dd>
+<p>Request a graceful shutdown of DOSBox Staging.</p>
 </dd>
 </dl>
 <h2 id="example-tools">Example tools<a class="headerlink" href="#example-tools" title="Permanent link">¶</a></h2>
