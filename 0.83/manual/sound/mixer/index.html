@@ -3135,6 +3135,10 @@
       
         
       
+        
+      
+        
+      
     
     
     
@@ -3185,14 +3189,154 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/adlib-cms-sound-blaster/" class="md-nav__link">
+      <a href="../sound-devices/pc-speaker/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    AdLib, CMS &amp; Sound Blaster
+    PC speaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-devices/tandy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tandy 3 Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-devices/cms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creative Music System (CMS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-devices/adlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib (OPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-devices/covox-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Covox variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-devices/sound-blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Blaster
   
 
     
@@ -3297,62 +3441,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/pc-speaker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    PC speaker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/tandy/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tandy 3 Voice
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../sound-devices/gravis-ultrasound/" class="md-nav__link">
         
   
@@ -3437,14 +3525,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-devices/covox-variants/" class="md-nav__link">
+      <a href="../sound-devices/imfc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Covox variants
+    IBM Music Feature Card
   
 
     
@@ -3473,34 +3561,6 @@
     
   
     Innovation SSI-2001
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../sound-devices/imfc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IBM Music Feature Card
   
 
     
@@ -4581,8 +4641,8 @@ independently per channel.</p>
 <p>The mixer uses a 32-bit floating-point processing path internally, so
 individual channels cannot be overloaded into clipping by high per-channel
 volume settings. A fixed 20 Hz high-pass filter on the master output removes
-DC offset and subsonic rumble. An auto-levelling <a href="#compressor"><code>compressor</code></a> on
-the master channel prevents clipping of the final output.</p>
+DC offset and subsonic rumble. An auto-levelling <a href="#compressor"><code>compressor</code></a>
+on the master channel prevents clipping of the final output.</p>
 <p>The default master volume is 50% (-6 dB) to avoid audible distortion in games
 with loud output. You can raise it per game as needed (e.g., <code>MIXER MASTER
 100</code>), but it’s better to boost only the channels that are too quiet (e.g.,
@@ -4614,19 +4674,23 @@ with the default configuration:</p>
 <ul>
 <li>
 <p><strong>MASTER</strong> – This is the final summed stereo output of all other
-    mixer channels. The <strong>MASTER</strong> channel is always enabled, always comes
-    first, and is always stereo.</p>
+  mixer channels. The <strong>MASTER</strong> channel is always enabled, always comes
+  first, and is always stereo.</p>
 </li>
 <li>
-<p><strong>OPL</strong> – Output of the <a href="../sound-devices/adlib-cms-sound-blaster/#fm-synthesisers">Yamaha OPL FM synthesizer</a> (usually part of an emulated <a href="../sound-devices/adlib-cms-sound-blaster/#sound-blaster-models">Sound Blaster</a> card, or a standalone <a href="../sound-devices/adlib-cms-sound-blaster/#adlib-music-synthesizer-card">AdLib Music Synthesizer Card</a>). Can be mono or stereo, depending on the emulated FM synthesizer.</p>
+<p><strong>OPL</strong> – Output of the <a href="../sound-devices/adlib/">Yamaha OPL FM synthesizer</a>
+  (usually part of an emulated <a href="../sound-devices/sound-blaster/#sound-blaster-models">Sound Blaster</a>
+  card, or a standalone <a href="../sound-devices/adlib/#adlib-music-synthesizer-card">AdLib Music Synthesizer Card</a>).
+  Can be mono or stereo, depending on the emulated FM synthesizer.</p>
 </li>
 <li>
-<p><strong>PCSPEAKER</strong> – Mono output of the ubiquitous small loudspeaker built into most old IBM PC compatibles.</p>
+<p><strong>PCSPEAKER</strong> – Mono output of the ubiquitous small loudspeaker built into
+  most old IBM PC compatibles.</p>
 </li>
 <li>
-<p><strong>SB</strong> – Digital audio output of the emulated <a href="../sound-devices/adlib-cms-sound-blaster/#sound-blaster-models">Sound Blaster
-  card</a>. Can be
-  mono or stereo, depending on the emulated model.</p>
+<p><strong>SB</strong> – Digital audio output of the emulated
+  <a href="../sound-devices/sound-blaster/#sound-blaster-models">Sound Blaster card</a>.
+  Can be mono or stereo, depending on the emulated model.</p>
 </li>
 </ul>
 <p>There is an important thing to note here: some emulated sound devices contain
@@ -4634,9 +4698,9 @@ multiple sub-devices, each having their own mixer channel. The Sound Blaster
 16 is such a device; its digital output is routed to the <strong>SB</strong> channel, while
 the output of the onboard Yamaha OPL3 synthesiser chip has its dedicated
 <strong>OPL</strong> channel.</p>
-<p>This is actually similar to how the Sound Blaster software mixer works on later Sound
-Blaster cards. The <code>MIXER</code> command extends this concept so you can adjust the
-parameters of all emulated audio devices via a unified interface.</p>
+<p>This is actually similar to how the Sound Blaster software mixer works on
+later Sound Blaster cards. The <code>MIXER</code> command extends this concept so you can
+adjust the parameters of all emulated audio devices via a unified interface.</p>
 <p>If you can’t remember all this, don’t worry — just run <code>MIXER /?</code> to display
 a handy little summary all available options.</p>
 <h2 id="changing-channel-settings">Changing channel settings<a class="headerlink" href="#changing-channel-settings" title="Permanent link">¶</a></h2>
@@ -4666,33 +4730,33 @@ effects</a>.</p>
 <p>Swap the left and right channels of a stereo mixer channel:</p>
 <div class="highlight"><pre><span></span><code>MIXER SB REVERSE
 </code></pre></div>
-<p>Some <a href="../sound-devices/adlib-cms-sound-blaster/#sound-blaster-models">Sound Blaster
+<p>Some <a href="../sound-devices/sound-blaster/#sound-blaster-models">Sound Blaster
 models</a> —
-particularly the <a href="../sound-devices/adlib-cms-sound-blaster/#sound-blaster-pro">Sound Blaster
+particularly the <a href="../sound-devices/sound-blaster/#sound-blaster-pro">Sound Blaster
 Pro</a> — had the
 left and right digital audio channels reversed compared to later cards. Games
 developed and tested on these cards may have their stereo image flipped when
-emulating a different Sound Blaster model (typically the default <a href="../sound-devices/adlib-cms-sound-blaster/#sound-blaster-16">Sound
+emulating a different Sound Blaster model (typically the default <a href="../sound-devices/sound-blaster/#sound-blaster-16">Sound
 Blaster 16</a>).</p>
 <p>If sound effects in a game seem to come from the wrong direction (e.g., an
 enemy on the left of the screen produces sound from the right speaker), try
 reversing the <strong>SB</strong> channel. This only affects the specified channel’s
 output; other channels (like <strong>OPL</strong>) have their own independent stereo field.</p>
 <h3 id="advanced-usage">Advanced usage<a class="headerlink" href="#advanced-usage" title="Permanent link">¶</a></h3>
-<p>You may change the settings of more than one channel in a single command.
-For example, the command <code>MIXER x30 opl 150 r50 c30 sb x10 reverse</code> accomplishes the
-following:</p>
+<p>You may change the settings of more than one channel in a single command. For
+example, the command <code>MIXER x30 opl 150 r50 c30 sb x10 reverse</code> accomplishes
+the following:</p>
 <ul>
 <li>
 <p>Set the global crossfeed to 30 (<code>x30</code>)</p>
 </li>
 <li>
-<p>Set the volume of the <strong>OPL</strong> channel to 150%, the reverb level to 50, and the
-    chorus level to 30 (<code>opl 150 r50 c30</code>)</p>
+<p>Set the volume of the <strong>OPL</strong> channel to 150%, the reverb level to 50, and
+  the chorus level to 30 (<code>opl 150 r50 c30</code>)</p>
 </li>
 <li>
-<p>Set the crossfeed of the <strong>SB</strong> channel to 10 and use reverse stereo (<code>sb x10
-    reverse</code>)</p>
+<p>Set the crossfeed of the <strong>SB</strong> channel to 10 and use reverse stereo
+  (<code>sb x10 reverse</code>)</p>
 </li>
 </ul>
 <h2 id="list-of-mixer-channels">List of mixer channels<a class="headerlink" href="#list-of-mixer-channels" title="Permanent link">¶</a></h2>
@@ -4715,7 +4779,7 @@ sections of the manual where they’re described in detail.</p>
 </tr>
 <tr>
 <td><strong>CMS</strong></td>
-<td><a href="../sound-devices/adlib-cms-sound-blaster/#cms">Creative Music System (C/MS) synthesiser</a></td>
+<td><a href="../sound-devices/cms/">Creative Music System (C/MS) synthesiser</a></td>
 <td>Yes</td>
 </tr>
 <tr>
@@ -4765,7 +4829,7 @@ sections of the manual where they’re described in detail.</p>
 </tr>
 <tr>
 <td><strong>OPL</strong></td>
-<td><a href="../sound-devices/adlib-cms-sound-blaster/">Yamaha OPL synthesiser</a></td>
+<td><a href="../sound-devices/adlib/">Yamaha OPL synthesiser</a></td>
 <td>Yes<sup id="fnref:stereo"><a class="footnote-ref" href="#fn:stereo">1</a></sup></td>
 </tr>
 <tr>
@@ -4790,7 +4854,7 @@ sections of the manual where they’re described in detail.</p>
 </tr>
 <tr>
 <td><strong>SB</strong></td>
-<td><a href="../sound-devices/adlib-cms-sound-blaster/">Sound Blaster digital audio</a></td>
+<td><a href="../sound-devices/sound-blaster/">Sound Blaster digital audio</a></td>
 <td>Yes<sup id="fnref2:stereo"><a class="footnote-ref" href="#fn:stereo">1</a></sup></td>
 </tr>
 <tr>
@@ -4817,12 +4881,11 @@ sections of the manual where they’re described in detail.</p>
 </table>
 </div>
 <h2 id="denoiser">Denoiser<a class="headerlink" href="#denoiser" title="Permanent link">¶</a></h2>
-<p>The <a href="../sound-devices/adlib-cms-sound-blaster/">OPL synth</a> and the original
-SC-55 mk1 <a href="../sound-devices/sound-canvas/">Sound Canvas</a>
-models produce very low-level residual noise as part of their faithful
-hardware emulation. This noise is authentic — real hardware behaved the same
-way — but it can be slightly annoying on good-quality headphones or in quiet
-passages.</p>
+<p>The <a href="../sound-devices/adlib/">OPL synth</a> and the original SC-55 mk1 <a href="../sound-devices/sound-canvas/">Sound
+Canvas</a> models produce very low-level residual
+noise as part of their faithful hardware emulation. This noise is authentic
+— real hardware behaved the same way — but it can be slightly annoying on
+good-quality headphones or in quiet passages.</p>
 <p>The <a href="#denoiser"><code>denoiser</code></a> (technically a noise gate) removes this residual
 noise without degrading the useful audio signal in any way. It is enabled by
 default.</p>
@@ -4946,11 +5009,15 @@ semi-random noise. Although this is authentic, most people would find it
 slightly annoying.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>on</code> <em class="default">default</em> – Enable the denoiser on the <strong>OPL</strong> and
+<li>
+<p><code>on</code> <em class="default">default</em> – Enable the denoiser on the <strong>OPL</strong> and
   <strong>SOUNDCANVAS</strong> channels. The denoiser does not introduce any sound
-  quality degradation; it only removes the barely audible residual noise in
-  quiet passages.</li>
-<li><code>off</code> – Disable the denoiser.</li>
+  quality degradation; it only removes the barely audible residual noise
+  in quiet passages.</p>
+</li>
+<li>
+<p><code>off</code> – Disable the denoiser.</p>
+</li>
 </ul>
 </dd>
 </dl>
