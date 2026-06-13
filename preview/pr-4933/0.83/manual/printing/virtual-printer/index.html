@@ -4788,44 +4788,111 @@ it handles the full range of ESC/P commands used across the entire DOS era.</p>
 <p>The virtual printer attaches to LPT1 (see <a href="#printer_port"><code>printer_port</code></a>),
 which is where almost every DOS app expects it.</p>
 <h3 id="step-1-pick-a-printer-driver-in-your-dos-app">Step 1 — Pick a printer driver in your DOS app<a class="headerlink" href="#step-1-pick-a-printer-driver-in-your-dos-app" title="Permanent link">¶</a></h3>
-<p>Go into your application’s printer setup and pick an Epson driver that matches
-the app’s era. If you’re not sure which era your app is from, use the table
-below:</p>
+<p>Go into your application’s printer setup and pick an Epson 24-pin driver that
+matches what you want to print:</p>
 <table>
 <thead>
 <tr>
-<th>App vintage</th>
+<th>What you need</th>
 <th>Recommended driver</th>
-<th>Also works</th>
+<th>Year</th>
+<th>Generation</th>
+<th>Carriage</th>
+<th>Colour</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>1981–1990 (early DOS, 9-pin)</td>
-<td>Epson FX-80</td>
-<td>FX-85, FX-100, LX-80, LX-850</td>
-</tr>
-<tr>
-<td>1985–1991 (mid DOS)</td>
-<td>Epson LQ-500</td>
-<td>LQ-510, LQ-550, LQ-800, LQ-850</td>
-</tr>
-<tr>
-<td>1991–1995 (late DOS)</td>
+<td><strong>Modern B&amp;W (default choice)</strong></td>
 <td>Epson LQ-870</td>
-<td>LQ-1170, LQ-570, LQ-450</td>
+<td>1991</td>
+<td>ESC/P 2</td>
+<td>8 inch</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Modern B&amp;W, wide paper</td>
+<td>Epson LQ-1170</td>
+<td>1991</td>
+<td>ESC/P 2</td>
+<td>13.6 inch</td>
+<td>No</td>
+</tr>
+<tr>
+<td><strong>Colour, narrow paper</strong></td>
+<td>Epson LQ-860</td>
+<td>1989</td>
+<td>ESC/P</td>
+<td>8 inch</td>
+<td>7-colour ribbon</td>
+</tr>
+<tr>
+<td>Colour, wide paper</td>
+<td>Epson LQ-2550</td>
+<td>1988</td>
+<td>ESC/P</td>
+<td>13.6 inch</td>
+<td>7-colour ribbon</td>
+</tr>
+<tr>
+<td>Older B&amp;W (1985–1990 app)</td>
+<td>Epson LQ-850</td>
+<td>1988</td>
+<td>ESC/P</td>
+<td>8 inch</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Older B&amp;W, wide paper</td>
+<td>Epson LQ-1050</td>
+<td>1988</td>
+<td>ESC/P</td>
+<td>13.6 inch</td>
+<td>No</td>
+</tr>
+<tr>
+<td>9-pin app (only if the app demands it)</td>
+<td>Epson FX-80</td>
+<td>1983</td>
+<td>ESC/P</td>
+<td>8 inch</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
-<p>When in doubt, pick <strong>LQ-870</strong>. It handles the widest range of ESC/P commands.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Avoid these drivers:</p>
+<p>When in doubt, pick <strong>LQ-870</strong> for B&amp;W or <strong>LQ-860</strong> for colour.</p>
+<p><strong>Choosing between LQ-850, LQ-860, and LQ-870:</strong></p>
 <ul>
-<li><strong>Epson Stylus</strong> — inkjet format, output will be blank or garbage</li>
-<li><strong>HP LaserJet</strong> — different command language (PCL), not supported</li>
-<li><strong>Generic Text / “Epson Standard Printer”</strong> — works but loses all formatting</li>
-<li><strong>Epson LQ-2550</strong> — colour support is limited; text prints but colour doesn’t</li>
+<li>LQ-860 is the only one of the three with colour. Both LQ-850 and LQ-870
+  are B&amp;W; even if your app sends colour commands, they will print black.</li>
+<li>LQ-870 is the newest of the three and speaks ESC/P 2, which adds scalable
+  fonts (point sizes from 8 to 32 in 2-point steps) and tighter page-format
+  control. Word processors that print headings at a different size from body
+  text take advantage of this.</li>
+<li>LQ-850 only speaks classic ESC/P, no ESC/P 2. Fixed-pitch text and basic
+  graphics work fine; scalable / variable-size fonts collapse to the
+  printer’s built-in sizes.</li>
+</ul>
+<p>For plain text it almost doesn’t matter which of these you pick: we render
+text via TrueType fonts scaled to the configured DPI, not by emulating the
+print head pin-by-pin, so a 9-pin or 24-pin driver produces the same crisp
+output. Pin count and ESC/P generation only matter for graphics and for the
+font features above.</p>
+<div class="admonition warning">
+<p class="admonition-title">Avoid these drivers</p>
+<ul>
+<li><strong>Epson Stylus</strong> (any model) — inkjet, uses raster-graphics formats
+  (<code>ESC .</code>, <code>ESC ( G</code>) we don’t render. Output will be blank or noise.</li>
+<li><strong>Epson DLQ-3000</strong> — 24-pin colour, but its colour goes through the
+  ESC/P 2 <code>ESC ( G</code> CMYK path rather than <code>ESC r</code>. We don’t render that
+  path, so colour will print black. Text works.</li>
+<li><strong>Epson LQ-2500 / LQ-2550</strong> colour — the basic 7-colour ribbon works
+  (we handle <code>ESC r</code>); the richer CMYK-mixing commands these models
+  support are approximated as ribbon overprint, not full CMYK.</li>
+<li><strong>HP LaserJet</strong> — uses PCL, a different command language. Not
+  supported.</li>
+<li><strong>Generic Text</strong> / “Epson Standard Printer” — works but loses all
+  formatting.</li>
 </ul>
 </div>
 <h3 id="step-2-print-something">Step 2 — Print something<a class="headerlink" href="#step-2-print-something" title="Permanent link">¶</a></h3>
@@ -5023,18 +5090,22 @@ quality is lower than PostScript. Enable it the same way as for DOS apps:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[printer]</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson_dot_matrix</span>
 </code></pre></div>
-<p>In Windows 3.1x, install an Epson dot-matrix driver connected to <strong>LPT1</strong>:</p>
+<p>In Windows 3.1x, go to <strong>Control Panel → Printers</strong> and install any 24-pin
+Epson LQ driver connected to <strong>LPT1</strong> (or the port you’ve configured via
+<a href="#printer_port"><code>printer_port</code></a>). Use the same recommendations as for DOS
+apps:</p>
 <ul>
-<li>Windows 3.1: <strong>Epson LQ-850</strong> (or LQ-1050 for wide-carriage output)</li>
-<li>Windows 3.11: <strong>Epson LQ-860</strong> (or LQ-1050 for wide-carriage output)</li>
+<li><strong>LQ-870</strong> — late-DOS / Win 3.x B&amp;W default. ESC/P 2, scalable fonts.</li>
+<li><strong>LQ-860</strong> — when you need colour. ESC/P, 7-colour ribbon.</li>
+<li><strong>LQ-1170</strong> or <strong>LQ-2550</strong> — wide-carriage variants of the above.</li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>In the Epson driver settings, make sure the graphics resolution is set to
-<strong>180×180 dpi</strong>. Any other resolution will produce corrupted output.</p>
-</div>
+<p>If your Windows install media doesn’t include an exact match, any other
+24-pin LQ driver from a similar era will produce correct output — you may
+lose newer features (an ESC/P-only driver, for example, gives the printer
+spooler nothing to scale fonts with), but pages still render correctly.</p>
 <p>Each page is written as a PNG to <a href="#printer_output_dir"><code>printer_output_dir</code></a>,
-exactly as with DOS apps.</p>
+exactly as with DOS apps. Any graphics resolution your driver offers
+(180×180, 360×180, 360×360 dpi) renders correctly.</p>
 <hr>
 <h2 id="escp-compatibility">ESC/P compatibility<a class="headerlink" href="#escp-compatibility" title="Permanent link">¶</a></h2>
 <p>The virtual Epson printer covers ESC/P fully and the subset of ESC/P 2
@@ -5042,10 +5113,21 @@ commands that DOS-era programs actually used — which is most of it. A few
 things are not emulated:</p>
 <ul>
 <li><strong>Bar codes</strong> — ESC/P 2 bar-code commands print blank space instead</li>
-<li><strong>User-defined / downloaded fonts</strong> — substituted with the nearest bundled TrueType font</li>
-<li><strong>9-pin high-density graphics</strong> — standard 9-pin bitmap graphics work fine; only the 9<sup>th</sup>-pin vertical density extension doesn’t</li>
-<li><strong>Full CMYK colour</strong> — 7-colour ribbon palette only; most DOS apps were black-and-white anyway</li>
-<li><strong>Inkjet formats</strong> (Epson Stylus / MicroWeave raster) — not emulated; these are post-DOS inkjet formats unrelated to dot-matrix ESC/P</li>
+<li><strong>Outline / shadow text style</strong> (<code>ESC q</code>) — apps that select outline or
+  shadow effects print plain text</li>
+<li><strong>User-defined / downloaded fonts</strong> — substituted with the nearest
+  bundled TrueType font</li>
+<li><strong>9-pin high-density graphics</strong> — standard 9-pin bitmap graphics work
+  fine; only the 9<sup>th</sup>-pin vertical density extension doesn’t</li>
+<li><strong>Raster graphics</strong> (<code>ESC .</code>, <code>ESC ( G</code>) — used by Stylus inkjets and
+  some late-model 24-pin colour printers (DLQ-3000). Not supported.</li>
+<li><strong>Full CMYK colour</strong> — 7-colour ribbon palette only; most DOS apps were
+  black-and-white anyway. Rules out the richer colour mixing used by the
+  LQ-2500 / LQ-2550 and DLQ-3000.</li>
+<li><strong>48-pin output</strong> — TLQ-4800 only; obscure 1988 Europe/Pacific
+  wide-carriage product, not on any common DOS app driver list.</li>
+<li><strong>Inkjet formats</strong> (Epson Stylus / MicroWeave raster) — not emulated;
+  these are post-DOS inkjet formats unrelated to dot-matrix ESC/P.</li>
 </ul>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Printer settings live in the <code>[printer]</code> section.</p>
@@ -5090,9 +5172,10 @@ apps target LPT1.</p>
 in PostScript mode (the PostScript file defines its own
 resolution).</em></p>
 <p>Output resolution in dots per inch. Higher values produce
-sharper output and larger PNG files. The default of <code>360</code>
-matches the highest-quality mode of late-model 24-pin Epson
-printers.</p>
+sharper output and larger PNG files. Default <code>360</code> matches
+the highest-quality mode of late-model 24-pin Epson printers.</p>
+<p>Valid range: <code>60</code>–<code>1200</code>. Out-of-range values fall back to
+<code>360</code> with a warning.</p>
 </dd>
 </dl>
 <h5 id="printer_page_size">printer_page_size<a class="headerlink" href="#printer_page_size" title="Permanent link">¶</a></h5>
@@ -5102,7 +5185,7 @@ printers.</p>
 in PostScript mode (the PostScript file defines its own
 page size).</em></p>
 <p>Output page size. Accepts a named preset or explicit
-dimensions.</p>
+dimensions, with an optional orientation suffix.</p>
 <p>Presets:</p>
 <div class="compact" markdown="">
 <ul>
@@ -5123,6 +5206,17 @@ dimensions.</p>
 <p>Or specify exact dimensions, e.g. <code>21x29.7cm</code>, <code>8.5x11inch</code>,
 <code>9.5x11inch</code> (narrow tractor-feed). The unit suffix is <code>cm</code>,
 <code>inch</code>, or <code>in</code>.</p>
+<p>Append <code>landscape</code> or <code>portrait</code> to swap to the requested
+orientation:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="na">printer_page_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">A4 landscape</span><span class="w">   </span><span class="c1"># 29.7 × 21 cm</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">printer_page_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Letter portrait</span><span class="w"> </span><span class="c1"># 8.5 × 11 inch (already portrait, no-op)</span>
+</code></pre></div>
+<p>For DOS apps to actually emit landscape output you also need
+to select a landscape-aware (or wide) printer driver in the
+app’s printer setup — the driver controls what the app
+sends; this setting controls the page we render onto.</p>
+<p>Dimensions must be 1 to 50 inches. Out-of-range or invalid
+values fall back to A4 with a warning.</p>
 </dd>
 </dl>
 <h5 id="printer_output_dir">printer_output_dir<a class="headerlink" href="#printer_output_dir" title="Permanent link">¶</a></h5>
