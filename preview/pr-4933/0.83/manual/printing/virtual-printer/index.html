@@ -4788,12 +4788,23 @@ it handles the full range of ESC/P commands used across the entire DOS era.</p>
 <p>The virtual printer attaches to LPT1 (see <a href="#printer_port"><code>printer_port</code></a>),
 which is where almost every DOS app expects it.</p>
 <h3 id="step-1-pick-a-printer-driver-in-your-dos-app">Step 1 — Pick a printer driver in your DOS app<a class="headerlink" href="#step-1-pick-a-printer-driver-in-your-dos-app" title="Permanent link">¶</a></h3>
-<p>Go into your application’s printer setup and pick an Epson 24-pin driver that
-matches what you want to print:</p>
+<p>The virtual printer comes in two flavours, set via
+<a href="#printer_model"><code>printer_model</code></a>:</p>
+<ul>
+<li><code>epson_dot_matrix</code> (default) — 24-pin Epson LQ-series emulation.
+  Speaks ESC/P 2 and ESC/P. Use for almost everything.</li>
+<li><code>epson_9pin</code> — 9-pin Epson FX/LX-series emulation. Older command
+  set (ESC/P, no ESC/P 2) and different vertical-spacing units (n/216
+  and n/72 instead of n/180 and n/60). Use this if your DOS app
+  specifically targets an FX-80 / FX-100 / LX driver.</li>
+</ul>
+<p>Then go into your application’s printer setup and pick an Epson driver
+that matches what you want to print:</p>
 <table>
 <thead>
 <tr>
 <th>What you need</th>
+<th><code>printer_model</code></th>
 <th>Recommended driver</th>
 <th>Year</th>
 <th>Generation</th>
@@ -4804,6 +4815,7 @@ matches what you want to print:</p>
 <tbody>
 <tr>
 <td><strong>Modern B&amp;W (default choice)</strong></td>
+<td><code>epson_dot_matrix</code></td>
 <td>Epson LQ-870</td>
 <td>1991</td>
 <td>ESC/P 2</td>
@@ -4812,6 +4824,7 @@ matches what you want to print:</p>
 </tr>
 <tr>
 <td>Modern B&amp;W, wide paper</td>
+<td><code>epson_dot_matrix</code></td>
 <td>Epson LQ-1170</td>
 <td>1991</td>
 <td>ESC/P 2</td>
@@ -4820,6 +4833,7 @@ matches what you want to print:</p>
 </tr>
 <tr>
 <td><strong>Colour, narrow paper</strong></td>
+<td><code>epson_dot_matrix</code></td>
 <td>Epson LQ-860</td>
 <td>1989</td>
 <td>ESC/P</td>
@@ -4828,6 +4842,7 @@ matches what you want to print:</p>
 </tr>
 <tr>
 <td>Colour, wide paper</td>
+<td><code>epson_dot_matrix</code></td>
 <td>Epson LQ-2550</td>
 <td>1988</td>
 <td>ESC/P</td>
@@ -4836,6 +4851,7 @@ matches what you want to print:</p>
 </tr>
 <tr>
 <td>Older B&amp;W (1985–1990 app)</td>
+<td><code>epson_dot_matrix</code></td>
 <td>Epson LQ-850</td>
 <td>1988</td>
 <td>ESC/P</td>
@@ -4844,6 +4860,7 @@ matches what you want to print:</p>
 </tr>
 <tr>
 <td>Older B&amp;W, wide paper</td>
+<td><code>epson_dot_matrix</code></td>
 <td>Epson LQ-1050</td>
 <td>1988</td>
 <td>ESC/P</td>
@@ -4851,11 +4868,21 @@ matches what you want to print:</p>
 <td>No</td>
 </tr>
 <tr>
-<td>9-pin app (only if the app demands it)</td>
+<td>Early-DOS / 9-pin app</td>
+<td><code>epson_9pin</code></td>
 <td>Epson FX-80</td>
 <td>1983</td>
 <td>ESC/P</td>
 <td>8 inch</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Early-DOS / 9-pin app, wide paper</td>
+<td><code>epson_9pin</code></td>
+<td>Epson FX-100</td>
+<td>1983</td>
+<td>ESC/P</td>
+<td>13.6 inch</td>
 <td>No</td>
 </tr>
 </tbody>
@@ -5137,9 +5164,14 @@ things are not emulated:</p>
 <div class="compact" markdown="">
 <ul>
 <li><code>none</code> <em class="default">default</em> — Printer disabled.</li>
-<li><code>epson_dot_matrix</code> — Epson dot-matrix emulation (ESC/P and
-  ESC/P 2). Writes one PNG per page. Best fit for the
-  Epson LQ-870 driver in your DOS app.</li>
+<li><code>epson_dot_matrix</code> — 24-pin Epson LQ-series emulation (ESC/P
+  and ESC/P 2 dialects). Best fit for the Epson LQ-870 driver
+  in your DOS app. Writes one PNG per page.</li>
+<li><code>epson_9pin</code> — 9-pin Epson FX/LX-series emulation (classic
+  ESC/P only). For older DOS apps that target an FX-80 /
+  FX-100 / LX driver. Uses the 9-pin family’s vertical-spacing
+  divisors (n/216 inch instead of n/180 inch for <code>ESC J</code>,
+  n/72 inch instead of n/60 inch for <code>ESC A</code>, etc.).</li>
 <li><code>postscript</code> — Passthrough PostScript printer. The DOS app
   sends raw PostScript and we save it verbatim to a <code>.ps</code>
   file. Use this when your DOS app targets a PostScript
