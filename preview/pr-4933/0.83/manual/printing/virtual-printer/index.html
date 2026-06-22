@@ -4161,6 +4161,19 @@
       
         
 <li class="md-nav__item">
+  <a href="#raw-passthrough" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Raw passthrough
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
   <a href="#printing-from-windows-31x" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4284,19 +4297,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#printer_output_dir" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        printer_output_dir
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#printer_timeout" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4351,7 +4351,7 @@ the <strong>Epson LQ-870</strong> — a popular 24-pin model from the early 1990
 it handles the full range of ESC/P commands used across the entire DOS era.</p>
 <p>To enable it, add this to your <code>dosbox.conf</code>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[printer]</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson_dot_matrix</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson-24pin</span>
 </code></pre></div>
 <p>The virtual printer attaches to LPT1 (see <a href="#printer_port"><code>printer_port</code></a>),
 which is where almost every DOS app expects it.</p>
@@ -4359,9 +4359,9 @@ which is where almost every DOS app expects it.</p>
 <p>The virtual printer comes in two flavours, set via
 <a href="#printer_model"><code>printer_model</code></a>:</p>
 <ul>
-<li><code>epson_dot_matrix</code> (default) — 24-pin Epson LQ-series emulation.
+<li><code>epson-24pin</code> (default) — 24-pin Epson LQ-series emulation.
   Speaks ESC/P 2 and ESC/P. Use for almost everything.</li>
-<li><code>epson_9pin</code> — 9-pin Epson FX/LX-series emulation. Older command
+<li><code>epson-9pin</code> — 9-pin Epson FX/LX-series emulation. Older command
   set (ESC/P, no ESC/P 2) and different vertical-spacing units (n/216
   and n/72 instead of n/180 and n/60). Use this if your DOS app
   specifically targets an FX-80 / FX-100 / LX driver.</li>
@@ -4383,7 +4383,7 @@ that matches what you want to print:</p>
 <tbody>
 <tr>
 <td><strong>Modern B&amp;W (default choice)</strong></td>
-<td><code>epson_dot_matrix</code></td>
+<td><code>epson-24pin</code></td>
 <td>Epson LQ-870</td>
 <td>1991</td>
 <td>ESC/P 2</td>
@@ -4392,7 +4392,7 @@ that matches what you want to print:</p>
 </tr>
 <tr>
 <td>Modern B&amp;W, wide paper</td>
-<td><code>epson_dot_matrix</code></td>
+<td><code>epson-24pin</code></td>
 <td>Epson LQ-1170</td>
 <td>1991</td>
 <td>ESC/P 2</td>
@@ -4401,7 +4401,7 @@ that matches what you want to print:</p>
 </tr>
 <tr>
 <td><strong>Colour, narrow paper</strong></td>
-<td><code>epson_dot_matrix</code></td>
+<td><code>epson-24pin</code></td>
 <td>Epson LQ-860</td>
 <td>1989</td>
 <td>ESC/P</td>
@@ -4410,7 +4410,7 @@ that matches what you want to print:</p>
 </tr>
 <tr>
 <td>Colour, wide paper</td>
-<td><code>epson_dot_matrix</code></td>
+<td><code>epson-24pin</code></td>
 <td>Epson LQ-2550</td>
 <td>1988</td>
 <td>ESC/P</td>
@@ -4419,7 +4419,7 @@ that matches what you want to print:</p>
 </tr>
 <tr>
 <td>Older B&amp;W (1985–1990 app)</td>
-<td><code>epson_dot_matrix</code></td>
+<td><code>epson-24pin</code></td>
 <td>Epson LQ-850</td>
 <td>1988</td>
 <td>ESC/P</td>
@@ -4428,7 +4428,7 @@ that matches what you want to print:</p>
 </tr>
 <tr>
 <td>Older B&amp;W, wide paper</td>
-<td><code>epson_dot_matrix</code></td>
+<td><code>epson-24pin</code></td>
 <td>Epson LQ-1050</td>
 <td>1988</td>
 <td>ESC/P</td>
@@ -4437,7 +4437,7 @@ that matches what you want to print:</p>
 </tr>
 <tr>
 <td>Early-DOS / 9-pin app</td>
-<td><code>epson_9pin</code></td>
+<td><code>epson-9pin</code></td>
 <td>Epson FX-80</td>
 <td>1983</td>
 <td>ESC/P</td>
@@ -4446,7 +4446,7 @@ that matches what you want to print:</p>
 </tr>
 <tr>
 <td>Early-DOS / 9-pin app, wide paper</td>
-<td><code>epson_9pin</code></td>
+<td><code>epson-9pin</code></td>
 <td>Epson FX-100</td>
 <td>1983</td>
 <td>ESC/P</td>
@@ -4494,13 +4494,17 @@ font features above.</p>
 <p>Print from your app the normal way. That’s it. DOSBox Staging intercepts what
 the app sends to the printer port and renders it.</p>
 <h3 id="step-3-find-your-output">Step 3 — Find your output<a class="headerlink" href="#step-3-find-your-output" title="Permanent link">¶</a></h3>
-<p>Each printed page is saved as a PNG file — <code>page1.png</code>, <code>page2.png</code>, and so
-on — in the folder set by <a href="#printer_output_dir"><code>printer_output_dir</code></a>. By
-default that’s the current working directory.</p>
+<p>Each printed page is saved as a PNG file — <code>page0001.png</code>, <code>page0002.png</code>,
+and so on — in the same folder as your other captures (screenshots, audio,
+video). That’s the <code>capture</code> directory in your current working directory by
+default, configurable via
+<a href="../../using-dosbox-staging/capture/#capture_dir"><code>capture_dir</code></a>.</p>
 <p>To save output somewhere specific:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[printer]</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson_dot_matrix</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">printer_output_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">C:\PrintOutput</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson-24pin</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">[capture]</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="na">capture_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">C:\Captures</span>
 </code></pre></div>
 <p>The folder is created automatically if it doesn’t exist.</p>
 <div class="admonition tip">
@@ -4510,7 +4514,7 @@ whether the printer initialised correctly and where it’s writing output.</p>
 </div>
 <h3 id="page-ejection">Page ejection<a class="headerlink" href="#page-ejection" title="Permanent link">¶</a></h3>
 <p>The printer writes each page to disk when it’s ejected. By default, a page
-ejects automatically after <strong>500 milliseconds of inactivity</strong> — so as long
+ejects automatically after <strong>10 seconds of inactivity</strong> — so as long
 as your app finishes sending data and then pauses, the page will appear on its
 own.</p>
 <p>If your app doesn’t trigger the auto-eject (some apps hold the port open),
@@ -4614,7 +4618,7 @@ Speech Thing, Stereo-on-1):</p>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">lpt_dac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">disney</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">[printer]</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson_dot_matrix</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson-24pin</span>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="na">printer_port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lpt2</span>
 </code></pre></div>
 <p>If two devices try to claim the same port, the printer backs off and logs a
@@ -4633,10 +4637,14 @@ file per print job.</p>
 </code></pre></div>
 <p>In your DOS app’s printer setup, pick any PostScript driver: <strong>Apple
 LaserWriter</strong>, <strong>Apple LaserWriter II</strong>, or <strong>Generic PostScript Printer</strong>.</p>
-<p>Output files are named <code>doc1.ps</code>, <code>doc2.ps</code>, etc., saved to
-<a href="#printer_output_dir"><code>printer_output_dir</code></a>. A job closes when the app sends the
-end-of-job marker, when you press <strong>Ctrl+F2</strong>, or after the inactivity
-timeout.</p>
+<p>Output files are named <code>doc0001.ps</code>, <code>doc0002.ps</code>, and so on, saved to
+<a href="../../using-dosbox-staging/capture/#capture_dir"><code>capture_dir</code></a>. A job
+closes when the driver sends the PostScript end-of-job marker (the <code>^D</code>
+byte). The
+<a href="#printer_timeout"><code>printer_timeout</code></a> and the <code>ejectpage</code> Ctrl+F2 binding
+<strong>do not apply in PostScript mode</strong> — PostScript is self-describing and
+the driver’s own byte stream already delimits pages and jobs. There’s no
+reason for the emulator to inject form-feeds.</p>
 <p>To view or convert the output on your host:</p>
 <ul>
 <li>
@@ -4660,6 +4668,36 @@ timeout.</p>
 PostScript file itself.</p>
 </div>
 <hr>
+<h2 id="raw-passthrough">Raw passthrough<a class="headerlink" href="#raw-passthrough" title="Permanent link">¶</a></h2>
+<p>Some DOS apps target printers that aren’t PostScript and aren’t Epson
+dot-matrix — HP LaserJet (PCL), HP DeskJet inkjets (PCL3), pen plotters
+(HP-GL), Canon Bubble Jet (BJL), and so on. For those, DOSBox Staging
+offers a <em>raw passthrough</em> mode that captures the LPT byte stream
+verbatim to a <code>.prn</code> file with no interpretation.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[printer]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">passthrough</span>
+</code></pre></div>
+<p>Output files are named <code>doc0001.prn</code>, <code>doc0002.prn</code>, and so on, saved to
+<a href="../../using-dosbox-staging/capture/#capture_dir"><code>capture_dir</code></a>. One file
+per print session.
+A session ends after <a href="#printer_timeout"><code>printer_timeout</code></a> milliseconds
+of inactivity, or when you press <strong>Ctrl+F2</strong> to eject manually.</p>
+<p>You can replay the captured <code>.prn</code> against the real printer driver
+later — send it to a physical printer that speaks the same language,
+or convert it offline with a tool like
+<a href="https://www.ghostscript.com/releases/gpcldnld.html">GhostPCL</a> (for
+PCL) or <a href="https://www.gnu.org/software/hp2xx/">hp2xx</a> (for HP-GL).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Raw passthrough writes <em>every byte</em> to the file — no filtering,
+no page-splitting. We can’t split per-page because PCL and ESC/P
+bit-image commands embed length-prefixed raster data that may
+contain <code>0x0C</code> (the form-feed character) as a pixel byte. Splitting
+on <code>0x0C</code> would chop image data mid-stream and produce broken
+captures. If you want per-page files, run a real PCL or ESC/P
+parser over the <code>.prn</code> offline.</p>
+</div>
+<hr>
 <h2 id="printing-from-windows-31x">Printing from Windows 3.1x<a class="headerlink" href="#printing-from-windows-31x" title="Permanent link">¶</a></h2>
 <p>Windows 3.1x supports two printing paths, one giving high-quality PostScript
 output and one using the same Epson emulation as DOS apps.</p>
@@ -4667,8 +4705,8 @@ output and one using the same Epson emulation as DOS apps.</p>
 <p>This gives the best output quality and works well for documents you want to
 convert to PDF or view on the host.</p>
 <p>Enable the PostScript virtual printer in your config:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">[printer]</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">postscript</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[printer]</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">postscript</span>
 </code></pre></div>
 <p>In Windows 3.1x, install a PostScript printer driver connected to <strong>LPT1</strong>.
 During setup (or afterwards via <strong>Control Panel → Printers</strong>), pick any
@@ -4676,14 +4714,14 @@ PostScript printer — the <strong>QMS ColorScript 100</strong> is a safe choice
 compatibility and cleaner PDF conversion, you can instead install the <strong>Adobe
 PostScript 3.1.2 driver</strong> — see the <a href="https://archive.org/details/adobeps312">Adobe PS 3.1.2 download on
 archive.org</a>.</p>
-<p>Output files are named <code>doc1.ps</code>, <code>doc2.ps</code>, etc., saved to
-<a href="#printer_output_dir"><code>printer_output_dir</code></a>. See <a href="#postscript">PostScript</a> for
-further details.</p>
+<p>Output files are named <code>doc0001.ps</code>, <code>doc0002.ps</code>, and so on, saved to
+<a href="../../using-dosbox-staging/capture/#capture_dir"><code>capture_dir</code></a>. See
+<a href="#postscript">PostScript</a> for further details.</p>
 <h3 id="epson-emulation">Epson emulation<a class="headerlink" href="#epson-emulation" title="Permanent link">¶</a></h3>
 <p>You can also use the virtual Epson printer from Windows 3.1x, though output
 quality is lower than PostScript. Enable it the same way as for DOS apps:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">[printer]</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson_dot_matrix</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">[printer]</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">printer_model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">epson-24pin</span>
 </code></pre></div>
 <p>In Windows 3.1x, go to <strong>Control Panel → Printers</strong> and install any 24-pin
 Epson LQ driver connected to <strong>LPT1</strong> (or the port you’ve configured via
@@ -4698,8 +4736,9 @@ apps:</p>
 24-pin LQ driver from a similar era will produce correct output — you may
 lose newer features (an ESC/P-only driver, for example, gives the printer
 spooler nothing to scale fonts with), but pages still render correctly.</p>
-<p>Each page is written as a PNG to <a href="#printer_output_dir"><code>printer_output_dir</code></a>,
-exactly as with DOS apps. Any graphics resolution your driver offers
+<p>Each page is written as a PNG to
+<a href="../../using-dosbox-staging/capture/#capture_dir"><code>capture_dir</code></a>, exactly as
+with DOS apps. Any graphics resolution your driver offers
 (180×180, 360×180, 360×360 dpi) renders correctly.</p>
 <hr>
 <h2 id="escp-compatibility">ESC/P compatibility<a class="headerlink" href="#escp-compatibility" title="Permanent link">¶</a></h2>
@@ -4729,23 +4768,41 @@ things are not emulated:</p>
 <h5 id="printer_model">printer_model<a class="headerlink" href="#printer_model" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Which kind of virtual printer to emulate.</p>
-<p>Possible values:</p>
+<p>Type of virtual printer to emulate.</p>
 <div class="compact" markdown="">
 <ul>
-<li><code>none</code> <em class="default">default</em> — Printer disabled.</li>
-<li><code>epson_dot_matrix</code> — 24-pin Epson LQ-series emulation (ESC/P
-  and ESC/P 2 dialects). Best fit for the Epson LQ-870 driver
-  in your DOS app. Writes one PNG per page.</li>
-<li><code>epson_9pin</code> — 9-pin Epson FX/LX-series emulation (classic
-  ESC/P only). For older DOS apps that target an FX-80 /
-  FX-100 / LX driver. Uses the 9-pin family’s vertical-spacing
-  divisors (n/216 inch instead of n/180 inch for <code>ESC J</code>,
-  n/72 inch instead of n/60 inch for <code>ESC A</code>, etc.).</li>
-<li><code>postscript</code> — Passthrough PostScript printer. The DOS app
-  sends raw PostScript and we save it verbatim to a <code>.ps</code>
-  file. Use this when your DOS app targets a PostScript
-  printer.</li>
+<li><code>none</code> <em class="default">default</em> — No printer emulation.</li>
+<li><code>epson-9pin</code> — 9-pin Epson FX/LX-series printer. Use for
+  older DOS programs that target an FX-80 / LX-series
+  driver. Line spacing will look wrong if you use the
+  <code>epson-24pin</code> model with these drivers, and you might
+  get vertically stretched graphics as well. Writes one
+  PNG image per page in the capture directory (see
+  <a href="../../using-dosbox-staging/capture/#capture_dir"><code>capture_dir</code></a>)
+  on the form feed command (<code>^L</code> byte), after
+  <a href="#printer_timeout"><code>printer_timeout</code></a> milliseconds of
+  inactivity, or by pressing the <code>ejectpage</code> hotkey.</li>
+<li><code>epson-24pin</code> — 24-pin Epson LQ-series dot-matrix printer
+  (ESC/P and ESC/P 2 dialects). Best fit for the Epson
+  LQ-870 / LQ-850 / LQ-550 drivers. See <code>epson-9pin</code> for
+  the output format.</li>
+<li><code>postscript</code> — Saves the raw PostScript data sent to the
+  printer to a file. Use this when your program targets a
+  PostScript printer (e.g., Apple LaserWriter). Writes a
+  single PostScript file with <code>.ps</code> extension to the
+  capture directory (see
+  <a href="../../using-dosbox-staging/capture/#capture_dir"><code>capture_dir</code></a>).
+  The output file is closed on the end-of-job marker
+  (<code>^D</code> byte); <a href="#printer_timeout"><code>printer_timeout</code></a> and
+  the <code>ejectpage</code> hotkey are ignored.</li>
+<li><code>passthrough</code> — Raw byte-stream capture; saves the raw
+  data sent to the printer to a <code>.prn</code> file. Use this for
+  printer languages other than PostScript or ESC/P (e.g.
+  HP PCL, HP-GL, Canon BJL, etc.), or when you want a raw
+  capture for offline processing. One file is created per
+  print session; the session ends after
+  <a href="#printer_timeout"><code>printer_timeout</code></a> milliseconds of
+  inactivity or by pressing the <code>ejectpage</code> hotkey.</li>
 </ul>
 </div>
 </dd>
@@ -4753,9 +4810,10 @@ things are not emulated:</p>
 <h5 id="printer_port">printer_port<a class="headerlink" href="#printer_port" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Which parallel port the virtual printer attaches to. Most DOS
-apps target LPT1.</p>
-<p>Possible values:</p>
+<p>Parallel port the virtual printer is attached to. Most DOS
+programs target LPT1. Use <code>lpt2</code> or <code>lpt3</code> if you also need
+an LPT DAC (see <a href="../../sound/sound-devices/covox-variants/#lpt_dac"><code>lpt_dac</code></a>)
+on LPT1.</p>
 <div class="compact" markdown="">
 <ul>
 <li><code>lpt1</code> <em class="default">default</em> — LPT1 at I/O port <code>0x378</code>.</li>
@@ -4768,37 +4826,38 @@ apps target LPT1.</p>
 <h5 id="printer_dpi">printer_dpi<a class="headerlink" href="#printer_dpi" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p><em>Only applies when <code>printer_model = epson_dot_matrix</code>. Ignored
-in PostScript mode (the PostScript file defines its own
-resolution).</em></p>
-<p>Output resolution in dots per inch. Higher values produce
-sharper output and larger PNG files. Default <code>360</code> matches
+<p>Output resolution of the virtual printer in dots per inch
+(<code>360</code> by default). Valid range is 60–1200. Higher values
+produce sharper output and larger PNG files. Default matches
 the highest-quality mode of late-model 24-pin Epson printers.</p>
-<p>Valid range: <code>60</code>–<code>1200</code>. Out-of-range values fall back to
-<code>360</code> with a warning.</p>
+<p>Out-of-range values fall back to <code>360</code> with a warning.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only applies to the <code>epson-24pin</code> printer model to set
+the size of the PNG output image. Ignored in PostScript
+mode (the PostScript file defines its own resolution).</p>
+</div>
 </dd>
 </dl>
 <h5 id="printer_page_size">printer_page_size<a class="headerlink" href="#printer_page_size" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p><em>Only applies when <code>printer_model = epson_dot_matrix</code>. Ignored
-in PostScript mode (the PostScript file defines its own
-page size).</em></p>
-<p>Output page size. Accepts a named preset or explicit
-dimensions, with an optional orientation suffix.</p>
+<p>Output page size of the virtual printer (<code>a4</code> by default).
+Accepts a named preset or explicit dimensions with an
+optional orientation suffix.</p>
 <p>Presets:</p>
 <div class="compact" markdown="">
 <ul>
-<li><code>A3</code> — 29.7 × 42 cm. Wide-carriage Epson printers only
+<li><code>a3</code> — 29.7 × 42 cm. Wide-carriage Epson printers only
   (LQ-1170, FX-100, FX-1050, and similar).</li>
-<li><code>A4</code> <em class="default">default</em> — 21 × 29.7 cm. The European
+<li><code>a4</code> <em class="default">default</em> — 21 × 29.7 cm. The European
   default.</li>
-<li><code>A5</code> — 14.8 × 21 cm.</li>
-<li><code>Letter</code> — 8.5 × 11 inch. The US default.</li>
-<li><code>Legal</code> — 8.5 × 14 inch.</li>
-<li><code>Tabloid</code> — 11 × 17 inch. The US near-equivalent of A3,
+<li><code>a5</code> — 14.8 × 21 cm.</li>
+<li><code>letter</code> — 8.5 × 11 inch. The US default.</li>
+<li><code>legal</code> — 8.5 × 14 inch.</li>
+<li><code>tabloid</code> — 11 × 17 inch. The US near-equivalent of A3,
   wide-carriage only.</li>
-<li><code>Fanfold</code> — 14.875 × 11 inch. Common tractor-feed
+<li><code>fanfold</code> — 14.875 × 11 inch. Common tractor-feed
   continuous paper of the DOS era — the “green-bar” form
   a lot of DOS print code assumes. Wide-carriage only.</li>
 </ul>
@@ -4806,37 +4865,39 @@ dimensions, with an optional orientation suffix.</p>
 <p>Or specify exact dimensions, e.g. <code>21x29.7cm</code>, <code>8.5x11inch</code>,
 <code>9.5x11inch</code> (narrow tractor-feed). The unit suffix is <code>cm</code>,
 <code>inch</code>, or <code>in</code>.</p>
-<p>Append <code>landscape</code> or <code>portrait</code> to swap to the requested
-orientation:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="na">printer_page_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">A4 landscape</span><span class="w">   </span><span class="c1"># 29.7 × 21 cm</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">printer_page_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">Letter portrait</span><span class="w"> </span><span class="c1"># 8.5 × 11 inch (already portrait, no-op)</span>
+<p>Append <code>landscape</code> or <code>portrait</code> to specify the orientation
+(defaults to <code>portrait</code> if unspecified):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="na">printer_page_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">a4 landscape</span><span class="w">    </span><span class="c1"># 29.7 × 21 cm</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="na">printer_page_size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">letter portrait</span><span class="w"> </span><span class="c1"># 8.5 × 11 inch (already portrait, no-op)</span>
 </code></pre></div>
 <p>For DOS apps to actually emit landscape output you also need
 to select a landscape-aware (or wide) printer driver in the
 app’s printer setup — the driver controls what the app
 sends; this setting controls the page we render onto.</p>
 <p>Dimensions must be 1 to 50 inches. Out-of-range or invalid
-values fall back to A4 with a warning.</p>
-</dd>
-</dl>
-<h5 id="printer_output_dir">printer_output_dir<a class="headerlink" href="#printer_output_dir" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Directory where output files are written. PNG files in
-dot-matrix mode, <code>.ps</code> files in PostScript mode. Default is
-the current working directory.</p>
-<p>The directory is auto-created if it doesn’t exist.</p>
+values fall back to <code>a4</code> with a warning.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only applies to the <code>epson-24pin</code> printer model to set
+the size of the PNG output image. Ignored in PostScript
+mode (the PostScript file defines its own page size).</p>
+</div>
 </dd>
 </dl>
 <h5 id="printer_timeout">printer_timeout<a class="headerlink" href="#printer_timeout" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Inactivity timeout in milliseconds. The printer auto-ejects
-an unfinished page after this many milliseconds with no
-incoming data.</p>
-<p>Default is <code>500</code>. Set to <code>0</code> to disable auto-eject; you’ll
-need to press the eject-page key (default Ctrl+F2, fully
-remappable via the mapper UI) manually.</p>
+<p>Inactivity timeout in milliseconds after which an unfinished
+page is auto-ejected. Default <code>10000</code> (10 seconds). DOS print
+drivers commonly pause for several seconds mid-job while
+preparing the next batch of bytes; too short a timeout splits
+one logical page across multiple output files. Raise this
+further if you still see split pages, or set to <code>0</code> to
+disable auto-eject entirely. You can also eject manually via
+the <code>ejectpage</code> mapper action (default Ctrl+F2, fully
+remappable).</p>
+<p>Ignored when <code>printer_model = postscript</code> — the PostScript
+output file closes only on the driver’s end-of-job marker.</p>
 </dd>
 </dl>
 
