@@ -1954,6 +1954,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Simple usage">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#windows-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows users
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
 </li>
 
       
@@ -4605,6 +4624,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Simple usage">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#windows-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Windows users
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
 </li>
 
       
@@ -5119,6 +5157,15 @@ is mounted and the program runs automatically.</p>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>dosbox /path/to/game/GAME.EXE
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>dosbox disk.img
 </code></pre></div>
+<h3 id="windows-users">Windows users<a class="headerlink" href="#windows-users" title="Permanent link">¶</a></h3>
+<p>When specifying a path using quotation marks, you must omit the trailing <code>\</code>
+or use double backslashes before the final quotation mark. For example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dosbox "C:\Users\My User\My Game"
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>dosbox "C:\Users\My User\My Game\\"
+</code></pre></div>
+<p>The following will <strong>not</strong> work as the final <code>\"</code> will translate to a literal quotation mark.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dosbox "C:\Users\My User\My Game\"
+</code></pre></div>
 <h2 id="preferred-usage">Preferred usage<a class="headerlink" href="#preferred-usage" title="Permanent link">¶</a></h2>
 <p>While this might be alright for some quick testing, a much better way is to
 organise games into subfolders and put a <code>dosbox.conf</code> <strong>local configuration</strong>
@@ -5126,15 +5173,15 @@ into each which contains your game-specific settings and tweaks.</p>
 <p>Config files can be layered with <a href="#-conf-config_file"><code>--conf</code></a>; later files
 override earlier ones. This way you can inject extra settings into your
 DOSBox session, overriding values from the local config:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>dosbox --conf extra.conf
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>dosbox --conf extra.conf
 </code></pre></div>
 <p>For quick one-off tweaks without editing any files, use
 <a href="#-set-settingvalue"><code>--set</code></a>. If you want to set multiple settings, no
 problem — just provide multiple <code>--set</code> arguments:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dosbox --set machine=ega --set cpu_cycles=5000
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>dosbox --set machine=ega --set cpu_cycles=5000
 </code></pre></div>
 <p>Of course, you can combine these techniques:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>dosbox --conf extra.conf --set cpu_cycles=25000
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>dosbox --conf extra.conf --set cpu_cycles=25000
 </code></pre></div>
 <p>See <a href="../configuration/#config-layering">Config layering</a> for more info.</p>
 <h2 id="discovery">Discovery<a class="headerlink" href="#discovery" title="Permanent link">¶</a></h2>
