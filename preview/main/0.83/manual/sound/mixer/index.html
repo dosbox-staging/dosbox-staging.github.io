@@ -2938,19 +2938,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#negotiate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        negotiate
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#compressor" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4573,19 +4560,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#negotiate" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        negotiate
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#compressor" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4660,8 +4634,8 @@ rates to 48000 Hz anyway.</p>
 emulated, but no audio reaches the host. This can be useful for capturing
 the emulated audio output to a WAV file without hearing it, or for running
 DOSBox on headless systems without audio hardware.</p>
-<p>For buffer tuning (<a href="#blocksize"><code>blocksize</code></a>, <a href="#prebuffer"><code>prebuffer</code></a>,
-<a href="#negotiate"><code>negotiate</code></a>) and troubleshooting audio glitches, see
+<p>For buffer tuning (<a href="#blocksize"><code>blocksize</code></a>, <a href="#prebuffer"><code>prebuffer</code></a>)
+and troubleshooting audio glitches, see
 <a href="#minimising-audio-glitches">Minimising audio glitches</a> below.</p>
 <h2 id="the-mixer-command">The MIXER command<a class="headerlink" href="#the-mixer-command" title="Permanent link">¶</a></h2>
 <p>To manage all these mixer channels, DOSBox provides the handy <code>MIXER</code> command
@@ -4910,22 +4884,17 @@ value, you may hear occasional clicks or pops. This depends on your
 particular hardware, audio driver, and operating system combination.</p>
 <p>Increasing the audio buffer sizes usually helps. The trade-off is higher
 audio latency (a longer delay between an action and its sound). The
-default <code>blocksize</code> is 1024 on Windows and 512 on macOS and Linux
-(in sample frames). The default <code>prebuffer</code> is 25 ms on Windows and 20 ms
-on the other platforms.</p>
+default <a href="#blocksize"><code>blocksize</code></a> is <code>auto</code> which selects a platform dependant default.
+(usually around 512-1024 sample frames). The default <a href="#prebuffer"><code>prebuffer</code></a> is 20ms.</p>
 <p>Try doubling both values as a starting point:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[mixer]</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">blocksize</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">2048</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="na">prebuffer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">50</span>
 </code></pre></div>
-<p>The <code>blocksize</code> should be a power of two: 256, 512, 1024, 2048, 4096, or
-8192. The <code>prebuffer</code> can be any value in milliseconds. Increase
+<p>The <a href="#blocksize"><code>blocksize</code></a> should be a power of two: 256, 512, 1024, 2048, 4096, or
+8192. The <a href="#prebuffer"><code>prebuffer</code></a> can be any value in milliseconds. Increase
 further if glitches persist, but keep in mind that larger buffers mean more
 noticeable input-to-sound delay.</p>
-<p>The <a href="#negotiate"><code>negotiate</code></a> setting lets the audio driver override your
-<a href="#blocksize"><code>blocksize</code></a> with a value it considers optimal. It’s enabled by
-default on macOS and Linux; disable it only if you need to force a specific
-buffer size.</p>
 <p>Also make sure your <a href="../../system/cpu/#cpu_cycles"><code>cpu_cycles</code></a> isn’t set
 higher than the game actually needs — overdoing it wastes host CPU
 resources that could otherwise go towards glitch-free audio emulation.</p>
@@ -4957,28 +4926,16 @@ change it.</p>
 </dl>
 <h5 id="blocksize">blocksize<a class="headerlink" href="#blocksize" title="Permanent link">¶</a></h5>
 <dl>
-<dd>Block size of the host audio device in sample frames (<code>1024</code> on Windows,
-<code>512</code> on other platforms by default). Valid range is 64 to 8192. Should
-be set to power-of-two values (e.g., 256, 512, 1024). Larger values
-might help with sound stuttering but will introduce more latency. Also
-see <a href="#negotiate"><code>negotiate</code></a>.</dd>
+<dd>Block size of the host audio device in sample frames (‘auto’ by default). Valid
+range is 16 to 8192. Should be set to power-of-two values (e.g., 256, 512, 1024,
+etc.) Larger values might help with sound stuttering but will introduce more
+latency.</dd>
 </dl>
 <h5 id="prebuffer">prebuffer<a class="headerlink" href="#prebuffer" title="Permanent link">¶</a></h5>
 <dl>
 <dd>How many milliseconds of sound to render in advance on top of
-<a href="#blocksize"><code>blocksize</code></a> (<code>25</code> on Windows, <code>20</code> on other platforms by
-default). Larger values might help with sound stuttering but will
-introduce more latency.</dd>
-</dl>
-<h5 id="negotiate">negotiate<a class="headerlink" href="#negotiate" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Negotiate a possibly better <a href="#blocksize"><code>blocksize</code></a> setting (<code>off</code> on
-Windows, <code>on</code> on other platforms by default). Enable if you’re not
-getting audio or the sound is stuttering with your <code>blocksize</code> setting.
-Disable to force the manually set <code>blocksize</code> value.</p>
-<p>Possible values: <code>on</code>, <code>off</code></p>
-</dd>
+<a href="#blocksize"><code>blocksize</code></a> (<code>20</code> by default). Larger values might
+help with sound stuttering but will introduce more latency.</dd>
 </dl>
 <h5 id="compressor">compressor<a class="headerlink" href="#compressor" title="Permanent link">¶</a></h5>
 <dl>
