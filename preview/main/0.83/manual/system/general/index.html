@@ -2385,19 +2385,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#vga_render_per_scanline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        vga_render_per_scanline
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#vmem_delay" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4662,19 +4649,6 @@
         
           
 <li class="md-nav__item">
-  <a href="#vga_render_per_scanline" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        vga_render_per_scanline
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
   <a href="#vmem_delay" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4934,10 +4908,6 @@ requires a special halfline VESA mode. See
 <p>VGA text mode normally uses 9-pixel-wide character cells.
 <a href="#vga_8dot_font"><code>vga_8dot_font</code></a> forces 8-pixel-wide characters instead. Very
 few programs need this.</p>
-<p><a href="#vga_render_per_scanline"><code>vga_render_per_scanline</code></a> is enabled by default and
-emulates accurate per-scanline VGA rendering. A few games crash at startup with
-it enabled (Deus, Ishar 3, Robinson’s Requiem, Time Warriors) — disable it on
-a per-game basis for those titles.</p>
 <h2 id="video-memory-delay">Video memory delay<a class="headerlink" href="#video-memory-delay" title="Permanent link">¶</a></h2>
 <p>The <a href="#vmem_delay"><code>vmem_delay</code></a> setting emulates the CPU-throttling effect of
 accessing slow video memory via the ISA bus on old video cards. This can fix
@@ -5162,18 +5132,6 @@ of the <code>vesa_modes</code> setting.</p>
 <dd>
 <p>Use 8-pixel-wide fonts on VGA adapters.</p>
 <p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
-</dd>
-</dl>
-<h5 id="vga_render_per_scanline">vga_render_per_scanline<a class="headerlink" href="#vga_render_per_scanline" title="Permanent link">¶</a></h5>
-<dl>
-<dd>
-<p>Emulate accurate per-scanline VGA rendering. Currently, you need to
-disable this for a few games, otherwise they will crash at startup
-(e.g., <a href="https://www.mobygames.com/game/5001/deus/">Deus</a>,
-<a href="https://www.mobygames.com/game/7702/ishar-3-the-seven-gates-of-infinity/">Ishar 3</a>,
-<a href="https://www.mobygames.com/game/4797/robinsons-requiem/">Robinson’s Requiem</a>,
-<a href="https://www.mobygames.com/game/22845/time-warriors/">Time Warriors</a>).</p>
-<p>Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></p>
 </dd>
 </dl>
 <h5 id="vmem_delay">vmem_delay<a class="headerlink" href="#vmem_delay" title="Permanent link">¶</a></h5>
