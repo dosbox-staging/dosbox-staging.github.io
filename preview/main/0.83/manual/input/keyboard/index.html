@@ -3442,6 +3442,19 @@
       
         
 <li class="md-nav__item">
+  <a href="#dos-keyboard-layout-and-code-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS keyboard layout and code pages
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
   <a href="#configuration-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4145,6 +4158,19 @@
       
         
 <li class="md-nav__item">
+  <a href="#dos-keyboard-layout-and-code-pages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DOS keyboard layout and code pages
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
   <a href="#configuration-settings" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4217,6 +4243,17 @@ game relies on key combinations that collide with OS shortcuts.</p>
 (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f1">F1</kbd></span> on Windows/Linux, <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f1">F1</kbd></span> on macOS). See
 <a href="../../appendices/shortcuts/">Keyboard shortcuts</a> for the full list of
 default bindings.</p>
+<h2 id="dos-keyboard-layout-and-code-pages">DOS keyboard layout and code pages<a class="headerlink" href="#dos-keyboard-layout-and-code-pages" title="Permanent link">¶</a></h2>
+<p>The settings above control how your physical keyboard is captured and mapped
+by DOSBox Staging. The DOS-level keyboard layout — which characters your
+keys actually produce inside DOS programs — is a separate matter; see
+<a href="../../system/localisation/#keyboard_layout">Keyboard layout and code pages</a>.</p>
+<p>At the DOS prompt, use the <code>KEYB</code> command to change the keyboard layout and
+code page together (run <code>KEYB /?</code> for details), or the <code>CHCP</code> command to
+switch just the code page while keeping the current keyboard layout (run
+<code>CHCP /?</code> for details). This is useful when a game assumes a certain code
+page — usually 437 — but you want the keyboard layout unchanged (for example,
+the game <a href="https://www.mobygames.com/game/49191/tommys-manor/">Tommy’s Manor</a>).</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>The keyboard capture setting is configured in the <code>[sdl]</code> configuration
 section.</p>
