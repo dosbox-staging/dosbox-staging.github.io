@@ -1110,6 +1110,19 @@
         
           
 <li class="md-nav__item">
+  <a href="#authentic-gravis-ultrasound-output-volume-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentic Gravis UltraSound output volume emulation
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#innovation-ssi-2001-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1384,19 +1397,6 @@
     <span class="md-ellipsis">
       
         New DOS screen font (CPI) loader
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#high-ascii-character-support-in-filenames" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        High-ASCII character support in filenames
       
     </span>
   </a>
@@ -2391,7 +2391,7 @@
   <span class="md-ellipsis">
     
   
-    Foreword
+    Introduction
   
 
     
@@ -2440,14 +2440,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../0.83/getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../0.83/getting-started/customising-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enhancing Prince of Persia
+    Customising Prince of Persia
   
 
     
@@ -3140,7 +3140,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -4399,14 +4399,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../0.83/manual/sound/sound-devices/sound-canvas/" class="md-nav__link">
+      <a href="../../../0.83/manual/sound/sound-devices/roland-sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -5770,6 +5770,19 @@
         
           
 <li class="md-nav__item">
+  <a href="#authentic-gravis-ultrasound-output-volume-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentic Gravis UltraSound output volume emulation
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
   <a href="#innovation-ssi-2001-changes" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -6044,19 +6057,6 @@
     <span class="md-ellipsis">
       
         New DOS screen font (CPI) loader
-      
-    </span>
-  </a>
-  
-</li>
-
-        
-          
-<li class="md-nav__item">
-  <a href="#high-ascii-character-support-in-filenames" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        High-ASCII character support in filenames
       
     </span>
   </a>
@@ -6523,11 +6523,11 @@ non-portable mode locations for each platform:</p>
 </tr>
 <tr>
 <td><strong>macOS</strong></td>
-<td><code>~/Library/Preferences/DOSBox/dosbox-staging.conf</code></td>
+<td><code>/Users/&lt;USERNAME&gt;/Library/Preferences/DOSBox/dosbox-staging.conf</code></td>
 </tr>
 <tr>
 <td><strong>Linux</strong></td>
-<td><code>~/.config/dosbox/dosbox-staging.conf</code></td>
+<td><code>$HOME/.config/dosbox/dosbox-staging.conf</code></td>
 </tr>
 </tbody>
 </table>
@@ -7711,7 +7711,7 @@ into the DOSBox Staging <code>soundcanvas-roms</code> folder.</p>
 </tr>
 <tr>
 <td><strong>Linux</strong></td>
-<td><code>~/.config/dosbox/soundcanvas-roms/</code></td>
+<td><code>$HOME/.config/dosbox/soundcanvas-roms/</code></td>
 </tr>
 </tbody>
 </table>
@@ -7907,6 +7907,19 @@ we can send the portamento messages again, and they will sound correct.</p>
   a warning and are mapped to <code>mididevice = port</code>.</p>
 </li>
 </ul>
+<h3 id="authentic-gravis-ultrasound-output-volume-emulation">Authentic Gravis UltraSound output volume emulation<a class="headerlink" href="#authentic-gravis-ultrasound-output-volume-emulation" title="Permanent link">¶</a></h3>
+<p>Previously, the Gravis UltraSound’s master output volume was scaled down as
+more hardware channels became active, to reduce the risk of clipping. This
+wasn’t accurate to real hardware: the GUS simply sums all mixer channel
+outputs into a 16-bit accumulator, and clipping prevention is left to the
+composer or programmer — some even drove output into clipping deliberately
+for a harder sound as an artistic choice. Also note that minor clipping is
+often barely audible.</p>
+<p>We’ve removed this scaling, making the output louder and more consistent
+across programs. Leave the <code>GUS</code> mixer channel volume at 100 for authentic
+clipping behavior, and turn down the <code>MASTER</code> channel if it’s too loud.
+Alternatively, lower the <code>GUS</code> channel’s volume for more headroom, though this
+might yield less authentic results — the choice is yours.</p>
 <h3 id="innovation-ssi-2001-changes">Innovation SSI-2001 changes<a class="headerlink" href="#innovation-ssi-2001-changes" title="Permanent link">¶</a></h3>
 <h4 id="simplified-settings">Simplified settings<a class="headerlink" href="#simplified-settings" title="Permanent link">¶</a></h4>
 <p>The Innovation SSI-2001’s configuration has been simplified to the following
@@ -7979,10 +7992,10 @@ and <a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates!</a
 <details class="note">
 <summary>Full PR list of sound-related changes</summary>
 <ul>
+<li>Add <code>soundcanvas_rom_dir</code> config setting and environment variable helpers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4572" title="GitHub Issue dosbox-staging/dosbox-staging #4572">#4572</a>)</li>
 <li>Add bounds checking to SoundBlaster’s read_dma_16bit() and read_dma_8bit() (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4188" title="GitHub Issue dosbox-staging/dosbox-staging #4188">#4188</a>)</li>
 <li>Add denoiser to filter out residual OPL and Sound Canvas mk1 noise (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4230" title="GitHub Issue dosbox-staging/dosbox-staging #4230">#4230</a>)</li>
 <li>Add seek-only mode for disk noise emulation, fix hdd noises missing i… (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4486" title="GitHub Issue dosbox-staging/dosbox-staging #4486">#4486</a>)</li>
-<li>Add <code>soundcanvas_rom_dir</code> config setting and environment variable helpers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4572" title="GitHub Issue dosbox-staging/dosbox-staging #4572">#4572</a>)</li>
 <li>Add support for Microprose’s ‘The Entertainer’ variant of the Innovation SSI-2001 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4857" title="GitHub Issue dosbox-staging/dosbox-staging #4857">#4857</a>)</li>
 <li>Added disk noise emulation and configurable IO throttling (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4325" title="GitHub Issue dosbox-staging/dosbox-staging #4325">#4325</a>)</li>
 <li>Allow changing the current FluidSynth <code>soundfont</code> config and the MT-32 <code>model</code> on-the-fly (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3982" title="GitHub Issue dosbox-staging/dosbox-staging #3982">#3982</a>)</li>
@@ -7994,18 +8007,18 @@ and <a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates!</a
 <li>Don’t let the mixer request frames for SoundBlaster in fast-forward mode (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4202" title="GitHub Issue dosbox-staging/dosbox-staging #4202">#4202</a>)</li>
 <li>Don’t save MP3 seek table to fastseek.lut file (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4311" title="GitHub Issue dosbox-staging/dosbox-staging #4311">#4311</a>)</li>
 <li>Dynamically load fluidsynth library at runtime (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4222" title="GitHub Issue dosbox-staging/dosbox-staging #4222">#4222</a>)</li>
+<li>Fix GUS Mix Control Register not getting reset to the correct value (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4271" title="GitHub Issue dosbox-staging/dosbox-staging #4271">#4271</a>)</li>
 <li>Fix GUS hang in KQ4 enhanced (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4787" title="GitHub Issue dosbox-staging/dosbox-staging #4787">#4787</a>)</li>
+<li>Fix HDD disk noises being played for floppies v2 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4661" title="GitHub Issue dosbox-staging/dosbox-staging #4661">#4661</a>)</li>
+<li>Fix SoundBlaster DMA regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4084" title="GitHub Issue dosbox-staging/dosbox-staging #4084">#4084</a>)</li>
+<li>Fix SoundBlaster Notify Unlock (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4169" title="GitHub Issue dosbox-staging/dosbox-staging #4169">#4169</a>)</li>
 <li>Fix clang tautological compare warning and related undefined behaviour in stb_vorbis (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4571" title="GitHub Issue dosbox-staging/dosbox-staging #4571">#4571</a>)</li>
 <li>Fix crash if opening the <code>soundfont_dir</code> directory failed (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4106" title="GitHub Issue dosbox-staging/dosbox-staging #4106">#4106</a>)</li>
 <li>Fix deadlock on exit while LPT DAC is running (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4063" title="GitHub Issue dosbox-staging/dosbox-staging #4063">#4063</a>)</li>
 <li>Fix edge case where CDROM mixer hangs at the end of a track (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4302" title="GitHub Issue dosbox-staging/dosbox-staging #4302">#4302</a>)</li>
-<li>Fix GUS Mix Control Register not getting reset to the correct value (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4271" title="GitHub Issue dosbox-staging/dosbox-staging #4271">#4271</a>)</li>
-<li>Fix HDD disk noises being played for floppies v2 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4661" title="GitHub Issue dosbox-staging/dosbox-staging #4661">#4661</a>)</li>
 <li>Fix incorrect check cast in IMFC (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4226" title="GitHub Issue dosbox-staging/dosbox-staging #4226">#4226</a>)</li>
 <li>Fix init order &amp; no sound regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4663" title="GitHub Issue dosbox-staging/dosbox-staging #4663">#4663</a>)</li>
 <li>Fix recovery from fast-forward when the Sound Canvas can’t keep up (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4210" title="GitHub Issue dosbox-staging/dosbox-staging #4210">#4210</a>)</li>
-<li>Fix SoundBlaster DMA regression (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4084" title="GitHub Issue dosbox-staging/dosbox-staging #4084">#4084</a>)</li>
-<li>Fix SoundBlaster Notify Unlock (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4169" title="GitHub Issue dosbox-staging/dosbox-staging #4169">#4169</a>)</li>
 <li>Fixed reversed audio channels for SoundBlaster Pro (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4412" title="GitHub Issue dosbox-staging/dosbox-staging #4412">#4412</a>)</li>
 <li>FluidSynth configuration improvements (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4047" title="GitHub Issue dosbox-staging/dosbox-staging #4047">#4047</a>)</li>
 <li>Generic Sound Canvas emulation support (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4090" title="GitHub Issue dosbox-staging/dosbox-staging #4090">#4090</a>)</li>
@@ -8022,12 +8035,13 @@ and <a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates!</a
 <li>Restore deprecated mixer channel name aliases (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4400" title="GitHub Issue dosbox-staging/dosbox-staging #4400">#4400</a>)</li>
 <li>Simplify <code>mididevice</code> and <code>midiconfig</code> settings (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4040" title="GitHub Issue dosbox-staging/dosbox-staging #4040">#4040</a>)</li>
 <li>Sort SoundFonts in <code>MIXER /LISTMIDI</code> output &amp; fix current SF2 matching (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3981" title="GitHub Issue dosbox-staging/dosbox-staging #3981">#3981</a>)</li>
-<li><code>soundcanvas_model</code> setting description fix. (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4298" title="GitHub Issue dosbox-staging/dosbox-staging #4298">#4298</a>)</li>
 <li>Standardize the Sound Blaster against other audio devices (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/3875" title="GitHub Issue dosbox-staging/dosbox-staging #3875">#3875</a>)</li>
+<li><code>soundcanvas_model</code> setting description fix. (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4298" title="GitHub Issue dosbox-staging/dosbox-staging #4298">#4298</a>)</li>
 <li>Tone down FluidSynth logging (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4569" title="GitHub Issue dosbox-staging/dosbox-staging #4569">#4569</a>)</li>
-<li>Upgrade external vcpkg dependencies to v0.83.0-1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4348" title="GitHub Issue dosbox-staging/dosbox-staging #4348">#4348</a>)</li>
 <li>Upgrade Nuked-SC55-CLAP to v0.8.0 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4442" title="GitHub Issue dosbox-staging/dosbox-staging #4442">#4442</a>)</li>
+<li>Upgrade external vcpkg dependencies to v0.83.0-1 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4348" title="GitHub Issue dosbox-staging/dosbox-staging #4348">#4348</a>)</li>
 <li>Upgrade the Nuked-SC55-CLAP plugin to v0.11.0 (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4748" title="GitHub Issue dosbox-staging/dosbox-staging #4748">#4748</a>)</li>
+<li>Use default unity gain for GUS audio samples (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/5012" title="GitHub Issue dosbox-staging/dosbox-staging #5012">#5012</a>)</li>
 </ul>
 </details>
 <h2 id="input">Input<a class="headerlink" href="#input" title="Permanent link">¶</a></h2>
@@ -8324,21 +8338,6 @@ error messages.</p>
   uppercase character with a national variant) are now patched when loading.</p>
 </li>
 </ul>
-<h3 id="high-ascii-character-support-in-filenames">High-ASCII character support in filenames<a class="headerlink" href="#high-ascii-character-support-in-filenames" title="Permanent link">¶</a></h3>
-<p>Some old DOS filenames use characters outside the normal ASCII range (codes
-127–255) — things like symbols, Greek letters, or box-drawing characters.
-You’ll run into these in some 1990s game installers and demoscene ZIPs.
-Earlier versions of DOSBox Staging couldn’t handle them and would error out.
-That’s fixed now.</p>
-<p>We convert these characters to UTF-8 when saving files to your host system,
-assuming the standard DOS codepage (437, English). As a result, old demoscene
-ZIPs with these filenames — which used to fail to unpack — now work.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-</div>
-<p>This isn’t a “proper” localisation or internationalisation feature. It’s a
-   simple mechanism to support the rare programs that assume codepage 437 and
-   abuse DOS filename conventions in creative ways.</p>
 <h3 id="other-dos-integration-changes">Other DOS integration changes<a class="headerlink" href="#other-dos-integration-changes" title="Permanent link">¶</a></h3>
 <ul>
 <li>
@@ -8367,7 +8366,6 @@ ZIPs with these filenames — which used to fail to unpack — now work.</p>
 <li>Automount CD images from drives/[x] folders (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4379" title="GitHub Issue dosbox-staging/dosbox-staging #4379">#4379</a>)</li>
 <li>Automount floppy images from <code>drives/a</code> and <code>drives/b</code> folders (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4788" title="GitHub Issue dosbox-staging/dosbox-staging #4788">#4788</a>)</li>
 <li>Cleanup AUTOEXEC.BAT regeneration (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4362" title="GitHub Issue dosbox-staging/dosbox-staging #4362">#4362</a>)</li>
-<li>Convert filenames to UTF-8 on host and Codepage 437 in DOS (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4966" title="GitHub Issue dosbox-staging/dosbox-staging #4966">#4966</a>)</li>
 <li>Correct EMS Set Handle Name to read from correct registers (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4496" title="GitHub Issue dosbox-staging/dosbox-staging #4496">#4496</a>)</li>
 <li>Default MediaId to HardDisk like in original codebase (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4932" title="GitHub Issue dosbox-staging/dosbox-staging #4932">#4932</a>)</li>
 <li>Filesystem fixes (<a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/4645" title="GitHub Issue dosbox-staging/dosbox-staging #4645">#4645</a>)</li>

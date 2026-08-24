@@ -24,7 +24,7 @@
     
     
       
-        <title>Capture - DOSBox Staging</title>
+        <title>Audio &amp; video captures - DOSBox Staging</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#capture" class="md-skip">
+        <a href="#audio-video-captures" class="md-skip">
           Skip to content
         </a>
       
@@ -1336,7 +1336,7 @@
   <span class="md-ellipsis">
     
   
-    Foreword
+    Introduction
   
 
     
@@ -1385,14 +1385,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../getting-started/customising-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enhancing Prince of Persia
+    Customising Prince of Persia
   
 
     
@@ -2101,7 +2101,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -2119,7 +2119,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -2154,6 +2154,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Screenshots">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#aspect-ratio-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect ratio correction
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
 </li>
 
       
@@ -2176,6 +2195,19 @@
     <span class="md-ellipsis">
       
         Audio capture
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shortcuts
       
     </span>
   </a>
@@ -3482,14 +3514,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/sound-canvas/" class="md-nav__link">
+      <a href="../../sound/sound-devices/roland-sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -4464,6 +4496,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Screenshots">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#aspect-ratio-correction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aspect ratio correction
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
 </li>
 
       
@@ -4486,6 +4537,19 @@
     <span class="md-ellipsis">
       
         Audio capture
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shortcuts
       
     </span>
   </a>
@@ -4555,7 +4619,7 @@
 
 
 
-<h1 id="capture">Capture<a class="headerlink" href="#capture" title="Permanent link">¶</a></h1>
+<h1 id="audio-video-captures">Audio &amp; video captures<a class="headerlink" href="#audio-video-captures" title="Permanent link">¶</a></h1>
 <p>DOSBox Staging can capture screenshots, record audio, and record video
 directly from the emulator. By default, all captures are saved to the
 <code>capture</code> folder in the current <a href="../starting/#the-working-directory">working
@@ -4563,18 +4627,104 @@ directory</a>. You can change this with the
 <a href="#capture_dir"><code>capture_dir</code></a> setting.</p>
 <h2 id="screenshots">Screenshots<a class="headerlink" href="#screenshots" title="Permanent link">¶</a></h2>
 <p>Screenshots can be saved in multiple formats: <strong>upscaled</strong> (sharp pixels,
-aspect-corrected), <strong>rendered</strong> (post-shader, exactly what you see on screen),
-or <strong>raw</strong> (the framebuffer’s contents with 1:1 pixel aspect ratio).</p>
-<p>Use <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> to take a screenshot using the default format(s)
-configured by the
-<a href="#default_image_capture_formats"><code>default_image_capture_formats</code></a> setting.</p>
+aspect-corrected), <strong>rendered</strong> (post-shader, exactly what you see on
+screen), or <strong>raw</strong> (the framebuffer’s contents with 1:1 pixel aspect
+ratio).</p>
+<p>Use <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f5">F5</kbd></span> to take a screenshot using the default
+format(s) configured by the
+<a href="#default_image_capture_formats"><code>default_image_capture_formats</code></a> setting.
+Keybindings for taking single screenshots in a specific format are also
+available.</p>
+<p>Screenshots are captured in the background on separate threads, so taking
+one doesn’t pause emulation or cause audio glitches, even if you spam the
+screenshot hotkey or capture at 4K in <code>rendered</code> mode.</p>
+<h3 id="aspect-ratio-correction">Aspect ratio correction<a class="headerlink" href="#aspect-ratio-correction" title="Permanent link">¶</a></h3>
+<p>By default, screenshots are captured in the same aspect ratio you see on
+screen (the <code>upscaled</code> format), not the raw, non-corrected image. This
+matters because most 320×200 and similar low-resolution DOS games need
+aspect ratio correction to look right; only a small fraction of games
+actually want square pixels. DOSBox Staging performs aspect ratio correction
+out of the box, and aspect-ratio-correct screenshots follow the same logic,
+rather than reproducing the square-pixel captures common on emulators (and,
+as a result, across many DOS game videos and screenshots online).</p>
+<p>In <code>upscaled</code> mode, the image is integer or bilinear-sharp upscaled to
+around 1200 pixels of vertical resolution. For example:</p>
+<ul>
+<li><strong>320×200</strong> content is upscaled to 1600×1200</li>
+<li><strong>640×480</strong> content is upscaled to 1920×1440</li>
+<li><strong>640×350</strong> content is upscaled to 1400×1050 (3× vertical,
+  2.1875× horizontal scaling)</li>
+</ul>
+<p>Upscaled captures are only about 30% larger than raw screenshots on
+average.</p>
+<p><code>raw</code> captures always contain the actual emulated DOS framebuffer image at its
+native resolution (e.g., 320×200 modes are captured as 320×200 PNG
+files), regardless of other settings. The one exception is
+<a href="../../graphics/composite-video/">composite</a> CGA, PCjr, and Tandy modes, which
+are internally rendered width-doubled to leave enough horizontal resolution
+for composite artifacts; raw captures of these modes preserve that
+width-doubling (e.g., 640×200 composite CGA is captured as a
+1280×200 PNG).</p>
 <h2 id="video-capture">Video capture<a class="headerlink" href="#video-capture" title="Permanent link">¶</a></h2>
-<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f7">F7</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f7">F7</kbd></span> to start and stop video recording. The video
-is captured as a lossless AVI file.</p>
+<p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f7">F7</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f7">F7</kbd></span> to start and stop video recording. Video is
+captured as an AVI file using the lossless ZMBV codec. Like <code>raw</code>
+screenshots, video capture records the raw emulated framebuffer contents
+without any CRT shader applied, though deinterlacing is applied. Video
+capture uses the optimized zlib-ng library, which is several times faster
+than plain zlib, so you can capture at higher resolutions without dropped
+frames or glitches, even on older CPUs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If your host CPU can’t keep up with recording in realtime, MIDI output may
+need to be timestretched a little, and other audio may need to be
+stretched too, to keep it in sync with the video. This can introduce
+audible artifacts. Enabling <a href="../../system/cpu/#cpu-throttling">CPU
+throttling</a> is one way to reduce this,
+but if it keeps happening, the real fix is a faster machine.</p>
+</div>
 <h2 id="audio-capture">Audio capture<a class="headerlink" href="#audio-capture" title="Permanent link">¶</a></h2>
 <p>Press <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f6">F6</kbd></span> / <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f6">F6</kbd></span> to start and stop audio recording. Raw MIDI
 and OPL output can also be captured for those who want to tinker with game
 music outside the emulator.</p>
+<h2 id="shortcuts">Shortcuts<a class="headerlink" href="#shortcuts" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Windows / Linux</th>
+<th>macOS</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f5">F5</kbd></span></td>
+<td><span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f5">F5</kbd></span></td>
+<td>Take screenshot (default format)</td>
+</tr>
+<tr>
+<td><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f5">F5</kbd></span></td>
+<td><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f5">F5</kbd></span></td>
+<td>Take rendered screenshot</td>
+</tr>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f6">F6</kbd></span></td>
+<td><span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f6">F6</kbd></span></td>
+<td>Start/stop audio recording</td>
+</tr>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f6">F6</kbd></span></td>
+<td><span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-f6">F6</kbd></span></td>
+<td>Start/stop MIDI recording</td>
+</tr>
+<tr>
+<td><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f7">F7</kbd></span></td>
+<td><span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f7">F7</kbd></span></td>
+<td>Start/stop video recording</td>
+</tr>
+</tbody>
+</table>
+<p>See the <a href="../../appendices/shortcuts/">Keyboard shortcuts</a> appendix for the full
+list of shortcuts.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Capture settings are to be configured in the <code>[capture]</code> section.</p>
 <h5 id="capture_dir">capture_dir<a class="headerlink" href="#capture_dir" title="Permanent link">¶</a></h5>
@@ -4593,14 +4743,26 @@ Keybindings for taking single screenshots in specific formats are also
 available.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>upscaled</code> <em class="default">default</em> – The image is bilinear-sharp
-  upscaled and the correct aspect ratio is maintained, depending on the
-  <code>aspect</code> setting. The vertical scaling factor is always an integer.</li>
-<li><code>rendered</code> – The post-rendered, post-shader image shown on the screen
-  is captured. Filenames end with <code>-rendered</code>.</li>
-<li><code>raw</code> – The contents of the raw framebuffer is captured (always results
-  in square pixels). Filenames end with <code>-raw</code>.</li>
+<li>
+<p><code>upscaled</code> <em class="default">default</em> – The image is captured in the same
+  aspect ratio you see on screen. It’s integer or bilinear-sharp
+  upscaled to around 1200 pixels of vertical resolution, and always uses
+  sharp pixels regardless of the shader in use.</p>
+</li>
+<li>
+<p><code>rendered</code> – The post-rendered, post-shader image is captured – an
+  exact pixel-by-pixel replica of what you see on screen. Filenames end
+  with <code>-rendered</code>.</p>
+</li>
+<li>
+<p><code>raw</code> – The contents of the raw framebuffer are captured (always
+  results in square pixels). Filenames end with <code>-raw</code>.</p>
+</li>
 </ul>
+<p>Example, capturing both raw and upscaled images on every screenshot:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[capture]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">default_image_capture_formats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">upscaled raw</span>
+</code></pre></div>
 </dd>
 </dl>
 

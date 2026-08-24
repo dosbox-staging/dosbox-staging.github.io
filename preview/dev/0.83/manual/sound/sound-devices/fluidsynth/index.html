@@ -10,7 +10,7 @@
       
       
       
-        <link rel="prev" href="../sound-canvas/">
+        <link rel="prev" href="../roland-sound-canvas/">
       
       
         <link rel="next" href="../gravis-ultrasound/">
@@ -1336,7 +1336,7 @@
   <span class="md-ellipsis">
     
   
-    Foreword
+    Introduction
   
 
     
@@ -1385,14 +1385,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../../getting-started/customising-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enhancing Prince of Persia
+    Customising Prince of Persia
   
 
     
@@ -2090,7 +2090,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -3353,14 +3353,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-canvas/" class="md-nav__link">
+      <a href="../roland-sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -4714,18 +4714,42 @@
 
 
 <h1 id="fluidsynth">FluidSynth<a class="headerlink" href="#fluidsynth" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">New to MIDI in DOS games?</p>
+<p>If you’re not familiar with how MIDI works in DOS games, read the overview
+in the <a href="../../midi/">MIDI</a> section first — it explains how DOS games use
+MIDI and the difference between the <a href="../roland-mt-32/">Roland MT-32</a> family
+of devices and <a href="../roland-sound-canvas/">Roland Sound Canvas / General
+MIDI</a>.</p>
+</div>
 <p><strong>FluidSynth</strong> is a built-in software MIDI synthesiser that uses <strong>SoundFont</strong>
-(<code>.sf2</code>) sample banks to generate audio. Unlike <a href="../sound-canvas/">Sound Canvas</a>
-emulation, it does not attempt to replicate any specific hardware device —
-instead, the character of the music depends entirely on which SoundFont you
-load. This makes it very flexible but also means results vary: a good SoundFont
-can sound close to an SC-55 on many games, while a poor one can sound
-noticeably wrong.</p>
-<p>FluidSynth is lighter on CPU than Sound Canvas emulation and is a good
-option when you don’t have SC-55 ROMs or when you prefer a particular
-SoundFont’s character.</p>
-<p>For background on the General MIDI standard and help deciding which MIDI
-device to use for a particular game, see the <a href="../../midi/#which-midi-device-should-i-use">MIDI overview</a>.</p>
+(<code>.sf2</code>) sample banks to generate audio. It can play <strong>General MIDI (GM)</strong>
+music, but it does not emulate any particular MIDI sound module.</p>
+<p>This distinction is important: General MIDI is a <strong>standard</strong>, not a sound
+module. The <a href="../roland-sound-canvas/">Roland Sound Canvas</a>, for example, is a
+specific MIDI sound module that supports General MIDI. Its particular samples,
+synthesis, and effects give it a characteristic sound. FluidSynth instead
+generates its sounds from whichever SoundFont you select, so two SoundFonts
+can produce noticeably different results when playing back the same General
+MIDI music.</p>
+<p>This makes FluidSynth very flexible, but it also means that it does not
+reproduce the sound of a particular DOS-era MIDI module. If you want the
+authentic sound of the Roland SC-55 (the MIDI module most game composers
+used), use <a href="../roland-sound-canvas/">Sound Canvas emulation</a> instead.</p>
+<p>FluidSynth is lighter on CPU than Sound Canvas emulation and is a good option
+when you don’t have SC-55 ROMs or when you prefer a particular SoundFont’s
+character.</p>
+<p>For more background on MIDI and General MIDI, and for help deciding which MIDI
+device to use for a particular game, see the <a href="../../midi/">MIDI</a> section.</p>
+<div class="admonition warning">
+<p class="admonition-title">Roland MT-32 is not General MIDI</p>
+<p>Don’t confuse the Sound Canvas with the <a href="../roland-mt-32/">Roland MT-32</a>.
+Although both are MIDI sound modules, the MT-32 is a programmable synthesiser
+with a very different sound engine, while the Sound Canvas supports
+General MIDI. Music written for one often sounds completely wrong on the
+other. See <a href="../../midi/#mt-32-vs-general-midi">MT-32 vs General MIDI</a> for
+details.</p>
+</div>
 <h2 id="soundfont-setup">SoundFont setup<a class="headerlink" href="#soundfont-setup" title="Permanent link">¶</a></h2>
 <p>Download a SoundFont file and place it in the <code>soundfonts</code> folder inside
 your DOSBox configuration folder:</p>
@@ -4744,11 +4768,11 @@ your DOSBox configuration folder:</p>
 </tr>
 <tr>
 <td>macOS</td>
-<td><code>~/Library/Preferences/DOSBox/soundfonts/</code></td>
+<td><code>/Users/&lt;USERNAME&gt;/Library/Preferences/DOSBox/soundfonts/</code></td>
 </tr>
 <tr>
 <td>Linux</td>
-<td><code>~/.config/dosbox/soundfonts/</code></td>
+<td><code>$HOME/.config/dosbox/soundfonts/</code></td>
 </tr>
 </tbody>
 </table>
@@ -4792,37 +4816,41 @@ triggers a SoundFont reload.</p>
 <p>For a hands-on walkthrough of setting up FluidSynth with a specific game,
 see the <a href="../../../../getting-started/star-wars-dark-forces/#fluidsynth">Star Wars: Dark
 Forces</a>
-chapter of the getting started guide.</p>
+chapter of the Getting Started guide.</p>
 <h2 id="soundfont-locations">SoundFont locations<a class="headerlink" href="#soundfont-locations" title="Permanent link">¶</a></h2>
 <p>If <a href="#soundfont_dir"><code>soundfont_dir</code></a> is set, DOSBox Staging searches that
 folder first. Otherwise, it searches the following folders for SoundFont files
 (in order):</p>
 <p><strong>Windows</strong></p>
+<div class="compact">
 <ol>
-<li><code>%LOCALAPPDATA%\DOSBox\soundfonts\</code></li>
+<li><code>C:\Users\&lt;USERNAME&gt;\AppData\Local\DOSBox\soundfonts\</code></li>
 <li><code>C:\soundfonts\</code></li>
 </ol>
+</div>
 <p><strong>macOS</strong></p>
+<div class="compact">
 <ol>
-<li><code>~/Library/Preferences/DOSBox/soundfonts/</code></li>
-<li><code>~/Library/Audio/Sounds/Banks/</code></li>
+<li><code>/Users/&lt;USERNAME&gt;/Library/Preferences/DOSBox/soundfonts/</code></li>
+<li><code>/Users/&lt;USERNAME&gt;/Library/Audio/Sounds/Banks/</code></li>
 </ol>
+</div>
 <p><strong>Linux</strong></p>
 <ol>
-<li><code>$XDG_DATA_HOME/dosbox/soundfonts/</code> (defaults to <code>~/.local/share/dosbox/soundfonts/</code>)</li>
-<li><code>$XDG_DATA_HOME/soundfonts/</code> (defaults to <code>~/.local/share/soundfonts/</code>)</li>
-<li><code>$XDG_DATA_HOME/sounds/sf2/</code> (defaults to <code>~/.local/share/sounds/sf2/</code>)</li>
+<li><code>$XDG_DATA_HOME/dosbox/soundfonts/</code> (defaults to <code>$HOME/.local/share/dosbox/soundfonts/</code>)</li>
+<li><code>$XDG_DATA_HOME/soundfonts/</code> (defaults to <code>$HOME/.local/share/soundfonts/</code>)</li>
+<li><code>$XDG_DATA_HOME/sounds/sf2/</code> (defaults to <code>$HOME/.local/share/sounds/sf2/</code>)</li>
 <li><code>$XDG_DATA_DIRS/soundfonts/</code> (defaults to <code>/usr/local/share/soundfonts/</code> and <code>/usr/share/soundfonts/</code>)</li>
 <li><code>$XDG_DATA_DIRS/sounds/sf2/</code> (defaults to <code>/usr/local/share/sounds/sf2/</code> and <code>/usr/share/sounds/sf2/</code>)</li>
-<li><code>$XDG_CONFIG_HOME/dosbox/soundfonts/</code> (defaults to <code>~/.config/dosbox/soundfonts/</code>)</li>
+<li><code>$XDG_CONFIG_HOME/dosbox/soundfonts/</code> (defaults to <code>$HOME/.config/dosbox/soundfonts/</code>)</li>
 </ol>
 <h2 id="reverb-and-chorus">Reverb and chorus<a class="headerlink" href="#reverb-and-chorus" title="Permanent link">¶</a></h2>
 <p>The <a href="#fsynth_reverb"><code>fsynth_reverb</code></a> and <a href="#fsynth_chorus"><code>fsynth_chorus</code></a>
-settings apply reverb and chorus effects <em>within the FluidSynth synthesiser
-engine itself</em>, before the audio reaches the DOSBox mixer. This is separate
-from the mixer-level <a href="../../mixer-effects/#reverb"><code>reverb</code></a> and
-<a href="../../mixer-effects/#chorus"><code>chorus</code></a> effects, which are applied after
-mixing to all audio channels. The FluidSynth effects only affect MIDI
+settings apply reverb and chorus effects <em>within</em> the FluidSynth synthesiser
+engine, <em>before</em> the audio reaches the DOSBox mixer. This is separate from the
+mixer-level <a href="../../mixer-effects/#reverb"><code>reverb</code></a> and
+<a href="../../mixer-effects/#chorus"><code>chorus</code></a> effects, which are applied to the
+output of the emulated sound devices. So these effects only affect MIDI
 playback through FluidSynth.</p>
 <p>The default <code>auto</code> mode applies optimised reverb and chorus settings for the
 following SoundFonts (detected by filename or embedded metadata):</p>
@@ -4975,7 +5003,7 @@ effects at the same time.</p>
       <!-- Link to previous page -->
       
         
-        <a href="../sound-canvas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Sound Canvas" rel="prev">
+        <a href="../roland-sound-canvas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Roland Sound Canvas" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
           </div>
@@ -4984,7 +5012,7 @@ effects at the same time.</p>
               <span class="md-footer__direction">
                 Previous
               </span>
-              Sound Canvas
+              Roland Sound Canvas
             </div>
           </div>
         </a>

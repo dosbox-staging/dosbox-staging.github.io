@@ -1336,7 +1336,7 @@
   <span class="md-ellipsis">
     
   
-    Foreword
+    Introduction
   
 
     
@@ -1385,14 +1385,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../getting-started/customising-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enhancing Prince of Persia
+    Customising Prince of Persia
   
 
     
@@ -2090,7 +2090,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -3689,14 +3689,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../sound/sound-devices/sound-canvas/" class="md-nav__link">
+      <a href="../../sound/sound-devices/roland-sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -4982,7 +4982,7 @@ mid-1980s games written for <a href="#cga">CGA</a>, <a href="#tandy-1000">Tandy<
 targeting specific <a href="#vga-and-svga">SVGA chipsets</a>.</p>
 <p>For an overview of which graphics standard was typical in each era, see
 <a href="../../introduction/dos-eras/">The DOS eras</a>. The
-<a href="../../../getting-started/enhancing-prince-of-persia/#graphics-options">Getting Started guide</a>
+<a href="../../../getting-started/customising-prince-of-persia/#graphics-options">Getting Started guide</a>
 walks through switching between adapters for a specific game.</p>
 <h2 id="hercules-graphics-card">Hercules Graphics Card<a class="headerlink" href="#hercules-graphics-card" title="Permanent link">¶</a></h2>
 <p><code>machine = hercules</code></p>
@@ -5426,21 +5426,22 @@ selected video adapter), or a specific size in MB or KB.</p>
 <p><code>compatible</code> <em class="default">default</em> – Only the most compatible VESA
   modes for the configured video memory size. Recommended with 4 or 8 MB
   of video memory (<a href="#vmemsize"><code>vmemsize</code></a>) for the widest compatibility
-  with games. 320x200 high colour modes are excluded as they were not
-  properly supported until the late ’90s. The 256-colour linear
-  framebuffer 320x240, 400x300, and 512x384 modes are also excluded as
-  they cause timing problems in Build Engine games.</p>
+  with games. 320×200 high colour modes are excluded as they were
+  not properly supported until the late ’90s. The 256-colour linear
+  framebuffer 320×240, 400×300, and 512×384 modes are
+  also excluded as they cause timing problems in Build Engine games.</p>
 </li>
 <li>
 <p><code>halfline</code> – Same as <code>compatible</code>, but the 120h VESA mode is replaced
-  with a special halfline mode used by <a href="https://www.mobygames.com/game/1396/extreme-assault/">Extreme Assault</a>. Use only if
-  needed.</p>
+  with a special halfline mode used by <a href="https://www.mobygames.com/game/1396/extreme-assault/">Extreme
+  Assault</a>. Use only
+  if needed.</p>
 </li>
 <li>
 <p><code>all</code> – All modes are available, including extra DOSBox-specific VESA
   modes. Use 8 MB of video memory for the best results. Some games
   misbehave in the presence of certain VESA modes; try <code>compatible</code> mode
-  if this happens. The 320x200 high colour modes available in this mode
+  if this happens. The 320×200 high colour modes available in this mode
   are often required by late ’90s demoscene productions.</p>
 </li>
 </ul>

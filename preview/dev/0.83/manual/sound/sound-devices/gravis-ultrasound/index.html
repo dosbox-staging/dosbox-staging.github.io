@@ -1336,7 +1336,7 @@
   <span class="md-ellipsis">
     
   
-    Foreword
+    Introduction
   
 
     
@@ -1385,14 +1385,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../../getting-started/customising-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enhancing Prince of Persia
+    Customising Prince of Persia
   
 
     
@@ -2090,7 +2090,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -3353,14 +3353,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../sound-canvas/" class="md-nav__link">
+      <a href="../roland-sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -3619,6 +3619,25 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="GUS-only configuration">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#authentic-clipping-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentic clipping emulation
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
   
 </li>
 
@@ -4789,6 +4808,25 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="GUS-only configuration">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#authentic-clipping-emulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentic clipping emulation
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
 </li>
 
       
@@ -5001,11 +5039,11 @@ patch files must be placed in a <code>MIDI</code> subdirectory under
 </details>
 <h3 id="ultramid">UltraMID<a class="headerlink" href="#ultramid" title="Permanent link">¶</a></h3>
 <p>These games have no GUS-specific code at all — they send standard MIDI
-commands as if talking to a <a href="../roland-mt-32/">Roland MT-32</a> or <a href="../../midi/#the-general-midi-standard">General
-MIDI</a> device. The <code>ULTRAMID.EXE</code> TSR
-provided by Gravis intercepts these MIDI commands and translates them into GUS
-hardware calls, loading instrument samples from the patch files on disk. Load
-<code>ULTRAMID.EXE</code> before starting the game:</p>
+commands as if talking to a <a href="../roland-mt-32/">Roland MT-32</a> or <a href="../../midi/#roland-sound-canvas-sc-55">General
+MIDI</a> device. The <code>ULTRAMID.EXE</code>
+TSR provided by Gravis intercepts these MIDI commands and translates them into
+GUS hardware calls, loading instrument samples from the patch files on disk.
+Load <code>ULTRAMID.EXE</code> before starting the game:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">[gus]</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">gus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">on</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">ultradir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">C:\ULTRASND</span>
@@ -5017,6 +5055,7 @@ hardware calls, loading instrument samples from the patch files on disk. Load
 <summary>Notable UltraMID games</summary>
 <div class="compact" markdown="">
 <ul>
+<li><a href="https://www.mobygames.com/game/561/the-7th-guest/">7<sup>th</sup> Guest, The (1993)</a></li>
 <li><a href="https://www.mobygames.com/game/236/betrayal-at-krondor/">Betrayal at Krondor (1993)</a></li>
 <li><a href="https://www.mobygames.com/game/1441/eye-of-the-beholder/">Eye of the Beholder (1991)</a></li>
 <li><a href="https://www.mobygames.com/game/1237/hocus-pocus/">Hocus Pocus (1994)</a></li>
@@ -5024,7 +5063,6 @@ hardware calls, loading instrument samples from the patch files on disk. Load
 <li><a href="https://www.mobygames.com/game/466/master-of-orion/">Master of Orion (1993)</a></li>
 <li><a href="https://www.mobygames.com/game/616/monkey-island-2-lechucks-revenge/">Monkey Island 2: LeChuck’s Revenge (1991)</a></li>
 <li><a href="https://www.mobygames.com/game/373/sam-max-hit-the-road/">Sam &amp; Max Hit the Road (1993)</a></li>
-<li><a href="https://www.mobygames.com/game/561/the-7th-guest/">The 7<sup>th</sup> Guest (1993)</a></li>
 <li><a href="https://www.mobygames.com/game/690/ultima-underworld-the-stygian-abyss/">Ultima Underworld: The Stygian Abyss (1992)</a></li>
 <li><a href="https://www.mobygames.com/game/1358/x-com-ufo-defense/">X-COM: UFO Defense (1994)</a></li>
 </ul>
@@ -5209,6 +5247,15 @@ some purists had in the 1990s), disable the other sound devices:</p>
 <p>This can be useful for games where the GUS and Sound Blaster interfere with
 each other, or when you want to ensure a game uses its GUS code path
 exclusively.</p>
+<h3 id="authentic-clipping-emulation">Authentic clipping emulation<a class="headerlink" href="#authentic-clipping-emulation" title="Permanent link">¶</a></h3>
+<p>The GUS simply sums the output its hardware mixer channels into a 16-bit
+accumulator, and clipping prevention is left to the composer or programmer —
+some even drove output into clipping deliberately for a harder sound as an
+artistic choice. Also note that minor clipping is often barely audible.</p>
+<p>Leave the <code>GUS</code> mixer channel volume at 100 for authentic clipping behavior,
+and turn down the <code>MASTER</code> channel if it’s too loud. Alternatively, lower the
+<code>GUS</code> channel’s volume for more headroom, though this might yield less
+authentic results — the choice is yours.</p>
 <h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
 <p>The Gravis UltraSound outputs to the <strong>GUS</strong> <a href="../../mixer/#list-of-mixer-channels">mixer channel</a>.</p>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>

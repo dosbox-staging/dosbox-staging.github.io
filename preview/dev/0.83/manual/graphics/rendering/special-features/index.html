@@ -1336,7 +1336,7 @@
   <span class="md-ellipsis">
     
   
-    Foreword
+    Introduction
   
 
     
@@ -1385,14 +1385,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../../getting-started/customising-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enhancing Prince of Persia
+    Customising Prince of Persia
   
 
     
@@ -2090,7 +2090,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -2746,10 +2746,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#deinterlacing" class="md-nav__link">
+  <a href="#fmv-deinterlacer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deinterlacing
+        FMV deinterlacer
       
     </span>
   </a>
@@ -2759,10 +2759,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#dedithering" class="md-nav__link">
+  <a href="#checkerboard-dedithering" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dedithering
+        Checkerboard dedithering
       
     </span>
   </a>
@@ -2785,7 +2785,7 @@
         
           
 <li class="md-nav__item">
-  <a href="#deinterlacing_1" class="md-nav__link">
+  <a href="#deinterlacing" class="md-nav__link">
     <span class="md-ellipsis">
       
         deinterlacing
@@ -2798,7 +2798,7 @@
         
           
 <li class="md-nav__item">
-  <a href="#dedithering_1" class="md-nav__link">
+  <a href="#dedithering" class="md-nav__link">
     <span class="md-ellipsis">
       
         dedithering
@@ -3471,14 +3471,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../sound/sound-devices/sound-canvas/" class="md-nav__link">
+      <a href="../../../sound/sound-devices/roland-sound-canvas/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -4445,10 +4445,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#deinterlacing" class="md-nav__link">
+  <a href="#fmv-deinterlacer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Deinterlacing
+        FMV deinterlacer
       
     </span>
   </a>
@@ -4458,10 +4458,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#dedithering" class="md-nav__link">
+  <a href="#checkerboard-dedithering" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dedithering
+        Checkerboard dedithering
       
     </span>
   </a>
@@ -4484,7 +4484,7 @@
         
           
 <li class="md-nav__item">
-  <a href="#deinterlacing_1" class="md-nav__link">
+  <a href="#deinterlacing" class="md-nav__link">
     <span class="md-ellipsis">
       
         deinterlacing
@@ -4497,7 +4497,7 @@
         
           
 <li class="md-nav__item">
-  <a href="#dedithering_1" class="md-nav__link">
+  <a href="#dedithering" class="md-nav__link">
     <span class="md-ellipsis">
       
         dedithering
@@ -4537,7 +4537,7 @@ visual enhancements that are impossible on real hardware: blending away dither
 patterns in old EGA and CGA games, and deinterlacing FMV videos to remove the
 distracting black lines found in many 90s games.</p>
 <p>Both are opt-in and work best when enabled per-game rather than globally.</p>
-<h2 id="deinterlacing">Deinterlacing<a class="headerlink" href="#deinterlacing" title="Permanent link">¶</a></h2>
+<h2 id="fmv-deinterlacer">FMV deinterlacer<a class="headerlink" href="#fmv-deinterlacer" title="Permanent link">¶</a></h2>
 <p>Many 90s DOS games displayed full-motion video (FMV) using interlaced
 rendering, showing only every second line of each frame. This halved storage
 requirements and looked fine on small CRTs where the brain filled in the gaps,
@@ -4552,6 +4552,8 @@ subtitles, and mouse cursors untouched.</p>
 — a special pattern used by the CD-ROM versions of
 <a href="https://www.mobygames.com/game/380/dune/">Dune</a> and
 <a href="https://www.mobygames.com/game/2894/kgb/">KGB</a>.</p>
+<!--- TODO image examples --->
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Enabling vertical <a href="../aspect-ratios-and-scaling/#integer_scaling"><code>integer_scaling</code></a>
@@ -4576,7 +4578,7 @@ deinterlacing feature:</p>
 </ul>
 </div>
 </details>
-<h2 id="dedithering">Dedithering<a class="headerlink" href="#dedithering" title="Permanent link">¶</a></h2>
+<h2 id="checkerboard-dedithering">Checkerboard dedithering<a class="headerlink" href="#checkerboard-dedithering" title="Permanent link">¶</a></h2>
 <p>Many DOS games used dithering — alternating pixel patterns — to simulate
 more colours than their limited palette could display. This was especially
 common in 16-colour EGA games, where checkerboard patterns created the
@@ -4584,6 +4586,8 @@ illusion of intermediate shades.</p>
 <p>The <a href="#dedithering"><code>dedithering</code></a> setting detects these checkerboard patterns
 and blends them into solid colours. It works with any graphics adapter (CGA,
 EGA, VGA, Hercules) and any resolution, and can be combined with any shader.</p>
+<!--- TODO image examples --->
+
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Dedithering is <em>not</em> a more authentic representation. On real PC CRT
@@ -4598,20 +4602,20 @@ instead.</p>
 dedithering feature:</p>
 <div class="compact" markdown="">
 <ul>
+<li><a href="https://www.mobygames.com/game/317/frederik-pohls-gateway/">Gateway (1992)</a></li>
 <li><a href="https://www.mobygames.com/game/409/leisure-suit-larry-goes-looking-for-love-in-several-wrong-places/">Leisure Suit Larry 2 (1988)</a> &amp; <a href="https://www.mobygames.com/game/412/leisure-suit-larry-iii-passionate-patti-in-pursuit-of-the-pulsat/">3</a></li>
-<li><a href="https://www.mobygames.com/game/168/heros-quest-so-you-want-to-be-a-hero/">Quest for Glory I (1989)</a> &amp; <a href="https://www.mobygames.com/game/169/quest-for-glory-ii-trial-by-fire/">II</a></li>
-<li><a href="https://www.mobygames.com/game/142/space-quest-iii-the-pirates-of-pestulon/">Space Quest III (1989)</a></li>
-<li><a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">The Secret of Monkey Island (1990)</a> (EGA version)</li>
 <li><a href="https://www.mobygames.com/game/176/loom/">Loom (1990)</a></li>
+<li><a href="https://www.mobygames.com/game/168/heros-quest-so-you-want-to-be-a-hero/">Quest for Glory I (1989)</a> &amp; <a href="https://www.mobygames.com/game/169/quest-for-glory-ii-trial-by-fire/">II</a></li>
+<li><a href="https://www.mobygames.com/game/616/the-secret-of-monkey-island/">Secret of Monkey Island, The (1990)</a> (EGA version)</li>
+<li><a href="https://www.mobygames.com/game/142/space-quest-iii-the-pirates-of-pestulon/">Space Quest III (1989)</a></li>
 <li><a href="https://www.mobygames.com/game/1027/spellcasting-101-sorcerers-get-all-the-girls/">Spellcasting 101 (1990)</a></li>
 <li><a href="https://www.mobygames.com/game/1026/timequest/">Timequest (1991)</a></li>
-<li><a href="https://www.mobygames.com/game/317/frederik-pohls-gateway/">Gateway (1992)</a></li>
 </ul>
 </div>
 </details>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>You can set these in the <code>[render]</code> configuration section.</p>
-<h5 id="deinterlacing_1">deinterlacing<a class="headerlink" href="#deinterlacing_1" title="Permanent link">¶</a></h5>
+<h5 id="deinterlacing">deinterlacing<a class="headerlink" href="#deinterlacing" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
 <p>Remove black lines from interlaced videos. Use with games that display
@@ -4652,7 +4656,7 @@ patterns.</p>
 </div>
 </dd>
 </dl>
-<h5 id="dedithering_1">dedithering<a class="headerlink" href="#dedithering_1" title="Permanent link">¶</a></h5>
+<h5 id="dedithering">dedithering<a class="headerlink" href="#dedithering" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
 <p>Remove checkerboard dither patterns from the video output. Useful with

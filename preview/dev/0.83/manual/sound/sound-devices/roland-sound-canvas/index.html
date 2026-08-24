@@ -24,7 +24,7 @@
     
     
       
-        <title>Sound Canvas - DOSBox Staging</title>
+        <title>Roland Sound Canvas - DOSBox Staging</title>
       
     
     
@@ -77,7 +77,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#sound-canvas" class="md-skip">
+        <a href="#roland-sound-canvas" class="md-skip">
           Skip to content
         </a>
       
@@ -1336,7 +1336,7 @@
   <span class="md-ellipsis">
     
   
-    Foreword
+    Introduction
   
 
     
@@ -1385,14 +1385,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../getting-started/enhancing-prince-of-persia/" class="md-nav__link">
+      <a href="../../../../getting-started/customising-prince-of-persia/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Enhancing Prince of Persia
+    Customising Prince of Persia
   
 
     
@@ -2090,7 +2090,7 @@
   <span class="md-ellipsis">
     
   
-    Capture
+    Audio &amp; video captures
   
 
     
@@ -3369,7 +3369,7 @@
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -3387,7 +3387,7 @@
   <span class="md-ellipsis">
     
   
-    Sound Canvas
+    Roland Sound Canvas
   
 
     
@@ -3414,10 +3414,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#setting-up-the-sound-canvas-rom-images" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
+        Setting up the Sound Canvas ROM images
       
     </span>
   </a>
@@ -3427,10 +3427,23 @@
       
         
 <li class="md-nav__item">
-  <a href="#sound-canvas-revisions" class="md-nav__link">
+  <a href="#listing-the-available-models" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sound Canvas revisions
+        Listing the available models
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#choosing-a-sound-canvas-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Sound Canvas model
       
     </span>
   </a>
@@ -3444,6 +3457,19 @@
     <span class="md-ellipsis">
       
         Mixer channel
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#legal-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal notes
       
     </span>
   </a>
@@ -4471,10 +4497,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#setup" class="md-nav__link">
+  <a href="#setting-up-the-sound-canvas-rom-images" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Setup
+        Setting up the Sound Canvas ROM images
       
     </span>
   </a>
@@ -4484,10 +4510,23 @@
       
         
 <li class="md-nav__item">
-  <a href="#sound-canvas-revisions" class="md-nav__link">
+  <a href="#listing-the-available-models" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Sound Canvas revisions
+        Listing the available models
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#choosing-a-sound-canvas-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Sound Canvas model
       
     </span>
   </a>
@@ -4501,6 +4540,19 @@
     <span class="md-ellipsis">
       
         Mixer channel
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#legal-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal notes
       
     </span>
   </a>
@@ -4583,26 +4635,97 @@
 
 
 
-<h1 id="sound-canvas">Sound Canvas<a class="headerlink" href="#sound-canvas" title="Permanent link">¶</a></h1>
-<p>The <strong>Roland Sound Canvas SC-55</strong>, released in 1991, was the first General MIDI
-sound module and quickly became the de facto standard for DOS game music. Most
-composers wrote and tested their music on Sound Canvas hardware, making it the
-gold standard for how the soundtrack was meant to sound.</p>
+<h1 id="roland-sound-canvas">Roland Sound Canvas<a class="headerlink" href="#roland-sound-canvas" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">New to MIDI in DOS games?</p>
+<p>If you’re not familiar with how MIDI works in DOS games, read the overview
+in the <a href="../../midi/">MIDI</a> section first — it explains how DOS games use
+MIDI and the difference between the <a href="../roland-mt-32/">Roland MT-32</a> family
+of devices and <strong>Roland Sound Canvas / General MIDI</strong>.</p>
+</div>
+<p>The <strong>Roland Sound Canvas SC-55</strong>, released in 1991, was a MIDI sound module
+that supported <strong>General MIDI (GM)</strong> and Roland’s <strong>GS</strong> extension to GM. It
+quickly became the de facto standard for DOS game music.</p>
+<p>This distinction is important: General MIDI is a <strong>standard</strong>, not a sound
+module. It defines standardised instrument assignments so that General MIDI
+music can be played on different GM-compatible synthesizers. The SC-55 is one
+particular GM-compatible sound module, with its own samples, synthesis, and
+effects. As a result, different GM-compatible devices can produce noticeably
+different sounds from the same music.</p>
+<p>For DOS games, the SC-55 is especially important because it was the hardware
+many composers used when writing and testing their music. If you want to hear
+General MIDI soundtracks using the SC-55’s characteristic sounds, Sound Canvas
+emulation is the appropriate choice.</p>
+<p>DOSBox Staging emulates the SC-55 via the <a href="https://github.com/johnnovak/Nuked-SC55-CLAP">Nuked SC55
+CLAP</a> audio plugin (bundled with
+the release packages), providing sample-accurate playback of the actual SC-55
+sound engine — as close to the real hardware as you can get without owning
+one.</p>
 <p>For background on the General MIDI and GS standards, and help deciding which
-MIDI device to use for a particular game, see the <a href="../../midi/#which-midi-device-should-i-use">MIDI overview</a>.</p>
-<p>DOSBox Staging emulates the SC-55 via the <strong>Nuked SC55 CLAP</strong> audio plugin,
-providing sample-accurate playback of the actual SC-55 sound engine — as
-close to the real hardware as you can get without owning one.</p>
-<h2 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">¶</a></h2>
-<p>To enable Sound Canvas emulation, set the MIDI device and place the required
-ROM files:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">[midi]</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
-</code></pre></div>
+MIDI device to use for a particular game, see the <a href="../../midi/#which-midi-device-should-i-use">Which MIDI device should I
+use?</a> section.</p>
+<div class="admonition warning">
+<p class="admonition-title">Roland MT-32 is not General MIDI</p>
+<p>Don’t confuse the Sound Canvas with the <a href="../roland-mt-32/">Roland MT-32</a>.
+Although both are MIDI sound modules, the MT-32 is a programmable synthesiser
+with a very different sound engine, while the Sound Canvas supports
+General MIDI. Music written for one often sounds completely wrong on the
+other. See <a href="../../midi/#mt-32-vs-general-midi">MT-32 vs General MIDI</a> for
+details.</p>
+</div>
+<details class="note">
+<summary>Notable games with Sound Canvas / General MIDI support</summary>
+<div class="compact" markdown="">
+<ul>
+<li><a href="https://www.mobygames.com/game/1852/azraels-tear/">Azrael’s Tear (1996</a></li>
+<li><a href="https://www.mobygames.com/game/285/betrayal-at-krondor/">Betrayal at Krondor (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/659/maniac-mansion-day-of-the-tentacle/">Day of the Tentacle (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/454/descent/">Descent (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/499/the-dig/">Dig, The (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/184/discworld/">Discworld (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/1068/doom/">Doom (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/365/duke-nukem-3d/">Duke Nukem 3D (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/803/the-elder-scrolls-arena/">Elder Scrolls: Arena, The (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/778/the-elder-scrolls-chapter-ii-daggerfall/">Elder Scrolls: Daggerfall, The (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/414/full-throttle/">Full Throttle (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/665/gabriel-knight-sins-of-the-fathers/">Gabriel Knight (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/131/kings-quest-vi-heir-today-gone-tomorrow/">King’s Quest VI: Heir Today, Gone Tomorrow (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/871/fables-fiends-hand-of-fate/">Legend of Kyrandia II: Hand of Fate, The</a></li>
+<li><a href="https://www.mobygames.com/game/407/leisure-suit-larry-6-shape-up-or-slip-out/">Leisure Suit Larry 6: Shape Up or Slip Out! (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/4303/lords-of-the-realm/">Lords of the Realm (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/16961/master-of-magic/">Master of Magic (1985)</a></li>
+<li><a href="https://www.mobygames.com/game/212/master-of-orion/">Master of Orion (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/1164/roberta-williams-phantasmagoria/">Phantasmagoria (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/173/quest-for-glory-iii-wages-of-war/">Quest for Glory III: Wages of War (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/3438/realms-of-arkania-star-trail/">Realms of Arkania: Star Trail (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/672/sam-max-hit-the-road/">Sam &amp; Max Hit the Road (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/387/shadow-warrior/">Shadow Warrior (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/145/space-quest-6-roger-wilco-in-the-spinal-frontier/">Space Quest 6: Roger Wilco in the Spinal Frontier (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/144/space-quest-v-the-next-mutation/">Space Quest V: The Next Mutation 1993)</a></li>
+<li><a href="https://www.mobygames.com/game/379/star-wars-dark-forces/">Star Wars: Dark Forces (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/204/star-wars-tie-fighter/">Star Wars: TIE Fighter (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/1876/stonekeep/">Stonekeep (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/545/system-shock/">System Shock (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/608/ultima-vii-the-black-gate/">Ultima VII (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/850/under-a-killing-moon/">Under a Killing Moon (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/1339/warcraft-ii-tides-of-darkness/">WarCraft II (1995)</a></li>
+</ul>
+</div>
+</details>
+<h2 id="setting-up-the-sound-canvas-rom-images">Setting up the Sound Canvas ROM images<a class="headerlink" href="#setting-up-the-sound-canvas-rom-images" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Emulating the Roland Sound Canvas requires the original ROM data from the
+hardware itself — the Sound Canvas MIDI device <strong>cannot</strong> function
+without these files. We can’t bundle these ROM files with our release
+packages due to copyright restrictions, so you’ll need to obtain and
+install them yourself.</p>
+</div>
 <p>Download the SC-55 ROM files from
-<a href="https://archive.org/details/nuked-sc-55-clap-rom-files">here</a>, unpack the
-ZIP archive, then move the contents of the <code>Nuked-SC55-Resources/ROMs/</code> folder
-into the <code>soundcanvas-roms</code> folder inside your DOSBox configuration folder:</p>
+<a href="https://archive.org/details/nuked-sc-55-clap-rom-files">here</a>, unpack the ZIP
+archive, then move the contents of the <code>Nuked-SC55-Resources/ROMs/</code> folder
+into the <code>soundcanvas-roms</code> folder inside your DOSBox Staging configuration
+folder:</p>
 <div class="compact">
 <table>
 <thead>
@@ -4618,36 +4741,45 @@ into the <code>soundcanvas-roms</code> folder inside your DOSBox configuration f
 </tr>
 <tr>
 <td>macOS</td>
-<td><code>~/Library/Preferences/DOSBox/soundcanvas-roms/</code></td>
+<td><code>/Users/&lt;USERNAME&gt;/Library/Preferences/DOSBox/soundcanvas-roms/</code></td>
 </tr>
 <tr>
 <td>Linux</td>
-<td><code>~/.config/dosbox/soundcanvas-roms/</code></td>
+<td><code>$HOME/.config/dosbox/soundcanvas-roms/</code></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>By doing so, you will make these ROMs globally available for all games.</p>
 <p>This is what the contents of <code>soundcanvas-roms</code> should look like:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>soundcanvas-roms
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── SC-55-v1.10
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>│   ├── sc55_rom1.bin
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>│   ├── sc55_rom2.bin
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>│   ├── sc55_waverom1.bin
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>│   ├── sc55_waverom2.bin
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>│   └── sc55_waverom3.bin
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>├── SC-55-v1.20
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>│   ...
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>├── SC-55-v1.21
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>...
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>soundcanvas-roms
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── SC-55-v1.10
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── sc55_rom1.bin
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── sc55_rom2.bin
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── sc55_waverom1.bin
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── sc55_waverom2.bin
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── sc55_waverom3.bin
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── SC-55-v1.20
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ...
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── SC-55-v1.21
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>...
 </code></pre></div>
 <p>You can also set a custom ROM folder via the
 <a href="#soundcanvas_rom_dir"><code>soundcanvas_rom_dir</code></a> setting.</p>
+<p>Now you can enable the Sound Canvas MIDI device in your config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
+</code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Sound Canvas emulation is CPU-intensive. You’ll need a mid-range or better
 desktop-class CPU from the last 5–7 years for glitch-free playback. If
 your system struggles, <a href="../fluidsynth/">FluidSynth</a> with a good SoundFont is
 a lighter alternative.</p>
+<p>Emulating SC-55mk2 is much more CPU-intensive than emulating the
+original SC-55 revision. The good news is that SC-55 v1.21 is the overall
+best version to use for most games — you’ll rarely need to use the
+SC-55mk2.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -4657,8 +4789,12 @@ a lighter alternative.</p>
 <p>For a hands-on walkthrough of setting up Sound Canvas emulation with a specific
 game, see the <a href="../../../../getting-started/star-wars-dark-forces/#sound-canvas-emulation">Star Wars: Dark
 Forces</a>
-chapter of the getting started guide.</p>
-<h2 id="sound-canvas-revisions">Sound Canvas revisions<a class="headerlink" href="#sound-canvas-revisions" title="Permanent link">¶</a></h2>
+chapter of the Getting Started guide.</p>
+<h2 id="listing-the-available-models">Listing the available models<a class="headerlink" href="#listing-the-available-models" title="Permanent link">¶</a></h2>
+<p>Run the <code>MIXER /LISTMIDI</code> command to see the list of available Sound Canvas
+models:</p>
+<p>TODO</p>
+<h2 id="choosing-a-sound-canvas-model">Choosing a Sound Canvas model<a class="headerlink" href="#choosing-a-sound-canvas-model" title="Permanent link">¶</a></h2>
 <p>The SC-55 went through several firmware revisions. The most important
 difference is <strong>Capital Tone Fallback (CTF)</strong> — a Roland GS feature that
 ensures correct instrument playback when a game requests a GS “variation
@@ -4700,14 +4836,14 @@ significant for DOS gaming.</p>
 <td>v1.20</td>
 <td><code>sc55_120</code></td>
 <td>Yes</td>
-<td>Corrected instrument <a class="gh-link gh-issue" href="https://github.com/dosbox-staging/dosbox-staging/issues/122" title="GitHub Issue dosbox-staging/dosbox-staging #122">#122</a>; GS reset</td>
+<td>Corrected instrument 122; GS reset</td>
 </tr>
 <tr>
 <td>SC-55</td>
 <td>v1.21</td>
 <td><code>sc55_121</code></td>
 <td>Yes</td>
-<td>Fixed NRPN processing bugs — <strong>recommended</strong></td>
+<td>Fixed NRPN processing bugs; still has CTF support — <strong>overall best version</strong></td>
 </tr>
 <tr>
 <td>SC-55</td>
@@ -4733,11 +4869,19 @@ significant for DOS gaming.</p>
 </tbody>
 </table>
 </div>
-<p>The <strong>SC-55 v1.21</strong> is the best overall choice for DOS gaming — it has
-Capital Tone Fallback, correct instrument mappings, and all known firmware
-bugs fixed. DOSBox Staging’s <code>soundcanvas_model = auto</code> prefers v1.21 when
-its ROM is available. Avoid v2.00 and the Mk II versions for games that
-rely on CTF.</p>
+<p>The <strong>SC-55 v1.21</strong> is the best overall choice for DOS gaming. It has
+<strong>Capital Tone Fallback (CTF)</strong> and addresses most issues present in earlier
+revisions. DOSBox Staging’s <code>soundcanvas_model = auto</code> prefers v1.21 when its
+ROM is available. Avoid v2.00 and the mk2 models for games that rely on
+CTF.</p>
+<p>The <strong>SC-55mk2</strong> has higher polyphony, but its voice-allocation rules are
+different from those of the original module. As a result, some games composed
+for the original SC-55 can cut notes off earlier on the mk2 (for example,
+<a href="https://www.mobygames.com/game/598/the-settlers-ii-veni-vidi-vici/">Settlers
+II</a>). Very
+few games make meaningful use of the additional polyphony, and the differences
+are usually subtle unless you know what to listen for. The mk2 is also more
+CPU-intensive to emulate, so the SC-55 v1.21 is generally the better choice.</p>
 <details class="note">
 <summary>Games that require Capital Tone Fallback (CTF) for correct audio</summary>
 <p>These games use GS variation tones that depend on CTF. On SC-55 v2.00
@@ -4748,12 +4892,12 @@ will sound incorrect or be silent.</p>
 <li><a href="https://www.mobygames.com/game/793/blood/">Blood (1997)</a></li>
 <li><a href="https://www.mobygames.com/game/365/duke-nukem-3d/">Duke Nukem 3D (1996)</a></li>
 <li><a href="https://www.mobygames.com/game/327/dune-ii-the-building-of-a-dynasty/">Dune II (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/1704/the-elder-scrolls-arena/">Elder Scrolls: Arena, The (1994)</a></li>
 <li><a href="https://www.mobygames.com/game/3165/extreme-assault/">Extreme Assault (1997)</a></li>
 <li><a href="https://www.mobygames.com/game/383/hexen-beyond-heretic/">Hexen (1995)</a></li>
 <li><a href="https://www.mobygames.com/game/451/might-and-magic-clouds-of-xeen/">Might and Magic IV (1992)</a></li>
 <li><a href="https://www.mobygames.com/game/452/might-and-magic-darkside-of-xeen/">Might and Magic V (1993)</a></li>
 <li><a href="https://www.mobygames.com/game/1779/shadow-warrior/">Shadow Warrior (1997)</a></li>
-<li><a href="https://www.mobygames.com/game/1704/the-elder-scrolls-arena/">The Elder Scrolls: Arena (1994)</a></li>
 <li><a href="https://www.mobygames.com/game/1339/warcraft-ii-tides-of-darkness/">WarCraft II (1995)</a></li>
 </ul>
 </div>
@@ -4761,6 +4905,33 @@ will sound incorrect or be silent.</p>
 <h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
 <p>Sound Canvas outputs to the <strong>SOUNDCANVAS</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
 channel</a>.</p>
+<h2 id="legal-notes">Legal notes<a class="headerlink" href="#legal-notes" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>By providing an easy-to-use Roland Sound Canvas emulation feature, we aim
+to preserve an important part of DOS gaming history for all to freely
+enjoy for posterity. The feature is <strong>only intended</strong> for personal use
+(e.g., retro gaming, or writing music as a hobby) and research purposes.</p>
+<p>The Roland Sound Canvas ROM images are copyrighted by Roland Corporation,
+therefore they cannot be bundled with DOSBox.</p>
+<p>As per the original <a href="https://github.com/nukeykt/Nuked-SC55">Nuked SC-55</a>
+license, the use of the feature is <strong>strictly prohibited</strong> for creating
+commercial Roland Sound Canvas emulation hardware boxes or for use in
+commercial music production.</p>
+<p>Moreover, you are <strong>not</strong> allowed to include the bundled <code>Nuked-SC55.clap</code>
+plugin in any commercial software package without both Roland’s and
+nukeykt’s express permissions. If you delete the plugin from your
+commercial package, you’re fine — DOSBox Staging will continue to work,
+just without Sound Canvas support.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">License notes</p>
+<p>Please see <a href="https://github.com/dosbox-staging/dosbox-staging/pull/4090">this detailed
+description</a>
+on how we bridged the license incompatibility between DOSBox Staging and
+Nuked-SC55 while fully complying with both the GPL v2 and the MAME license
+and respecting nukeykt’s wishes.</p>
+</div>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
 <p>Sound Canvas settings are to be configured in the <code>[soundcanvas]</code> section.</p>
 <h5 id="soundcanvas_model">soundcanvas_model<a class="headerlink" href="#soundcanvas_model" title="Permanent link">¶</a></h5>
