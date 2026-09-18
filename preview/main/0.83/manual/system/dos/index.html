@@ -5181,17 +5181,14 @@ write operations for these write-protected files.</p>
 <h5 id="stacks">stacks<a class="headerlink" href="#stacks" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Use DOS-style private stacks for hardware interrupts (‘auto’ by default).
-When a wrapped hardware interrupt fires, DOSBox Staging switches to one
-stack from a private pool before invoking the previous handler. Disabling
-this means each running program must have enough stack space for hardware
-interrupts (and any chained handlers) itself. Most programs work correctly
-without it; a few legacy programs depend on it to avoid corrupting their
-own stack.</p>
-<p>Note: the current implementation wraps the timer interrupt (INT 08h, IRQ0)
-and the keyboard interrupt (INT 09h, IRQ1). MS-DOS’s STACKS feature wraps
-additional hardware-IRQ vectors; coverage may be expanded in future
-versions.</p>
+<p>Use DOS-style private stacks for hardware interrupts. When a wrapped
+hardware interrupt fires, DOSBox Staging switches to one stack from a
+private pool before invoking the previous handler. Disabling this means
+each running program must have enough stack space for hardware interrupts
+(and any chained handlers) itself. Most programs work correctly without
+it; a few legacy programs depend on it to avoid corrupting their own
+stack.</p>
+<p>Possible values:</p>
 <ul>
 <li>
 <p><code>auto</code> <em class="default">default</em> – Enable on AT-class machine types with
@@ -5207,6 +5204,13 @@ versions.</p>
 <p><code>0,0</code> – Disable; use the interrupted program’s stack.</p>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The current implementation wraps the timer interrupt (INT 08h, IRQ0)
+and the keyboard interrupt (INT 09h, IRQ1). MS-DOS’s STACKS feature wraps
+additional hardware-IRQ vectors; coverage may be expanded in future
+versions.</p>
+</div>
 </dd>
 </dl>
 

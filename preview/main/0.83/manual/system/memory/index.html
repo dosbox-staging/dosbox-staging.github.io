@@ -2369,15 +2369,15 @@
         
           
 <li class="md-nav__item">
-  <a href="#total-machine-memory_1" class="md-nav__link">
+  <a href="#total-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Total machine memory
+        Total memory
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Total machine memory">
+    <nav class="md-nav" aria-label="Total memory">
       <ul class="md-nav__list">
         
           
@@ -2401,15 +2401,15 @@
         
           
 <li class="md-nav__item">
-  <a href="#dos-memory-management_1" class="md-nav__link">
+  <a href="#memory-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DOS memory management
+        Memory management
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="DOS memory management">
+    <nav class="md-nav" aria-label="Memory management">
       <ul class="md-nav__list">
         
           
@@ -4546,15 +4546,15 @@
         
           
 <li class="md-nav__item">
-  <a href="#total-machine-memory_1" class="md-nav__link">
+  <a href="#total-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Total machine memory
+        Total memory
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Total machine memory">
+    <nav class="md-nav" aria-label="Total memory">
       <ul class="md-nav__list">
         
           
@@ -4578,15 +4578,15 @@
         
           
 <li class="md-nav__item">
-  <a href="#dos-memory-management_1" class="md-nav__link">
+  <a href="#memory-management" class="md-nav__link">
     <span class="md-ellipsis">
       
-        DOS memory management
+        Memory management
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="DOS memory management">
+    <nav class="md-nav" aria-label="Memory management">
       <ul class="md-nav__list">
         
           
@@ -4712,7 +4712,7 @@ needed by a handful of titles). See <a href="../machine-types/">Machine types</a
 for details.</p>
 </div>
 <h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
-<h3 id="total-machine-memory_1">Total machine memory<a class="headerlink" href="#total-machine-memory_1" title="Permanent link">¶</a></h3>
+<h3 id="total-memory">Total memory<a class="headerlink" href="#total-memory" title="Permanent link">¶</a></h3>
 <p>This setting is configured in the <code>[dosbox]</code> section.</p>
 <h5 id="memsize">memsize<a class="headerlink" href="#memsize" title="Permanent link">¶</a></h5>
 <dl>
@@ -4721,14 +4721,36 @@ leave at the default setting to avoid problems with some games, though a
 few games might require a higher value. There is generally no speed
 advantage when raising this value.</dd>
 </dl>
-<h3 id="dos-memory-management_1">DOS memory management<a class="headerlink" href="#dos-memory-management_1" title="Permanent link">¶</a></h3>
+<h3 id="memory-management">Memory management<a class="headerlink" href="#memory-management" title="Permanent link">¶</a></h3>
 <p>These settings are configured in the <code>[dos]</code> section.</p>
 <h5 id="ems">ems<a class="headerlink" href="#ems" title="Permanent link">¶</a></h5>
 <dl>
-<dd>Enable EMS support. Enabled provides the best compatibility but certain
-applications may run better with other choices, or require EMS support to
-be disabled to work at all.
-Possible values: <code>on</code> <em class="default">default</em>, <code>off</code></dd>
+<dd>
+<p>Enable EMS support.</p>
+<p>Possible values:</p>
+<ul>
+<li>
+<p><code>off</code> – Disable EMS entirely. INT 67h is not installed, so programs
+  that probe for it correctly detect it as absent.</p>
+</li>
+<li>
+<p><code>on</code> <em class="default">default</em> – Standard LIM EMS via the INT 67h
+  page-frame interface, without emulating a protected-mode memory manager
+  (default). Provides the best compatibility with most software.</p>
+</li>
+<li>
+<p><code>emsboard</code> –  Emulates a physical EMS expansion board rather than a
+  software manager: real mode only, no VCPI. Useful for software that
+  expects board-style EMS behavior, or on pre-386 CPU types where
+  EMM386-style emulation isn’t possible.</p>
+</li>
+<li>
+<p><code>emm386</code> – Emulates EMS the way loading EMM386.EXE under real DOS
+  would, including VCPI support for DOS extenders that switch to protected
+  mode, and matching its DMA-wrapping behavior.</p>
+</li>
+</ul>
+</dd>
 </dl>
 <h5 id="xms">xms<a class="headerlink" href="#xms" title="Permanent link">¶</a></h5>
 <dl>
