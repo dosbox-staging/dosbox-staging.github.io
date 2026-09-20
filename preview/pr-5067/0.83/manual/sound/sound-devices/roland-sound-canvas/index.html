@@ -1,0 +1,5091 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DOSBox Staging is a modern continuation of DOSBox with advanced features and current development practices.">
+      
+      
+        <meta name="author" content="DOSBox Staging Authors">
+      
+      
+      
+        <link rel="prev" href="../roland-mt-32/">
+      
+      
+        <link rel="next" href="../fluidsynth/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Roland Sound Canvas - DOSBox Staging</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Open Sans";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#roland-sound-canvas" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+
+<div class="dev-site" hidden="">
+  <p>🔥🔥🔥 You are viewing a development version of the website. Things will blow up. 🔥🔥🔥</p>
+  <p>Regular users, please <a href="https://www.dosbox-staging.org/">follow the exit signs</a>.</p>
+</div>
+
+<script>
+  if (window.location.pathname.startsWith("/preview/")) {
+    document.querySelector(".dev-site").removeAttribute("hidden");
+  }
+</script>
+
+<!-- Determine class according to configuration -->
+
+
+  
+
+
+<!-- Header -->
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="header.title">
+
+    <!-- Link to home -->
+    
+      <a href="../../../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+        
+  <img src="../../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+      </a>
+    
+
+    <!-- Button to open drawer -->
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+
+    <!-- Header title -->
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            DOSBox Staging
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button to open search modal -->
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+
+      <!-- Search interface -->
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard="" data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  </nav>
+
+  <!-- Navigation tabs (sticky) -->
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../download/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Download
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../introduction/about-this-manual/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  User manual
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../get-involved/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Get involved
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../about/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+        
+      
+        
+          
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Wiki
+
+      </a>
+    </li>
+  
+
+        
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
+      
+  <img src="../../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+
+    </a>
+    DOSBox Staging
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../download/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Download
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Download
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/windows/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Windows
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/macos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    macOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Linux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5">
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Release notes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Release notes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.83.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.83.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.82.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.82.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.82.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.82.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.81.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.81.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.81.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.81.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.80.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.80.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.80.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.79.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.79.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.79.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.78.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.78.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.78.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.77.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.77.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.77.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.76.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.76.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.75.2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.75.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.75.0/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/release-notes/0.75.0-rc1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.75.0-RC1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../download/development-builds/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development builds
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/introduction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/setting-up-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Setting up Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/customising-prince-of-persia/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Customising Prince of Persia
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/passport-to-adventure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Passport to Adventure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/beneath-a-steel-sky/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Beneath a Steel Sky
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/star-wars-dark-forces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Star Wars: Dark Forces
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../getting-started/next-steps/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Next steps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User manual
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User manual
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introduction
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introduction
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/about-this-manual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About this manual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/what-is-dosbox-staging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What is DOSBox Staging?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/dos-primer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    A short DOS primer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../introduction/dos-eras/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DOS eras
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using DOSBox Staging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using DOSBox Staging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/starting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starting the emulator
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/command-line/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/shell/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    The DOS shell
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOS commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/hardware-resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/capture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Audio &amp; video captures
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/windows-31/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running Windows 3.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    System settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/cpu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CPU
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Memory
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/dos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/machine-types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Machine types
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../system/localisation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Localisation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Graphics settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/adapters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphics adapters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/display-and-window/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Display &amp; window
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_3" id="__nav_3_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rendering
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/rendering/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rendering overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/rendering/shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Shaders
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/rendering/aspect-ratios-and-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aspect ratios &amp; scaling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/rendering/colour-and-image-adjustments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Colour &amp; image adjustments
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/rendering/special-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Special features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/composite-video/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Composite video
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/3dfx-voodoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3dfx Voodoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../graphics/reelmagic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ReelMagic
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../on-subjectivity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    On subjectivity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mixer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DOSBox mixer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mixer-effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mixer effects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../midi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MIDI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../output-filters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Output filter emulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../disk-noise/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Disk noise
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5_8" checked="">
+        
+          
+          <label class="md-nav__link" for="__nav_3_5_8" id="__nav_3_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound devices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_5_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sound devices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pc-speaker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PC speaker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tandy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tandy 3 Voice
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creative Music System (CMS)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../adlib/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AdLib (OPL)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../covox-variants/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Covox variants
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-blaster/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sound Blaster
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roland-mt-32/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland MT-32
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland Sound Canvas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roland Sound Canvas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        
+<li class="md-nav__item">
+  <a href="#setting-up-the-sound-canvas-rom-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up the Sound Canvas ROM images
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#listing-the-available-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listing the available models
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#choosing-a-sound-canvas-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Sound Canvas model
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#mixer-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixer channel
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#legal-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal notes
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#soundcanvas_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soundcanvas_model
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#soundcanvas_rom_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soundcanvas_rom_dir
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#soundcanvas_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soundcanvas_filter
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fluidsynth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FluidSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gravis-ultrasound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gravis UltraSound
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cd-da/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CD-DA audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ibm-ps1audio/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM PS/1 Audio Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../imfc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IBM Music Feature Card
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../innovation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Innovation SSI-2001
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6">
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Input settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Input overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/keyboard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/mouse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mouse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/joystick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Joystick
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../input/keymapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Key mapper
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7">
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network settings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Network settings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/serial-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Serial ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/ipx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IPX
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/ethernet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ethernet
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../networking/multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../http-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP API
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9">
+        
+          
+          <label class="md-nav__link" for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Appendices
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Appendices
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keyboard shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../appendices/keymapper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keymapper reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../get-involved/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get involved
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Get involved
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../get-involved/code-of-conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code of conduct
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../about/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/dosbox-staging/dosbox-staging/wiki" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wiki
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        
+<li class="md-nav__item">
+  <a href="#setting-up-the-sound-canvas-rom-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Setting up the Sound Canvas ROM images
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#listing-the-available-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Listing the available models
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#choosing-a-sound-canvas-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing a Sound Canvas model
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#mixer-channel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mixer channel
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#legal-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legal notes
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
+  <a href="#configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration settings
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration settings">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#soundcanvas_model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soundcanvas_model
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#soundcanvas_rom_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soundcanvas_rom_dir
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#soundcanvas_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        soundcanvas_filter
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="roland-sound-canvas">Roland Sound Canvas<a class="headerlink" href="#roland-sound-canvas" title="Permanent link">¶</a></h1>
+<div class="admonition tip">
+<p class="admonition-title">New to MIDI in DOS games?</p>
+<p>If you’re not familiar with how MIDI works in DOS games, read the overview
+in the <a href="../../midi/">MIDI</a> section first — it explains how DOS games use
+MIDI and the difference between the <a href="../roland-mt-32/">Roland MT-32</a> family
+of devices and <strong>Roland Sound Canvas / General MIDI</strong>.</p>
+</div>
+<p>The <strong>Roland Sound Canvas SC-55</strong>, released in 1991, was a MIDI sound module
+that supported <strong>General MIDI (GM)</strong> and Roland’s <strong>GS</strong> extension to GM. It
+quickly became the de facto standard for DOS game music.</p>
+<p>This distinction is important: General MIDI is a <strong>standard</strong>, not a sound
+module. It defines standardised instrument assignments so that General MIDI
+music can be played on different GM-compatible synthesizers. The SC-55 is one
+particular GM-compatible sound module, with its own samples, synthesis, and
+effects. As a result, different GM-compatible devices can produce noticeably
+different sounds from the same music.</p>
+<p>For DOS games, the SC-55 is especially important because it was the hardware
+many composers used when writing and testing their music. If you want to hear
+General MIDI soundtracks using the SC-55’s characteristic sounds, Sound Canvas
+emulation is the appropriate choice.</p>
+<p>DOSBox Staging emulates the SC-55 via the <a href="https://github.com/johnnovak/Nuked-SC55-CLAP">Nuked SC55
+CLAP</a> audio plugin (bundled with
+the release packages), providing sample-accurate playback of the actual SC-55
+sound engine — as close to the real hardware as you can get without owning
+one.</p>
+<p>For background on the General MIDI and GS standards, and help deciding which
+MIDI device to use for a particular game, see the <a href="../../midi/#which-midi-device-should-i-use">Which MIDI device should I
+use?</a> section.</p>
+<div class="admonition warning">
+<p class="admonition-title">Roland MT-32 is not General MIDI</p>
+<p>Don’t confuse the Sound Canvas with the <a href="../roland-mt-32/">Roland MT-32</a>.
+Although both are MIDI sound modules, the MT-32 is a programmable synthesiser
+with a very different sound engine, while the Sound Canvas supports
+General MIDI. Music written for one often sounds completely wrong on the
+other. See <a href="../../midi/#mt-32-vs-general-midi">MT-32 vs General MIDI</a> for
+details.</p>
+</div>
+<details class="note">
+<summary>Notable games with Sound Canvas / General MIDI support</summary>
+<div class="compact" markdown="">
+<ul>
+<li><a href="https://www.mobygames.com/game/1852/azraels-tear/">Azrael’s Tear (1996</a></li>
+<li><a href="https://www.mobygames.com/game/285/betrayal-at-krondor/">Betrayal at Krondor (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/659/maniac-mansion-day-of-the-tentacle/">Day of the Tentacle (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/454/descent/">Descent (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/499/the-dig/">Dig, The (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/184/discworld/">Discworld (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/1068/doom/">Doom (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/365/duke-nukem-3d/">Duke Nukem 3D (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/803/the-elder-scrolls-arena/">Elder Scrolls: Arena, The (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/778/the-elder-scrolls-chapter-ii-daggerfall/">Elder Scrolls: Daggerfall, The (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/414/full-throttle/">Full Throttle (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/665/gabriel-knight-sins-of-the-fathers/">Gabriel Knight (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/131/kings-quest-vi-heir-today-gone-tomorrow/">King’s Quest VI: Heir Today, Gone Tomorrow (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/871/fables-fiends-hand-of-fate/">Legend of Kyrandia II: Hand of Fate, The</a></li>
+<li><a href="https://www.mobygames.com/game/407/leisure-suit-larry-6-shape-up-or-slip-out/">Leisure Suit Larry 6: Shape Up or Slip Out! (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/4303/lords-of-the-realm/">Lords of the Realm (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/16961/master-of-magic/">Master of Magic (1985)</a></li>
+<li><a href="https://www.mobygames.com/game/212/master-of-orion/">Master of Orion (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/1164/roberta-williams-phantasmagoria/">Phantasmagoria (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/173/quest-for-glory-iii-wages-of-war/">Quest for Glory III: Wages of War (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/3438/realms-of-arkania-star-trail/">Realms of Arkania: Star Trail (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/672/sam-max-hit-the-road/">Sam &amp; Max Hit the Road (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/387/shadow-warrior/">Shadow Warrior (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/145/space-quest-6-roger-wilco-in-the-spinal-frontier/">Space Quest 6: Roger Wilco in the Spinal Frontier (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/144/space-quest-v-the-next-mutation/">Space Quest V: The Next Mutation 1993)</a></li>
+<li><a href="https://www.mobygames.com/game/379/star-wars-dark-forces/">Star Wars: Dark Forces (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/204/star-wars-tie-fighter/">Star Wars: TIE Fighter (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/1876/stonekeep/">Stonekeep (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/545/system-shock/">System Shock (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/608/ultima-vii-the-black-gate/">Ultima VII (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/850/under-a-killing-moon/">Under a Killing Moon (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/1339/warcraft-ii-tides-of-darkness/">WarCraft II (1995)</a></li>
+</ul>
+</div>
+</details>
+<h2 id="setting-up-the-sound-canvas-rom-images">Setting up the Sound Canvas ROM images<a class="headerlink" href="#setting-up-the-sound-canvas-rom-images" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Emulating the Roland Sound Canvas requires the original ROM data from the
+hardware itself — the Sound Canvas MIDI device <strong>cannot</strong> function
+without these files. We can’t bundle these ROM files with our release
+packages due to copyright restrictions, so you’ll need to obtain and
+install them yourself.</p>
+</div>
+<p>Download the SC-55 ROM files from
+<a href="https://archive.org/details/nuked-sc-55-clap-rom-files">here</a>, unpack the ZIP
+archive, then move the contents of the <code>Nuked-SC55-Resources/ROMs/</code> folder
+into the <code>soundcanvas-roms</code> folder inside your DOSBox Staging configuration
+folder:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>ROM folder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows</td>
+<td><code>C:\Users\&lt;USERNAME&gt;\AppData\Local\DOSBox\soundcanvas-roms\</code></td>
+</tr>
+<tr>
+<td>macOS</td>
+<td><code>/Users/&lt;USERNAME&gt;/Library/Preferences/DOSBox/soundcanvas-roms/</code></td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><code>$HOME/.config/dosbox/soundcanvas-roms/</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>By doing so, you will make these ROMs globally available for all games.</p>
+<p>This is what the contents of <code>soundcanvas-roms</code> should look like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>soundcanvas-roms
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── SC-55-v1.10
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── sc55_rom1.bin
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── sc55_rom2.bin
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── sc55_waverom1.bin
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── sc55_waverom2.bin
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   └── sc55_waverom3.bin
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── SC-55-v1.20
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ...
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── SC-55-v1.21
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>...
+</code></pre></div>
+<p>You can also set a custom ROM folder via the
+<a href="#soundcanvas_rom_dir"><code>soundcanvas_rom_dir</code></a> setting.</p>
+<p>Now you can enable the Sound Canvas MIDI device in your config:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">[midi]</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sound Canvas emulation is CPU-intensive. You’ll need a mid-range or better
+desktop-class CPU from the last 5–7 years for glitch-free playback. If
+your system struggles, <a href="../fluidsynth/">FluidSynth</a> with a good SoundFont is
+a lighter alternative.</p>
+<p>Emulating SC-55mk2 is much more CPU-intensive than emulating the
+original SC-55 revision. The good news is that SC-55 v1.21 is the overall
+best version to use for most games — you’ll rarely need to use the
+SC-55mk2.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can switch between Sound Canvas models on the fly by changing the
+<a href="#soundcanvas_model"><code>soundcanvas_model</code></a> setting — no restart needed.</p>
+</div>
+<p>For a hands-on walkthrough of setting up Sound Canvas emulation with a specific
+game, see the <a href="../../../../getting-started/star-wars-dark-forces/#sound-canvas-emulation">Star Wars: Dark
+Forces</a>
+chapter of the Getting Started guide.</p>
+<h2 id="listing-the-available-models">Listing the available models<a class="headerlink" href="#listing-the-available-models" title="Permanent link">¶</a></h2>
+<p>Run the <code>MIXER /LISTMIDI</code> command to see the list of available Sound Canvas
+models:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/manual/mixer-listmidi-sound-canvas.png" data-desc-position="bottom"><img alt="DOSBox Staging mixer showing the active Sound Canvas model" loading="lazy" src="https://www.dosbox-staging.org/static/images/manual/mixer-listmidi-sound-canvas.png"></a></p>
+<p>If the Sound Canvas is active, the selected model is highlighted.</p>
+<h2 id="choosing-a-sound-canvas-model">Choosing a Sound Canvas model<a class="headerlink" href="#choosing-a-sound-canvas-model" title="Permanent link">¶</a></h2>
+<p>The SC-55 went through several firmware revisions. The most important
+difference is <strong>Capital Tone Fallback (CTF)</strong> — a Roland GS feature that
+ensures correct instrument playback when a game requests a GS “variation
+tone” that isn’t available on the module. Without CTF, the module may play
+silence or the wrong instrument. Many DOS games rely on CTF for correct
+audio, particularly for percussion and instrument variations.</p>
+<p>Due to a patent dispute with Yamaha, Roland was forced to remove CTF from
+later firmware revisions. This makes the choice of firmware version
+significant for DOS gaming.</p>
+<p>DOSBox Staging emulates the following Sound Canvas firmware versions:</p>
+<div class="compact">
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th>Version</th>
+<th><code>soundcanvas_model</code></th>
+<th>CTF</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SC-55</td>
+<td>v1.00</td>
+<td><code>sc55_100</code></td>
+<td>Yes</td>
+<td>First release; some instrument mapping bugs</td>
+</tr>
+<tr>
+<td>SC-55</td>
+<td>v1.10</td>
+<td><code>sc55_110</code></td>
+<td>Yes</td>
+<td>Bug fixes</td>
+</tr>
+<tr>
+<td>SC-55</td>
+<td>v1.20</td>
+<td><code>sc55_120</code></td>
+<td>Yes</td>
+<td>Corrected instrument 122; GS reset</td>
+</tr>
+<tr>
+<td>SC-55</td>
+<td>v1.21</td>
+<td><code>sc55_121</code></td>
+<td>Yes</td>
+<td>Fixed NRPN processing bugs; still has CTF support — <strong>overall best version</strong></td>
+</tr>
+<tr>
+<td>SC-55</td>
+<td>v2.00</td>
+<td><code>sc55_200</code></td>
+<td>No</td>
+<td>CTF removed (Yamaha patent dispute)</td>
+</tr>
+<tr>
+<td>SC-55mk2</td>
+<td>v1.00</td>
+<td><code>sc55mk2_100</code></td>
+<td>No</td>
+<td>28 voices, 354 sounds; no CTF</td>
+</tr>
+<tr>
+<td>SC-55mk2</td>
+<td>v1.01</td>
+<td><code>sc55mk2_101</code></td>
+<td>No</td>
+<td>Minor revisions</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <strong>SC-55 v1.21</strong> is the best overall choice for DOS gaming. It has
+<strong>Capital Tone Fallback (CTF)</strong> and addresses most issues present in earlier
+revisions. DOSBox Staging’s <code>soundcanvas_model = auto</code> prefers v1.21 when its
+ROM is available. Avoid v2.00 and the mk2 models for games that rely on
+CTF.</p>
+<p>The <strong>SC-55mk2</strong> has higher polyphony, but its voice-allocation rules are
+different from those of the original module. As a result, some games composed
+for the original SC-55 can cut notes off earlier on the mk2 (for example,
+<a href="https://www.mobygames.com/game/598/the-settlers-ii-veni-vidi-vici/">Settlers
+II</a>). Very
+few games make meaningful use of the additional polyphony, and the differences
+are usually subtle unless you know what to listen for. The mk2 is also more
+CPU-intensive to emulate, so the SC-55 v1.21 is generally the better choice.</p>
+<details class="note">
+<summary>Games that require Capital Tone Fallback (CTF) for correct audio</summary>
+<p>These games use GS variation tones that depend on CTF. On SC-55 v2.00
+or Mk II firmware (which lack CTF), certain instruments or percussion
+will sound incorrect or be silent.</p>
+<div class="compact" markdown="">
+<ul>
+<li><a href="https://www.mobygames.com/game/793/blood/">Blood (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/365/duke-nukem-3d/">Duke Nukem 3D (1996)</a></li>
+<li><a href="https://www.mobygames.com/game/327/dune-ii-the-building-of-a-dynasty/">Dune II (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/1704/the-elder-scrolls-arena/">Elder Scrolls: Arena, The (1994)</a></li>
+<li><a href="https://www.mobygames.com/game/3165/extreme-assault/">Extreme Assault (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/383/hexen-beyond-heretic/">Hexen (1995)</a></li>
+<li><a href="https://www.mobygames.com/game/451/might-and-magic-clouds-of-xeen/">Might and Magic IV (1992)</a></li>
+<li><a href="https://www.mobygames.com/game/452/might-and-magic-darkside-of-xeen/">Might and Magic V (1993)</a></li>
+<li><a href="https://www.mobygames.com/game/1779/shadow-warrior/">Shadow Warrior (1997)</a></li>
+<li><a href="https://www.mobygames.com/game/1339/warcraft-ii-tides-of-darkness/">WarCraft II (1995)</a></li>
+</ul>
+</div>
+</details>
+<h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
+<p>Sound Canvas outputs to the <strong>SOUNDCANVAS</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
+channel</a>.</p>
+<h2 id="legal-notes">Legal notes<a class="headerlink" href="#legal-notes" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>By providing an easy-to-use Roland Sound Canvas emulation feature, we aim
+to preserve an important part of DOS gaming history for all to freely
+enjoy for posterity. The feature is <strong>only intended</strong> for personal use
+(e.g., retro gaming, or writing music as a hobby) and research purposes.</p>
+<p>The Roland Sound Canvas ROM images are copyrighted by Roland Corporation,
+therefore they cannot be bundled with DOSBox.</p>
+<p>As per the original <a href="https://github.com/nukeykt/Nuked-SC55">Nuked SC-55</a>
+license, the use of the feature is <strong>strictly prohibited</strong> for creating
+commercial Roland Sound Canvas emulation hardware boxes or for use in
+commercial music production.</p>
+<p>Moreover, you are <strong>not</strong> allowed to include the bundled <code>Nuked-SC55.clap</code>
+plugin in any commercial software package without both Roland’s and
+nukeykt’s express permissions. If you delete the plugin from your
+commercial package, you’re fine — DOSBox Staging will continue to work,
+just without Sound Canvas support.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">License notes</p>
+<p>Please see <a href="https://github.com/dosbox-staging/dosbox-staging/pull/4090">this detailed
+description</a>
+on how we bridged the license incompatibility between DOSBox Staging and
+Nuked-SC55 while fully complying with both the GPL v2 and the MAME license
+and respecting nukeykt’s wishes.</p>
+</div>
+<h2 id="configuration-settings">Configuration settings<a class="headerlink" href="#configuration-settings" title="Permanent link">¶</a></h2>
+<p>Sound Canvas settings are to be configured in the <code>[soundcanvas]</code> section.</p>
+<h5 id="soundcanvas_model">soundcanvas_model<a class="headerlink" href="#soundcanvas_model" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Roland Sound Canvas model to use. One or more CLAP audio plugins that
+implement the supported Sound Canvas models must be present in the
+<code>plugins</code> folder in your DOSBox installation or configuration folder.</p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>auto</code> <em class="default">default</em> – Pick the best available model.</li>
+<li><code>sc55</code> – Pick the best available original SC-55 model.</li>
+<li><code>sc55mk2</code> – Pick the best available SC-55mk2 model.</li>
+<li><code>&lt;version&gt;</code> – Use the exact specified model version (e.g., <code>sc55_121</code>).</li>
+</ul>
+</div>
+</dd>
+</dl>
+<h5 id="soundcanvas_rom_dir">soundcanvas_rom_dir<a class="headerlink" href="#soundcanvas_rom_dir" title="Permanent link">¶</a></h5>
+<dl>
+<dd>The folder containing the Roland Sound Canvas ROMs (unset by default).
+The folder can be absolute or relative, or leave it unset to use the
+<code>soundcanvas-roms</code> folder in your DOSBox configuration folder. Other
+common system locations will be checked as well.</dd>
+</dl>
+<h5 id="soundcanvas_filter">soundcanvas_filter<a class="headerlink" href="#soundcanvas_filter" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Filter for the Roland Sound Canvas audio output.</p>
+<p>Possible values:</p>
+<ul>
+<li><code>on</code> <em class="default">default</em> – Filter the output. This applies a 1<sup>st</sup> order low-pass filter at 11 kHz (<code>lpf 1 11000</code>).</li>
+<li><code>off</code> – Don’t filter the output.</li>
+<li><code>&lt;custom&gt;</code> – Custom filter definition; see
+  <a href="../../output-filters/#custom-filter-settings">Custom filter settings</a>
+  for details.</li>
+</ul>
+</dd>
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden="">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <!-- Footer -->
+<footer class="md-footer">
+
+  <!-- Link to previous and/or next page -->
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="footer.title">
+
+      <!-- Link to previous page -->
+      
+        
+        <a href="../roland-mt-32/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Roland MT-32" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Roland MT-32
+            </div>
+          </div>
+        </a>
+      
+
+      <!-- Link to next page -->
+      
+        
+        <a href="../fluidsynth/" class="md-footer__link md-footer__link--next" aria-label="Next: FluidSynth" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              FluidSynth
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+
+  <!-- Further information -->
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="links">
+        <ul>
+          <li><a href="https://github.com/dosbox-staging/dosbox-staging">GitHub</a></li>
+          <li><a href="https://discord.gg/WwAg3Xf">Discord</a></li>
+          <li><a href="https://opencollective.com/dosbox-staging">Open Collective</a></li>
+          <!-- Mastodon verification -->
+	  <li><a rel="me" href="https://corteximplant.com/@DOSBox_Staging">Mastodon</a></li>
+        </ul>
+
+      </div>
+
+     <div class="credits">
+       Powered by <a href="https://www.mkdocs.org/">MkDocs</a>, <a href="https://squidfunk.github.io/mkdocs-material/">MkDocs Material</a>, and <a href="https://pages.github.com/">GitHub Pages</a>
+     </div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../../../../assets/javascripts/version-selector.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "none"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
