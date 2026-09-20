@@ -4560,9 +4560,10 @@
 <h1 id="innovation-ssi-2001">Innovation SSI-2001<a class="headerlink" href="#innovation-ssi-2001" title="Permanent link">¶</a></h1>
 <p>The ultra-rare <strong>Innovation SSI-2001</strong> card was released in April 1989 by
 Innovation Computer Corporation, utilizing the MOS 6581 (aka SID) chip, as
-found in the Commodore 64. Microprose later released its own variant,
-called “The Entertainer”.</p>
-<p>Only 15 games are known to support this truly unique sound option.</p>
+found in the Commodore 64. Microprose later released its own variant, called
+<strong>The Entertainer</strong>. Only 15 games are known to support this truly unique
+sound option.</p>
+<p>Set <code>innovation = on</code> in your config to enable SSI-2001 support.</p>
 <details class="note">
 <summary>Games with Innovation SSI-2001 support</summary>
 <div class="compact" markdown="">
@@ -4583,23 +4584,30 @@ called “The Entertainer”.</p>
 </ul>
 </div>
 </details>
-<p>Set <code>innovation = on</code> in your config to enable the card.</p>
 <h2 id="the-entertainer-variant">The Entertainer variant<a class="headerlink" href="#the-entertainer-variant" title="Permanent link">¶</a></h2>
-<p>Microprose’s The Entertainer variant is functionally identical to the
+<p>Microprose’s <strong>The Entertainer</strong> variant is functionally identical to the
 SSI-2001, but it also has an identification port at address 200.</p>
-<p>The following two games only output SID sound if they detect this
-identification port:</p>
+<p>Only specific versions of two games support this card, and they need
+<code>innovation = entertainer</code> to auto-detect the card:</p>
 <div class="compact">
 <ul>
-<li><a href="https://www.mobygames.com/game/335/gunship/">Gunship versions 429.04 and 429.05 (1986)</a></li>
-<li><a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates! versions 432.1, 432.2, and 432.3 (1987)</a></li>
+<li>
+<p><a href="https://www.mobygames.com/game/335/gunship/">Gunship (1986)</a> — versions
+  429.04 and 429.05</p>
+</li>
+<li>
+<p><a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates! (1987)</a>
+  — versions 432.1, 432.2, and 432.3</p>
+</li>
 </ul>
 </div>
-<p>Set <code>innovation = entertainer</code> to play these two games with SID sound. Only
-enable the Entertainer for these two games—its identification port can
-cause phantom joystick input in other games (e.g., stuck keys or flippers in
-<a href="https://www.mobygames.com/game/3935/pro-pinball-the-web/">Pro Pinball: The
-Web</a>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Only enable <strong>The Entertainer</strong> for these two games — its identification
+port can cause phantom joystick input in other games (e.g., stuck keys or
+flippers in
+<a href="https://www.mobygames.com/game/3935/pro-pinball-the-web/">Pro Pinball: The Web</a>).</p>
+</div>
 <h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
 <p>The Innovation SSI-2001 outputs to the <strong>INNOVATION</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
 channel</a>.</p>
@@ -4610,17 +4618,23 @@ channel</a>.</p>
 <dl>
 <dd>
 <p>Innovation SSI-2001 sound card emulation. The SSI-2001 and Microprose’s
-“The Entertainer” variant use the iconic MOS 6581 SID chip of the Commodore
-64 personal computer from the 1980s. Only 15 games are known to support
-these cards.</p>
+<strong>The Entertainer</strong> variant use the iconic MOS 6581 SID chip of the
+Commodore 64 personal computer from the 1980s. Only 15 games are known to
+support these cards.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>off</code> <em class="default">default</em> – Disable the emulation.</li>
-<li><code>on</code> – Emulate the Innovation SSI-2001 on base port 280.</li>
-<li><code>entertainer</code> – Emulate The Entertainer on base port 280. This variant
-  adds an identification port at 200 that Gunship and Pirates! need for
-  SID sound. Only enable it for these two games as the identification port
-  can cause phantom joystick input in other games.</li>
+<li>
+<p><code>off</code> <em class="default">default</em> – Disable the emulation.</p>
+</li>
+<li>
+<p><code>on</code> – Emulate the Innovation SSI-2001 on base port 280.</p>
+</li>
+<li>
+<p><code>entertainer</code> – Emulate <strong>The Entertainer</strong> on base port 280. This
+  variant adds an identification port at 200 that <strong>Gunship</strong> and
+  <strong>Pirates!</strong> need for SID sound. Only enable it for these two games as
+  the identification port can cause phantom joystick input in other games.</p>
+</li>
 </ul>
 </dd>
 </dl>
