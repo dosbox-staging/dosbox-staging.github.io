@@ -4591,14 +4591,10 @@ SSI-2001, but it also has an identification port at address 200.</p>
 <code>innovation = entertainer</code> to auto-detect the card:</p>
 <div class="compact">
 <ul>
-<li>
-<p><a href="https://www.mobygames.com/game/335/gunship/">Gunship (1986)</a> — versions
-  429.04 and 429.05</p>
-</li>
-<li>
-<p><a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates! (1987)</a>
-  — versions 432.1, 432.2, and 432.3</p>
-</li>
+<li><a href="https://www.mobygames.com/game/335/gunship/">Gunship (1986)</a> — versions
+  429.04 and 429.05</li>
+<li><a href="https://www.mobygames.com/game/214/sid-meiers-pirates/">Pirates! (1987)</a>
+  — versions 432.1, 432.2, and 432.3</li>
 </ul>
 </div>
 <div class="admonition warning">
@@ -4607,6 +4603,12 @@ SSI-2001, but it also has an identification port at address 200.</p>
 port can cause phantom joystick input in other games (e.g., stuck keys or
 flippers in
 <a href="https://www.mobygames.com/game/3935/pro-pinball-the-web/">Pro Pinball: The Web</a>).</p>
+</div>
+<div class="admonition danger base address conflict">
+<p class="admonition-title">Danger</p>
+<p>Port 200 of <strong>The Entertainer</strong> conflicts with the
+<a href="../ibm-ps1audio/">IBM PS/1 Audio Card</a> which uses the 200–205 address
+range. Don’t enable both audio devices at the same time.</p>
 </div>
 <h2 id="mixer-channel">Mixer channel<a class="headerlink" href="#mixer-channel" title="Permanent link">¶</a></h2>
 <p>The Innovation SSI-2001 outputs to the <strong>INNOVATION</strong> <a href="../../mixer/#list-of-mixer-channels">mixer
