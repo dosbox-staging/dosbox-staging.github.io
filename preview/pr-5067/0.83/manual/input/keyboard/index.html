@@ -4511,6 +4511,10 @@ combinations (<span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kb
 The <code>keyboard_capture</code> setting lets you override this, so DOSBox gets first
 dibs on those keys. This is especially useful in fullscreen mode or when a
 game relies on key combinations that collide with OS shortcuts.</p>
+<p>Set it to <code>auto</code> to make the keyboard follow the mouse: the shortcuts are only
+captured while the <a href="../mouse/#mouse_capture">mouse is captured</a>. Releasing the
+mouse (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> on Windows/Linux, <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f10">F10</kbd></span> on macOS) hands them back to
+your operating system, so there’s a single way out.</p>
 <p>All key bindings can be customised through the <a href="../keymapper/">key mapper</a>
 (<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f1">F1</kbd></span> on Windows/Linux, <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f1">F1</kbd></span> on macOS). See
 <a href="../../appendices/shortcuts/">Keyboard shortcuts</a> for the full list of
@@ -4536,9 +4540,9 @@ section.</p>
 <h5 id="keyboard_capture">keyboard_capture<a class="headerlink" href="#keyboard_capture" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>Capture system keyboard shortcuts. When enabled, most system shortcuts
-are captured and sent to DOSBox Staging instead of being intercepted by
-the host OS. Examples of captured shortcuts:</p>
+<p>Capture system keyboard shortcuts. When captured, most system shortcuts
+such as <span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span> are sent to DOSBox Staging instead of the host OS.
+Examples of captured shortcuts:</p>
 <ul>
 <li><span class="keys"><kbd class="key-alt">Alt</kbd><span>+</span><kbd class="key-tab">Tab</kbd></span> (task switching on all platforms)</li>
 <li><span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-escape">Esc</kbd></span> (Start menu on Windows)</li>
@@ -4547,7 +4551,15 @@ the host OS. Examples of captured shortcuts:</p>
 </ul>
 <p>This is particularly useful for <a href="../../using-dosbox-staging/windows-31/">Windows 3.1</a> and DOS
 programs that use key combinations which conflict with your OS shortcuts.</p>
-<p>Possible values: <code>on</code>, <code>off</code> <em class="default">default</em></p>
+<p>Possible values:</p>
+<div class="compact" markdown="">
+<ul>
+<li><code>auto</code> – Capture system shortcuts only while the mouse is captured.
+  Releasing the mouse gives the shortcuts back to the host OS.</li>
+<li><code>on</code> – Always capture system shortcuts.</li>
+<li><code>off</code> <em class="default">default</em> – Never capture system shortcuts.</li>
+</ul>
+</div>
 </dd>
 </dl>
 
