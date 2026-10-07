@@ -5403,10 +5403,10 @@ texture backends; the default <code>auto</code> value selects the best available
 <p>The <a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a>
 settings control where and how large the DOSBox Staging window appears on
 startup. You can still resize the window freely after launch — these only set
-the initial state. The named sizes (<code>small</code>, <code>medium</code>, <code>large</code>) are relative to
-your desktop, while the <code>WxH</code> format lets you specify the size in logical
-units, pixels, or percentages (see <a href="#logical-units-pixels-and-percentages">Logical units, pixels, and
-percentages</a> below).</p>
+the initial state. The named sizes (<code>small</code>, <code>medium</code>, <code>large</code>) give you 4:3
+windows relative to your desktop height, while the <code>WxH</code> format lets you
+specify the size in logical units, pixels, or percentages (see <a href="#logical-units-pixels-and-percentages">Logical units,
+pixels, and percentages</a> below).</p>
 <p>On multi-monitor setups, use <a href="#display"><code>display</code></a> to select which screen DOSBox
 opens on, and <a href="#window_position"><code>window_position</code></a> to fine-tune placement.</p>
 <p><a href="#window_decorations"><code>window_decorations</code></a> controls whether the operating
@@ -5438,7 +5438,8 @@ different ways:</p>
 <p><strong>Percentages</strong> (e.g., <code>window_size = 120x90%</code> or <code>viewport = 89%</code>) — The
   values are relative to your desktop size, so they adapt to any monitor. For
   window sizes, both values are relative to the desktop height; for example,
-  <code>120x90%</code> always gives you a 4:3 window that is 90% as tall as your desktop.</p>
+  <code>120x90%</code> always gives you a 4:3 window that is 90% as tall as your desktop
+  (this is the same as <code>window_size = large</code>).</p>
 </li>
 </ul>
 <p>For the least surprising results, use the same kind of unit for
@@ -5515,8 +5516,8 @@ section.</p>
   position.</li>
 <li><code>X,Y</code> – Set window position in X,Y format in logical units (e.g.,
   <code>250,100</code>). <code>0,0</code> is the top-left corner of the screen. The values are
-  multiplied by the OS-level DPI scale factor to get the window position
-  in pixels.</li>
+  multiplied by the OS-level display scaling factor to get the window
+  position in pixels.</li>
 <li><code>X,Ypx</code> – Set window position in pixels (e.g., <code>375,150px</code>).</li>
 <li><code>X,Y%</code> – Set window position as a percentage of the desktop width and
   height (e.g., <code>10,10%</code>).</li>
@@ -5537,11 +5538,12 @@ window after startup.</p>
 <p>Possible values:</p>
 <ul>
 <li><code>default</code> <em class="default">default</em> – Same as <code>medium</code>.</li>
-<li><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – Size the window
-  relative to the desktop.</li>
+<li><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – 4:3 window sizes
+  relative to the desktop height (same as <code>66.67x50%</code>, <code>98.67x74%</code>, and
+  <code>120x90%</code>, respectively).</li>
 <li><code>WxH</code> – Specify window size in WxH format in logical units (e.g.,
-  <code>1024x768</code>). The values are multiplied by the OS-level DPI scale factor
-  to get the window size in pixels.</li>
+  <code>1024x768</code>). The values are multiplied by the OS-level display scaling
+  factor to get the window size in pixels.</li>
 <li><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>).</li>
 <li><code>WxH%</code> – Specify window size as a percentage of the desktop height
   (e.g., <code>133x100%</code> for a 4:3 window as tall as the desktop). Both values
@@ -5552,7 +5554,8 @@ window after startup.</p>
 percentages</a> for more details.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Resizing the window updates this setting in the same format.</p>
+<p>Resizing the window updates this setting in the same format, except
+for the named sizes, which are updated in <code>WxH%</code> format.</p>
 </div>
 </dd>
 </dl>
