@@ -4706,20 +4706,6 @@ function set_build_date(asset, os_name) {
   get_build_date_el(os_name).textContent = date_string_utc
 }
 
-function set_release_notes_link(html_url) {
-  const el = document.getElementById("dev-build-notes")
-
-  const link = document.createElement("a")
-  link.textContent = "Release notes"
-  link.setAttribute("href", html_url)
-
-  const small = document.createElement("small")
-  small.appendChild(link)
-
-  el.innerHTML = ""
-  el.appendChild(small)
-}
-
 async function set_dev_builds() {
   try {
     const release = await fetch_json(
@@ -4749,8 +4735,6 @@ async function set_dev_builds() {
 
       get_build_version_el(build.os_name).textContent = version
     })
-
-    set_release_notes_link(release.html_url)
 
   } catch (err) {
     console.warn("Fetch error", err)
@@ -4782,8 +4766,10 @@ head on to the <a href="../windows/">Windows</a>, <a href="../macos/">macOS</a>,
 <p>The <strong>development builds</strong> are hosted on GitHub; no GitHub account is
 needed to download them.</p>
 <p>We publish a new dev snapshot build whenever a PR is merged, as long as
-the Windows, macOS, and Linux builds all succeed for it. Make sure to
-check out the automatically generated <strong>release notes</strong>, which list all
+the Windows, macOS, and Linux builds all succeed for it.</p>
+<p>Make sure to check out the automatically generated <a href="https://github.com/dosbox-staging/dosbox-staging/releases/tag/dev-latest">release
+notes</a>
+(also included in the release artifacts in HTML format), which list all
 the changes since the last stable release, with links to the individual
 PRs on GitHub.</p>
 </div>
@@ -4830,10 +4816,8 @@ PRs on GitHub.</p>
 </tbody></table>
 </div>
 
-<div id="dev-build-notes">
-<a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/dots.svg" data-desc-position="bottom"><img style="margin:auto;margin-left:0.1em;" src="../images/dots.svg"></a>
-</div>
-
+<p>You can read the release notes for the latest development build
+<a href="https://github.com/dosbox-staging/dosbox-staging/releases/tag/dev-latest">here</a>.</p>
 <h2 id="installation-notes">Installation notes<a class="headerlink" href="#installation-notes" title="Permanent link">¶</a></h2>
 <h3 id="windows">Windows<a class="headerlink" href="#windows" title="Permanent link">¶</a></h3>
 <p>Windows builds include x86_64 installer (artifact name ending with <code>-setup</code>)
