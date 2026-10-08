@@ -5495,10 +5495,11 @@ while still allowing the game to save data:</p>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>mount C /path/to/saves -t overlay
 </code></pre></div>
 <h3 id="mounting-floppy-images">Mounting floppy images<a class="headerlink" href="#mounting-floppy-images" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mount A floppy.img
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mount A floppy.img -t floppy
 </code></pre></div>
-<p>Use <code>-t floppy</code> if auto-detection picks the wrong type. Supported floppy
-image formats: <code>.img</code>, <code>.ima</code> (raw sector images).</p>
+<p>The <code>-t floppy</code> option is required because <code>.img</code> and <code>.ima</code> files are
+mounted as hard disk images by default. Supported floppy image formats:
+<code>.img</code>, <code>.ima</code> (raw sector images).</p>
 <h4 id="floppy-disk-formats">Floppy disk formats<a class="headerlink" href="#floppy-disk-formats" title="Permanent link">¶</a></h4>
 <p>The 5.25-inch disk was a flexible magnetic disk visible through a slot in its
 cardboard sleeve. The 3.5-inch disk housed the magnetic medium in a rigid
