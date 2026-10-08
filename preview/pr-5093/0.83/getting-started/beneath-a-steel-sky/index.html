@@ -55,6 +55,9 @@
 
     
     
+  
+  <link rel="icon" type="image/svg+xml" href="../../../assets/images/favicon.svg">
+
   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -113,7 +116,7 @@
     
       <a href="../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
         
-  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
       </a>
     
@@ -379,7 +382,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
       
-  <img src="../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
     </a>
     DOSBox Staging
@@ -5504,11 +5507,19 @@ of the game.</p>
 then copy <code>skydrv.com</code> into <code>drives/c/SKY</code>. As per the forum post, you can run
 the patched game from the mounted CD with this command:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>d:
-<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>c:\sky\skydrv cfg=c:\sky
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>c:\sky\skydrv CFG=c:\sky
 </code></pre></div>
 <p>Skip the intro and inspect the door again. Whoa, magic! MT-32 music <em>and</em>
 speech at the same time! Yikes! <img alt="😎" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/1f60e.svg" title=":sunglasses:"> Best put this into our
 <code>[autoexec]</code> section!</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You <em>must</em> use uppercase <code>CFG=</code>! This is a quirk of the game — the
+game’s code looks for the <code>CFG=</code> parameter in a case-sensitive manner and
+will ignore lowercase <code>cfg=</code> (e.g., if you’ve configured the game for a
+non-English language, using lowercase <code>cfg=</code> will <em>not</em> load the
+configuration and the game will revert to English subtitles).</p>
+</div>
 <h2 id="aspect-ratio-correction">Aspect ratio correction<a class="headerlink" href="#aspect-ratio-correction" title="Permanent link">¶</a></h2>
 <p>We’re on a roll — from audio to graphics next! If you’ve checked out the
 included comic book (you should!) and have a keen eye, you might notice the
@@ -5691,9 +5702,12 @@ strange parallel universe! 😎</p>
 <a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>
 <a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a><span class="c1"># patched game (MT-32 music &amp; SB speech/sfx)</span>
 <a id="__codelineno-23-31" name="__codelineno-23-31" href="#__codelineno-23-31"></a><span class="na">d</span><span class="o">:</span>
-<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a><span class="na">c</span><span class="o">:</span><span class="s">\sky\skydrv cfg=c:\sky</span>
-<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a>
-<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a><span class="na">exit</span>
+<a id="__codelineno-23-32" name="__codelineno-23-32" href="#__codelineno-23-32"></a>
+<a id="__codelineno-23-33" name="__codelineno-23-33" href="#__codelineno-23-33"></a><span class="c1"># 'CFG=' must be uppercase! The game will ignore lowercase 'cfg='</span>
+<a id="__codelineno-23-34" name="__codelineno-23-34" href="#__codelineno-23-34"></a><span class="c1"># (this is a quirk of the game, nothing to do with DOSBox Staging)</span>
+<a id="__codelineno-23-35" name="__codelineno-23-35" href="#__codelineno-23-35"></a><span class="na">c</span><span class="o">:</span><span class="s">\sky\skydrv CFG=c:\sky</span>
+<a id="__codelineno-23-36" name="__codelineno-23-36" href="#__codelineno-23-36"></a>
+<a id="__codelineno-23-37" name="__codelineno-23-37" href="#__codelineno-23-37"></a><span class="na">exit</span>
 </code></pre></div>
 <p>The patched game is clearly superior, but you can still run the original:
 uncomment the three lines below <code># original game</code>, then comment out the two
