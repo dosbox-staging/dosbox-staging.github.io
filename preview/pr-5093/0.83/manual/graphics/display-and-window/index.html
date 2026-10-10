@@ -5435,7 +5435,10 @@ different ways:</p>
 <li>
 <p><strong>Pixels</strong> (e.g., <code>window_size = 1440x1080px</code>) — The values are in
   pixels, and display scaling is not applied. This gives you precise control,
-  but the window will look smaller on a 4K monitor than on a 1080p one.</p>
+  but the window will look smaller on a 4K monitor than on a 1080p one. A
+  window sized in pixels keeps its size in pixels when you move it to another
+  monitor, while windows sized in logical units or percentages keep their
+  size in logical units.</p>
 </li>
 <li>
 <p><strong>Percentages</strong> (e.g., <code>window_size = 120x90%</code> or <code>viewport = 89%</code>) — The
@@ -5547,7 +5550,8 @@ window after startup.</p>
 <li><code>WxH</code> – Specify window size in WxH format in logical units (e.g.,
   <code>1024x768</code>). The values are multiplied by the OS-level display scaling
   factor to get the window size in pixels.</li>
-<li><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>).</li>
+<li><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>). The
+  window keeps its size in pixels when moved to another display.</li>
 <li><code>WxH%</code> – Specify window size as a percentage of the desktop height
   (e.g., <code>120x90%</code> for a 4:3 window 90% as tall as the desktop). Both
   values are relative to the desktop height, so the aspect ratio of the
