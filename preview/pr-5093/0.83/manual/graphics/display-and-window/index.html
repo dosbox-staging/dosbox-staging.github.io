@@ -5420,7 +5420,7 @@ system’s title bar and window borders are shown.
 <p>Most operating systems let you enlarge everything on the screen with a display
 scaling setting, which is especially useful on high-resolution monitors. For
 example, 4K monitors are typically used at 200% scaling. A window that is 1000
-<em>logical units</em> wide is 2000 pixels wide on such a monitor, but only 1000
+<strong>logical units</strong> wide is 2000 pixels wide on such a monitor, but only 1000
 pixels wide on a 1080p monitor at 100% scaling. This way, the window appears
 roughly the same physical size on both.</p>
 <p>You can specify the window size and position, and the <a href="../rendering/aspect-ratios-and-scaling/#custom-viewport-size">viewport
@@ -5448,15 +5448,26 @@ different ways:</p>
   (this is the same as <code>window_size = large</code>).</p>
 </li>
 </ul>
+<p>For general use, logical units and percentages are recommended as they ensure
+your settings will be portable between monitors with different scaling
+factors.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>You can also use a comma instead of the <code>x</code> in sizes (e.g., <code>window_size =
 1024,768</code> or <code>viewport = 1440,1080px</code>).</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Keep it simple</p>
 <p>For the least surprising results, use the same kind of unit for
-<code>window_size</code>, <code>window_position</code>, and <code>viewport</code>. Mixing them can have
-unexpected effects; for example, a viewport specified in logical units can end
-up larger than a window specified in pixels at high scaling factors. That said,
-mixing units is perfectly valid for more advanced use cases, such as combining
-a window size relative to your desktop with a viewport size in pixels to get a
-specific integer scaling factor on your monitor.</p>
+<a href="#window_size"><code>window_size</code></a>, <a href="#window_position"><code>window_position</code></a>, and
+<a href="../rendering/aspect-ratios-and-scaling/#viewport"><code>viewport</code></a>. Mixing them
+can have unexpected effects; for example, a viewport specified in logical
+units can end up larger than a window specified in pixels at high scaling
+factors. That said, mixing units is perfectly valid for more advanced use
+cases, such as combining a window size relative to your desktop with a
+viewport size in pixels to get a specific integer scaling factor on your
+monitor.</p>
+</div>
 <h2 id="titlebar-customisation">Titlebar customisation<a class="headerlink" href="#titlebar-customisation" title="Permanent link">¶</a></h2>
 <p>The <a href="#window_titlebar"><code>window_titlebar</code></a> setting controls what information
 appears in the window’s title bar. It accepts a space-separated list of
