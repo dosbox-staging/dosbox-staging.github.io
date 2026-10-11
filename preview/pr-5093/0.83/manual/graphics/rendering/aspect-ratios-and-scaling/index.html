@@ -4975,11 +4975,11 @@ for more details and advice on choosing the right unit.</p>
 <p class="admonition-title">Why 89%?</p>
 <p><code>viewport = 89%</code> is based on the amount of vertical space available on a
 typical 1920×1080 desktop. It gives a maximum viewport of about 961
-logical units vertically.</p>
+logical pixels vertically.</p>
 <p>With integer scaling enabled, this is enough for a 2× vertical scale
 of both 320×200 content after VGA double-scanning (resulting in a
 640×400 image) and 640×480 content. The resulting image sizes
-are approximately 1067×800 and 1280×960 logical units
+are approximately 1067×800 and 1280×960 logical pixels
 respectively in fullscreen mode — around 15” and 19” physical CRT
 equivalents. This makes <code>89%</code> a useful general-purpose starting point.</p>
 </div>
@@ -5068,10 +5068,10 @@ aspect ratio into account (see <a href="#aspect"><code>aspect</code></a>).</p>
   with <a href="#integer_scaling"><code>integer_scaling</code></a> enabled.</p>
 </li>
 <li>
-<p><code>WxH</code> – Set a fixed viewport size in WxH (or W,H) format in logical units
-  (e.g., <code>960x720</code>). The specified size must not be larger than the desktop.
-  If it’s larger than the window size, it will be scaled to fit within the
-  window.</p>
+<p><code>WxH</code> – Set a fixed viewport size in WxH format in logical units
+  (e.g., <code>960x720</code>). The specified size must not be larger than the
+  desktop. If it’s larger than the window size, it will be scaled to fit
+  within the window.</p>
 </li>
 <li>
 <p><code>WxHpx</code> – Same as <code>WxH</code>, but the size is specified in pixels (e.g.,
