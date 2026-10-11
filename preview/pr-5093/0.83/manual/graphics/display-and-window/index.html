@@ -5435,7 +5435,10 @@ different ways:</p>
 <li>
 <p><strong>Pixels</strong> (e.g., <code>window_size = 1440x1080px</code>) — The values are in
   pixels, and display scaling is not applied. This gives you precise control,
-  but the window will look smaller on a 4K monitor than on a 1080p one.</p>
+  but the window will look smaller on a 4K monitor than on a 1080p one. A
+  window sized in pixels keeps its size in pixels when you move it to another
+  monitor, while windows sized in logical units or percentages keep their
+  size in logical units.</p>
 </li>
 <li>
 <p><strong>Percentages</strong> (e.g., <code>window_size = 120x90%</code> or <code>viewport = 89%</code>) — The
@@ -5445,6 +5448,8 @@ different ways:</p>
   (this is the same as <code>window_size = large</code>).</p>
 </li>
 </ul>
+<p>You can also use a comma instead of the <code>x</code> in sizes (e.g., <code>window_size =
+1024,768</code> or <code>viewport = 1440,1080px</code>).</p>
 <p>For the least surprising results, use the same kind of unit for
 <code>window_size</code>, <code>window_position</code>, and <code>viewport</code>. Mixing them can have
 unexpected effects; for example, a viewport specified in logical units can end
@@ -5531,6 +5536,11 @@ percentages</a> for more details.</p>
 <p class="admonition-title">Note</p>
 <p>Moving the window updates this setting in the same format.</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This setting has no effect on Wayland because Wayland doesn’t let
+applications position their windows.</p>
+</div>
 </dd>
 </dl>
 <h5 id="window_size">window_size<a class="headerlink" href="#window_size" title="Permanent link">¶</a></h5>
@@ -5544,10 +5554,11 @@ window after startup.</p>
 <li><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – 4:3 window sizes
   relative to the desktop height (same as <code>66.67x50%</code>, <code>98.67x74%</code>, and
   <code>120x90%</code>, respectively).</li>
-<li><code>WxH</code> – Specify window size in WxH format in logical units (e.g.,
-  <code>1024x768</code>). The values are multiplied by the OS-level display scaling
-  factor to get the window size in pixels.</li>
-<li><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>).</li>
+<li><code>WxH</code> – Specify window size in WxH (or W,H) format in logical units
+  (e.g., <code>1024x768</code>). The values are multiplied by the OS-level display
+  scaling factor to get the window size in pixels.</li>
+<li><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>). The
+  window keeps its size in pixels when moved to another display.</li>
 <li><code>WxH%</code> – Specify window size as a percentage of the desktop height
   (e.g., <code>120x90%</code> for a 4:3 window 90% as tall as the desktop). Both
   values are relative to the desktop height, so the aspect ratio of the
