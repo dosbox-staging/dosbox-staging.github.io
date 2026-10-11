@@ -5449,6 +5449,8 @@ different ways:</p>
   tall as your desktop (this is the same as <code>window_size = large</code>).</p>
 </li>
 </ul>
+<p>You can also use a comma instead of the <code>x</code> in sizes (e.g., <code>window_size =
+1024,768</code> or <code>viewport = 1440,1080px</code>).</p>
 <p>For the least surprising results, use the same kind of unit for <code>window_size</code>,
 <code>window_position</code>, <code>viewport</code>, and <code>viewport_position</code>. Mixing them can have
 unexpected effects; for example, a viewport specified in logical units can end
@@ -5548,9 +5550,9 @@ window after startup.</p>
 <li><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – 4:3 window sizes
   relative to the desktop height (same as <code>66.67x50%</code>, <code>98.67x74%</code>, and
   <code>120x90%</code>, respectively).</li>
-<li><code>WxH</code> – Specify window size in WxH format in logical units (e.g.,
-  <code>1024x768</code>). The values are multiplied by the OS-level display scaling
-  factor to get the window size in pixels.</li>
+<li><code>WxH</code> – Specify window size in WxH (or W,H) format in logical units
+  (e.g., <code>1024x768</code>). The values are multiplied by the OS-level display
+  scaling factor to get the window size in pixels.</li>
 <li><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>). The
   window keeps its size in pixels when moved to another display.</li>
 <li><code>WxH%</code> – Specify window size as a percentage of the desktop height
