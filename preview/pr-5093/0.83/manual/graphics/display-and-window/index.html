@@ -5496,12 +5496,12 @@ viewport size in pixels to get a specific integer scaling factor on your
 monitor.</p>
 </div>
 <h3 id="title-bar-and-window-borders">Title bar and window borders<a class="headerlink" href="#title-bar-and-window-borders" title="Permanent link">¶</a></h3>
-<p><a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a> refer to
-the window’s <em>content area</em>, the part of the window where DOSBox Staging draws
-the image. The size doesn’t include the title bar and window borders, so the
-window takes up slightly more space on the screen than the size you specify.
-Likewise, the position is that of the top-left corner of the content area, not
-of the whole window.</p>
+<p><a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a> refer
+to the window’s <strong>content area</strong>, the part of the window where DOSBox Staging
+draws the image. The size does <em>not</em> include the title bar and window borders,
+so the window takes up slightly more space on the screen than the size you
+specify. Likewise, the position is that of the top-left corner of the content
+area, <em>not</em> of the whole window including the title bar.</p>
 <p>You’ll rarely notice this, except when you place the window near the top of the
 screen or make it nearly as tall as your desktop. What happens then depends on
 your operating system:</p>
@@ -5529,11 +5529,12 @@ covered by the taskbar (on Windows) or the Dock (on macOS), so the window can
 end up partly behind them.</p>
 <div class="admonition tip">
 <p class="admonition-title">Arranging windows</p>
-<p>To arrange windows side by side, it’s easiest to use your operating system’s
-window snapping: press <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> on Windows,
+<p>To arrange windows side by side, it’s easiest to use your operating
+system’s window snapping: press <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> on Windows,
 <span class="keys"><kbd class="key-meta">Meta</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-meta">Meta</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> on most Linux desktops, or hover over the
-green button in the title bar on macOS. DOSBox Staging updates <code>window_size</code>
-and <code>window_position</code> to match.</p>
+green button in the title bar on macOS. DOSBox Staging updates
+<a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a>`
+to match.</p>
 <p>If the window must cover an exact area of the screen, set
 <a href="#window_decorations"><code>window_decorations</code></a> to <code>off</code>. The window then has no
 title bar or borders, so its size and position describe the whole window.
