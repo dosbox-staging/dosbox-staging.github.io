@@ -2674,10 +2674,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#titlebar-customisation" class="md-nav__link">
+  <a href="#title-bar-customisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Titlebar customisation
+        Title bar customisation
       
     </span>
   </a>
@@ -4891,10 +4891,10 @@
       
         
 <li class="md-nav__item">
-  <a href="#titlebar-customisation" class="md-nav__link">
+  <a href="#title-bar-customisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Titlebar customisation
+        Title bar customisation
       
     </span>
   </a>
@@ -5398,9 +5398,9 @@ Staging specifically.</p>
 <a href="#vsync"><code>vsync</code></a> disabled. The tearing will only be noticeable in fast-paced
 3D games and smooth-scrolling 2D games. In games with mostly static screens
 (RPGs, adventures, and strategy games) the tearing is virtually unnoticeable.</p>
-<p>If really want to use vsync, you can create custom screen modes that match the
-DOS refresh rate exactly. Use the Nvidia Control Panel or <a href="https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU">Custom Resolution
-Utility
+<p>If you really want to use vsync, you can create custom screen modes that match
+the DOS refresh rate exactly. Use the Nvidia Control Panel or <a href="https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU">Custom
+Resolution Utility
 (CRU)</a>
 on Windows. Enable <strong>CVT reduced blanking</strong> (<strong>CVT-RB</strong> or <strong>CVT-RBv2</strong>) to
 reach 70 Hz. For the best results, use the exact fractional <strong>59.713 Hz</strong> and
@@ -5520,13 +5520,22 @@ your operating system:</p>
 <p><strong>macOS</strong> — macOS keeps the title bar below the menu bar and doesn’t let
   windows grow taller than the space below it. A window positioned too close to
   the top of the screen is moved down, and a window that’s too tall is shrunk to
-  fit (this also updates <code>window_size</code>).</p>
+  fit (this also updates <a href="#window_size"><code>window_size</code></a>).</p>
 </li>
 <li>
-<p><strong>Linux</strong> — This depends on your desktop environment. On Wayland,
-  <a href="#window_position"><code>window_position</code></a> has no effect.</p>
+<p><strong>Linux</strong> — The exact behaviour depends on your desktop environment. On Wayland,
+  <a href="#window_position"><code>window_position</code></a> has no effect. Otherwise, some window
+  managers place the top-left corner of the title bar at the position you set,
+  while others place the top-left corner of the content area there. Some also
+  move the window to keep it fully inside the display bounds. If the window
+  ends up somewhere else, the current values of <a href="#window_size"><code>window_size</code></a>
+  and <a href="#window_position"><code>window_position</code></a> show its actual size and position.</p>
 </li>
 </ul>
+<p>Resizing the window updates <a href="#window_size"><code>window_size</code></a>, and moving it
+updates <a href="#window_position"><code>window_position</code></a>. Each setting is updated in the
+same unit you used to specify it (for example, a percentage stays a
+percentage).</p>
 <p>Positions and percentages are relative to the whole desktop, including the area
 covered by the taskbar (on Windows) or the Dock (on macOS), so the window can
 end up partly behind them.</p>
@@ -5536,14 +5545,14 @@ end up partly behind them.</p>
 system’s window snapping: press <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> on Windows,
 <span class="keys"><kbd class="key-meta">Meta</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-meta">Meta</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> on most Linux desktops, or hover over the
 green button in the title bar on macOS. DOSBox Staging updates
-<a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a>`
+<a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a>
 to match.</p>
 <p>If the window must cover an exact area of the screen, set
 <a href="#window_decorations"><code>window_decorations</code></a> to <code>off</code>. The window then has no
 title bar or borders, so its size and position describe the whole window.
 The downside is that there’s no title bar to drag the window around with.</p>
 </div>
-<h2 id="titlebar-customisation">Titlebar customisation<a class="headerlink" href="#titlebar-customisation" title="Permanent link">¶</a></h2>
+<h2 id="title-bar-customisation">Title bar customisation<a class="headerlink" href="#title-bar-customisation" title="Permanent link">¶</a></h2>
 <p>The <a href="#window_titlebar"><code>window_titlebar</code></a> setting controls what information
 appears in the window’s title bar. It accepts a space-separated list of
 parameters, each in <code>key=value</code> format.</p>
@@ -5606,31 +5615,50 @@ section.</p>
 <p>Set initial window position for windowed mode.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>auto</code> <em class="default">default</em> – Let the window manager decide the
-  position.</li>
-<li><code>X,Y</code> – Set window position in X,Y format in logical units (e.g.,
+<li>
+<p><code>auto</code> <em class="default">default</em> – Let the window manager decide the
+  position.</p>
+</li>
+<li>
+<p><code>X,Y</code> – Set window position in <code>X,Y</code> format in logical units (e.g.,
   <code>250,100</code>). <code>0,0</code> is the top-left corner of the display selected with
-  <a href="#display"><code>display</code></a>. The values are multiplied by the OS-level
-  display scaling factor to get the window position in pixels.</li>
-<li><code>X,Ypx</code> – Set window position in pixels (e.g., <code>375,150px</code>).</li>
-<li><code>X,Y%</code> – Set window position as a percentage of the desktop width and
-  height (e.g., <code>10,10%</code>).</li>
+  <a href="#display"><code>display</code></a>. The values are multiplied by the OS-level display
+  scaling factor to get the window position in pixels.</p>
+</li>
+<li>
+<p><code>X,Ypx</code> – Set window position in pixels (e.g., <code>375,150px</code>).</p>
+</li>
+<li>
+<p><code>X,Y%</code> – Set window position as a percentage of the desktop width and
+  height (e.g., <code>10,10%</code>).</p>
+</li>
 </ul>
 <p>See <a href="#logical-units-pixels-and-percentages">Logical units, pixels, and
 percentages</a> for more details.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The position is that of the top-left corner of the window’s content
-area, excluding the title bar and window borders. With small Y values,
-the title bar can end up above the top edge of the screen. On macOS, the
-window is moved down instead so that its title bar is below the menu
-bar. See <a href="#title-bar-and-window-borders">Title bar and window borders</a>
-for details.</p>
-<p>Moving the window updates this setting in the same format. Moving it to
-a different display also updates the <a href="#display"><code>display</code></a> setting.</p>
+<p class="admonition-title">Notes</p>
+<ul>
+<li>
+<p>Moving the window updates this setting in the same format. Moving it
+  to a different display also updates the <a href="#display"><code>display</code></a>
+  setting.</p>
+</li>
+<li>
+<p>The position is that of the top-left corner of the window’s content area,
+  excluding the title bar and window borders.</p>
+</li>
+<li>
+<p>The window manager might move the window away from the specified position
+  (e.g., to keep it fully inside the display bounds, or to place it below a
+  task bar). E.g., on Windows, with small Y values, the title bar can
+  end up above the top edge of the screen. On macOS, the window is moved
+  down instead so that its title bar is below the menu bar. See <a href="#title-bar-and-window-borders">Title
+  bar and window borders</a> for details.</p>
+</li>
+</ul>
 </div>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">Wayland note</p>
 <p>This setting has no effect on Wayland because Wayland doesn’t let
 applications position their windows.</p>
 </div>
@@ -5643,30 +5671,50 @@ applications position their windows.</p>
 window after startup.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>default</code> <em class="default">default</em> – Same as <code>medium</code>.</li>
-<li><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – 4:3 window sizes
+<li>
+<p><code>default</code> <em class="default">default</em> – Same as <code>medium</code>.</p>
+</li>
+<li>
+<p><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – 4:3 window sizes
   relative to the desktop height (same as <code>66.67x50%</code>, <code>98.67x74%</code>, and
-  <code>120x90%</code>, respectively).</li>
-<li><code>WxH</code> – Specify window size in WxH (or W,H) format in logical units
+  <code>120x90%</code>, respectively).</p>
+</li>
+<li>
+<p><code>WxH</code> – Specify window size in <code>WxH</code> (or <code>W,H</code>) format in logical units
   (e.g., <code>1024x768</code>). The values are multiplied by the OS-level display
-  scaling factor to get the window size in pixels.</li>
-<li><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>). The
-  window keeps its size in pixels when moved to another display.</li>
-<li><code>WxH%</code> – Specify window size as a percentage of the desktop height
+  scaling factor to get the window size in pixels.</p>
+</li>
+<li>
+<p><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>). The
+  window keeps its size in pixels when moved to another display.</p>
+</li>
+<li>
+<p><code>WxH%</code> – Specify window size as a percentage of the desktop height
   (e.g., <code>120x90%</code> for a 4:3 window 90% as tall as the desktop). Both
   values are relative to the desktop height, so the aspect ratio of the
-  window doesn’t depend on the aspect ratio of the desktop.</li>
+  window doesn’t depend on the aspect ratio of the desktop.</p>
+</li>
 </ul>
 <p>See <a href="#logical-units-pixels-and-percentages">Logical units, pixels, and
 percentages</a> for more details.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The size doesn’t include the title bar and window borders, so the window
-takes up slightly more space on the screen than the specified size. See
-<a href="#title-bar-and-window-borders">Title bar and window borders</a> for
-details.</p>
-<p>Resizing the window updates this setting in the same format, except for
-the named sizes, which are updated in <code>WxH%</code> format.</p>
+<p class="admonition-title">Notes</p>
+<ul>
+<li>
+<p>Resizing the window updates this setting in the same format, except for the
+  named sizes, which are updated in <code>WxH%</code> format.</p>
+</li>
+<li>
+<p>The size specifies the window’s content area excluding the title bar and
+  window borders, so the window takes up slightly more space on the screen
+  than the specified size. </p>
+</li>
+<li>
+<p>The window manager might resize the window (e.g., to keep it fully inside
+  the display bounds). See <a href="#title-bar-and-window-borders">Title bar and window
+  borders</a> for details.</p>
+</li>
+</ul>
 </div>
 </dd>
 </dl>
@@ -5674,7 +5722,7 @@ the named sizes, which are updated in <code>WxH%</code> format.</p>
 <dl>
 <dd>
 <p>Space-separated list of information to be displayed in the window’s
-titlebar. If a parameter is not specified, its default value is used
+title bar. If a parameter is not specified, its default value is used
 (<code>program=name dosbox=auto cycles=on mouse=full</code> by default).</p>
 <p>Possible parameters:</p>
 <ul>
@@ -5830,7 +5878,7 @@ games).</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Notes</p>
 <ul>
 <li>
 <p>For perfectly smooth scrolling in 2D games (e.g., in
