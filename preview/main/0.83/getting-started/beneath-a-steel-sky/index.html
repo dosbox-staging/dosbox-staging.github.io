@@ -5547,6 +5547,19 @@ fullscreen:</p>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="na">aspect</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">square-pixels</span>
 <a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="na">viewport</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">1280x800</span>
 </code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Logical units</p>
+<p>The viewport size is specified in <strong>logical units</strong>, which are multiplied
+by your operating system’s display scaling factor. For example, the above
+setting results in a viewport of 1280×800 pixels on a 1080p monitor at
+100% scaling, and 2560×1600 pixels on a 4K monitor at 200% scaling. This
+way, the image appears roughly the same size on both.</p>
+<p>If you need exact pixel dimensions, add <code>px</code> to the end of the value
+(e.g., <code>viewport = 1280x800px</code>), but then the image size will depend on
+your monitor’s resolution. See <a href="../../manual/graphics/display-and-window/#logical-units-pixels-and-percentages">Logical units, pixels, and
+percentages</a>
+in the user manual for more details.</p>
+</div>
 <div class="image-grid">
 <figure>
 <p><a class="glightbox" href="https://www.dosbox-staging.org/static/images/getting-started/bass-ingame1.jpg">

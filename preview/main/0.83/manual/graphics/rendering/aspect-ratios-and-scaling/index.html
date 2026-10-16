@@ -4965,16 +4965,21 @@ setting uses the same approach.</p>
 viewport of 1280×960 logical units corresponds to 2560×1920
 physical pixels. On a 1080p display with 100% scaling, it corresponds to
 1280×960 physical pixels.</p>
+<p>To specify the viewport size in physical pixels instead, add <code>px</code> to the
+end of the value (e.g., <code>viewport = 1280x960px</code>). See <a href="../../display-and-window/#logical-units-pixels-and-percentages">Logical units,
+pixels, and
+percentages</a>
+for more details and advice on choosing the right unit.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Why 89%?</p>
 <p><code>viewport = 89%</code> is based on the amount of vertical space available on a
 typical 1920×1080 desktop. It gives a maximum viewport of about 961
-logical pixels vertically.</p>
+logical units vertically.</p>
 <p>With integer scaling enabled, this is enough for a 2× vertical scale
 of both 320×200 content after VGA double-scanning (resulting in a
 640×400 image) and 640×480 content. The resulting image sizes
-are approximately 1067×800 and 1280×960 logical pixels
+are approximately 1067×800 and 1280×960 logical units
 respectively in fullscreen mode — around 15” and 19” physical CRT
 equivalents. This makes <code>89%</code> a useful general-purpose starting point.</p>
 </div>
@@ -5063,10 +5068,14 @@ aspect ratio into account (see <a href="#aspect"><code>aspect</code></a>).</p>
   with <a href="#integer_scaling"><code>integer_scaling</code></a> enabled.</p>
 </li>
 <li>
-<p><code>WxH</code> – Set a fixed viewport size in WxH format in logical units
-  (e.g., <code>960x720</code>). The specified size must not be larger than the
+<p><code>WxH</code> – Set a fixed viewport size in <code>WxH</code> (or <code>W,H</code>) format in logical
+  units (e.g., <code>960x720</code>). The specified size must not be larger than the
   desktop. If it’s larger than the window size, it will be scaled to fit
   within the window.</p>
+</li>
+<li>
+<p><code>WxHpx</code> – Same as <code>WxH</code>, but the size is specified in pixels (e.g.,
+  <code>1440x1080px</code>).</p>
 </li>
 <li>
 <p><code>N%</code> – Similar to <code>WxH</code>, but the size is specified as a percentage of
@@ -5074,17 +5083,17 @@ aspect ratio into account (see <a href="#aspect"><code>aspect</code></a>).</p>
 </li>
 <li>
 <p><code>relative H% V%</code> – The viewport is set to a 4:3 aspect ratio rectangle
-  fit into the available window or screen, then is scaled by the H and V
-  horizontal and vertical scaling factors (valid range is from 20% to
-  300%). The resulting viewport is allowed to extend beyond the bounds of
-  the window or screen. Useful to force arbitrary display aspect ratios
-  with <a href="#aspect"><code>aspect</code></a> set to <code>stretch</code> and to “zoom” into the image.
-  This effectively emulates the horizontal and vertical stretch controls
-  of CRT monitors.</p>
+   fit into the available window or screen, then is scaled by the <code>H</code> and
+   <code>V</code> horizontal and vertical scaling factors (valid range is from 20%
+   to 300%). The resulting viewport is allowed to extend beyond the
+   bounds of the window or screen. Useful to force arbitrary display
+   aspect ratios with <a href="#aspect"><code>aspect</code></a> set to <code>stretch</code> and to “zoom”
+   into the image. This effectively emulates the horizontal and vertical
+   stretch controls of CRT monitors.</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Notes</p>
 <ul>
 <li>
 <p>Using <code>relative</code> mode with <a href="#integer_scaling"><code>integer_scaling</code></a>
