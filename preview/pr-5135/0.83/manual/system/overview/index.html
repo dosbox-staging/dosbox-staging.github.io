@@ -1812,6 +1812,8 @@
       
         
       
+        
+      
     
     
     
@@ -1954,6 +1956,34 @@
     
   
     Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using-dosbox-staging/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
   
 
     
@@ -4903,20 +4933,19 @@ emulator is running.</p>
 <p>Set the logging mode (<code>console-and-file</code> by default). Possible values:</p>
 <ul>
 <li>
+<p><code>off</code> – Disable all logging.</p>
+</li>
+<li>
 <p><code>console</code> – Print log messages to the console.</p>
 </li>
 <li>
-<p><code>file</code> – Write log messages to a file. The name of the file is
-  <code>dosbox.log</code> located in the directory set by <a href="#log_dir"><code>log_dir</code></a>. Log
-  files from the previous five log runs are kept as <code>dosbox-001.log</code>,
-  <code>dosbox-002.log</code>, etc.</p>
+<p><code>file</code> – Write log messages to a file in the <a href="#log_dir">log_dir</a>
+    directory, named <code>dosbox-YYYYMMDD-HHMMSS.log</code> after the date and time
+      the file was created. Logs from the previous ten runs are kept.</p>
 </li>
 <li>
-<p><code>console-and-file</code> <em class="default">default</em> – Print log messages to the
-  console and also write a log file (default).</p>
-</li>
-<li>
-<p><code>off</code> – Disable all logging.</p>
+<p><code>console-and-file</code> <em class="default">default</em> –  Print log messages to the
+    console and also write a log file.</p>
 </li>
 </ul>
 </dd>
