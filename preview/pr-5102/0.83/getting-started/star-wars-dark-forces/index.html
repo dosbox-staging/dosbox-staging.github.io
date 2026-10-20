@@ -3637,7 +3637,7 @@
   <span class="md-ellipsis">
     
   
-    CLAP synth
+    CLAP MIDI synth
   
 
     
@@ -5238,7 +5238,7 @@ into the DOSBox Staging <code>soundcanvas-roms</code> folder:</p>
 <p>Now start up DOSBox Staging and verify that the Sound Canvas plugin is
 functional by running <code>MIXER /LISTMIDI</code>. The Sound Canvas section should look
 like this:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi.png" data-desc-position="bottom"><img alt="DOSBox Staging mixer -- Listing available MIDI devices" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi.png"></a></p>
+<p></p>
 <p>DOSBox Staging will prefer the <strong>SC-55 v1.21</strong> firmware when available, which
 is the best overall choice for DOS gaming.</p>
 <p>To enable Sound Canvas emulation, add the following to your config:</p>
@@ -5246,7 +5246,7 @@ is the best overall choice for DOS gaming.</p>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
 </code></pre></div>
 <p>Re-run <code>MIXER /LISTMIDI</code> to confirm the Sound Canvas is now active:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi-sound-canvas.png" data-desc-position="bottom"><img alt="DOSBox Staging mixer showing the active Sound Canvas model" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi-sound-canvas.png"></a></p>
+<p></p>
 <p>Now let’s reconfigure the game to use General MIDI for music. Comment out the
 <code>autotype</code> command in the <code>[autoexec]</code> section and restart DOSBox, then:</p>
 <ul>
@@ -5268,7 +5268,7 @@ is the best overall choice for DOS gaming.</p>
 </ul>
 <p>The final configuration should look like this:</p>
 <figure>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/getting-started/dark-forces-midi.png" data-desc-position="bottom"><img alt="Star Wars: Dark Forces setup --- Advanced sound settings" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/dark-forces-midi.png" width="80%"></a></p>
+<p></p>
 </figure>
 <p>Press <span class="keys"><kbd class="key-enter">Enter</kbd></span> on the <strong>Test Music</strong> menu item and you should hear the start
 of the Imperial March playing with much more realistic instruments!</p>
@@ -5332,7 +5332,7 @@ SoundFont file with the <code>.sf2</code> extension into its designated folder:<
 <p>You can use the <code>mixer /listmidi</code> command to get the list of available
 SoundFonts. If you’ve copied the SF2 file into the correct folder, you
 should see the following:</p>
-<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi-fluidsynth.png" data-desc-position="bottom"><img alt="MIXER /LISTMIDI showing the list of available SoundFonts" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/mixer-listmidi-fluidsynth.png"></a></p>
+<p></p>
 <p>To configure FluidSynth, add the following to your config. The name of the
 SoundFont might be slightly different if a new version has been released since
 the writing of this guide, so make sure you use the correct filename for the
