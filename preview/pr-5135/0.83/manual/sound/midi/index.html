@@ -3502,6 +3502,8 @@
       
         
       
+        
+      
     
     
     
@@ -3784,6 +3786,34 @@
     
   
     FluidSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound-devices/clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLAP MIDI synth
   
 
     
@@ -5231,43 +5261,35 @@ with a more modern and punchy sonic character. They are alternative
 standard. Many enthusiasts prefer them to the SC-55 in certain games. For a
 detailed comparison of how these modules stack up against the SC-55, see <a href="https://blog.johnnovak.net/2023/03/05/grand-ms-dos-gaming-general-midi-showdown/">this
 article</a>.
-These modules are currently not emulated in DOSBox Staging, but can use them
-as <a href="#virtual-midi-devices">external MIDI synthesisers</a>.</p>
+You can connect hardware modules as <a href="#physical-midi-devices">physical MIDI
+devices</a>, or run software emulations as <a href="#virtual-midi-devices">external MIDI
+synthesisers</a>. If an emulation is available as a CLAP
+plugin, you can load it directly with the <a href="../sound-devices/clap/">CLAP MIDI
+synth</a>.</p>
 <h2 id="built-in-midi-devices">Built-in MIDI devices<a class="headerlink" href="#built-in-midi-devices" title="Permanent link">¶</a></h2>
-<p>DOSBox Staging offers three main ways for MIDI playback:</p>
+<p>DOSBox Staging offers four main ways for MIDI playback without an external
+MIDI host program:</p>
 <ul>
 <li>
 <p><a href="../sound-devices/roland-mt-32/">Roland MT-32 emulation</a> — Built-in
-  emulation of the MT-32 and CM-32L.</p>
+  authentic emulation of the Roland MT-32 and CM-32L sound modules.</p>
 </li>
 <li>
 <p><a href="../sound-devices/roland-sound-canvas/">Sound Canvas emulation</a> —
-  Authentic Roland SC-55 emulation via the Nuked SC55 CLAP plugin. This
-  emulates a specific General MIDI-compatible MIDI sound module, rather than
-  “General MIDI” itself.</p>
-</li>
-<li>
-<p><a href="../sound-devices/fluidsynth/">FluidSynth</a> — Built-in generic General MIDI
-  synthesiser that uses SoundFont files and emulates no particular DOS-era
-  hardware.</p>
-</li>
-</ul>
-<p>In other words, the built-in choices can be thought of as different MIDI
-playback devices or systems:</p>
-<ul>
-<li>
-<p><strong>MT-32</strong> — Authentic emulation of the Roland MT-32 sound module</p>
-</li>
-<li>
-<p><strong>Sound Canvas</strong> — Authentic emulation of the Roland SC-55 sound module,
+  Built-in authentic emulation of the Roland SC-55 sound module,
   supporting General MIDI and Roland GS. Most “General MIDI” DOS soundtracks
   were composed specifically for the SC-55.</p>
 </li>
 <li>
-<p><strong>FluidSynth</strong> — General MIDI synthesiser that uses SoundFont files. It
-  cannot provide authentic results for DOS games; it can be thought of as an
-  alternative experience (e.g. by trying different SoundFonts for the same
-  game).</p>
+<p><a href="../sound-devices/fluidsynth/">FluidSynth</a> — Built-in generic General MIDI
+  synthesiser that uses SoundFont files and emulates no particular DOS-era
+  hardware. It cannot provide authentic results for DOS games; it can be
+  thought of as an alternative experience (e.g. by trying different SoundFonts
+  for the same game).</p>
+</li>
+<li>
+<p><a href="../sound-devices/clap/">CLAP MIDI synth</a> — A MIDI synthesiser supplied as
+  a CLAP plugin. You must use a General MIDI-compatible plugin.</p>
 </li>
 </ul>
 <p>This distinction is useful throughout the rest of the chapter: when a game
@@ -5307,6 +5329,9 @@ or misrepresent this information.</p>
   alternative.</p>
 </li>
 </ul>
+<p>You can also use the <a href="../sound-devices/clap/">CLAP MIDI synth</a> to try other
+MIDI synthesisers. Check that your chosen plugin supports the MIDI standard
+used by the game.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Remember that General MIDI describes the supported MIDI format, while
@@ -5333,15 +5358,30 @@ either.</p>
 <p>MIDI related settings are to be configured in the <code>[midi]</code> section. Set the
 <a href="#mididevice"><code>mididevice</code></a> setting to select which MIDI device to use:</p>
 <ul>
-<li><code>mt32</code> to use the built-in <a href="../sound-devices/roland-mt-32/">Roland MT-32</a> emulation,</li>
-<li><code>fluidsynth</code> to use the built-in <a href="../sound-devices/fluidsynth/">FluidSynth</a> MIDI synthesiser,</li>
-<li><code>soundcanvas</code> to use the built-in <a href="../sound-devices/roland-sound-canvas/">Sound Canvas</a> emulation,</li>
-<li>or <code>port</code> (the default) to send MIDI data to an <a href="#using-external-midi-devices">external MIDI
+<li>
+<p><code>mt32</code> to use the built-in <a href="../sound-devices/roland-mt-32/">Roland MT-32</a>
+  emulation,</p>
+</li>
+<li>
+<p><code>fluidsynth</code> to use the built-in <a href="../sound-devices/fluidsynth/">FluidSynth</a>
+  MIDI synthesiser,</p>
+</li>
+<li>
+<p><code>clap</code> to use a <a href="../sound-devices/clap/">CLAP MIDI synth</a> plugin configured
+  in the <code>[clap]</code> section,</p>
+</li>
+<li>
+<p><code>soundcanvas</code> to use the built-in <a href="../sound-devices/roland-sound-canvas/">Sound
+  Canvas</a> emulation,</p>
+</li>
+<li>
+<p>or <code>port</code> (the default) to send MIDI data to an <a href="#using-external-midi-devices">external MIDI
   device</a> configured via
-  <a href="#midiconfig"><code>midiconfig</code></a>.</li>
+  <a href="#midiconfig"><code>midiconfig</code></a>.</p>
+</li>
 </ul>
-<p>You can use the <code>MIXER /LISTMIDI</code> DOS command to see the list of available
-external MIDI devices:</p>
+<p>You can use the <code>MIXER /LISTMIDI</code> DOS command to see the available MIDI
+devices, including external MIDI ports, SoundFonts, and CLAP plugins:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/manual/mixer-listmidi.png" data-desc-position="bottom"><img alt="DOSBox Staging mixer listing the available MIDI devices" loading="lazy" src="https://www.dosbox-staging.org/static/images/manual/mixer-listmidi.png"></a></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -5494,6 +5534,10 @@ interface is sent.</p>
     player). See <a href="../sound-devices/fluidsynth/">FluidSynth</a> for details.</p>
 </li>
 <li>
+<p><code>clap</code> — A CLAP MIDI synthesizer plugin (see the
+    <a href="../sound-devices/clap/#configuration-settings"><code>[clap]</code> section</a>).</p>
+</li>
+<li>
 <p><code>mt32</code> — The built-in Roland MT-32 synthesiser. See <a href="../sound-devices/roland-mt-32/#configuration-settings">Roland
     MT-32</a>
     for details.</p>
@@ -5537,6 +5581,10 @@ setting is interpreted as follows:</p>
 <tr>
 <td><code>fluidsynth</code></td>
 <td>N/A</td>
+</tr>
+<tr>
+<td><code>clap</code></td>
+<td>N/A — configure the plugin in the <a href="../sound-devices/clap/#configuration-settings"><code>[clap]</code> section</a>.</td>
 </tr>
 <tr>
 <td><code>mt32</code></td>
