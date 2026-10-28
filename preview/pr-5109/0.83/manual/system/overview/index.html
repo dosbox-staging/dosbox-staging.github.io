@@ -1812,6 +1812,8 @@
       
         
       
+        
+      
     
     
     
@@ -1954,6 +1956,34 @@
     
   
     Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using-dosbox-staging/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
   
 
     
@@ -2404,6 +2434,51 @@
     <span class="md-ellipsis">
       
         hard_disk_speed
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#log_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_mode
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#log_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_dir
       
     </span>
   </a>
@@ -3303,6 +3378,8 @@
       
         
       
+        
+      
     
     
     
@@ -3585,6 +3662,34 @@
     
   
     FluidSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLAP MIDI synth
   
 
     
@@ -4663,6 +4768,51 @@
 </li>
 
         
+          
+<li class="md-nav__item">
+  <a href="#logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#log_mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_mode
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#log_dir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        log_dir
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
+</li>
+
+        
       </ul>
     </nav>
   
@@ -4804,6 +4954,37 @@ emulator is running.</p>
 </ul>
 </div>
 </dd>
+</dl>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">¶</a></h3>
+<p>These settings are configured in the <code>[dosbox]</code> section.</p>
+<h5 id="log_mode">log_mode<a class="headerlink" href="#log_mode" title="Permanent link">¶</a></h5>
+<dl>
+<dd>
+<p>Set the logging mode (<code>console-and-file</code> by default). Possible values:</p>
+<ul>
+<li>
+<p><code>off</code> – Disable all logging.</p>
+</li>
+<li>
+<p><code>console</code> – Print log messages to the console.</p>
+</li>
+<li>
+<p><code>file</code> – Write log messages to a file in the <a href="#log_dir">log_dir</a>
+    directory, named <code>dosbox-YYYYMMDD-HHMMSS.log</code> after the date and time
+    the file was created. Logs from the most recent ten runs are kept.</p>
+</li>
+<li>
+<p><code>console-and-file</code> <em class="default">default</em> –  Print log messages to the
+    console and also write a log file.</p>
+</li>
+</ul>
+</dd>
+</dl>
+<h5 id="log_dir">log_dir<a class="headerlink" href="#log_dir" title="Permanent link">¶</a></h5>
+<dl>
+<dd>Log file directory (unset by default). If unset, the logs are written to
+the <code>logs</code> folder in the <a href="../../using-dosbox-staging/configuration/#primary-configuration">configuration
+directory</a>.</dd>
 </dl>
 
 

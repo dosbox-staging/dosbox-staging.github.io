@@ -1814,6 +1814,8 @@
       
         
       
+        
+      
     
     
     
@@ -1956,6 +1958,34 @@
     
   
     Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
   
 
     
@@ -3233,6 +3263,8 @@
       
         
       
+        
+      
     
     
     
@@ -3515,6 +3547,34 @@
     
   
     FluidSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLAP MIDI synth
   
 
     
@@ -4602,9 +4662,10 @@ media, either as floppy disk images or the files extracted from them.</p>
 <a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
 <a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
 <a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">[midi]</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Alternatively, set it to 'mt32' or 'fluidsynth',</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># or don't set it if you don't care about MIDI</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="c1"># Alternatively, set it to 'mt32', 'fluidsynth', or 'clap'.</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1"># Configure a plugin first if using 'clap'.</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1"># Leave unset if you don't need MIDI.</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="na">mididevice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">soundcanvas</span>
 </code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -4687,9 +4748,10 @@ for digital audio and OPL music.</p>
 <a href="../../sound/midi/#mididevice"><code>mididevice</code></a>, so you can use
 <a href="../../sound/sound-devices/roland-mt-32/">Roland MT-32</a>,
 <a href="../../sound/sound-devices/roland-sound-canvas/">Sound Canvas SC-55</a>,
-or <a href="../../sound/sound-devices/fluidsynth/">FluidSynth</a>, 
-emulation for Windows 3.1 games — just change the <code>mididevice</code> setting in
-your DOSBox config.</p>
+<a href="../../sound/sound-devices/fluidsynth/">FluidSynth</a>, or a
+<a href="../../sound/sound-devices/clap/">CLAP MIDI synth</a> plugin for Windows 3.1 games.
+Set <code>mididevice</code> in your DOSBox config and follow the setup instructions for
+the selected MIDI device.</p>
 <h2 id="mouse-setup">Mouse setup<a class="headerlink" href="#mouse-setup" title="Permanent link">¶</a></h2>
 <p>The built-in PS/2 mouse driver that Windows installs by default works fine
 and requires no additional configuration.</p>
