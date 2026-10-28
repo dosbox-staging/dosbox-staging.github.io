@@ -55,6 +55,9 @@
 
     
     
+  
+  <link rel="icon" type="image/svg+xml" href="../../../../../assets/images/favicon.svg">
+
   <link href="../../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -113,7 +116,7 @@
     
       <a href="../../../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
         
-  <img src="../../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
       </a>
     
@@ -381,7 +384,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
       
-  <img src="../../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
     </a>
     DOSBox Staging
@@ -1809,6 +1812,8 @@
       
         
       
+        
+      
     
     
     
@@ -1951,6 +1956,34 @@
     
   
     Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../using-dosbox-staging/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
   
 
     
@@ -3309,6 +3342,8 @@
       
         
       
+        
+      
     
     
     
@@ -3591,6 +3626,34 @@
     
   
     FluidSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/sound-devices/clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLAP MIDI synth
   
 
     
@@ -4841,7 +4904,8 @@ the issue by only ever scaling the vertical direction by whole-number factors.</
   cases. Enables vertical integer scaling only when a CRT shader is active,
   allows a few extra scaling ratios (e.g., 3.5x, 4.5x) to make better use of
   the screen, and turns integer scaling off when it’s safe to do so (e.g.,
-  low-resolution games in fullscreen on a 4K display; see the
+  low-resolution games in fullscreen on a 4K display, or 320×200 games
+  on a 1080p display; see the
   <a href="#integer_scaling"><code>integer_scaling</code></a> setting reference below for the
   exact scaling-factor thresholds).</p>
 </li>
@@ -4874,6 +4938,23 @@ also <strong>letterbox</strong> (black bars on top and bottom) or pillarbox, bec
 image can’t always be enlarged by a whole-number factor while also filling the
 available space. With integer scaling off, 4:3 content on a widescreen monitor
 would only ever pillarbox, never letterbox.</p>
+<p>This is what to expect in fullscreen with the default settings on the most
+common screen resolutions:</p>
+<ul>
+<li>
+<p><strong>1080p</strong> — 320×200 VGA games and most CGA and EGA games fill the
+  screen vertically. 640×480 games are scaled 2×, leaving a
+  60-pixel border at the top and bottom.</p>
+</li>
+<li>
+<p><strong>1440p</strong> — 640×480 games fill the screen vertically at exactly
+  3×, and most CGA and EGA games fill it too. 320×200 VGA games
+  are scaled 3.5×, leaving a 20-pixel border at the top and bottom.</p>
+</li>
+<li>
+<p><strong>4K</strong> — All video modes up to 640×480 fill the screen vertically.</p>
+</li>
+</ul>
 <p>Because the adaptive CRT shaders take the viewport size into account,
 resizing the window or switching between windowed and fullscreen can change
 the selected shader and “snap” the image between scaling ratios (reported in
@@ -4944,16 +5025,21 @@ setting uses the same approach.</p>
 viewport of 1280×960 logical units corresponds to 2560×1920
 physical pixels. On a 1080p display with 100% scaling, it corresponds to
 1280×960 physical pixels.</p>
+<p>To specify the viewport size in physical pixels instead, add <code>px</code> to the
+end of the value (e.g., <code>viewport = 1280x960px</code>). See <a href="../../display-and-window/#logical-units-pixels-and-percentages">Logical units,
+pixels, and
+percentages</a>
+for more details and advice on choosing the right unit.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Why 89%?</p>
 <p><code>viewport = 89%</code> is based on the amount of vertical space available on a
 typical 1920×1080 desktop. It gives a maximum viewport of about 961
-logical pixels vertically.</p>
+logical units vertically.</p>
 <p>With integer scaling enabled, this is enough for a 2× vertical scale
 of both 320×200 content after VGA double-scanning (resulting in a
 640×400 image) and 640×480 content. The resulting image sizes
-are approximately 1067×800 and 1280×960 logical pixels
+are approximately 1067×800 and 1280×960 logical units
 respectively in fullscreen mode — around 15” and 19” physical CRT
 equivalents. This makes <code>89%</code> a useful general-purpose starting point.</p>
 </div>
@@ -5042,10 +5128,14 @@ aspect ratio into account (see <a href="#aspect"><code>aspect</code></a>).</p>
   with <a href="#integer_scaling"><code>integer_scaling</code></a> enabled.</p>
 </li>
 <li>
-<p><code>WxH</code> – Set a fixed viewport size in WxH format in logical units
-  (e.g., <code>960x720</code>). The specified size must not be larger than the
+<p><code>WxH</code> – Set a fixed viewport size in <code>WxH</code> (or <code>W,H</code>) format in logical
+  units (e.g., <code>960x720</code>). The specified size must not be larger than the
   desktop. If it’s larger than the window size, it will be scaled to fit
   within the window.</p>
+</li>
+<li>
+<p><code>WxHpx</code> – Same as <code>WxH</code>, but the size is specified in pixels (e.g.,
+  <code>1440x1080px</code>).</p>
 </li>
 <li>
 <p><code>N%</code> – Similar to <code>WxH</code>, but the size is specified as a percentage of
@@ -5053,17 +5143,17 @@ aspect ratio into account (see <a href="#aspect"><code>aspect</code></a>).</p>
 </li>
 <li>
 <p><code>relative H% V%</code> – The viewport is set to a 4:3 aspect ratio rectangle
-  fit into the available window or screen, then is scaled by the H and V
-  horizontal and vertical scaling factors (valid range is from 20% to
-  300%). The resulting viewport is allowed to extend beyond the bounds of
-  the window or screen. Useful to force arbitrary display aspect ratios
-  with <a href="#aspect"><code>aspect</code></a> set to <code>stretch</code> and to “zoom” into the image.
-  This effectively emulates the horizontal and vertical stretch controls
-  of CRT monitors.</p>
+   fit into the available window or screen, then is scaled by the <code>H</code> and
+   <code>V</code> horizontal and vertical scaling factors (valid range is from 20%
+   to 300%). The resulting viewport is allowed to extend beyond the
+   bounds of the window or screen. Useful to force arbitrary display
+   aspect ratios with <a href="#aspect"><code>aspect</code></a> set to <code>stretch</code> and to “zoom”
+   into the image. This effectively emulates the horizontal and vertical
+   stretch controls of CRT monitors.</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Notes</p>
 <ul>
 <li>
 <p>Using <code>relative</code> mode with <a href="#integer_scaling"><code>integer_scaling</code></a>

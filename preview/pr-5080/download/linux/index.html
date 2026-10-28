@@ -55,6 +55,9 @@
 
     
     
+  
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+
   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -113,7 +116,7 @@
     
       <a href="../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
         
-  <img src="../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
       </a>
     
@@ -381,7 +384,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
       
-  <img src="../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
     </a>
     DOSBox Staging
@@ -1895,6 +1898,8 @@
       
         
       
+        
+      
     
     
     
@@ -2037,6 +2042,34 @@
     
   
     Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0.83/manual/using-dosbox-staging/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
   
 
     
@@ -3189,6 +3222,8 @@
       
         
       
+        
+      
     
     
     
@@ -3471,6 +3506,34 @@
     
   
     FluidSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../0.83/manual/sound/sound-devices/clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLAP MIDI synth
   
 
     
@@ -4468,13 +4531,43 @@
 
 
 <h1 id="linux-releases">Linux releases<a class="headerlink" href="#linux-releases" title="Permanent link">¶</a></h1>
+<div class="admonition danger">
+<p class="admonition-title">READ THIS FIRST!</p>
+<p>📖 <strong>Read the <a href="https://www.dosbox-staging.org/download/release-notes/0.83.0/">0.83.0 release
+notes</a></strong>.
+They explain what’s new, what’s changed, and what may behave differently
+from previous versions.</p>
+<p>🚀 <strong>New to DOSBox Staging? Read the <a href="https://www.dosbox-staging.org/getting-started/">Getting Started
+guide</a>.</strong> This is <strong>not
+optional</strong> — it covers the basics that most first-time questions are about.</p>
+<p>📚 <strong>Check the <a href="https://www.dosbox-staging.org/0.83/manual/introduction/about-this-manual/">user
+manual</a></strong>
+to learn how the new features work and how to configure them.</p>
+<p>🔍 <strong>Search the <a href="https://www.dosbox-staging.org/">project website</a></strong> using
+the search box in the top-right corner. It searches the <em>entire</em> site,
+including the Getting Started guide and the user manual.</p>
+<p>🧩 <strong>Check the
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki">wiki</a> and the
+<a href="https://github.com/dosbox-staging/dosbox-staging/wiki/Game-issues">Game
+issues</a>
+page.</strong> Your problem may already be known, and there may be a workaround.</p>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong>Only ask a question or raise an issue ticket after you’ve done ALL of
+the above.</strong> When you do post, tell us what you’ve already read and tried.
+It saves everyone time and gets you an answer faster.</p>
+<p><strong>Most questions we receive are already answered in the documentation.</strong>
+Questions and issue tickets that are clearly covered by the docs may be
+closed without further discussion.</p>
+</div>
 <h2 id="latest-version">Latest version<a class="headerlink" href="#latest-version" title="Permanent link">¶</a></h2>
 <section class="release-downloads">
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.83.0/dosbox-staging-linux-x86_64-v0.83.0.tar.xz">Download DOSBox Staging 0.83.0 (x86_64)</a>
-<br>
-<small>
-sha256: d3a94f7f1c3e68a47ec88d61145506c7<wbr>904452adb0c9c5928cb8cfe2331d6c5c
-</small></p>
+  <br>
+  <small>
+  sha256: d3a94f7f1c3e68a47ec88d61145506c7<wbr>904452adb0c9c5928cb8cfe2331d6c5c
+  </small></p>
 </section>
 <p>The latest version is compatible with any laptop or desktop released after
 2010 running a modern x86_64 Linux distribution. It only depends on the C/C++,
@@ -4482,11 +4575,6 @@ ALSA, and OpenGL system libraries; all other libraries are statically linked.
 A dedicated graphics adapter is recommended for laptops.</p>
 <p>Read the <a href="../release-notes/0.83.0/">0.83.0 release notes</a> to learn about the
 changes and improvements introduced in this version.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>If you’re new to DOSBox Staging, we highly recommend reading the
-<a href="../../getting-started/">Getting Started guide</a> first.</p>
-</div>
 <p>Run the <code>install-icons.sh</code> script included with the release to install
 the application icons.</p>
 <h2 id="unofficial-repackaged-releases">Unofficial repackaged releases<a class="headerlink" href="#unofficial-repackaged-releases" title="Permanent link">¶</a></h2>
@@ -4516,14 +4604,13 @@ release!</strong> If the problem is only present in the unofficial package, you
 should ask the person or team who did the repackaging for help.</p>
 </div>
 <h2 id="older-versions">Older versions<a class="headerlink" href="#older-versions" title="Permanent link">¶</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
 <p>These older versions are mainly provided for regression testing. You can also
 use them if you’re on a legacy operating system unsupported by the latest
 release, but the core team doesn’t offer any help with these earlier releases.
 Our recommendation is to upgrade your operating system and use the latest
 version.</p>
-</div>
+<details class="note">
+<summary>List of older Linux versions</summary>
 <ul>
 <li>
 <p><a href="https://github.com/dosbox-staging/dosbox-staging/releases/download/v0.82.2/dosbox-staging-linux-x86_64-v0.82.2.tar.xz">DOSBox Staging 0.82.2 (x86_64)</a>
@@ -4652,6 +4739,7 @@ version.</p>
   </small></p>
 </li>
 </ul>
+</details>
 
 
 

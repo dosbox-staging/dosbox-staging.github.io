@@ -55,6 +55,9 @@
 
     
     
+  
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/images/favicon.svg">
+
   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -113,7 +116,7 @@
     
       <a href="../../../.." title="DOSBox Staging" class="md-header__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
         
-  <img src="../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
       </a>
     
@@ -381,7 +384,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../../.." title="DOSBox Staging" class="md-nav__button md-logo" aria-label="DOSBox Staging" data-md-component="logo">
       
-  <img src="../../../../assets/images/dosbox-staging-nobg.svg" alt="logo">
+  <img src="../../../../assets/images/dosbox-staging-logo.svg" alt="logo">
 
     </a>
     DOSBox Staging
@@ -1809,6 +1812,8 @@
       
         
       
+        
+      
     
     
     
@@ -1951,6 +1956,34 @@
     
   
     Command-line usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../using-dosbox-staging/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Logging
   
 
     
@@ -2634,15 +2667,47 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Window settings">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#logical-units-pixels-and-percentages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical units, pixels, and percentages
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#title-bar-and-window-borders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Title bar and window borders
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
 </li>
 
       
         
 <li class="md-nav__item">
-  <a href="#titlebar-customisation" class="md-nav__link">
+  <a href="#title-bar-customisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Titlebar customisation
+        Title bar customisation
       
     </span>
   </a>
@@ -3507,6 +3572,8 @@
       
         
       
+        
+      
     
     
     
@@ -3789,6 +3856,34 @@
     
   
     FluidSynth
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/sound-devices/clap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLAP MIDI synth
   
 
     
@@ -4819,15 +4914,47 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Window settings">
+      <ul class="md-nav__list">
+        
+          
+<li class="md-nav__item">
+  <a href="#logical-units-pixels-and-percentages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logical units, pixels, and percentages
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+          
+<li class="md-nav__item">
+  <a href="#title-bar-and-window-borders" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Title bar and window borders
+      
+    </span>
+  </a>
+  
+</li>
+
+        
+      </ul>
+    </nav>
+  
 </li>
 
       
         
 <li class="md-nav__item">
-  <a href="#titlebar-customisation" class="md-nav__link">
+  <a href="#title-bar-customisation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Titlebar customisation
+        Title bar customisation
       
     </span>
   </a>
@@ -5331,9 +5458,9 @@ Staging specifically.</p>
 <a href="#vsync"><code>vsync</code></a> disabled. The tearing will only be noticeable in fast-paced
 3D games and smooth-scrolling 2D games. In games with mostly static screens
 (RPGs, adventures, and strategy games) the tearing is virtually unnoticeable.</p>
-<p>If really want to use vsync, you can create custom screen modes that match the
-DOS refresh rate exactly. Use the Nvidia Control Panel or <a href="https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU">Custom Resolution
-Utility
+<p>If you really want to use vsync, you can create custom screen modes that match
+the DOS refresh rate exactly. Use the Nvidia Control Panel or <a href="https://www.monitortests.com/forum/Thread-Custom-Resolution-Utility-CRU">Custom
+Resolution Utility
 (CRU)</a>
 on Windows. Enable <strong>CVT reduced blanking</strong> (<strong>CVT-RB</strong> or <strong>CVT-RBv2</strong>) to
 reach 70 Hz. For the best results, use the exact fractional <strong>59.713 Hz</strong> and
@@ -5365,22 +5492,124 @@ texture backends; the default <code>auto</code> value selects the best available
 <p>The <a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a>
 settings control where and how large the DOSBox Staging window appears on
 startup. You can still resize the window freely after launch — these only set
-the initial state. The named sizes (<code>small</code>, <code>medium</code>, <code>large</code>) are relative to
-your desktop, while the <code>WxH</code> format lets you request an exact size in logical
-units.</p>
+the initial state. The named sizes (<code>small</code>, <code>medium</code>, <code>large</code>) give you 4:3
+windows relative to your desktop height, while the <code>WxH</code> format lets you
+specify the size in logical units, pixels, or percentages (see <a href="#logical-units-pixels-and-percentages">Logical units,
+pixels, and percentages</a> below).</p>
 <p>On multi-monitor setups, use <a href="#display"><code>display</code></a> to select which screen DOSBox
 opens on, and <a href="#window_position"><code>window_position</code></a> to fine-tune placement.</p>
 <p><a href="#window_decorations"><code>window_decorations</code></a> controls whether the operating
 system’s title bar and window borders are shown.
 <a href="#window_transparency"><code>window_transparency</code></a> sets the window transparency level
 (0–90%).</p>
+<h3 id="logical-units-pixels-and-percentages">Logical units, pixels, and percentages<a class="headerlink" href="#logical-units-pixels-and-percentages" title="Permanent link">¶</a></h3>
+<p>Most operating systems let you enlarge everything on the screen with a display
+scaling setting, which is especially useful on high-resolution monitors. For
+example, 4K monitors are typically used at 200% scaling. A window that is 1000
+<strong>logical units</strong> wide is 2000 pixels wide on such a monitor, but only 1000
+pixels wide on a 1080p monitor at 100% scaling. This way, the window appears
+roughly the same physical size on both.</p>
+<p>You can specify the window size and position, and the <a href="../rendering/aspect-ratios-and-scaling/#custom-viewport-size">viewport
+size</a>, in three
+different ways:</p>
+<ul>
+<li>
+<p><strong>Logical units</strong> (e.g., <code>window_size = 1024x768</code>) — The values are
+  multiplied by your operating system’s display scaling factor, which is how
+  most programs size their windows.</p>
+</li>
+<li>
+<p><strong>Pixels</strong> (e.g., <code>window_size = 1440x1080px</code>) — The values are in
+  pixels, and display scaling is not applied. This gives you precise control,
+  but the window will look smaller on a 4K monitor than on a 1080p one. A
+  window sized in pixels keeps its size in pixels when you move it to another
+  monitor, while a window sized in logical units keeps its size in logical
+  units.</p>
+</li>
+<li>
+<p><strong>Percentages</strong> (e.g., <code>window_size = 120x90%</code> or <code>viewport = 89%</code>) — The
+  values are relative to your desktop size, so they adapt to any monitor. For
+  window sizes, both values are relative to the desktop height; for example,
+  <code>120x90%</code> always gives you a 4:3 window that is 90% as tall as your desktop
+  (this is the same as <code>window_size = large</code>). The window is resized when you
+  move it to another monitor or change the display scaling.</p>
+</li>
+</ul>
+<p>For general use, logical units and percentages are recommended as they ensure
+your settings will be portable between monitors with different scaling
+factors.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Both <code>window_size</code> and <code>window_position</code> use logical units that are
-multiplied by your OS-level DPI scaling. To use raw pixel coordinates
-instead, set the <code>SDL_WINDOWS_DPI_SCALING</code> environment variable to <code>0</code>.</p>
+<p>You can also use a comma instead of the <code>x</code> in sizes (e.g., <code>window_size =
+1024,768</code> or <code>viewport = 1440,1080px</code>).</p>
 </div>
-<h2 id="titlebar-customisation">Titlebar customisation<a class="headerlink" href="#titlebar-customisation" title="Permanent link">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Keep it simple</p>
+<p>For the least surprising results, use the same kind of unit for
+<a href="#window_size"><code>window_size</code></a>, <a href="#window_position"><code>window_position</code></a>, and
+<a href="../rendering/aspect-ratios-and-scaling/#viewport"><code>viewport</code></a>. Mixing them
+can have unexpected effects; for example, a viewport specified in logical
+units can end up larger than a window specified in pixels at high scaling
+factors. That said, mixing units is perfectly valid for more advanced use
+cases, such as combining a window size relative to your desktop with a
+viewport size in pixels to get a specific integer scaling factor on your
+monitor.</p>
+</div>
+<h3 id="title-bar-and-window-borders">Title bar and window borders<a class="headerlink" href="#title-bar-and-window-borders" title="Permanent link">¶</a></h3>
+<p><a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a> refer
+to the window’s <strong>content area</strong>, the part of the window where DOSBox Staging
+draws the image. The size does <em>not</em> include the title bar and window borders,
+so the window takes up slightly more space on the screen than the size you
+specify. Likewise, the position is that of the top-left corner of the content
+area, <em>not</em> of the whole window including the title bar.</p>
+<p>You’ll rarely notice this, except when you place the window near the top of the
+screen or make it nearly as tall as your desktop. What happens then depends on
+your operating system:</p>
+<ul>
+<li>
+<p><strong>Windows</strong> — The title bar is about 30 logical units tall, and windows can
+  extend beyond the edges of the screen. With a vertical position smaller than
+  that (e.g., <code>window_position = 0,0</code>), the title bar ends up above the top edge
+  of the screen, where you can’t grab it to move the window. Similarly, a window
+  whose content area is as tall as your desktop gets cut off.</p>
+</li>
+<li>
+<p><strong>macOS</strong> — macOS keeps the title bar below the menu bar and doesn’t let
+  windows grow taller than the space below it. A window positioned too close to
+  the top of the screen is moved down, and a window that’s too tall is shrunk to
+  fit (this also updates <a href="#window_size"><code>window_size</code></a>).</p>
+</li>
+<li>
+<p><strong>Linux</strong> — The exact behaviour depends on your desktop environment. On Wayland,
+  <a href="#window_position"><code>window_position</code></a> has no effect. Otherwise, some window
+  managers place the top-left corner of the title bar at the position you set,
+  while others place the top-left corner of the content area there. Some also
+  move the window to keep it fully inside the display bounds. If the window
+  ends up somewhere else, the current values of <a href="#window_size"><code>window_size</code></a>
+  and <a href="#window_position"><code>window_position</code></a> show its actual size and position.</p>
+</li>
+</ul>
+<p>Resizing the window updates <a href="#window_size"><code>window_size</code></a>, and moving it
+updates <a href="#window_position"><code>window_position</code></a>. Each setting is updated in the
+same unit you used to specify it (for example, a percentage stays a
+percentage).</p>
+<p>Positions and percentages are relative to the whole desktop, including the area
+covered by the taskbar (on Windows) or the Dock (on macOS), so the window can
+end up partly behind them.</p>
+<div class="admonition tip">
+<p class="admonition-title">Arranging windows</p>
+<p>To arrange windows side by side, it’s easiest to use your operating
+system’s window snapping: press <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-windows">Win</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> on Windows,
+<span class="keys"><kbd class="key-meta">Meta</kbd><span>+</span><kbd class="key-arrow-left">Left</kbd></span> or <span class="keys"><kbd class="key-meta">Meta</kbd><span>+</span><kbd class="key-arrow-right">Right</kbd></span> on most Linux desktops, or hover over the
+green button in the title bar on macOS. DOSBox Staging updates
+<a href="#window_size"><code>window_size</code></a> and <a href="#window_position"><code>window_position</code></a>
+to match.</p>
+<p>If the window must cover an exact area of the screen, set
+<a href="#window_decorations"><code>window_decorations</code></a> to <code>off</code>. The window then has no
+title bar or borders, so its size and position describe the whole window.
+The downside is that there’s no title bar to drag the window around with.</p>
+</div>
+<h2 id="title-bar-customisation">Title bar customisation<a class="headerlink" href="#title-bar-customisation" title="Permanent link">¶</a></h2>
 <p>The <a href="#window_titlebar"><code>window_titlebar</code></a> setting controls what information
 appears in the window’s title bar. It accepts a space-separated list of
 parameters, each in <code>key=value</code> format.</p>
@@ -5443,17 +5672,50 @@ section.</p>
 <p>Set initial window position for windowed mode.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>auto</code> <em class="default">default</em> – Let the window manager decide the
-  position.</li>
-<li><code>X,Y</code> – Set window position in X,Y format in logical units (e.g.,
-  <code>250,100</code>). <code>0,0</code> is the top-left corner of the screen. The values
-  will be multiplied by the OS-level DPI scaling to get the window
-  position in pixels.</li>
+<li>
+<p><code>auto</code> <em class="default">default</em> – Let the window manager decide the
+  position.</p>
+</li>
+<li>
+<p><code>X,Y</code> – Set window position in <code>X,Y</code> format in logical units (e.g.,
+  <code>250,100</code>). <code>0,0</code> is the top-left corner of the screen. The values are
+  multiplied by the OS-level display scaling factor to get the window
+  position in pixels.</p>
+</li>
+<li>
+<p><code>X,Ypx</code> – Set window position in pixels (e.g., <code>375,150px</code>).</p>
+</li>
+<li>
+<p><code>X,Y%</code> – Set window position as a percentage of the desktop width and
+  height (e.g., <code>10,10%</code>).</p>
+</li>
 </ul>
+<p>See <a href="#logical-units-pixels-and-percentages">Logical units, pixels, and
+percentages</a> for more details.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you want to use pixel coordinates instead and ignore DPI scaling,
-set the <code>SDL_WINDOWS_DPI_SCALING</code> environment variable to <code>0</code>.</p>
+<p class="admonition-title">Notes</p>
+<ul>
+<li>
+<p>Moving the window updates this setting in the same format.</p>
+</li>
+<li>
+<p>The position is that of the top-left corner of the window’s content area,
+  excluding the title bar and window borders.</p>
+</li>
+<li>
+<p>The window manager might move the window away from the specified position
+  (e.g., to keep it fully inside the display bounds, or to place it below a
+  task bar). E.g., on Windows, with small Y values, the title bar can
+  end up above the top edge of the screen. On macOS, the window is moved
+  down instead so that its title bar is below the menu bar. See <a href="#title-bar-and-window-borders">Title
+  bar and window borders</a> for details.</p>
+</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Wayland note</p>
+<p>This setting has no effect on Wayland because Wayland doesn’t let
+applications position their windows.</p>
 </div>
 </dd>
 </dl>
@@ -5464,19 +5726,50 @@ set the <code>SDL_WINDOWS_DPI_SCALING</code> environment variable to <code>0</co
 window after startup.</p>
 <p>Possible values:</p>
 <ul>
-<li><code>default</code> <em class="default">default</em> – Select the best option based on
-  your environment and other factors (such as whether aspect ratio
-  correction is enabled).</li>
-<li><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – Size the window
-  relative to the desktop.</li>
-<li><code>WxH</code> – Specify window size in WxH format in logical units (e.g.,
-  <code>1024x768</code>). The values will be multiplied by the OS-level DPI scaling
-  to get the window size in pixels.</li>
+<li>
+<p><code>default</code> <em class="default">default</em> – Same as <code>medium</code>.</p>
+</li>
+<li>
+<p><code>small</code>, <code>medium</code>, <code>large</code> (<code>s</code>, <code>m</code>, <code>l</code>) – 4:3 window sizes
+  relative to the desktop height (same as <code>66.67x50%</code>, <code>98.67x74%</code>, and
+  <code>120x90%</code>, respectively).</p>
+</li>
+<li>
+<p><code>WxH</code> – Specify window size in <code>WxH</code> (or <code>W,H</code>) format in logical units
+  (e.g., <code>1024x768</code>). The values are multiplied by the OS-level display
+  scaling factor to get the window size in pixels.</p>
+</li>
+<li>
+<p><code>WxHpx</code> – Specify window size in pixels (e.g., <code>1440x1080px</code>). The
+  window keeps its size in pixels when moved to another display.</p>
+</li>
+<li>
+<p><code>WxH%</code> – Specify window size as a percentage of the desktop height
+  (e.g., <code>120x90%</code> for a 4:3 window 90% as tall as the desktop). Both
+  values are relative to the desktop height, so the aspect ratio of the
+  window doesn’t depend on the aspect ratio of the desktop.</p>
+</li>
 </ul>
+<p>See <a href="#logical-units-pixels-and-percentages">Logical units, pixels, and
+percentages</a> for more details.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you want to use pixel coordinates instead and ignore DPI scaling,
-set the <code>SDL_WINDOWS_DPI_SCALING</code> environment variable to <code>0</code>.</p>
+<p class="admonition-title">Notes</p>
+<ul>
+<li>
+<p>Resizing the window updates this setting in the same format, except for the
+  named sizes, which are updated in <code>WxH%</code> format.</p>
+</li>
+<li>
+<p>The size specifies the window’s content area excluding the title bar and
+  window borders, so the window takes up slightly more space on the screen
+  than the specified size. </p>
+</li>
+<li>
+<p>The window manager might resize the window (e.g., to keep it fully inside
+  the display bounds). See <a href="#title-bar-and-window-borders">Title bar and window
+  borders</a> for details.</p>
+</li>
+</ul>
 </div>
 </dd>
 </dl>
@@ -5484,7 +5777,7 @@ set the <code>SDL_WINDOWS_DPI_SCALING</code> environment variable to <code>0</co
 <dl>
 <dd>
 <p>Space-separated list of information to be displayed in the window’s
-titlebar. If a parameter is not specified, its default value is used
+title bar. If a parameter is not specified, its default value is used
 (<code>program=name dosbox=auto cycles=on mouse=full</code> by default).</p>
 <p>Possible parameters:</p>
 <ul>
@@ -5640,7 +5933,7 @@ games).</p>
 </li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">Notes</p>
 <ul>
 <li>
 <p>For perfectly smooth scrolling in 2D games (e.g., in
