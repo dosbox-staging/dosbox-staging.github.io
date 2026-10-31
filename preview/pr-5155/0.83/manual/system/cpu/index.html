@@ -5207,8 +5207,8 @@ DOS software.</p>
 <p>On non-x86 computers, DOSBox Staging can use an optional software FPU with
 80-bit extended precision. Set <a href="#fpu"><code>fpu</code></a> to <code>accurate</code> to enable it.
 This mode uses more host CPU time, and its results do not exactly match
-every real x87 processor. Some FPU behavior is still incomplete, so test
-software that depends on precise FPU behavior carefully.</p>
+every real x87 processor. Some FPU behaviour is still incomplete, so test
+software that depends on precise FPU behaviour carefully.</p>
 <p>The default <code>fast</code> mode uses reduced-precision FPU emulation on non-x86
 computers. On x86-64 computers, DOSBox Staging always uses the host’s native
 x87 instructions, and the <code>fpu</code> setting has no effect. Changes to this
@@ -5220,7 +5220,7 @@ setting take effect after restarting DOSBox Staging.</p>
 hardware as accurately as we can, <strong>we cannot guarantee</strong> DOSBox Staging
 has zero bugs or can run every single DOS software ever written 100%
 correctly. This is especially true for software that relies on precise x87
-FPU behavior: emulation can differ from real hardware, even when using the
+FPU behaviour: emulation can differ from real hardware, even when using the
 <code>accurate</code> mode.</p>
 <p><strong>Under no circumstances</strong> should DOSBox Staging be used for professional
 applications, especially where DOS software malfunctioning due to
@@ -5281,18 +5281,17 @@ section.</p>
 <h5 id="fpu_1">fpu<a class="headerlink" href="#fpu_1" title="Permanent link">¶</a></h5>
 <dl>
 <dd>
-<p>FPU emulation mode on non-x86 computers. The default is <code>fast</code>.</p>
-<p>Possible values:</p>
+<p>FPU emulation on non-x86 hosts (<code>fast</code> by default). Possible values:</p>
 <ul>
-<li><code>fast</code> <em class="default">default</em> – Use reduced-precision emulation for
-  better performance.</li>
+<li><code>fast</code> – Use the existing reduced-precision implementation for better
+  performance (default).</li>
 <li><code>accurate</code> – Use software 80-bit extended precision for improved
-  computational accuracy, at a higher host CPU cost. This does not
-  guarantee results identical to a particular x87 processor.</li>
+  floating-point accuracy, at a higher host CPU cost.</li>
 </ul>
-<p>On x86-64 computers, DOSBox Staging always uses native x87 instructions,
-regardless of this setting. Changes take effect after restarting DOSBox
-Staging. This setting is independent of <a href="#core"><code>core</code></a>.</p>
+<p>Restart DOSBox to apply changes. Independent of the <a href="#core"><code>core</code></a> setting.
+On x86-64 hosts, native x87 emulation is always used.</p>
+<p>The <code>accurate</code> mode improves computational accuracy, but does not guarantee
+results identical to a particular x87 processor.</p>
 </dd>
 </dl>
 <h5 id="cputype">cputype<a class="headerlink" href="#cputype" title="Permanent link">¶</a></h5>
