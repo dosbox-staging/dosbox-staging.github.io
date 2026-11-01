@@ -5206,9 +5206,10 @@ DOS software.</p>
 <p class="admonition-title">80-bit extended precision FPU emulation</p>
 <p>On non-x86 computers, DOSBox Staging can use an optional software FPU with
 80-bit extended precision. Set <a href="#fpu"><code>fpu</code></a> to <code>accurate</code> to enable it.
-This mode uses more host CPU time, and its results do not exactly match
-every real x87 processor. Some FPU behaviour is still incomplete, so test
-software that depends on precise FPU behaviour carefully.</p>
+FPU-intensive workloads may run about 50% slower in this mode; the impact
+varies by workload. Its results do not exactly match every real x87
+processor. Some FPU behaviour is still incomplete, so test software that
+depends on precise FPU behaviour carefully.</p>
 <p>The default <code>fast</code> mode uses reduced-precision FPU emulation on non-x86
 computers. On x86-64 computers, DOSBox Staging always uses the host’s native
 x87 instructions, and the <code>fpu</code> setting has no effect. Changes to this
@@ -5286,7 +5287,8 @@ section.</p>
 <li><code>fast</code> – Use the existing reduced-precision implementation for better
   performance (default).</li>
 <li><code>accurate</code> – Use software 80-bit extended precision for improved
-  floating-point accuracy, at a higher host CPU cost.</li>
+  floating-point accuracy. FPU-intensive workloads may run about 50%
+  slower; the impact varies by workload.</li>
 </ul>
 <p>Restart DOSBox to apply changes. Independent of the <a href="#core"><code>core</code></a> setting.
 On x86-64 hosts, native x87 emulation is always used.</p>
