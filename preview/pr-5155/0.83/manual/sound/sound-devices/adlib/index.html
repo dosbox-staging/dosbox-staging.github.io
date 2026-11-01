@@ -3376,6 +3376,19 @@
       
         
 <li class="md-nav__item">
+  <a href="#creative-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creative CQM
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
   <a href="#audio-artifact-mitigation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4631,6 +4644,19 @@
       
         
 <li class="md-nav__item">
+  <a href="#creative-cqm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creative CQM
+      
+    </span>
+  </a>
+  
+</li>
+
+      
+        
+<li class="md-nav__item">
   <a href="#audio-artifact-mitigation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -4764,13 +4790,13 @@
 
 <h1 id="adlib-opl">AdLib (OPL)<a class="headerlink" href="#adlib-opl" title="Permanent link">¶</a></h1>
 <p>This page covers the <strong>AdLib Music Synthesizer Card</strong>, the <strong>AdLib Gold
-1000</strong>, and the OPL3-compatible <strong>ESS Enhanced FM (ESFM)</strong> synthesiser — all
-FM synthesisers built around Yamaha’s OPL chip family or compatible designs.
-Because the OPL chip also appeared on every DOS-era <a href="../sound-blaster/">Sound
-Blaster</a>, their settings live the shared <code>[sblaster]</code>
-configuration section alongside the Sound Blaster’s own. DOSBox Staging uses
-the cycle-accurate Nuked OPL3 emulator for effectively bit-identical OPL
-output. </p>
+1000</strong>, the OPL3-compatible <strong>ESS Enhanced FM (ESFM)</strong> synthesiser, and
+<strong>Creative CQM</strong> — all FM synthesisers built around Yamaha’s OPL chip
+family or compatible designs. Because the OPL chip also appeared on every
+DOS-era <a href="../sound-blaster/">Sound Blaster</a>, their settings live the shared
+<code>[sblaster]</code> configuration section alongside the Sound Blaster’s own.
+DOSBox Staging uses the cycle-accurate Nuked OPL3 emulator for effectively
+bit-identical OPL output, and Nuked CQM when <code>oplmode = cqm</code> is selected.</p>
 <p>DOS games typically split their audio into two streams handled by different
 hardware: <a href="../../overview/#synthesised-sound">synthesised music</a> (notes played
 by a chip like OPL) and <a href="../../overview/#digital-sound">digital sound</a>
@@ -4880,6 +4906,17 @@ System games that have it into earlier ones that don’t. For example,
 with the ESFM driver from
 <a href="https://www.mobygames.com/game/45120/heavens-dawn/">Heaven’s Dawn</a>.</p>
 </div>
+<h2 id="creative-cqm">Creative CQM<a class="headerlink" href="#creative-cqm" title="Permanent link">¶</a></h2>
+<p>Later <strong>Sound Blaster 16</strong> and <strong>AWE32/64</strong> boards often used Creative’s
+<strong>CQM</strong> (Creative Quadrature Modulation) instead of a discrete Yamaha YMF262
+(OPL3) chip. CQM is register-compatible with OPL3, so games need no special
+driver, but the timbre differs from a real YMF262 (softer modulators, and a
+different character on high-feedback bass and drums).</p>
+<p>DOSBox Staging can emulate CQM with the Nuked CQM core:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sb16</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">cqm</span>
+</code></pre></div>
 <h2 id="audio-artifact-mitigation">Audio artifact mitigation<a class="headerlink" href="#audio-artifact-mitigation" title="Permanent link">¶</a></h2>
 <p>Real OPL hardware exhibited certain audio quirks — hanging notes and DC bias
 in particular — that were simply part of the experience at the time. DOSBox
@@ -4992,17 +5029,17 @@ annoying pops. Enable this setting to eliminate them.</p>
 <p>Known affected games: Golden Eagle (1991), Wizardry VI: Bane of the
 Cosmic Forge (1990), Wizardry VII (1992).</p>
 <p>Recommended settings for <strong>Wizardry VI</strong> when configured for AdLib sound:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">[sblaster]</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">opl2</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="na">opl_remove_dc_bias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="na">opl_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lpf 2 5500</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">[speaker]</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="na">pcspeaker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">[autoexec]</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="na">mixer opl 500</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">[sblaster]</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">none</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="na">oplmode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">opl2</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="na">opl_remove_dc_bias</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">true</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="na">opl_filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">lpf 2 5500</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="k">[speaker]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="na">pcspeaker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">off</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="k">[autoexec]</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="na">mixer opl 500</span>
 </code></pre></div>
 </dd>
 </dl>
@@ -5033,6 +5070,9 @@ nearly bit-perfect emulation of the Yamaha OPL chips.</p>
 </li>
 <li>
 <p><code>esfm</code> – ESS ESFM (enhanced Yamaha OPL3 compatible FM synth).</p>
+</li>
+<li>
+<p><code>cqm</code> – Creative CQM (OPL3-compatible clone used on later SB16 and AWE32/64 cards).</p>
 </li>
 <li>
 <p><code>none</code>/<code>off</code> – Disable OPL emulation.</p>
