@@ -595,6 +595,8 @@
       
         
       
+        
+      
     
     
     
@@ -637,6 +639,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/release-notes/0.83.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.83.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -4603,10 +4633,12 @@ Staging has full read and write access to it (don’t put it in a system folder,
 e.g., <code>Program Files</code> on Windows). Each game will have its own dedicated
 subfolder under <code>DOS Games</code>, so let’s create our first one called <code>Prince of
 Persia</code>.</p>
-<p>Now download <a href="https://www.dosgamesarchive.com/file/prince-of-persia/pop1demo">pop1.zip</a> from the <a href="https://www.dosgamesarchive.com/download/prince-of-persia">Prince of Persia demo page</a>
-and extract its contents into <code>DOS Games/Prince of Persia</code>. The archive
-contains only two files: <code>pop1.txt</code> (a regular text file) and <code>pop1demo.exe</code>
-(an MS-DOS executable). Let’s open <code>pop1.txt</code> in our text editor!</p>
+<p>Now download <a href="https://www.dosgamesarchive.com/file/prince-of-persia/pop1demo">pop1demo.zip</a> from the <a href="https://www.dosgamesarchive.com/download/prince-of-persia">Prince of Persia demo
+page</a> and extract its contents into a temporary folder. The archive
+contains a bunch of files – we’ll only need <code>pop1.zip</code>, so let’s extract it.
+This second archive contains only two files: <code>pop1.txt</code> (a regular text file)
+and <code>pop1demo.exe</code> (an MS-DOS executable). Let’s open <code>pop1.txt</code> in our text
+editor!</p>
 <div class="highlight"><pre><span></span><code>It's like an Arabian Nights movie come to life... with you as the star!
 Leap into an exotic labyrinth of heart-stopping action, challenging mazes,
 intrigue and superb animation that's breathtakingly realistic!
@@ -4647,9 +4679,9 @@ subfolders like <code>drives/c</code> and <code>drives/d</code> as DOS drives is
 <p>In our case, we only need a single C: drive, so we’ll create a <code>c</code> subfolder
 inside our <code>drives</code> folder (technically, it does not make a difference whether
 you use uppercase or lowercase “letter C” on Windows and macOS, but it does in
-Linux, so we recommend always using lowercase). We’ll then copy the files from
-the <code>pop1.zip</code> archive into <code>drives/c</code> to end up with the following folder
-structure:</p>
+Linux, so we recommend always using lowercase). We’ll then copy the two files
+from our <code>pop1.zip</code> archive into <code>drives/c</code> to end up with the following
+folder structure:</p>
 <p><img alt="Prince of Persia folder structure" class="skip-lightbox" src="../images/prince-of-persia-dirtree1.png" style="width: 16.5rem; margin: 0.3rem max(calc((50% - 16.5rem/2) * 0.85), 0rem);"></p>
 <div class="admonition info">
 <p class="admonition-title">Origins of the C: drive</p>
@@ -4762,27 +4794,28 @@ executes the following command:</p>
 </code></pre></div>
 <p><code>&lt;PATH&gt;</code> is the absolute path of your game directory (<code>Prince of Persia</code>, in
 this case).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In MS-DOS, folders
+are called <strong>directories</strong>, so the various DOSBox Staging messages usually use
+the word “directory”. We’ll use “folder” and “directory” interchangeably in
+this guide.</p>
+</div>
 <h2 id="installing-the-game">Installing the game<a class="headerlink" href="#installing-the-game" title="Permanent link">¶</a></h2>
 <p>You’ll be greeted by the following window when starting DOSBox Staging:</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="https://www.dosbox-staging.org/static/images/getting-started/dosbox-start.png" data-desc-position="bottom"><img alt="DOSBox start screen" loading="lazy" src="https://www.dosbox-staging.org/static/images/getting-started/dosbox-start.png"></a></p>
 <!-- TODO update screenshot, make sure it has the automounting message  -->
 
-<p>Let’s ignore the polite welcome message for now and focus on the text below
-the big blue rectangle:</p>
-<div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Local directory drives/c/ mounted as C drive
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Z:\&gt;_
+<p>Let’s ignore the polite welcome message for now and focus on this strange
+line:</p>
+<div class="dos-prompt highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Z:\&gt;_
 </code></pre></div>
-<p>The first line is pretty straightforward — it tells us that DOSBox Staging
-mounted <code>drives/c</code> we created earlier as the “C: drive”. In MS-DOS, folders
-are called <strong>directories</strong>, so the various DOSBox Staging messages usually use
-the word “directory”. We’ll use “folder” and “directory” interchangeably in
-this guide.</p>
-<p>The second line is the <strong>DOS prompt</strong>. DOS has a command line interface that
-predates graphical user interfaces we’re accustomed to from modern operating
-systems. We get DOS to do things by typing in commands, and if we manage to do
-this correctly, DOS will follow our instructions to the letter (pun intended).
-DOS is <em>not</em> a multitasking operating system; you can only do a single thing
-in it at any given time.</p>
+<p>This is the <strong>DOS prompt</strong>. DOS has a command line interface that predates
+graphical user interfaces we’re accustomed to from modern operating systems.
+We get DOS to do things by typing in commands, and if we manage to do this
+correctly, DOS will follow our instructions to the letter (pun intended). DOS
+is <em>not</em> a multitasking operating system; you can only do a single thing in it
+at any given time.</p>
 <p>Let’s analyse the prompt a little bit: it always starts with a letter followed
 by a colon, which denotes the current drive. Right after startup, this is
 always the <strong>Z: drive</strong>. This is a special drive that’s always available;
