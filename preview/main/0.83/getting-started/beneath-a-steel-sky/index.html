@@ -598,6 +598,8 @@
       
         
       
+        
+      
     
     
     
@@ -640,6 +642,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../download/release-notes/0.83.1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    0.83.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -4952,7 +4982,7 @@ step:</p>
 <li>
 <p>Create a batch file called <code>Start DOSBox Staging.bat</code> with the following
     content:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>C:\Users\%USERNAME%\AppData\Local\DOSBox\dosbox.exe
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>C:\Users\%USERNAME%\AppData\Local\Programs\DOSBox Staging\dosbox.exe
 </code></pre></div>
 <p>That’s the default installation path chosen by the installer. <code>%USERNAME%</code>
 is your Windows user name. If you installed DOSBox Staging to a different
@@ -4999,7 +5029,7 @@ Internet Archive and put the <code>.iso</code> file into a new <code>drives/d</c
 inside your <code>Beneath a Steel Sky</code> game folder.</p>
 <p>Also grab the scan of the <a href="https://archive.org/details/beneath-a-steel-sky-security-manual/">Security
 Manual</a> and
-the <a href="https://ia802200.us.archive.org/13/items/beneath-a-steel-sky-comic-book/Beneath_a_Steel_Sky.pdf">comic
+the <a href="https://archive.org/details/beneath-a-steel-sky-comic-book">comic
 book</a>
 included in the boxed version of the game.</p>
 <p>For the visually inclined, this is the structure we’ll end up with:</p>
@@ -5025,9 +5055,7 @@ the CD:</p>
 <a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>                6 file(s)            72,956,935 bytes
 <a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>                0 dir(s)                      0 bytes free
 </code></pre></div>
-<p>We have two <code>.EXE</code> files and one text file. <code>README.TXT</code> just contains some
-legal notice we don’t need to worry about (view it with <code>more README.TXT</code> if
-you’re curious). <code>INSTALL.EXE</code> is what we’re after, so run that.</p>
+<p>We have two <code>.EXE</code> files. <code>INSTALL.EXE</code> is what we’re after, so run that.</p>
 <p>We’re greeted by a pretty standard-looking text-mode installer. Either press
 any key or wait a few seconds to progress to the second screen, where you
 select the installation path:</p>
@@ -5171,10 +5199,11 @@ printout, which we don’t need in an automated startup script.</p>
 <p>DOSBox emulates the <strong>Sound Blaster 16</strong> by default. This card can emulate all
 earlier Sound Blaster models and offers the widest compatibility with DOS
 games.</p>
-<p>But back in the day there were more Sound Blaster variants and clones than
-you could shake a stick at, many with quite different default volume levels.
-We don’t know which model this game’s developers used, so it’s worth trying
-a few. Let’s start with a first-revision <strong>Sound Blaster Pro</strong>:</p>
+<p>But back in the day there were more Sound Blaster variants and clones than you
+could shake a stick at, many with quite different default volume levels. We
+don’t know which model this game’s developers used, so it’s worth trying a
+few. Let’s start with a secondirst-revision (most common) <strong>Sound Blaster
+Pro</strong>:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">[sblaster]</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="na">sbtype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">sbpro2</span>
 </code></pre></div>
@@ -5213,7 +5242,7 @@ is the best solution.</p>
 <p class="admonition-title">When the game knows best</p>
 <p>Not letting a game adjust volume levels can sometimes backfire, e.g. in a
 game that intelligently lowers OPL music whenever speech is playing. But
-it’s worth a shot — some games benefit from wrestling control from them
+it’s worth a shot — some games benefit from wresting control from them
 and putting the mixer into “manual mode”.</p>
 </div>
 <h2 id="adjusting-the-emulated-cpu-speed">Adjusting the emulated CPU speed<a class="headerlink" href="#adjusting-the-emulated-cpu-speed" title="Permanent link">¶</a></h2>
@@ -5234,8 +5263,8 @@ automatic speed calibration by default:</p>
 <ul>
 <li><strong>Real mode</strong> games: <strong>3000</strong> CPU instructions per millisecond (roughly a
   386SX at 20 MHz)</li>
-<li><strong>Protected mode</strong> games: <strong>60,000</strong> instructions per millisecond (roughly
-  a Pentium at 90 MHz)</li>
+<li><strong>Protected mode</strong> games: <strong>60 000</strong> instructions per millisecond (roughly
+  a Pentium at 100 MHz)</li>
 </ul>
 <p>The reasoning: older games are often sensitive to CPU speed and might
 misbehave if it’s too fast, hence the conservative default; newer games
@@ -5254,7 +5283,7 @@ the title bar. DOSBox itself always starts in real mode:</p>
 the title bar change:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="na">SKY.EXE - 60000 cycles/ms - to capture the mouse press...</span>
 </code></pre></div>
-<p><code>SKY.EXE</code> is now running, and it’s at 60,000 cycles/ms — our protected-mode
+<p><code>SKY.EXE</code> is now running, and it’s at 60 000 cycles/ms — our protected-mode
 default, confirming this is a protected-mode game.</p>
 <p>That’s the crux of the stuttering: not enough horsepower left for
 time-critical audio. The fix is to cap the cycle count instead of letting
@@ -5401,9 +5430,9 @@ just need to find the cycles value the game works well with.</p>
 at it. For 3D games you’ll likely need Pentium or Pentium MMX levels, and
 Pentium II speeds for 3D SVGA gaming at 640×480 or higher. For older
 real-mode games, the default 3000 cycles is a good starting point, but try
-the 300–10,000 range if it needs improvement.</p>
+the 300–10 000 range if it needs improvement.</p>
 <p>You can fine-tune cycles live with <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f11">F11</kbd></span>/<span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> (<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f11">F11</kbd></span>/
-<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> on Mac) — these increase cycles by 10% or decrease by 20%
+<span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-f12">F12</kbd></span> on Mac) — these decrease cycles by 20% or increase by 10%
 respectively. Once you land on a good setting, update your config with the
 value shown in the title bar.</p>
 <p>Always aim for the minimum cycles value that gives adequate performance, to
@@ -5492,8 +5521,9 @@ games</a>
 that tells you the correct model for most well-known titles.</p>
 <p>Let’s consult the list and see what it says about Beneath a Steel Sky!</p>
 <blockquote>
-<p>Requires CM-series/LAPC-I for proper MT-32 output. Buffer overflows on
-MT-32 ‘old’. Combined MT-32/SB output only possible using ScummVM</p>
+<p>Buffer overflows on MT-32 ‘old’. Custom instrument patches use
+CM-series/LAPC-I’s extra sound effects. Combined MT-32/SB output requires
+ScummVM or fanmade patch</p>
 </blockquote>
 <p>Well, the list knows best, so we’ll use the CM-32L for our game (as we’ve done
 in the above config example).</p>
@@ -5537,20 +5567,20 @@ and then pressing the left mouse button — hey, where did the voice-over go?!
 Yeah… you’ve probably glossed over this little detail in the tip from the
 MT-32 wiki page:</p>
 <blockquote>
-<p style="margin: 1.3rem 0">Combined MT-32/SB output <em>only possible</em> using ScummVM</p>
+<p style="margin: 1.3rem 0">Combined MT-32/SB output <strong>requires ScummVM or fanmade patch</strong></p>
 </blockquote>
-<p>What this means for us ordinary mortals is that the original game can either
-use the MT-32 for MIDI music and sound effects, and you get <em>no</em> digital
-speech, or only the Sound Blaster for OPL music, digital sound effects, <em>and</em>
-speech. MT-32 MIDI music and sound effects combined with digital
-speech via the Sound Blaster — the computer says no, buddy.</p>
-<p>The game has just taught us an important life lesson: you can’t have
-everything, especially not in the world of older DOS games. You’ll have to
-pick what you value most: better music and only subtitles or full
-voice-acting with a slightly worse soundtrack. I’m opting for the latter, and
-remember, we can always enhance the Sound Blaster / AdLib music by adding
-chorus and reverb. This will get us a little bit closer to the MT-32
-soundtrack:</p>
+<p>What this means for us ordinary mortals is that the original, unpatched game
+can either use the MT-32 for MIDI music and sound effects, and you get <em>no</em>
+digital speech, or only the Sound Blaster for OPL music, digital sound
+effects, <em>and</em> speech. MT-32 MIDI music and sound effects combined with
+digital speech via the Sound Blaster — the computer says no, buddy.</p>
+<p>For those who don’t want to bother with fanmade patches, the game has just
+taught us an important life lesson: you can’t have everything, especially not
+in the world of older DOS games. You’ll have to pick what you value most:
+better music and only subtitles or full voice-acting with a slightly worse
+soundtrack. I’m opting for the latter, and remember, we can always enhance the
+Sound Blaster / AdLib music by adding chorus and reverb. This will get us a
+little bit closer to the MT-32 soundtrack:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">[mixer]</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="na">reverb</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">large</span>
 <a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="na">chorus</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">strong</span>
@@ -5645,9 +5675,9 @@ in-game visuals — fortunately, both were drawn assuming square pixels. The
 floppy disk icon, for instance, looks like a tallish rectangle with aspect
 correction enabled, when it should be a perfect square; human figures and
 circular objects appear slightly elongated too. Revolution was a European
-studio, released the game for PAL Amigas (which have square pixels), and was
-generally Amiga-first — for such games, disabling aspect ratio correction
-is almost always correct.</p>
+studio that released the game for PAL Amigas (which have square pixels), and
+was generally Amiga-first — for such games, disabling aspect ratio
+correction is almost always correct.</p>
 <p>Rules of thumb:</p>
 <p><strong><code>aspect = on</code></strong></p>
 <ul>
